@@ -1,6 +1,27 @@
 # IG-Template
 A template for building IG based on the Argonaut and US-Core IG
 
+Here some screenshots:
+
+1. **index.html (home) page:**
+
+![index.html page](ss1.png)
+
+2. **profile list page:**
+
+![profile list page](ss2.png)
+
+3. **individual profile page:**
+
+![profile page](ss3.png)
+
+4. **example page:**
+
+![example](ss4.png)
+
+
+
+
 See FHIR [IG publsiher documentation](http://wiki.hl7.org/index.php?title=IG_Publisher_Documentation)  for how to set up your local environment.   
 
 You will also need to have the following directories in the same path:
