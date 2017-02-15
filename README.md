@@ -1,6 +1,16 @@
 # IG-Template
 A template for building IG based on the Argonaut and US-Core IG
 
+See FHIR [IG publsiher documentation](http://wiki.hl7.org/index.php?title=IG_Publisher_Documentation)  for how to set up your local environment.   
+
+You will also need to have the following directories in the same path:
+
+- temp
+- output
+- qa
+
+There is a python file that will create the ig.json and ig.xnl file based on the content in the resources and example directories.  The bash scripts to run the ig publisher with or withoutthe python script.
+
 Authors:  Eric Haas, Brett Marquard
 
 
