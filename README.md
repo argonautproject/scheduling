@@ -9,7 +9,7 @@ You will also need to have the following directories in the same path:
 - output
 - qa
 
-There is a python file that will create the ig.json and ig.xnl file based on the content in the resources and example directories.  The bash scripts to run the ig publisher with or withoutthe python script.
+There is a python file that will create the ig.json and ig.xnl file based on the content in the `resources` and `example` directories.  The bash scripts to run the ig publisher with or withoutthe python script.
 
 Authors:  Eric Haas, Brett Marquard
 
