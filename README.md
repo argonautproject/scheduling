@@ -5,9 +5,9 @@ See FHIR [IG publsiher documentation](http://wiki.hl7.org/index.php?title=IG_Pub
 
 You will also need to have the following directories in the same path:
 
-- temp
-- output
-- qa
+- `temp`
+- `output`
+- `qa`
 
 There is a python file that will create the ig.json and ig.xnl file based on the content in the `resources` and `example` directories.  The bash scripts to run the ig publisher with or withoutthe python script.
 
