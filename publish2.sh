@@ -1,6 +1,6 @@
 #!/bin/bash
 name="IG-starter-template"
-path1=/Users/ehaas/Documents/FHIR/IG-starter-template/
+path1=/Users/ehaas/Documents/FHIR/IG-Template/
 path2=/Users/ehaas/Downloads/
 echo "================================================================="
 echo === Publish $name IG!!! $(date -u) ===
