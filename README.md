@@ -3,10 +3,6 @@ Authors:  Eric Haas, Brett Marquard
 
 A template for building an FHIR Implemenation Guide(IG) using the IG publisher and profile spreadsheets.  This is based on the design of the [Argonaut](http://www.fhir.org/guides/argonaut/r2/) and [US-Core](http://hl7.org/fhir/us/core/) IGs.    See the [FHIR IG publisher documentation](http://wiki.hl7.org/index.php?title=IG_Publisher_Documentation)  for how to set up your local environment.  
 
-GitHub will automatically trigger a new build whenever you commit changes.
-(To manually trigger a build, just `POST` to the Webhook URL yourself, for example via:
-`curl -X POST "https://2rxzc1u4ji.execute-api.us-east-1.amazonaws.com/prod/publish?Healthedata1/IG-Template"`)
-
 ### Rendered IG-Template at
 
 http://build.fhir.org/ig/Healthedata1/IG-Template
