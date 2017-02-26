@@ -30,11 +30,11 @@ logging.info('create the ig.xml file template as string')
 
 ''' this is the ig.xml file skeleton may need to modify as needed see ig publisher documenentation at  f http://wiki.hl7.org/index.php?title=IG_Publisher_Documentation or more information. '''
 
-igxml ='''<?xml version="1.0" encoding="UTF-8"?><!--Hidden IG for de facto IG publishing--><ImplementationGuide xmlns="http://hl7.org/fhir"><id value="ig"/><url value="http://www.fhir.org/guides/ig-template/ImplementationGuide/ig"/><name value="Implementation Guide Template"/><status value="draft"/><experimental value="true"/><publisher value="FHIR Project"/><package><name value="base"/></package><page><source value="index.html"/><title value="blah"/><kind value="page"/></page></ImplementationGuide>'''
+igxml ='''<?xml version="1.0" encoding="UTF-8"?><!--Hidden IG for de facto IG publishing--><ImplementationGuide xmlns="http://hl7.org/fhir"><id value="ig"/><url value="http://www.fhir.org/guides/ig-template/ImplementationGuide/ig"/><name value="Implementation Guide Template"/><status value="draft"/><experimental value="true"/><publisher value="FHIR Project"/><package><name value="base"/></package><page><source value="index.html"/><title value="IG Templage Homepage"/><kind value="page"/></page></ImplementationGuide>'''
 
 # extension in spreadsheet - these need to be manually listed here
 
-extensions = []
+extensions = ['template-blah']
 
 # operation in spreadsheet - these need to be manually listed here
 
@@ -44,6 +44,13 @@ operations = []
 
 searches = []
 
+#if valueset in spreadsheet is a codesystem - these need to be manually listed here
+
+codesystems = ['blah-codes']
+
+#if valueset in spreadsheet is not a codesystem - these need to be manually listed
+
+valuesets = []
 
 
 # Function definitions here
@@ -78,7 +85,7 @@ def update_igjson(type, id, template = 'base'): # add base to ig.json - can exte
             template : type + '-' + id + '.html'}  # concat id into appropriate strings and add valuset base def to resources in def file
         logging.info('adding ' + type + ' ' + id + ' base to resources ig.json')
     if template == 'defns':
-        igpy['resources'][type + '/' + id][template] = type + '-' + id + '-definitions.html'  # concat id into appropriate strings and add sd defitions to in def file
+        igpy['resources'][type + '/' + id][template] = type + '-' + id + '-definitions.html'  # concat id into appropriate strings and add sd definitions to in def file
         logging.info('adding ' + type + ' ' +  id  + ' definitions to resources ig.json')
     return
 
@@ -143,11 +150,17 @@ def main():
     # add spreadsheet operations
     for operation in operations:
        update_igjson('OperationDefinition', operation, 'base')
-       update_igjson('OperationDefinition', operation, 'defns')
     # add spreadsheet search parameters
     for search in searches:
        update_igjson('SearchParameter', search, 'base')
-       update_igjson('SearchParameter', search, 'defns')
+    # add spreadsheet code systems
+    for codesystem in codesystems:
+       update_igjson('CodeSystem', codesystem, 'base')
+       update_igjson('ValueSet', codesystem, 'base')
+    # add spreadsheet valuesets
+    for valueset in valuesets:
+       update_igjson('ValueSet', valueset, 'base')
+
 
     examples = os.listdir(
         dir + 'examples')  # get all the examples in the examples directory assuming are in json or xml
