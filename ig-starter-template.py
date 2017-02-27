@@ -32,9 +32,9 @@ logging.info('create the ig.xml file template as string')
 
 igxml ='''<?xml version="1.0" encoding="UTF-8"?><!--Hidden IG for de facto IG publishing--><ImplementationGuide xmlns="http://hl7.org/fhir"><id value="ig"/><url value="http://www.fhir.org/guides/ig-template/ImplementationGuide/ig"/><name value="Implementation Guide Template"/><status value="draft"/><experimental value="true"/><publisher value="FHIR Project"/><package><name value="base"/></package><page><source value="index.html"/><title value="IG Templage Homepage"/><kind value="page"/></page></ImplementationGuide>'''
 
-# extension in spreadsheet - these need to be manually listed here
+# extension in spreadsheet - these need to be manually listed here needs to be named same as SD files
 
-extensions = ['template-blah']
+extensions = ['template-blah','template-complex']
 
 # operation in spreadsheet - these need to be manually listed here
 
