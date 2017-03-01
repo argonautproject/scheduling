@@ -52,6 +52,7 @@ codesystems = ['blah-codes']
 
 valuesets = []
 
+# ====================== this is all the same for all IGs ===================
 
 # Function definitions here
 def update_sd(i,type):
@@ -79,31 +80,40 @@ def update_igxml(type, purpose, id):
     logging.info('adding ' + type + vsxml + ' to resources in ig.xml')
     return
 
-def update_igjson(type, id, template = 'base'): # add base to ig.json - can extend for other templates if needed with extra 'template' param
+def update_igjson(type, id, template = 'base', filename = "blah"): # add base to ig.json - can extend for other templates if needed with extra 'template' param
     if template == 'base':
         igpy['resources'][type + '/' + id] = {
             template : type + '-' + id + '.html'}  # concat id into appropriate strings and add valuset base def to resources in def file
         logging.info('adding ' + type + ' ' + id + ' base to resources ig.json')
+
+    if template == 'source':
+        igpy['resources'][type + '/' + id][template] =  filename  # concat filename + xml into appropriate strings and add source in def file
+        logging.info('adding ' + id + ' source filename to resources ig.json')
+
     if template == 'defns':
-        igpy['resources'][type + '/' + id][template] = type + '-' + id + '-definitions.html'  # concat id into appropriate strings and add sd definitions to in def file
+        igpy['resources'][type + '/' + id][template] = type + '-' + id + '-definitions.html'  # concat id into appropriate strings and add sd defitions to in def file
         logging.info('adding ' + type + ' ' +  id  + ' definitions to resources ig.json')
     return
 
 
-def update_def(i, type, purpose):
+def update_def(filename, type, purpose):
       vsid_re = re.compile(r'<id value="(.*)"/>')  # regex for finding the index in vs
       vs_file = open(
-            dir + 'resources/' + i)  # can use a package like untangle or Xmltodict but I'm gonna regex it for now"
+            dir + 'resources/' + filename)  # can use a package like untangle or Xmltodict but I'm gonna regex it for now"
       vsxml = vs_file.read()  # convert to string
       vsmo = vsid_re.search(vsxml)  # get match object which contains id
       vsid = vsmo.group(1)  # get id as string
       update_igjson(type, vsid) # add base to definitions file
+      update_igjson(type, vsid, 'source', filename) # add source filename to definitions file
+      if type == 'StructureDefinition':
+          update_igjson(type, vsid, 'defns')  # add base to definitions file
       update_igxml(type, purpose, vsid)
       return
 
-def update_example(type, id):
+def update_example(type, id, filename):
       update_igxml(type, 'example', id)  # add example to ig.xml file
       update_igjson(type, id )  # add example base to definitions file
+      update_igjson(type, id,'source', filename) # add source filename to definitions file
       igpy['defaults'][type] = {'template-base': 'ex.html'}  # add example template for type
       logging.info('adding example template to type ' +type + ' in ig.json')
       return
@@ -136,12 +146,12 @@ def main():
         if 'operationdefinition' in resources[
             i]:  # for each cs in /resources open, read id and create and append dict struct to definiions file
             update_def(resources[i], 'OperationDefinition', 'conformance')
-        if 'searchparameter' in resources[
-            i]:  # for each cs in /resources open, read id and create and append dict struct to definiions file
-            update_def(resources[i], 'SearchParameter', 'conformance')
         if 'structuredefinition' in resources[
             i]:  # for each cs in /resources open, read id and create and append dict struct to definiions file
             update_def(resources[i], 'StructureDefinition', 'conformance')
+        if 'searchparameter' in resources[
+            i]:  # for each cs in /resources open, read id and create and append dict struct to definiions file
+            update_def(resources[i], 'SearchParameter', 'conformance')
 
    # add spreadsheet extensions
     for extension in extensions:
@@ -161,7 +171,6 @@ def main():
     for valueset in valuesets:
        update_igjson('ValueSet', valueset, 'base')
 
-
     examples = os.listdir(
         dir + 'examples')  # get all the examples in the examples directory assuming are in json or xml
     for i in range(len(examples)):  # run through all the examples and get id and resource type
@@ -170,13 +179,13 @@ def main():
             exjson = json.load(get_file(examples[i]))
             extype = exjson['resourceType']
             ex_id = exjson['id']
-            update_example(extype, ex_id)
+            update_example(extype, ex_id, examples[i])
         if 'xml' in examples[
             i]:  # for each cs in /resources open, read id and create and append dict struct to definiions file
             ex_xml = etree.parse(get_file(examples[i]))  # lxml module to parse example xml
             ex_id = ex_xml.xpath('//f:id/@value', namespaces={'f': 'http://hl7.org/fhir'})  # use xpath to get the id
             extype = ex_xml.xpath('name(/*)')  # use xpath to get the type '''
-            update_example(extype, ex_id[0])
+            update_example(extype, ex_id[0], examples[i])
 
     # write files
     ig_file = open(dir + 'ig.json', 'w')
