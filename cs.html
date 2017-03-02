@@ -3,17 +3,24 @@
 ---
 {% include header.html %}
 
-<h2>{{[title]}}</h2>
+{% include container-start.html %}
 
-<p>
-Formats: <a href="{{[type]}}-{{[id]}}.xml.html">XML</a>, <a href="{{[type]}}-{{[id]}}.json.html">JSON</a>, <a href="{{[type]}}-{{[id]}}.ttl.html">Turtle</a>
-</p>
+  <!-- ============CONTENT CONTENT=============== -->
 
-{% include {{[type]}}-{{[name]}}.xhtml %}
+
+<!-- <h2>{{[title]}}</h2> -->
+
 
 {% include {{[type]}}-{{[id]}}-summary.xhtml %}
+
 {% include {{[type]}}-{{[id]}}-xref.xhtml %}
+
 {% include {{[type]}}-{{[id]}}-content.xhtml %}
 
-{% include footer.html %}
 
+<!-- ==============END CONTENT END CONTENT=================== -->
+
+{% include container-end.html %}
+
+
+{% include footer.html %}
