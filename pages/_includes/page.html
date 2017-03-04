@@ -1,18 +1,13 @@
----
-# jekyll header
----
 {% include header.html %}
 
   <!-- ============BreadCrumb=============== -->
+
 
 {% include container-start.html %}
 
   <!-- ============CONTENT CONTENT=============== -->
 
-<!--  note add the '{}'  and the "%"  to this when uncomment...
-     include list-simple-capabilitystatements.xhtml
--->
-
+{% capture my-include %}{% include {{page.md_filename}}.md %}{% endcapture %}{{ my-include | markdownify }}
 
 
   <!-- ==============END CONTENT END CONTENT=================== -->
