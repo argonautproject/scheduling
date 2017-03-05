@@ -1,20 +1,42 @@
-<?xml version="1.0" encoding="UTF-8"?><Basic xmlns="http://hl7.org/fhir">
-  <id value="diet"/>
-
-
-  <identifier>
-    <system value="http://goodhealth.org/basic/identifiers"/>
-    <value value="19283746"/>
-  </identifier>
-  <code>
-    <coding>
-      <system value="http://hl7.org/fhir/basic-resource-type"/>
-      <code value="diet"/>
-    </coding>
-  </code>
-  <subject>
-    <display value="Roel"/>
-  </subject>
-  <created value="2017-02-14"/>
-
+<?xml version="1.0" encoding="UTF-8"?>
+<Basic xmlns="http://hl7.org/fhir">
+	<id value="diet"/>
+	<text>
+		<status value="generated"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			<p>
+				<b>Generated Narrative with Details</b>
+			</p>
+			<p>
+				<b>id</b>: diet</p>
+			<p>
+				<b>extension</b>: http://www.fhir.org/guides/ig-template/StuctureDefinition/template-blah<span style="background: LightGoldenRodYellow">(Details : valueCode 'foo' = 'Foo')</span></p>
+			<p>
+				<b>identifier</b>: 19283746</p>
+			<p>
+				<b>code</b>: Diet <span style="background: LightGoldenRodYellow">(Details : http://hl7.org/fhir/basic-resource-type code 'diet' = 'Diet)</span>
+			</p>
+			<p>
+				<b>subject</b>: Roel</p>
+			<p>
+				<b>created</b>: Feb 14, 2017</p>
+		</div>
+	</text>
+	<extension url="http://www.fhir.org/guides/ig-template/StuctureDefinition/template-blah">
+		<valueCode value="foo"/>
+	</extension>
+	<identifier>
+		<system value="http://goodhealth.org/basic/identifiers"/>
+		<value value="19283746"/>
+	</identifier>
+	<code>
+		<coding>
+			<system value="http://hl7.org/fhir/basic-resource-type"/>
+			<code value="diet"/>
+		</coding>
+	</code>
+	<subject>
+		<display value="Roel"/>
+	</subject>
+	<created value="2017-02-14"/>
 </Basic>
