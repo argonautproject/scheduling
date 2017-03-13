@@ -6,4 +6,4 @@ echo "================================================================="
 echo === Publish $name IG!!! $(date -u) ===
 echo "================================================================="
 git status
-java -jar ${path2}org.hl7.fhir.igpublisher.jar -ig ${path1}ig.json
+java -jar ${path2}org.hl7.fhir.igpublisher.jar -ig ${path1}ig.json -watch

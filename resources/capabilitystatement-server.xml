@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CapabilityStatement xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir http://build.fhir.org/device.xsd">
+	<id value="server"/>
+	<text>
+		<status value="generated"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+<ul><li>FHIR Version: 1.9.0</li><li>Supported formats: xml, json</li><li>Published: 2017-03-08</li><li>Published by: Health eData Inc</li></ul><p>The Section describes the expected capabilities etc....</p></div>
+
+	</text>
+	<url value="http://www.fhir.org/guides/ig-template/CapabilityStatement/server"/>
+	<name value="US Meds Server"/>
+	<status value="draft"/>
+	<date value="2017-03-08"/>
+	<publisher value="Health eData Inc"/>
+	<contact>
+		<telecom>
+			<system value="other"/>
+			<value value="ehaas@healthedatainc.com"/>
+		</telecom>
+	</contact>
+	<description value="This resource defines the expected capabilities "/>
+	<kind value="requirements"/>
+	<fhirVersion value="1.9.0"/>
+	<acceptUnknown value="extensions"/>
+	<format value="xml"/>
+	<format value="json"/>
+
+	<profile>
+
+		<reference value="http://build.fhir.org/ig/Healthedata1/IG-Template/StructureDefinition-template-basic.html"/>
+		<display value="StructureDefinition-template-basic"/>
+	</profile>
+	<rest>
+		<mode value="server"/>
+
+		<resource>
+			<type value="Basic"/>
+			<interaction>
+				<extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+					<valueCode value="SHOULD"/>
+				</extension>
+				<code value="search-type"/>
+			</interaction>
+			<interaction>
+				<extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+					<valueCode value="SHOULD"/>
+				</extension>
+				<code value="read"/>
+			</interaction>
+			<interaction>
+				<extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+					<valueCode value="SHOULD"/>
+				</extension>
+				<code value="history-instance"/>
+			</interaction>
+			<interaction>
+				<extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+					<valueCode value="SHOULD"/>
+				</extension>
+				<code value="vread"/>
+			</interaction>
+		</resource>
+
+	</rest>
+</CapabilityStatement>
