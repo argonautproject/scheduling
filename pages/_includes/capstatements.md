@@ -19,7 +19,7 @@ This section outlines conformance requirements
 
 ### Conformance requirements for Server
 
-Source Resource: [XML](capabilitystatement-server.xml.html)/[JSON](capabilitystatement-server.json.html)
+[Source Resource](capabilitystatement-server.html)
 
 
 
@@ -32,7 +32,7 @@ etc
 
 ### Conformance requirements for Client
 
-Source Resource: [XML](capabilitystatement-Client.xml.html)/[JSON](capabilitystatement-Client.json.html)
+[Source Resource](capabilitystatement-Client.html)
 
 - FHIR Version: 1.9.0
 - Supported formats: xml, json
