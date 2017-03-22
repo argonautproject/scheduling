@@ -1,12 +1,18 @@
 ---
 # jekyll header
+level: 2
+active: terminology
 ---
 {% include header.html %}
 
 {% include container-start.html %}
 
-  <!-- ============CONTENT CONTENT=============== -->
 
+<!-- ============BreadCrumb=============== -->
+
+{% include breadcrumbs.html %}
+
+<!-- ============CONTENT CONTENT=============== -->
 
 <h2>CapabilityStatement: {{[type]}}-{{[id]}}</h2>
 

@@ -1,11 +1,9 @@
 ---
 # jekyll header
+active: capstatements
 level: 2
-active: profiles
-
 ---
 {% include header.html %}
-
 
 {% include container-start.html %}
 
@@ -15,7 +13,8 @@ active: profiles
 
 <!-- ============CONTENT CONTENT=============== -->
 
-<h2>Example: {{[type]}}-{{[id]}}</h2>
+
+<h2>CapabilityStatement: {{[id]}}</h2>
 
 <p>
 Formats: <a href="{{[type]}}-{{[id]}}.xml.html">XML</a>, <a href="{{[type]}}-{{[id]}}.json.html">JSON</a>, <a href="{{[type]}}-{{[id]}}.ttl.html">Turtle</a>
@@ -23,8 +22,17 @@ Formats: <a href="{{[type]}}-{{[id]}}.xml.html">XML</a>, <a href="{{[type]}}-{{[
 
 {% include {{[type]}}-{{[name]}}.xhtml %}
 
-  <!-- ==============END CONTENT END CONTENT=================== -->
+<p>
+<!-- spacer -->
+</p>
+
+<p>
+<!-- spacer -->
+</p>
+
+<!-- ==============END CONTENT END CONTENT=================== -->
 
 {% include container-end.html %}
+
 
 {% include footer.html %}
