@@ -376,6 +376,11 @@ a.to-top {
 }
 ul#markdown-toc {
   list-style: none;
-  padding: 0;
-  background-color: white;
+    margin: 4px;
+    padding: 4px;
+    float: right;
+    z-index: 10;
+    width: 150px;
+    background-color: #ffeb7e;
+    border: 1px solid navy;
 }
