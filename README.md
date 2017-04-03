@@ -7,7 +7,8 @@ A template for building an FHIR Implemenation Guide(IG) using the IG publisher a
 
 http://build.fhir.org/ig/Healthedata1/IG-Template
 
-(GitHub will automatically trigger a new build whenever you commit changes.
+(GitHub will automatically trigger a new build whenever you commit changes.)
+
 Debugging info about the build: http://build.fhir.org/ig/Healthedata1/IG-Template/debug.tgz)
 
 ## Setup instructions
