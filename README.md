@@ -1,9 +1,31 @@
-# Argonaut Scheduling IG
-Authors:  Eric Haas, Brett Marquard
+# Welcome to the [Argonaut](http://argonautwiki.hl7.org/index.php?title=Main_Page) Scheduling Implementation Guide
 
-A template for building an FHIR Implemenation Guide(IG) using the IG publisher and profile spreadsheets.  This is based on the design of the [Argonaut](http://www.fhir.org/guides/argonaut/r2/) and [US-Core](http://hl7.org/fhir/us/core/) IGs.    See the [FHIR IG publisher documentation](http://wiki.hl7.org/index.php?title=IG_Publisher_Documentation)  for how to set up your local environment.  
+Project Lead: [Micky Tripathi](mtripathi@maehc.org)
 
-### Rendered IG-Template at
+Project Coordinator: [Jennifer Monahan](jmonahan@maehc.org)
+
+FHIR SME and Facilitator: [Eric Haas](ehaas@healthedatainc.com)
+
+FHIR SME and Facilitator: [Brett Marquard](brett@riverrockassociates.com)
+
+
+## Scope of Work
+
+Support basic patient and provider access to a provider's calendar and appointment requests including APIs and guidance.
+
+## Timeline
+
+![timeline](https://github.com/argonautproject/scheduling/blob/master/meeting-notes/Screen%20Shot%202017-04-03%20at%2011.08.16%20AM.png)
+
+## Meetings Notes
+
+Meeting agenda and notes are archived [here](https://github.com/argonautproject/scheduling/tree/master/meeting-notes)
+
+## Issues
+
+Issues will be listed and tracked on this Github repository site [here](https://github.com/argonautproject/scheduling/issues).
+
+### Rendered Scheduling Implementation Guide at
 
 http://build.fhir.org/ig/Healthedata1/IG-Template
 
