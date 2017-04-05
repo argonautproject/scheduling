@@ -1,6 +1,6 @@
 # Welcome to the [Argonaut](http://argonautwiki.hl7.org/index.php?title=Main_Page) Scheduling Implementation Guide
 
-Project Lead: [Micky Tripathi](mtripathi@maehc.org)
+Argonaut Lead: [Micky Tripathi](mtripathi@maehc.org)
 
 Project Coordinator: [Jennifer Monahan](jmonahan@maehc.org)
 
