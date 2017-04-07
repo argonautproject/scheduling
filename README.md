@@ -27,7 +27,7 @@ Issues will be listed and tracked on this Github repository site [here](https://
 
 ### Rendered Scheduling Implementation Guide at
 
-http://build.fhir.org/ig/argonautproject/scheduling
+http://build.fhir.org/ig/argonautproject/scheduling/
 
 (GitHub will automatically trigger a new build whenever you commit changes.)
 
