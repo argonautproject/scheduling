@@ -27,9 +27,9 @@ Issues will be listed and tracked on this Github repository site [here](https://
 
 ### Rendered Scheduling Implementation Guide at
 
-http://build.fhir.org/ig/Healthedata1/IG-Template
+http://build.fhir.org/ig/argonautproject/scheduling
 
 (GitHub will automatically trigger a new build whenever you commit changes.)
 
-Debugging info about the build: http://build.fhir.org/ig/Healthedata1/IG-Template/debug.tgz)
+Debugging info about the build: http://build.fhir.org/ig/argonautproject/scheduling/debug.tgz)
 
