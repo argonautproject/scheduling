@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CapabilityStatement xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir http://build.fhir.org/device.xsd">
-	<id value="server"/>
+	<id value="client"/>
 	<text>
 		<status value="generated"/>
 		<div xmlns="http://www.w3.org/1999/xhtml">
 <ul><li>FHIR Version: 3.0.0</li><li>Supported formats: xml, json</li><li>Published: 2017-03-08</li><li>Published by: Health eData Inc</li></ul><p>The Section describes the expected capabilities etc....</p></div>
-</text>
-	<url value="http://www.fhir.org/guides/ig-template/CapabilityStatement/server"/>
-	<name value="Server"/>
+
+	</text>
+	<url value="http://www.fhir.org/guides/ig-template/CapabilityStatement/client"/>
+	<name value="Client"/>
 	<status value="draft"/>
 	<date value="2017-03-08"/>
 	<publisher value="Health eData Inc"/>
@@ -30,7 +31,7 @@
 		<display value="StructureDefinition-template-basic"/>
 	</profile>
 	<rest>
-		<mode value="server"/>
+		<mode value="client"/>
 
 		<resource>
 			<type value="Basic"/>
