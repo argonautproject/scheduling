@@ -1,25 +1,20 @@
 # {{ page.title }}
 
-source pages/\_include/{{page.md_filename}}.md  file
-
-This section outlines conformance requirements
-
----
-
 <!-- TOC  the css styling for this is \pages\assets\css\project.css under 'markdown-toc'-->
-**Contents**
 
 * Do not remove this line (it will not be displayed)
 {:toc}
 
----
-
 <!-- end TOC -->
+
+source pages/\_include/{{page.md_filename}}.md  file
+
+This section outlines conformance requirements
 
 
 ### Conformance requirements for Server
 
-[Source Resource](capabilitystatement-server.html)
+[Source Resource](CapabilityStatement-server.html)
 
 
 
@@ -32,7 +27,7 @@ etc
 
 ### Conformance requirements for Client
 
-[Source Resource](capabilitystatement-Client.html)
+[Source Resource](CapabilityStatement-client.html)
 
 - FHIR Version: 1.9.0
 - Supported formats: xml, json
