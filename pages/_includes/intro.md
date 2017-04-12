@@ -1,4 +1,4 @@
-## {{ page.title }}
+## {{ site.data.fhir.igName }} Implementation Guide
 
 {% include publish-box.html %}
 
@@ -29,9 +29,11 @@ As of a 2007 study, cats are the second most popular pet in the US by number of 
 
 ### Jekyll Site Variables
 
-path : path to the main FHIR specification -  {% raw %} {{ site.data.fhir.path }} {% endraw %}= {{site.data.fhir.path}}
+igName : Title of the implementation Guide (defined in ig.xml) -  {% raw %} {{ site.data.fhir.igName }} {% endraw %}= {{site.data.fhir.igName}}
 
-canonical : canonical path to this specification -  {% raw %} {{ site.data.fhir.canonical }} {% endraw %} = {{ site.data.fhir.canonical }}
+path : path to the main FHIR specification (defined in ig.json)-  {% raw %} {{ site.data.fhir.path }} {% endraw %}= {{site.data.fhir.path}}
+
+canonical : canonical path to this specification (defined in ig.json)-  {% raw %} {{ site.data.fhir.canonical }} {% endraw %} = {{ site.data.fhir.canonical }}
 
 errorCount : number of errors in the build file (not including HTML validation errors) -  {% raw %} {{ site.data.fhir.errorCount }} {% endraw %} = {{ site.data.fhir.errorCount }}
 

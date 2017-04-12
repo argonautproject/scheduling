@@ -418,3 +418,12 @@ text-align: baseline;
 font-size: 1em;
 
 }
+
+/* ----------Title styling------*/
+
+#ig-status {
+
+  width: 50%;
+  margin: auto;
+  padding-top: 2.5%;
+}
