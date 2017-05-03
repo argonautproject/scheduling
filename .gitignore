@@ -52,7 +52,7 @@ output
 archived
 validation
 validateme
-meeting-notes
+my-notes
 
 # Altova files #
 ################
@@ -62,11 +62,6 @@ tmp*.md
 *.mfd
 tmp*.xml
 ~mf*.tmp
-edos-example1.csv
-schema-template.xsd
-infile.csv
-outfile.csv
-Log-FHIR.xlsx
 *.xlst
 
 # Microsoft Office #
