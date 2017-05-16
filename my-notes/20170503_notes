@@ -1,0 +1,44 @@
+Assume the Smart Auth stuff will handle security - is enough.
+  e.g patient content
+
+How does provider access to scheduling differ from patient.
+  provider on behalf of
+  ( does provider have whole different work flow when entering data)
+
+  Meetings notes
+
+  Use Case 0:  OK to not focus on this?
+
+  Epic, Meditech Cerner all all as existing functionality
+
+  Liz - what about 3rd party app?
+
+  may need to back into from more advanced use cases.
+
+  Use Case 0:  Will need to revisit in FHIR context - don't forget
+
+  Michelle:
+
+    Use Case 1:
+    New patient once is existing patient has option to use again as existing use case or go Use Case 0
+    over many organizations
+
+    Use Case 1b   Existing patient and limit to their single organization = use case 0
+
+
+  Use Case 2:
+
+  Emphasis on Provider on Behalf of
+  or the Follow-up is the goal - Should follow up be a separate use case. not that different from initial visit with PCP.
+
+  key differences between internal and external system
+
+  key difference provider vs patient entry
+
+  new patient and existing patient
+
+  Eligibility check/Prior auth - separate work flow stubs (not part of first pass)
+
+  get appts requests vs complete appts.
+
+  k

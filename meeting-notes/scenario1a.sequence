@@ -1,0 +1,18 @@
+# test
+Title: Scenario 1a:  Existing Patient schedules directly with their provider/specialty\nA = End User, B = FHIR Client, C = FHIR Server
+
+A-B: 1. Open App (Login ID?)
+Note left of A: - Enter Patient ID\n(if Scheduling for a family member)\n- Search by period of time available\n- Filter for provider\n- Enter Chief Complaint\n-other?
+A-B: 2. Select Patient, Provider and When Available
+B-C: 3. Patient.$match/Authenticate?
+C-C: 4. (summary of Cooper's comments)\n Check if Patient exists\n on system and check for conflicts.
+B-C: 5. Appointment.$find based on End User Input
+C-C: 6. (summary of Cooper's comments)\nAvailability search.\nServer needs to provide available\ntimes that all actors are available
+C-B: 7. Returns set of proposed Appointments
+B-A: 8. Display set of proposed Appointments
+A-B: 9. Select preferred Appointment
+B-C: 10. Post Appointment (update status)
+C-C: 11. (summary of Cooper's comments)\n verify (again) that all actors \nare available and check for conflicts \n(double appointments)
+C-B: 12. Return confirmation/Error
+B-A: 13. Communicates Instructions, Logout
+Note left of A: - Other Outcomes: \na) End User Doesn't Finish\nb) Cancels\nc) Amends Information\nd) Change Appointment\n e) No Appointments\n f) other

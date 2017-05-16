@@ -1,0 +1,31 @@
+# test
+Title: Draft Scenario 2a: New Patient Discovers and Schedules an Appointment with a Provider without being in health system\nA = End User, B = FHIR Client, C = 3rd Party App FHIR Server, D = EHR FHIR Server
+# list order of participants
+participant A
+participant B
+participant C
+participant D
+
+C-D: 1. Draft - Initially 3rd party App\nmay poll for all available appointments\n possibly using Appointment.$find
+D-D: 2. (summary of Cooper's comments)\nAvailability search.\nServer needs to\nprovide available times\nthat all actors are available
+D-C: 3. Returns set of open Appointments
+A-B: 4. Open App (Login ID?)
+Note Left of A:Other Inputs: \nInsurance information probably \ngets entered right out of the gate
+A-B: 5. Search for Location, Availability, \nSpecialty, Provider Gender, etc
+B-C: 6. Appointment.$find based on End User Input
+C-C: 6. (summary of Cooper's comments)\nAvailability search.\nServer needs to provide available\ntimes
+C-B: 7. Returns set of proposed Appointments
+B-A: 8. Display set of proposed Appointmentss
+A-B: 9. Select preferred Appointment
+A-B: 10. Enter Patient information
+Note Left of A:Other Inputs: \nChief Complaint\n Insurance, other?
+B-C: 11. Post Appointment (update status)
+C-C: 12. Hold Appointment
+C-D: 13. Post Appointment (update status)
+D-D: 14. (summary of Cooper's comments)\n verify (again) that all actors \nare available and check for conflicts \n(double appointments)
+D-D: 15. (summary of Cooper's comments)\n check if existing patient \ncreate new patient
+D-C: 16. Return confirmation/Error
+C-C: 17. Update available Appointment
+C-B: 18. Return confirmation/Error
+B-A: 19. Communicates Instructions, Logout
+Note left of A: - Other Outcomes: \na) End User Doesn't Finish\nb) Cancels\nc) Amends Information\nd) Change Appointment\ne) No Appointments \nf) other
