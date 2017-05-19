@@ -1,18 +1,27 @@
 # test
 Title: Scenario 1a:  Existing Patient schedules directly with their provider/specialty\nA = End User, B = FHIR Client, C = FHIR Server
 
-A-B: 1. Open App (Login ID?)
-Note left of A: - Enter Patient ID\n(if Scheduling for a family member)\n- Search by period of time available\n- Filter for provider\n- Enter Chief Complaint\n-other?
-A-B: 2. Select Patient, Provider and When Available
-B-C: 3. Patient.$match/Authenticate?
-C-C: 4. (summary of Cooper's comments)\n Check if Patient exists\n on system and check for conflicts.
-B-C: 5. Appointment.$find based on End User Input
-C-C: 6. (summary of Cooper's comments)\nAvailability search.\nServer needs to provide available\ntimes that all actors are available
-C-B: 7. Returns set of proposed Appointments
-B-A: 8. Display set of proposed Appointments
-A-B: 9. Select preferred Appointment
-B-C: 10. Post Appointment (update status)
-C-C: 11. (summary of Cooper's comments)\n verify (again) that all actors \nare available and check for conflicts \n(double appointments)
-C-B: 12. Return confirmation/Error
-B-A: 13. Communicates Instructions, Logout
+Note over A,B: functions handled by the App
+Note over B,C: functions handled by the standard
+
+A--B: 1. Open App (Optional Login to FHIR Client)
+A-C: 2. (Login to FHIR Server)
+A-B: 3. Select Patient, Provider and When Available
+Note left of A: Input Parameter:\n - Who (Patient)\n- When (Time Period)\n- Who (Provider)\n-Why (Chief Complaint)\n-DEFER others\nPatient Demographic updates\nDetails trigger by Complaint\n Insurance\n(likely as a Questionnaire)
+B--C: *Future Scope* POST Some operation $input
+C--C: *Future Scope* Discover Appointment type
+C--B: *Future Scope* Optionally return Questionnaire to be filled in
+B--A: *Future Scope* Display input parameters
+A--B: *Future Scope* fills out Questionnaire
+B-C: 4. Appointment.$find based on End User Input
+C-C: 5. (summary of Cooper's comments)\nAvailability search.\nServer needs to provide available\ntimes that all actors are available
+# Note right of C: Note: Server patient matching and \nchecking for conflicts \nmatters for other workflows \n(don’t need the know \nthe patient for doing a appt search)
+C-B: 6. Returns set of proposed Appointments
+B-A: 7. Display set of proposed Appointments
+A-B: 8. Select preferred Appointment
+B-C: 9. POST Appointment (create vs update status?)
+Note right of C: Appointment would be the same \nas the proposed Appointment\nIf any changes to Appointment \nthe Server will reject
+C-C: 10. (summary of Cooper's comments)\n verify (again) that all actors \nare available and check for conflicts \n(double appointments)
+C-B: 11. Return confirmation/Error
+B-A: 12. Communicates Instructions, Logout
 Note left of A: - Other Outcomes: \na) End User Doesn't Finish\nb) Cancels\nc) Amends Information\nd) Change Appointment\n e) No Appointments\n f) other
