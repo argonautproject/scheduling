@@ -1,0 +1,35 @@
+# test
+Title: Scenario 2a:  New Patient discovers and schedules a appointment with a provider without being in a health using a scheduling app./nA = End User, B = Scheduling App, C = FHIR Server
+
+# list order of participants
+participant A
+participant B
+participant C
+
+Note over A,B: functions handled by the App
+Note over B,C: functions handled by the standard
+
+note right of C: For performance issues/n App may have cached \nopen appointments from \nmultiple providers
+A--B: 1. Open App (Optional Login to Scheduling App)
+#A-C: 2. (Login to FHIR Server) see assumptions on authorization for scheduling app
+Note left of A: Parameter to search on:\-Availability)\n-Location\n-Specialty\n- Provider Demographic\nPhotograph!!\n- Insurance
+A-B: 2. Search for Location, Availability, \nSpecialty, Provider Gender, etc
+Note left of A: Input Parameter:\n - Who (Patient)\n-Why (Chief Complaint)\n-DEFER others\nPatient Demographic\nDetails trigger by Complaint\n Insurance\n(likely as a Questionnaire)
+B--C: *Future Scope* POST Some operation $input
+C--C: *Future Scope* Discover Appointment type
+C--B: *Future Scope* Optionally return Questionnaire to be filled in
+B--A: *Future Scope* Display input parameters
+A--B: *Future Scope* fills out Questionnaire
+B-C: 3. Appointment.$find based on End User Input
+C-C: 4. (summary of Cooper's comments)\nAvailability search.\nServer needs to provide available\ntimes that all actors are available
+# Note right of C: Note: Server patient matching and \nchecking for conflicts \nmatters for other workflows \n(don’t need the know \nthe patient for doing a appt search)
+C-B: 5. Returns set of proposed Appointments
+B-A: 6. Display set of proposed Appointments
+A-B: 7. Select preferred Appointment
+B-C: 8. POST Appointment (create vs update status?)
+Note right of C: Appointment would be the same \nas the proposed Appointment\nIf any changes to Appointment \nthe Server will reject
+C-C: 9. (summary of Cooper's comments)\n verify (again) that all actors \nare available and check for conflicts \n(double appointments)
+C-C: 10. (summary of Cooper's comments)\n check if existing patient \ncreate new patient
+C-B: 11. Return confirmation/Error
+B-A: 12. Communicates Instructions, Logout
+Note left of A: - Other Outcomes: \na) End User Doesn't Finish\nb) Cancels\nc) Amends Information\nd) Change Appointment\n e) No Appointments\n f) other
