@@ -6,7 +6,7 @@
 		<div xmlns="http://www.w3.org/1999/xhtml">
 <ul><li>FHIR Version: 3.0.0</li><li>Supported formats: xml, json</li><li>Published: 2017-03-08</li><li>Published by: Health eData Inc</li></ul><p>The Section describes the expected capabilities etc....</p></div>
 </text>
-	<url value="http://www.fhir.org/guides/ig-template/CapabilityStatement/server"/>
+	<url value="http://fhir.org/guides/argonaut-scheduling/CapabilityStatement/server"/>
 	<name value="Server"/>
 	<status value="draft"/>
 	<date value="2017-03-08"/>
@@ -26,7 +26,7 @@
 
 	<profile>
 
-		<reference value="http://www.fhir.org/guides/ig-template/StructureDefinition/template-basic"/>
+		<reference value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/template-basic"/>
 		<display value="StructureDefinition-template-basic"/>
 	</profile>
 	<rest>
