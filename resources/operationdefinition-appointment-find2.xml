@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OperationDefinition xmlns="http://hl7.org/fhir">
+  <id value="Appointment-find2"/>
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>Appointment Availability ***Parameter Output Option***</h2>
+      <p>OPERATION: Appointment Availability</p>
+      <p>The official URL for this operation definition is: </p>
+      <pre>http://hl7.org/fhir/OperationDefinition/Appointment-find2</pre>
+      <div>
+        <p>Searches for availability for a future appointment. This operation accepts a preferred date range for an appointment, as well as a specialty, optional list of practitioners, healthcare service, location, and patient. From those criteria, it determines which schedulable resources ( e.g., people, rooms, equiibment) are needed for the visit, and provides time slots where all required resources are available.</p>
+
+      </div>
+      <p>URL: [base]/$find2</p>
+      <p>Parameters</p>
+      <table class="grid">
+        <tr>
+          <td>
+            <b>Use</b>
+          </td>
+          <td>
+            <b>Name</b>
+          </td>
+          <td>
+            <b>Cardinality</b>
+          </td>
+          <td>
+            <b>Type</b>
+          </td>
+          <td>
+            <b>Binding</b>
+          </td>
+          <td>
+            <b>Documentation</b>
+          </td>
+        </tr>
+        <tr>
+          <td>IN</td>
+          <td>period</td>
+          <td>1..*</td>
+          <td>period</td>
+          <td/>
+          <td>
+            <div>
+              <p>The period of time that should be checked for appointment availability.</p>
+
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>IN</td>
+          <td>specialty</td>
+          <td>0..*</td>
+          <td>CodeableConcept</td>
+          <td>http://fhir.org/guides/argonaut-pd/ValueSet/provider-specialty (Extensible)</td>
+          <td>
+            <div>
+              <p>Which specialty is requested for the appointment. ( e.g., Dermatology)</p>
+
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>IN</td>
+          <td>service</td>
+          <td>0..*</td>
+          <td>CodeableConcept</td>
+          <td>
+            <a href="valueset-service-category.html">http://hl7.org/fhir/ValueSet/service-category</a> (Example)
+          </td>
+          <td>
+            <div>
+              <p>What service is requested for the appointment. ( e.g., Xrays)</p>
+
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>IN</td>
+          <td>provider</td>
+          <td>0..*</td>
+          <td>Reference</td>
+          <td/>
+          <td>
+            <div>
+              <p>A Patient resource that includes demographics and patient preferences. This is provided as a resource instead of a reference because the patient may not exist when performing an availablity search. If the appointment is for a new patient, the patient record should not be created until just before booking an appointment.</p>
+
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>IN</td>
+          <td>location</td>
+          <td>0..*</td>
+          <td>string</td>
+          <td/>
+          <td>
+            <div>
+              <p>A (part of the) address of the location of interest.  (e.g., zip codes, city or state)</p>
+
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>IN</td>
+          <td>patient</td>
+          <td>0..*</td>
+          <td>resource</td>
+          <td/>
+          <td>
+            <div>
+              <p>A Patient resource that includes demographics and patient preferences. This is provided as a resource instead of a reference because the patient may not exist when performing an availablity search. If the appointment is for a new patient, the patient record should not be created until just before booking an appointment.</p>
+
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>IN</td>
+          <td>indication</td>
+          <td>0..*</td>
+          <td>CodeableConcept</td>
+          <td>
+            <a href="valueset-encounter-reason.html">http://hl7.org/fhir/ValueSet/encounter-reason</a> (Preferred)
+          </td>
+          <td>
+            <div>
+              <p>Problems that this appointment is indended to treat. This is used in conjunction with the specialty to determine which schedulable resources are needed for the visit. For example, for an orthopedics appointment, the indiciation may drive whether a hip specialist or knee specialist is preferred.</p>
+
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>IN</td>
+          <td>max-number</td>
+          <td>0..1</td>
+          <td>positiveInt</td>
+          <td/>
+          <td>
+            <div>
+              <p>A parameter to ask the server to choose the first/best n= max-number available appointment options</p>
+
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>OUT</td>
+          <td>available-appts</td>
+          <td>0..*</td>
+          <td>Appointment</td>
+          <td/>
+          <td>
+            <div>
+              <p>The operation returns an array of proposed Appointments within the Parameter resource where all required resources are available.  An empty Parameter resource would means no available appointments based on inputs</p>
+
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>OUT</td>
+          <td>outcome</td>
+          <td>0..1</td>
+          <td>OperationOutcome</td>
+          <td/>
+          <td>
+            <div>
+              <p>An OperationOutcome that represent errors that occured during execution of the operation</p>
+
+            </div>
+          </td>
+        </tr>
+      </table>
+      <div>
+        <p>additional notes here</p>
+
+      </div>
+    </div>
+  </text>
+  <url value="http://fhir.org/guides/argonaut-scheduling/OperationDefinition/Appointment-find2"/>
+  <name value="Appointment Availability - Parameter Output"/>
+  <status value="draft"/>
+  <kind value="operation"/>
+  <date value="2017-06-15T09:57:11-07:00"/>
+	<publisher value="Argonaut Project"/>
+  <contact>
+    <telecom>
+      <system value="other"/>
+      <value value="http://argonautwiki.hl7.org"/>
+    </telecom>
+  </contact>
+  <description value="***Parameter Output Option****:Searches for availability for a future appointment. This operation accepts a preferred date range for an appointment, as well as a specialty, optional list of practitioners, healthcare service, location, and patient. From those criteria, it determines which schedulable resources ( e.g., people, rooms, equiibment) are needed for the visit, and provides time slots where all required resources are available."/>
+  <code value="find2"/>
+  <comment value="additional notes here"/>
+  <resource value="Appointment"/>
+  <system value="true"/>
+  <type value="false"/>
+  <instance value="false"/>
+  <parameter>
+    <name value="period"/>
+    <use value="in"/>
+    <min value="1"/>
+    <max value="*"/>
+    <documentation value="The period of time that should be checked for appointment availability."/>
+    <type value="period"/>
+  </parameter>
+  <parameter>
+    <name value="specialty"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="*"/>
+    <documentation value="Which specialty is requested for the appointment. ( e.g., Dermatology)"/>
+    <type value="CodeableConcept"/>
+    <binding>
+      <strength value="extensible"/>
+      <valueSetReference>
+        <reference value="http://fhir.org/guides/argonaut-pd/ValueSet/provider-specialty"/>
+      </valueSetReference>
+    </binding>
+  </parameter>
+  <parameter>
+    <name value="service"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="*"/>
+    <documentation value="What service is requested for the appointment. ( e.g., Xrays)"/>
+    <type value="CodeableConcept"/>
+    <binding>
+      <strength value="example"/>
+      <valueSetReference>
+        <reference value="http://hl7.org/fhir/ValueSet/service-category"/>
+      </valueSetReference>
+    </binding>
+  </parameter>
+  <parameter>
+    <name value="provider"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="*"/>
+    <documentation value="A Patient resource that includes demographics and patient preferences. This is provided as a resource instead of a reference because the patient may not exist when performing an availablity search. If the appointment is for a new patient, the patient record should not be created until just before booking an appointment."/>
+    <type value="Reference"/>
+    <profile>
+      <reference value="StructureDefinition/us-core-practitioner"/>
+    </profile>
+  </parameter>
+  <parameter>
+    <name value="location"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="*"/>
+    <documentation value="A (part of the) address of the location of interest.  (e.g., zip codes, city or state)"/>
+    <type value="string"/>
+  </parameter>
+  <parameter>
+    <name value="patient"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="*"/>
+    <documentation value="A Patient resource that includes demographics and patient preferences. This is provided as a resource instead of a reference because the patient may not exist when performing an availablity search. If the appointment is for a new patient, the patient record should not be created until just before booking an appointment."/>
+    <type value="resource"/>
+    <profile>
+      <reference value="StructureDefinition/us-core-patient"/>
+    </profile>
+  </parameter>
+  <parameter>
+    <name value="indication"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="*"/>
+    <documentation value="Problems that this appointment is indended to treat. This is used in conjunction with the specialty to determine which schedulable resources are needed for the visit. For example, for an orthopedics appointment, the indiciation may drive whether a hip specialist or knee specialist is preferred."/>
+    <type value="CodeableConcept"/>
+    <binding>
+      <strength value="preferred"/>
+      <valueSetReference>
+        <reference value="http://hl7.org/fhir/ValueSet/encounter-reason"/>
+      </valueSetReference>
+    </binding>
+  </parameter>
+  <parameter>
+    <name value="max-number"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="A parameter to ask the server to choose the first/best n= max-number available appointment options"/>
+    <type value="positiveInt"/>
+  </parameter>
+  <parameter>
+    <name value="available-appts"/>
+    <use value="out"/>
+    <min value="0"/>
+    <max value="*"/>
+    <documentation value="The operation returns an array of proposed Appointments within the Parameter resource where all required resources are available.  An empty Parameter resource would means no available appointments based on inputs"/>
+    <type value="Appointment"/>
+    <profile>
+      <reference value="StructureDefinition/appt-out"/>
+    </profile>
+  </parameter>
+  <parameter>
+    <name value="outcome"/>
+    <use value="out"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="An OperationOutcome that represent errors that occured during execution of the operation"/>
+    <type value="OperationOutcome"/>
+  </parameter>
+</OperationDefinition>
