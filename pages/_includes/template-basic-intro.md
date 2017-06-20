@@ -1,5 +1,6 @@
 # Template-basic-intro.md  file
 
+
 ## id  =  template-basic
 
  - index : a local id for the structure: {% raw %} {{site.data.structuredefinitions.[id].index}} {%  endraw %} = {{site.data.structuredefinitions.template-basic.index}}
