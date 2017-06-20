@@ -25,6 +25,7 @@
 *.rar
 *.tar
 *.zip
+!definitions.json.zip
 
 # Logs and databases #
 ######################
