@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <OperationDefinition xmlns="http://hl7.org/fhir">
   <id value="Appointment-find2"/>
   <text>
     <status value="generated"/>
     <div xmlns="http://www.w3.org/1999/xhtml">
-      <h2>Appointment Availability ***Parameter Output Option***</h2>
+      <h2>Appointment Availability - Output Parameter Option</h2>
       <p>OPERATION: Appointment Availability</p>
       <p>The official URL for this operation definition is: </p>
-      <pre>http://hl7.org/fhir/OperationDefinition/Appointment-find2</pre>
+      <pre>http://fhir.org/guides/argonaut-scheduling/OperationDefinition/Appointment-find2</pre>
       <div>
         <p>Searches for availability for a future appointment. This operation accepts a preferred date range for an appointment, as well as a specialty, optional list of practitioners, healthcare service, location, and patient. From those criteria, it determines which schedulable resources ( e.g., people, rooms, equiibment) are needed for the visit, and provides time slots where all required resources are available.</p>
 
       </div>
       <p>URL: [base]/$find2</p>
+      <p>URL: [base]/Appointment/$find2</p>
       <p>Parameters</p>
       <table class="grid">
         <tr>
@@ -39,7 +41,7 @@
           <td>IN</td>
           <td>period</td>
           <td>1..*</td>
-          <td>period</td>
+          <td>Period</td>
           <td/>
           <td>
             <div>
@@ -106,7 +108,7 @@
           <td>IN</td>
           <td>patient</td>
           <td>0..*</td>
-          <td>resource</td>
+          <td>Resource</td>
           <td/>
           <td>
             <div>
@@ -156,19 +158,6 @@
             </div>
           </td>
         </tr>
-        <tr>
-          <td>OUT</td>
-          <td>outcome</td>
-          <td>0..1</td>
-          <td>OperationOutcome</td>
-          <td/>
-          <td>
-            <div>
-              <p>An OperationOutcome that represent errors that occured during execution of the operation</p>
-
-            </div>
-          </td>
-        </tr>
       </table>
       <div>
         <p>additional notes here</p>
@@ -177,23 +166,27 @@
     </div>
   </text>
   <url value="http://fhir.org/guides/argonaut-scheduling/OperationDefinition/Appointment-find2"/>
-  <name value="Appointment Availability - Parameter Output"/>
+  <name value="Appointment Availability - Output Parameter Option"/>
   <status value="draft"/>
   <kind value="operation"/>
-  <date value="2017-06-15T09:57:11-07:00"/>
-	<publisher value="Argonaut Project"/>
+  <date value="2017-06-20T16:31:31-07:00"/>
+  <publisher value="HL7 (FHIR Project)"/>
   <contact>
     <telecom>
-      <system value="other"/>
-      <value value="http://argonautwiki.hl7.org"/>
+      <system value="url"/>
+      <value value="http://hl7.org/fhir"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="fhir@lists.hl7.org"/>
     </telecom>
   </contact>
-  <description value="***Parameter Output Option****:Searches for availability for a future appointment. This operation accepts a preferred date range for an appointment, as well as a specialty, optional list of practitioners, healthcare service, location, and patient. From those criteria, it determines which schedulable resources ( e.g., people, rooms, equiibment) are needed for the visit, and provides time slots where all required resources are available."/>
+  <description value="Searches for availability for a future appointment. This operation accepts a preferred date range for an appointment, as well as a specialty, optional list of practitioners, healthcare service, location, and patient. From those criteria, it determines which schedulable resources ( e.g., people, rooms, equiibment) are needed for the visit, and provides time slots where all required resources are available."/>
   <code value="find2"/>
   <comment value="additional notes here"/>
   <resource value="Appointment"/>
   <system value="true"/>
-  <type value="false"/>
+  <type value="true"/>
   <instance value="false"/>
   <parameter>
     <name value="period"/>
@@ -201,7 +194,7 @@
     <min value="1"/>
     <max value="*"/>
     <documentation value="The period of time that should be checked for appointment availability."/>
-    <type value="period"/>
+    <type value="Period"/>
   </parameter>
   <parameter>
     <name value="specialty"/>
@@ -256,7 +249,7 @@
     <min value="0"/>
     <max value="*"/>
     <documentation value="A Patient resource that includes demographics and patient preferences. This is provided as a resource instead of a reference because the patient may not exist when performing an availablity search. If the appointment is for a new patient, the patient record should not be created until just before booking an appointment."/>
-    <type value="resource"/>
+    <type value="Resource"/>
     <profile>
       <reference value="StructureDefinition/us-core-patient"/>
     </profile>
@@ -293,13 +286,5 @@
     <profile>
       <reference value="StructureDefinition/appt-out"/>
     </profile>
-  </parameter>
-  <parameter>
-    <name value="outcome"/>
-    <use value="out"/>
-    <min value="0"/>
-    <max value="1"/>
-    <documentation value="An OperationOutcome that represent errors that occured during execution of the operation"/>
-    <type value="OperationOutcome"/>
   </parameter>
 </OperationDefinition>

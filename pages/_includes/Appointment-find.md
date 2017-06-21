@@ -46,7 +46,7 @@
       ]
     }
 
-##### Response (using bundle option
+##### Response (using bundle)
 
     {
       "resourceType": "Bundle",
