@@ -61,6 +61,19 @@ structuremaps = []
 
 # =================Function definitions here=========================
 
+def make_op_frag(frag_id):  # create [id].md file for new operations
+
+    # default content for files
+    op_frag = '''
+    This is the  markdown file that gets inserted into the op.html template.
+    '''
+    # check if files already exist before writing files
+    frag = dir + 'pages/_includes/' + frag_id
+
+    fragf = open(frag + '.md', 'w')
+    fragf.write(frag_id + '.md file\n' + op_frag)
+    logging.info('added file: ' + frag + '.md')
+    return
 
 def make_frags(frag_id):  # create [id]-intro.md, [id]-search.md and [id]-summary.md files
 
@@ -133,7 +146,6 @@ def update_sd(i,type,logical):
     update_igjson(type, temp_id, 'defns') # add base to definitions file
     if not os.path.exists(dir + 'pages/_includes/'+ temp_id + '-intro.md'):  # if intro fragment is missing then create new page fragments for extension
         make_frags(temp_id)
-
     return
 
 def update_igxml(type, purpose, id):
@@ -174,8 +186,11 @@ def update_def(filename, type, purpose):
       update_igjson(type, vsid, 'source', filename) # add source filename to definitions file
       if type == 'StructureDefinition':
           update_igjson(type, vsid, 'defns')  # add base to definitions file
-          if not os.path.exists(dir + 'pages/_includes/'+ vsid + '-intro.md'):  # if intro fragment is missing then create new page fragments for extension
+          if not os.path.exists(dir + 'pages/_includes/'+ vsid + '-intro.md'):  # if intro file fragment is missing then create new page fragments for extension
               make_frags(vsid)
+      if type == 'OperationDefinition':
+          if not os.path.exists(dir + 'pages/_includes/'+ vsid + '.md'):  # if file is missing then create new page fragments for extension
+              make_op_frag(vsid)
       update_igxml(type, purpose, vsid)
       return
 

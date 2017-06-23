@@ -1,0 +1,46 @@
+<OperationDefinition xmlns="http://hl7.org/fhir">
+  <id value="appt-avail"/>
+  <meta>
+    <versionId value="1" />
+    <lastUpdated value="2017-06-08T14:36:41.893+00:00" />
+  </meta>
+  <url value="http://fhir.org/guides/argonaut-scheduling/OperationDefinition/appt-avail" />
+  <name value="Appointment Availability -  Appointment as input parameter option" />
+  <status value="draft" />
+  <kind value="operation" />
+  <publisher value="Epic Systems" />
+  <contact>
+    <telecom>
+      <system value="email" />
+      <value value="cooper@epic.com" />
+    </telecom>
+  </contact>
+  <date value="2017-06-08T00:00:00Z" />
+  <description value="Searches for availability for a future appointment.  This operation accepts a preferred date range for an appointment, as well as a specialty, optional list of practitioners, healthcare service, and patient.  For those criteria, it determines which schedulable resources are needed for the visit, and provides time slots where all required resources are available." />
+  <code value="availability" />
+  <resource value="Appointment" />
+  <system value="false" />
+  <type value="true" />
+  <instance value="false" />
+  <parameter>
+    <name value="appointment" />
+    <use value="in" />
+    <min value="0" />
+    <max value="1" />
+    <documentation value="An *Appointment* resource as an input template populated with criteria that should be used for finding available Appointments." />
+    <type value="Appointment" />
+    <profile>
+      <reference value="http://www.fhir.org/guides/argonaut/r3/StructureDefinition/TemplateAppointment" />
+    </profile>
+  </parameter>
+  <parameter>
+    <name value="result"/>
+    <use value="out" />
+    <min value="0" />
+    <max value="1" />
+    <documentation value="A searchset Bundle of;
+      1) zero to many proposed *Appointments* where all required resources are available and
+      2) zero to one *OperationOutcome* that represent errors that occured during execution of the operation." />
+    <type value="Bundle" />
+  </parameter>
+</OperationDefinition>
