@@ -14,6 +14,13 @@
       /
       <span class="breadcrumb-item active">{{page.path | remove: '.html'}}</span>
     {% endif %}
+    {% if page.active == 'operations' and  page.level == 2 %}
+      <a class="breadcrumb-item" href="index.html">Home</a>
+      /
+      <a class="breadcrumb-item" href="operations.html">Operations</a>
+      /
+      <span class="breadcrumb-item active">{{page.path | remove: '.html'}}</span>
+    {% endif %}
     {% if page.active == 'capstatements' and  page.level == 2 %}
       <a class="breadcrumb-item" href="index.html">Home</a>
       /

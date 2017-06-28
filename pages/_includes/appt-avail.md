@@ -6,11 +6,11 @@
 
 **Assumptions:** Using the Appointment$availability operation, an App searches for the next available open Dermatology Appointments near Bruce.
 
-##### Request (using Parameters Resource in payload )
+##### Request
 
-`POST [base]/Appointment/$availability{?_count&location.address=[Bruce's Zip Code]}`
+`POST [base]/Appointment/$availability{?_count=3&location.address=[Bruce's Zip Code]}`
 
-**using *Parameters* Resource for payload:**
+**Operation's payload: the *Appointment* resource as an input parameter which is wrapped inside the *Parameters* resource**
 
 
       {
@@ -28,7 +28,7 @@
       }
 
 
-##### Response using *Bundle*:
+##### Response using *Bundle* containing 3 proposed appointments and an OperationOutcome with errors/warnings/information:
 
     {
       "resourceType": "Bundle",
