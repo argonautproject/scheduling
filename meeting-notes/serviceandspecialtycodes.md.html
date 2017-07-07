@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8" />
+      <title>Markdown to HTML</title>
+      <style>.markdown-preview:not([data-use-github-style]) { padding: 2em; font-size: 1.2em; color: rgb(241, 241, 241); overflow: auto; background-color: rgb(40, 40, 40); }
+.markdown-preview:not([data-use-github-style]) > :first-child { margin-top: 0px; }
+.markdown-preview:not([data-use-github-style]) h1, .markdown-preview:not([data-use-github-style]) h2, .markdown-preview:not([data-use-github-style]) h3, .markdown-preview:not([data-use-github-style]) h4, .markdown-preview:not([data-use-github-style]) h5, .markdown-preview:not([data-use-github-style]) h6 { line-height: 1.2; margin-top: 1.5em; margin-bottom: 0.5em; color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) h1 { font-size: 2.4em; font-weight: 300; }
+.markdown-preview:not([data-use-github-style]) h2 { font-size: 1.8em; font-weight: 400; }
+.markdown-preview:not([data-use-github-style]) h3 { font-size: 1.5em; font-weight: 500; }
+.markdown-preview:not([data-use-github-style]) h4 { font-size: 1.2em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) h5 { font-size: 1.1em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) h6 { font-size: 1em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) strong { color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) del { color: rgb(200, 200, 200); }
+.markdown-preview:not([data-use-github-style]) a, .markdown-preview:not([data-use-github-style]) a code { color: rgb(241, 130, 96); }
+.markdown-preview:not([data-use-github-style]) img { max-width: 100%; }
+.markdown-preview:not([data-use-github-style]) > p { margin-top: 0px; margin-bottom: 1.5em; }
+.markdown-preview:not([data-use-github-style]) > ul, .markdown-preview:not([data-use-github-style]) > ol { margin-bottom: 1.5em; }
+.markdown-preview:not([data-use-github-style]) blockquote { margin: 1.5em 0px; font-size: inherit; color: rgb(200, 200, 200); border-color: rgb(81, 81, 81); border-width: 4px; }
+.markdown-preview:not([data-use-github-style]) hr { margin: 3em 0px; border-top: 2px dashed rgb(81, 81, 81); background: none; }
+.markdown-preview:not([data-use-github-style]) table { margin: 1.5em 0px; }
+.markdown-preview:not([data-use-github-style]) th { color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) th, .markdown-preview:not([data-use-github-style]) td { padding: 0.66em 1em; border: 1px solid rgb(81, 81, 81); }
+.markdown-preview:not([data-use-github-style]) code { color: rgb(255, 255, 255); background-color: rgb(60, 60, 60); }
+.markdown-preview:not([data-use-github-style]) pre.editor-colors { margin: 1.5em 0px; padding: 1em; font-size: 0.92em; border-radius: 3px; background-color: rgb(50, 50, 50); }
+.markdown-preview:not([data-use-github-style]) kbd { color: rgb(255, 255, 255); border-width: 1px 1px 2px; border-style: solid; border-color: rgb(81, 81, 81) rgb(81, 81, 81) rgb(66, 66, 66); background-color: rgb(60, 60, 60); }
+.markdown-preview[data-use-github-style] { font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif; line-height: 1.6; word-wrap: break-word; padding: 30px; font-size: 16px; color: rgb(51, 51, 51); overflow: scroll; background-color: rgb(255, 255, 255); }
+.markdown-preview[data-use-github-style] > :first-child { margin-top: 0px !important; }
+.markdown-preview[data-use-github-style] > :last-child { margin-bottom: 0px !important; }
+.markdown-preview[data-use-github-style] a:not([href]) { color: inherit; text-decoration: none; }
+.markdown-preview[data-use-github-style] .absent { color: rgb(204, 0, 0); }
+.markdown-preview[data-use-github-style] .anchor { position: absolute; top: 0px; left: 0px; display: block; padding-right: 6px; padding-left: 30px; margin-left: -30px; }
+.markdown-preview[data-use-github-style] .anchor:focus { outline: none; }
+.markdown-preview[data-use-github-style] h1, .markdown-preview[data-use-github-style] h2, .markdown-preview[data-use-github-style] h3, .markdown-preview[data-use-github-style] h4, .markdown-preview[data-use-github-style] h5, .markdown-preview[data-use-github-style] h6 { position: relative; margin-top: 1em; margin-bottom: 16px; font-weight: bold; line-height: 1.4; }
+.markdown-preview[data-use-github-style] h1 .octicon-link, .markdown-preview[data-use-github-style] h2 .octicon-link, .markdown-preview[data-use-github-style] h3 .octicon-link, .markdown-preview[data-use-github-style] h4 .octicon-link, .markdown-preview[data-use-github-style] h5 .octicon-link, .markdown-preview[data-use-github-style] h6 .octicon-link { display: none; color: rgb(0, 0, 0); vertical-align: middle; }
+.markdown-preview[data-use-github-style] h1:hover .anchor, .markdown-preview[data-use-github-style] h2:hover .anchor, .markdown-preview[data-use-github-style] h3:hover .anchor, .markdown-preview[data-use-github-style] h4:hover .anchor, .markdown-preview[data-use-github-style] h5:hover .anchor, .markdown-preview[data-use-github-style] h6:hover .anchor { padding-left: 8px; margin-left: -30px; text-decoration: none; }
+.markdown-preview[data-use-github-style] h1:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h2:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h3:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h4:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h5:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h6:hover .anchor .octicon-link { display: inline-block; }
+.markdown-preview[data-use-github-style] h1 tt, .markdown-preview[data-use-github-style] h2 tt, .markdown-preview[data-use-github-style] h3 tt, .markdown-preview[data-use-github-style] h4 tt, .markdown-preview[data-use-github-style] h5 tt, .markdown-preview[data-use-github-style] h6 tt, .markdown-preview[data-use-github-style] h1 code, .markdown-preview[data-use-github-style] h2 code, .markdown-preview[data-use-github-style] h3 code, .markdown-preview[data-use-github-style] h4 code, .markdown-preview[data-use-github-style] h5 code, .markdown-preview[data-use-github-style] h6 code { font-size: inherit; }
+.markdown-preview[data-use-github-style] h1 { padding-bottom: 0.3em; font-size: 2.25em; line-height: 1.2; border-bottom: 1px solid rgb(238, 238, 238); }
+.markdown-preview[data-use-github-style] h1 .anchor { line-height: 1; }
+.markdown-preview[data-use-github-style] h2 { padding-bottom: 0.3em; font-size: 1.75em; line-height: 1.225; border-bottom: 1px solid rgb(238, 238, 238); }
+.markdown-preview[data-use-github-style] h2 .anchor { line-height: 1; }
+.markdown-preview[data-use-github-style] h3 { font-size: 1.5em; line-height: 1.43; }
+.markdown-preview[data-use-github-style] h3 .anchor { line-height: 1.2; }
+.markdown-preview[data-use-github-style] h4 { font-size: 1.25em; }
+.markdown-preview[data-use-github-style] h4 .anchor { line-height: 1.2; }
+.markdown-preview[data-use-github-style] h5 { font-size: 1em; }
+.markdown-preview[data-use-github-style] h5 .anchor { line-height: 1.1; }
+.markdown-preview[data-use-github-style] h6 { font-size: 1em; color: rgb(119, 119, 119); }
+.markdown-preview[data-use-github-style] h6 .anchor { line-height: 1.1; }
+.markdown-preview[data-use-github-style] p, .markdown-preview[data-use-github-style] blockquote, .markdown-preview[data-use-github-style] ul, .markdown-preview[data-use-github-style] ol, .markdown-preview[data-use-github-style] dl, .markdown-preview[data-use-github-style] table, .markdown-preview[data-use-github-style] pre { margin-top: 0px; margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] hr { height: 4px; padding: 0px; margin: 16px 0px; border: 0px none; background-color: rgb(231, 231, 231); }
+.markdown-preview[data-use-github-style] ul, .markdown-preview[data-use-github-style] ol { padding-left: 2em; }
+.markdown-preview[data-use-github-style] ul.no-list, .markdown-preview[data-use-github-style] ol.no-list { padding: 0px; list-style-type: none; }
+.markdown-preview[data-use-github-style] ul ul, .markdown-preview[data-use-github-style] ul ol, .markdown-preview[data-use-github-style] ol ol, .markdown-preview[data-use-github-style] ol ul { margin-top: 0px; margin-bottom: 0px; }
+.markdown-preview[data-use-github-style] li > p { margin-top: 16px; }
+.markdown-preview[data-use-github-style] dl { padding: 0px; }
+.markdown-preview[data-use-github-style] dl dt { padding: 0px; margin-top: 16px; font-size: 1em; font-style: italic; font-weight: bold; }
+.markdown-preview[data-use-github-style] dl dd { padding: 0px 16px; margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] blockquote { padding: 0px 15px; color: rgb(119, 119, 119); border-left: 4px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] blockquote > :first-child { margin-top: 0px; }
+.markdown-preview[data-use-github-style] blockquote > :last-child { margin-bottom: 0px; }
+.markdown-preview[data-use-github-style] table { display: block; width: 100%; overflow: auto; word-break: keep-all; }
+.markdown-preview[data-use-github-style] table th { font-weight: bold; }
+.markdown-preview[data-use-github-style] table th, .markdown-preview[data-use-github-style] table td { padding: 6px 13px; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] table tr { border-top: 1px solid rgb(204, 204, 204); background-color: rgb(255, 255, 255); }
+.markdown-preview[data-use-github-style] table tr:nth-child(2n) { background-color: rgb(248, 248, 248); }
+.markdown-preview[data-use-github-style] img { max-width: 100%; box-sizing: border-box; }
+.markdown-preview[data-use-github-style] .emoji { max-width: none; }
+.markdown-preview[data-use-github-style] span.frame { display: block; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.frame > span { display: block; float: left; width: auto; padding: 7px; margin: 13px 0px 0px; overflow: hidden; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] span.frame span img { display: block; float: left; }
+.markdown-preview[data-use-github-style] span.frame span span { display: block; padding: 5px 0px 0px; clear: both; color: rgb(51, 51, 51); }
+.markdown-preview[data-use-github-style] span.align-center { display: block; overflow: hidden; clear: both; }
+.markdown-preview[data-use-github-style] span.align-center > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: center; }
+.markdown-preview[data-use-github-style] span.align-center span img { margin: 0px auto; text-align: center; }
+.markdown-preview[data-use-github-style] span.align-right { display: block; overflow: hidden; clear: both; }
+.markdown-preview[data-use-github-style] span.align-right > span { display: block; margin: 13px 0px 0px; overflow: hidden; text-align: right; }
+.markdown-preview[data-use-github-style] span.align-right span img { margin: 0px; text-align: right; }
+.markdown-preview[data-use-github-style] span.float-left { display: block; float: left; margin-right: 13px; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.float-left span { margin: 13px 0px 0px; }
+.markdown-preview[data-use-github-style] span.float-right { display: block; float: right; margin-left: 13px; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.float-right > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: right; }
+.markdown-preview[data-use-github-style] code, .markdown-preview[data-use-github-style] tt { padding: 0.2em 0px; margin: 0px; font-size: 85%; border-radius: 3px; background-color: rgba(0, 0, 0, 0.0392157); }
+.markdown-preview[data-use-github-style] code::before, .markdown-preview[data-use-github-style] tt::before, .markdown-preview[data-use-github-style] code::after, .markdown-preview[data-use-github-style] tt::after { letter-spacing: -0.2em; content: " "; }
+.markdown-preview[data-use-github-style] code br, .markdown-preview[data-use-github-style] tt br { display: none; }
+.markdown-preview[data-use-github-style] del code { text-decoration: inherit; }
+.markdown-preview[data-use-github-style] pre > code { padding: 0px; margin: 0px; font-size: 100%; word-break: normal; white-space: pre; border: 0px; background: transparent; }
+.markdown-preview[data-use-github-style] .highlight { margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] .highlight pre, .markdown-preview[data-use-github-style] pre { padding: 16px; overflow: auto; font-size: 85%; line-height: 1.45; border-radius: 3px; background-color: rgb(247, 247, 247); }
+.markdown-preview[data-use-github-style] .highlight pre { margin-bottom: 0px; word-break: normal; }
+.markdown-preview[data-use-github-style] pre { word-wrap: normal; }
+.markdown-preview[data-use-github-style] pre code, .markdown-preview[data-use-github-style] pre tt { display: inline; max-width: initial; padding: 0px; margin: 0px; overflow: initial; line-height: inherit; word-wrap: normal; border: 0px; background-color: transparent; }
+.markdown-preview[data-use-github-style] pre code::before, .markdown-preview[data-use-github-style] pre tt::before, .markdown-preview[data-use-github-style] pre code::after, .markdown-preview[data-use-github-style] pre tt::after { content: normal; }
+.markdown-preview[data-use-github-style] kbd { display: inline-block; padding: 3px 5px; font-size: 11px; line-height: 10px; color: rgb(85, 85, 85); vertical-align: middle; border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(204, 204, 204) rgb(187, 187, 187); border-radius: 3px; box-shadow: rgb(187, 187, 187) 0px -1px 0px inset; background-color: rgb(252, 252, 252); }
+.markdown-preview[data-use-github-style] a { color: rgb(51, 122, 183); }
+.markdown-preview[data-use-github-style] code { color: inherit; }
+.markdown-preview[data-use-github-style] pre.editor-colors { padding: 0.8em 1em; margin-bottom: 1em; font-size: 0.85em; border-radius: 4px; overflow: auto; }
+.scrollbars-visible-always .markdown-preview pre.editor-colors .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors .horizontal-scrollbar { visibility: hidden; }
+.scrollbars-visible-always .markdown-preview pre.editor-colors:hover .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors:hover .horizontal-scrollbar { visibility: visible; }
+.markdown-preview .task-list-item-checkbox { position: absolute; margin: 0.25em 0px 0px -1.4em; }
+.bracket-matcher .region {
+  border-bottom: 1px dotted lime;
+  position: absolute;
+}
+
+.auto-cursor {
+  cursor: default;
+}
+.highlight-green .region {
+  background-color: #A8FF60;
+}
+.highlight-blue .region {
+  background-color: #96CBFE;
+}
+.highlight-red .region {
+  background-color: #CC6666;
+}
+
+.spell-check-misspelling .region {
+  border-bottom: 2px dotted rgba(255, 51, 51, 0.75);
+}
+.spell-check-corrections {
+  width: 25em !important;
+}
+
+pre.editor-colors {
+  background-color: #282828;
+  color: #F1F1F1;
+}
+pre.editor-colors .gutter {
+  background-color: #282828;
+  color: #F1F1F1;
+}
+pre.editor-colors .gutter .line-number.cursor-line {
+  background-color: #232323;
+  color: #F1F1F1;
+}
+pre.editor-colors .gutter .line-number.cursor-line-no-selection {
+  color: #F1F1F1;
+}
+pre.editor-colors .wrap-guide {
+  color: #F18260;
+}
+pre.editor-colors .indent-guide {
+  color: rgba(241, 130, 96, 0.15);
+}
+pre.editor-colors .invisible-character {
+  color: rgba(241, 241, 241, 0.25);
+}
+pre.editor-colors .search-results .syntax--marker .region {
+  background-color: transparent;
+  border: #F18260;
+}
+pre.editor-colors .search-results .syntax--marker.current-result .region {
+  border: #F1F1F1;
+}
+pre.editor-colors.is-focused .cursor {
+  border-color: #F18260;
+}
+pre.editor-colors.is-focused .selection .region {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+pre.editor-colors.is-focused .line-number.cursor-line-no-selection,
+pre.editor-colors.is-focused .line.cursor-line {
+  background-color: #232323;
+  box-shadow: inset 0 1px 1px -1px rgba(0, 0, 0, 0.5), inset 0 -1px 1px -1px rgba(0, 0, 0, 0.5);
+}
+.syntax--comment {
+  color: #777777;
+}
+.syntax--string.syntax--quoted.syntax--double.syntax--block.syntax--python {
+  color: #777777;
+}
+.syntax--constant {
+  color: #ECEC89;
+}
+.syntax--entity {
+  color: #92BFBF;
+}
+.syntax--keyword {
+  color: #F49D62;
+}
+.syntax--storage {
+  color: #ECEC89;
+}
+.syntax--string {
+  color: #BDDCDC;
+}
+.syntax--support {
+  color: #92BFBF;
+}
+.syntax--variable {
+  color: #F49D62;
+}
+.syntax--invalid,
+.syntax--keyword.syntax--other.syntax--important.syntax--scss {
+  color: #CF5340;
+}
+.syntax--text.syntax--html.syntax--ruby .syntax--source {
+  background-color: #151515;
+}
+.syntax--entity.syntax--other.syntax--inherited-class {
+  color: #B4D388;
+}
+.syntax--string.syntax--quoted .syntax--source {
+  color: #B4D388;
+}
+.syntax--string .syntax--constant {
+  color: #B4D388;
+}
+.syntax--string.syntax--regexp {
+  color: #F49D62;
+}
+.syntax--string .syntax--variable {
+  color: #ECEC89;
+}
+.syntax--support.syntax--function {
+  color: #F49D62;
+}
+.syntax--support.syntax--constant {
+  color: #B4D388;
+}
+.syntax--other.syntax--preprocessor.syntax--c {
+  color: #92BFBF;
+}
+.syntax--other.syntax--preprocessor.syntax--c .syntax--entity {
+  color: #92BFBF;
+}
+.syntax--declaration.syntax--tag,
+.syntax--declaration.syntax--tag .syntax--entity,
+.syntax--meta.syntax--tag,
+.syntax--meta.syntax--tag .syntax--entity {
+  color: #B4D388;
+}
+.syntax--meta.syntax--selector.syntax--css .syntax--entity.syntax--name.syntax--tag,
+.syntax--entity.syntax--name.syntax--tag.syntax--scss,
+.syntax--source.syntax--scss .syntax--entity.syntax--other.syntax--attribute-name.syntax--pseudo-class.syntax--scss,
+.syntax--keyword.syntax--control.syntax--at-rule.syntax--include.syntax--scss,
+.syntax--entity.syntax--name.syntax--tag.syntax--wildcard.syntax--scss {
+  color: #ECEC89;
+}
+.syntax--meta.syntax--selector.syntax--css .syntax--entity.syntax--other.syntax--attribute-name.syntax--id,
+.syntax--meta.syntax--selector.syntax--scss .syntax--entity.syntax--other.syntax--attribute-name.syntax--id,
+.syntax--entity.syntax--name.syntax--tag.syntax--reference.syntax--scss {
+  color: #F49D62;
+}
+.syntax--meta.syntax--selector.syntax--css .syntax--entity.syntax--other.syntax--attribute-name.syntax--class,
+.syntax--source.syntax--scss .syntax--entity.syntax--other.syntax--attribute-name.syntax--class.syntax--css,
+.syntax--keyword.syntax--other.syntax--default.syntax--scss {
+  color: #B4D388;
+}
+.syntax--support.syntax--type.syntax--property-name.syntax--css,
+.syntax--support.syntax--type.syntax--property-name.syntax--scss,
+.syntax--entity.syntax--other.syntax--attribute-name.syntax--pseudo-element.syntax--css,
+.syntax--entity.syntax--other.syntax--attribute-name.syntax--pseudo-class.syntax--css,
+.syntax--entity.syntax--other.syntax--attribute-name.syntax--attribute.syntax--css,
+.syntax--variable.syntax--scss,
+.syntax--meta.syntax--property-name.syntax--scss {
+  color: #92BFBF;
+}
+.syntax--meta.syntax--property-group .syntax--support.syntax--constant.syntax--property-value.syntax--css,
+.syntax--meta.syntax--property-value .syntax--support.syntax--constant.syntax--property-value.syntax--css,
+.syntax--meta.syntax--property-group .syntax--support.syntax--constant.syntax--property-value.syntax--scss,
+.syntax--meta.syntax--property-value .syntax--support.syntax--constant.syntax--property-value.syntax--scss,
+.syntax--meta.syntax--property-list .syntax--meta.syntax--property-value.syntax--scss {
+  color: #ECEC89;
+}
+.syntax--meta.syntax--preprocessor.syntax--at-rule .syntax--keyword.syntax--control.syntax--at-rule {
+  color: #F49D62;
+}
+.syntax--meta.syntax--property-value .syntax--support.syntax--constant.syntax--named-color.syntax--css,
+.syntax--meta.syntax--property-value .syntax--constant {
+  color: #ECEC89;
+}
+.syntax--source.syntax--css .syntax--string.syntax--quoted.syntax--single,
+.syntax--source.syntax--scss .syntax--string.syntax--quoted.syntax--single,
+.syntax--source.syntax--css .syntax--string.syntax--quoted.syntax--double,
+.syntax--source.syntax--scss .syntax--string.syntax--quoted.syntax--double,
+.syntax--source.syntax--css .syntax--variable.syntax--parameter,
+.syntax--variable.syntax--parameter.syntax--url.syntax--scss,
+.syntax--string.syntax--unquoted.syntax--attribute-value.syntax--scss,
+.syntax--string.syntax--unquoted.syntax--attribute-value.syntax--css {
+  color: #777777;
+}
+.syntax--meta.syntax--constructor.syntax--argument.syntax--css {
+  color: #F18260;
+}
+.syntax--meta.syntax--diff,
+.syntax--meta.syntax--diff.syntax--header {
+  color: #DDDDDD;
+  background-color: #151515;
+}
+.syntax--markup.syntax--deleted {
+  color: #CF5340;
+  background-color: #151515;
+}
+.syntax--markup.syntax--changed {
+  color: #92BFBF;
+  background-color: #B4D388;
+}
+.syntax--markup.syntax--inserted {
+  color: #B4D388;
+  background-color: #151515;
+}
+.syntax--markup.syntax--deleted.git_gutter {
+  color: #CF5340;
+}
+.syntax--markup.syntax--changed.git_gutter {
+  color: #92BFBF;
+}
+.syntax--markup.syntax--inserted.git_gutter {
+  color: #B4D388;
+}
+.syntax--markup.syntax--ignored.git_gutter {
+  color: #777777;
+}
+.syntax--markup.syntax--untracked.git_gutter {
+  color: #777777;
+}
+.sublimelinter.outline.syntax--notes {
+  background-color: #ECEC89;
+}
+.sublimelinter.outline.syntax--illegal {
+  background-color: #F18260;
+}
+.sublimelinter.syntax--underline.syntax--illegal {
+  background-color: #CF5340;
+}
+.sublimelinter.outline.syntax--warning {
+  background-color: #F49D62;
+}
+.sublimelinter.syntax--underline.syntax--warning {
+  background-color: #CF5340;
+}
+.sublimelinter.outline.syntax--violation {
+  background-color: #777777;
+}
+.sublimelinter.syntax--underline.syntax--violation {
+  background-color: rgba(255, 0, 0, 0.31);
+}
+.syntax--entity.syntax--other.syntax--attribute-name.syntax--id.syntax--html {
+  color: #F49D62;
+}
+.syntax--entity.syntax--other.syntax--attribute-name.syntax--html {
+  color: #ECEC89;
+}
+.syntax--punctuation.syntax--definition.syntax--tag.syntax--end,
+.syntax--punctuation.syntax--definition.syntax--tag.syntax--begin,
+.syntax--punctuation.syntax--definition.syntax--tag {
+  color: #92BFBF;
+}
+.syntax--punctuation.syntax--section.syntax--function.syntax--scss,
+.syntax--punctuation.syntax--terminator.syntax--rule.syntax--scss,
+.syntax--punctuation.syntax--separator.syntax--key-value.syntax--scss {
+  color: #F1F1F1;
+}
+.syntax--keyword.syntax--control.syntax--at-rule.syntax--import.syntax--css,
+.syntax--keyword.syntax--control.syntax--at-rule.syntax--import.syntax--scss,
+.syntax--keyword.syntax--control.syntax--at-rule.syntax--keyframes.syntax--css,
+.syntax--keyword.syntax--control.syntax--at-rule.syntax--keyframes.syntax--scss {
+  color: #ECEC89;
+}
+.syntax--meta.syntax--at-rule.syntax--media.syntax--css,
+.syntax--meta.syntax--at-rule.syntax--media.syntax--scss {
+  color: #f49d62;
+}
+.syntax--variable.syntax--other.syntax--less {
+  color: #B4D388;
+}
+.syntax--entity.syntax--other.syntax--less.syntax--mixin {
+  color: #B4D388;
+}
+.syntax--source.syntax--css.syntax--less .syntax--keyword.syntax--unit.syntax--css {
+  color: #F18260;
+}
+.syntax--entity.syntax--other.syntax--attribute-name.syntax--angular.syntax--html,
+.syntax--source.syntax--angular.syntax--embedded.syntax--html {
+  color: #F18260;
+}
+.syntax--constant.syntax--character.syntax--entity.syntax--html {
+  color: #F18260;
+}
+.syntax--variable.syntax--other.syntax--readwrite.syntax--instance.syntax--coffee {
+  color: #B4D388;
+}
+.syntax--meta.syntax--brace.syntax--round.syntax--coffee,
+.syntax--meta.syntax--brace.syntax--square.syntax--coffee {
+  color: #ECEC89;
+}
+.syntax--punctuation.syntax--section.syntax--embedded.syntax--coffee {
+  color: #B4D388;
+}
+.syntax--variable.syntax--assignment.syntax--coffee .syntax--variable.syntax--assignment.syntax--coffee {
+  color: #DDDDDD;
+}
+.syntax--meta.syntax--delimiter.syntax--method.syntax--period.syntax--coffee {
+  color: #F49D62;
+}
+.syntax--meta.syntax--brace.syntax--curly.syntax--coffee {
+  color: #B4D388;
+}
+.syntax--meta.syntax--tag.syntax--sgml.syntax--doctype.syntax--xml,
+.syntax--declaration.syntax--sgml.syntax--html .syntax--declaration.syntax--doctype,
+.syntax--declaration.syntax--sgml.syntax--html .syntax--declaration.syntax--doctype .syntax--entity,
+.syntax--declaration.syntax--sgml.syntax--html .syntax--declaration.syntax--doctype .syntax--string,
+.syntax--declaration.syntax--xml-processing,
+.syntax--declaration.syntax--xml-processing .syntax--entity,
+.syntax--declaration.syntax--xml-processing .syntax--string,
+.syntax--doctype {
+  color: #777777;
+}
+.brackethighlighter.syntax--default {
+  color: #92BFBF;
+}
+.syntax--keyword.syntax--control.syntax--php {
+  color: #B4D388;
+}
+.syntax--keyword.syntax--operator.syntax--logical.syntax--php,
+.syntax--keyword.syntax--operator.syntax--assignment.syntax--php,
+.syntax--keyword.syntax--operator.syntax--class.syntax--php {
+  color: #999;
+}
+.syntax--variable.syntax--other.syntax--property.syntax--php {
+  color: #ECEC89;
+}
+.syntax--string.syntax--regexp.syntax--single-quoted.syntax--php {
+  color: #BDDCDC;
+}
+</style>
+  </head>
+  <body class='markdown-preview' data-use-github-style><p>As discussed on our last Argo Scheduling Call having a standard set of codes for <a href="http://build.fhir.org/appointment-definitions.html#Appointment.serviceType">ServiceType</a> and <a href="http://build.fhir.org/appointment-definitions.html#Appointment.specialty">Specialty</a> are keys to interoperate.  We have not identified a satisfactory value set and so are looking to create them for this project.</p>
+<p>The goals:</p>
+<ul>
+<li>~100 codes that could cover &gt;80% of our initial use cases.</li>
+<li>using using either existing code systems  ( e.g., SNOMED )  or new Argonaut based code system.</li>
+<li>Transfer long term code system maintenance to an SDO</li>
+</ul>
+<p>Strategy:</p>
+<ul>
+<li>review the existing standard value sets (code sets) for:<ul>
+<li>ServiceType<ul>
+<li><a href="http://build.fhir.org/valueset-service-type.html">ServiceType</a></li>
+</ul>
+</li>
+<li>Specialty<ul>
+<li><a href="http://build.fhir.org/valueset-c80-practice-codes.html">Practice Setting Code Value Set</a></li>
+<li><a href="http://www.fhir.org/guides/argonaut/pd/ValueSet-provider-specialty.html">Argonaut Provider Directory Provider Speciality (NUCC)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Collect( ideally the most commonly used or sorted by usage ) code sets from the Argonaut Scheduling team and consolidate/aggregate the concepts.<ul>
+<li>Starter codes set from EHR Vendors</li>
+<li>Code sets from 3rd Part Apps.</li>
+</ul>
+</li>
+<li>Compare these concepts to standard codes-systems and map to them wher equivalent.</li>
+</ul>
+<p>  If possible, please provide me with your codesets for Service types and Specialty and I will take a first pass at aggregation and distribute for review.</p>
+<p>  Thanks,</p>
+<p>  Eric</p></body>
+</html>
