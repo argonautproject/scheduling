@@ -1,12 +1,34 @@
 ## Examples
 
-#### Patient Portal Search:
+#### Scenario 1a Patient Portal Search:
+
+**Scenario:**
+
+**Assumptions:**
+
+##### Request using `Get` Syntax
+
+`GET [base]/Appointment/$find?end=2017-06-20&provider=Practitioner/123&max=3`
+
+##### Request using `POST` Syntax and 'Parameters' resource in payload )
+
+`POST [base]/Appointment/$find`
+
+**payload:**
+
+##### Response
+
+#### Scenario 1b Patient Portal Search:
 
 **Scenario:** Bruce has a rash and wants to make an appointment with his health-system
 
 **Assumptions:** Using the Appointment$find operation, an App searches for the next 3 available open Dermatology Appointments near Bruce.
 
-##### Request ( using Parameters Resource in payload )
+##### Request using `Get` Syntax
+
+`GET [base]/Appointment/$find?end=2017-06-20&specialty=207N00000X&location=94559&max=3`
+
+##### Request using `POST` Syntax and 'Parameters' resource in payload )
 
 `POST [base]/Appointment/$find`
 
@@ -18,8 +40,8 @@
       "parameter": [
 
         {
-          "name": "period",
-          "valuePeriod": [{"start": "2017-06-20"}]
+          "name": "end",
+          ["valueDateTime": 2017-06-20"]
           },
           {
             "name": "max",
@@ -33,20 +55,11 @@
             "name": "location",
             "valueString": ["Napa"]
           },
-          {
-            "name": "patient",
-            "resource": [{
-              "resourceType": "Patient",
-              "id": "bruce",
-              "identifier":[{"value": "id-for-bruce"}],
-              "name":{"given":["Bruce"]}
-              ...}]
-            }
             ...
       ]
     }
 
-##### Response (using bundle)
+##### Response
 
     {
       "resourceType": "Bundle",
@@ -70,6 +83,12 @@
         "resource": {
           "resourceType": "Appointment",
           "id": "proposed-appt-3",
+          .. snip ...
+        },
+        "fullUrl": "http://server/path/OperationOutcome/oo-for-derm-appts",
+        "resource": {
+          "resourceType": "OperationOutcome",
+          "id": "oo-for-derm-appts",
           .. snip ...
         }
       ]
