@@ -1,0 +1,40 @@
+<CodeSystem xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir http://build.fhir.org/device.xsd">
+	<id value="appt-types"/>
+	<url value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-types"/>
+	<version value="0.0.0"/>
+	<name value="AppointmentTypes"/>
+	<status value="draft"/>
+	<experimental value="false"/>
+	<date value="2017-07-15T09:46:45-07:00"/>
+
+	<description value="The style of appointment or patient for appointment booking (not service type)."/>
+
+	<caseSensitive value="true"/>
+	<valueSet value="http://fhir.org/guides/argonaut-scheduling/ValueSet/appt-types"/>
+	<content value="complete"/>
+	<concept>
+		<code value="new-patient"/>
+		<display value="New Patient"/>
+		<definition value="An appointment for a patient who is new to the provider"/>
+	</concept>
+	<concept>
+		<code value="post-op"/>
+		<display value="Post-Op"/>
+		<definition value="An appointment to follow up on an operative procedure"/>
+	</concept>
+	<concept>
+		<code value="pre-op"/>
+		<display value="Pre-Op"/>
+		<definition value="An appointment to prepare for an operative procedure"/>
+	</concept>
+	<concept>
+		<code value="same-day"/>
+		<display value="Same Day"/>
+		<definition value="An appoinment to be seen by a provider the same day"/>
+	</concept>
+	<concept>
+		<code value="urgent"/>
+		<display value="Urgent"/>
+		<definition value="An appointment for an urgent problem or condition"/>
+	</concept>
+</CodeSystem>

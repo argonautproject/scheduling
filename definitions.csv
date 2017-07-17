@@ -1,7 +1,7 @@
 Configuration Parameter,configuration Value ( use '|' for lists)
 broken-links,warning
 canonicalBase,http://fhir.org/guides/argonaut-scheduling
-codesystems,appt-types
+codesystems,
 dependencyList.location,http://hl7.org/fhir/us/core/stu1/|http://www.fhir.org/guides/argonaut/pd/release1/
 dependencyList.name,uscore|argopd
 dependencyList.source,uscore|argopd
@@ -9,7 +9,7 @@ do-transforms,FALSE
 extensions,
 fixed-business-version,0.0.0
 gen-examples,FALSE
-jurisdiction,UM
+jurisdiction,US
 no-inactive-codes,FALSE
 paths.output,output
 paths.pages,pages
