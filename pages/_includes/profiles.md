@@ -8,6 +8,8 @@ The following Profiles have been defined for this implementation guide.
 
 <!-- { % include list-simple-profiles.xhtml %  } -->
 
-- [Appointment-Output](StructureDefinition-appt-output.html):  Profile for Appointment resource that is returned using then Appointment$find operation.
+- [Available Appointments Bundle](StructureDefinition-avail-bundle.html):  Profile for Bundle resource which is returned using the Appointment$find operation.
+- [Appointment-Output](StructureDefinition-appt-output.html):  Profile for Appointment resource which is returned within the Available Appointments Bundle.
+
 
 <br />

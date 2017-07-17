@@ -6,7 +6,7 @@
 
 **Assumptions:** Using the Appointment$availability operation, an App searches for the next available open Dermatology Appointments near Bruce.
 
-##### Request
+##### Request using POST Syntax
 
 `POST [base]/Appointment/$availability{?_count=3&location.address=[Bruce's Zip Code]}`
 
@@ -54,10 +54,5 @@
           "id": "proposed-appt-3",
           .. snip ...
         },
-        "fullUrl": "http://server/path/OperationOutcome/proposed-appt-3",
-        "resource": {
-          "resourceType": "OperationOutcome",
-          "id": "oo-for-derm-appts",
-          .. snip ...
       ]
     }

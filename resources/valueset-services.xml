@@ -87,6 +87,9 @@
 				<code value="127785005"/>
 				<display value="Administration of substance to produce immunity, either active or passive (procedure)"/>
 			</concept>
+		</include>
+		<include>
+			<system value="http://snomed.info/sct"/>
 			<filter>
 				<property value="concept"/>
 				<op value="is-a"/>

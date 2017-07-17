@@ -6,7 +6,7 @@
   <status value="draft"/>
   <kind value="operation"/>
   <date value="2017-07-15T08:59:00-07:00"/>
-  <description    value="Searches for availability for a future appointment(s) within  a time period of defined by date range input parameters.  Other input parameter that can be used to further refine the search include  practitioner references, specialties, healthcare services, locations, and patientinformation. From these criteria, a system determines which schedulable resources ( e.g., people, rooms, equiibment) are needed for the visit, and provides time slots where all required resources are available.&#xA;&#xA;If neither a start or end date is given then the maximum period as defined by local business rules and starting from when the  operation was transacted will be used."/>
+  <description    value="Searches for availability for a future appointment(s) within  a time period of defined by date range input parameters.  Other input parameter that can be used to further refine the search include  practitioner references, specialties, healthcare services, locations, and patient information. From these criteria, a system determines which schedulable resources ( e.g., people, rooms, equiibment) are needed for the visit, and provides time slots where all required resources are available.&#xA;&#xA;If neither a start or end date is given then the maximum period as defined by local business rules and starting from when the  operation was transacted will be used."/>
   <code value="find"/>
   <comment value="additional notes here"/>
   <resource value="Appointment"/>
@@ -87,7 +87,7 @@
     <documentation    value="A Patient resource that includes demographics and patient preferences. This is provided as a resource instead of a reference because the patient may not exist when performing an availablity search. If the appointment is for a new patient, the patient record should not be created until just before booking an appointment."/>
     <type value="Resource"/>
     <profile>
-      <reference value="StructureDefinition/us-core-patient"/>
+      <reference value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"/>
     </profile>
   </parameter>
   <parameter>

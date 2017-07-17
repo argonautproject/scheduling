@@ -16,5 +16,8 @@ appt-output-intro.md file
 
     **Additional Profile specific implementation guidance:**
 
-    #### Examples
-    
+#### Examples
+
+- [Proposed Appt 1](Appointment-proposed-appt1.html)
+- [Proposed Appt 2](Appointment-proposed-appt2.html)
+- [Proposed Appt 3](Appointment-proposed-appt3.html)
