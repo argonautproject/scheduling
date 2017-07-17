@@ -305,7 +305,7 @@ Using Both `GET` and `POST` Syntax
 
     {
       "resourceType": "Bundle",
-      "id": "hal-imaging-appts",
+      "id": "prefetch-derm-appts",
       "type": "searchset",
       "total": 3,
       "entry": [{
@@ -327,10 +327,10 @@ Using Both `GET` and `POST` Syntax
           "id": "proposed-appt-3",
           .. snip ...
         },
-        "fullUrl": "http://server/path/OperationOutcome/oo-for-imaging-appts",
+        "fullUrl": "http://server/path/OperationOutcome/oo-for-derm-appts",
         "resource": {
           "resourceType": "OperationOutcome",
-          "id": "oo-for-imaging-appts",
+          "id": "oo-for-derm-appts",
           .. snip ...
         }
       ]

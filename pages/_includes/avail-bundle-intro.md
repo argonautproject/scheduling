@@ -16,5 +16,6 @@ avail-bundle-intro.md file
 
     **Additional Profile specific implementation guidance:**
 
-    #### Examples
-    
+#### Examples
+
+- [Operation$find Example 2b](Bundle-prefetch-derm-appts.html)
