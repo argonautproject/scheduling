@@ -94,7 +94,7 @@ Using Both `GET` and `POST` Syntax
 ##### Request using `GET` Syntax
 
     GET  [base]/Appointment/$find?start=2017-07-15T20:00:00Z&end=2017-07-17T20:00:00Z&max=3&service-code=708175003
-    &service-codesystem=http://snomed.info/sct&type-code=urgent&system=http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-types
+    &service-codesystem=http://snomed.info/sct&appt-type-code=urgent&system=http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-types
     &location=Napa
 
 ##### Request using `POST` Syntax
@@ -120,11 +120,11 @@ Using Both `GET` and `POST` Syntax
           "valuePositiveInt": 3
         },
         {
-          "name": "type-code",
+          "name": "appt-type-code",
           "valueCode": ["urgent"]
         },
         {
-          "name": "type-codesystem",
+          "name": "appt-type-codesystem",
           "valueUri": ["http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-types"]
         },
         {
@@ -257,7 +257,7 @@ Using Both `GET` and `POST` Syntax
 
 ##### Request using `GET` Syntax
 
-    GET [base]/Appointment/$find?start=2017-07-15T20:00:00Z&end=2017-08-17T20:00:00Z&type-code=ROUTINE&type-codesystem=http://hl7.org/fhir/v2/0276
+    GET [base]/Appointment/$find?start=2017-07-15T20:00:00Z&end=2017-08-17T20:00:00Z&appt-type-code=ROUTINE&appt-type-codesystem=http://hl7.org/fhir/v2/0276
     &specialty-code=394582007&specialty-codesystem=http://snomed.info/sct&location=Napa
 
 ##### Request using `POST` Syntax
@@ -279,11 +279,11 @@ Using Both `GET` and `POST` Syntax
           "valueDateTime" : "2017-07-17T20:00:00Z"
       },
       {
-        "name": "type-code",
+        "name": "appt-type-code",
         "valueCode": ["ROUTINE"]
       },
       {
-        "name": "type-codesystem",
+        "name": "appt-type-codesystem",
         "valueUri": ["http://hl7.org/fhir/v2/0276"]
       },
       {

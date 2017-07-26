@@ -7,8 +7,8 @@
         value="The period of time that should be checked for appointment availability.- e.g., look for all available appointments in a certain date range. If no start date is provided,  all available appointments prior to the end date are in scope (subject to limits imposed by local business rules)."/><type value="dateTime"/></parameter>
     <parameter><name value="end"/><use value="in"/><min value="1"/><max value="1"/><documentation
         value="The period of time that should be checked for appointment availability.- e.g., look for all available appointments in a certain date range. If no end date is provided, all available appointments after the start date are in scope (subject to limits imposed by local business rules)."/><type value="dateTime"/></parameter>
-    <parameter><name value="type-codesystem"/><use value="in"/><min value="0"/><max value="*"/><documentation value="The code system for the appointment type."/><type value="uri"/></parameter>
-    <parameter><name value="type-code"/><use value="in"/><min value="0"/><max value="*"/><documentation value="The code for the type of the appointment. ( e.g., &#39;new patient&#39;or  &#39;follow up&#39;).  Each type code must have a corresponding  `type-codesystem`  input parameter."/><type value="code"/>
+    <parameter><name value="appt-type-codesystem"/><use value="in"/><min value="0"/><max value="*"/><documentation value="The code system for the appointment type."/><type value="uri"/></parameter>
+    <parameter><name value="appt-type-code"/><use value="in"/><min value="0"/><max value="*"/><documentation value="The code for the type of the appointment. ( e.g., &#39;new patient&#39;or  &#39;follow up&#39;).  Each type code must have a corresponding  `appt-type-codesystem`  input parameter."/><type value="code"/>
         <binding><strength value="extensible"/>
             <valueSetReference><reference value="http://fhir.org/guides/argonaut-scheduling/ValueSet/types"/></valueSetReference>
         </binding>

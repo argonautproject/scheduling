@@ -125,20 +125,16 @@ Using `POST` Syntax and *Parameters* resource in the payload
         "valuePositiveInt": 3
       },
       {
-        "name": "appt-type",
+        "name": "service",
         "valueCoding": [{
             "system" : "http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-types",
             "code" : "urgent",
             "display" : "Urgent"
-          }]
-      },
-      {
-        "name": "service",
-        "valueCoding": {         
-            "system" : "http://snomed.info/sct",
-            "code" : "708175003",
-            "display" : "708175003	Diagnostic imaging service"
-          }
+          },{         
+              "system" : "http://snomed.info/sct",
+              "code" : "708175003",
+              "display" : "708175003	Diagnostic imaging service"
+            }]
       },
       {
         "name": "location",
@@ -292,7 +288,7 @@ Using `POST` Syntax and *Parameters* resource in the payload
         }
       },
     {
-          "name": "appt-type",
+          "name": "service",
           "valueCoding": [{
               "system" : "http://hl7.org/fhir/v2/0276",
               "code" : "ROUTINE",

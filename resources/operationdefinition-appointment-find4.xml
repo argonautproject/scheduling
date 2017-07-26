@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <OperationDefinition xmlns="http://hl7.org/fhir">
-  <id value="appointment-find"/>
-  <url value="http://fhir.org/guides/argonaut-scheduling/OperationDefinition/appointment-find"/>
-  <name value="Appointment Availability Version 1 (complex inputs)"/>
+  <id value="appointment-find4"/>
+  <url value="http://fhir.org/guides/argonaut-scheduling/OperationDefinition/appointment-find4"/>
+  <name value="Appointment Availability Version 4 (complex inputs and combined services + type)"/>
   <status value="draft"/>
   <kind value="operation"/>
   <date value="2017-07-15T08:59:00-07:00"/>
@@ -22,25 +22,11 @@
     <type value="Period"/>
   </parameter>
   <parameter>
-    <name value="appt-type"/>
-    <use value="in"/>
-    <min value="0"/>
-    <max value="*"/>
-    <documentation value="The code for the type of the appointment. ( e.g., &#39;new patient&#39;or  &#39;follow up&#39;).  Each type code must have a corresponding  `specialty-codesystem`  input parameter."/>
-    <type value="Coding"/>
-    <binding>
-      <strength value="extensible"/>
-      <valueSetReference>
-        <reference value="http://fhir.org/guides/argonaut-scheduling/ValueSet/types"/>
-      </valueSetReference>
-    </binding>
-  </parameter>
-  <parameter>
     <name value="specialty"/>
     <use value="in"/>
     <min value="0"/>
     <max value="*"/>
-    <documentation    value="The code for which specialty is requested for the appointment. ( e.g., &#39;Dermatology&#39;).   If multiple codes are listed, the order of the codes will interpreted as the order of preference.  The response will contain appointments with any of these actors (i.e. this does not drive joint appointment with multiple actors)."/>
+    <documentation    value="The code for which specialty is requested for the appointment. ( e.g., &#39;Dermatology&#39;).   If multiple codes are listed, the order of the codes will interpreted as the order of preference.  The response will contain appointments with any of these actors (i.e. this does not drive joint appointment with multiple actors).  Each specialty code must have a corresponding  `specialty-codesystem`  input parameter."/>
     <type value="Coding"/>
     <binding>
       <strength value="extensible"/>
@@ -53,13 +39,13 @@
     <name value="service"/>
     <use value="in"/>
     <min value="0"/>
-    <max value="1"/>
-    <documentation value="The code for type of requested service for the appointment. ( e.g.,&#39;Echocardiography&#39; or  &#39;Well child visit&#39; ).  The service code must have a corresponding  `service-codesystem` input parameter."/>
+    <max value="*"/>
+    <documentation value="The codes for types of requested service for the appointment. ( e.g.,&#39;Echocardiography&#39;, &#39;New Patient&#39;  ,or  &#39;Well child visit&#39; ).  The service code must have a corresponding  `service-codesystem` input parameter."/>
     <type value="Coding"/>
     <binding>
       <strength value="extensible"/>
       <valueSetReference>
-        <reference value="http://fhir.org/guides/argonaut-scheduling/ValueSet/services"/>
+        <reference value="http://fhir.org/guides/argonaut-scheduling/ValueSet/services2"/>
       </valueSetReference>
     </binding>
   </parameter>
