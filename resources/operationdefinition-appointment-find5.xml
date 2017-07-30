@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <OperationDefinition xmlns="http://hl7.org/fhir">
-  <id value="Appointment-find"/>
-  <url value="http://fhir.org/guides/argonaut-scheduling/OperationDefinition/Appointment-find"/>
-  <name value="Appointment Availability"/>
+  <id value="appointment-find-sprint"/>
+  <url value="http://fhir.org/guides/argonaut-scheduling/OperationDefinition/appointment-find-sprint"/>
+  <name value="Appointment Availability Sprint Version: Uses simple input parameters and distinct appt-type, specialty and service code sets."/>
   <status value="draft"/>
   <kind value="operation"/>
   <date value="2017-07-29T15:31:37-07:00"/>
-  <description value="Searches for availability for a future appointment(s) within  a time period of defined by date range input parameters.  Other input parameter that can be used to further refine the search include  practitioner references, specialties, healthcare services, locations, and patientinformation. From these criteria, a system determines which schedulable resources ( e.g., people, rooms, equiibment) are needed for the visit, and provides time slots where all required resources are available.&#xA;&#xA;If neither a start or end date is given then the maximum period as defined by local business rules and starting from when the  operation was transacted will be used."/>
+  <description value="Searches for availability for a future appointment(s) within  a time period of defined by date range input parameters.  Other input parameter that can be used to further refine the search include  practitioner references, specialties, healthcare services, locations, and patient information. From these criteria, a system determines which schedulable resources ( e.g., people, rooms, equiibment) are needed for the visit, and provides time slots where all required resources are available.&#xA;&#xA;If neither a start or end date is given then the maximum period as defined by local business rules and starting from when the  operation was transacted will be used."/>
   <code value="find"/>
   <comment value="additional notes here"/>
   <resource value="Appointment"/>
