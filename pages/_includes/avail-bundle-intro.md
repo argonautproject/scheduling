@@ -18,4 +18,5 @@ avail-bundle-intro.md file
 
 #### Examples
 
+- [Operation$find Example 1a](Bundle-hal-dr-y-appts.html)
 - [Operation$find Example 2b](Bundle-prefetch-derm-appts.html)

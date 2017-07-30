@@ -79,7 +79,7 @@
     <use value="in"/>
     <min value="0"/>
     <max value="*"/>
-    <documentation value="The Provider reference when performing a provider based query which has the value of either the Appointment.participant.actor either as a reference to a FHIR resource,  e.g. &#39;Provider/123&#39;.  References can be to an absolute URL, but servers only perform operations on their own resources.  If multiple uris are listed, the order will interpreted as the order of preference.  The response will contain appointments with any of these actors (i.e. this does not drive joint appointment with multiple actors)."/>
+    <documentation value="The Provider reference when performing a provider based query.  This is a reference to a FHIR resource,  e.g. &#39;Provider/123&#39;.  References can be to an absolute URL, but servers only perform operations on their own resources.  If multiple uris are listed, the order will interpreted as the order of preference.  The response will contain appointments with any of these actors (i.e. this does not drive joint appointment with multiple actors)."/>
     <type value="uri"/>
   </parameter>
   <parameter>
@@ -104,12 +104,29 @@
     <use value="in"/>
     <min value="0"/>
     <max value="*"/>
-    <documentation value="This parameter is a complex `Resource` type instead of a simple reference because the patient record may not exist when performing availablity searches. (If the Patient resource id is known, use the `patient-reference` parameter instead.)  It based on the [US Core Patient Profile]({{site.data.fhir.uscore}}/us-core-patient) and includes demographics and patient preferences that may be important for availaiblilty searches. If the appointment is for a new patient, the patient record should not be created until just before booking an appointment.  If multiple patient references are listed, the response will contain appointments which is joint match for all patients - i.e., a group appointment. "/>
+    <documentation value="This parameter is a complex `Resource` type instead of a simple reference because the patient record may not exist when performing availablity searches. (If the Patient resource id is known, use the `patient-reference` parameter instead.)  It based on the [US Core Patient Profile]({{site.data.fhir.uscore}}/StructureDefinition-us-core-patient.html) and includes demographics and patient preferences that may be important for availaiblilty searches. If the appointment is for a new patient, the patient record should not be created until just before booking an appointment.  If multiple patient references are listed, the response will contain appointments which is joint match for all patients - i.e., a group appointment."/>
     <type value="Resource"/>
     <profile>
-      <reference value="StructureDefinition/us-core-patient"/>
+      <reference value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"/>
     </profile>
   </parameter>
+  <!--
+  <parameter>
+    <name value="indication"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="*"/>
+    <documentation value="Problems that this appointment is intended to treat. This to determine which schedulable resources are needed for the visit. For example, for an orthopedics appointment, the indication may drive whether a hip specialist or knee specialist is preferred. This string parameter is interpreted as a  [Token search parameter]({{site.data.fhir.path}}/search.html#token).  Each parameter value SHALL contain *both* the system property and the code property for a code using the general syntax `service=[system]|[code]`.  See the examples below for how this is implemented."/>
+    <type value="string"/>
+    <searchType value="token"/>
+    <binding>
+      <strength value="preferred"/>
+      <valueSetReference>
+        <reference value="http://hl7.org/fhir/ValueSet/encounter-reason"/>
+      </valueSetReference>
+    </binding>
+  </parameter>
+-->
   <parameter>
     <name value="max-number"/>
     <use value="in"/>
@@ -118,6 +135,16 @@
     <documentation value="A parameter to ask the server to choose the first/best n= max-number available appointment options"/>
     <type value="positiveInt"/>
   </parameter>
+  <!--
+  <parameter>
+    <name value="comment"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Comments or special instructions"/>
+    <type value="string"/>
+  </parameter>
+-->
   <parameter>
     <name value="return"/>
     <use value="out"/>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bundle xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir http://build.fhir.org/device.xsd">
-	<id value="prefetch-derm-appts"/>
+	<id value="hal-dr-y-appts"/>
 	<!--   this example bundle is a search set   -->
 	<meta>
 		<profile value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/avail-bundle"/>
@@ -10,11 +10,11 @@
 	<total value="3"/>
 	<!--   now, the actual entries   -->
 	<entry>
-		<fullUrl value="https://example.com/base/Appointment/proposed-appt2b-1"/>
+		<fullUrl value="https://example.com/base/Appointment/proposed-appt1a-1"/>
 		<!--   the matching resource   -->
 		<resource>
 			<Appointment>
-				<id value="proposed-appt2b-1"/>
+				<id value="proposed-appt1a-1"/>
 				<meta>
 					<profile value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/appt-output"/>
 				</meta>
@@ -27,14 +27,6 @@
 					</coding>
 					<text value="Office Call"/>
 				</serviceType>
-				<specialty>
-					<coding>
-						<system value="http://snomed.info/sct"/>
-						<code value="394582007"/>
-						<display value="Dermatology"/>
-					</coding>
-					<text value="Dermatology"/>
-				</specialty>
 				<appointmentType>
 					<coding>
 						<system value="http://hl7.org/fhir/v2/0276"/>
@@ -44,71 +36,6 @@
 				</appointmentType>
 				<start value="2017-07-17T00:45:00Z"/>
 				<end value="2017-07-17T01:00:00Z"/>
-				<participant>
-					<actor>
-						<reference value="Practitioner/dr-y"/>
-						<display value="Dr Y"/>
-					</actor>
-					<required value="required"/>
-					<status value="needs-action"/>
-				</participant>
-				<participant>
-					<actor>
-						<display value="Napa Office"/>
-					</actor>
-					<required value="required"/>
-					<status value="needs-action"/>
-				</participant>
-				<requestedPeriod>
-					<start value="2017-07-15T20:00:00Z"/>
-					<end value="2017-08-17T20:00:00Z"/>
-				</requestedPeriod>
-			</Appointment>
-		</resource>
-		<!--   and now optional search information   -->
-		<search>
-			<!--   this resource included as a match to the search criteria.
-         Servers are not required to populate this, but should, because
-         there are a few cases where it might be ambiguous whether a
-         resource is added because it's a match or an include           -->
-			<mode value="match"/>
-		</search>
-	</entry>
-	<entry>
-		<fullUrl value="https://example.com/base/Appointment/proposed-appt2b-2"/>
-		<!--   the matching resource   -->
-		<resource>
-			<Appointment>
-				<id value="proposed-appt2b-2"/>
-				<meta>
-					<profile value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/appt-output"/>
-				</meta>
-				<status value="proposed"/>
-				<serviceType>
-					<coding>
-						<system value="http://snomed.info/sct"/>
-						<code value="11429006"/>
-						<display value="Consultation (procedure)"/>
-					</coding>
-					<text value="Office Call"/>
-				</serviceType>
-				<specialty>
-					<coding>
-						<system value="http://snomed.info/sct"/>
-						<code value="394582007"/>
-						<display value="Dermatology"/>
-					</coding>
-					<text value="Dermatology"/>
-				</specialty>
-				<appointmentType>
-					<coding>
-						<system value="http://hl7.org/fhir/v2/0276"/>
-						<code value="ROUTINE"/>
-					</coding>
-					<text value="Routine"/>
-				</appointmentType>
-				<start value="2017-07-17T01:00:00Z"/>
-				<end value="2017-08-17T01:15:00Z"/>
 				<participant>
 					<actor>
 						<reference value="Practitioner/dr-y"/>
@@ -140,11 +67,11 @@
 		</search>
 	</entry>
 	<entry>
-		<fullUrl value="https://example.com/base/Appointment/proposed-appt2b-3"/>
+		<fullUrl value="https://example.com/base/Appointment/proposed-appt1a-2"/>
 		<!--   the matching resource   -->
 		<resource>
 			<Appointment>
-				<id value="proposed-appt2b-3"/>
+				<id value="proposed-appt1a-2"/>
 				<meta>
 					<profile value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/appt-output"/>
 				</meta>
@@ -157,14 +84,63 @@
 					</coding>
 					<text value="Office Call"/>
 				</serviceType>
-				<specialty>
+				<appointmentType>
+					<coding>
+						<system value="http://hl7.org/fhir/v2/0276"/>
+						<code value="ROUTINE"/>
+					</coding>
+					<text value="Routine"/>
+				</appointmentType>
+				<start value="2017-07-17T01:00:00Z"/>
+				<end value="2017-07-17T01:15:00Z"/>
+				<participant>
+					<actor>
+						<reference value="Practitioner/dr-y"/>
+						<display value="Dr Y"/>
+					</actor>
+					<required value="required"/>
+					<status value="needs-action"/>
+				</participant>
+				<participant>
+					<actor>
+						<display value="Napa Office"/>
+					</actor>
+					<required value="required"/>
+					<status value="needs-action"/>
+				</participant>
+				<requestedPeriod>
+					<start value="2017-07-15T20:00:00Z"/>
+					<end value="2017-07-17T20:00:00Z"/>
+				</requestedPeriod>
+			</Appointment>
+		</resource>
+		<!--   and now optional search information   -->
+		<search>
+			<!--   this resource included as a match to the search criteria.
+         Servers are not required to populate this, but should, because
+         there are a few cases where it might be ambiguous whether a
+         resource is added because it's a match or an include           -->
+			<mode value="match"/>
+		</search>
+	</entry>
+	<entry>
+		<fullUrl value="https://example.com/base/Appointment/proposed-appt1a-3"/>
+		<!--   the matching resource   -->
+		<resource>
+			<Appointment>
+				<id value="proposed-appt1a-3"/>
+				<meta>
+					<profile value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/appt-output"/>
+				</meta>
+				<status value="proposed"/>
+				<serviceType>
 					<coding>
 						<system value="http://snomed.info/sct"/>
-						<code value="394582007"/>
-						<display value="Dermatology"/>
+						<code value="11429006"/>
+						<display value="Consultation (procedure)"/>
 					</coding>
-					<text value="Dermatology"/>
-				</specialty>
+					<text value="Office Call"/>
+				</serviceType>
 				<appointmentType>
 					<coding>
 						<system value="http://hl7.org/fhir/v2/0276"/>
@@ -191,7 +167,7 @@
 				</participant>
 				<requestedPeriod>
 					<start value="2017-07-15T20:00:00Z"/>
-					<end value="2017-08-17T20:00:00Z"/>
+					<end value="2017-07-17T20:00:00Z"/>
 				</requestedPeriod>
 			</Appointment>
 		</resource>

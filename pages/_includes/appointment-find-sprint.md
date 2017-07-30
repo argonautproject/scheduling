@@ -52,7 +52,8 @@ Using Both `GET` and `POST` Syntax
     ]
     }
 
-##### Response
+##### Response ([Operation$find Example 1a](Bundle-hal-dr-y-appts.html))
+
 
     {
       "resourceType": "Bundle",
@@ -285,7 +286,7 @@ Using Both `GET` and `POST` Syntax
     ]
     }
 
-##### Response
+##### Response ([Operation$find Example 2b](Bundle-prefetch-derm-appts.html))
 
     {
       "resourceType": "Bundle",

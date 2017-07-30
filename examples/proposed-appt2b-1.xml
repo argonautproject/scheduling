@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Appointment xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir http://build.fhir.org/device.xsd">
+	<id value="proposed-appt2b-1"/>
+	<meta>
+		<profile value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/appt-output"/>
+	</meta>
+	<status value="proposed"/>
+	<serviceType>
+		<coding>
+			<system value="http://snomed.info/sct"/>
+			<code value="11429006"/>
+			<display value="Consultation (procedure)"/>
+		</coding>
+		<text value="Office Call"/>
+	</serviceType>
+	<specialty>
+		<coding>
+			<system value="http://snomed.info/sct"/>
+			<code value="394582007"/>
+			<display value="Dermatology"/>
+		</coding>
+		<text value="Dermatology"/>
+	</specialty>
+	<appointmentType>
+		<coding>
+			<system value="http://hl7.org/fhir/v2/0276"/>
+			<code value="ROUTINE"/>
+		</coding>
+		<text value="Routine"/>
+	</appointmentType>
+	<start value="2017-07-17T00:45:00Z"/>
+	<end value="2017-07-17T01:00:00Z"/>
+	<participant>
+		<actor>
+			<reference value="Practitioner/dr-y"/>
+			<display value="Dr Y"/>
+		</actor>
+		<required value="required"/>
+		<status value="needs-action"/>
+	</participant>
+	<participant>
+		<actor>
+			<display value="Napa Office"/>
+		</actor>
+		<required value="required"/>
+		<status value="needs-action"/>
+	</participant>
+	<requestedPeriod>
+		<start value="2017-07-15T20:00:00Z"/>
+		<end value="2017-08-17T20:00:00Z"/>
+	</requestedPeriod>
+</Appointment>

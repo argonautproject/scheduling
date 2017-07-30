@@ -35,7 +35,7 @@ path : path to the main FHIR specification (defined in ig.json)-  {% raw %} {{si
 
 canonical : canonical path to this specification (defined in ig.json)-  {% raw %} {{site.data.fhir.canonical}} {% endraw %} = {{site.data.fhir.canonical}}
 
-dependency url -  “uscore” : Base url of a dependency implementation Guide (defined in ig.json) - {{site.data.fhir.uscore}} = http://hl7.org/fhir/us/core/stu1/
+dependency url -  “uscore” : Base url of a dependency implementation Guide (defined in ig.json) - {% raw %}{{site.data.fhir.uscore}}{% endraw %} = {{site.data.fhir.uscore}}
 
 errorCount : number of errors in the build file (not including HTML validation errors) -  {% raw %} {{site.data.fhir.errorCount}} {% endraw %} = {{site.data.fhir.errorCount}}
 
