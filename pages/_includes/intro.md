@@ -1,4 +1,4 @@
-## {{ site.data.fhir.igName }} Implementation Guide
+## {{site.data.fhir.igName}} Implementation Guide
 
 {% include publish-box.html %}
 
@@ -29,25 +29,27 @@ As of a 2007 study, cats are the second most popular pet in the US by number of 
 
 ### Jekyll Site Variables
 
-igName : Title of the implementation Guide (defined in ig.xml) -  {% raw %} {{ site.data.fhir.igName }} {% endraw %}= {{site.data.fhir.igName}}
+igName : Title of the implementation Guide (defined in ig.xml) -  {% raw %} {{site.data.fhir.igName}} {% endraw %}= {{site.data.fhir.igName}}
 
-path : path to the main FHIR specification (defined in ig.json)-  {% raw %} {{ site.data.fhir.path }} {% endraw %}= {{site.data.fhir.path}}
+path : path to the main FHIR specification (defined in ig.json)-  {% raw %} {{site.data.fhir.path}} {% endraw %}= {{site.data.fhir.path}}
 
-canonical : canonical path to this specification (defined in ig.json)-  {% raw %} {{ site.data.fhir.canonical }} {% endraw %} = {{ site.data.fhir.canonical }}
+canonical : canonical path to this specification (defined in ig.json)-  {% raw %} {{site.data.fhir.canonical}} {% endraw %} = {{site.data.fhir.canonical}}
 
-errorCount : number of errors in the build file (not including HTML validation errors) -  {% raw %} {{ site.data.fhir.errorCount }} {% endraw %} = {{ site.data.fhir.errorCount }}
+dependency url -  “uscore” : Base url of a dependency implementation Guide (defined in ig.json) - {{site.data.fhir.uscore}} = http://hl7.org/fhir/us/core/stu1/
 
-version : version of FHIR -  {% raw %} {{ site.data.fhir.version }} {% endraw %} = {{ site.data.fhir.version }}
+errorCount : number of errors in the build file (not including HTML validation errors) -  {% raw %} {{site.data.fhir.errorCount}} {% endraw %} = {{site.data.fhir.errorCount}}
 
-revision : revision of FHIR -  {% raw %} {{ site.data.fhir.revision }} {% endraw %} = {{ site.data.fhir.revision }}
+version : version of FHIR -  {% raw %} {{site.data.fhir.version}} {% endraw %} = {{site.data.fhir.version}}
 
-versionFull : version-revision -  {% raw %} {{ site.data.fhir.versionFull }} {% endraw %} = {{ site.data.fhir.versionFull }}
+revision : revision of FHIR -  {% raw %} {{site.data.fhir.revision}} {% endraw %} = {{site.data.fhir.revision}}
 
-totalFiles : total number of files found by the build -  {% raw %} {{ site.data.fhir.totalFiles }} {% endraw %} = {{ site.data.fhir.totalFiles }}
+versionFull : version-revision -  {% raw %} {{site.data.fhir.versionFull}} {% endraw %} = {{site.data.fhir.versionFull}}
 
-processedFiles : number of files genrated by the build -  {% raw %} {{ site.data.fhir.processedFiles }} {% endraw %} = {{ site.data.fhir.processedFiles }}
+totalFiles : total number of files found by the build -  {% raw %} {{site.data.fhir.totalFiles}} {% endraw %} = {{site.data.fhir.totalFiles}}
 
-genDate : date of generation (so date stamps in the pages can match those in the conformance resources) -  {% raw %} {{ site.data.fhir.genDate }} {% endraw %} = {{ site.data.fhir.genDate }}
+processedFiles : number of files genrated by the build -  {% raw %} {{site.data.fhir.processedFiles}} {% endraw %} = {{site.data.fhir.processedFiles}}
+
+genDate : date of generation (so date stamps in the pages can match those in the conformance resources) -  {% raw %} {{site.data.fhir.genDate}} {% endraw %} = {{site.data.fhir.genDate}}
 
 
 ### Introduction
