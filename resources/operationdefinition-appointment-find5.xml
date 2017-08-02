@@ -8,7 +8,7 @@
 	<date value="2017-07-29T15:31:37-07:00"/>
 	<description value="Searches for availability for a future appointment(s) within  a time period of defined by date range input parameters.  Other input parameter that can be used to further refine the search include  practitioner references, specialties, healthcare services, locations, and patient information. From these criteria, a system determines which schedulable resources ( e.g., people, rooms, equiibment) are needed for the visit, and provides time slots where all required resources are available.&#xA;&#xA;If neither a start or end date is given then the maximum period as defined by local business rules and starting from when the  operation was transacted will be used."/>
 	<code value="find"/>
-	<comment value="additional notes here"/>
+	<comment value="- The server is responsible for determining the first/best available appointment options to return.&#xD;- To set the upper limit on the total number of available appointment options to return use the standard [`_count`](http://build.fhir.org/search.html#count) search parameter.  See the examples below for how this is implemented.&#xD;- If there is nominated patient, it is assumed that the server has identified and secured the context appropriately, and can either associate the authorization context with a single patient, or determine whether the context has the rights to the nominated patient, if there is one.  Specifying the relationship between the context, a user and patient records is outside the scope of this specification"/>
 	<resource value="Appointment"/>
 	<system value="true"/>
 	<type value="true"/>

@@ -16,11 +16,11 @@ Using Both `GET` and `POST` Syntax
 
 **Using `GET`**
 
-`GET [base]/Appointment/$find?start=2017-07-15T20:00:00Z&end=2017-07-17T20:00:00Z&max=3&provider=Practitioner/dr-y&location=Napa`
+`GET [base]/Appointment/$find?start=2017-07-15T20:00:00Z&end=2017-07-17T20:00:00Z&provider=Practitioner/dr-y&location=Napa&_count=3`
 
 **Using `POST`**
 
-`POST [base]/Appointment/$find`
+`POST [base]/Appointment/$find&_count=3`
 
     **payload:**
 
@@ -35,10 +35,6 @@ Using Both `GET` and `POST` Syntax
         {
           "name": "end",
             "valueDateTime" : "2017-07-17T20:00:00Z"
-        },
-        {
-          "name": "max",
-          "valuePositiveInt": 3
         },
         {
           "name": "provider",
@@ -94,12 +90,12 @@ Using Both `GET` and `POST` Syntax
 
 ##### Request using `GET` Syntax
 
-    GET  [base]/Appointment/$find?start=2017-07-15T20:00:00Z&end=2017-07-17T20:00:00Z&max=3&service-type=http://snomed.info/sct|708175003
+    GET  [base]/Appointment/$find?start=2017-07-15T20:00:00Z&end=2017-07-17T20:00:00Z&service-type=http://snomed.info/sct|708175003
     &appt-type=http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-types|urgent&location=Napa
 
 ##### Request using `POST` Syntax
 
-`POST [base]/Appointment/$find`
+`POST [base]/Appointment/$find&_count=3`
 
     **payload:**
 
@@ -114,10 +110,6 @@ Using Both `GET` and `POST` Syntax
         {
           "name": "end",
             "valueDateTime" : "2017-07-17T20:00:00Z"
-        },
-        {
-          "name": "max",
-          "valuePositiveInt": 3
         },
         {
           "name": "appt-type",
