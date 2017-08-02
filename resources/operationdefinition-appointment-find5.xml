@@ -60,11 +60,11 @@
     </binding>
   </parameter>
   <parameter>
-    <name value="service"/>
+    <name value="service-type"/>
     <use value="in"/>
     <min value="0"/>
     <max value="*"/>
-    <documentation value="The code for type of requested service for the appointment. ( e.g.,&#39;Echocardiography&#39; or  &#39;Well child visit&#39; ). If multiple codes are listed, the order of the codes will interpreted as the order of preference.  The response will contain appointments with any of these services (i.e. this does not drive joint appointment with multiple services).  This string parameter is interpreted as a  [Token search parameter]({{site.data.fhir.path}}/search.html#token).  Each parameter value SHALL contain *both* the system property and the code property for a code using the general syntax `service=[system]|[code]`.   See the examples below for how this is implemented."/>
+    <documentation value="The code for type of requested service for the appointment. ( e.g.,&#39;Echocardiography&#39; or  &#39;Well child visit&#39; ). If multiple codes are listed, the order of the codes will interpreted as the order of preference.  The response will contain appointments with any of these services (i.e. this does not drive joint appointment with multiple services).  This string parameter is interpreted as a  [Token search parameter]({{site.data.fhir.path}}/search.html#token).  Each parameter value SHALL contain *both* the system property and the code property for a code using the general syntax `service-type=[system]|[code]`.   See the examples below for how this is implemented."/>
     <type value="string"/>
     <searchType value="token"/>
     <binding>
@@ -79,7 +79,7 @@
     <use value="in"/>
     <min value="0"/>
     <max value="*"/>
-    <documentation value="The Provider reference when performing a provider based query.  This is a reference to a FHIR resource,  e.g. &#39;Provider/123&#39;.  References can be to an absolute URL, but servers only perform operations on their own resources.  If multiple uris are listed, the order will interpreted as the order of preference.  The response will contain appointments with any of these actors (i.e. this does not drive joint appointment with multiple actors)."/>
+    <documentation value="The Provider reference when performing a provider based query.  This is a reference to a FHIR resource,  e.g. &#39;Practitioner/123&#39;.  References can be to an absolute URL, but servers only perform operations on their own resources.  If multiple uris are listed, the order will interpreted as the order of preference.  The response will contain appointments with any of these actors (i.e. this does not drive joint appointment with multiple actors)."/>
     <type value="uri"/>
   </parameter>
   <parameter>
@@ -132,7 +132,7 @@
     <use value="in"/>
     <min value="0"/>
     <max value="1"/>
-    <documentation value="A parameter to ask the server to choose the first/best n= max-number available appointment options"/>
+    <documentation value="A parameter that set the upper limit on the total number of available appointments options to return."/>
     <type value="positiveInt"/>
   </parameter>
   <!--
