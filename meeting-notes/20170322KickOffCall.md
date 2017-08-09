@@ -6,8 +6,6 @@ Attendees:
 Attended|Name|Organization|email
 ---|---|---|---
 X |Hiten Patel|Advisory Board|patelh@advisory.com
-X |Ricky Bloomfield|Apple|rickybloomfield@apple.com
-X |Sean Moore|Apple|sean_moore2@apple.com
 X |Drew Torres|Cerner|Drew.Torres@cerner.com
   |Jenni Syed|Cerner|Jenni.Syed@cerner.com
   |Michelle Miller|Cerner|Michelle.M.Miller@cerner.com
