@@ -1,20 +1,26 @@
-appt-output-intro.md file
+    appt-output-intro.md file
 
-    This is the introduction markdown file that gets inserted into the sd.html template.
 
-    This profile sets minimum expectations for blah blah blah
+This profile sets minimum expectations for the Appointment resource to record, search and fetch basic information about an individual appointment. It identifies which core elements, extensions, vocabularies and value sets SHALL be present in the resource when using this profile.
 
-    ##### Mandatory Data Elements and Terminology
+This profile is defined for:
 
-    The following data-elements are mandatory (i.e data MUST be present). blah blah blah
+- Use in the Bundle resource as a result of the $find, $hold, and $ book operations.
+- Patient searching for their appointments.
+- Provider searching for their appointments.
 
-    **must have:**
+##### Mandatory Data Elements and Terminology
 
-    1. blah
-    1. blah
-    1. blah
+The following data-elements are mandatory (i.e data MUST be present).
 
-    **Additional Profile specific implementation guidance:**
+**Each Appointment must have:**
+
+1. a status (e.g., 'proposed')
+1. a start and end time
+1. a list of participants and their individual statuses (e.g., the patient will be there)
+1. the times that were requested for this appointment
+
+**Additional Profile specific implementation guidance:**
 
 #### Examples
 

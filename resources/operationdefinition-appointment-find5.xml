@@ -34,7 +34,7 @@
 		<use value="in"/>
 		<min value="0"/>
 		<max value="*"/>
-		<documentation value="The code for the type of the appointment. ( e.g., &#39;new patient&#39;or  &#39;follow up&#39;).   If multiple codes are listed, the response will contain appointments which match all of these appointment types.  This string parameter is interpreted as a  [Token search parameter]({{site.data.fhir.path}}/search.html#token).  Each parameter value SHALL contain *both* the system property and the code property for a code using the general syntax `appt-type=[system]|[code]`.   See the examples below for how this is implemented."/>
+		<documentation value="The code for the type of the appointment. ( e.g., &#39;new patient&#39;or  &#39;follow up&#39;).   If multiple codes are listed, the response will contain appointments which match all of these appointment types.  This string parameter is interpreted as a  [Token search parameter]({site.data.fhir.path}/search.html#token).  Each parameter value SHALL contain *both* the system property and the code property for a code using the general syntax `appt-type=[system]|[code]`.   See the examples below for how this is implemented."/>
 		<type value="string"/>
 		<searchType value="token"/>
 		<binding>
@@ -49,7 +49,7 @@
 		<use value="in"/>
 		<min value="0"/>
 		<max value="*"/>
-		<documentation value="The code for which specialty is requested for the appointment. ( e.g., &#39;Dermatology&#39;).   If multiple codes are listed, the order of the codes will interpreted as the order of preference.  The response will contain appointments with any of these actors (i.e. this does not drive joint appointment with multiple actors).  This string parameter is interpreted as a  [Token search parameter]({{site.data.fhir.path}}/search.html#token).  Each parameter value SHALL contain *both* the system property and the code property for a code using the general syntax `specialty=[system]|[code]`.   See the examples below for how this is implemented."/>
+		<documentation value="The code for which specialty is requested for the appointment. ( e.g., &#39;Dermatology&#39;).   If multiple codes are listed, the order of the codes will interpreted as the order of preference.  The response will contain appointments with any of these actors (i.e. this does not drive joint appointment with multiple actors).  This string parameter is interpreted as a  [Token search parameter]({site.data.fhir.path}/search.html#token).  Each parameter value SHALL contain *both* the system property and the code property for a code using the general syntax `specialty=[system]|[code]`.   See the examples below for how this is implemented."/>
 		<type value="string"/>
 		<searchType value="token"/>
 		<binding>
@@ -64,7 +64,7 @@
 		<use value="in"/>
 		<min value="0"/>
 		<max value="*"/>
-		<documentation value="The code for type of requested service for the appointment. ( e.g.,&#39;Echocardiography&#39; or  &#39;Well child visit&#39; ). If multiple codes are listed, the order of the codes will interpreted as the order of preference.  The response will contain appointments with any of these services (i.e. this does not drive joint appointment with multiple services).  This string parameter is interpreted as a  [Token search parameter]({{site.data.fhir.path}}/search.html#token).  Each parameter value SHALL contain *both* the system property and the code property for a code using the general syntax `service-type=[system]|[code]`.   See the examples below for how this is implemented."/>
+		<documentation value="The code for type of requested service for the appointment. ( e.g.,&#39;Echocardiography&#39; or  &#39;Well child visit&#39; ). If multiple codes are listed, the order of the codes will interpreted as the order of preference.  The response will contain appointments with any of these services (i.e. this does not drive joint appointment with multiple services).  This string parameter is interpreted as a  [Token search parameter]({site.data.fhir.path}/search.html#token).  Each parameter value SHALL contain *both* the system property and the code property for a code using the general syntax `service-type=[system]|[code]`.   See the examples below for how this is implemented."/>
 		<type value="string"/>
 		<searchType value="token"/>
 		<binding>
@@ -87,7 +87,7 @@
 		<use value="in"/>
 		<min value="0"/>
 		<max value="*"/>
-		<documentation value="A (part of the) address of the location of interest.  (e.g., zip codes, city or state).  This string parameter is interpreted as a  [String search parameter]({{site.data.fhir.path}}/search.html#string) and covers the `string` type elements in the [Address datatype]({{site.data.fhir.path}}/datatypes.html#Address). If multiple locations are listed, the order will interpreted as the order of preference. The response will contain appointments with any of these actors (i.e. this does not drive joint appointment with multiple locations)"/>
+		<documentation value="A (part of the) address of the location of interest.  (e.g., zip codes, city or state).  This string parameter is interpreted as a  [String search parameter]({site.data.fhir.path}/search.html#string) and covers the `string` type elements in the [Address datatype]({site.data.fhir.path}/datatypes.html#Address). If multiple locations are listed, the order will interpreted as the order of preference. The response will contain appointments with any of these actors (i.e. this does not drive joint appointment with multiple locations)"/>
 		<type value="string"/>
 		<searchType value="string"/>
 	</parameter>
@@ -104,7 +104,7 @@
 		<use value="in"/>
 		<min value="0"/>
 		<max value="*"/>
-		<documentation value="This parameter is a complex `Resource` type instead of a simple reference because the patient record may not exist when performing availablity searches. (If the Patient resource id is known, use the `patient-reference` parameter instead.)  It based on the [US Core Patient Profile]({{site.data.fhir.uscore}}/StructureDefinition-us-core-patient.html) and includes demographics and patient preferences that may be important for availaiblilty searches. If the appointment is for a new patient, the patient record should not be created until just before booking an appointment.  If multiple patient references are listed, the response will contain appointments which is joint match for all patients - i.e., a group appointment."/>
+		<documentation value="This parameter is a complex `Resource` type instead of a simple reference because the patient record may not exist when performing availablity searches. (If the Patient resource id is known, use the `patient-reference` parameter instead.)  It based on the [US Core Patient Profile]({site.data.fhir.uscore}/StructureDefinition-us-core-patient.html) and includes demographics and patient preferences that may be important for availaiblilty searches. If the appointment is for a new patient, the patient record should not be created until just before booking an appointment.  If multiple patient references are listed, the response will contain appointments which is joint match for all patients - i.e., a group appointment."/>
 		<type value="Resource"/>
 		<profile>
 			<reference value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"/>
@@ -117,7 +117,7 @@
     <use value="in"/>
     <min value="0"/>
     <max value="*"/>
-    <documentation value="Problems that this appointment is intended to treat. This to determine which schedulable resources are needed for the visit. For example, for an orthopedics appointment, the indication may drive whether a hip specialist or knee specialist is preferred. This string parameter is interpreted as a  [Token search parameter]({{site.data.fhir.path}}/search.html#token).  Each parameter value SHALL contain *both* the system property and the code property for a code using the general syntax `service=[system]|[code]`.  See the examples below for how this is implemented."/>
+    <documentation value="Problems that this appointment is intended to treat. This to determine which schedulable resources are needed for the visit. For example, for an orthopedics appointment, the indication may drive whether a hip specialist or knee specialist is preferred. This string parameter is interpreted as a  [Token search parameter]({site.data.fhir.path}/search.html#token).  Each parameter value SHALL contain *both* the system property and the code property for a code using the general syntax `service=[system]|[code]`.  See the examples below for how this is implemented."/>
     <type value="string"/>
     <searchType value="token"/>
     <binding>
@@ -152,7 +152,7 @@
 		<use value="out"/>
 		<min value="0"/>
 		<max value="1"/>
-		<documentation value="An [Appointment Availability Bundle profile](StructureDefinition-avail-bundle.html) of type `searchset` with entries of proposed [Appointment]({{site.data.fhir.path}}/appointment.html) resources and may also contain an [OperationOutcome]({{site.data.fhir.path}}/operationoutcome.html) with errors, warnings or information as a result of processing the operation - e.g., an informational notice that the returned appointments are not within the requested start and end times.  An empty bundle means no available appointments based on inputs"/>
+		<documentation value="An [Appointment Availability Bundle profile](StructureDefinition-avail-bundle.html) of type `searchset` with entries of proposed [Appointment]({site.data.fhir.path}/appointment.html) resources and may also contain an [OperationOutcome]({site.data.fhir.path}/operationoutcome.html) with errors, warnings or information as a result of processing the operation - e.g., an informational notice that the returned appointments are not within the requested start and end times.  An empty bundle means no available appointments based on inputs"/>
 		<type value="Bundle"/>
 		<profile>
 			<reference value="StructureDefinition/avail-bundle"/>
