@@ -6,17 +6,15 @@ Attendees:
 Attended|Name|Organization|email
 ---|---|---|---
 X |Hiten Patel|Advisory Board|patelh@advisory.com
-X |Ricky Bloomfield|Apple|rickybloomfield@apple.com
-X |Sean Moore|Apple|sean_moore2@apple.com
 X |Drew Torres|Cerner|Drew.Torres@cerner.com
-  |Jenni Syed|Cerner|Jenni.Syed@cerner.com
-  |Michelle Miller|Cerner|Michelle.M.Miller@cerner.com
+X |Jenni Syed|Cerner|Jenni.Syed@cerner.com
+X |Michelle Miller|Cerner|Michelle.M.Miller@cerner.com
 X |Cooper Thompson|Epic|Cooper@epic.com
-  |Laura Langford|Intermountain Health|Laura.Heermann@imail.or
+X |Laura Langford|Intermountain Health|Laura.Heermann@imail.or
 X |Stan Huff|Intermountain Health|stan.huff@imail.org
 X |Sean Patenuade|Meditech|spatenaude@meditech.com
-  |Lawrence O'Toole |Meditech|lotoole@meditech.com
-  |Mike Cordeiro|Meditech |mcordeiro@meditech.com
+X |Lawrence O'Toole |Meditech|lotoole@meditech.com
+X |Mike Cordeiro|Meditech |mcordeiro@meditech.com
 X |Micky Tripathi|Argonaut|mtripathi@maehc.org
 X |Jennifer Monahan|Argonaut|jmonahan@maehc.org
 X |Brett Marquard|Argonaut|brett@riverrockassociates.com
