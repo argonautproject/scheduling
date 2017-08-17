@@ -15,7 +15,7 @@ Using Both `GET` and `POST` Syntax
 
 **Using `GET`**
 
-`GET [base]/Appointment/$book?appt-id=Appointment/proposed-appt1a-1`
+`GET [base]/Appointment/$book?appt-id=Appointment/proposed-appt1a-1&comment=this%20is%20an%20url%20encoded%20appointment%20comment%20how%20long%20can%20it%20be%3F`
 
 **Using `POST`**
 
@@ -30,7 +30,12 @@ Using Both `GET` and `POST` Syntax
         {
           "name": "appt-id",
           "valueUrl" : "Appointment/proposed-appt1a-1"
+        },
+        {
+          "name": "comment",
+          "valueString" : "this is an appointment comment how long can it be?"
         }
+
       ]
     }
 

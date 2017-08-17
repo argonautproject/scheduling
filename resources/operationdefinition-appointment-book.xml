@@ -31,7 +31,15 @@
 (i.e., [US-Core Patient Search]({{site.data.fhir.uscore}}//StructureDefinition-us-core-patient.html#search)). For new patients client needs to fetch Patient ID using RESTful `POST` (or use the Conditional create) to register the patient on the FHIR Server (see [create]({{site.data.fhir.path}}//http.html#create))"/>
 		<type value="uri"/>
 	</parameter>
-	<!--	
+	<parameter>
+		<name value="comment"/>
+		<use value="in"/>
+		<min value="0"/>
+		<max value="1"/>
+		<documentation value="Comments or special instructions"/>
+		<type value="string"/>
+	</parameter>
+	<!--
 	<parameter>
 		<name value="patient-resource"/>
 		<use value="in"/>
