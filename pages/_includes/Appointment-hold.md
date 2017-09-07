@@ -1,19 +1,11 @@
 ## Example
 
-Using Both `GET` and `POST` Syntax
-
 #### Scenario 1a: Use the operation to book the appointment.
 {: #scenario-1}
 
 [Scenario Details](https://github.com/argonautproject/scheduling/wiki/Use-Cases#scenario-1a-existing-patient-schedules-directly-with-their-provider)
 
 ##### Request
-
-**Using `GET`**
-
-`GET [base]/Appointment/$hold?appt-id=Appointment/proposed-appt1a-1`
-
-**Using `POST`**
 
 `POST [base]/Appointment/$hold`
 

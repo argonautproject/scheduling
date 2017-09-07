@@ -1,10 +1,7 @@
 ## Examples
 
-Using Both `GET` and `POST` Syntax
-
 - [Scenario-1](#scenario-1)
 - [Scenario-2](#scenario-2)
-
 
 #### Scenario 1a: Use the operation to book the appointment.
 {: #scenario-1}
@@ -12,12 +9,6 @@ Using Both `GET` and `POST` Syntax
 [Scenario Details](https://github.com/argonautproject/scheduling/wiki/Use-Cases#scenario-1a-existing-patient-schedules-directly-with-their-provider)
 
 ##### Request
-
-**Using `GET`**
-
-`GET [base]/Appointment/$book?appt-id=Appointment/proposed-appt1a-1&comment=this%20is%20an%20url%20encoded%20appointment%20comment%20how%20long%20can%20it%20be%3F`
-
-**Using `POST`**
 
 `POST [base]/Appointment/$book`
 
@@ -67,10 +58,6 @@ Using Both `GET` and `POST` Syntax
 {: #scenario-2}
 
 [Scenario Details](https://github.com/argonautproject/scheduling/wiki/Use-Cases#scenario-2a-new-patient-schedules-an-appointment-with-a-provider-without-being-in-health-system)
-
-`GET [base]/Appointment/$book?appt-id=Appointment/proposed-appt2a-1&patient-id=Patient/1234`
-
-**Using `POST`**
 
 `POST [base]/Appointment/$book`
 

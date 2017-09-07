@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <OperationDefinition xmlns="http://hl7.org/fhir">
 	<id value="Appointment-hold"/>
-
 	<url value="http://fhir.org/guides/argonaut-scheduling/OperationDefinition/Appointment-hold"/>
 	<name value="Appointment Hold"/>
 	<status value="draft"/>
 	<kind value="operation"/>
 	<date value="2017-08-09T11:36:05-07:00"/>
 	<publisher value="Argonaut Project"/>
-	<description value="Request for a hold on the selected proposed Appointment in order for the user to complete entering data for booking an appointment.  This operation precedes  the booking operation for an appointment and  follows the appointment availability operation ($find).  The server determines if the nominated appointment is still available (i.e., all the required actors and physical assets needed for the appointment are still available) . The length of the hold is defined by local business rules. (TODO: determine if the length of hold needs to be an output parameter as well)"/>
+	<description value="Request for a hold on the selected proposed Appointment in order for the user to complete entering data for booking an appointment.  This operation precedes  the booking operation for an appointment and  follows the appointment availability operation ($find).  The server determines if the nominated appointment is still available (i.e., all the required actors and physical assets needed for the appointment are still available) . The length of the hold is defined by local business rules."/>
+	<idempotent value="false"/>
 	<code value="hold"/>
-	<comment value="additional notes here"/>
+	<comment value="This operation is not idempotent (see HTTP specification definition of idempotent ) may only be invoked by performing an HTTP POST."/>
 	<resource value="Appointment"/>
 	<system value="true"/>
 	<type value="true"/>
@@ -30,9 +30,8 @@
 		<max value="1"/>
 		<documentation value="An [Appointment Availability Bundle profile](StructureDefinition-avail-bundle.html)  of type `searchset` of requested held Appointment resource and may also contain an OperationOutcome with errors, warnings or information as a result of processing the operation.   The Appointment resource will have an updated `status` of &quot;pending&quot; if the hold is approved or  &quot;cancelled&quot; if the hold is rejected."/>
 		<type value="Bundle"/>
-				<profile>
+		<profile>
 			<reference value="StructureDefinition/avail-bundle"/>
 		</profile>
 	</parameter>
-
 </OperationDefinition>
