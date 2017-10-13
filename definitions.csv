@@ -6,7 +6,7 @@ dependencyList.location,http://hl7.org/fhir/us/core/STU1/|http://www.fhir.org/gu
 dependencyList.name,uscore|argopd
 dependencyList.source,uscore|argopd
 do-transforms,FALSE
-extensions,
+extensions,extension-status-reason
 fixed-business-version,0.0.0
 gen-examples,FALSE
 jurisdiction,US

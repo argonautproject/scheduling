@@ -1,0 +1,30 @@
+<CodeSystem xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir http://build.fhir.org/device.xsd">
+	<id value="status-reason"/>
+	<url value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/status-reason"/>
+	<version value="0.0.0"/>
+	<name value="Argonaut Appointment Event Reason Codes"/>
+	<status value="draft"/>
+	<experimental value="false"/>
+	<date value="2017-10-10T07:46:45-07:00"/>
+
+	<description value="The reason for the current state of the Appointment."/>
+
+	<caseSensitive value="true"/>
+	<valueSet value="http://fhir.org/guides/argonaut-scheduling/ValueSet/status-reason"/>
+	<content value="complete"/>
+	<concept>
+		<code value="patient-cancel"/>
+		<display value="Patient Cancel"/>
+		<definition value="An appointment for a patient was cancelled by the patient"/>
+	</concept>
+	<concept>
+		<code value="staff-cancel"/>
+		<display value="Staff Cancel"/>
+		<definition value="An appointment for a patient was cancelled by the provider"/>
+	</concept>
+	<concept>
+		<code value="scheduling-error"/>
+		<display value="Scheduling Error"/>
+		<definition value="An appointment for a patient was cancelled because it was made in error by the provider"/>
+	</concept>
+</CodeSystem>

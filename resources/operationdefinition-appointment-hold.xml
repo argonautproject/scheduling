@@ -12,7 +12,7 @@
 	<code value="hold"/>
 	<comment value="This operation is not idempotent (see HTTP specification definition of idempotent ) may only be invoked by performing an HTTP POST."/>
 	<resource value="Appointment"/>
-	<system value="true"/>
+	<system value="false"/>
 	<type value="true"/>
 	<instance value="false"/>
 	<parameter>

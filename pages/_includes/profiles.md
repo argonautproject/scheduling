@@ -6,10 +6,9 @@ source pages/_include/{{page.md_filename}}.md  file
 
 The following Profiles have been defined for this implementation guide.
 
-<!-- { % include list-simple-profiles.xhtml %  } -->
+<!-- { % include list-profiles.xhtml % } -->
 
-- [Available Appointments Bundle](StructureDefinition-avail-bundle.html):  Profile for Bundle resource which is returned using the Appointment$find operation.
-- [Appointment-Output](StructureDefinition-appt-output.html):  Profile for Appointment resource which is returned within the Available Appointments Bundle.
-
+<li><a href="StructureDefinition-appt-output.html">Argonaut Appointment Output Profile</a> Argonaut Appointment Output Profile</li>
+<li><a href="StructureDefinition-avail-bundle.html">Argonaut Availability Bundle Profile</a> This is the output Appointment Bundle profile which is returned as a result of the *Operation$find* operation.</li>
 
 <br />

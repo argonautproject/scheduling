@@ -1,0 +1,38 @@
+
+
+Urgency  vs appt-type
+bump people
+
+Urgency - put a pin in it.  or use Appt-type
+
+operation parameter and/or new element
+
+Next step is to circulate a short list of service types straw man
+
+slots get deleted.   is this issue in FHIR
+less work for servers / subscription is more event based
+
+no patient information in slots
+
+carve out simple and complex scenarios
+
+whole payload push.  slot no PHI
+
+draft workflow etc and review.
+
+
+note working on ProductPlan for PD (future)
+
+Prior to booking but vague
+Use overage Resource. (PlanId, payer)
+
+Home work for all
+
+
+todo list for  FHIR
+
+commits
+fhir block
+ig publishing tutorial
+QA comments
+Smart on FHIR
