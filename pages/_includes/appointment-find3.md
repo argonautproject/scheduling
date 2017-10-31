@@ -94,7 +94,7 @@ Using Both `GET` and `POST` Syntax
 ##### Request using `GET` Syntax
 
     GET  [base]/Appointment/$find?start=2017-07-15T20:00:00Z&end=2017-07-17T20:00:00Z&max=3&service-code=708175003
-    &service-codesystem=http://snomed.info/sct&appt-type-code=urgent&system=http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-types
+    &service-codesystem=http://snomed.info/sct&appt-type-code=urgent&system=http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-type
     &location=Napa
 
 ##### Request using `POST` Syntax
@@ -125,7 +125,7 @@ Using Both `GET` and `POST` Syntax
         },
         {
           "name": "appt-type-codesystem",
-          "valueUri": ["http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-types"]
+          "valueUri": ["http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-type"]
         },
         {
           "name": "service-code",

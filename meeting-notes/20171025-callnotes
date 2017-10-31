@@ -1,0 +1,51 @@
+event based
+  use case -
+  pros:
+
+  deleted slots would not be caught with search based
+vs
+search based  Using batch.
+  pros:
+ using
+
+ Isaac (Epic) event
+
+ Suscriber ID
+ Suscriber
+
+ Scenario 1 - use practice software.  low priority for Servers.
+
+ create a future appt.
+
+ scenario 2A practice softwares  low priority for servers
+
+ assumption
+ external system knows patient
+ new patient
+
+is different if Cerner/Epic to Cerner/Epic or Third Part App - like thing that providers use. Clarify if there is a diffierence between EHR to EHR vs Third Party App to EHR or is it always a Third party App?  Issue
+
+Sidebar usually done when existing agreement exist between systems.
+
+Out of network providers priveleges/Hospital systems
+
+Third party apps  - no
+
+insurance/preauth a convienance who gets this?  done by a call center ( third party ) referring or referral dr.
+
+authority to get pre-auth by referring? - not needed in all scenarios
+pre-auth future scope.
+
+medical contex is in part scope  when trigger after appointment made - DR or other existing mechanism
+
+informative
+
+work flow: clinic staff vs a call center to make appointment
+
+vs in person
+
+keep service separate from referral scenarios
+
+Scenario
+
+scheduling discharge follow up with PCP

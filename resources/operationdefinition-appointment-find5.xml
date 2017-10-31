@@ -40,7 +40,7 @@
 		<binding>
 			<strength value="extensible"/>
 			<valueSetReference>
-				<reference value="http://fhir.org/guides/argonaut-scheduling/ValueSet/types"/>
+				<reference value="http://fhir.org/guides/argonaut-scheduling/ValueSet/appt-type"/>
 			</valueSetReference>
 		</binding>
 	</parameter>
@@ -55,7 +55,7 @@
 		<binding>
 			<strength value="extensible"/>
 			<valueSetReference>
-				<reference value="http://fhir.org/guides/argonaut-scheduling/ValueSet/specialties"/>
+				<reference value="http://fhir.org/guides/argonaut-scheduling/ValueSet/specialty"/>
 			</valueSetReference>
 		</binding>
 	</parameter>
@@ -70,7 +70,7 @@
 		<binding>
 			<strength value="extensible"/>
 			<valueSetReference>
-				<reference value="http://fhir.org/guides/argonaut-scheduling/ValueSet/services"/>
+				<reference value="http://fhir.org/guides/argonaut-scheduling/ValueSet/service"/>
 			</valueSetReference>
 		</binding>
 	</parameter>

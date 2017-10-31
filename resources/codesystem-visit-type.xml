@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir http://build.fhir.org/device.xsd">
+	<id value="visit-type"/>
+	<url value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
+	<version value="0.0.0"/>
+	<name value="Argonaut Visit Types"/>
+	<status value="draft"/>
+	<experimental value="false"/>
+	<date value="2017-07-30T09:46:45-07:00"/>
+	<description value="The Argonaut Visit Types are a prioritized valueset of the most common 'business types' for scheduling and have been identified as the baseline use cases for the  Argonaut Scheduling Implementation Guide.  This is intended to facilitates implementation of the IG by provide a common starting point for interoperability.  The Visit types can be extended by implementers to meet there use cases.  In order to align with the FHIR Appointment, Schedule and Slot resources, these concepts are mapped to the Argonaut Appointment Types and Argonaut Scheduling Services Valuesets which are Snomed Concepts."/>
+	<caseSensitive value="true"/>
+	<valueSet value="http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type"/>
+	<content value="complete"/>
+	<count value="40"/>
+	<concept>
+		<code value="breast-imaging "/>
+		<display value="BREAST IMAGING "/>
+		<definition value="breast imaging  visit"/>
+	</concept>
+	<concept>
+		<code value="consult"/>
+		<display value="CONSULTATION"/>
+		<definition value="consultation visit"/>
+	</concept>
+	<concept>
+		<code value="ct"/>
+		<display value="COMPUTED TOMOGRAPHY SCAN(CT)"/>
+		<definition value="computed tomography scan(ct) visit"/>
+	</concept>
+	<concept>
+		<code value="dental"/>
+		<display value="DENTAL"/>
+		<definition value="dental visit"/>
+	</concept>
+	<concept>
+		<code value="dxa"/>
+		<display value="DUAL-ENERGY X-RAY ABSORPTIOMETRY(DXA)"/>
+		<definition value="Dual-energy X-ray absorptiometry(dxa) visit"/>
+	</concept>
+	<concept>
+		<code value="echo"/>
+		<display value="ECHOCARDIOGRAPHY(ECHO)"/>
+		<definition value="echocardiography(echo) visit"/>
+	</concept>
+	<concept>
+		<code value="echo-stresstest"/>
+		<display value="ECHOCARDIOGRAPHY(ECHO) STRESS TEST"/>
+		<definition value="echocardiography(echo) stress test visit"/>
+	</concept>
+	<concept>
+		<code value="ed-followup"/>
+		<display value="EDUCATION FOLLOW UP"/>
+		<definition value="education follow up visit"/>
+	</concept>
+	<concept>
+		<code value="eeg"/>
+		<display value="ELECTROENCEPHALOGRAPHY(EEG)"/>
+		<definition value="Electroencephalography(eeg) visit"/>
+	</concept>
+	<concept>
+		<code value="egd"/>
+		<display value="ESOPHAGOGASTRODUODENOSCOPY(EGD)"/>
+		<definition value="esophagogastroduodenoscopy(egd) visit"/>
+	</concept>
+	<concept>
+		<code value="ekg"/>
+		<display value="ELECTROCARDIOGRAM(EKG)"/>
+		<definition value="electrocardiogram(ekg) visit"/>
+	</concept>
+	<concept>
+		<code value="evaluation"/>
+		<display value="EVALUATION"/>
+		<definition value="evaluation visit"/>
+	</concept>
+	<concept>
+		<code value="flu-shot-clinic"/>
+		<display value="INFLUENZA VACCINATION CLINIC"/>
+		<definition value="Influenza vaccination clinic visit"/>
+	</concept>
+	<concept>
+		<code value="fluoroscopy"/>
+		<display value="FLUOROSCOPY"/>
+		<definition value="fluoroscopy visit"/>
+	</concept>
+	<concept>
+		<code value="follow-up"/>
+		<display value="FOLLOW UP"/>
+		<definition value="follow up visit"/>
+	</concept>
+	<concept>
+		<code value="home-health"/>
+		<display value="HOME HEALTH VISIT"/>
+		<definition value="home health visit visit"/>
+	</concept>
+	<concept>
+		<code value="injection"/>
+		<display value="INJECTION"/>
+		<definition value="injection visit"/>
+	</concept>
+	<concept>
+		<code value="inter-rad"/>
+		<display value="INTERVENTIONAL RADIOLOGY"/>
+		<definition value="interventional radiology visit"/>
+	</concept>
+	<concept>
+		<code value="lab"/>
+		<display value="LABORATORY TESTS"/>
+		<definition value="Laboratory Testing visit"/>
+	</concept>
+	<concept>
+		<code value="minor-surgery"/>
+		<display value="MINOR SURGERY"/>
+		<definition value="minor surgery visit"/>
+	</concept>
+	<concept>
+		<code value="mri"/>
+		<display value="MAGNETIC RESONANCE IMAGING(MRI)"/>
+		<definition value="magnetic resonance imaging(mri) visit"/>
+	</concept>
+	<concept>
+		<code value="new-patient"/>
+		<display value="NEW PATIENT"/>
+		<definition value="new patient visit"/>
+	</concept>
+	<concept>
+		<code value="nuc-med"/>
+		<display value="NUCLEAR MEDICINE"/>
+		<definition value="nuclear medicine visit"/>
+	</concept>
+	<concept>
+		<code value="occup-therapy"/>
+		<display value="OCCUPATIONAL THERAPY"/>
+		<definition value="occupational therapy visit"/>
+	</concept>
+	<concept>
+		<code value="office-visit"/>
+		<display value="OFFICE VISIT"/>
+		<definition value="office visit"/>
+	</concept>
+	<concept>
+		<code value="physical"/>
+		<display value="PHYSICAL"/>
+		<definition value="physical visit"/>
+	</concept>
+	<concept>
+		<code value="post-op"/>
+		<display value="POST-OPERATIVE(POST-OP)"/>
+		<definition value="post-operative visit"/>
+	</concept>
+	<concept>
+		<code value="pre-admit-testing"/>
+		<display value="PRE-ADMISSION TESTING VISIT"/>
+		<definition value="pre-admission testing visit visit"/>
+	</concept>
+	<concept>
+		<code value="pre-op"/>
+		<display value="PRE-OPERATIVE(PRE-OP)"/>
+		<definition value="pre-operative(pre-op) visit"/>
+	</concept>
+	<concept>
+		<code value="procedure"/>
+		<display value="PROCEDURE"/>
+		<definition value="procedure visit"/>
+	</concept>
+	<concept>
+		<code value="same-day"/>
+		<display value="SAME DAY"/>
+		<definition value="same day visit"/>
+	</concept>
+	<concept>
+		<code value="stress-test"/>
+		<display value="STRESS TEST"/>
+		<definition value="stress test visit"/>
+	</concept>
+	<concept>
+		<code value="surgery"/>
+		<display value="SURGERY"/>
+		<definition value="surgery visit"/>
+	</concept>
+	<concept>
+		<code value="treatment"/>
+		<display value="TREATMENT"/>
+		<definition value="treatment visit"/>
+	</concept>
+	<concept>
+		<code value="ultrasound"/>
+		<display value="ULTRASOUND"/>
+		<definition value="ultrasound visit"/>
+	</concept>
+	<concept>
+		<code value="urgent"/>
+		<display value="URGENT"/>
+		<definition value="urgent visit"/>
+	</concept>
+	<concept>
+		<code value="vaccine"/>
+		<display value="VACCINATION"/>
+		<definition value="vaccination visit"/>
+	</concept>
+	<concept>
+		<code value="vision"/>
+		<display value="VISION"/>
+		<definition value="vision visit"/>
+	</concept>
+	<concept>
+		<code value="walk-in"/>
+		<display value="WALK IN"/>
+		<definition value="walk in visit"/>
+	</concept>
+	<concept>
+		<code value="well-child"/>
+		<display value="WELL CHILD"/>
+		<definition value="well child visit"/>
+	</concept>
+	<concept>
+		<code value="x-ray"/>
+		<display value="X-RAY"/>
+		<definition value="x-ray visit"/>
+	</concept>
+</CodeSystem>

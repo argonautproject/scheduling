@@ -1,6 +1,6 @@
 <CodeSystem xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir http://build.fhir.org/device.xsd">
-	<id value="appt-types"/>
-	<url value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-types"/>
+	<id value="appt-type"/>
+	<url value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-type"/>
 	<version value="0.0.0"/>
 	<name value="AppointmentTypes"/>
 	<status value="draft"/>
@@ -10,7 +10,7 @@
 	<description value="The style of appointment or patient for appointment booking (not service type)."/>
 
 	<caseSensitive value="true"/>
-	<valueSet value="http://fhir.org/guides/argonaut-scheduling/ValueSet/appt-types"/>
+	<valueSet value="http://fhir.org/guides/argonaut-scheduling/ValueSet/appt-type"/>
 	<content value="complete"/>
 	<concept>
 		<code value="new-patient"/>

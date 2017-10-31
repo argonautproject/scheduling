@@ -31,7 +31,7 @@
     <binding>
       <strength value="extensible"/>
       <valueSetReference>
-        <reference value="http://fhir.org/guides/argonaut-scheduling/ValueSet/specialties"/>
+        <reference value="http://fhir.org/guides/argonaut-scheduling/ValueSet/specialty"/>
       </valueSetReference>
     </binding>
   </parameter>
@@ -45,7 +45,7 @@
     <binding>
       <strength value="extensible"/>
       <valueSetReference>
-        <reference value="http://fhir.org/guides/argonaut-scheduling/ValueSet/services2"/>
+        <reference value="http://fhir.org/guides/argonaut-scheduling/ValueSet/service2"/>
       </valueSetReference>
     </binding>
   </parameter>

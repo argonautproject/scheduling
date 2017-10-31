@@ -13,4 +13,10 @@ These value sets have been defined for this implementation guide.
 **Code systems published in this IG** - Includes US Core defined code systems and externally defined code systems
 {% include list-simple-codesystems.xhtml %}
 
+#### Concept Maps
+
+These concept mappings have been defined for this implementation guide.
+{% include list-simple-conceptmaps.xhtml %}
+
+
 <br />

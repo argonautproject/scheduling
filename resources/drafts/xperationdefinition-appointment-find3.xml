@@ -10,20 +10,20 @@
     <parameter><name value="appt-type-codesystem"/><use value="in"/><min value="0"/><max value="*"/><documentation value="The code system for the appointment type."/><type value="uri"/></parameter>
     <parameter><name value="appt-type-code"/><use value="in"/><min value="0"/><max value="*"/><documentation value="The code for the type of the appointment. ( e.g., &#39;new patient&#39;or  &#39;follow up&#39;).  Each type code must have a corresponding  `appt-type-codesystem`  input parameter."/><type value="code"/>
         <binding><strength value="extensible"/>
-            <valueSetReference><reference value="http://fhir.org/guides/argonaut-scheduling/ValueSet/types"/></valueSetReference>
+            <valueSetReference><reference value="http://fhir.org/guides/argonaut-scheduling/ValueSet/appt-type"/></valueSetReference>
         </binding>
     </parameter>
     <parameter><name value="specialty-codesystem"/><use value="in"/><min value="0"/><max value="*"/><documentation value="The code system for the specialty code."/><type value="uri"/></parameter>
     <parameter><name value="specialty-code"/><use value="in"/><min value="0"/><max value="*"/><documentation
         value="The code for which specialty is requested for the appointment. ( e.g., &#39;Dermatology&#39;).   If multiple codes are listed, the order of the codes will interpreted as the order of preference.  The response will contain appointments with any of these actors (i.e. this does not drive joint appointment with multiple actors).  Each specialty code must have a corresponding  `specialty-codesystem`  input parameter."/><type value="code"/>
         <binding><strength value="extensible"/>
-            <valueSetReference><reference value="http://fhir.org/guides/argonaut-scheduling/ValueSet/specialties"/></valueSetReference>
+            <valueSetReference><reference value="http://fhir.org/guides/argonaut-scheduling/ValueSet/specialty"/></valueSetReference>
         </binding>
     </parameter>
     <parameter><name value="service-codesystem"/><use value="in"/><min value="0"/><max value="1"/><documentation value="The code system for the service code."/><type value="uri"/></parameter>
     <parameter><name value="service-code"/><use value="in"/><min value="0"/><max value="1"/><documentation value="The code for type of requested service for the appointment. ( e.g.,&#39;Echocardiography&#39; or  &#39;Well child visit&#39; ).  The service code must have a corresponding  `service-codesystem` input parameter."/><type value="code"/>
         <binding><strength value="extensible"/>
-            <valueSetReference><reference value="http://fhir.org/guides/argonaut-scheduling/ValueSet/services"/></valueSetReference>
+            <valueSetReference><reference value="http://fhir.org/guides/argonaut-scheduling/ValueSet/service"/></valueSetReference>
         </binding>
     </parameter>
     <parameter><name value="provider"/><use value="in"/><min value="0"/><max value="*"/><documentation

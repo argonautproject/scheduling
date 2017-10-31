@@ -127,7 +127,7 @@ Using `POST` Syntax and *Parameters* resource in the payload
       {
         "name": "appt-type",
         "valueCoding": [{
-            "system" : "http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-types",
+            "system" : "http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-type",
             "code" : "urgent",
             "display" : "Urgent"
           }]

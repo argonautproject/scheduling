@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ValueSet xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir http://build.fhir.org/device.xsd">
-	<id value="types"/>
-	<url value="http://fhir.org/guides/argonaut-scheduling/ValueSet/types"/>
+	<id value="appt-type"/>
+	<url value="http://fhir.org/guides/argonaut-scheduling/ValueSet/appt-type"/>
 	<version value="1.0.0"/>
 	<name value="Argonaut Appointment Types"/>
 	<status value="draft"/>
@@ -9,7 +9,7 @@
 	<description value="The style of appointment or patient for appointment booking (not service type)."/>
 	<compose>
 		<include>
-			<system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-types"/>
+			<system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-type"/>
 		</include>
 				<include>
 			<valueSet value="http://hl7.org/fhir/ValueSet/v2-0276"/>

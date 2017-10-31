@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ValueSet xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir http://build.fhir.org/device.xsd">
-	<id value="specialties"/>
-	<url value="http://fhir.org/guides/argonaut-scheduling/ValueSet/specialties"/>
+	<id value="specialty"/>
+	<url value="http://fhir.org/guides/argonaut-scheduling/ValueSet/specialty"/>
 	<version value="1.0.0"/>
 	<name value="Argonaut Scheduling Specialties"/>
 	<status value="draft"/>

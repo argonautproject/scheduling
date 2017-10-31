@@ -7380,7 +7380,7 @@
     <Cell ss:StyleID="s134"><Data ss:Type="String">value set</Data></Cell>
     <Cell ss:StyleID="s134"><Data ss:Type="String">extensible</Data></Cell>
     <Cell ss:StyleID="s134"><Data ss:Type="String">yes</Data></Cell>
-    <Cell ss:StyleID="Default"><Data ss:Type="String">http://fhir.org/guides/argonaut-scheduling/ValueSet/types</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">http://fhir.org/guides/argonaut-scheduling/ValueSet/appt-type</Data></Cell>
     <Cell ss:StyleID="s134"/>
     <Cell ss:StyleID="s134"/>
     <Cell ss:StyleID="s134"/>
@@ -7396,7 +7396,7 @@
     <Cell ss:StyleID="s134"><Data ss:Type="String">value set</Data></Cell>
     <Cell ss:StyleID="s134"><Data ss:Type="String">extensible</Data></Cell>
     <Cell ss:StyleID="s134"><Data ss:Type="String">yes</Data></Cell>
-    <Cell ss:StyleID="Default"><Data ss:Type="String">http://fhir.org/guides/argonaut-scheduling/ValueSet/specialties</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">http://fhir.org/guides/argonaut-scheduling/ValueSet/specialty</Data></Cell>
     <Cell ss:StyleID="s134"/>
     <Cell ss:StyleID="s134"/>
     <Cell ss:StyleID="s134"/>
@@ -7412,7 +7412,7 @@
     <Cell ss:StyleID="s134"><Data ss:Type="String">value set</Data></Cell>
     <Cell ss:StyleID="s134"><Data ss:Type="String">extensible</Data></Cell>
     <Cell ss:StyleID="s134"><Data ss:Type="String">yes</Data></Cell>
-    <Cell ss:StyleID="s155"><Data ss:Type="String">http://fhir.org/guides/argonaut-scheduling/ValueSet/services</Data></Cell>
+    <Cell ss:StyleID="s155"><Data ss:Type="String">http://fhir.org/guides/argonaut-scheduling/ValueSet/service</Data></Cell>
     <Cell ss:StyleID="s134"/>
     <Cell ss:StyleID="s134"/>
     <Cell ss:StyleID="s134"/>

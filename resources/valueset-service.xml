@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ValueSet xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir http://build.fhir.org/device.xsd">
-	<id value="services"/>
-	<url value="http://fhir.org/guides/argonaut-scheduling/ValueSet/services"/>
+	<id value="service"/>
+	<url value="http://fhir.org/guides/argonaut-scheduling/ValueSet/service"/>
 	<version value="1.0.0"/>
 	<name value="Argonaut Scheduling Services"/>
 	<status value="draft"/>
@@ -14,6 +14,30 @@
 			<concept>
 				<code value="11429006"/>
 				<display value="Consultation (procedure)"/>
+			</concept>
+			<concept>
+				<code value="185387006"/>
+				<display value="New patient consultation (procedure)"/>
+			</concept>
+			<concept>
+				<code value="310058008"/>
+				<display value="Nuclear medicine service (procedure)"/>
+			</concept>
+			<concept>
+				<code value="439740005"/>
+				<display value="Postoperative follow-up visit (procedure)"/>
+			</concept>
+			<concept>
+				<code value="406153003"/>
+				<display value="Pre-admission assessment (procedure)"/>
+			</concept>
+			<concept>
+				<code value="77132007"/>
+				<display value="Therapeutic procedure (procedure)"/>
+			</concept>
+			<concept>
+				<code value="406153003"/>
+				<display value="Pre-admission assessment (procedure)"/>
 			</concept>
 			<concept>
 				<code value="241686001"/>
