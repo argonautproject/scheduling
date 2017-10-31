@@ -6,7 +6,7 @@
 	<name value="Argonaut Scheduling Services"/>
 	<status value="draft"/>
 	<date value="2017-07-12T19:40:10Z"/>
-	<description value="The service types offered by providers and  that is to be performed during this appointment. "/>
+	<description value="The service types offered by providers and  that is to be performed during this appointment.  These concepts are used in the FHIR Appointment, Schedule and Slot resources. The [Argonaut Scheduling Visit Types](ConceptMap-visit-service-map.html) are mapped to these concepts "/>
 	<copyright value="This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement"/>
 	<compose>
 		<include>
