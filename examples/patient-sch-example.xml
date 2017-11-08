@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patient xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://hl7.org/fhir"  >
+	<id value="argo-sch-patient"/>
+	<meta>
+		<profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"/>
+	</meta>
+	<extension url="http://hl7.org/fhir/us/core/StructureDefinition/us-core-race">
+		<extension url="ombCategory">
+			<valueCoding>
+				<system value="urn:oid:2.16.840.1.113883.6.238"/>
+				<code value="2106-3"/>
+				<display value="White"/>
+			</valueCoding>
+		</extension>
+		<extension url="text">
+			<valueString value="White"/>
+		</extension>
+	</extension>
+	<extension url="http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity">
+		<extension url="ombCategory">
+			<valueCoding>
+				<system value="urn:oid:2.16.840.1.113883.6.238"/>
+				<code value="2135-2"/>
+				<display value="Hispanic or Latino"/>
+			</valueCoding>
+		</extension>
+		<extension url="text">
+			<valueString value="Hispanic or Latino"/>
+		</extension>
+	</extension>
+	<extension url="http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex">
+		<valueCode value="M"/>
+	</extension>
+	<identifier>
+		<use value="usual"/>
+		<type>
+			<coding>
+				<system value="http://hl7.org/fhir/v2/0203"/>
+				<code value="MR"/>
+				<display value="Medical Record Number"/>
+			</coding>
+			<text value="Medical Record Number"/>
+		</type>
+		<system value="http://hospital.smarthealthit.org"/>
+		<value value="1032702"/>
+	</identifier>
+	<active value="true"/>
+	<name>
+		<family value="LastName"/>
+		<given value="First"/>
+		<given value="M"/>
+		<suffix value="Jr"/>
+	</name>
+	<telecom>
+		<system value="phone"/>
+		<value value="555-555-5555"/>
+		<use value="home"/>
+	</telecom>
+	<telecom>
+		<system value="email"/>
+		<value value="myemail@example.com"/>
+	</telecom>
+	<gender value="male"/>
+	<birthDate value="1964-06-19"/>
+	<address>
+		<line value="123 Main St"/>
+		<city value="Santa Rosa"/>
+		<state value="CA"/>
+		<postalCode value="95555"/>
+		<country value="US"/>
+	</address>
+</Patient>
