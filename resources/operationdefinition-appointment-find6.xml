@@ -165,7 +165,7 @@
 					<td/>
 					<td>
 						<div>
-							<p>This parameter is a complex <code>Resource</code> type. It based on the <a href="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-coverage">Argonaut Coverage Profile</a> and is used to provide insurance information for scheduling an appointment and or registering a patient. If the Patient resource id is not known the Patient resource needs to be <a href="http://build.fhir.org/references.html#contained">contained</a> within this resource and a separate <code>patient-resource</code> input parameter is not needed.  If multiple coverage resources are listed, the response will contain appointments which is joint match for all coverages and patients - i.e., a group appointment.</p>
+							<p>This parameter is a complex <code>Resource</code> type. It based on the <a href="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-coverage">Argonaut Coverage Profile</a> and is used to provide insurance information for scheduling an appointment and or registering a patient. Becasue the resource references a patient, either the Patient resource id must be known or the <code>patient-resource</code> parameter must be present and contain a business identifer that can be referenced by this resource.  If multiple coverage resources are listed, the response will contain appointments which is joint match for all coverages and patients - i.e., a group appointment.</p>
 						</div>
 					</td>
 				</tr>
@@ -317,7 +317,7 @@
 		<use value="in"/>
 		<min value="0"/>
 		<max value="*"/>
-		<documentation value="This parameter is a complex `Resource` type. It based on the [Argonaut Coverage Profile](http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-coverage) and is used to provide insurance information for scheduling an appointment and or registering a patient. If the Patient resource id is not known the Patient resource needs to be [contained](http://build.fhir.org/references.html#contained) within this resource and a separate `patient-resource` input parameter is not needed.  If multiple coverage resources are listed, the response will contain appointments which is joint match for all coverages and patients - i.e., a group appointment."/>
+		<documentation value="This parameter is a complex `Resource` type. It based on the [Argonaut Coverage Profile](http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-coverage) and is used to provide insurance information for scheduling an appointment and or registering a patient. Becasue the resource references a patient, either the Patient resource id must be known or the `patient-resource` parameter must be present and contain a business identifer that can be referenced by this resource.  If multiple coverage resources are listed, the response will contain appointments which is joint match for all coverages and patients - i.e., a group appointment."/>
 		<type value="Resource"/>
 		<profile>
 			<reference value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-coverage"/>
