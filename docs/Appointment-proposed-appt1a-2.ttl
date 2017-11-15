@@ -1,0 +1,73 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/argonaut-scheduling/Appointment/proposed-appt1a-2> a fhir:Appointment;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "proposed-appt1a-2"];
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/appt-output";
+       fhir:index 0
+     ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: proposed-appt1a-2</p><p><b>meta</b>: </p><p><b>status</b>: proposed</p><p><b>serviceType</b>: Office Call <span style=\"background: LightGoldenRodYellow\">(Details : {SNOMED CT code '11429006' = 'Consultation with healthcare provider', given as 'Consultation (procedure)'})</span></p><p><b>appointmentType</b>: Routine <span style=\"background: LightGoldenRodYellow\">(Details : {http://hl7.org/fhir/v2/0276 code 'ROUTINE' = 'Routine appointment - default if not valued)</span></p><p><b>start</b>: Jul 17, 2017 1:00:00 AM</p><p><b>end</b>: Jul 17, 2017 1:15:00 AM</p><blockquote><p><b>participant</b></p><p><b>actor</b>: <a href=\"Practitioner-dr-y.html\">Dr Y. Generated Summary: id: dr-y; 9941339108, 25456; Y </a></p><p><b>required</b>: required</p><p><b>status</b>: needs-action</p></blockquote><blockquote><p><b>participant</b></p><p><b>actor</b>: Napa Office</p><p><b>required</b>: required</p><p><b>status</b>: needs-action</p></blockquote><p><b>requestedPeriod</b>: Jul 15, 2017 8:00:00 PM --&gt; Jul 17, 2017 8:00:00 PM</p></div>"
+  ];
+  fhir:Appointment.status [ fhir:value "proposed"];
+  fhir:Appointment.serviceType [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:11429006;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "11429006" ];
+       fhir:Coding.display [ fhir:value "Consultation (procedure)" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Office Call" ]
+  ];
+  fhir:Appointment.appointmentType [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://hl7.org/fhir/v2/0276" ];
+       fhir:Coding.code [ fhir:value "ROUTINE" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Routine" ]
+  ];
+  fhir:Appointment.start [ fhir:value "2017-07-17T01:00:00Z"^^xsd:dateTime];
+  fhir:Appointment.end [ fhir:value "2017-07-17T01:15:00Z"^^xsd:dateTime];
+  fhir:Appointment.participant [
+     fhir:index 0;
+     fhir:Appointment.participant.actor [
+       fhir:link <http://fhir.org/guides/argonaut-scheduling/Practitioner/dr-y>;
+       fhir:Reference.reference [ fhir:value "Practitioner/dr-y" ];
+       fhir:Reference.display [ fhir:value "Dr Y" ]
+     ];
+     fhir:Appointment.participant.required [ fhir:value "required" ];
+     fhir:Appointment.participant.status [ fhir:value "needs-action" ]
+  ], [
+     fhir:index 1;
+     fhir:Appointment.participant.actor [
+       fhir:Reference.display [ fhir:value "Napa Office" ]
+     ];
+     fhir:Appointment.participant.required [ fhir:value "required" ];
+     fhir:Appointment.participant.status [ fhir:value "needs-action" ]
+  ];
+  fhir:Appointment.requestedPeriod [
+     fhir:index 0;
+     fhir:Period.start [ fhir:value "2017-07-15T20:00:00Z"^^xsd:dateTime ];
+     fhir:Period.end [ fhir:value "2017-07-17T20:00:00Z"^^xsd:dateTime ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.org/guides/argonaut-scheduling/Appointment/proposed-appt1a-2.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

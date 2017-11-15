@@ -1,0 +1,215 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/argonaut-scheduling/ConceptMap/visit-appt-map> a fhir:ConceptMap;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "visit-appt-map"];
+  fhir:DomainResource.text [ fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n<h2>Argonaut Scheduling Visit Type to Appointment Type Mapping(http://fhir.org/guides/argonaut-scheduling/ConceptMap/visit-appt-map)</h2><p>Mapping from <a href=\"http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type\">http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type</a> to <a href=\"http://fhir.org/guides/argonaut-scheduling/ValueSet/appt-type\">http://fhir.org/guides/argonaut-scheduling/ValueSet/appt-type</a></p><p>DRAFT. Published on Oct 30, 2017 6:49:44 PM by Argonaut Project</p><p>The source concepts are Argonaut Visit Types which are a prioritized valueset of the most common appointment types for scheduling and have been identified as the baseline use cases for the  Argonaut scheduling Implementation Guide.   The Visit types are mapped to the target concepts from the Argonaut Appointment Types Valueset in order to align with the FHIR Appointment, Schedule and Slot resources.  <strong>Note</strong>: where the there is no mapping the appointment type is assumed to be 'ROUTINE'.</p><br/><table class=\"grid\"><thead><tr><th><strong>Source Code</strong></th><th><strong>Equivalence</strong></th><th><strong>Destination Code</strong></th><th><strong>Destination CodeSystem</strong></th><th><strong>Comment</strong></th></tr></thead><tbody><tr><td>breast-imaging</td><td/><td/><td/><td/></tr><tr><td>consult</td><td/><td/><td/><td/></tr><tr><td>ct</td><td/><td/><td/><td/></tr><tr><td>dental</td><td/><td/><td/><td/></tr><tr><td>dxa</td><td/><td/><td/><td/></tr><tr><td>echo</td><td/><td/><td/><td/></tr><tr><td>echo-stresstest</td><td/><td/><td/><td/></tr><tr><td>ed-followup</td><td>equivalent</td><td>FOLLOWUP</td><td><a href=\"http://hl7.org/fhir/v2/0276\">http://hl7.org/fhir/v2/0276</a></td><td/></tr><tr><td>eeg</td><td/><td/><td/><td/></tr><tr><td>egd</td><td/><td/><td/><td/></tr><tr><td>ekg</td><td/><td/><td/><td/></tr><tr><td>evaluation</td><td/><td/><td/><td/></tr><tr><td>flu-shot-clinic</td><td/><td/><td/><td/></tr><tr><td>fluoroscopy</td><td/><td/><td/><td/></tr><tr><td>follow-up</td><td>equivalent</td><td>FOLLOWUP</td><td><a href=\"http://hl7.org/fhir/v2/0276\">http://hl7.org/fhir/v2/0276</a></td><td/></tr><tr><td>home-heath visit</td><td/><td/><td/><td/></tr><tr><td>injection</td><td/><td/><td/><td/></tr><tr><td>interventional-rad</td><td/><td/><td/><td/></tr><tr><td>lab</td><td/><td/><td/><td/></tr><tr><td>minor-surgery</td><td/><td/><td/><td/></tr><tr><td>mri</td><td/><td/><td/><td/></tr><tr><td>new-patient</td><td>equal</td><td>new-patient</td><td><a href=\"http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-types\">http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-types</a></td><td/></tr><tr><td>nuc-med</td><td/><td/><td/><td/></tr><tr><td>occup-therapy</td><td/><td/><td/><td/></tr><tr><td>office-visit</td><td/><td/><td/><td/></tr><tr><td>physical</td><td/><td/><td/><td/></tr><tr><td>post-op</td><td>equal</td><td>post-op</td><td><a href=\"http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-types\">http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-types</a></td><td/></tr><tr><td>pre-admit-testing</td><td/><td/><td/><td/></tr><tr><td>pre-op</td><td>equal</td><td>pre-op</td><td><a href=\"http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-types\">http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-types</a></td><td/></tr><tr><td>procedure</td><td/><td/><td/><td/></tr><tr><td>same-day</td><td>equal</td><td>same-day</td><td><a href=\"http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-types\">http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-types</a></td><td/></tr><tr><td>stress-test</td><td/><td/><td/><td/></tr><tr><td>surgery</td><td/><td/><td/><td/></tr><tr><td>treatment</td><td/><td/><td/><td/></tr><tr><td>ultrasound</td><td/><td/><td/><td/></tr><tr><td>urgent</td><td>equal</td><td>urgent</td><td><a href=\"http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-types\">http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-types</a></td><td/></tr><tr><td>vaccine</td><td/><td/><td/><td/></tr><tr><td>vision</td><td/><td/><td/><td/></tr><tr><td>walk-in</td><td>equivalent</td><td>WALKIN</td><td><a href=\"http://hl7.org/fhir/v2/0276\">http://hl7.org/fhir/v2/0276</a></td><td/></tr><tr><td>well-child</td><td/><td/><td/><td/></tr><tr><td>x-ray</td><td/><td/><td/><td/></tr></tbody></table>\n		</div>"];
+  fhir:ConceptMap.url [ fhir:value "http://fhir.org/guides/argonaut-scheduling/ConceptMap/visit-appt-map"];
+  fhir:ConceptMap.version [ fhir:value "0.0.0"];
+  fhir:ConceptMap.name [ fhir:value "Argonaut Scheduiing Visit Type to Appointment Type Mapping"];
+  fhir:ConceptMap.status [ fhir:value "draft"];
+  fhir:ConceptMap.date [ fhir:value "2017-10-31T10:57:43-07:00"^^xsd:dateTime];
+  fhir:ConceptMap.publisher [ fhir:value "Argonaut Project"];
+  fhir:ConceptMap.description [ fhir:value "The source concepts are Argonaut Visit Types which are a prioritized valueset of the most common appointment types for scheduling and have been identified as the baseline use cases for the  Argonaut scheduling Implementation Guide.   The Visit types are mapped to the target concepts from the Argonaut Appointment Types Valueset in order to align with the FHIR Appointment, Schedule and Slot resources.  Note where the there is no mapping the appointment type is assumed to be 'ROUTINE'."];
+  fhir:ConceptMap.jurisdiction [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ];
+       fhir:Coding.code [ fhir:value "US" ];
+       fhir:Coding.display [ fhir:value "United States Minor Outlying Islands (the)" ]
+     ]
+  ];
+  fhir:ConceptMap.sourceUri [ fhir:value "http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type"];
+  fhir:ConceptMap.targetUri [ fhir:value "http://fhir.org/guides/argonaut-scheduling/ValueSet/appt-type"];
+  fhir:ConceptMap.group [
+     fhir:index 0;
+     fhir:ConceptMap.group.source [ fhir:value "http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type" ];
+     fhir:ConceptMap.group.target [ fhir:value "http://hl7.org/fhir/v2/0276" ];
+     fhir:ConceptMap.group.element [
+       fhir:index 0;
+       fhir:ConceptMap.group.element.code [ fhir:value "ed-followup" ];
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "FOLLOWUP" ];
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 1;
+       fhir:ConceptMap.group.element.code [ fhir:value "follow-up" ];
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "FOLLOWUP" ];
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 2;
+       fhir:ConceptMap.group.element.code [ fhir:value "walk-in" ];
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "WALKIN" ];
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:ConceptMap.group.source [ fhir:value "http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type" ];
+     fhir:ConceptMap.group.target [ fhir:value "http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-types" ];
+     fhir:ConceptMap.group.element [
+       fhir:index 0;
+       fhir:ConceptMap.group.element.code [ fhir:value "new-patient" ];
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "new-patient" ];
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equal" ]
+       ]
+     ], [
+       fhir:index 1;
+       fhir:ConceptMap.group.element.code [ fhir:value "post-op" ];
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "post-op" ];
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equal" ]
+       ]
+     ], [
+       fhir:index 2;
+       fhir:ConceptMap.group.element.code [ fhir:value "pre-op" ];
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "pre-op" ];
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equal" ]
+       ]
+     ], [
+       fhir:index 3;
+       fhir:ConceptMap.group.element.code [ fhir:value "same-day" ];
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "same-day" ];
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equal" ]
+       ]
+     ], [
+       fhir:index 4;
+       fhir:ConceptMap.group.element.code [ fhir:value "urgent" ];
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "urgent" ];
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equal" ]
+       ]
+     ]
+  ], [
+     fhir:index 2;
+     fhir:ConceptMap.group.source [ fhir:value "http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type" ];
+     fhir:ConceptMap.group.element [
+       fhir:index 0;
+       fhir:ConceptMap.group.element.code [ fhir:value "breast-imaging" ]
+     ], [
+       fhir:index 1;
+       fhir:ConceptMap.group.element.code [ fhir:value "consult" ]
+     ], [
+       fhir:index 2;
+       fhir:ConceptMap.group.element.code [ fhir:value "ct" ]
+     ], [
+       fhir:index 3;
+       fhir:ConceptMap.group.element.code [ fhir:value "dental" ]
+     ], [
+       fhir:index 4;
+       fhir:ConceptMap.group.element.code [ fhir:value "dxa" ]
+     ], [
+       fhir:index 5;
+       fhir:ConceptMap.group.element.code [ fhir:value "echo" ]
+     ], [
+       fhir:index 6;
+       fhir:ConceptMap.group.element.code [ fhir:value "echo-stresstest" ]
+     ], [
+       fhir:index 7;
+       fhir:ConceptMap.group.element.code [ fhir:value "eeg" ]
+     ], [
+       fhir:index 8;
+       fhir:ConceptMap.group.element.code [ fhir:value "egd" ]
+     ], [
+       fhir:index 9;
+       fhir:ConceptMap.group.element.code [ fhir:value "ekg" ]
+     ], [
+       fhir:index 10;
+       fhir:ConceptMap.group.element.code [ fhir:value "evaluation" ]
+     ], [
+       fhir:index 11;
+       fhir:ConceptMap.group.element.code [ fhir:value "flu-shot-clinic" ]
+     ], [
+       fhir:index 12;
+       fhir:ConceptMap.group.element.code [ fhir:value "fluoroscopy" ]
+     ], [
+       fhir:index 13;
+       fhir:ConceptMap.group.element.code [ fhir:value "home-heath visit" ]
+     ], [
+       fhir:index 14;
+       fhir:ConceptMap.group.element.code [ fhir:value "injection" ]
+     ], [
+       fhir:index 15;
+       fhir:ConceptMap.group.element.code [ fhir:value "interventional-rad" ]
+     ], [
+       fhir:index 16;
+       fhir:ConceptMap.group.element.code [ fhir:value "lab" ]
+     ], [
+       fhir:index 17;
+       fhir:ConceptMap.group.element.code [ fhir:value "minor-surgery" ]
+     ], [
+       fhir:index 18;
+       fhir:ConceptMap.group.element.code [ fhir:value "mri" ]
+     ], [
+       fhir:index 19;
+       fhir:ConceptMap.group.element.code [ fhir:value "nuc-med" ]
+     ], [
+       fhir:index 20;
+       fhir:ConceptMap.group.element.code [ fhir:value "occup-therapy" ]
+     ], [
+       fhir:index 21;
+       fhir:ConceptMap.group.element.code [ fhir:value "office-visit" ]
+     ], [
+       fhir:index 22;
+       fhir:ConceptMap.group.element.code [ fhir:value "physical" ]
+     ], [
+       fhir:index 23;
+       fhir:ConceptMap.group.element.code [ fhir:value "pre-admit-testing" ]
+     ], [
+       fhir:index 24;
+       fhir:ConceptMap.group.element.code [ fhir:value "procedure" ]
+     ], [
+       fhir:index 25;
+       fhir:ConceptMap.group.element.code [ fhir:value "stress-test" ]
+     ], [
+       fhir:index 26;
+       fhir:ConceptMap.group.element.code [ fhir:value "surgery" ]
+     ], [
+       fhir:index 27;
+       fhir:ConceptMap.group.element.code [ fhir:value "treatment" ]
+     ], [
+       fhir:index 28;
+       fhir:ConceptMap.group.element.code [ fhir:value "ultrasound" ]
+     ], [
+       fhir:index 29;
+       fhir:ConceptMap.group.element.code [ fhir:value "vaccine" ]
+     ], [
+       fhir:index 30;
+       fhir:ConceptMap.group.element.code [ fhir:value "vision" ]
+     ], [
+       fhir:index 31;
+       fhir:ConceptMap.group.element.code [ fhir:value "well-child" ]
+     ], [
+       fhir:index 32;
+       fhir:ConceptMap.group.element.code [ fhir:value "x-ray" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.org/guides/argonaut-scheduling/ConceptMap/visit-appt-map.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

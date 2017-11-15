@@ -1,0 +1,86 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/argonaut-scheduling/OperationDefinition/Appointment-book> a fhir:OperationDefinition;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "Appointment-book"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>Appointment Book</h2><p>OPERATION: Appointment Book</p><p>The official URL for this operation definition is: </p><pre>http://fhir.org/guides/argonaut-scheduling/OperationDefinition/Appointment-book</pre><div><p>Request to book the selected proposed Appointment.  This operation  follows the appointment availability ($find) and optional hold  ($hold) operations.  The server determines if the nominated appointment is still available (i.e., all the required actors and physical assets needed for the appointment are still available) .</p>\n</div><p>URL: [base]/Appointment/$book</p><p>Parameters</p><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>appt-id</td><td>0..1</td><td>uri</td><td/><td><div><p>A resource id for one of proposed Appointments returned by a prior $find operation (e.g., Resource/1234).  This is the same resource id as used for the $hold operation.  References can be to an absolute URL, but servers only perform this operation on their own appointments.</p>\n</div></td></tr><tr><td>IN</td><td>patient-id</td><td>0..*</td><td>uri</td><td/><td><div><p>A resource id for the Patient(s) participant in the resource (e.g., Patient/1234).  References can be to an absolute URL, but servers only perform this operation on their own patients.  For existing patients the client may need to fetch Patient ID using RESTful <code>GET</code> to the FHIR Server (i.e., <a href=\"{site.data.fhir.uscore}/StructureDefinition-us-core-patient.html#search\">US-Core Patient Search</a>). For new patients client needs to fetch Patient ID using RESTful <code>POST</code> to register the patient on the FHIR Server (see <a href=\"{site.data.fhir.path}/http.html#create\">create</a> and <a href=\"{site.data.fhir.path}/http.html#ccreate\">conditional create</a>)</p>\n</div></td></tr><tr><td>IN</td><td>comment</td><td>0..1</td><td>string</td><td/><td><div><p>Comments or special instructions</p>\n</div></td></tr><tr><td>OUT</td><td>return</td><td>0..1</td><td>Bundle</td><td/><td><div><p>An <a href=\"StructureDefinition-avail-bundle.html\">Appointment Availability Bundle profile</a> of type <code>searchset</code> of requested Appointment resource and may also contain an <a href=\"{site.data.fhir.path}/operationoutcome.html\">OperationOutcome</a> with errors, warnings or information as a result of processing the operation.   If the booking is accepted, the Appointment resource will have an updated <code>status</code> of &quot;booked&quot; and  the <code>participants</code>element updated to include the patients.  If the booking is rejected, the Appointment resource will have an updated <code>status</code> of  &quot;cancelled&quot;.</p>\n</div></td></tr></table><div><p>This operation is not idempotent (see HTTP specification definition of idempotent ) may only be invoked by performing an HTTP POST.</p>\n<p>It is assumed that the server has identified and secured the context appropriately, and can either associate the authorization context with the patient(s), or determine whether the context has the rights to the nominated patient(s), if there is one.  Specifying the relationship between the context, a user and patient records is outside the scope of this specification</p>\n</div></div>"
+  ];
+  fhir:OperationDefinition.url [ fhir:value "http://fhir.org/guides/argonaut-scheduling/OperationDefinition/Appointment-book"];
+  fhir:OperationDefinition.version [ fhir:value "0.0.0"];
+  fhir:OperationDefinition.name [ fhir:value "Appointment Book"];
+  fhir:OperationDefinition.status [ fhir:value "draft"];
+  fhir:OperationDefinition.kind [ fhir:value "operation"];
+  fhir:OperationDefinition.date [ fhir:value "2017-08-09T11:36:05-07:00"^^xsd:dateTime];
+  fhir:OperationDefinition.publisher [ fhir:value "Argonaut Project"];
+  fhir:OperationDefinition.description [ fhir:value "Request to book the selected proposed Appointment.  This operation  follows the appointment availability ($find) and optional hold  ($hold) operations.  The server determines if the nominated appointment is still available (i.e., all the required actors and physical assets needed for the appointment are still available) ."];
+  fhir:OperationDefinition.jurisdiction [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ];
+       fhir:Coding.code [ fhir:value "US" ];
+       fhir:Coding.display [ fhir:value "United States Minor Outlying Islands (the)" ]
+     ]
+  ];
+  fhir:OperationDefinition.idempotent [ fhir:value "false"^^xsd:boolean];
+  fhir:OperationDefinition.code [ fhir:value "book"];
+  fhir:OperationDefinition.comment [ fhir:value "This operation is not idempotent (see HTTP specification definition of idempotent ) may only be invoked by performing an HTTP POST.\r\r It is assumed that the server has identified and secured the context appropriately, and can either associate the authorization context with the patient(s), or determine whether the context has the rights to the nominated patient(s), if there is one.  Specifying the relationship between the context, a user and patient records is outside the scope of this specification"];
+  fhir:OperationDefinition.resource [
+     fhir:value "Appointment";
+     fhir:index 0
+  ];
+  fhir:OperationDefinition.system [ fhir:value "false"^^xsd:boolean];
+  fhir:OperationDefinition.type [ fhir:value "true"^^xsd:boolean];
+  fhir:OperationDefinition.instance [ fhir:value "false"^^xsd:boolean];
+  fhir:OperationDefinition.parameter [
+     fhir:index 0;
+     fhir:OperationDefinition.parameter.name [ fhir:value "appt-id" ];
+     fhir:OperationDefinition.parameter.use [ fhir:value "in" ];
+     fhir:OperationDefinition.parameter.min [ fhir:value "0"^^xsd:integer ];
+     fhir:OperationDefinition.parameter.max [ fhir:value "1" ];
+     fhir:OperationDefinition.parameter.documentation [ fhir:value "A resource id for one of proposed Appointments returned by a prior $find operation (e.g., Resource/1234).  This is the same resource id as used for the $hold operation.  References can be to an absolute URL, but servers only perform this operation on their own appointments." ];
+     fhir:OperationDefinition.parameter.type [ fhir:value "uri" ]
+  ], [
+     fhir:index 1;
+     fhir:OperationDefinition.parameter.name [ fhir:value "patient-id" ];
+     fhir:OperationDefinition.parameter.use [ fhir:value "in" ];
+     fhir:OperationDefinition.parameter.min [ fhir:value "0"^^xsd:integer ];
+     fhir:OperationDefinition.parameter.max [ fhir:value "*" ];
+     fhir:OperationDefinition.parameter.documentation [ fhir:value "A resource id for the Patient(s) participant in the resource (e.g., Patient/1234).  References can be to an absolute URL, but servers only perform this operation on their own patients.  For existing patients the client may need to fetch Patient ID using RESTful `GET` to the FHIR Server (i.e., [US-Core Patient Search]({site.data.fhir.uscore}/StructureDefinition-us-core-patient.html#search)). For new patients client needs to fetch Patient ID using RESTful `POST` to register the patient on the FHIR Server (see [create]({site.data.fhir.path}/http.html#create) and [conditional create]({site.data.fhir.path}/http.html#ccreate))" ];
+     fhir:OperationDefinition.parameter.type [ fhir:value "uri" ]
+  ], [
+     fhir:index 2;
+     fhir:OperationDefinition.parameter.name [ fhir:value "comment" ];
+     fhir:OperationDefinition.parameter.use [ fhir:value "in" ];
+     fhir:OperationDefinition.parameter.min [ fhir:value "0"^^xsd:integer ];
+     fhir:OperationDefinition.parameter.max [ fhir:value "1" ];
+     fhir:OperationDefinition.parameter.documentation [ fhir:value "Comments or special instructions" ];
+     fhir:OperationDefinition.parameter.type [ fhir:value "string" ]
+  ], [
+     fhir:index 3;
+     fhir:OperationDefinition.parameter.name [ fhir:value "return" ];
+     fhir:OperationDefinition.parameter.use [ fhir:value "out" ];
+     fhir:OperationDefinition.parameter.min [ fhir:value "0"^^xsd:integer ];
+     fhir:OperationDefinition.parameter.max [ fhir:value "1" ];
+     fhir:OperationDefinition.parameter.documentation [ fhir:value "An [Appointment Availability Bundle profile](StructureDefinition-avail-bundle.html) of type `searchset` of requested Appointment resource and may also contain an [OperationOutcome]({site.data.fhir.path}/operationoutcome.html) with errors, warnings or information as a result of processing the operation.   If the booking is accepted, the Appointment resource will have an updated `status` of \"booked\" and  the `participants`element updated to include the patients.  If the booking is rejected, the Appointment resource will have an updated `status` of  \"cancelled\"." ];
+     fhir:OperationDefinition.parameter.type [ fhir:value "Bundle" ];
+     fhir:OperationDefinition.parameter.profile [
+       fhir:link <http://fhir.org/guides/argonaut-scheduling/StructureDefinition/avail-bundle>;
+       fhir:Reference.reference [ fhir:value "StructureDefinition/avail-bundle" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.org/guides/argonaut-scheduling/OperationDefinition/Appointment-book.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,234 @@
+﻿Argo-Scheduling : Validation Results
+=========================================
+
+err = 14, warn = 4, info = 266
+Generated Wed Nov 15 11:08:14 PST 2017. FHIR version 3.1.0 for 3.0.1
+
+ Build Errors : 11 / 0
+ /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/1a-avail-bundle : 0 / 21
+ /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/2b-avail-bundle : 0 / 21
+ /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/coverage-example-1 : 0 / 0
+ /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/coverage-example-2 : 2 / 0
+ /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/operationoutcome-example : 0 / 0
+ /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/patient-sch-example-1 : 0 / 20
+ /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/patient-sch-example-2 : 0 / 19
+ /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/practitioner-1 : 0 / 5
+ /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/proposed-appt1 : 0 / 5
+ /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/proposed-appt1a-1 : 0 / 5
+ /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/proposed-appt1a-2 : 0 / 5
+ /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/proposed-appt1a-3 : 0 / 5
+ /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/proposed-appt2 : 0 / 5
+ /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/proposed-appt2b-1 : 0 / 5
+ /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/proposed-appt2b-2 : 0 / 5
+ /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/proposed-appt2b-3 : 0 / 5
+ /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/proposed-appt3 : 0 / 5
+ /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/appt-out-spreadsheet : 1 / 1
+ /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/argo-coverage-spreadsheet : 0 / 1
+ /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/capabilitystatement-client : 1 / 0
+ /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/capabilitystatement-server : 1 / 0
+ /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/codesystem-appt-type : 0 / 0
+ /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/codesystem-status-reason : 0 / 0
+ /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/codesystem-visit-type : 1 / 1
+ /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/conceptmap-visit-appt : 1 / 0
+ /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/conceptmap-visit-service : 0 / 0
+ /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/ig : 0 / 0
+ /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/operationdefinition-appointment-book : 0 / 0
+ /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/operationdefinition-appointment-find6 : 0 / 1
+ /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/operationdefinition-appointment-hold : 0 / 0
+ /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/structuredefinition-avail-bundle : 0 / 0
+ /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/valueset-appt-type : 0 / 0
+ /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/valueset-service : 0 / 0
+ /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/valueset-specialty : 0 / 0
+ /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/valueset-status-reason : 0 / 0
+ /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/valueset-visit-type : 0 / 0
+</table>
+== n/a ==
+ERROR: /Users/ehaas/Documents/FHIR/Argo-Scheduling/docs/OperationDefinition-Appointment-book.html#/html/head/body/div/div/div/div/div/div/table/tr/td/div/p/a at Line 187, column 399: The link '{site.data.fhir.uscore}/StructureDefinition-us-core-patient.html#search' cannot be resolved
+ERROR: /Users/ehaas/Documents/FHIR/Argo-Scheduling/docs/OperationDefinition-Appointment-book.html#/html/head/body/div/div/div/div/div/div/table/tr/td/div/p/a at Line 187, column 640: The link '{site.data.fhir.path}/http.html#create' cannot be resolved
+ERROR: /Users/ehaas/Documents/FHIR/Argo-Scheduling/docs/OperationDefinition-Appointment-book.html#/html/head/body/div/div/div/div/div/div/table/tr/td/div/p/a at Line 187, column 704: The link '{site.data.fhir.path}/http.html#ccreate' cannot be resolved
+ERROR: /Users/ehaas/Documents/FHIR/Argo-Scheduling/docs/OperationDefinition-Appointment-book.html#/html/head/body/div/div/div/div/div/div/table/tr/td/div/p/a at Line 189, column 278: The link '{site.data.fhir.path}/operationoutcome.html' cannot be resolved
+ERROR: /Users/ehaas/Documents/FHIR/Argo-Scheduling/docs/OperationDefinition-Appointment-book.html#/html/head/body/div/div/div/div/div/h5/a at Line 229, column 79: The link 'Bundle-hal-dr-y-book.html' cannot be resolved
+ERROR: /Users/ehaas/Documents/FHIR/Argo-Scheduling/docs/OperationDefinition-Appointment-book.html#/html/head/body/div/div/div/div/div/h5/a at Line 278, column 75: The link 'Bundle-derm-book.html' cannot be resolved
+ERROR: /Users/ehaas/Documents/FHIR/Argo-Scheduling/docs/ValueSet-visit-type.html#/html/head/body/div/div/div/div/div/table/tbody/tr/td/p/a at Line 190, column 537: The link 'http://hl7.org/fhir/STU3ConceptMap-visit-appt-map.html' cannot be resolved
+ERROR: /Users/ehaas/Documents/FHIR/Argo-Scheduling/docs/ValueSet-visit-type.html#/html/head/body/div/div/div/div/div/table/tbody/tr/td/p/a at Line 190, column 637: The link 'http://hl7.org/fhir/STU3ConceptMap-visit-service-map.html' cannot be resolved
+ERROR: /Users/ehaas/Documents/FHIR/Argo-Scheduling/docs/ValueSet-service.html#/html/head/body/div/div/div/div/div/table/tbody/tr/td/p/a at Line 190, column 211: The link 'http://hl7.org/fhir/STU3ConceptMap-visit-service-map.html' cannot be resolved
+ERROR: /Users/ehaas/Documents/FHIR/Argo-Scheduling/docs/ValueSet-appt-type.html#/html/head/body/div/div/div/div/div/table/tbody/tr/td/p/a at Line 190, column 198: The link 'http://hl7.org/fhir/STU3ConceptMap-visit-appt-map.html' cannot be resolved
+ERROR: /Users/ehaas/Documents/FHIR/Argo-Scheduling/docs/OperationDefinition-Appointment-hold.html#/html/head/body/div/div/div/div/div/h5/a at Line 216, column 79: The link 'Bundle-hal-dr-y-held.html' cannot be resolved
+== /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/1a-avail-bundle.xml ==
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.id[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.meta[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[1].fullUrl[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[1].resource[1].id[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[1].resource[1].meta[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[1].resource[1].text[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[1].resource[1].participant[1].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[1].resource[1].participant[2].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[2].fullUrl[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[2].resource[1].id[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[2].resource[1].meta[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[2].resource[1].text[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[2].resource[1].participant[1].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[2].resource[1].participant[2].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[3].fullUrl[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[3].resource[1].id[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[3].resource[1].meta[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[3].resource[1].text[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[3].resource[1].participant[1].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[3].resource[1].participant[2].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[4].fullUrl[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+== /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/2b-avail-bundle.xml ==
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.id[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.meta[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[1].fullUrl[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[1].resource[1].id[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[1].resource[1].meta[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[1].resource[1].text[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[1].resource[1].participant[1].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[1].resource[1].participant[2].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[2].fullUrl[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[2].resource[1].id[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[2].resource[1].meta[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[2].resource[1].text[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[2].resource[1].participant[1].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[2].resource[1].participant[2].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[3].fullUrl[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[3].resource[1].id[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[3].resource[1].meta[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[3].resource[1].text[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[3].resource[1].participant[1].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[3].resource[1].participant[2].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[4].fullUrl[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+== /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/coverage-example-1.xml ==
+== /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/coverage-example-2.xml ==
+ERROR: Coverage/argo-sch-2: Coverage.contained.patient: Unable to resolve resource 'Patient/argo-sch-2'
+ERROR: Coverage/argo-sch-2: Coverage.subscriber.contained.patient: Unable to resolve resource 'Patient/argo-sch-2'
+== /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/operationoutcome-example.xml ==
+== /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/patient-sch-example-1.xml ==
+INFORMATION: Patient/argo-sch-patient-1: Patient.id[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Patient/argo-sch-patient-1: Patient.meta[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Patient/argo-sch-patient-1: Patient.text[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Patient/argo-sch-patient-1: Patient.extension[1].url[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Patient/argo-sch-patient-1: Patient.extension[1].extension[1].url[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Patient/argo-sch-patient-1: Patient.extension[1].extension[1].valueCoding[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Patient/argo-sch-patient-1: Patient.extension[1].extension[2].url[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Patient/argo-sch-patient-1: Patient.extension[1].extension[2].valueString[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Patient/argo-sch-patient-1: Patient.extension[2].url[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Patient/argo-sch-patient-1: Patient.extension[2].extension[1].url[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Patient/argo-sch-patient-1: Patient.extension[2].extension[1].valueCoding[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Patient/argo-sch-patient-1: Patient.extension[2].extension[2].url[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Patient/argo-sch-patient-1: Patient.extension[2].extension[2].valueString[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Patient/argo-sch-patient-1: Patient.identifier[1].use[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Patient/argo-sch-patient-1: Patient.identifier[1].type[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Patient/argo-sch-patient-1: Patient.active[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Patient/argo-sch-patient-1: Patient.name[1].suffix[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Patient/argo-sch-patient-1: Patient.telecom[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Patient/argo-sch-patient-1: Patient.telecom[2]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Patient/argo-sch-patient-1: Patient.address[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+== /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/patient-sch-example-2.xml ==
+INFORMATION: Patient/argo-sch-patient-2: Patient.id[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Patient/argo-sch-patient-2: Patient.meta[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Patient/argo-sch-patient-2: Patient.text[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Patient/argo-sch-patient-2: Patient.extension[1].url[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Patient/argo-sch-patient-2: Patient.extension[1].extension[1].url[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Patient/argo-sch-patient-2: Patient.extension[1].extension[1].valueCoding[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Patient/argo-sch-patient-2: Patient.extension[1].extension[2].url[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Patient/argo-sch-patient-2: Patient.extension[1].extension[2].valueString[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Patient/argo-sch-patient-2: Patient.extension[2].url[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Patient/argo-sch-patient-2: Patient.extension[2].extension[1].url[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Patient/argo-sch-patient-2: Patient.extension[2].extension[1].valueCoding[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Patient/argo-sch-patient-2: Patient.extension[2].extension[2].url[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Patient/argo-sch-patient-2: Patient.extension[2].extension[2].valueString[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Patient/argo-sch-patient-2: Patient.identifier[1].use[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Patient/argo-sch-patient-2: Patient.identifier[1].type[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Patient/argo-sch-patient-2: Patient.active[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Patient/argo-sch-patient-2: Patient.telecom[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Patient/argo-sch-patient-2: Patient.telecom[2]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Patient/argo-sch-patient-2: Patient.address[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+== /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/practitioner-1.xml ==
+INFORMATION: Practitioner/dr-y: Practitioner.id[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Practitioner/dr-y: Practitioner.meta[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Practitioner/dr-y: Practitioner.text[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Practitioner/dr-y: Practitioner.name[1].prefix[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Practitioner/dr-y: Practitioner.address[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+== /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/proposed-appt1.xml ==
+INFORMATION: Appointment/proposed-appt1: Appointment.id[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Appointment/proposed-appt1: Appointment.meta[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Appointment/proposed-appt1: Appointment.text[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Appointment/proposed-appt1: Appointment.participant[1].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Appointment/proposed-appt1: Appointment.participant[2].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+== /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/proposed-appt1a-1.xml ==
+INFORMATION: Appointment/proposed-appt1a-1: Appointment.id[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Appointment/proposed-appt1a-1: Appointment.meta[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Appointment/proposed-appt1a-1: Appointment.text[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Appointment/proposed-appt1a-1: Appointment.participant[1].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Appointment/proposed-appt1a-1: Appointment.participant[2].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+== /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/proposed-appt1a-2.xml ==
+INFORMATION: Appointment/proposed-appt1a-2: Appointment.id[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Appointment/proposed-appt1a-2: Appointment.meta[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Appointment/proposed-appt1a-2: Appointment.text[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Appointment/proposed-appt1a-2: Appointment.participant[1].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Appointment/proposed-appt1a-2: Appointment.participant[2].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+== /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/proposed-appt1a-3.xml ==
+INFORMATION: Appointment/proposed-appt1a-3: Appointment.id[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Appointment/proposed-appt1a-3: Appointment.meta[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Appointment/proposed-appt1a-3: Appointment.text[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Appointment/proposed-appt1a-3: Appointment.participant[1].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Appointment/proposed-appt1a-3: Appointment.participant[2].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+== /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/proposed-appt2.xml ==
+INFORMATION: Appointment/proposed-appt2: Appointment.id[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Appointment/proposed-appt2: Appointment.meta[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Appointment/proposed-appt2: Appointment.text[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Appointment/proposed-appt2: Appointment.participant[1].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Appointment/proposed-appt2: Appointment.participant[2].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+== /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/proposed-appt2b-1.xml ==
+INFORMATION: Appointment/proposed-appt2b-1: Appointment.id[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Appointment/proposed-appt2b-1: Appointment.meta[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Appointment/proposed-appt2b-1: Appointment.text[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Appointment/proposed-appt2b-1: Appointment.participant[1].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Appointment/proposed-appt2b-1: Appointment.participant[2].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+== /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/proposed-appt2b-2.xml ==
+INFORMATION: Appointment/proposed-appt2b-2: Appointment.id[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Appointment/proposed-appt2b-2: Appointment.meta[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Appointment/proposed-appt2b-2: Appointment.text[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Appointment/proposed-appt2b-2: Appointment.participant[1].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Appointment/proposed-appt2b-2: Appointment.participant[2].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+== /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/proposed-appt2b-3.xml ==
+INFORMATION: Appointment/proposed-appt2b-3: Appointment.id[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Appointment/proposed-appt2b-3: Appointment.meta[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Appointment/proposed-appt2b-3: Appointment.text[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Appointment/proposed-appt2b-3: Appointment.participant[1].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Appointment/proposed-appt2b-3: Appointment.participant[2].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+== /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/proposed-appt3.xml ==
+INFORMATION: Appointment/proposed-appt3: Appointment.id[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Appointment/proposed-appt3: Appointment.meta[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Appointment/proposed-appt3: Appointment.text[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Appointment/proposed-appt3: Appointment.participant[1].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Appointment/proposed-appt3: Appointment.participant[2].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+== /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/appt-out-spreadsheet.xml ==
+INFORMATION: /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/appt-out-spreadsheet: Resources generated by processing /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/appt-out-spreadsheet:  http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-status-reason ("Reason for current status")  http://fhir.org/guides/argonaut-scheduling/StructureDefinition/appt-output ("Argonaut Appointment Output Profile")
+ERROR: StructureDefinition/appt-output: StructureDefinition: In any snapshot or differential, no label, code or requirements on the an element without a "." in the path (e.g. the first element) [children().element.first().label.empty() and children().element.first().code.empty() and children().element.first().requirements.empty()]
+== /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/argo-coverage-spreadsheet.xml ==
+INFORMATION: /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/argo-coverage-spreadsheet: Resources generated by processing /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/argo-coverage-spreadsheet:  http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-coverage ("Argonaut Coverage Profile")
+== /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/capabilitystatement-client.xml ==
+ERROR: CapabilityStatement/client: CapabilityStatement.profile: Unable to resolve resource 'http://fhir.org/guides/argonaut-scheduling/StructureDefinition/template-basic'
+== /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/capabilitystatement-server.xml ==
+ERROR: CapabilityStatement/server: CapabilityStatement.profile: Unable to resolve resource 'http://fhir.org/guides/argonaut-scheduling/StructureDefinition/template-basic'
+== /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/codesystem-appt-type.xml ==
+== /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/codesystem-status-reason.xml ==
+== /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/codesystem-visit-type.xml ==
+ERROR: CodeSystem/visit-type: CodeSystem.concept[1].code: The code 'breast-imaging ' is not valid (whitespace rules)
+WARNING: CodeSystem/visit-type: CodeSystem.concept[1].display: value should not start or finish with whitespace
+== /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/conceptmap-visit-appt.xml ==
+ERROR: ConceptMap/visit-appt-map: ConceptMap.text: Profile http://hl7.org/fhir/StructureDefinition/Narrative, Element 'ConceptMap.text.status': minimum required = 1, but only found 0
+== /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/conceptmap-visit-service.xml ==
+== /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/ig.xml ==
+== /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/operationdefinition-appointment-book.xml ==
+== /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/operationdefinition-appointment-find6.xml ==
+WARNING: OperationDefinition/appointment-find: OperationDefinition.jurisdiction: Error org.hl7.fhir.r4.utils.client.EFhirClientException: Error unmarshalling resource: [Microsoft][SQL Server Native Client 11.0][SQL Server]Transaction (Process ID 53) was deadlocked on lock resources with another process and has been chosen as the deadlock victim. Rerun the transaction. validating CodeableConcept
+== /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/operationdefinition-appointment-hold.xml ==
+== /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/structuredefinition-avail-bundle.xml ==
+== /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/valueset-appt-type.xml ==
+== /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/valueset-service.xml ==
+== /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/valueset-specialty.xml ==
+== /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/valueset-status-reason.xml ==
+== /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/valueset-visit-type.xml ==

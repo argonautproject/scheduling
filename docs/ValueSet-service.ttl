@@ -1,0 +1,154 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/argonaut-scheduling/ValueSet/service> a fhir:ValueSet;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "service"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>Argonaut Scheduling Services</h2><div><p>The service types offered by providers and  that is to be performed during this appointment.  These concepts are used in the FHIR Appointment, Schedule and Slot resources. The <a href=\"ConceptMap-visit-service-map.html\">Argonaut Scheduling Visit Types</a> are mapped to these concepts</p>\n</div><p><b>Copyright Statement:</b> This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement</p><p>This value set includes codes from the following code systems:</p><ul><li>Include these codes as defined in <a href=\"http://www.snomed.org/\"><code>http://snomed.info/sct</code></a><table class=\"none\"><tr><td><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=11429006\">11429006</a></td><td>Consultation (procedure)</td><td/></tr><tr><td><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=185387006\">185387006</a></td><td>New patient consultation (procedure)</td><td/></tr><tr><td><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=310058008\">310058008</a></td><td>Nuclear medicine service (procedure)</td><td/></tr><tr><td><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=439740005\">439740005</a></td><td>Postoperative follow-up visit (procedure)</td><td/></tr><tr><td><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=406153003\">406153003</a></td><td>Pre-admission assessment (procedure)</td><td/></tr><tr><td><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=77132007\">77132007</a></td><td>Therapeutic procedure (procedure)</td><td/></tr><tr><td><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=406153003\">406153003</a></td><td>Pre-admission assessment (procedure)</td><td/></tr><tr><td><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=241686001\">241686001</a></td><td>Dual energy X-ray photon absorptiometry (procedure)</td><td/></tr><tr><td><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=40701008\">40701008</a></td><td>Echocardiography (procedure)</td><td/></tr><tr><td><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=433233004\">433233004</a></td><td>Exercise stress echocardiography (procedure)</td><td/></tr><tr><td><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=409073007\">409073007</a></td><td>Education (procedure)</td><td/></tr><tr><td><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=54550000\">54550000</a></td><td>Electroencephalogram (procedure)</td><td/></tr><tr><td><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=29303009\">29303009</a></td><td>Electrocardiographic procedure (procedure)</td><td/></tr><tr><td><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=386053000\">386053000</a></td><td>Evaluation procedure (procedure)</td><td/></tr><tr><td><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=86198006\">86198006</a></td><td>Influenza vaccination (procedure)</td><td/></tr><tr><td><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=44491008\">44491008</a></td><td>Fluoroscopy (procedure)</td><td/></tr><tr><td><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=281036007\">281036007</a></td><td>Follow-up consultation (procedure)</td><td/></tr><tr><td><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=439708006\">439708006</a></td><td>Home visit (procedure)</td><td/></tr><tr><td><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=59108006\">59108006</a></td><td>Injection (procedure)</td><td/></tr><tr><td><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=5880005\">5880005</a></td><td>Physical examination procedure (procedure)</td><td/></tr><tr><td><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=71388002\">71388002</a></td><td>Procedure (procedure)</td><td/></tr><tr><td><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=76746007\">76746007</a></td><td>Cardiovascular stress testing (procedure)</td><td/></tr><tr><td><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=7922000\">7922000</a></td><td>General treatment (procedure)</td><td/></tr><tr><td><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=410620009\">410620009</a></td><td>Well child visit (procedure)</td><td/></tr><tr><td><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=127785005\">127785005</a></td><td>Administration of substance to produce immunity, either active or passive (procedure)</td><td/></tr></table></li><li>Include codes from <a href=\"http://www.snomed.org/\"><code>http://snomed.info/sct</code></a> where concept  is-a  224930009 (Services)</li></ul></div>"
+  ];
+  fhir:ValueSet.url [ fhir:value "http://fhir.org/guides/argonaut-scheduling/ValueSet/service"];
+  fhir:ValueSet.version [ fhir:value "0.0.0"];
+  fhir:ValueSet.name [ fhir:value "Argonaut Scheduling Services"];
+  fhir:ValueSet.status [ fhir:value "draft"];
+  fhir:ValueSet.date [ fhir:value "2017-07-12T12:40:10-07:00"^^xsd:dateTime];
+  fhir:ValueSet.description [ fhir:value "The service types offered by providers and  that is to be performed during this appointment.  These concepts are used in the FHIR Appointment, Schedule and Slot resources. The [Argonaut Scheduling Visit Types](ConceptMap-visit-service-map.html) are mapped to these concepts "];
+  fhir:ValueSet.jurisdiction [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ];
+       fhir:Coding.code [ fhir:value "US" ];
+       fhir:Coding.display [ fhir:value "United States Minor Outlying Islands (the)" ]
+     ]
+  ];
+  fhir:ValueSet.copyright [ fhir:value "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement"];
+  fhir:ValueSet.compose [
+     fhir:ValueSet.compose.include [
+       fhir:index 0;
+       fhir:ValueSet.compose.include.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:ValueSet.compose.include.concept [
+         fhir:index 0;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "11429006" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Consultation (procedure)" ]
+       ], [
+         fhir:index 1;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "185387006" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "New patient consultation (procedure)" ]
+       ], [
+         fhir:index 2;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "310058008" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Nuclear medicine service (procedure)" ]
+       ], [
+         fhir:index 3;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "439740005" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Postoperative follow-up visit (procedure)" ]
+       ], [
+         fhir:index 4;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "406153003" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Pre-admission assessment (procedure)" ]
+       ], [
+         fhir:index 5;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "77132007" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Therapeutic procedure (procedure)" ]
+       ], [
+         fhir:index 6;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "406153003" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Pre-admission assessment (procedure)" ]
+       ], [
+         fhir:index 7;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "241686001" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Dual energy X-ray photon absorptiometry (procedure)" ]
+       ], [
+         fhir:index 8;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "40701008" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Echocardiography (procedure)" ]
+       ], [
+         fhir:index 9;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "433233004" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Exercise stress echocardiography (procedure)" ]
+       ], [
+         fhir:index 10;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "409073007" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Education (procedure)" ]
+       ], [
+         fhir:index 11;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "54550000" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Electroencephalogram (procedure)" ]
+       ], [
+         fhir:index 12;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "29303009" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Electrocardiographic procedure (procedure)" ]
+       ], [
+         fhir:index 13;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "386053000" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Evaluation procedure (procedure)" ]
+       ], [
+         fhir:index 14;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "86198006" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Influenza vaccination (procedure)" ]
+       ], [
+         fhir:index 15;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "44491008" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Fluoroscopy (procedure)" ]
+       ], [
+         fhir:index 16;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "281036007" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Follow-up consultation (procedure)" ]
+       ], [
+         fhir:index 17;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "439708006" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Home visit (procedure)" ]
+       ], [
+         fhir:index 18;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "59108006" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Injection (procedure)" ]
+       ], [
+         fhir:index 19;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "5880005" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Physical examination procedure (procedure)" ]
+       ], [
+         fhir:index 20;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "71388002" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Procedure (procedure)" ]
+       ], [
+         fhir:index 21;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "76746007" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Cardiovascular stress testing (procedure)" ]
+       ], [
+         fhir:index 22;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "7922000" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "General treatment (procedure)" ]
+       ], [
+         fhir:index 23;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "410620009" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Well child visit (procedure)" ]
+       ], [
+         fhir:index 24;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "127785005" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Administration of substance to produce immunity, either active or passive (procedure)" ]
+       ]
+     ], [
+       fhir:index 1;
+       fhir:ValueSet.compose.include.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:ValueSet.compose.include.filter [
+         fhir:index 0;
+         fhir:ValueSet.compose.include.filter.property [ fhir:value "concept" ];
+         fhir:ValueSet.compose.include.filter.op [ fhir:value "is-a" ];
+         fhir:ValueSet.compose.include.filter.value [ fhir:value "224930009" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.org/guides/argonaut-scheduling/ValueSet/service.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

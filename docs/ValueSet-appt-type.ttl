@@ -1,0 +1,49 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/argonaut-scheduling/ValueSet/appt-type> a fhir:ValueSet;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "appt-type"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>Argonaut Appointment Types</h2><div><p>The style of appointment or patient for appointment booking (not service type).  These concepts are used in the FHIR Appointment, Schedule and Slot resources. The <a href=\"ConceptMap-visit-appt-map.html\">Argonaut Scheduling Visit Types</a> are mapped to these concepts.</p>\n</div><p>This value set includes codes from the following code systems:</p><ul><li>Include all codes defined in <a href=\"CodeSystem-appt-type.html\"><code>http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-type</code></a></li><li/><li>Import all the codes that are contained in <a href=\"http://hl7.org/fhir/STU3/v2/0276/index.html\">http://hl7.org/fhir/ValueSet/v2-0276</a></li></ul></div>"
+  ];
+  fhir:ValueSet.url [ fhir:value "http://fhir.org/guides/argonaut-scheduling/ValueSet/appt-type"];
+  fhir:ValueSet.version [ fhir:value "0.0.0"];
+  fhir:ValueSet.name [ fhir:value "Argonaut Appointment Types"];
+  fhir:ValueSet.status [ fhir:value "draft"];
+  fhir:ValueSet.date [ fhir:value "2017-07-12T12:40:10-07:00"^^xsd:dateTime];
+  fhir:ValueSet.description [ fhir:value "The style of appointment or patient for appointment booking (not service type).  These concepts are used in the FHIR Appointment, Schedule and Slot resources. The [Argonaut Scheduling Visit Types](ConceptMap-visit-appt-map.html) are mapped to these concepts."];
+  fhir:ValueSet.jurisdiction [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ];
+       fhir:Coding.code [ fhir:value "US" ];
+       fhir:Coding.display [ fhir:value "United States Minor Outlying Islands (the)" ]
+     ]
+  ];
+  fhir:ValueSet.compose [
+     fhir:ValueSet.compose.include [
+       fhir:index 0;
+       fhir:ValueSet.compose.include.system [ fhir:value "http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-type" ]
+     ], [
+       fhir:index 1;
+       fhir:ValueSet.compose.include.valueSet [
+         fhir:value "http://hl7.org/fhir/ValueSet/v2-0276";
+         fhir:index 0
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.org/guides/argonaut-scheduling/ValueSet/appt-type.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

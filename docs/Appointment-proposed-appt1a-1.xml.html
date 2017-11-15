@@ -1,0 +1,307 @@
+<!DOCTYPE HTML>
+
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+   <meta charset="UTF-8"/>
+  <title>Argo-Scheduling</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Argo-Scheduling Implemenation Guide" />
+<meta name="author" content="http://argonautwiki.hl7.org"/>
+
+
+  <link href="fhir.css" rel="stylesheet"/>
+
+
+   <!-- Bootstrap core CSS -->
+
+   <!-- Latest compiled and minified CSS -->
+
+  <link href="assets/css/bootstrap.css" rel="stylesheet"/>
+  <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+  <!-- Project extras -->
+  <link href="assets/css/project.css" rel="stylesheet"/>
+  <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+	<link href="jquery-ui.css" rel="stylesheet"/>
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+
+
+<body markdown="1">
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<div id="segment-header" class="segment">
+  <!-- segment-header -->
+  <div class="container">
+    <!-- container --> <a id="logo" no-external="true" href="http://hl7.org/fhir">
+      <img alt="logo fhir" src="assets/images/fhir-logo-www.png"/>
+    </a>
+      <div id="project-nav">
+             <!--
+<a id="your-logo" no-external="true" href="http://www.hl7.org">
+<img height="50" alt="visit the hl7 website" width="42" src="assets/images/hl7-logo.png"/>
+</a>
+
+================THIS IS FOR THE PROJECT LOGO AND URL ===============
+-->
+
+<p class="img-responsive" id="hl7-logo"><a href="http://argonautwiki.hl7.org"><img src="assets/images/ArgonautProject_logo_black.png" alt="visit the our website" height="65px" /></a></p>
+
+      </div>
+    <div id="ig-status">
+      <b>Argo-Scheduling Implementation Guide CI Build</b>
+    </div>
+  </div>
+  <div class="container">
+    <!-- container -->
+  </div>
+</div>
+<!-- /segment-header -->
+<div id="segment-navbar" class="segment">
+  <!-- segment-navbar -->
+  <div id="stripe">
+  </div>
+  <div class="container">
+    <!-- container -->
+    <!-- HEADER CONTENT -->
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+          <span class="icon-bar">
+          </span>
+          <span class="icon-bar">
+          </span>
+          <span class="icon-bar">
+          </span>
+        </button>
+        <a class="navbar-brand hidden" href="http://hl7.org/fhir/STU3/index.html">FHIR</a>
+        <div class="nav-collapse collapse navbar-inverse-collapse">        <!-- don't remove the line above - to add or remove a menu item commeent in or out -->
+<ul class="nav navbar-nav">
+  <li><a href="index.html">Home</a></li>
+  <li><a href="guidance.html" class="dropdown-toggle" data-toggle="dropdown">Use Cases…</a>
+    <ul class="dropdown-menu">
+      <li><a href="patient-scheduling.html">Patient Based Scheduling</a></li>
+      <li><a href="provider-scheduling.html">Provider based Scheduling</a></li>
+    </ul>
+  </li>
+  <li><a href="operations.html">Operations</a></li>
+  <li><a href="profiles.html">Profiles/Extensions</a></li>
+  <li><a href="terminology.html">Terminology</a></li>
+  <li><a href="capstatements.html" class="dropdown-toggle" data-toggle="dropdown">Capability Statements…</a>
+    <ul class="dropdown-menu">
+      <li><a href="server-capstatement.html">Conformance requirements for Server</a></li>
+      <li><a href="client-capstatement.html">Conformance requirements for Client</a></li>
+    </ul>
+  </li>
+  <li><a href="downloads.html">Downloads</a></li>
+</ul>
+        <!--        <ul class="nav navbar-nav">
+          <li>
+            <a href="index.html">Home</a>
+          </li>
+          <li>
+            <a href="guidance.html">General Guidance</a>
+          </li>
+          <li>
+            <a href="profiles.html">Profiles and Logical Models</a>
+          </li>
+          <li>
+            <a href="structuremaps.html">Mappings</a>
+          </li>
+          <li>
+            <a href="extensions.html">Extensions</a>
+          </li>
+          <li>
+            <a href="terminology.html">Terminology</a>
+          </li>
+          <li>
+            <a href="searchparams.html">Search Parameters</a>
+          </li>
+          <li>
+            <a href="capstatements.html">Capability Statements</a>
+          </li>
+          <li>
+            <a href="security.html">Security</a>
+          </li>
+          <li>
+            <a href="examples.html">Examples</a>
+          </li>
+          <li>
+            <a href="downloads.html">Downloads</a>
+          </li>
+        </ul> -->
+      </div>
+      <!-- /.nav-collapse -->
+    </div>
+    <!-- /.container -->
+  </nav>
+  <!-- /.navbar -->
+  <!-- /HEADER CONTENT -->
+</div>
+<!-- /container -->
+</div>
+<!-- /segment-navbar -->
+
+
+
+</div>  <!-- /container -->
+</div>  <!-- /segment-breadcrumb -->
+
+<div id="segment-content" class="segment">  <!-- segment-content -->
+<div class="container">  <!-- container -->
+<div class="row">
+<div class="inner-wrapper">
+
+
+<div class="col-12">
+
+
+<!-- ============BreadCrumb=============== -->
+
+<nav class="breadcrumb">
+  
+    
+    
+      <a class="breadcrumb-item" href="index.html">Home</a>
+      /
+      <a class="breadcrumb-item" href="profiles.html">Profiles</a>
+      /
+      <span class="breadcrumb-item active">Appointment-proposed-appt1a-1.xml</span>
+    
+    
+    
+    
+
+</nav>
+
+
+  <!-- ============CONTENT CONTENT=============== -->
+
+<h2>Example: Appointment-proposed-appt1a-1</h2>
+
+<p>
+Formats: <a href="Appointment-proposed-appt1a-1.html">Narrative</a>, <a href="Appointment-proposed-appt1a-1.xml.html">XML</a>, <a href="Appointment-proposed-appt1a-1.json.html">JSON</a>, <a href="Appointment-proposed-appt1a-1.ttl.html">Turtle</a>
+</p>
+<p>
+Raw <a href="Appointment-proposed-appt1a-1.xml" download>xml</a>
+</p>
+
+<pre class="xml">
+
+&lt;<a href="http://hl7.org/fhir/STU3/appointment.html#Appointment">Appointment</a> xmlns=&quot;http://hl7.org/fhir&quot;&gt;
+  &lt;<a href="http://hl7.org/fhir/STU3/appointment.html#Appointment.id">id</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#id">value</a>=&quot;proposed-appt1a-1&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/STU3/appointment.html#Appointment.meta">meta</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#Meta#Meta.profile">profile</a>
+             <a href="http://hl7.org/fhir/STU3/datatypes.html#uri">value</a>=&quot;http://fhir.org/guides/argonaut-scheduling/StructureDefinition/appt-output&quot;/&gt;
+  &lt;/meta&gt;
+  &lt;<a href="http://hl7.org/fhir/STU3/appointment.html#Appointment.text">text</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#Narrative#Narrative.status">status</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;generated&quot;/&gt;
+    &lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative with Details&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;id&lt;/b&gt;: proposed-appt1a-1&lt;/p&gt;&lt;p&gt;&lt;b&gt;meta&lt;/b&gt;: &lt;/p&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: proposed&lt;/p&gt;&lt;p&gt;&lt;b&gt;serviceType&lt;/b&gt;: Office Call &lt;span style=&quot;background: LightGoldenRodYellow&quot;&gt;(Details : {SNOMED CT code '11429006' = 'Consultation with healthcare provider', given as 'Consultation (procedure)'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;appointmentType&lt;/b&gt;: Routine &lt;span style=&quot;background: LightGoldenRodYellow&quot;&gt;(Details : {http://hl7.org/fhir/v2/0276 code 'ROUTINE' = 'Routine appointment - default if not valued)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;start&lt;/b&gt;: Jul 17, 2017 12:45:00 AM&lt;/p&gt;&lt;p&gt;&lt;b&gt;end&lt;/b&gt;: Jul 17, 2017 1:00:00 AM&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;participant&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;actor&lt;/b&gt;: &lt;a href=&quot;Practitioner-dr-y.html&quot;&gt;Dr Y. Generated Summary: id: dr-y; 9941339108, 25456; Y &lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;required&lt;/b&gt;: required&lt;/p&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: needs-action&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;participant&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;actor&lt;/b&gt;: Napa Office&lt;/p&gt;&lt;p&gt;&lt;b&gt;required&lt;/b&gt;: required&lt;/p&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: needs-action&lt;/p&gt;&lt;/blockquote&gt;&lt;p&gt;&lt;b&gt;requestedPeriod&lt;/b&gt;: Jul 15, 2017 8:00:00 PM --&amp;gt; Jul 17, 2017 8:00:00 PM&lt;/p&gt;&lt;/div&gt;
+  &lt;/text&gt;
+  &lt;<a href="http://hl7.org/fhir/STU3/appointment.html#Appointment.status">status</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;proposed&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/STU3/appointment.html#Appointment.serviceType">serviceType</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#uri">value</a>=&quot;http://snomed.info/sct&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;11429006&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>=&quot;Consultation (procedure)&quot;/&gt;
+    &lt;/coding&gt;
+    &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>=&quot;Office Call&quot;/&gt;
+  &lt;/serviceType&gt;
+  &lt;<a href="http://hl7.org/fhir/STU3/appointment.html#Appointment.appointmentType">appointmentType</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/v2/0276&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;ROUTINE&quot;/&gt;
+    &lt;/coding&gt;
+    &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>=&quot;Routine&quot;/&gt;
+  &lt;/appointmentType&gt;
+  &lt;<a href="http://hl7.org/fhir/STU3/appointment.html#Appointment.start">start</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#instant">value</a>=&quot;2017-07-17T00:45:00Z&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/STU3/appointment.html#Appointment.end">end</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#instant">value</a>=&quot;2017-07-17T01:00:00Z&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/STU3/appointment.html#Appointment.participant">participant</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/STU3/appointment.html#Appointment.participant.actor">actor</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>=&quot;Practitioner/dr-y&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.display">display</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>=&quot;Dr Y&quot;/&gt;
+    &lt;/actor&gt;
+    &lt;<a href="http://hl7.org/fhir/STU3/appointment.html#Appointment.participant.required">required</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;required&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/STU3/appointment.html#Appointment.participant.status">status</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;needs-action&quot;/&gt;
+  &lt;/participant&gt;
+  &lt;<a href="http://hl7.org/fhir/STU3/appointment.html#Appointment.participant">participant</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/STU3/appointment.html#Appointment.participant.actor">actor</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.display">display</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>=&quot;Napa Office&quot;/&gt;
+    &lt;/actor&gt;
+    &lt;<a href="http://hl7.org/fhir/STU3/appointment.html#Appointment.participant.required">required</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;required&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/STU3/appointment.html#Appointment.participant.status">status</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;needs-action&quot;/&gt;
+  &lt;/participant&gt;
+  &lt;<a href="http://hl7.org/fhir/STU3/appointment.html#Appointment.requestedPeriod">requestedPeriod</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#Period#Period.start">start</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#dateTime">value</a>=&quot;2017-07-15T20:00:00Z&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#Period#Period.end">end</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#dateTime">value</a>=&quot;2017-07-17T20:00:00Z&quot;/&gt;
+  &lt;/requestedPeriod&gt;
+&lt;/Appointment&gt;</pre>
+
+
+  <!-- ==============END CONTENT END CONTENT=================== -->
+
+</div>
+
+
+</div>  <!-- /inner-wrapper -->
+</div>  <!-- /row -->
+</div>  <!-- /container -->
+
+</div>  <!-- /segment-content -->
+
+
+
+</div>
+
+    </div>  <!-- /inner-wrapper -->
+            </div>  <!-- /row -->
+        </div>  <!-- /container -->
+
+    </div>  <!-- /segment-content -->
+
+
+<div id="segment-footer" class="segment">  <!-- segment-footer -->
+  <div class="container">  <!-- container -->
+   <div class="inner-wrapper">
+    <p>
+            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Wed, Nov 15, 2017 11:08-0800. |
+             <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
+                <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/STU3license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
+        </span>
+        </p>
+   </div>  <!-- /inner-wrapper -->
+  </div>  <!-- /container -->
+ </div>  <!-- /segment-footer -->
+  <!-- disqus thread -->
+  <!-- disqus -->
+  <!-- end disqus -->
+
+ <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+  <div class="container">  <!-- container -->
+  </div>  <!-- /container -->
+ </div>  <!-- /segment-post-footer -->
+
+ <!-- JS and analytics only. -->
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./assets/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+<!-- Analytics Below
+================================================== -->
+
+
+</body>
+</html>
+

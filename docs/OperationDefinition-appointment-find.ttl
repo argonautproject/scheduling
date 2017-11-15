@@ -1,0 +1,175 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/argonaut-scheduling/OperationDefinition/appointment-find> a fhir:OperationDefinition;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "appointment-find"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n			<h2>Appointment Availability Operation</h2>\n			<p>OPERATION: Appointment Availability Operation</p>\n			<p>The official URL for this operation definition is: </p>\n			<pre>http://fhir.org/guides/argonaut-scheduling/OperationDefinition/appointment-find</pre>\n			<div>\n				<p>Searches for availability for a future appointment(s) within a time period of defined by date range input parameters.  If neither a start or end date is given then the maximum period as defined by local business rules and starting from when the  operation was transacted will be used.   Other input parameter further refine the search and include  practitioner references, specialties, visit type, locations, and patient information. From these criteria, a system determines which schedulable resources ( e.g., people, rooms, equiibment) are needed for the visit, and provides time slots where all required resources are available.</p>\n				<p>Note that for input parameters that are codes, the simple FHIR <a href=\"http://build.fhir.org/search.html#token\">token</a> search parameter type is used instead of the complex <code>Coding</code> datatype.  Also, the simple <code>uri</code> datatype is used instead of the complex <code>Reference</code> datatype for resources references.  This allows either the 'GET'  or the 'POST' syntax to be used to initiate the interaction in many cases.  Examples of both are shown in the below.</p>\n			</div>\n			<p>URL: [base]/Appointment/$find</p>\n			<p>Parameters</p>\n			<table class=\"grid\">\n				<tr>\n					<td>\n						<b>Use</b>\n					</td>\n					<td>\n						<b>Name</b>\n					</td>\n					<td>\n						<b>Cardinality</b>\n					</td>\n					<td>\n						<b>Type</b>\n					</td>\n					<td>\n						<b>Binding</b>\n					</td>\n					<td>\n						<b>Documentation</b>\n					</td>\n				</tr>\n				<tr>\n					<td>IN</td>\n					<td>start</td>\n					<td>1..1</td>\n					<td>dateTime</td>\n					<td/>\n					<td>\n						<div>\n							<p>The period of time that should be checked for appointment availability.- e.g., look for all available appointments in a certain date range. If no start date is provided,  all available appointments prior to the end date are in scope (subject to limits imposed by local business rules).</p>\n						</div>\n					</td>\n				</tr>\n				<tr>\n					<td>IN</td>\n					<td>end</td>\n					<td>1..1</td>\n					<td>dateTime</td>\n					<td/>\n					<td>\n						<div>\n							<p>The period of time that should be checked for appointment availability.- e.g., look for all available appointments in a certain date range. If no end date is provided, all available appointments after the start date are in scope (subject to limits imposed by local business rules).</p>\n						</div>\n					</td>\n				</tr>\n				<tr>\n					<td>IN</td>\n					<td>specialty</td>\n					<td>0..*</td>\n					<td>string (<a href=\"http://hl7.org/fhir/STU3/search.html#token\">token</a>)</td>\n					<td>\n						<a href=\"ValueSet-specialty.html\">http://fhir.org/guides/argonaut-scheduling/ValueSet/specialty</a> (Extensible)</td>\n					<td>\n						<div>\n							<p>The code for which specialty is requested for the appointment. ( e.g., 'Dermatology').   If multiple codes are listed, the order of the codes will interpreted as the order of preference.  The response will contain appointments with any of these actors (i.e. this does not drive joint appointment with multiple actors).  Each parameter value SHALL contain <em>both</em> the system property and the code property for a code using the general syntax <code>specialty=[system]|[code]</code>.   See the examples below for how this is implemented.</p>\n						</div>\n					</td>\n				</tr>\n				<tr>\n					<td>IN</td>\n					<td>visit-type</td>\n					<td>0..*</td>\n					<td>string (<a href=\"http://hl7.org/fhir/STU3/search.html#token\">token</a>)</td>\n					<td>\n						<a href=\"ValueSet-visit-type.html\">http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type</a> (Extensible)</td>\n					<td>\n						<div>\n							<p>The code for one of the common appointment visit types for scheduling.  ( e.g.,'Echocardiography' or  'Well child visit' ). This list of visit types is extensible and implementers may choose to add there own codes.  If multiple codes are listed, the order of the codes will interpreted as the order of preference.  The response will contain appointments with any of these services (i.e. this does not drive joint appointment with multiple services).  Each parameter value SHALL contain <em>both</em> the system property and the code property for a code using the general syntax <code>service-type=[system]|[code]</code>.   See the examples below for how this is implemented.</p>\n						</div>\n					</td>\n				</tr>\n				<tr>\n					<td>IN</td>\n					<td>practitioner</td>\n					<td>0..*</td>\n					<td>uri</td>\n					<td/>\n					<td>\n						<div>\n							<p>The Practitioner reference when performing a provider based query.  This is a reference to a FHIR Practitioner resource,  e.g. 'Practitioner/123'.   If multiple practitioner references are listed, the order will interpreted as the order of preference.  The response will contain appointments with any of these actors (i.e. this does not drive joint appointment with multiple actors).</p>\n						</div>\n					</td>\n				</tr>\n				<tr>\n					<td>IN</td>\n					<td>organization</td>\n					<td>0..*</td>\n					<td>uri</td>\n					<td/>\n					<td>\n						<div>\n							<p>The Organization reference when performing a provider based query.  This is a reference to a FHIR Organization resource,  e.g. 'Organization/abc'.  If multiple organization references are listed, the order will interpreted as the order of preference.  The response will contain appointments with any of these actors (i.e. this does not drive joint appointment with multiple actors).</p>\n						</div>\n					</td>\n				</tr>\n				<tr>\n					<td>IN</td>\n					<td>location-string</td>\n					<td>0..*</td>\n					<td>string (<a href=\"http://hl7.org/fhir/STU3/search.html#string\">string</a>)</td>\n					<td/>\n					<td>\n						<div>\n							<p>A (part of the) address of the location of interest.  (e.g., zip codes, city or state).  This string parameter is interpreted as a  <a href=\"http://build.fhir.org/search.html#string\">String search parameter</a> and covers the <code>string</code> type elements in the <a href=\"http://build.fhir.org/datatypes.html#Address\">Address datatype</a>. If multiple locations are listed, the order will interpreted as the order of preference. The response will contain appointments with any of these actors (i.e. this does not drive joint appointment with multiple locations)</p>\n						</div>\n					</td>\n				</tr>\n				<tr>\n					<td>IN</td>\n					<td>location-reference</td>\n					<td>0..*</td>\n					<td>uri</td>\n					<td/>\n					<td>\n						<div>\n							<p>A Location reference when performing an operation where the Location resource <code>id</code> is known.  If multiple location references are listed, the order will interpreted as the order of preference. The response will contain appointments with any of these actors (i.e. this does not drive joint appointment with multiple locations)</p>\n						</div>\n					</td>\n				</tr>\n				<tr>\n					<td>IN</td>\n					<td>patient-reference</td>\n					<td>0..*</td>\n					<td>uri</td>\n					<td/>\n					<td>\n						<div>\n							<p>A Patient reference when performing an operation where the Patient resource <code>id</code> is known.   Patient resources include demographics and patient preferences that may be important for availaiblilty searches. If multiple patient references are listed, the response will contain appointments which is joint match for all patients - i.e., a group appointment.</p>\n						</div>\n					</td>\n				</tr>\n				<tr>\n					<td>IN</td>\n					<td>patient-resource</td>\n					<td>0..*</td>\n					<td>Resource</td>\n					<td/>\n					<td>\n						<div>\n							<p>This parameter is a complex <code>Resource</code> type instead of a simple reference because the patient record may not exist when performing availablity searches. (If the Patient resource id is known, use the <code>patient-reference</code> parameter instead.)  It based on the <a href=\"http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient\">US Core Patient Profile</a> and includes demographics and patient preferences that may be important for availaiblilty searches. If the appointment is for a new patient, the patient record should not be created until just before booking an appointment.  If multiple patient resources are listed, the response will contain appointments which is joint match for all patients - i.e., a group appointment.</p>\n						</div>\n					</td>\n				</tr>\n				<tr>\n					<td>IN</td>\n					<td>coverage</td>\n					<td>0..*</td>\n					<td>Resource</td>\n					<td/>\n					<td>\n						<div>\n							<p>This parameter is a complex <code>Resource</code> type. It based on the <a href=\"http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-coverage\">Argonaut Coverage Profile</a> and is used to provide insurance information for scheduling an appointment and or registering a patient. Do not transmit Coverage resource elements that require the Patient resource id if it is not known.  If multiple coverage resources are listed, the response will contain appointments which is joint match for all coverages and patients - i.e., a group appointment.</p>\n						</div>\n					</td>\n				</tr>\n				<tr>\n					<td>OUT</td>\n					<td>return</td>\n					<td>0..1</td>\n					<td>Bundle</td>\n					<td/>\n					<td>\n						<div>\n							<p>An <a href=\"StructureDefinition-avail-bundle.html\">Appointment Availability Bundle profile</a> of type <code>searchset</code> with entries of proposed <a href=\"http://build.fhir.org/appointment.html\">Appointment</a> resources and may also contain an <a href=\"http://build.fhir.org/operationoutcome.html\">OperationOutcome</a> with errors, warnings or information as a result of processing the operation - e.g., an informational notice that the returned appointments are not within the requested start and end times.  An empty bundle means no available appointments based on inputs</p>\n						</div>\n					</td>\n				</tr>\n			</table>\n			<div>\n				<ul>\n					<li>The server is responsible for determining the first/best available appointment options to return.</li>\n					<li>References can be to an absolute URL, but servers only perform operations on their own resources.</li>\n					<li>To set the upper limit on the total number of available appointment options to return use the standard <a href=\"http://build.fhir.org/search.html#count\">\n							<code>_count</code>\n						</a> search parameter.  See the examples below for how this is implemented.</li>\n					<li>If there is nominated patient, it is assumed that the server has identified and secured the context appropriately, and can either associate the authorization context with a single patient, or determine whether the context has the rights to the nominated patient, if there is one.  Specifying the relationship between the context, a user and patient records is outside the scope of this specification</li>\n				</ul>\n			</div>\n		</div>"
+  ];
+  fhir:OperationDefinition.url [ fhir:value "http://fhir.org/guides/argonaut-scheduling/OperationDefinition/appointment-find"];
+  fhir:OperationDefinition.version [ fhir:value "0.0.0"];
+  fhir:OperationDefinition.name [ fhir:value "Appointment Availability Operation"];
+  fhir:OperationDefinition.status [ fhir:value "draft"];
+  fhir:OperationDefinition.kind [ fhir:value "operation"];
+  fhir:OperationDefinition.date [ fhir:value "2017-10-31T00:00:00-07:00"^^xsd:dateTime];
+  fhir:OperationDefinition.description [ fhir:value "Searches for availability for a future appointment(s) within a time period of defined by date range input parameters.  If neither a start or end date is given then the maximum period as defined by local business rules and starting from when the  operation was transacted will be used.   Other input parameter further refine the search and include  practitioner references, specialties, visit type, locations, and patient information. From these criteria, a system determines which schedulable resources ( e.g., people, rooms, equiibment) are needed for the visit, and provides time slots where all required resources are available.\n\n Note that for input parameters that are codes, the simple FHIR [token](http://build.fhir.org/search.html#token) search parameter type is used instead of the complex `Coding` datatype.  Also, the simple `uri` datatype is used instead of the complex `Reference` datatype for resources references.  This allows either the 'GET'  or the 'POST' syntax to be used to initiate the interaction in many cases.  Examples of both are shown in the below."];
+  fhir:OperationDefinition.jurisdiction [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ];
+       fhir:Coding.code [ fhir:value "US" ];
+       fhir:Coding.display [ fhir:value "United States Minor Outlying Islands (the)" ]
+     ]
+  ];
+  fhir:OperationDefinition.code [ fhir:value "find"];
+  fhir:OperationDefinition.comment [ fhir:value "- The server is responsible for determining the first/best available appointment options to return.\r-   References can be to an absolute URL, but servers only perform operations on their own resources.\r- To set the upper limit on the total number of available appointment options to return use the standard [`_count`](http://build.fhir.org/search.html#count) search parameter.  See the examples below for how this is implemented.\r- If there is nominated patient, it is assumed that the server has identified and secured the context appropriately, and can either associate the authorization context with a single patient, or determine whether the context has the rights to the nominated patient, if there is one.  Specifying the relationship between the context, a user and patient records is outside the scope of this specification"];
+  fhir:OperationDefinition.resource [
+     fhir:value "Appointment";
+     fhir:index 0
+  ];
+  fhir:OperationDefinition.system [ fhir:value "false"^^xsd:boolean];
+  fhir:OperationDefinition.type [ fhir:value "true"^^xsd:boolean];
+  fhir:OperationDefinition.instance [ fhir:value "false"^^xsd:boolean];
+  fhir:OperationDefinition.parameter [
+     fhir:index 0;
+     fhir:OperationDefinition.parameter.name [ fhir:value "start" ];
+     fhir:OperationDefinition.parameter.use [ fhir:value "in" ];
+     fhir:OperationDefinition.parameter.min [ fhir:value "1"^^xsd:integer ];
+     fhir:OperationDefinition.parameter.max [ fhir:value "1" ];
+     fhir:OperationDefinition.parameter.documentation [ fhir:value "The period of time that should be checked for appointment availability.- e.g., look for all available appointments in a certain date range. If no start date is provided,  all available appointments prior to the end date are in scope (subject to limits imposed by local business rules)." ];
+     fhir:OperationDefinition.parameter.type [ fhir:value "dateTime" ]
+  ], [
+     fhir:index 1;
+     fhir:OperationDefinition.parameter.name [ fhir:value "end" ];
+     fhir:OperationDefinition.parameter.use [ fhir:value "in" ];
+     fhir:OperationDefinition.parameter.min [ fhir:value "1"^^xsd:integer ];
+     fhir:OperationDefinition.parameter.max [ fhir:value "1" ];
+     fhir:OperationDefinition.parameter.documentation [ fhir:value "The period of time that should be checked for appointment availability.- e.g., look for all available appointments in a certain date range. If no end date is provided, all available appointments after the start date are in scope (subject to limits imposed by local business rules)." ];
+     fhir:OperationDefinition.parameter.type [ fhir:value "dateTime" ]
+  ], [
+     fhir:index 2;
+     fhir:OperationDefinition.parameter.name [ fhir:value "specialty" ];
+     fhir:OperationDefinition.parameter.use [ fhir:value "in" ];
+     fhir:OperationDefinition.parameter.min [ fhir:value "0"^^xsd:integer ];
+     fhir:OperationDefinition.parameter.max [ fhir:value "*" ];
+     fhir:OperationDefinition.parameter.documentation [ fhir:value "The code for which specialty is requested for the appointment. ( e.g., 'Dermatology').   If multiple codes are listed, the order of the codes will interpreted as the order of preference.  The response will contain appointments with any of these actors (i.e. this does not drive joint appointment with multiple actors).  Each parameter value SHALL contain *both* the system property and the code property for a code using the general syntax `specialty=[system]|[code]`.   See the examples below for how this is implemented." ];
+     fhir:OperationDefinition.parameter.type [ fhir:value "string" ];
+     fhir:OperationDefinition.parameter.searchType [ fhir:value "token" ];
+     fhir:OperationDefinition.parameter.binding [
+       fhir:OperationDefinition.parameter.binding.strength [ fhir:value "extensible" ];
+       fhir:OperationDefinition.parameter.binding.valueSetReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/ValueSet/specialty>;
+         fhir:Reference.reference [ fhir:value "http://fhir.org/guides/argonaut-scheduling/ValueSet/specialty" ]
+       ]
+     ]
+  ], [
+     fhir:index 3;
+     fhir:OperationDefinition.parameter.name [ fhir:value "visit-type" ];
+     fhir:OperationDefinition.parameter.use [ fhir:value "in" ];
+     fhir:OperationDefinition.parameter.min [ fhir:value "0"^^xsd:integer ];
+     fhir:OperationDefinition.parameter.max [ fhir:value "*" ];
+     fhir:OperationDefinition.parameter.documentation [ fhir:value "The code for one of the common appointment visit types for scheduling.  ( e.g.,'Echocardiography' or  'Well child visit' ). This list of visit types is extensible and implementers may choose to add there own codes.  If multiple codes are listed, the order of the codes will interpreted as the order of preference.  The response will contain appointments with any of these services (i.e. this does not drive joint appointment with multiple services).  Each parameter value SHALL contain *both* the system property and the code property for a code using the general syntax `service-type=[system]|[code]`.   See the examples below for how this is implemented." ];
+     fhir:OperationDefinition.parameter.type [ fhir:value "string" ];
+     fhir:OperationDefinition.parameter.searchType [ fhir:value "token" ];
+     fhir:OperationDefinition.parameter.binding [
+       fhir:OperationDefinition.parameter.binding.strength [ fhir:value "extensible" ];
+       fhir:OperationDefinition.parameter.binding.valueSetReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type>;
+         fhir:Reference.reference [ fhir:value "http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type" ]
+       ]
+     ]
+  ], [
+     fhir:index 4;
+     fhir:OperationDefinition.parameter.name [ fhir:value "practitioner" ];
+     fhir:OperationDefinition.parameter.use [ fhir:value "in" ];
+     fhir:OperationDefinition.parameter.min [ fhir:value "0"^^xsd:integer ];
+     fhir:OperationDefinition.parameter.max [ fhir:value "*" ];
+     fhir:OperationDefinition.parameter.documentation [ fhir:value "The Practitioner reference when performing a provider based query.  This is a reference to a FHIR Practitioner resource,  e.g. 'Practitioner/123'.   If multiple practitioner references are listed, the order will interpreted as the order of preference.  The response will contain appointments with any of these actors (i.e. this does not drive joint appointment with multiple actors)." ];
+     fhir:OperationDefinition.parameter.type [ fhir:value "uri" ]
+  ], [
+     fhir:index 5;
+     fhir:OperationDefinition.parameter.name [ fhir:value "organization" ];
+     fhir:OperationDefinition.parameter.use [ fhir:value "in" ];
+     fhir:OperationDefinition.parameter.min [ fhir:value "0"^^xsd:integer ];
+     fhir:OperationDefinition.parameter.max [ fhir:value "*" ];
+     fhir:OperationDefinition.parameter.documentation [ fhir:value "The Organization reference when performing a provider based query.  This is a reference to a FHIR Organization resource,  e.g. 'Organization/abc'.  If multiple organization references are listed, the order will interpreted as the order of preference.  The response will contain appointments with any of these actors (i.e. this does not drive joint appointment with multiple actors)." ];
+     fhir:OperationDefinition.parameter.type [ fhir:value "uri" ]
+  ], [
+     fhir:index 6;
+     fhir:OperationDefinition.parameter.name [ fhir:value "location-string" ];
+     fhir:OperationDefinition.parameter.use [ fhir:value "in" ];
+     fhir:OperationDefinition.parameter.min [ fhir:value "0"^^xsd:integer ];
+     fhir:OperationDefinition.parameter.max [ fhir:value "*" ];
+     fhir:OperationDefinition.parameter.documentation [ fhir:value "A (part of the) address of the location of interest.  (e.g., zip codes, city or state).  This string parameter is interpreted as a  [String search parameter](http://build.fhir.org/search.html#string) and covers the `string` type elements in the [Address datatype](http://build.fhir.org/datatypes.html#Address). If multiple locations are listed, the order will interpreted as the order of preference. The response will contain appointments with any of these actors (i.e. this does not drive joint appointment with multiple locations)" ];
+     fhir:OperationDefinition.parameter.type [ fhir:value "string" ];
+     fhir:OperationDefinition.parameter.searchType [ fhir:value "string" ]
+  ], [
+     fhir:index 7;
+     fhir:OperationDefinition.parameter.name [ fhir:value "location-reference" ];
+     fhir:OperationDefinition.parameter.use [ fhir:value "in" ];
+     fhir:OperationDefinition.parameter.min [ fhir:value "0"^^xsd:integer ];
+     fhir:OperationDefinition.parameter.max [ fhir:value "*" ];
+     fhir:OperationDefinition.parameter.documentation [ fhir:value "A Location reference when performing an operation where the Location resource `id` is known.  If multiple location references are listed, the order will interpreted as the order of preference. The response will contain appointments with any of these actors (i.e. this does not drive joint appointment with multiple locations)" ];
+     fhir:OperationDefinition.parameter.type [ fhir:value "uri" ]
+  ], [
+     fhir:index 8;
+     fhir:OperationDefinition.parameter.name [ fhir:value "patient-reference" ];
+     fhir:OperationDefinition.parameter.use [ fhir:value "in" ];
+     fhir:OperationDefinition.parameter.min [ fhir:value "0"^^xsd:integer ];
+     fhir:OperationDefinition.parameter.max [ fhir:value "*" ];
+     fhir:OperationDefinition.parameter.documentation [ fhir:value "A Patient reference when performing an operation where the Patient resource `id` is known.   Patient resources include demographics and patient preferences that may be important for availaiblilty searches. If multiple patient references are listed, the response will contain appointments which is joint match for all patients - i.e., a group appointment." ];
+     fhir:OperationDefinition.parameter.type [ fhir:value "uri" ]
+  ], [
+     fhir:index 9;
+     fhir:OperationDefinition.parameter.name [ fhir:value "patient-resource" ];
+     fhir:OperationDefinition.parameter.use [ fhir:value "in" ];
+     fhir:OperationDefinition.parameter.min [ fhir:value "0"^^xsd:integer ];
+     fhir:OperationDefinition.parameter.max [ fhir:value "*" ];
+     fhir:OperationDefinition.parameter.documentation [ fhir:value "This parameter is a complex `Resource` type instead of a simple reference because the patient record may not exist when performing availablity searches. (If the Patient resource id is known, use the `patient-reference` parameter instead.)  It based on the [US Core Patient Profile](http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient) and includes demographics and patient preferences that may be important for availaiblilty searches. If the appointment is for a new patient, the patient record should not be created until just before booking an appointment.  If multiple patient resources are listed, the response will contain appointments which is joint match for all patients - i.e., a group appointment." ];
+     fhir:OperationDefinition.parameter.type [ fhir:value "Resource" ];
+     fhir:OperationDefinition.parameter.profile [
+       fhir:link <http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient>;
+       fhir:Reference.reference [ fhir:value "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient" ]
+     ]
+  ], [
+     fhir:index 10;
+     fhir:OperationDefinition.parameter.name [ fhir:value "coverage" ];
+     fhir:OperationDefinition.parameter.use [ fhir:value "in" ];
+     fhir:OperationDefinition.parameter.min [ fhir:value "0"^^xsd:integer ];
+     fhir:OperationDefinition.parameter.max [ fhir:value "*" ];
+     fhir:OperationDefinition.parameter.documentation [ fhir:value "This parameter is a complex `Resource` type. It based on the [Argonaut Coverage Profile](http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-coverage) and is used to provide insurance information for scheduling an appointment and or registering a patient.  Do not transmit Coverage resource elements that require the Patient resource id if it is not known. If multiple coverage resources are listed, the response will contain appointments which is joint match for all coverages and patients - i.e., a group appointment." ];
+     fhir:OperationDefinition.parameter.type [ fhir:value "Resource" ];
+     fhir:OperationDefinition.parameter.profile [
+       fhir:link <http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-coverage>;
+       fhir:Reference.reference [ fhir:value "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-coverage" ]
+     ]
+  ], [
+     fhir:index 11;
+     fhir:OperationDefinition.parameter.name [ fhir:value "return" ];
+     fhir:OperationDefinition.parameter.use [ fhir:value "out" ];
+     fhir:OperationDefinition.parameter.min [ fhir:value "0"^^xsd:integer ];
+     fhir:OperationDefinition.parameter.max [ fhir:value "1" ];
+     fhir:OperationDefinition.parameter.documentation [ fhir:value "An [Appointment Availability Bundle profile](StructureDefinition-avail-bundle.html) of type `searchset` with entries of proposed [Appointment](http://build.fhir.org/appointment.html) resources and may also contain an [OperationOutcome](http://build.fhir.org/operationoutcome.html) with errors, warnings or information as a result of processing the operation - e.g., an informational notice that the returned appointments are not within the requested start and end times.  An empty bundle means no available appointments based on inputs" ];
+     fhir:OperationDefinition.parameter.type [ fhir:value "Bundle" ];
+     fhir:OperationDefinition.parameter.profile [
+       fhir:link <http://fhir.org/guides/argonaut-scheduling/StructureDefinition/avail-bundle>;
+       fhir:Reference.reference [ fhir:value "StructureDefinition/avail-bundle" ]
+     ]
+  ] .
+
+<http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient> a fhir:us .
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.org/guides/argonaut-scheduling/OperationDefinition/appointment-find.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

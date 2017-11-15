@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Coverage xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir file:///C:/Users/Eric/Downloads/fhir-all-xsd/structuredefinition.xsd">
+	<id value="argo-sch-1"/>
+
+	<identifier>
+		<system value="https://www.anthem.com/ca"/>
+		<value value="DZW9200000000"/>
+	</identifier>
+	<status value="active"/>
+	<type>
+		<coding>
+			<system value="http://hl7.org/fhir/v3/ActCode"/>
+			<code value="HIP"/>
+			<display value="health insurance plan policy"/>
+		</coding>
+	</type>
+	<subscriber>
+		<reference value="Patient/argo-sch-patient-1"/>
+		<display value="First M LastName Jr"/>
+	</subscriber>
+	<subscriberId value="DZW9200000000"/>
+	<relationship>
+		<coding>
+			<system value="http://hl7.org/fhir/policyholder-relationship"/>
+			<code value="self"/>
+			<display value="Self"/>
+		</coding>
+	</relationship>
+	<period>
+		<start value="2016-01-01"/>
+	</period>
+	<payor>
+		<display value="Anthem Blue Cross of California"/>
+	</payor>
+	<grouping>
+		<plan value="1FZQ"/>
+		<planDisplay value="Anthem Bronze 60 D HSA PPO"/>
+	</grouping>
+</Coverage>

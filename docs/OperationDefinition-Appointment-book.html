@@ -1,0 +1,360 @@
+﻿<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+   <meta charset="UTF-8"/>
+  <title>Argo-Scheduling</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Argo-Scheduling Implemenation Guide"/>
+<meta name="author" content="http://argonautwiki.hl7.org"/>
+
+
+  <link rel="stylesheet" href="fhir.css"/>
+
+
+     <!-- Bootstrap core CSS -->
+
+     <!-- Latest compiled and minified CSS -->
+
+  <link rel="stylesheet" href="assets/css/bootstrap.css"/>
+  <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
+
+    <!-- Project extras -->
+  <link rel="stylesheet" href="assets/css/project.css"/>
+  <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
+	<link rel="stylesheet" href="jquery-ui.css"/>
+
+    <!-- Favicons -->
+  <link sizes="144x144" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link sizes="114x114" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link sizes="72x72" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+
+
+<body markdown="1">
+
+
+  <!-- ?xml version="1.0" encoding="UTF-8"? -->
+<div id="segment-header" class="segment">
+    <!-- segment-header -->
+  <div class="container">
+      <!-- container --> <a no-external="true" id="logo" href="http://hl7.org/fhir">
+      <img src="assets/images/fhir-logo-www.png" alt="logo fhir"/>
+    </a>
+      <div id="project-nav">
+               <!-- <a id="your-logo" no-external="true" href="http://www.hl7.org">
+<img height="50" alt="visit the hl7 website" width="42" src="assets/images/hl7-logo.png"/>
+</a>
+
+================THIS IS FOR THE PROJECT LOGO AND URL =============== -->
+
+<p id="hl7-logo" class="img-responsive"><a href="http://argonautwiki.hl7.org"><img src="assets/images/ArgonautProject_logo_black.png" alt="visit the our website" height="65px"/></a></p>
+
+      </div>
+    <div id="ig-status">
+      <b>Argo-Scheduling Implementation Guide CI Build</b>
+    </div>
+  </div>
+  <div class="container">
+      <!-- container -->
+  </div>
+</div>
+  <!-- /segment-header -->
+<div id="segment-navbar" class="segment">
+    <!-- segment-navbar -->
+  <div id="stripe">
+  </div>
+  <div class="container">
+      <!-- container -->
+      <!-- HEADER CONTENT -->
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+          <span class="icon-bar">
+          </span>
+          <span class="icon-bar">
+          </span>
+          <span class="icon-bar">
+          </span>
+        </button>
+        <a href="http://hl7.org/fhir/STU3/index.html" class="navbar-brand hidden">FHIR</a>
+        <div class="nav-collapse collapse navbar-inverse-collapse">          <!-- don't remove the line above - to add or remove a menu item commeent in or out -->
+<ul class="nav navbar-nav">
+  <li><a href="index.html">Home</a></li>
+  <li><a data-toggle="dropdown" href="guidance.html" class="dropdown-toggle">Use Cases…</a>
+    <ul class="dropdown-menu">
+      <li><a href="patient-scheduling.html">Patient Based Scheduling</a></li>
+      <li><a href="provider-scheduling.html">Provider based Scheduling</a></li>
+    </ul>
+  </li>
+  <li><a href="operations.html">Operations</a></li>
+  <li><a href="profiles.html">Profiles/Extensions</a></li>
+  <li><a href="terminology.html">Terminology</a></li>
+  <li><a data-toggle="dropdown" href="capstatements.html" class="dropdown-toggle">Capability Statements…</a>
+    <ul class="dropdown-menu">
+      <li><a href="server-capstatement.html">Conformance requirements for Server</a></li>
+      <li><a href="client-capstatement.html">Conformance requirements for Client</a></li>
+    </ul>
+  </li>
+  <li><a href="downloads.html">Downloads</a></li>
+</ul>
+          <!-- <ul class="nav navbar-nav">
+          <li>
+            <a href="index.html">Home</a>
+          </li>
+          <li>
+            <a href="guidance.html">General Guidance</a>
+          </li>
+          <li>
+            <a href="profiles.html">Profiles and Logical Models</a>
+          </li>
+          <li>
+            <a href="structuremaps.html">Mappings</a>
+          </li>
+          <li>
+            <a href="extensions.html">Extensions</a>
+          </li>
+          <li>
+            <a href="terminology.html">Terminology</a>
+          </li>
+          <li>
+            <a href="searchparams.html">Search Parameters</a>
+          </li>
+          <li>
+            <a href="capstatements.html">Capability Statements</a>
+          </li>
+          <li>
+            <a href="security.html">Security</a>
+          </li>
+          <li>
+            <a href="examples.html">Examples</a>
+          </li>
+          <li>
+            <a href="downloads.html">Downloads</a>
+          </li>
+        </ul> -->
+      </div>
+        <!-- /.nav-collapse -->
+    </div>
+      <!-- /.container -->
+  </nav>
+    <!-- /.navbar -->
+    <!-- /HEADER CONTENT -->
+</div>
+  <!-- /container -->
+</div>
+  <!-- /segment-navbar -->
+
+
+
+    <!-- /container -->
+    <!-- /segment-breadcrumb -->
+
+<div id="segment-content" class="segment">    <!-- segment-content -->
+<div class="container">    <!-- container -->
+<div class="row">
+<div class="inner-wrapper">
+
+
+<div class="col-12">
+
+
+  <!-- ============BreadCrumb=============== -->
+
+<nav class="breadcrumb">
+  
+    
+    
+    
+    
+    
+
+</nav>
+
+
+  <!-- ============CONTENT CONTENT=============== -->
+
+<p>
+Formats: <a href="OperationDefinition-Appointment-book.xml.html">XML</a>, <a href="OperationDefinition-Appointment-book.json.html">JSON</a>, <a href="OperationDefinition-Appointment-book.ttl.html">Turtle</a>
+</p>
+
+<div xmlns="http://www.w3.org/1999/xhtml"><h2>Appointment Book</h2><p>OPERATION: Appointment Book</p><p>The official URL for this operation definition is: </p><pre>http://fhir.org/guides/argonaut-scheduling/OperationDefinition/Appointment-book</pre><div><p>Request to book the selected proposed Appointment.  This operation  follows the appointment availability ($find) and optional hold  ($hold) operations.  The server determines if the nominated appointment is still available (i.e., all the required actors and physical assets needed for the appointment are still available) .</p>
+</div><p>URL: [base]/Appointment/$book</p><p>Parameters</p><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>appt-id</td><td>0..1</td><td>uri</td><td/><td><div><p>A resource id for one of proposed Appointments returned by a prior $find operation (e.g., Resource/1234).  This is the same resource id as used for the $hold operation.  References can be to an absolute URL, but servers only perform this operation on their own appointments.</p>
+</div></td></tr><tr><td>IN</td><td>patient-id</td><td>0..*</td><td>uri</td><td/><td><div><p><a name="1534648d-e8fb-4925-bd1e-d0d92ee0d05d">​</a>A resource id for the Patient(s) participant in the resource (e.g., Patient/1234).  References can be to an absolute URL, but servers only perform this operation on their own patients.  For existing patients the client may need to fetch Patient ID using RESTful <code>GET</code> to the FHIR Server (i.e., <a href="{site.data.fhir.uscore}/StructureDefinition-us-core-patient.html#search">US-Core Patient Search</a>). For new patients client needs to fetch Patient ID using RESTful <code>POST</code> to register the patient on the FHIR Server (see <a href="{site.data.fhir.path}/http.html#create">create</a> and <a href="{site.data.fhir.path}/http.html#ccreate">conditional create</a>)</p>
+</div></td></tr><tr><td>IN</td><td>comment</td><td>0..1</td><td>string</td><td/><td><div><p>Comments or special instructions</p>
+</div></td></tr><tr><td>OUT</td><td>return</td><td>0..1</td><td>Bundle</td><td/><td><div><p><a name="78cdf6e2-ff53-4177-9da7-105b21f8c3ab">​</a>An <a href="StructureDefinition-avail-bundle.html">Appointment Availability Bundle profile</a> of type <code>searchset</code> of requested Appointment resource and may also contain an <a href="{site.data.fhir.path}/operationoutcome.html">OperationOutcome</a> with errors, warnings or information as a result of processing the operation.   If the booking is accepted, the Appointment resource will have an updated <code>status</code> of &quot;booked&quot; and  the <code>participants</code>element updated to include the patients.  If the booking is rejected, the Appointment resource will have an updated <code>status</code> of  &quot;cancelled&quot;.</p>
+</div></td></tr></table><div><p>This operation is not idempotent (see HTTP specification definition of idempotent ) may only be invoked by performing an HTTP POST.</p>
+<p>It is assumed that the server has identified and secured the context appropriately, and can either associate the authorization context with the patient(s), or determine whether the context has the rights to the nominated patient(s), if there is one.  Specifying the relationship between the context, a user and patient records is outside the scope of this specification</p>
+</div></div>
+
+<h2 id="examples">Examples</h2>
+
+<ul>
+  <li><a href="#scenario-1">Scenario-1</a></li>
+  <li><a href="#scenario-2">Scenario-2</a></li>
+</ul>
+
+<h4 id="scenario-1">Scenario 1a: Use the operation to book the appointment.</h4>
+
+<p><a href="https://github.com/argonautproject/scheduling/wiki/Use-Cases#scenario-1a-existing-patient-schedules-directly-with-their-provider">Scenario Details</a></p>
+
+<h5 id="request">Request</h5>
+
+<p><code class="highlighter-rouge">POST [base]/Appointment/$book</code></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>**payload:**
+
+{
+  &quot;resourceType&quot;: &quot;Parameters&quot;,
+  &quot;id&quot;: &quot;pcp-book&quot;,
+  &quot;parameter&quot;: [
+    {
+      &quot;name&quot;: &quot;appt-id&quot;,
+      &quot;valueUrl&quot; : &quot;Appointment/proposed-appt1a-1&quot;
+    },
+    {
+      &quot;name&quot;: &quot;comment&quot;,
+      &quot;valueString&quot; : &quot;this is an appointment comment how long can it be?&quot;
+    }
+
+  ]
+}
+</code></pre>
+</div>
+
+<h5 id="response-operationbook-example-1abundle-hal-dr-y-bookhtml"><a name="6fcdc6f8-7f70-4ae3-b83c-e47ad77bd3ac">​</a>Response (<a href="Bundle-hal-dr-y-book.html">Operation$book Example 1a</a>)</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">&quot;resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bundle&quot;</span><span class="p">,</span><span class="w">
+  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;hal-dr-y-booked&quot;</span><span class="p">,</span><span class="w">
+  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;searchset&quot;</span><span class="p">,</span><span class="w">
+  </span><span class="nt">&quot;total&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nt">&quot;entry&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+    </span><span class="nt">&quot;fullUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://server/path/Appointment/booked-appt1a&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="nt">&quot;resource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">&quot;resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Appointment&quot;</span><span class="p">,</span><span class="w">
+      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;booked-appt1a&quot;</span><span class="p">,</span><span class="w">
+      </span><span class="err">..</span><span class="w"> </span><span class="err">snip</span><span class="w"> </span><span class="err">...</span><span class="w">
+    </span><span class="nt">&quot;fullUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://server/path/OperationOutcome/oo-booked-appt1a&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="nt">&quot;resource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">&quot;resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OperationOutcome&quot;</span><span class="p">,</span><span class="w">
+      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;oo-booked-appt1a&quot;</span><span class="p">,</span><span class="w">
+      </span><span class="err">..</span><span class="w"> </span><span class="err">snip</span><span class="w"> </span><span class="err">...</span><span class="w">
+    </span><span class="err">}</span><span class="w">
+  </span><span class="err">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<h4 id="scenario-2">Scenario 2: Use the operation to book an appointment</h4>
+
+<p><a href="https://github.com/argonautproject/scheduling/wiki/Use-Cases#scenario-2a-new-patient-schedules-an-appointment-with-a-provider-without-being-in-health-system">Scenario Details</a></p>
+
+<p><code class="highlighter-rouge">POST [base]/Appointment/$book</code></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>**payload:**
+
+{
+  &quot;resourceType&quot;: &quot;Parameters&quot;,
+  &quot;id&quot;: &quot;pcp-appts&quot;,
+  &quot;parameter&quot;: [
+    {
+      &quot;name&quot;: &quot;appt-id&quot;,
+      &quot;valueUrl&quot; : &quot;Appointment/proposed-appt2a-1&quot;
+    },
+    {
+      &quot;name&quot;: &quot;patient-id&quot;,
+        &quot;valueDateTime&quot; : &quot;Patient/1234&quot;
+    }
+]
+}
+</code></pre>
+</div>
+
+<h5 id="response-operationbook-example-2abundle-derm-bookhtml"><a name="700a9114-170b-4539-a8b2-7da2f1f82ff9">​</a>Response (<a href="Bundle-derm-book.html">Operation$book Example 2a</a>)</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="w">    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">&quot;resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bundle&quot;</span><span class="p">,</span><span class="w">
+      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;derm-booked&quot;</span><span class="p">,</span><span class="w">
+      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;searchset&quot;</span><span class="p">,</span><span class="w">
+      </span><span class="nt">&quot;total&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nt">&quot;entry&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nt">&quot;fullUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://server/path/Appointment/booked-derm-appt&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="nt">&quot;resource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nt">&quot;resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Appointment&quot;</span><span class="p">,</span><span class="w">
+          </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;booked-derm-appt&quot;</span><span class="p">,</span><span class="w">
+          </span><span class="err">..</span><span class="w"> </span><span class="err">snip</span><span class="w"> </span><span class="err">...</span><span class="w">
+        </span><span class="nt">&quot;fullUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://server/path/OperationOutcome/oo-booked-derm-appt&quot;</span><span class="p">,</span><span class="w">
+        </span><span class="nt">&quot;resource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nt">&quot;resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OperationOutcome&quot;</span><span class="p">,</span><span class="w">
+          </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;oo-booked-derm-appt&quot;</span><span class="p">,</span><span class="w">
+          </span><span class="err">..</span><span class="w"> </span><span class="err">snip</span><span class="w"> </span><span class="err">...</span><span class="w">
+        </span><span class="err">}</span><span class="w">
+      </span><span class="err">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+
+    <!-- ==============END CONTENT END CONTENT=================== -->
+
+</div>
+
+
+</div>    <!-- /inner-wrapper -->
+</div>    <!-- /row -->
+</div>    <!-- /container -->
+
+</div>    <!-- /segment-content -->
+
+
+
+
+
+        <!-- /inner-wrapper -->
+                <!-- /row -->
+            <!-- /container -->
+
+        <!-- /segment-content -->
+
+
+<div id="segment-footer" class="segment">    <!-- segment-footer -->
+  <div class="container">    <!-- container -->
+   <div class="inner-wrapper">
+    <p>
+            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Wed, Nov 15, 2017 11:08-0800. |
+               <!-- <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
+                <a rel="license" style="color: #81BEF7" href="http://hl7.org/fhir/STU3license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a>
+        
+        </p>
+   </div>    <!-- /inner-wrapper -->
+  </div>    <!-- /container -->
+ </div>    <!-- /segment-footer -->
+    <!-- disqus thread -->
+    <!-- disqus -->
+    <!-- end disqus -->
+
+ <div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
+  <div class="container">    <!-- container -->
+  </div>    <!-- /container -->
+ </div>    <!-- /segment-post-footer -->
+
+   <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./assets/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+
+
+</body>
+
+
+</head></html>

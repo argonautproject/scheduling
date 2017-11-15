@@ -1,0 +1,258 @@
+<!DOCTYPE HTML>
+
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+   <meta charset="UTF-8"/>
+  <title>Argo-Scheduling</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Argo-Scheduling Implemenation Guide" />
+<meta name="author" content="http://argonautwiki.hl7.org"/>
+
+
+  <link href="fhir.css" rel="stylesheet"/>
+
+
+   <!-- Bootstrap core CSS -->
+
+   <!-- Latest compiled and minified CSS -->
+
+  <link href="assets/css/bootstrap.css" rel="stylesheet"/>
+  <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+  <!-- Project extras -->
+  <link href="assets/css/project.css" rel="stylesheet"/>
+  <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+	<link href="jquery-ui.css" rel="stylesheet"/>
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+
+
+<body markdown="1">
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<div id="segment-header" class="segment">
+  <!-- segment-header -->
+  <div class="container">
+    <!-- container --> <a id="logo" no-external="true" href="http://hl7.org/fhir">
+      <img alt="logo fhir" src="assets/images/fhir-logo-www.png"/>
+    </a>
+      <div id="project-nav">
+             <!--
+<a id="your-logo" no-external="true" href="http://www.hl7.org">
+<img height="50" alt="visit the hl7 website" width="42" src="assets/images/hl7-logo.png"/>
+</a>
+
+================THIS IS FOR THE PROJECT LOGO AND URL ===============
+-->
+
+<p class="img-responsive" id="hl7-logo"><a href="http://argonautwiki.hl7.org"><img src="assets/images/ArgonautProject_logo_black.png" alt="visit the our website" height="65px" /></a></p>
+
+      </div>
+    <div id="ig-status">
+      <b>Argo-Scheduling Implementation Guide CI Build</b>
+    </div>
+  </div>
+  <div class="container">
+    <!-- container -->
+  </div>
+</div>
+<!-- /segment-header -->
+<div id="segment-navbar" class="segment">
+  <!-- segment-navbar -->
+  <div id="stripe">
+  </div>
+  <div class="container">
+    <!-- container -->
+    <!-- HEADER CONTENT -->
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+          <span class="icon-bar">
+          </span>
+          <span class="icon-bar">
+          </span>
+          <span class="icon-bar">
+          </span>
+        </button>
+        <a class="navbar-brand hidden" href="http://hl7.org/fhir/STU3/index.html">FHIR</a>
+        <div class="nav-collapse collapse navbar-inverse-collapse">        <!-- don't remove the line above - to add or remove a menu item commeent in or out -->
+<ul class="nav navbar-nav">
+  <li><a href="index.html">Home</a></li>
+  <li><a href="guidance.html" class="dropdown-toggle" data-toggle="dropdown">Use Cases…</a>
+    <ul class="dropdown-menu">
+      <li><a href="patient-scheduling.html">Patient Based Scheduling</a></li>
+      <li><a href="provider-scheduling.html">Provider based Scheduling</a></li>
+    </ul>
+  </li>
+  <li><a href="operations.html">Operations</a></li>
+  <li><a href="profiles.html">Profiles/Extensions</a></li>
+  <li><a href="terminology.html">Terminology</a></li>
+  <li><a href="capstatements.html" class="dropdown-toggle" data-toggle="dropdown">Capability Statements…</a>
+    <ul class="dropdown-menu">
+      <li><a href="server-capstatement.html">Conformance requirements for Server</a></li>
+      <li><a href="client-capstatement.html">Conformance requirements for Client</a></li>
+    </ul>
+  </li>
+  <li><a href="downloads.html">Downloads</a></li>
+</ul>
+        <!--        <ul class="nav navbar-nav">
+          <li>
+            <a href="index.html">Home</a>
+          </li>
+          <li>
+            <a href="guidance.html">General Guidance</a>
+          </li>
+          <li>
+            <a href="profiles.html">Profiles and Logical Models</a>
+          </li>
+          <li>
+            <a href="structuremaps.html">Mappings</a>
+          </li>
+          <li>
+            <a href="extensions.html">Extensions</a>
+          </li>
+          <li>
+            <a href="terminology.html">Terminology</a>
+          </li>
+          <li>
+            <a href="searchparams.html">Search Parameters</a>
+          </li>
+          <li>
+            <a href="capstatements.html">Capability Statements</a>
+          </li>
+          <li>
+            <a href="security.html">Security</a>
+          </li>
+          <li>
+            <a href="examples.html">Examples</a>
+          </li>
+          <li>
+            <a href="downloads.html">Downloads</a>
+          </li>
+        </ul> -->
+      </div>
+      <!-- /.nav-collapse -->
+    </div>
+    <!-- /.container -->
+  </nav>
+  <!-- /.navbar -->
+  <!-- /HEADER CONTENT -->
+</div>
+<!-- /container -->
+</div>
+<!-- /segment-navbar -->
+
+
+
+</div>  <!-- /container -->
+</div>  <!-- /segment-breadcrumb -->
+
+<div id="segment-content" class="segment">  <!-- segment-content -->
+<div class="container">  <!-- container -->
+<div class="row">
+<div class="inner-wrapper">
+
+
+<div class="col-12">
+
+
+
+<!-- ============BreadCrumb=============== -->
+
+<nav class="breadcrumb">
+  
+    
+    
+    
+    
+      <a class="breadcrumb-item" href="index.html">Home</a>
+      /
+      <a class="breadcrumb-item" href="terminology.html">Terminology</a>
+      /
+      <span class="breadcrumb-item active">CodeSystem-visit-type</span>
+    
+    
+
+</nav>
+
+
+<!-- ============CONTENT CONTENT=============== -->
+
+<h2>CodeSystem: CodeSystem-visit-type</h2>
+
+<p>
+Formats: <a href="CodeSystem-visit-type.xml.html">XML</a>, <a href="CodeSystem-visit-type.json.html">JSON</a>, <a href="CodeSystem-visit-type.ttl.html">Turtle</a>
+</p>
+
+<div xmlns="http://www.w3.org/1999/xhtml"><h2>Argonaut Visit Types</h2><div><p>The Argonaut Visit Types are a prioritized valueset of the most common 'business types' for scheduling and have been identified as the baseline use cases for the  Argonaut Scheduling Implementation Guide.  This is intended to facilitates implementation of the IG by provide a common starting point for interoperability.  The Visit types can be extended by implementers to meet there use cases.  In order to align with the FHIR Appointment, Schedule and Slot resources, these concepts are mapped to the Argonaut Appointment Types and Argonaut Scheduling Services Valuesets which are Snomed Concepts.</p>
+</div><p>This code system http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type defines the following codes:</p><table class="codes"><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td>breast-imaging <a name="visit-type-breast-imaging"> </a></td><td>BREAST IMAGING </td><td>breast imaging  visit</td></tr><tr><td>consult<a name="visit-type-consult"> </a></td><td>CONSULTATION</td><td>consultation visit</td></tr><tr><td>ct<a name="visit-type-ct"> </a></td><td>COMPUTED TOMOGRAPHY SCAN(CT)</td><td>computed tomography scan(ct) visit</td></tr><tr><td>dental<a name="visit-type-dental"> </a></td><td>DENTAL</td><td>dental visit</td></tr><tr><td>dxa<a name="visit-type-dxa"> </a></td><td>DUAL-ENERGY X-RAY ABSORPTIOMETRY(DXA)</td><td>Dual-energy X-ray absorptiometry(dxa) visit</td></tr><tr><td>echo<a name="visit-type-echo"> </a></td><td>ECHOCARDIOGRAPHY(ECHO)</td><td>echocardiography(echo) visit</td></tr><tr><td>echo-stresstest<a name="visit-type-echo-stresstest"> </a></td><td>ECHOCARDIOGRAPHY(ECHO) STRESS TEST</td><td>echocardiography(echo) stress test visit</td></tr><tr><td>ed-followup<a name="visit-type-ed-followup"> </a></td><td>EDUCATION FOLLOW UP</td><td>education follow up visit</td></tr><tr><td>eeg<a name="visit-type-eeg"> </a></td><td>ELECTROENCEPHALOGRAPHY(EEG)</td><td>Electroencephalography(eeg) visit</td></tr><tr><td>egd<a name="visit-type-egd"> </a></td><td>ESOPHAGOGASTRODUODENOSCOPY(EGD)</td><td>esophagogastroduodenoscopy(egd) visit</td></tr><tr><td>ekg<a name="visit-type-ekg"> </a></td><td>ELECTROCARDIOGRAM(EKG)</td><td>electrocardiogram(ekg) visit</td></tr><tr><td>evaluation<a name="visit-type-evaluation"> </a></td><td>EVALUATION</td><td>evaluation visit</td></tr><tr><td>flu-shot-clinic<a name="visit-type-flu-shot-clinic"> </a></td><td>INFLUENZA VACCINATION CLINIC</td><td>Influenza vaccination clinic visit</td></tr><tr><td>fluoroscopy<a name="visit-type-fluoroscopy"> </a></td><td>FLUOROSCOPY</td><td>fluoroscopy visit</td></tr><tr><td>follow-up<a name="visit-type-follow-up"> </a></td><td>FOLLOW UP</td><td>follow up visit</td></tr><tr><td>home-health<a name="visit-type-home-health"> </a></td><td>HOME HEALTH VISIT</td><td>home health visit visit</td></tr><tr><td>injection<a name="visit-type-injection"> </a></td><td>INJECTION</td><td>injection visit</td></tr><tr><td>inter-rad<a name="visit-type-inter-rad"> </a></td><td>INTERVENTIONAL RADIOLOGY</td><td>interventional radiology visit</td></tr><tr><td>lab<a name="visit-type-lab"> </a></td><td>LABORATORY TESTS</td><td>Laboratory Testing visit</td></tr><tr><td>minor-surgery<a name="visit-type-minor-surgery"> </a></td><td>MINOR SURGERY</td><td>minor surgery visit</td></tr><tr><td>mri<a name="visit-type-mri"> </a></td><td>MAGNETIC RESONANCE IMAGING(MRI)</td><td>magnetic resonance imaging(mri) visit</td></tr><tr><td>new-patient<a name="visit-type-new-patient"> </a></td><td>NEW PATIENT</td><td>new patient visit</td></tr><tr><td>nuc-med<a name="visit-type-nuc-med"> </a></td><td>NUCLEAR MEDICINE</td><td>nuclear medicine visit</td></tr><tr><td>occup-therapy<a name="visit-type-occup-therapy"> </a></td><td>OCCUPATIONAL THERAPY</td><td>occupational therapy visit</td></tr><tr><td>office-visit<a name="visit-type-office-visit"> </a></td><td>OFFICE VISIT</td><td>office visit</td></tr><tr><td>physical<a name="visit-type-physical"> </a></td><td>PHYSICAL</td><td>physical visit</td></tr><tr><td>post-op<a name="visit-type-post-op"> </a></td><td>POST-OPERATIVE(POST-OP)</td><td>post-operative visit</td></tr><tr><td>pre-admit-testing<a name="visit-type-pre-admit-testing"> </a></td><td>PRE-ADMISSION TESTING VISIT</td><td>pre-admission testing visit visit</td></tr><tr><td>pre-op<a name="visit-type-pre-op"> </a></td><td>PRE-OPERATIVE(PRE-OP)</td><td>pre-operative(pre-op) visit</td></tr><tr><td>procedure<a name="visit-type-procedure"> </a></td><td>PROCEDURE</td><td>procedure visit</td></tr><tr><td>same-day<a name="visit-type-same-day"> </a></td><td>SAME DAY</td><td>same day visit</td></tr><tr><td>stress-test<a name="visit-type-stress-test"> </a></td><td>STRESS TEST</td><td>stress test visit</td></tr><tr><td>surgery<a name="visit-type-surgery"> </a></td><td>SURGERY</td><td>surgery visit</td></tr><tr><td>treatment<a name="visit-type-treatment"> </a></td><td>TREATMENT</td><td>treatment visit</td></tr><tr><td>ultrasound<a name="visit-type-ultrasound"> </a></td><td>ULTRASOUND</td><td>ultrasound visit</td></tr><tr><td>urgent<a name="visit-type-urgent"> </a></td><td>URGENT</td><td>urgent visit</td></tr><tr><td>vaccine<a name="visit-type-vaccine"> </a></td><td>VACCINATION</td><td>vaccination visit</td></tr><tr><td>vision<a name="visit-type-vision"> </a></td><td>VISION</td><td>vision visit</td></tr><tr><td>walk-in<a name="visit-type-walk-in"> </a></td><td>WALK IN</td><td>walk in visit</td></tr><tr><td>well-child<a name="visit-type-well-child"> </a></td><td>WELL CHILD</td><td>well child visit</td></tr><tr><td>x-ray<a name="visit-type-x-ray"> </a></td><td>X-RAY</td><td>x-ray visit</td></tr></table></div>
+
+
+<!-- ==============END CONTENT END CONTENT=================== -->
+
+</div>
+
+
+</div>  <!-- /inner-wrapper -->
+</div>  <!-- /row -->
+</div>  <!-- /container -->
+
+</div>  <!-- /segment-content -->
+
+
+
+
+</div>
+
+    </div>  <!-- /inner-wrapper -->
+            </div>  <!-- /row -->
+        </div>  <!-- /container -->
+
+    </div>  <!-- /segment-content -->
+
+
+<div id="segment-footer" class="segment">  <!-- segment-footer -->
+  <div class="container">  <!-- container -->
+   <div class="inner-wrapper">
+    <p>
+            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Wed, Nov 15, 2017 11:08-0800. |
+             <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
+                <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/STU3license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
+        </span>
+        </p>
+   </div>  <!-- /inner-wrapper -->
+  </div>  <!-- /container -->
+ </div>  <!-- /segment-footer -->
+  <!-- disqus thread -->
+  <!-- disqus -->
+  <!-- end disqus -->
+
+ <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+  <div class="container">  <!-- container -->
+  </div>  <!-- /container -->
+ </div>  <!-- /segment-post-footer -->
+
+ <!-- JS and analytics only. -->
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./assets/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+<!-- Analytics Below
+================================================== -->
+
+
+</body>
+</html>
+

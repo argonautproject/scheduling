@@ -1,6 +1,6 @@
 ## {{site.data.fhir.igName}} Implementation Guide
 
-{% include publish-box.html %}
+{% include ci-publish-box.html %}
 
 {:.no_toc}
 
