@@ -1,5 +1,5 @@
 #!/bin/bash
-name="Argoo-Scheduling"
+name="Argo-Scheduling"
 path1=/Users/ehaas/Documents/FHIR/IG-Template/
 path2=/Users/ehaas/Downloads/
 echo "================================================================="
@@ -11,9 +11,9 @@ echo "================================================================="
 find . -name '.DS_Store' -type f -delete
 git status
 echo "================================================================="
-echo === move ig.json from ${path1} to $PWD ===
+echo === copy ig.json from $PWD to ${path1} ===
 echo "================================================================="
-mv ig.json ${path1}
+cp ig.json ${path1}
 echo "================================================================="
 echo === run igpublisher ===
 echo "================================================================="
