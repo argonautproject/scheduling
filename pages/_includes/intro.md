@@ -18,9 +18,9 @@ source pages/\_include/{{page.md_filename}}.md  file
 
 ### Introduction
 
-The [Argonaut Scheduling Project](#.html) is a vendor agnostic specification providing FHIR RESTful APIs and guidance for access to and booking of appointments for patients by both patient and practitioner end users. This specification is based on [FHIR Version 3.0.1]({{site.data.fhir.path}}) and specifically the Scheduling and Appointment resources]({{site.data.fhir.path}}/administration-module.html#sched).
+The [Argonaut Scheduling Project](#.html) is a vendor agnostic specification providing FHIR RESTful APIs and guidance for access to and booking of appointments for patients by both patient and practitioner end users. This specification is based on [FHIR Version 3.0.1]({{site.data.fhir.path}}) and specifically the [Scheduling and Appointment resources]({{site.data.fhir.path}}/administration-module.html#sched).
 
-These requirements were developed and as defined by the [Argonaut](http://argonautwiki.hl7.org) pilot implementations.
+These requirements were developed and defined by the [Argonaut](http://argonautwiki.hl7.org) pilot implementations.
 
 ### Scope
 
@@ -28,28 +28,35 @@ These requirements were developed and as defined by the [Argonaut](http://argona
 #### Patient Based Scheduling:
 {:.no_toc}
 
-   - Provide FHIR APIs and guidance for both existing and new patients to:
-     - Search for open Appointments for procedures specialties and services that are based on these "simple" inputs:
-       - practitioner
-       - available times
-       - location
-       - specialty
-       - set of common [visit types](ValueSet-visit-type.html).
-     - Book an appointment
-     - Cancel an appointment
-     - Retrieve patient appointments
-   - For both an EHR sponsored "patient portal" applications and third-party applications.
-   - For both when patients is known and unknown by scheduling system
-   - Ability for third party application to 'pre-fetch' open slots
+   - Patient searches for available appointment times for a service or procedure through an organization's on-line service ("patient portal") or a third-party application.
+      - Includes scenarios when patient is a new patient or an existing patient.
+      - Only those procedures/specialties/services based on the following "simple" inputs will be available:
+         - practitioner
+         - available times
+         - location
+         - specialty
+         - set of common [visit types](ValueSet-visit-type.html).
+
+   - Patient books an appointment through an organization's on-line service ("patient portal") or a third-party application.
+   - Patient cancels an appointment through an organization's on-line service ("patient portal") or a third-party application.
+   - Patient retrieves their scheduled appointments through an organization's on-line service ("patient portal") or a third-party application.
 
 #### Provider based Scheduling:
 {:.no_toc}
  Note that in this guide "provider"  =  individual, organization or healthcare service.
 
-   - Use case for scheduling between organizations on behalf of a patient.
-   - Provide FHIR APIs and guidance for providers to:
-     - Schedule on behalf of patient with the same functionality as outlined above in the first bullet under Patient Based Scheduling.
-     - Retrieving existing appointments for all patients
+   - Provider scheduling between organizations on behalf of a patient
+      - searches for available appointment times for a service or procedure
+        - Includes scenarios when patient is a new patient or an existing patient.
+        - Only those procedures/specialties/services based on the following "simple" inputs will be available:
+           - practitioner
+           - available times
+           - location
+           - specialty
+           - set of common [visit types](ValueSet-visit-type.html)
+      - books an appointment
+      - cancels an appointment
+   - Provider retrieves their existing appointments for all patients
 
 ### Future Scope
 
@@ -89,6 +96,11 @@ For the provider based scheduling, the actors are depicted in figure 2 below.  T
 {% include img.html img="diagrams/Slide19.png" caption="Figure 2: Actors for Provider Based Scheduling" %}
 
 ### Assumptions
+
+#### Third Party applications
+{:.no_toc}
+1. A third party patient scheduling application may 'pre-fetch' open slots and create appointments or it may fetch open appointments in real time.
+
 
 #### Login and Trust
 {:.no_toc}

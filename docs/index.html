@@ -233,18 +233,19 @@ This Implementation Guide is published by the <a href="http://argonautwiki.hl7.o
 
 <h3 id="introduction">Introduction</h3>
 
-<p><a name="442ee5e1-d911-48df-ac20-0e9aec850b21">​</a>The <a href="#.html">Argonaut Scheduling Project</a> is a vendor agnostic specification providing FHIR RESTful APIs and guidance for access to and booking of appointments for patients by both patient and practitioner end users. This specification is based on <a href="http://hl7.org/fhir/STU3">FHIR Version 3.0.1</a> and specifically the Scheduling and Appointment resources](http://hl7.org/fhir/STU3/administration-module.html#sched).</p>
+<p><a name="60168fbf-9e07-4a56-9900-519e8c64c82d">​</a>The <a href="#.html">Argonaut Scheduling Project</a> is a vendor agnostic specification providing FHIR RESTful APIs and guidance for access to and booking of appointments for patients by both patient and practitioner end users. This specification is based on <a href="http://hl7.org/fhir/STU3">FHIR Version 3.0.1</a> and specifically the <a href="http://hl7.org/fhir/STU3/administration-module.html#sched">Scheduling and Appointment resources</a>.</p>
 
-<p>These requirements were developed and as defined by the <a href="http://argonautwiki.hl7.org">Argonaut</a> pilot implementations.</p>
+<p>These requirements were developed and defined by the <a href="http://argonautwiki.hl7.org">Argonaut</a> pilot implementations.</p>
 
 <h3 id="scope">Scope</h3>
 
 <h4 id="patient-based-scheduling" class="no_toc">Patient Based Scheduling:</h4>
 
 <ul>
-  <li>Provide FHIR APIs and guidance for both existing and new patients to:
+  <li>Patient searches for available appointment times for a service or procedure through an organization’s on-line service (“patient portal”) or a third-party application.
     <ul>
-      <li>Search for open Appointments for procedures specialties and services that are based on these “simple” inputs:
+      <li>Includes scenarios when patient is a new patient or an existing patient.</li>
+      <li>Only those procedures/specialties/services based on the following “simple” inputs will be available:
         <ul>
           <li>practitioner</li>
           <li>available times</li>
@@ -253,27 +254,38 @@ This Implementation Guide is published by the <a href="http://argonautwiki.hl7.o
           <li>set of common <a href="ValueSet-visit-type.html">visit types</a>.</li>
         </ul>
       </li>
-      <li>Book an appointment</li>
-      <li>Cancel an appointment</li>
-      <li>Retrieve patient appointments</li>
     </ul>
   </li>
-  <li>For both an EHR sponsored “patient portal” applications and third-party applications.</li>
-  <li>For both when patients is known and unknown by scheduling system</li>
-  <li>Ability for third party application to ‘pre-fetch’ open slots</li>
+  <li>Patient books an appointment through an organization’s on-line service (“patient portal”) or a third-party application.</li>
+  <li>Patient cancels an appointment through an organization’s on-line service (“patient portal”) or a third-party application.</li>
+  <li>Patient retrieves their scheduled appointments through an organization’s on-line service (“patient portal”) or a third-party application.</li>
 </ul>
 
 <h4 id="provider-based-scheduling" class="no_toc">Provider based Scheduling:</h4>
 <p>Note that in this guide “provider”  =  individual, organization or healthcare service.</p>
 
 <ul>
-  <li>Use case for scheduling between organizations on behalf of a patient.</li>
-  <li>Provide FHIR APIs and guidance for providers to:
+  <li>Provider scheduling between organizations on behalf of a patient
     <ul>
-      <li>Schedule on behalf of patient with the same functionality as outlined above in the first bullet under Patient Based Scheduling.</li>
-      <li>Retrieving existing appointments for all patients</li>
+      <li>searches for available appointment times for a service or procedure
+        <ul>
+          <li>Includes scenarios when patient is a new patient or an existing patient.</li>
+          <li>Only those procedures/specialties/services based on the following “simple” inputs will be available:
+            <ul>
+              <li>practitioner</li>
+              <li>available times</li>
+              <li>location</li>
+              <li>specialty</li>
+              <li>set of common <a href="ValueSet-visit-type.html">visit types</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>books an appointment</li>
+      <li>cancels an appointment</li>
     </ul>
   </li>
+  <li>Provider retrieves their existing appointments for all patients</li>
 </ul>
 
 <h3 id="future-scope">Future Scope</h3>
@@ -344,6 +356,11 @@ This Implementation Guide is published by the <a href="http://argonautwiki.hl7.o
 </div>
 
 <h3 id="assumptions">Assumptions</h3>
+
+<h4 id="third-party-applications" class="no_toc">Third Party applications</h4>
+<ol>
+  <li>A third party patient scheduling application may ‘pre-fetch’ open slots and create appointments or it may fetch open appointments in real time.</li>
+</ol>
 
 <h4 id="login-and-trust" class="no_toc">Login and Trust</h4>
 
@@ -498,7 +515,7 @@ This Implementation Guide is published by the <a href="http://argonautwiki.hl7.o
 
 <p>dependency url -  “uscore” : Base url of a dependency implementation Guide (defined in ig.json) - {{site.data.fhir.uscore}} = http://hl7.org/fhir/us/core/stu1/</p>
 
-<p>errorCount : number of errors in the build file (not including HTML validation errors) -   {{site.data.fhir.errorCount}}  = 102</p>
+<p>errorCount : number of errors in the build file (not including HTML validation errors) -   {{site.data.fhir.errorCount}}  = 7</p>
 
 <p>version : version of FHIR -   {{site.data.fhir.version}}  = 3.0.1</p>
 
@@ -508,9 +525,9 @@ This Implementation Guide is published by the <a href="http://argonautwiki.hl7.o
 
 <p>totalFiles : total number of files found by the build -   {{site.data.fhir.totalFiles}}  = 36</p>
 
-<p>processedFiles : number of files genrated by the build -   {{site.data.fhir.processedFiles}}  = 1</p>
+<p>processedFiles : number of files genrated by the build -   {{site.data.fhir.processedFiles}}  = 188</p>
 
-<p>genDate : date of generation (so date stamps in the pages can match those in the conformance resources) -   {{site.data.fhir.genDate}}  = Wed, Nov 15, 2017 18:15-0800</p>
+<p>genDate : date of generation (so date stamps in the pages can match those in the conformance resources) -   {{site.data.fhir.genDate}}  = Thu, Nov 16, 2017 07:02-0800</p>
 
 <hr/>
 
@@ -550,7 +567,7 @@ This Implementation Guide is published by the <a href="http://argonautwiki.hl7.o
   <div class="container">    <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Wed, Nov 15, 2017 18:15-0800. |
+            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Thu, Nov 16, 2017 07:02-0800. |
                <!-- <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a rel="license" style="color: #81BEF7" href="http://hl7.org/fhir/STU3license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a>
         

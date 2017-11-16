@@ -1,12 +1,6 @@
 # {{ page.title }}
-{:.no_toc}
 
 source pages/\_include/{{page.md_filename}}.md  file
-
-<!-- TOC  the css styling for this is \pages\assets\css\project.css under 'markdown-toc' -->
-
-* Do not remove this line (it will not be displayed)
-{:toc}
 
 ## Validator Pack and Definitions:
 
@@ -25,7 +19,10 @@ These files should be the first choice whenever generating any implementation ar
 
 Schematrons for the profiles defined in this guide are also available and listed below:
 
-- [Schematrons](#)
+- [Argonaut Appointment Output Profile](appt-output.sch)
+- [Argonaut Coverage Profile](argo-coverage.sch)
+- [Argonaut Availability Output Profile](avail-bundle.sch)
+- [Reason for Current Status Extension](extension-status-reason.sch)
 
 ## Examples:
 
@@ -34,3 +31,5 @@ All the examples that are used in this guide are available for download:
 - [XML](examples.xml.zip)
 - [JSON](examples.json.zip)
 - [TTl](examples.ttl.zip)
+
+<br />

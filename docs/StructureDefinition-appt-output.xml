@@ -276,7 +276,7 @@
     </element>
     <element id="Appointment.extension">
       <path value="Appointment.extension"/>
-      <slicing id="2">
+      <slicing id="1">
         <discriminator>
           <type value="value"/>
           <path value="url"/>
