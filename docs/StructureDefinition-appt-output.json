@@ -10,6 +10,17 @@
   "name": "Argonaut Appointment Output Profile",
   "status": "draft",
   "date": "2017-06-13T00:00:00-07:00",
+  "publisher": "Argonaut Project",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://argonautwiki.hl7.org"
+        }
+      ]
+    }
+  ],
   "jurisdiction": [
     {
       "coding": [
@@ -304,7 +315,7 @@
         "id": "Appointment.extension",
         "path": "Appointment.extension",
         "slicing": {
-          "id": "1",
+          "id": "2",
           "discriminator": [
             {
               "type": "value",

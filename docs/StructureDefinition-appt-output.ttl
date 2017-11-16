@@ -17,6 +17,15 @@
   fhir:StructureDefinition.name [ fhir:value "Argonaut Appointment Output Profile"];
   fhir:StructureDefinition.status [ fhir:value "draft"];
   fhir:StructureDefinition.date [ fhir:value "2017-06-13T00:00:00-07:00"^^xsd:dateTime];
+  fhir:StructureDefinition.publisher [ fhir:value "Argonaut Project"];
+  fhir:StructureDefinition.contact [
+     fhir:index 0;
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "http://argonautwiki.hl7.org" ]
+     ]
+  ];
   fhir:StructureDefinition.jurisdiction [
      fhir:index 0;
      fhir:CodeableConcept.coding [
@@ -312,7 +321,7 @@
        fhir:Element.id [ fhir:value "Appointment.extension" ];
        fhir:ElementDefinition.path [ fhir:value "Appointment.extension" ];
        fhir:ElementDefinition.slicing [
-         fhir:Element.id [ fhir:value "1" ];
+         fhir:Element.id [ fhir:value "2" ];
          fhir:ElementDefinition.slicing.discriminator [
            fhir:index 0;
            fhir:ElementDefinition.slicing.discriminator.type [ fhir:value "value" ];

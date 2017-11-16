@@ -379,7 +379,7 @@ a.to-top {
 
 
 ul#markdown-toc {
-  /* font-size: .6em; */
+  /* font-size: 0.8em; */
   /* list-style: none; */
     list-style-position: inside;
     margin: 4px;
@@ -393,7 +393,7 @@ ul#markdown-toc {
 }
 
 li#markdown-toc {
-font-size: 1.5em;
+/* font-size: 1.5em; */
 }
 
 

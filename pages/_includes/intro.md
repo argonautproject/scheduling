@@ -1,8 +1,9 @@
 ## {{site.data.fhir.igName}} Implementation Guide
+{:.no_toc}
+
+
 
 {% include ci-publish-box.html %}
-
-{:.no_toc}
 
 <!-- TOC  the css styling for this is \pages\assets\css\project.css under 'markdown-toc'-->
 
@@ -15,19 +16,208 @@
 
 source pages/\_include/{{page.md_filename}}.md  file
 
-###  Cat Facts (To Show How the Text Wraps around the Contents Block)
+### Introduction
 
- The domestic cat[1][5] (Latin: Felis catus) is a small, typically furry, carnivorous mammal. They are often called house cats when kept as indoor pets or simply cats when there is no need to distinguish them from other felids and felines.[6] Cats are often valued by humans for companionship and for their ability to hunt vermin. There are more than 70 cat breeds, though different associations proclaim different numbers according to their standards.
+The [Argonaut Scheduling Project](#.html) is a vendor agnostic specification providing FHIR RESTful APIs and guidance for access to and booking of appointments for patients by both patient and practitioner end users. This specification is based on [FHIR Version 3.0.1]({{site.data.fhir.path}}) and specifically the Scheduling and Appointment resources]({{site.data.fhir.path}}/administration-module.html#sched).
 
-Cats are similar in anatomy to the other felids, with a strong flexible body, quick reflexes, sharp retractable claws, and teeth adapted to killing small prey. Cat senses fit a crepuscular and predatory ecological niche. Cats can hear sounds too faint or too high in frequency for human ears, such as those made by mice and other small animals. They can see in near darkness. Like most other mammals, cats have poorer color vision and a better sense of smell than humans. Cats, despite being solitary hunters, are a social species and cat communication includes the use of a variety of vocalizations (mewing, purring, trilling, hissing, growling, and grunting), as well as cat pheromones and types of cat-specific body language.[7]
+These requirements were developed and as defined by the [Argonaut](http://argonautwiki.hl7.org) pilot implementations.
 
-Cats have a high breeding rate.[8] Under controlled breeding, they can be bred and shown as registered pedigree pets, a hobby known as cat fancy. Failure to control the breeding of pet cats by neutering, as well as the abandonment of former household pets, has resulted in large numbers of feral cats worldwide, requiring population control.[9] In certain areas outside cats' native range, this has contributed, along with habitat destruction and other factors, to the extinction of many bird species. Cats have been known to extirpate a bird species within specific regions and may have contributed to the extinction of isolated island populations.[10] Cats are thought to be primarily responsible for the extinction of 33 species of birds, and the presence of feral and free-ranging cats makes some otherwise suitable locations unsuitable for attempted species reintroduction.[11]
+### Scope
 
-Since cats were venerated in ancient Egypt, they were commonly believed to have been domesticated there,[12] but there may have been instances of domestication as early as the Neolithic from around 9,500 years ago (7,500 BC).[13] A genetic study in 2007 concluded that domestic cats are descended from Near Eastern wildcats, having diverged around 8,000 BC in the Middle East.[12][14] A 2016 study found that leopard cats were undergoing domestication independently in China around 5,500 BC, though this line of partially domesticated cats leaves no trace in the domesticated populations of today.[15][16]
 
-As of a 2007 study, cats are the second most popular pet in the US by number of pets owned, behind freshwater fish.[17] In a 2010 study they were ranked the third most popular pet in the UK, after fish and dogs, with around 8 million being owned.[18]
+#### Patient Based Scheduling:
+{:.no_toc}
 
-### Jekyll Site Variables
+   - Provide FHIR APIs and guidance for both existing and new patients to:
+     - Search for open Appointments for procedures specialties and services that are based on these "simple" inputs:
+       - practitioner
+       - available times
+       - location
+       - specialty
+       - set of common [visit types](ValueSet-visit-type.html).
+     - Book an appointment
+     - Cancel an appointment
+     - Retrieve patient appointments
+   - For both an EHR sponsored "patient portal" applications and third-party applications.
+   - For both when patients is known and unknown by scheduling system
+   - Ability for third party application to 'pre-fetch' open slots
+
+#### Provider based Scheduling:
+{:.no_toc}
+ Note that in this guide "provider"  =  individual, organization or healthcare service.
+
+   - Use case for scheduling between organizations on behalf of a patient.
+   - Provide FHIR APIs and guidance for providers to:
+     - Schedule on behalf of patient with the same functionality as outlined above in the first bullet under Patient Based Scheduling.
+     - Retrieving existing appointments for all patients
+
+### Future Scope
+
+Throughout the development of the Argonaut Scheduling Guide several additional important items were reviewed for robust scheduling implementations. This page summarizes items under development, or things that should be considered for future efforts.
+
+1. "Discovery Operation"
+    - Asks the key questions - What Service(/specialty/provider) are bookable?
+        - This information is Static and is easy to prefetch.
+        - It can be used as a filter when searching for appointment availability reducing the burden on server.
+        - Consumer Facing apps can use this information to create appointments from slots.
+        - in the future the Provider Directory (i.e., “common catalog”) can supply much of this key services information
+        - In our initial scope, only those specialties/services based on the "simple inputs" - available times, location, specialty- will be available. Instead of a separate FHIR operation will document the need for an off-line exchange to coordinate the services/per provider (e.g. a spreadsheet)
+
+1. Additional input requirements Operation
+   - As stated above, in our initial scope, only those specialties/services based on the "simple inputs" - available times, location, specialty- will be available. Additional patient input and more advanced conflict checking which has been deferred to future scope.  Information like additional patient demographics, chief complaint/indication and other details to help with identifying the available appointments.   
+   - for example an *Appointment$input operation* could precede the Appointment Availability Operation to discover what inputs are needed for the service.  This operation would return a questionnaire to be filled out by the End User and submitted with the Appointment Availability Operation.  Alternatively the Operation#find operation could return an OperationOutcome informing the client that information is needed and a questionnaire to be completed first.
+
+1. Amending an appointment
+1. Scheduling requests
+1. Prior approvals including preauthorizations
+1. Scheduling physical (rooms, modalities, etc.) resources
+1. Initiating Transitions of Care
+1. Language support
+1. Multimedia support
+1. Estimated out of pocket patient costs
+1. Provider based scheduling within an organization
+
+### Actors
+
+In FHIR, booking an appointment typically includes two main actors: the FHIR Server serving as the EHR scheduler and a Client as a scheduling application. For the patient based scheduling, the actors are depicted in figure 1 below.  Note that for the 3rd Party Application the scheduling application is both server for the end user application and a client of the FHIR Server.  In the patient portal use case the the end user application interacts directly with the FHIR Server.
+
+
+{% include img.html img="diagrams/Slide27.png" caption="Figure 1: Actors for Patient Based Scheduling" %}
+
+For the provider based scheduling, the actors are depicted in figure 2 below.  The referring provider's scheduling application is the client and may schedule with or without patient input.
+
+{% include img.html img="diagrams/Slide19.png" caption="Figure 2: Actors for Provider Based Scheduling" %}
+
+### Assumptions
+
+#### Login and Trust
+{:.no_toc}
+
+1. An client application has been authorized by the health system.
+1. Uses [SMART on FHIR](http://docs.smarthealthit.org/authorization/ ) authorization for apps that connect to EHR data.
+1. If the patient is successfully registered via a third-party application or logged into an EHR's patient portal, the patient ID is returned or known.
+1. 'Open-scheduling':  Authorized applications can search for available appointments without Server having to “know” the patient.
+   - Later on in interaction a “patient level authorization” in order to create a new account and complete the appointment will be required.  The technical details for this are out of scope for this project.
+   - Alternate approaches are out of scope for this project.
+
+#### Dependencies
+{:.no_toc}
+
+1. [US Core Profiles](http://hl7.org/fhir/us/core/index.html) are supported
+1. ...
+
+### Security
+
+For general security consideration refer to the [Security section](http://hl7.org/fhir/us/core/security.html) in the US Core Implementation Guide.  See the [Assumptions](#login-and-trust) section above for a discussion of login and trust.
+
+
+
+### Site Contents
+
+#### Home Page
+{:.no_toc}
+
+- Introduction
+- Scope
+- Future Scope
+- Actors
+- Assumptions
+- Security
+- Where to start/TOC
+
+#### Use Cases
+{:.no_toc}
+
+##### Patient Based Scheduling
+{:.no_toc}
+
+- Scenario 1: Patient Portal/Scheduling for new or existing patient
+  - Patient login/registration
+  - Search for open appointments
+  - Hold appointment
+  - Book appointment
+- Scenario 2: Open Scheduling for new patient
+  - Patient registration (option)
+  - Search for open appointments
+  - Hold appointment
+  - Patient registration (option)
+  - Book appointment
+- Scenario 3: Prefetching Open Slots for Scheduling patient
+  - exchange logic
+  - initial load of open slots
+  - update open slots
+  - Patient login/registration (option)
+  - Search for open appointments
+  - Hold appointment
+  - Patient login/registration (option)
+  - Book appointment
+- Cancelling appointment
+- Retrieving appointments
+
+##### Provider based Scheduling
+{:.no_toc}
+
+- Scenario 1: Scheduling for existing patient across systems
+  - Patient Match
+  - Search for open appointments
+  - Hold appointment
+  - Book appointment
+- Scenario 2: Scheduling for new patient across systems
+  - Patient registration (option)
+  - Search for open appointments
+  - Hold appointment
+  - Patient registration (option)
+  - Book appointment
+- Scenario 3: Scheduling for existing patient within system
+- Cancelling appointment
+- Retrieving Patient appointments
+- Retrieving Providers appointment/Schedule
+
+#### Operations
+{:.no_toc}
+{% include list-simple-operationdefinitions.xhtml %}
+
+
+#### Profiles/Extensions
+{:.no_toc}
+
+##### Profiles
+{:.no_toc}
+
+{% include list-profiles.xhtml %}{:.li}
+
+##### Extensions
+{:.no_toc}
+
+{% include list-extensions.xhtml %}
+
+#### Terminology
+{:.no_toc}
+
+##### Value Sets
+{:.no_toc}
+
+##### Code Systems
+{:.no_toc}
+
+##### Concept Maps
+{:.no_toc}
+
+#### Capability
+{:.no_toc}
+
+- Conformance requirements for Server
+- Conformance requirements for Client
+
+#### Downloads
+{:.no_toc}
+
+- Validation pack and Definition files
+- Schematrons
+- Examples
+
+
+### Jekyll Site Variables(remove prior to publishing)
 
 igName : Title of the implementation Guide (defined in ig.xml) -  {% raw %} {{site.data.fhir.igName}} {% endraw %}= {{site.data.fhir.igName}}
 
@@ -51,11 +241,6 @@ processedFiles : number of files genrated by the build -  {% raw %} {{site.data.
 
 genDate : date of generation (so date stamps in the pages can match those in the conformance resources) -  {% raw %} {{site.data.fhir.genDate}} {% endraw %} = {{site.data.fhir.genDate}}
 
+----
 
-### Introduction
-
-blah blah blah
-
-### More Stuff
-
-#### And More Stuff
+Primary Authors: Eric Haas, Brett Marquard

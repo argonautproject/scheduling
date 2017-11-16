@@ -11,6 +11,17 @@
   "title": "Status Reason",
   "status": "draft",
   "date": "2017-06-13T00:00:00-07:00",
+  "publisher": "Argonaut Project",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://argonautwiki.hl7.org"
+        }
+      ]
+    }
+  ],
   "description": "Captures the reason for the current state of the Appointment.",
   "jurisdiction": [
     {

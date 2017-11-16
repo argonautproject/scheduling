@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<StructureDefinition xmlns="http://hl7.org/fhir">
+<StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir file:///C:/Users/Eric/Downloads/fhir-all-xsd/structuredefinition.xsd">
 	<id value="avail-bundle"/>
-
 	<url value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/avail-bundle"/>
 	<version value="0.0.0"/>
-	<name value="Profile avail-bundle"/>
+	<name value="Argonaut Availability Output Profile"/>
 	<status value="draft"/>
-	<date value="2017-06-13T00:00:00-07:00"/>
-
+	<date value="2017-11-13"/>
+	<publisher value="Argonaut Project"/>
+	<contact>
+		<telecom>
+			<system value="url"/>
+			<value value="http://argonautwiki.hl7.org"/>
+		</telecom>
+	</contact>
+	<description value="This is the output Appointment Bundle profile which is returned as a result of the `$find` operation."></description>
 	<fhirVersion value="3.0.1"/>
 	<mapping>
 		<identity value="v2"/>
@@ -29,11 +35,10 @@
 	<type value="Bundle"/>
 	<baseDefinition value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
 	<derivation value="constraint"/>
-
 	<differential>
 		<element id="Bundle">
 			<path value="Bundle"/>
-			<definition value="This is the output Appointment Bundle profile which is returned as a result of the *Operation$find* operation."/>
+			<definition value="This is the output Appointment Bundle profile which is returned as a result of the `find` operation."/>
 			<mustSupport value="true"/>
 			<isModifier value="false"/>
 		</element>
@@ -55,7 +60,7 @@
 		</element>
 		<element id="Bundle.entry">
 			<path value="Bundle.entry"/>
-<!--
+			<!--
 			<sliceName value="Entry Slice"/>
 -->
 			<slicing>

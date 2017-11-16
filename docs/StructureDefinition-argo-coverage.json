@@ -10,6 +10,17 @@
   "name": "Argonaut Coverage Profile",
   "status": "draft",
   "date": "2017-11-07T00:00:00-08:00",
+  "publisher": "Argonaut Project",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://argonautwiki.hl7.org"
+        }
+      ]
+    }
+  ],
   "jurisdiction": [
     {
       "coding": [

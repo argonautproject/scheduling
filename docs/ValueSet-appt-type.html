@@ -79,25 +79,50 @@
           </span>
         </button>
         <a href="http://hl7.org/fhir/STU3/index.html" class="navbar-brand hidden">FHIR</a>
-        <div class="nav-collapse collapse navbar-inverse-collapse">          <!-- don't remove the line above - to add or remove a menu item commeent in or out -->
+        <div class="nav-collapse collapse navbar-inverse-collapse">        
+  <!-- {:.nav .navbar-nav} don't remove the line above - to add or remove a menu item commeent in or out - [Home](index.html)- [Use Cases...](guidance.html){: .dropdown-toggle data-toggle="dropdown"}  - [Patient Based Scheduling](patient-scheduling.html)  - [Provider based Scheduling](provider-scheduling.html)  {: .dropdown-menu}- [Operations](operations.html)- [Profiles/Extensions](profiles.html)- [Terminology](terminology.html)- [Capability Statements...](capstatements.html){: .dropdown-toggle data-toggle="dropdown"}  - [Conformance requirements for Server](server-capstatement.html)  - [Conformance requirements for Client](client-capstatement.html)  {: .dropdown-menu}- [Downloads](downloads.html) -->
 <ul class="nav navbar-nav">
-  <li><a href="index.html">Home</a></li>
-  <li><a data-toggle="dropdown" href="guidance.html" class="dropdown-toggle">Use Cases…</a>
-    <ul class="dropdown-menu">
-      <li><a href="patient-scheduling.html">Patient Based Scheduling</a></li>
-      <li><a href="provider-scheduling.html">Provider based Scheduling</a></li>
-    </ul>
+  <li>
+    <a href="index.html">Home</a>
   </li>
-  <li><a href="operations.html">Operations</a></li>
-  <li><a href="profiles.html">Profiles/Extensions</a></li>
-  <li><a href="terminology.html">Terminology</a></li>
-  <li><a data-toggle="dropdown" href="capstatements.html" class="dropdown-toggle">Capability Statements…</a>
-    <ul class="dropdown-menu">
-      <li><a href="server-capstatement.html">Conformance requirements for Server</a></li>
-      <li><a href="client-capstatement.html">Conformance requirements for Client</a></li>
-    </ul>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Use Cases<b class="caret">
+    </b>
+  </a>
+  <ul class="dropdown-menu">
+    <li>
+      <a href="patient-scheduling.html">Patient Based Scheduling</a>
+    </li>
+    <li>
+      <a href="provider-scheduling.html">Provider Based Scheduling</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="operations.html">Operation</a>
+</li>
+<li>
+  <a href="profiles.html">Profiles/Extensions</a>
+</li>
+<li>
+  <a href="terminology.html">Terminology</a>
+</li>
+<li class="dropdown">
+  <a data-toggle="dropdown" href="#" class="dropdown-toggle">Capability Statements<b class="caret">
+  </b>
+</a>
+<ul class="dropdown-menu">
+  <li>
+    <a href="server-capstatement.html">Conformance requirements for Server</a>
   </li>
-  <li><a href="downloads.html">Downloads</a></li>
+  <li>
+    <a href="client-capstatement.html">Conformance requirements for Client</a>
+  </li>
+</ul>
+</li>
+<li>
+  <a href="downloads.html">Downloads</a>
+</li>
 </ul>
           <!-- <ul class="nav navbar-nav">
           <li>
@@ -184,7 +209,7 @@
 <table class="grid">
  <tbody><tr><td>Defining URL:</td><td>http://fhir.org/guides/argonaut-scheduling/ValueSet/appt-type</td></tr>
  <tr><td>Name:</td><td>Argonaut Appointment Types</td></tr>
- <tr><td>Definition:</td><td><p><a name="be60b0d5-8724-49f0-ae23-cb6ee4242b1e">​</a>The style of appointment or patient for appointment booking (not service type).  These concepts are used in the FHIR Appointment, Schedule and Slot resources. The <a href="http://hl7.org/fhir/STU3ConceptMap-visit-appt-map.html">Argonaut Scheduling Visit Types</a> are mapped to these concepts.</p>
+ <tr><td>Definition:</td><td><p><a name="fdfe1a5f-f74e-4434-a0dd-4abc49c042e5">​</a>The style of appointment or patient for appointment booking (not service type).  These concepts are used in the FHIR Appointment, Schedule and Slot resources. The <a href="http://hl7.org/fhir/STU3ConceptMap-visit-appt-map.html">Argonaut Scheduling Visit Types</a> are mapped to these concepts.</p>
 </td></tr>
  <tr><td>Source Resource</td><td><a href="ValueSet-appt-type.xml.html">XML</a> / <a href="ValueSet-appt-type.json.html">JSON</a> / <a href="ValueSet-appt-type.ttl.html">Turtle</a></td></tr>
 </tbody></table>
@@ -227,7 +252,7 @@
   <div class="container">    <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Wed, Nov 15, 2017 11:08-0800. |
+            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Wed, Nov 15, 2017 18:15-0800. |
                <!-- <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a rel="license" style="color: #81BEF7" href="http://hl7.org/fhir/STU3license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a>
         

@@ -82,25 +82,50 @@
           </span>
         </button>
         <a class="navbar-brand hidden" href="http://hl7.org/fhir/STU3/index.html">FHIR</a>
-        <div class="nav-collapse collapse navbar-inverse-collapse">        <!-- don't remove the line above - to add or remove a menu item commeent in or out -->
+        <div class="nav-collapse collapse navbar-inverse-collapse">        
+<!--{:.nav .navbar-nav} don't remove the line above - to add or remove a menu item commeent in or out - [Home](index.html)- [Use Cases...](guidance.html){: .dropdown-toggle data-toggle="dropdown"}  - [Patient Based Scheduling](patient-scheduling.html)  - [Provider based Scheduling](provider-scheduling.html)  {: .dropdown-menu}- [Operations](operations.html)- [Profiles/Extensions](profiles.html)- [Terminology](terminology.html)- [Capability Statements...](capstatements.html){: .dropdown-toggle data-toggle="dropdown"}  - [Conformance requirements for Server](server-capstatement.html)  - [Conformance requirements for Client](client-capstatement.html)  {: .dropdown-menu}- [Downloads](downloads.html)-->
 <ul class="nav navbar-nav">
-  <li><a href="index.html">Home</a></li>
-  <li><a href="guidance.html" class="dropdown-toggle" data-toggle="dropdown">Use Cases…</a>
-    <ul class="dropdown-menu">
-      <li><a href="patient-scheduling.html">Patient Based Scheduling</a></li>
-      <li><a href="provider-scheduling.html">Provider based Scheduling</a></li>
-    </ul>
+  <li>
+    <a href="index.html">Home</a>
   </li>
-  <li><a href="operations.html">Operations</a></li>
-  <li><a href="profiles.html">Profiles/Extensions</a></li>
-  <li><a href="terminology.html">Terminology</a></li>
-  <li><a href="capstatements.html" class="dropdown-toggle" data-toggle="dropdown">Capability Statements…</a>
-    <ul class="dropdown-menu">
-      <li><a href="server-capstatement.html">Conformance requirements for Server</a></li>
-      <li><a href="client-capstatement.html">Conformance requirements for Client</a></li>
-    </ul>
+  <li class="dropdown">
+    <a href="#" data-toggle="dropdown" class="dropdown-toggle">Use Cases<b class="caret">
+    </b>
+  </a>
+  <ul class="dropdown-menu">
+    <li>
+      <a href="patient-scheduling.html">Patient Based Scheduling</a>
+    </li>
+    <li>
+      <a href="provider-scheduling.html">Provider Based Scheduling</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="operations.html">Operation</a>
+</li>
+<li>
+  <a href="profiles.html">Profiles/Extensions</a>
+</li>
+<li>
+  <a href="terminology.html">Terminology</a>
+</li>
+<li class="dropdown">
+  <a href="#" data-toggle="dropdown" class="dropdown-toggle">Capability Statements<b class="caret">
+  </b>
+</a>
+<ul class="dropdown-menu">
+  <li>
+    <a href="server-capstatement.html">Conformance requirements for Server</a>
   </li>
-  <li><a href="downloads.html">Downloads</a></li>
+  <li>
+    <a href="client-capstatement.html">Conformance requirements for Client</a>
+  </li>
+</ul>
+</li>
+<li>
+  <a href="downloads.html">Downloads</a>
+</li>
 </ul>
         <!--        <ul class="nav navbar-nav">
           <li>
@@ -438,7 +463,7 @@ Raw <a href="CodeSystem-status-reason.xml" download>xml</a>
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Wed, Nov 15, 2017 11:08-0800. |
+            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Wed, Nov 15, 2017 18:15-0800. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/STU3license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

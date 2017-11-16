@@ -22,6 +22,13 @@
   <name value="Argonaut Appointment Output Profile"/>
   <status value="draft"/>
   <date value="2017-06-13T00:00:00-07:00"/>
+  <publisher value="Argonaut Project"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://argonautwiki.hl7.org"/>
+    </telecom>
+  </contact>
   <jurisdiction>
     <coding>
       <system value="urn:iso:std:iso:3166"/>
@@ -269,7 +276,7 @@
     </element>
     <element id="Appointment.extension">
       <path value="Appointment.extension"/>
-      <slicing id="1">
+      <slicing id="2">
         <discriminator>
           <type value="value"/>
           <path value="url"/>
