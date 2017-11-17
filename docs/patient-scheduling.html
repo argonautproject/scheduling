@@ -300,13 +300,14 @@
       <li><strong><a href="StructureDefinition-argo-coverage.html">Coverage Profile API</a></strong>.</li>
     </ul>
 
-    <p><a name="2de0eff8-c59d-4528-9a66-9d4a8b6d7b79">​</a>Note that the server MAY reject certain updates to the coverage information (for example, type of coverage) and SHOULD return an <a href="http://hl7.org/fhir/STU3/operationoutcome.html">OperationOutcome</a> explaining the reason.<a href="../issues/47">Issue #47</a></p>
+    <p><a name="a3f115cf-459b-44aa-9031-9433122fa72b">​</a>Note that the server MAY reject certain updates to the coverage information (for example, type of coverage) and SHOULD return an <a href="http://hl7.org/fhir/STU3/operationoutcome.html">OperationOutcome</a> explaining the reason.<a href="../issues/47">Issue #47</a></p>
   </li>
 </ul>
 
 <div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="err">todo</span><span class="w"> </span><span class="err">inline</span><span class="w"> </span><span class="err">example</span><span class="w">
 </span></code></pre>
 </div>
+<p><br/></p>
 
 <h4 id="appointment-availability-discovery-and-search" class="no_toc">2. Appointment Availability Discovery and Search</h4>
 
@@ -339,7 +340,7 @@ dynamic and complex because of multiple dependencies.  (In contrast, a discovery
 <p>The following Argonaut Scheduling artifacts are used in this transaction:</p>
 
 <ul>
-  <li><strong><a name="e171fc33-3b2a-4d1b-bd80-9874180ab4fb">​</a><a href="OperationDefinition-appointment-hold.html">Appointment Hold Operation API</a></strong>.</li>
+  <li><strong><a href="OperationDefinition-appointment-find.html">Appointment Availability Operation API</a></strong>.</li>
   <li><strong><a href="StructureDefinition-avail-bundle.html">Argonaut Availability Output Profile API</a></strong>.</li>
   <li>
     <p><strong><a href="StructureDefinition-appt-output.html">Argonaut Appointment Output Profile</a></strong>.</p>
@@ -358,6 +359,7 @@ dynamic and complex because of multiple dependencies.  (In contrast, a discovery
 <div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="err">todo</span><span class="w"> </span><span class="err">inline</span><span class="w"> </span><span class="err">example</span><span class="w">
 </span></code></pre>
 </div>
+<p><br/></p>
 
 <h4 id="optional-hold-appointment-operation" class="no_toc">3. Optional Hold Appointment Operation</h4>
 
@@ -379,7 +381,7 @@ dynamic and complex because of multiple dependencies.  (In contrast, a discovery
 <p>The following Argonaut Scheduling artifacts are used in this transaction:</p>
 
 <ul>
-  <li><strong><a name="1fa7d16a-00b7-4eed-adcb-71356853c579">​</a><a href="OperationDefinition-appointment-hold.html">Appointment Hold Operation API</a></strong>.</li>
+  <li><strong><a name="1dbd6981-828c-4d97-b021-e6509ff3cd74">​</a><a href="OperationDefinition-appointment-hold.html">Appointment Hold Operation API</a></strong>.</li>
   <li><strong><a href="StructureDefinition-avail-bundle.html">Argonaut Availability Output Profile API</a></strong>.</li>
   <li>
     <p><strong><a href="StructureDefinition-appt-output.html">Argonaut Appointment Output Profile</a></strong>.</p>
@@ -394,6 +396,7 @@ dynamic and complex because of multiple dependencies.  (In contrast, a discovery
 <div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="err">todo</span><span class="w"> </span><span class="err">inline</span><span class="w"> </span><span class="err">example</span><span class="w">
 </span></code></pre>
 </div>
+<p><br/></p>
 
 <h4 id="book-appointment" class="no_toc">4. Book appointment</h4>
 
@@ -415,7 +418,7 @@ dynamic and complex because of multiple dependencies.  (In contrast, a discovery
 <p>The following Argonaut Scheduling artifacts are used in this transaction:</p>
 
 <ul>
-  <li><strong><a name="16dcbb06-ef4c-452e-8b79-8b3d909b4683">​</a><a href="OperationDefinition-appointment-book.html">Appointment Book Operation API</a></strong>.</li>
+  <li><strong><a name="da5c14cc-91ff-4592-ad0a-375ff29fede8">​</a><a href="OperationDefinition-appointment-book.html">Appointment Book Operation API</a></strong>.</li>
   <li><strong><a href="StructureDefinition-avail-bundle.html">Argonaut Availability Output Profile API</a></strong>.</li>
   <li>
     <p><strong><a href="StructureDefinition-appt-output.html">Argonaut Appointment Output Profile</a></strong>.</p>
@@ -430,6 +433,7 @@ dynamic and complex because of multiple dependencies.  (In contrast, a discovery
 <div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="err">todo</span><span class="w"> </span><span class="err">inline</span><span class="w"> </span><span class="err">example</span><span class="w">
 </span></code></pre>
 </div>
+<p><br/></p>
 
 <h3 id="scenario-2-open-scheduling-for-new-patient">Scenario 2: Open Scheduling for new patient</h3>
 
@@ -519,7 +523,7 @@ dynamic and complex because of multiple dependencies.  (In contrast, a discovery
 <p/>
 </div>
 
-<p><a name="872e13f6-85b8-488d-aa68-a8bc32591890">​</a>If the patient is not registered in step 1 above, the hold step is required in order to register the patient in step 4.  The end user needs to complete the information needed to complete the booking.  The details of this step are the same as described in <a href="#pptional-hold-appointment-operation">Scenario-1</a>.</p>
+<p><a name="20c74471-767e-4455-8d50-dccd2f94b4d3">​</a>If the patient is not registered in step 1 above, the hold step is required in order to register the patient in step 4.  The end user needs to complete the information needed to complete the booking.  The details of this step are the same as described in <a href="#pptional-hold-appointment-operation">Scenario-1</a>.</p>
 
 <h4 id="patient-registration-option-b" class="no_toc">4. Patient Registration Option B</h4>
 
@@ -561,11 +565,12 @@ dynamic and complex because of multiple dependencies.  (In contrast, a discovery
   <li><strong><a href="StructureDefinition-argo-coverage.html">Coverage Profile API</a></strong>.</li>
 </ul>
 
-<p><a name="570da749-af36-44b4-a844-184f845aa6c6">​</a>Note that the server MAY reject certain updates to the coverage information (for example, type of coverage) and SHOULD return an <a href="http://hl7.org/fhir/STU3/operationoutcome.html">OperationOutcome</a> explaining the reason.<a href="../issues/47">Issue #47</a></p>
+<p><a name="9d1eaf92-2187-4b4e-a82d-f6e6943a7ad2">​</a>Note that the server MAY reject certain updates to the coverage information (for example, type of coverage) and SHOULD return an <a href="http://hl7.org/fhir/STU3/operationoutcome.html">OperationOutcome</a> explaining the reason.<a href="../issues/47">Issue #47</a></p>
 
 <div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="err">todo</span><span class="w"> </span><span class="err">inline</span><span class="w"> </span><span class="err">example</span><span class="w">
 </span></code></pre>
 </div>
+<p><br/></p>
 
 <h4 id="book-appointment-1" class="no_toc">4. Book Appointment</h4>
 
@@ -586,6 +591,13 @@ dynamic and complex because of multiple dependencies.  (In contrast, a discovery
 
 <h3 id="scenario-3-prefetching-open-slots-for-scheduling-patient">Scenario 3: Prefetching Open Slots for Scheduling patient</h3>
 
+<h4 id="todo" class="no_toc">TODO</h4>
+
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="err">todo</span><span class="w"> </span><span class="err">inline</span><span class="w"> </span><span class="err">example</span><span class="w">
+</span></code></pre>
+</div>
+<p><br/></p>
+
 <h3 id="cancelling-appointment">Cancelling appointment</h3>
 
   <!-- all this Bootstrap html for getting an image to fit nicely in text - 640 pix wide -->
@@ -601,9 +613,7 @@ dynamic and complex because of multiple dependencies.  (In contrast, a discovery
 <p/>
 </div>
 
-<p>In this scenario the end user wishes to cancels or cancel/reschedule an appointment.</p>
-
-<p>CLIENT: send cancel request using a RESTful <a href="http://build.fhir.org/http.html#patch"><code class="highlighter-rouge">PATCH</code></a> transaction as shown</p>
+<p>In this scenario the end user wishes to cancels or cancel/reschedule an appointment. A cancelation is done using the standard FHIR  <a href="http://build.fhir.org/http.html#patch"><code class="highlighter-rouge">PATCH</code></a> transaction as shown:</p>
 
 <p><code class="highlighter-rouge">PATCH [Base]/Appointment/[id]</code></p>
 
@@ -612,19 +622,17 @@ dynamic and complex because of multiple dependencies.  (In contrast, a discovery
     <p>optional input parameter:</p>
 
     <ol>
-      <li>cancel reason code or string</li>
+      <li>cancel <a href="#">reason code</a> or string</li>
     </ol>
   </li>
+  <li>Note the Server SHALL declare support for JSON, XML, or FHIRPath Patch in the <a href="server-capstatement.html">CapabilityStatement</a></li>
+  <li><a name="4a180510-950e-41cb-b974-6544267882f2">​</a>not sure what server options are - discuss?  <a href="../issues/30">#30</a></li>
 </ul>
-
-<p><a name="8252743b-d3e6-4c48-9875-83185b278b0d">​</a>SERVER:
-- Return OperationOutcome and defined in the FHIR specification.
-- Note the Server SHALL declare support for JSON, XML, or FHIRPath Patch in the <a href="server-capstatement.html">CapabilityStatement</a>
-- not sure what server options are - discuss?  <a href="../issues/30">#30</a></p>
 
 <div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="err">todo</span><span class="w"> </span><span class="err">inline</span><span class="w"> </span><span class="err">example</span><span class="w">
 </span></code></pre>
 </div>
+<p><br/></p>
 
 <h3 id="retrieving-appointments">Retrieving appointments</h3>
 
@@ -641,31 +649,11 @@ dynamic and complex because of multiple dependencies.  (In contrast, a discovery
 <p/>
 </div>
 
-<p>Patient access for their scheduled appointments</p>
-
-<p><a href="http://build.fhir.org/ig/argonautproject/scheduling/StructureDefinition-appt-output.html#search">Draft Search requirements for appointment profile</a></p>
-
-<p>A patient data access use case for searching their appointments. The search criteria for this transaction isdescribed in:</p>
+<p>Patient access to their scheduled appointments uses the standard FHIR search API.  The supported search criteria for this transaction are described in:</p>
 
 <ul>
-  <li><strong><a name="4d810584-ece4-43e8-a0f8-db122ef2b05f">​</a><a href="OperationDefinition-appointment-hold.html">Appointment Hold Operation API</a></strong></li>
+  <li><strong><a href="StructureDefinition-appt-output.html">Argonaut Appointment Output Profile</a></strong>.</li>
 </ul>
-
-<p>Syntax:</p>
-
-<p><code class="highlighter-rouge">GET [base]\Appointment?patient=[id]{&amp;status=[status]&amp;date=[date]}</code></p>
-
-<p>For example, fetch all appointments (all statuses):</p>
-
-<p><code class="highlighter-rouge">GET [base]\Appointment?patient=[id]</code></p>
-
-<p>fetch all booked appointments:</p>
-
-<p><code class="highlighter-rouge">GET [base]\Appointment?patient=[id]&amp;status=booked</code></p>
-
-<p>fetch all completed appointments since January:</p>
-
-<p><code class="highlighter-rouge">GET [base]\Appointment?patient=[id]&amp;status=fulfilled&amp;date=ge2017-01-01</code></p>
 
 <div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="err">todo</span><span class="w"> </span><span class="err">inline</span><span class="w"> </span><span class="err">example</span><span class="w">
 </span></code></pre>
@@ -706,7 +694,7 @@ dynamic and complex because of multiple dependencies.  (In contrast, a discovery
   <div class="container">    <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Thu, Nov 16, 2017 17:24-0800. |
+            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Fri, Nov 17, 2017 06:37-0800. |
                <!-- <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a rel="license" style="color: #81BEF7" href="http://hl7.org/fhir/STU3license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a>
         

@@ -60,6 +60,7 @@ If the patient is logged into an EHR’s patient portal, the patient ID is retur
 ~~~json
 todo inline example
 ~~~
+<br />
 
 #### 2. Appointment Availability Discovery and Search
 {:.no_toc}
@@ -80,7 +81,7 @@ The Server determines which schedulable resources are needed for the visit and p
 
 The following Argonaut Scheduling artifacts are used in this transaction:
 
-- **[Appointment Hold Operation API](OperationDefinition-appointment-hold.html)**.
+- **[Appointment Availability Operation API](OperationDefinition-appointment-find.html)**.
 - **[Argonaut Availability Output Profile API](StructureDefinition-avail-bundle.html)**.
 - **[Argonaut Appointment Output Profile](StructureDefinition-appt-output.html)**.
 
@@ -97,6 +98,7 @@ The following Argonaut Scheduling artifacts are used in this transaction:
 ~~~json
 todo inline example
 ~~~
+<br />
 
 #### 3. Optional Hold Appointment Operation
 {:.no_toc}
@@ -120,6 +122,7 @@ The following Argonaut Scheduling artifacts are used in this transaction:
 ~~~json
 todo inline example
 ~~~
+<br />
 
 #### 4. Book appointment
 {:.no_toc}
@@ -142,6 +145,7 @@ The following Argonaut Scheduling artifacts are used in this transaction:
 ~~~json
 todo inline example
 ~~~
+<br />
 
 ### Scenario 2: Open Scheduling for new patient
 
@@ -226,6 +230,7 @@ In this scheduling scenario a patient will need to be registered or an existing 
 ~~~json
 todo inline example
 ~~~
+<br />
 
 #### 4. Book Appointment
 {:.no_toc}
@@ -236,61 +241,44 @@ After the patient is registered the actual booking interaction can occur.  This 
 
 ### Scenario 3: Prefetching Open Slots for Scheduling patient
 
+#### TODO
+{:.no_toc}
 
+~~~json
+todo inline example
+~~~
+<br />
 
 ### Cancelling appointment
 
 {% include img.html img="diagrams/Slide33.png" caption="Figure 1: Patient Cancel" %}
 
-In this scenario the end user wishes to cancels or cancel/reschedule an appointment.
-
-CLIENT: send cancel request using a RESTful [`PATCH`](http://build.fhir.org/http.html#patch) transaction as shown
+In this scenario the end user wishes to cancels or cancel/reschedule an appointment. A cancelation is done using the standard FHIR  [`PATCH`](http://build.fhir.org/http.html#patch) transaction as shown:
 
 `PATCH [Base]/Appointment/[id]`
 
-
 -  optional input parameter:
 
-    1. cancel reason code or string
+    1. cancel [reason code](#) or string
 
-SERVER:
-- Return OperationOutcome and defined in the FHIR specification.
+
 - Note the Server SHALL declare support for JSON, XML, or FHIRPath Patch in the [CapabilityStatement](server-capstatement.html)
 - not sure what server options are - discuss?  [#30](../issues/30)
 
 ~~~json
 todo inline example
 ~~~
-
+<br />
 
 ### Retrieving appointments
 
 {% include img.html img="diagrams/Slide34.png" caption="Figure 1: Patient Cancel" %}
 
 
-Patient access for their scheduled appointments
+Patient access to their scheduled appointments uses the standard FHIR search API.  The supported search criteria for this transaction are described in:
 
-[Draft Search requirements for appointment profile](http://build.fhir.org/ig/argonautproject/scheduling/StructureDefinition-appt-output.html#search)
+- **[Argonaut Appointment Output Profile](StructureDefinition-appt-output.html)**.
 
-A patient data access use case for searching their appointments. The search criteria for this transaction isdescribed in:
-
-- **[Appointment Hold Operation API](OperationDefinition-appointment-hold.html)**
-
-Syntax:
-
-`GET [base]\Appointment?patient=[id]{&status=[status]&date=[date]}`
-
-For example, fetch all appointments (all statuses):
-
-`GET [base]\Appointment?patient=[id]`
-
-fetch all booked appointments:
-
-`GET [base]\Appointment?patient=[id]&status=booked`
-
-fetch all completed appointments since January:
-
-`GET [base]\Appointment?patient=[id]&status=fulfilled&date=ge2017-01-01`
 
 ~~~json
 todo inline example
