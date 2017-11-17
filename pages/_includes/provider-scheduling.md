@@ -12,6 +12,14 @@ source pages/\_include/{{page.md_filename}}.md  file
 
 blah blah blah
 
-### More Stuff
+### Scenario 1: Scheduling for existing patient across systems
 
-#### And More Stuff
+### Scenario 2: Scheduling for new patient across systems
+
+### Scenario 3: Scheduling for existing patient within system
+
+### Cancelling appointment
+
+### Retrieving Patient appointments
+
+### Retrieving Providers appointment/Schedule

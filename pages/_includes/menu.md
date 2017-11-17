@@ -18,7 +18,7 @@
   </ul>
 </li>
 <li>
-  <a href="operations.html">Operation</a>
+  <a href="operations.html">Operations</a>
 </li>
 <li>
   <a href="profiles.html">Profiles/Extensions</a>

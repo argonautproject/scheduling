@@ -99,7 +99,7 @@
   </ul>
 </li>
 <li>
-  <a href="operations.html">Operation</a>
+  <a href="operations.html">Operations</a>
 </li>
 <li>
   <a href="profiles.html">Profiles/Extensions</a>
@@ -221,7 +221,10 @@ This Implementation Guide is published by the <a href="http://argonautwiki.hl7.o
   <li><a href="#scope" id="markdown-toc-scope">Scope</a></li>
   <li><a href="#future-scope" id="markdown-toc-future-scope">Future Scope</a></li>
   <li><a href="#actors" id="markdown-toc-actors">Actors</a></li>
-  <li><a href="#assumptions" id="markdown-toc-assumptions">Assumptions</a></li>
+  <li><a href="#assumptions" id="markdown-toc-assumptions">Assumptions</a>    <ul>
+      <li><a href="#rescheduling" id="markdown-toc-rescheduling">Rescheduling</a></li>
+    </ul>
+  </li>
   <li><a href="#security" id="markdown-toc-security">Security</a></li>
   <li><a href="#site-contents" id="markdown-toc-site-contents">Site Contents</a></li>
   <li><a href="#jekyll-site-variablesremove-prior-to-publishing" id="markdown-toc-jekyll-site-variablesremove-prior-to-publishing">Jekyll Site Variables(remove prior to publishing)</a></li>
@@ -233,7 +236,7 @@ This Implementation Guide is published by the <a href="http://argonautwiki.hl7.o
 
 <h3 id="introduction">Introduction</h3>
 
-<p><a name="6e6d9a79-678f-4b8f-85da-8055282c4fe8">​</a>The <a href="#.html">Argonaut Scheduling Project</a> is a vendor agnostic specification providing FHIR RESTful APIs and guidance for access to and booking of appointments for patients by both patient and practitioner end users. This specification is based on <a href="http://hl7.org/fhir/STU3">FHIR Version 3.0.1</a> and specifically the <a href="http://hl7.org/fhir/STU3/administration-module.html#sched">Scheduling and Appointment resources</a>.</p>
+<p><a name="4e1a79f9-7f66-4090-b7e0-91614dd1b85c">​</a>The <a href="#.html">Argonaut Scheduling Project</a> is a vendor agnostic specification providing FHIR RESTful APIs and guidance for access to and booking of appointments for patients by both patient and practitioner end users. This specification is based on <a href="http://hl7.org/fhir/STU3">FHIR Version 3.0.1</a> and specifically the <a href="http://hl7.org/fhir/STU3/administration-module.html#sched">Scheduling and Appointment resources</a>.</p>
 
 <p>These requirements were developed and defined by the <a href="http://argonautwiki.hl7.org">Argonaut</a> pilot implementations.</p>
 
@@ -312,7 +315,11 @@ This Implementation Guide is published by the <a href="http://argonautwiki.hl7.o
       <li>for example an <em>Appointment$input operation</em> could precede the Appointment Availability Operation to discover what inputs are needed for the service.  This operation would return a questionnaire to be filled out by the End User and submitted with the Appointment Availability Operation.  Alternatively the Operation#find operation could return an OperationOutcome informing the client that information is needed and a questionnaire to be completed first.</li>
     </ul>
   </li>
-  <li>Amending an appointment</li>
+  <li>Amending an appointment
+    <ul>
+      <li>Need to establish what if anything the consumer can update.</li>
+    </ul>
+  </li>
   <li>Scheduling requests</li>
   <li>Prior approvals including preauthorizations</li>
   <li>Scheduling physical (rooms, modalities, etc.) resources</li>
@@ -380,7 +387,13 @@ This Implementation Guide is published by the <a href="http://argonautwiki.hl7.o
 
 <ol>
   <li><a href="http://hl7.org/fhir/us/core/index.html">US Core Profiles</a> are supported</li>
-  <li>…</li>
+  <li><a href="http://hl7.org/fhir/us/core/guidance.html">US Core General Guidance</a> and conventions apply to this guide.</li>
+</ol>
+
+<h4 id="rescheduling">Rescheduling</h4>
+
+<ol>
+  <li>Rescheduling and appointment is a two step process of cancelling and rebooking.</li>
 </ol>
 
 <h3 id="security">Security</h3>
@@ -515,7 +528,7 @@ This Implementation Guide is published by the <a href="http://argonautwiki.hl7.o
 
 <p>dependency url -  “uscore” : Base url of a dependency implementation Guide (defined in ig.json) - {{site.data.fhir.uscore}} = http://hl7.org/fhir/us/core/stu1/</p>
 
-<p>errorCount : number of errors in the build file (not including HTML validation errors) -   {{site.data.fhir.errorCount}}  = 7</p>
+<p>errorCount : number of errors in the build file (not including HTML validation errors) -   {{site.data.fhir.errorCount}}  = 99</p>
 
 <p>version : version of FHIR -   {{site.data.fhir.version}}  = 3.0.1</p>
 
@@ -525,9 +538,9 @@ This Implementation Guide is published by the <a href="http://argonautwiki.hl7.o
 
 <p>totalFiles : total number of files found by the build -   {{site.data.fhir.totalFiles}}  = 36</p>
 
-<p>processedFiles : number of files genrated by the build -   {{site.data.fhir.processedFiles}}  = 188</p>
+<p>processedFiles : number of files genrated by the build -   {{site.data.fhir.processedFiles}}  = 1</p>
 
-<p>genDate : date of generation (so date stamps in the pages can match those in the conformance resources) -   {{site.data.fhir.genDate}}  = Thu, Nov 16, 2017 07:51-0800</p>
+<p>genDate : date of generation (so date stamps in the pages can match those in the conformance resources) -   {{site.data.fhir.genDate}}  = Thu, Nov 16, 2017 17:24-0800</p>
 
 <hr/>
 
@@ -567,7 +580,7 @@ This Implementation Guide is published by the <a href="http://argonautwiki.hl7.o
   <div class="container">    <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Thu, Nov 16, 2017 07:51-0800. |
+            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Thu, Nov 16, 2017 17:24-0800. |
                <!-- <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a rel="license" style="color: #81BEF7" href="http://hl7.org/fhir/STU3license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a>
         

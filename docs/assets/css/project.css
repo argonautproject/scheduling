@@ -419,3 +419,9 @@ text-align: baseline;
 font-size: 1em;
 
 }
+
+/* ----- increase li font sized fhir.css makes it all 12 px---*/
+
+p, li {
+    font-size: 1em;
+}

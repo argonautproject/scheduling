@@ -75,6 +75,7 @@ Throughout the development of the Argonaut Scheduling Guide several additional i
    - for example an *Appointment$input operation* could precede the Appointment Availability Operation to discover what inputs are needed for the service.  This operation would return a questionnaire to be filled out by the End User and submitted with the Appointment Availability Operation.  Alternatively the Operation#find operation could return an OperationOutcome informing the client that information is needed and a questionnaire to be completed first.
 
 1. Amending an appointment
+   - Need to establish what if anything the consumer can update.
 1. Scheduling requests
 1. Prior approvals including preauthorizations
 1. Scheduling physical (rooms, modalities, etc.) resources
@@ -116,7 +117,11 @@ For the provider based scheduling, the actors are depicted in figure 2 below.  T
 {:.no_toc}
 
 1. [US Core Profiles](http://hl7.org/fhir/us/core/index.html) are supported
-1. ...
+1. [US Core General Guidance](http://hl7.org/fhir/us/core/guidance.html) and conventions apply to this guide.
+
+#### Rescheduling
+
+1. Rescheduling and appointment is a two step process of cancelling and rebooking.
 
 ### Security
 
