@@ -219,27 +219,209 @@
   <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
   <li><a href="#scenario-1-scheduling-for-existing-patient-across-systems" id="markdown-toc-scenario-1-scheduling-for-existing-patient-across-systems">Scenario 1: Scheduling for existing patient across systems</a></li>
   <li><a href="#scenario-2-scheduling-for-new-patient-across-systems" id="markdown-toc-scenario-2-scheduling-for-new-patient-across-systems">Scenario 2: Scheduling for new patient across systems</a></li>
-  <li><a href="#scenario-3-scheduling-for-existing-patient-within-system" id="markdown-toc-scenario-3-scheduling-for-existing-patient-within-system">Scenario 3: Scheduling for existing patient within system</a></li>
   <li><a href="#cancelling-appointment" id="markdown-toc-cancelling-appointment">Cancelling appointment</a></li>
   <li><a href="#retrieving-patient-appointments" id="markdown-toc-retrieving-patient-appointments">Retrieving Patient appointments</a></li>
-  <li><a href="#retrieving-providers-appointmentschedule" id="markdown-toc-retrieving-providers-appointmentschedule">Retrieving Providers appointment/Schedule</a></li>
+  <li><a href="#retrieving-providers-appointmentschedule" id="markdown-toc-retrieving-providers-appointmentschedule">Retrieving Providers appointment/schedule</a></li>
 </ul>
 
 <h3 id="introduction">Introduction</h3>
 
-<p>blah blah blah</p>
-
 <h3 id="scenario-1-scheduling-for-existing-patient-across-systems">Scenario 1: Scheduling for existing patient across systems</h3>
+
+<p>Preconditions:</p>
+
+<ul>
+  <li>External system knows patient</li>
+  <li>Login and trust ( todo: confirm this)
+    <ul>
+      <li>The referring provider application has been authorized by the referral recipients health system</li>
+      <li>Uses <em>SMART on FHIR</em> authorization for applications that connect to EHR data.</li>
+    </ul>
+  </li>
+  <li>Work flow for clinic staff vs a call center to make appointment (in person vs over phone) is same</li>
+</ul>
+
+<h5 class="no_toc" id="scenario-1a-provider-schedules-an-appointment-with-a-patients-pcp-on-behalf-of-patient-discharge-follow-up">Scenario 1a Provider schedules an appointment with a patient’s PCP on behalf of patient (Discharge follow-up):</h5>
+<div class="highlighter-rouge"><pre class="highlight"><code> Hospital A has treated patient B. Upon discharge, Hospital A schedules a follow-up appointment with patient B's PCP (primary care provider).
+</code></pre>
+</div>
+
+<p>This is a basic referral scenario in which the patient is registered with the referral recipient.</p>
+
+<h5 class="no_toc" id="scenario-2a-provider-schedules-a-follow-up-procedure-on-behalf-of-patient-imaging-referral">Scenario 2a Provider schedules a follow-up procedure on behalf of patient (Imaging referral):</h5>
+<div class="highlighter-rouge"><pre class="highlight"><code> Patient Y has been seeing Doctor X for a sore back. After examining the patient Doctor X recommends a follow-up MRI for Patient Y. The clinic staff schedule the MRI for Patient Y.
+</code></pre>
+</div>
+
+<p>This scenario is similar to 1a above, but is an appointment for a procedure instead of a direct referral with a practitioner.</p>
+
+<hr />
+
+<!-- all this Bootstrap html for getting an image to fit nicely in text - 640 pix wide -->
+
+<p>file:///assets/images/diagrams/Slide35.png</p>
+
+<div>
+<figure class="figure">
+<figcaption class="figure-caption"><strong>Figure 1: Provider Scheduling for existing patient across systemst.</strong></figcaption>
+  <img src="assets/images/diagrams/Slide35.png" class="figure-img img-responsive img-rounded center-block" alt="diagrams/Slide35.png" />
+</figure>
+
+<p></p>
+</div>
+
+<ol>
+  <li>
+    <p>Patient Match</p>
+
+    <ul>
+      <li>Optional Step</li>
+      <li>Fetch Patient ID(s) from other systems</li>
+      <li>Prevent overlapping appointments since Scheduler may not be aware</li>
+    </ul>
+
+    <p>Use $match operation as described in the <a href="http://build.fhir.org/patient-operations.html#8.1.18.1">FHIR Specification</a></p>
+  </li>
+  <li>
+    <p>End user searches for available appointments</p>
+
+    <ul>
+      <li>Use the <a href="http://build.fhir.org/ig/argonautproject/scheduling/operations.html">Appointment Availability Search Operation</a></li>
+      <li>Same operation used for patient scheduling</li>
+    </ul>
+  </li>
+  <li>
+    <p>End user selects from available appointments</p>
+
+    <ul>
+      <li>Provider selects on behalf of patient</li>
+      <li>Patient instruct provider which appointment they want.</li>
+      <li>$hold and $book operations same as used for patient scheduling</li>
+    </ul>
+  </li>
+  <li>
+    <p>exchange patient information</p>
+
+    <ul>
+      <li>medical information
+        <ul>
+          <li>ccda exchange
+            <ul>
+              <li>document this</li>
+              <li>transactions out of scope - future</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>patient registration
+        <ul>
+          <li>existing patient see patient match step</li>
+          <li>new patient registration prior to booking</li>
+        </ul>
+      </li>
+      <li>coverage - optional</li>
+    </ul>
+  </li>
+</ol>
+
+<hr />
 
 <h3 id="scenario-2-scheduling-for-new-patient-across-systems">Scenario 2: Scheduling for new patient across systems</h3>
 
-<h3 id="scenario-3-scheduling-for-existing-patient-within-system">Scenario 3: Scheduling for existing patient within system</h3>
+<p>Preconditions:</p>
+
+<ul>
+  <li>The patient is presumed to be unknown to external system.</li>
+  <li>Login and trust ( todo: confirm this)
+    <ul>
+      <li>The referring provider application has been authorized by the referral recipients health system</li>
+      <li>Uses <em>SMART on FHIR</em> authorization for applications that connect to EHR data.</li>
+    </ul>
+  </li>
+  <li>Work flow for clinic staff vs a call center to make appointment (in person vs over phone) is same</li>
+</ul>
+
+<h5 class="no_toc" id="scenario-2a-provider-schedules-an-appointment-with-a-provider-on-behalf-of-patient-dermatology-referral">Scenario 2a Provider schedules an appointment with a provider on behalf of patient (Dermatology referral):</h5>
+<div class="highlighter-rouge"><pre class="highlight"><code>  Patient Y sees Doctor Z his PCP for a rash. After examining the patient, Doctor Z wants to Patient Y to see a dermatologist.  The clinic staff schedule Patient Y to see Doctor D for a dermatology consult.  Patient Y has never been to a dermatologist before.
+</code></pre>
+</div>
+
+<p>This basic referral scenario is the same as [Scenario-1a][#] above except that the patient is presumed to be a new patient to the referral recipient. An alternative but equivalent scenario would be a hospital scheduling at discharge and follow-up with a patient’s PCP (primary care provider).</p>
+
+<h5 class="no_toc" id="scenario-2b-provider-schedules-a-procedure-on-behalf-of-patient-imaging-referral">Scenario 2b Provider schedules a procedure on behalf of patient (Imaging referral):</h5>
+<div class="highlighter-rouge"><pre class="highlight"><code>  Patient Y see Doctor X for a sore back. After examining the patient Doctor X recommends an MRI for Patient Y. The clinic staff schedule the MRI for Patient Y.  This is first MRI for patient Y.
+</code></pre>
+</div>
+
+<p>This basic referral scenario is the same as [Scenario-1b][#] above except that the patient is presumed to be a new patient to the referral recipient.  This is very similar to 2a above but is an appointment for a procedure instead of a direct referral.</p>
+
+<hr />
+
+<!-- all this Bootstrap html for getting an image to fit nicely in text - 640 pix wide -->
+
+<p>file:///assets/images/diagrams/Slide36.png</p>
+
+<div>
+<figure class="figure">
+<figcaption class="figure-caption"><strong>Figure 1: Provider Scheduling for existing patient across systemst.</strong></figcaption>
+  <img src="assets/images/diagrams/Slide36.png" class="figure-img img-responsive img-rounded center-block" alt="diagrams/Slide36.png" />
+</figure>
+
+<p></p>
+</div>
+
+<hr />
 
 <h3 id="cancelling-appointment">Cancelling appointment</h3>
 
+<p>same as for Patient Use Cases</p>
+
 <h3 id="retrieving-patient-appointments">Retrieving Patient appointments</h3>
 
-<h3 id="retrieving-providers-appointmentschedule">Retrieving Providers appointment/Schedule</h3>
+<p>same as for Patient Use Cases with Provider scope</p>
+
+<p>A Provider data access search for all of her appointments and all of a patient’s appointments:</p>
+
+<p><a href="http://build.fhir.org/ig/argonautproject/scheduling/StructureDefinition-appt-output.html#search">Draft Search requirements for appointment profile</a></p>
+
+<p>required to support the:
+- patient
+- status
+- date (+ modifiers supported in us core)
+- practitioner
+search parameters</p>
+
+<p>Syntax:</p>
+
+<p><code class="highlighter-rouge">GET [base]\Appointment?practitioner=[id]{&amp;status=[status]&amp;date=[date]}</code></p>
+
+<p>For example, fetch all of a practitioner’s appointments (all statuses):</p>
+
+<p><code class="highlighter-rouge">GET [base]\Appointment?practitioner=[id]</code></p>
+
+<p>fetch all open appointments:</p>
+
+<p><code class="highlighter-rouge">GET [base]\Appointment?practitioner=[id]&amp;status=free</code></p>
+
+<p>fetch all completed appointments since October:</p>
+
+<p><code class="highlighter-rouge">GET [base]\Appointment?practitioner=[id]&amp;status=fulfilled&amp;date=ge2017-10-01</code></p>
+
+<p>fetch all completed appointments for a patient since October:</p>
+
+<p><code class="highlighter-rouge">GET [base]\Appointment?practitioner=[id]&amp;patient=[id]&amp;status=fulfilled&amp;date=ge2017-10-01</code></p>
+
+<p>(see the patient facing search for additional examples)</p>
+
+<p>Questions:</p>
+
+<p>Support for multiple patients and practitioners (e.g. [id1, id2, id3])</p>
+
+<p>More Useful to search provider Schedule?</p>
+
+<h3 id="retrieving-providers-appointmentschedule">Retrieving Providers appointment/schedule</h3>
+
+<p>Discuss - what is in scope?</p>
 
 
 
@@ -275,7 +457,7 @@
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Fri, Nov 17, 2017 06:37-0800. |
+            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Mon, Nov 20, 2017 11:24-0800. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/STU3license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

@@ -236,7 +236,7 @@ This Implementation Guide is published by the <a href="http://argonautwiki.hl7.o
 
 <h3 id="introduction">Introduction</h3>
 
-<p><a name="b0bf3741-5c2a-4fb5-9048-c46b6f143d6b">​</a>The <a href="#.html">Argonaut Scheduling Project</a> is a vendor agnostic specification providing FHIR RESTful APIs and guidance for access to and booking of appointments for patients by both patient and practitioner end users. This specification is based on <a href="http://hl7.org/fhir/STU3">FHIR Version 3.0.1</a> and specifically the <a href="http://hl7.org/fhir/STU3/administration-module.html#sched">Scheduling and Appointment resources</a>.</p>
+<p><a name="50172270-9523-4665-a19b-02872a260012">​</a>The <a href="#.html">Argonaut Scheduling Project</a> is a vendor agnostic specification providing FHIR RESTful APIs and guidance for access to and booking of appointments for patients by both patient and practitioner end users. This specification is based on <a href="http://hl7.org/fhir/STU3">FHIR Version 3.0.1</a> and specifically the <a href="http://hl7.org/fhir/STU3/administration-module.html#sched">Scheduling and Appointment resources</a>.</p>
 
 <p>These requirements were developed and defined by the <a href="http://argonautwiki.hl7.org">Argonaut</a> pilot implementations.</p>
 
@@ -286,6 +286,7 @@ This Implementation Guide is published by the <a href="http://argonautwiki.hl7.o
       </li>
       <li>books an appointment</li>
       <li>cancels an appointment</li>
+      <li>Exchange of medical history ( document only )</li>
     </ul>
   </li>
   <li>Provider retrieves their existing appointments for all patients</li>
@@ -321,7 +322,25 @@ This Implementation Guide is published by the <a href="http://argonautwiki.hl7.o
     </ul>
   </li>
   <li>Scheduling requests</li>
-  <li>Prior approvals including preauthorizations</li>
+  <li>Prior approvals including preauthorizations
+    <ul>
+      <li>Who has the authority to get pre-auth?</li>
+      <li>call center ( third party )</li>
+      <li>referring</li>
+      <li>referred-to Organization.</li>
+      <li>When is it needed</li>
+    </ul>
+  </li>
+  <li>Scheduling for existing patient within system</li>
+</ol>
+
+<p>Summary: Provider schedules an follow-up appointment with same provider on behalf of patient.  This is a low priority use case since its is typically done by in-practice software and therefore of limited use for an interoperability specification.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  Scenario (follow-up appointment): Patient Y sees Doctor Z for a rash. After examining and prescribing the appropriate treatment plan, Doctor Z wants to see Patient Y in two weeks for a follow-up visit to evaluate the response to treatment.  The clinic staff schedule Patient Y for a follow-up office call.
+</code></pre>
+</div>
+
+<ol>
   <li>Scheduling physical (rooms, modalities, etc.) resources</li>
   <li>Initiating Transitions of Care</li>
   <li>Language support</li>
@@ -528,7 +547,7 @@ This Implementation Guide is published by the <a href="http://argonautwiki.hl7.o
 
 <p>dependency url -  “uscore” : Base url of a dependency implementation Guide (defined in ig.json) - {{site.data.fhir.uscore}} = http://hl7.org/fhir/us/core/stu1/</p>
 
-<p>errorCount : number of errors in the build file (not including HTML validation errors) -   {{site.data.fhir.errorCount}}  = 30</p>
+<p>errorCount : number of errors in the build file (not including HTML validation errors) -   {{site.data.fhir.errorCount}}  = 26</p>
 
 <p>version : version of FHIR -   {{site.data.fhir.version}}  = 3.0.1</p>
 
@@ -540,7 +559,7 @@ This Implementation Guide is published by the <a href="http://argonautwiki.hl7.o
 
 <p>processedFiles : number of files genrated by the build -   {{site.data.fhir.processedFiles}}  = 1</p>
 
-<p>genDate : date of generation (so date stamps in the pages can match those in the conformance resources) -   {{site.data.fhir.genDate}}  = Fri, Nov 17, 2017 06:37-0800</p>
+<p>genDate : date of generation (so date stamps in the pages can match those in the conformance resources) -   {{site.data.fhir.genDate}}  = Mon, Nov 20, 2017 11:24-0800</p>
 
 <hr/>
 
@@ -580,7 +599,7 @@ This Implementation Guide is published by the <a href="http://argonautwiki.hl7.o
   <div class="container">    <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Fri, Nov 17, 2017 06:37-0800. |
+            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Mon, Nov 20, 2017 11:24-0800. |
                <!-- <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a rel="license" style="color: #81BEF7" href="http://hl7.org/fhir/STU3license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a>
         

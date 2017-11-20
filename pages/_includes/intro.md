@@ -56,6 +56,7 @@ These requirements were developed and defined by the [Argonaut](http://argonautw
            - set of common [visit types](ValueSet-visit-type.html)
       - books an appointment
       - cancels an appointment
+      - Exchange of medical history ( document only )
    - Provider retrieves their existing appointments for all patients
 
 ### Future Scope
@@ -78,6 +79,17 @@ Throughout the development of the Argonaut Scheduling Guide several additional i
    - Need to establish what if anything the consumer can update.
 1. Scheduling requests
 1. Prior approvals including preauthorizations
+  - Who has the authority to get pre-auth?
+    - call center ( third party )
+    - referring
+    - referred-to Organization.
+  - When is it needed
+1. Scheduling for existing patient within system
+
+Summary: Provider schedules an follow-up appointment with same provider on behalf of patient.  This is a low priority use case since its is typically done by in-practice software and therefore of limited use for an interoperability specification.
+
+      Scenario (follow-up appointment): Patient Y sees Doctor Z for a rash. After examining and prescribing the appropriate treatment plan, Doctor Z wants to see Patient Y in two weeks for a follow-up visit to evaluate the response to treatment.  The clinic staff schedule Patient Y for a follow-up office call.
+
 1. Scheduling physical (rooms, modalities, etc.) resources
 1. Initiating Transitions of Care
 1. Language support
