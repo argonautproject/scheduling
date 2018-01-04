@@ -1,88 +1,19 @@
-## Examples
+Using Both `GET` and `POST` Syntax the operation can be invoked as follows:
 
-Using Both `GET` and `POST` Syntax
+`GET [base]/Appointment/$hold?{parameters}&?{_count}`
+
+`POST [base]/Appointment/$hold?{_count}`
+
+## Examples
 
 - [Scenario-1a](#scenario-1a)
 - [Scenario-1b](#scenario-1b)
 - [Scenario-2a](#scenario-2a)
 - [Scenario-2b](#scenario-2b)
 
-#### Scenario 1a: Use the operation to fetch a maximum of the soonest 3 open appointments available within the next 2 days for Dr Y at the Napa location.
-{: #scenario-1a}
 
-[Scenario Details](https://github.com/argonautproject/scheduling/wiki/Use-Cases#scenario-1a-existing-patient-schedules-directly-with-their-provider)
+{% capture my-include %}{% include appointment-find1a.md %}{% endcapture %}{{ my-include | markdownify }}
 
-##### Request
-
-**Using `GET`**
-
-`GET [base]/Appointment/$find?start=2017-07-15T20:00:00Z&end=2017-07-17T20:00:00Z&provider=Practitioner/dr-y&location=Napa&_count=3`
-
-**Using `POST`**
-
-`POST [base]/Appointment/$find&_count=3`
-
-    **payload:**
-
-    {
-      "resourceType": "Parameters",
-      "id": "pcp-appts",
-      "parameter": [
-        {
-          "name": "start",
-          "valueDateTime" : "2017-07-15T20:00:00Z"
-        },
-        {
-          "name": "end",
-            "valueDateTime" : "2017-07-17T20:00:00Z"
-        },
-        {
-          "name": "provider",
-          "valueUri": ["Practitioner/dr-y"]
-          }
-        },
-        {
-          "name": "location",
-          "valueString": ["Napa"]
-        }
-    ]
-    }
-
-##### Response ([Operation$find Example 1a](Bundle-hal-dr-y-appts.html))
-
-
-    {
-      "resourceType": "Bundle",
-      "id": "hal-dr-y-appts",
-      "type": "searchset",
-      "total": 3,
-      "entry": [{
-        "fullUrl": "http://server/path/Appointment/proposed-appt-1",
-        "resource": {
-          "resourceType": "Appointment",
-          "id": "proposed-appt-1",
-          .. snip ...
-        },
-        "fullUrl": "http://server/path/Appointment/proposed-appt-2",
-        "resource": {
-          "resourceType": "Appointment",
-          "id": "proposed-appt-2",
-          .. snip ...
-        },
-        "fullUrl": "http://server/path/Appointment/proposed-appt-3",
-        "resource": {
-          "resourceType": "Appointment",
-          "id": "proposed-appt-3",
-          .. snip ...
-        },
-        "fullUrl": "http://server/path/OperationOutcome/oo-for-dr-y-appts",
-        "resource": {
-          "resourceType": "OperationOutcome",
-          "id": "oo-for-dr-y-appts",
-          .. snip ...
-        }
-      ]
-    }
 
 #### Scenario 1b: Use the operation to fetch a maximum of the soonest 3 open appointments available within the next 2 days for the requested service at the Napa location.
 {: #scenario-1b}

@@ -4,12 +4,12 @@ canonicalBase,http://fhir.org/guides/argonaut-scheduling
 codesystems,
 dependencyList.location,http://hl7.org/fhir/us/core/stu1/
 dependencyList.name,uscore
-dependencyList.source,uscore
+dependencyList.source,dependencies/uscore
 do-transforms,FALSE
 extensions,extension-status-reason
 fixed-business-version,0.0.0
 gen-examples,FALSE
-igtemplate-dir,/Users/ehaas/Documents/FHIR/IG-Template/
+igtemplate-dir,/Users/ehaas/Documents/FHIR/IG-Template-New/
 jurisdiction,US
 no-inactive-codes,FALSE
 paths.output,../Argo-Scheduling/docs

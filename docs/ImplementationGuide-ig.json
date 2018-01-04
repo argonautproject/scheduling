@@ -225,7 +225,6 @@
               "valueUri": "ValueSet-visit-type.html"
             }
           ],
-          "example": false,
           "sourceReference": {
             "reference": "ValueSet/visit-type"
           }
@@ -237,7 +236,6 @@
               "valueUri": "ValueSet-status-reason.html"
             }
           ],
-          "example": false,
           "sourceReference": {
             "reference": "ValueSet/status-reason"
           }
@@ -249,7 +247,6 @@
               "valueUri": "ValueSet-specialty.html"
             }
           ],
-          "example": false,
           "sourceReference": {
             "reference": "ValueSet/specialty"
           }
@@ -261,7 +258,6 @@
               "valueUri": "ValueSet-service.html"
             }
           ],
-          "example": false,
           "sourceReference": {
             "reference": "ValueSet/service"
           }
@@ -273,7 +269,6 @@
               "valueUri": "ValueSet-appt-type.html"
             }
           ],
-          "example": false,
           "sourceReference": {
             "reference": "ValueSet/appt-type"
           }
@@ -285,7 +280,6 @@
               "valueUri": "StructureDefinition-avail-bundle.html"
             }
           ],
-          "example": false,
           "sourceReference": {
             "reference": "StructureDefinition/avail-bundle"
           }
@@ -294,12 +288,11 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "OperationDefinition-Appointment-hold.html"
+              "valueUri": "OperationDefinition-appointment-hold.html"
             }
           ],
-          "example": false,
           "sourceReference": {
-            "reference": "OperationDefinition/Appointment-hold"
+            "reference": "OperationDefinition/appointment-hold"
           }
         },
         {
@@ -309,7 +302,6 @@
               "valueUri": "OperationDefinition-appointment-find.html"
             }
           ],
-          "example": false,
           "sourceReference": {
             "reference": "OperationDefinition/appointment-find"
           }
@@ -318,12 +310,11 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "OperationDefinition-Appointment-book.html"
+              "valueUri": "OperationDefinition-appointment-book.html"
             }
           ],
-          "example": false,
           "sourceReference": {
-            "reference": "OperationDefinition/Appointment-book"
+            "reference": "OperationDefinition/appointment-book"
           }
         },
         {
@@ -333,7 +324,6 @@
               "valueUri": "ConceptMap-visit-service-map.html"
             }
           ],
-          "example": false,
           "sourceReference": {
             "reference": "ConceptMap/visit-service-map"
           }
@@ -345,7 +335,6 @@
               "valueUri": "ConceptMap-visit-appt-map.html"
             }
           ],
-          "example": false,
           "sourceReference": {
             "reference": "ConceptMap/visit-appt-map"
           }
@@ -357,7 +346,6 @@
               "valueUri": "CodeSystem-visit-type.html"
             }
           ],
-          "example": false,
           "sourceReference": {
             "reference": "CodeSystem/visit-type"
           }
@@ -369,7 +357,6 @@
               "valueUri": "CodeSystem-status-reason.html"
             }
           ],
-          "example": false,
           "sourceReference": {
             "reference": "CodeSystem/status-reason"
           }
@@ -381,7 +368,6 @@
               "valueUri": "CodeSystem-appt-type.html"
             }
           ],
-          "example": false,
           "sourceReference": {
             "reference": "CodeSystem/appt-type"
           }
@@ -393,7 +379,6 @@
               "valueUri": "CapabilityStatement-server.html"
             }
           ],
-          "example": false,
           "sourceReference": {
             "reference": "CapabilityStatement/server"
           }
@@ -405,7 +390,6 @@
               "valueUri": "CapabilityStatement-client.html"
             }
           ],
-          "example": false,
           "sourceReference": {
             "reference": "CapabilityStatement/client"
           }
@@ -422,7 +406,6 @@
               "valueUri": "StructureDefinition-extension-status-reason.html"
             }
           ],
-          "example": false,
           "name": "Reason for current status",
           "sourceReference": {
             "reference": "StructureDefinition/extension-status-reason"
@@ -435,7 +418,6 @@
               "valueUri": "StructureDefinition-appt-output.html"
             }
           ],
-          "example": false,
           "name": "Argonaut Appointment Output Profile",
           "sourceReference": {
             "reference": "StructureDefinition/appt-output"
@@ -453,7 +435,6 @@
               "valueUri": "StructureDefinition-argo-coverage.html"
             }
           ],
-          "example": false,
           "name": "Argonaut Coverage Profile",
           "sourceReference": {
             "reference": "StructureDefinition/argo-coverage"

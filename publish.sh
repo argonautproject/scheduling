@@ -1,6 +1,6 @@
 #!/bin/bash
 name="Argo-Scheduling"
-path1=/Users/ehaas/Documents/FHIR/IG-Template/
+path1=/Users/ehaas/Documents/FHIR/IG-Template-New/
 path2=/Users/ehaas/Downloads/
 echo "================================================================="
 echo === Publish $name IG!!! $(date -u) ===

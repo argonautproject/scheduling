@@ -2322,11 +2322,11 @@ button.close {
   display: block;
 }
 .nav .caret {
-  border-top-color: #428bca;
+  border-top-color: #f5f5f5;
   border-bottom-color: #428bca;
 }
 .nav a:hover .caret {
-  border-top-color: #2a6496;
+  border-top-color: #f5f5f5;
   border-bottom-color: #2a6496;
 }
 .nav-tabs .dropdown-menu {

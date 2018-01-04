@@ -1,5 +1,5 @@
     appt-output-search.md file
-    
+
 
 [Syntax]({{site.data.fhir.uscore}}/guidance.html#readfetch-resource-notation)
 
@@ -13,7 +13,7 @@
 - filter by a date or a date range ( including the date modifiers 'ge','le','gt','lt')
 - filter by a practitioner
 
-Examples: 
+Examples:
 
 Search for all appointments for a patient with Resource ID 1234: `GET [base]/Appointment?patient=1234`
 

@@ -28,8 +28,7 @@
       "coding": [
         {
           "system": "urn:iso:std:iso:3166",
-          "code": "US",
-          "display": "United States Minor Outlying Islands (the)"
+          "code": "US"
         }
       ]
     }

@@ -169,7 +169,6 @@
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
         <valueUri value="ValueSet-visit-type.html"/>
       </extension>
-      <example value="false"/>
       <sourceReference>
         <reference value="ValueSet/visit-type"/>
       </sourceReference>
@@ -178,7 +177,6 @@
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
         <valueUri value="ValueSet-status-reason.html"/>
       </extension>
-      <example value="false"/>
       <sourceReference>
         <reference value="ValueSet/status-reason"/>
       </sourceReference>
@@ -187,7 +185,6 @@
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
         <valueUri value="ValueSet-specialty.html"/>
       </extension>
-      <example value="false"/>
       <sourceReference>
         <reference value="ValueSet/specialty"/>
       </sourceReference>
@@ -196,7 +193,6 @@
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
         <valueUri value="ValueSet-service.html"/>
       </extension>
-      <example value="false"/>
       <sourceReference>
         <reference value="ValueSet/service"/>
       </sourceReference>
@@ -205,7 +201,6 @@
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
         <valueUri value="ValueSet-appt-type.html"/>
       </extension>
-      <example value="false"/>
       <sourceReference>
         <reference value="ValueSet/appt-type"/>
       </sourceReference>
@@ -214,43 +209,38 @@
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
         <valueUri value="StructureDefinition-avail-bundle.html"/>
       </extension>
-      <example value="false"/>
       <sourceReference>
         <reference value="StructureDefinition/avail-bundle"/>
       </sourceReference>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="OperationDefinition-Appointment-hold.html"/>
+        <valueUri value="OperationDefinition-appointment-hold.html"/>
       </extension>
-      <example value="false"/>
       <sourceReference>
-        <reference value="OperationDefinition/Appointment-hold"/>
+        <reference value="OperationDefinition/appointment-hold"/>
       </sourceReference>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
         <valueUri value="OperationDefinition-appointment-find.html"/>
       </extension>
-      <example value="false"/>
       <sourceReference>
         <reference value="OperationDefinition/appointment-find"/>
       </sourceReference>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="OperationDefinition-Appointment-book.html"/>
+        <valueUri value="OperationDefinition-appointment-book.html"/>
       </extension>
-      <example value="false"/>
       <sourceReference>
-        <reference value="OperationDefinition/Appointment-book"/>
+        <reference value="OperationDefinition/appointment-book"/>
       </sourceReference>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
         <valueUri value="ConceptMap-visit-service-map.html"/>
       </extension>
-      <example value="false"/>
       <sourceReference>
         <reference value="ConceptMap/visit-service-map"/>
       </sourceReference>
@@ -259,7 +249,6 @@
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
         <valueUri value="ConceptMap-visit-appt-map.html"/>
       </extension>
-      <example value="false"/>
       <sourceReference>
         <reference value="ConceptMap/visit-appt-map"/>
       </sourceReference>
@@ -268,7 +257,6 @@
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
         <valueUri value="CodeSystem-visit-type.html"/>
       </extension>
-      <example value="false"/>
       <sourceReference>
         <reference value="CodeSystem/visit-type"/>
       </sourceReference>
@@ -277,7 +265,6 @@
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
         <valueUri value="CodeSystem-status-reason.html"/>
       </extension>
-      <example value="false"/>
       <sourceReference>
         <reference value="CodeSystem/status-reason"/>
       </sourceReference>
@@ -286,7 +273,6 @@
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
         <valueUri value="CodeSystem-appt-type.html"/>
       </extension>
-      <example value="false"/>
       <sourceReference>
         <reference value="CodeSystem/appt-type"/>
       </sourceReference>
@@ -295,7 +281,6 @@
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
         <valueUri value="CapabilityStatement-server.html"/>
       </extension>
-      <example value="false"/>
       <sourceReference>
         <reference value="CapabilityStatement/server"/>
       </sourceReference>
@@ -304,7 +289,6 @@
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
         <valueUri value="CapabilityStatement-client.html"/>
       </extension>
-      <example value="false"/>
       <sourceReference>
         <reference value="CapabilityStatement/client"/>
       </sourceReference>
@@ -316,7 +300,6 @@
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
         <valueUri value="StructureDefinition-extension-status-reason.html"/>
       </extension>
-      <example value="false"/>
       <name value="Reason for current status"/>
       <sourceReference>
         <reference value="StructureDefinition/extension-status-reason"/>
@@ -326,7 +309,6 @@
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
         <valueUri value="StructureDefinition-appt-output.html"/>
       </extension>
-      <example value="false"/>
       <name value="Argonaut Appointment Output Profile"/>
       <sourceReference>
         <reference value="StructureDefinition/appt-output"/>
@@ -339,7 +321,6 @@
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
         <valueUri value="StructureDefinition-argo-coverage.html"/>
       </extension>
-      <example value="false"/>
       <name value="Argonaut Coverage Profile"/>
       <sourceReference>
         <reference value="StructureDefinition/argo-coverage"/>

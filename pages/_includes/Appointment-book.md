@@ -1,5 +1,11 @@
-## Examples
+appointment-book.md
 
+The operation can be invoked as follows:
+
+   `POST [base]/Appointment/$hold`
+
+##### Examples
+<!--
 - [Scenario-1](#scenario-1)
 - [Scenario-2](#scenario-2)
 
@@ -52,12 +58,9 @@
         }
       ]
     }
-
-
-#### Scenario 2: Use the operation to book an appointment
-{: #scenario-2}
-
-[Scenario Details](https://github.com/argonautproject/scheduling/wiki/Use-Cases#scenario-2a-new-patient-schedules-an-appointment-with-a-provider-without-being-in-health-system)
+-->
+~~~
+#### Request
 
 `POST [base]/Appointment/$book`
 
@@ -99,3 +102,4 @@
             }
           ]
         }
+~~~

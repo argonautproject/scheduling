@@ -1,10 +1,12 @@
-## Example
+source file: pages/_includes/docref/md
 
-#### Scenario 1a: Use the operation to book the appointment.
-{: #scenario-1}
+The operation can be invoked as follows:
 
-[Scenario Details](https://github.com/argonautproject/scheduling/wiki/Use-Cases#scenario-1a-existing-patient-schedules-directly-with-their-provider)
+   `POST [base]/Appointment/$hold`
 
+##### Example
+
+~~~
 ##### Request
 
 `POST [base]/Appointment/$hold`
@@ -44,3 +46,4 @@
         }
       ]
     }
+~~~
