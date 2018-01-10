@@ -1,0 +1,17 @@
+﻿swagger: 2.0
+
+info:  title: Server
+  description: This resource defines the expected capabilities 
+  version: 0.0.0
+  # contact:
+    # end user to fill out
+  license:
+    name: null
+
+# host: [user to provide]
+# basePath: [user to provide]
+schemes:
+  - https
+  # - http this would not normally be allowed (see doco)
+consumes:
+produces:

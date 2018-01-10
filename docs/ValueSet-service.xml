@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="service"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><h2>Argonaut Scheduling Services</h2><div><p>The service types offered by providers and  that is to be performed during this appointment.  These concepts are used in the FHIR Appointment, Schedule and Slot resources. The <a href="ConceptMap-visit-service-map.html">Argonaut Scheduling Visit Types</a> are mapped to these concepts</p>
+</div><p><b>Copyright Statement:</b> This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement</p><p>This value set includes codes from the following code systems:</p><ul><li>Include these codes as defined in <a href="http://www.snomed.org/"><code>http://snomed.info/sct</code></a><table class="none"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=11429006">11429006</a></td><td>Consultation (procedure)</td><td/></tr><tr><td><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=185387006">185387006</a></td><td>New patient consultation (procedure)</td><td/></tr><tr><td><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=310058008">310058008</a></td><td>Nuclear medicine service (procedure)</td><td/></tr><tr><td><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=439740005">439740005</a></td><td>Postoperative follow-up visit (procedure)</td><td/></tr><tr><td><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=406153003">406153003</a></td><td>Pre-admission assessment (procedure)</td><td/></tr><tr><td><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=77132007">77132007</a></td><td>Therapeutic procedure (procedure)</td><td/></tr><tr><td><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=406153003">406153003</a></td><td>Pre-admission assessment (procedure)</td><td/></tr><tr><td><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=241686001">241686001</a></td><td>Dual energy X-ray photon absorptiometry (procedure)</td><td/></tr><tr><td><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=40701008">40701008</a></td><td>Echocardiography (procedure)</td><td/></tr><tr><td><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=433233004">433233004</a></td><td>Exercise stress echocardiography (procedure)</td><td/></tr><tr><td><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=409073007">409073007</a></td><td>Education (procedure)</td><td/></tr><tr><td><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=54550000">54550000</a></td><td>Electroencephalogram (procedure)</td><td/></tr><tr><td><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=29303009">29303009</a></td><td>Electrocardiographic procedure (procedure)</td><td/></tr><tr><td><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=386053000">386053000</a></td><td>Evaluation procedure (procedure)</td><td/></tr><tr><td><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=86198006">86198006</a></td><td>Influenza vaccination (procedure)</td><td/></tr><tr><td><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=44491008">44491008</a></td><td>Fluoroscopy (procedure)</td><td/></tr><tr><td><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=281036007">281036007</a></td><td>Follow-up consultation (procedure)</td><td/></tr><tr><td><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=439708006">439708006</a></td><td>Home visit (procedure)</td><td/></tr><tr><td><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=59108006">59108006</a></td><td>Injection (procedure)</td><td/></tr><tr><td><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=5880005">5880005</a></td><td>Physical examination procedure (procedure)</td><td/></tr><tr><td><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=71388002">71388002</a></td><td>Procedure (procedure)</td><td/></tr><tr><td><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=76746007">76746007</a></td><td>Cardiovascular stress testing (procedure)</td><td/></tr><tr><td><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=7922000">7922000</a></td><td>General treatment (procedure)</td><td/></tr><tr><td><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=410620009">410620009</a></td><td>Well child visit (procedure)</td><td/></tr><tr><td><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=127785005">127785005</a></td><td>Administration of substance to produce immunity, either active or passive (procedure)</td><td/></tr></table></li><li>Include codes from <a href="http://www.snomed.org/"><code>http://snomed.info/sct</code></a> where concept  is-a  224930009</li></ul></div>
+  </text>
+  <url value="http://fhir.org/guides/argonaut-scheduling/ValueSet/service"/>
+  <version value="0.0.0"/>
+  <name value="Argonaut Scheduling Services"/>
+  <status value="draft"/>
+  <date value="2017-07-12T12:40:10-07:00"/>
+  <description value="The service types offered by providers and  that is to be performed during this appointment.  These concepts are used in the FHIR Appointment, Schedule and Slot resources. The [Argonaut Scheduling Visit Types](ConceptMap-visit-service-map.html) are mapped to these concepts "/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+    </coding>
+  </jurisdiction>
+  <copyright value="This value set includes content from SNOMED CT, which is copyright &#xA9; 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement"/>
+  <compose>
+    <include>
+      <system value="http://snomed.info/sct"/>
+      <concept>
+        <code value="11429006"/>
+        <display value="Consultation (procedure)"/>
+      </concept>
+      <concept>
+        <code value="185387006"/>
+        <display value="New patient consultation (procedure)"/>
+      </concept>
+      <concept>
+        <code value="310058008"/>
+        <display value="Nuclear medicine service (procedure)"/>
+      </concept>
+      <concept>
+        <code value="439740005"/>
+        <display value="Postoperative follow-up visit (procedure)"/>
+      </concept>
+      <concept>
+        <code value="406153003"/>
+        <display value="Pre-admission assessment (procedure)"/>
+      </concept>
+      <concept>
+        <code value="77132007"/>
+        <display value="Therapeutic procedure (procedure)"/>
+      </concept>
+      <concept>
+        <code value="406153003"/>
+        <display value="Pre-admission assessment (procedure)"/>
+      </concept>
+      <concept>
+        <code value="241686001"/>
+        <display value="Dual energy X-ray photon absorptiometry (procedure)"/>
+      </concept>
+      <concept>
+        <code value="40701008"/>
+        <display value="Echocardiography (procedure)"/>
+      </concept>
+      <concept>
+        <code value="433233004"/>
+        <display value="Exercise stress echocardiography (procedure)"/>
+      </concept>
+      <concept>
+        <code value="409073007"/>
+        <display value="Education (procedure)"/>
+      </concept>
+      <concept>
+        <code value="54550000"/>
+        <display value="Electroencephalogram (procedure)"/>
+      </concept>
+      <concept>
+        <code value="29303009"/>
+        <display value="Electrocardiographic procedure (procedure)"/>
+      </concept>
+      <concept>
+        <code value="386053000"/>
+        <display value="Evaluation procedure (procedure)"/>
+      </concept>
+      <concept>
+        <code value="86198006"/>
+        <display value="Influenza vaccination (procedure)"/>
+      </concept>
+      <concept>
+        <code value="44491008"/>
+        <display value="Fluoroscopy (procedure)"/>
+      </concept>
+      <concept>
+        <code value="281036007"/>
+        <display value="Follow-up consultation (procedure)"/>
+      </concept>
+      <concept>
+        <code value="439708006"/>
+        <display value="Home visit (procedure)"/>
+      </concept>
+      <concept>
+        <code value="59108006"/>
+        <display value="Injection (procedure)"/>
+      </concept>
+      <concept>
+        <code value="5880005"/>
+        <display value="Physical examination procedure (procedure)"/>
+      </concept>
+      <concept>
+        <code value="71388002"/>
+        <display value="Procedure (procedure)"/>
+      </concept>
+      <concept>
+        <code value="76746007"/>
+        <display value="Cardiovascular stress testing (procedure)"/>
+      </concept>
+      <concept>
+        <code value="7922000"/>
+        <display value="General treatment (procedure)"/>
+      </concept>
+      <concept>
+        <code value="410620009"/>
+        <display value="Well child visit (procedure)"/>
+      </concept>
+      <concept>
+        <code value="127785005"/>
+        <display value="Administration of substance to produce immunity, either active or passive (procedure)"/>
+      </concept>
+    </include>
+    <include>
+      <system value="http://snomed.info/sct"/>
+      <filter>
+        <property value="concept"/>
+        <op value="is-a"/>
+        <value value="224930009"/>
+      </filter>
+    </include>
+  </compose>
+</ValueSet>

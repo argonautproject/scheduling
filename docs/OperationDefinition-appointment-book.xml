@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<OperationDefinition xmlns="http://hl7.org/fhir">
+  <id value="appointment-book"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><h2>Appointment Book</h2><p>OPERATION: Appointment Book</p><p>The official URL for this operation definition is: </p><pre>http://fhir.org/guides/argonaut-scheduling/OperationDefinition/appointment-book</pre><div><p>Request to book the selected proposed Appointment.  This operation  follows the appointment availability ($find) and optional hold  ($hold) operations.  The server determines if the nominated appointment is still available (i.e., all the required actors and physical assets needed for the appointment are still available) .</p>
+</div><p>URL: [base]/Appointment/$book</p><p>Parameters</p><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>appt-id</td><td>0..1</td><td>uri</td><td/><td><div><p>A resource id for one of proposed Appointments returned by a prior $find operation (e.g., Resource/1234).  This is the same resource id as used for the $hold operation.  References can be to an absolute URL, but servers only perform this operation on their own appointments.</p>
+</div></td></tr><tr><td>IN</td><td>patient-id</td><td>0..*</td><td>uri</td><td/><td><div><p>A resource id for the Patient(s) participant in the resource (e.g., Patient/1234).  References can be to an absolute URL, but servers only perform this operation on their own patients.  For existing patients the client may need to fetch Patient ID using RESTful <code>GET</code> to the FHIR Server (i.e., <a href="{site.data.fhir.uscore}/StructureDefinition-us-core-patient.html#search">US-Core Patient Search</a>). For new patients client needs to fetch Patient ID using RESTful <code>POST</code> to register the patient on the FHIR Server (see <a href="{site.data.fhir.path}/http.html#create">create</a> and <a href="{site.data.fhir.path}/http.html#ccreate">conditional create</a>)</p>
+</div></td></tr><tr><td>IN</td><td>comment</td><td>0..1</td><td>string</td><td/><td><div><p>Comments or special instructions</p>
+</div></td></tr><tr><td>OUT</td><td>return</td><td>0..1</td><td>Bundle</td><td/><td><div><p>An <a href="StructureDefinition-avail-bundle.html">Appointment Availability Bundle profile</a> of type <code>searchset</code> of requested Appointment resource and may also contain an <a href="{site.data.fhir.path}/operationoutcome.html">OperationOutcome</a> with errors, warnings or information as a result of processing the operation.   If the booking is accepted, the Appointment resource will have an updated <code>status</code> of &quot;booked&quot; and  the <code>participants</code>element updated to include the patients.  If the booking is rejected, the Appointment resource will have an updated <code>status</code> of  &quot;cancelled&quot;.</p>
+</div></td></tr></table><div><p>This operation is not idempotent (see HTTP specification definition of idempotent ) may only be invoked by performing an HTTP POST.</p>
+<p>It is assumed that the server has identified and secured the context appropriately, and can either associate the authorization context with the patient(s), or determine whether the context has the rights to the nominated patient(s), if there is one.  Specifying the relationship between the context, a user and patient records is outside the scope of this specification</p>
+</div></div>
+  </text>
+  <url value="http://fhir.org/guides/argonaut-scheduling/OperationDefinition/appointment-book"/>
+  <version value="0.0.0"/>
+  <name value="Appointment Book"/>
+  <status value="draft"/>
+  <kind value="operation"/>
+  <date value="2017-08-09T11:36:05-07:00"/>
+  <publisher value="Argonaut Project"/>
+  <description value="Request to book the selected proposed Appointment.  This operation  follows the appointment availability ($find) and optional hold  ($hold) operations.  The server determines if the nominated appointment is still available (i.e., all the required actors and physical assets needed for the appointment are still available) ."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+    </coding>
+  </jurisdiction>
+  <idempotent value="false"/>
+  <code value="book"/>
+  <comment value="This operation is not idempotent (see HTTP specification definition of idempotent ) may only be invoked by performing an HTTP POST.&#xD;&#xD; It is assumed that the server has identified and secured the context appropriately, and can either associate the authorization context with the patient(s), or determine whether the context has the rights to the nominated patient(s), if there is one.  Specifying the relationship between the context, a user and patient records is outside the scope of this specification"/>
+  <resource value="Appointment"/>
+  <system value="false"/>
+  <type value="true"/>
+  <instance value="false"/>
+  <parameter>
+    <name value="appt-id"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="A resource id for one of proposed Appointments returned by a prior $find operation (e.g., Resource/1234).  This is the same resource id as used for the $hold operation.  References can be to an absolute URL, but servers only perform this operation on their own appointments."/>
+    <type value="uri"/>
+  </parameter>
+  <parameter>
+    <name value="patient-id"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="*"/>
+    <documentation value="A resource id for the Patient(s) participant in the resource (e.g., Patient/1234).  References can be to an absolute URL, but servers only perform this operation on their own patients.  For existing patients the client may need to fetch Patient ID using RESTful `GET` to the FHIR Server (i.e., [US-Core Patient Search]({site.data.fhir.uscore}/StructureDefinition-us-core-patient.html#search)). For new patients client needs to fetch Patient ID using RESTful `POST` to register the patient on the FHIR Server (see [create]({site.data.fhir.path}/http.html#create) and [conditional create]({site.data.fhir.path}/http.html#ccreate))"/>
+    <type value="uri"/>
+  </parameter>
+  <parameter>
+    <name value="comment"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Comments or special instructions"/>
+    <type value="string"/>
+  </parameter>
+  <parameter>
+    <name value="return"/>
+    <use value="out"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="An [Appointment Availability Bundle profile](StructureDefinition-avail-bundle.html) of type `searchset` of requested Appointment resource and may also contain an [OperationOutcome]({site.data.fhir.path}/operationoutcome.html) with errors, warnings or information as a result of processing the operation.   If the booking is accepted, the Appointment resource will have an updated `status` of &quot;booked&quot; and  the `participants`element updated to include the patients.  If the booking is rejected, the Appointment resource will have an updated `status` of  &quot;cancelled&quot;."/>
+    <type value="Bundle"/>
+    <profile>
+      <reference value="StructureDefinition/avail-bundle"/>
+    </profile>
+  </parameter>
+</OperationDefinition>

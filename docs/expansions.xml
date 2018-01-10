@@ -1,9 +1,1278 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Bundle xmlns="http://hl7.org/fhir">
-  <id value="f785790d-069e-4cc4-a69d-8cb8fdc6e431"/>
+  <id value="ae3fa68a-b6d9-4472-a9d7-11f8b4b2fa61"/>
   <meta>
-    <lastUpdated value="2018-01-03T23:09:20.653-08:00"/>
+    <lastUpdated value="2018-01-10T14:34:11.750-08:00"/>
   </meta>
   <type value="collection"/>
+  <entry>
+    <fullUrl value="http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type"/>
+    <resource>
+      <ValueSet>
+        <id value="visit-type"/>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <p>This value set contains 41 concepts</p>
+            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px">Expansion based on http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type version 0.0.0</p>
+            <p>All codes from system 
+              <a href="CodeSystem-visit-type.html">
+                <code>http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type</code>
+              </a>
+            </p>
+            <table class="codes">
+              <tr>
+                <td style="white-space:nowrap">
+                  <b>Code</b>
+                </td>
+                <td>
+                  <b>Display</b>
+                </td>
+                <td>
+                  <b>Definition</b>
+                </td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-visit-type-breast-imaging-"> </a>
+                  <a href="CodeSystem-visit-type.html#visit-type-breast-imaging">breast-imaging </a>
+                </td>
+                <td>BREAST IMAGING </td>
+                <td>breast imaging  visit</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-visit-type-consult"> </a>
+                  <a href="CodeSystem-visit-type.html#visit-type-consult">consult</a>
+                </td>
+                <td>CONSULTATION</td>
+                <td>consultation visit</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-visit-type-ct"> </a>
+                  <a href="CodeSystem-visit-type.html#visit-type-ct">ct</a>
+                </td>
+                <td>COMPUTED TOMOGRAPHY SCAN(CT)</td>
+                <td>computed tomography scan(ct) visit</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-visit-type-dental"> </a>
+                  <a href="CodeSystem-visit-type.html#visit-type-dental">dental</a>
+                </td>
+                <td>DENTAL</td>
+                <td>dental visit</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-visit-type-dxa"> </a>
+                  <a href="CodeSystem-visit-type.html#visit-type-dxa">dxa</a>
+                </td>
+                <td>DUAL-ENERGY X-RAY ABSORPTIOMETRY(DXA)</td>
+                <td>Dual-energy X-ray absorptiometry(dxa) visit</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-visit-type-echo"> </a>
+                  <a href="CodeSystem-visit-type.html#visit-type-echo">echo</a>
+                </td>
+                <td>ECHOCARDIOGRAPHY(ECHO)</td>
+                <td>echocardiography(echo) visit</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-visit-type-echo-stresstest"> </a>
+                  <a href="CodeSystem-visit-type.html#visit-type-echo-stresstest">echo-stresstest</a>
+                </td>
+                <td>ECHOCARDIOGRAPHY(ECHO) STRESS TEST</td>
+                <td>echocardiography(echo) stress test visit</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-visit-type-ed-followup"> </a>
+                  <a href="CodeSystem-visit-type.html#visit-type-ed-followup">ed-followup</a>
+                </td>
+                <td>EDUCATION FOLLOW UP</td>
+                <td>education follow up visit</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-visit-type-eeg"> </a>
+                  <a href="CodeSystem-visit-type.html#visit-type-eeg">eeg</a>
+                </td>
+                <td>ELECTROENCEPHALOGRAPHY(EEG)</td>
+                <td>Electroencephalography(eeg) visit</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-visit-type-egd"> </a>
+                  <a href="CodeSystem-visit-type.html#visit-type-egd">egd</a>
+                </td>
+                <td>ESOPHAGOGASTRODUODENOSCOPY(EGD)</td>
+                <td>esophagogastroduodenoscopy(egd) visit</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-visit-type-ekg"> </a>
+                  <a href="CodeSystem-visit-type.html#visit-type-ekg">ekg</a>
+                </td>
+                <td>ELECTROCARDIOGRAM(EKG)</td>
+                <td>electrocardiogram(ekg) visit</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-visit-type-evaluation"> </a>
+                  <a href="CodeSystem-visit-type.html#visit-type-evaluation">evaluation</a>
+                </td>
+                <td>EVALUATION</td>
+                <td>evaluation visit</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-visit-type-flu-shot-clinic"> </a>
+                  <a href="CodeSystem-visit-type.html#visit-type-flu-shot-clinic">flu-shot-clinic</a>
+                </td>
+                <td>INFLUENZA VACCINATION CLINIC</td>
+                <td>Influenza vaccination clinic visit</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-visit-type-fluoroscopy"> </a>
+                  <a href="CodeSystem-visit-type.html#visit-type-fluoroscopy">fluoroscopy</a>
+                </td>
+                <td>FLUOROSCOPY</td>
+                <td>fluoroscopy visit</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-visit-type-follow-up"> </a>
+                  <a href="CodeSystem-visit-type.html#visit-type-follow-up">follow-up</a>
+                </td>
+                <td>FOLLOW UP</td>
+                <td>follow up visit</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-visit-type-home-health"> </a>
+                  <a href="CodeSystem-visit-type.html#visit-type-home-health">home-health</a>
+                </td>
+                <td>HOME HEALTH VISIT</td>
+                <td>home health visit visit</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-visit-type-injection"> </a>
+                  <a href="CodeSystem-visit-type.html#visit-type-injection">injection</a>
+                </td>
+                <td>INJECTION</td>
+                <td>injection visit</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-visit-type-inter-rad"> </a>
+                  <a href="CodeSystem-visit-type.html#visit-type-inter-rad">inter-rad</a>
+                </td>
+                <td>INTERVENTIONAL RADIOLOGY</td>
+                <td>interventional radiology visit</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-visit-type-lab"> </a>
+                  <a href="CodeSystem-visit-type.html#visit-type-lab">lab</a>
+                </td>
+                <td>LABORATORY TESTS</td>
+                <td>Laboratory Testing visit</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-visit-type-minor-surgery"> </a>
+                  <a href="CodeSystem-visit-type.html#visit-type-minor-surgery">minor-surgery</a>
+                </td>
+                <td>MINOR SURGERY</td>
+                <td>minor surgery visit</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-visit-type-mri"> </a>
+                  <a href="CodeSystem-visit-type.html#visit-type-mri">mri</a>
+                </td>
+                <td>MAGNETIC RESONANCE IMAGING(MRI)</td>
+                <td>magnetic resonance imaging(mri) visit</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-visit-type-new-patient"> </a>
+                  <a href="CodeSystem-visit-type.html#visit-type-new-patient">new-patient</a>
+                </td>
+                <td>NEW PATIENT</td>
+                <td>new patient visit</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-visit-type-nuc-med"> </a>
+                  <a href="CodeSystem-visit-type.html#visit-type-nuc-med">nuc-med</a>
+                </td>
+                <td>NUCLEAR MEDICINE</td>
+                <td>nuclear medicine visit</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-visit-type-occup-therapy"> </a>
+                  <a href="CodeSystem-visit-type.html#visit-type-occup-therapy">occup-therapy</a>
+                </td>
+                <td>OCCUPATIONAL THERAPY</td>
+                <td>occupational therapy visit</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-visit-type-office-visit"> </a>
+                  <a href="CodeSystem-visit-type.html#visit-type-office-visit">office-visit</a>
+                </td>
+                <td>OFFICE VISIT</td>
+                <td>office visit</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-visit-type-physical"> </a>
+                  <a href="CodeSystem-visit-type.html#visit-type-physical">physical</a>
+                </td>
+                <td>PHYSICAL</td>
+                <td>physical visit</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-visit-type-post-op"> </a>
+                  <a href="CodeSystem-visit-type.html#visit-type-post-op">post-op</a>
+                </td>
+                <td>POST-OPERATIVE(POST-OP)</td>
+                <td>post-operative visit</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-visit-type-pre-admit-testing"> </a>
+                  <a href="CodeSystem-visit-type.html#visit-type-pre-admit-testing">pre-admit-testing</a>
+                </td>
+                <td>PRE-ADMISSION TESTING VISIT</td>
+                <td>pre-admission testing visit visit</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-visit-type-pre-op"> </a>
+                  <a href="CodeSystem-visit-type.html#visit-type-pre-op">pre-op</a>
+                </td>
+                <td>PRE-OPERATIVE(PRE-OP)</td>
+                <td>pre-operative(pre-op) visit</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-visit-type-procedure"> </a>
+                  <a href="CodeSystem-visit-type.html#visit-type-procedure">procedure</a>
+                </td>
+                <td>PROCEDURE</td>
+                <td>procedure visit</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-visit-type-same-day"> </a>
+                  <a href="CodeSystem-visit-type.html#visit-type-same-day">same-day</a>
+                </td>
+                <td>SAME DAY</td>
+                <td>same day visit</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-visit-type-stress-test"> </a>
+                  <a href="CodeSystem-visit-type.html#visit-type-stress-test">stress-test</a>
+                </td>
+                <td>STRESS TEST</td>
+                <td>stress test visit</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-visit-type-surgery"> </a>
+                  <a href="CodeSystem-visit-type.html#visit-type-surgery">surgery</a>
+                </td>
+                <td>SURGERY</td>
+                <td>surgery visit</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-visit-type-treatment"> </a>
+                  <a href="CodeSystem-visit-type.html#visit-type-treatment">treatment</a>
+                </td>
+                <td>TREATMENT</td>
+                <td>treatment visit</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-visit-type-ultrasound"> </a>
+                  <a href="CodeSystem-visit-type.html#visit-type-ultrasound">ultrasound</a>
+                </td>
+                <td>ULTRASOUND</td>
+                <td>ultrasound visit</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-visit-type-urgent"> </a>
+                  <a href="CodeSystem-visit-type.html#visit-type-urgent">urgent</a>
+                </td>
+                <td>URGENT</td>
+                <td>urgent visit</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-visit-type-vaccine"> </a>
+                  <a href="CodeSystem-visit-type.html#visit-type-vaccine">vaccine</a>
+                </td>
+                <td>VACCINATION</td>
+                <td>vaccination visit</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-visit-type-vision"> </a>
+                  <a href="CodeSystem-visit-type.html#visit-type-vision">vision</a>
+                </td>
+                <td>VISION</td>
+                <td>vision visit</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-visit-type-walk-in"> </a>
+                  <a href="CodeSystem-visit-type.html#visit-type-walk-in">walk-in</a>
+                </td>
+                <td>WALK IN</td>
+                <td>walk in visit</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-visit-type-well-child"> </a>
+                  <a href="CodeSystem-visit-type.html#visit-type-well-child">well-child</a>
+                </td>
+                <td>WELL CHILD</td>
+                <td>well child visit</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-visit-type-x-ray"> </a>
+                  <a href="CodeSystem-visit-type.html#visit-type-x-ray">x-ray</a>
+                </td>
+                <td>X-RAY</td>
+                <td>x-ray visit</td>
+              </tr>
+            </table>
+          </div>
+        </text>
+        <url value="http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type"/>
+        <version value="0.0.0"/>
+        <name value="Argonaut Visit Types"/>
+        <status value="draft"/>
+        <date value="2017-07-30T12:40:10-07:00"/>
+        <description value="The Argonaut Visit Types are a prioritized valueset of the most common &#39;business types&#39; for scheduling and have been identified as the baseline use cases for the  Argonaut scheduling Implementation Guide.  This is intended to facilitates implementation of the IG by provide a common starting point for interoperability.  The Visit types can be extended by implementers to meet there use cases.  In order to align with the FHIR Appointment, Schedule and Slot resources, these concepts are mapped to the [Argonaut Appointment Types](ConceptMap-visit-appt-map.html) and [Argonaut Scheduling Services](ConceptMap-visit-service-map.html) valuesets."/>
+        <jurisdiction>
+          <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+          </coding>
+        </jurisdiction>
+        <expansion>
+          <identifier value="urn:uuid:448b2836-995e-4b87-b921-62bfbf4b9bd7"/>
+          <timestamp value="2018-01-10T14:24:23-08:00"/>
+          <total value="41"/>
+          <parameter>
+            <name value="profile"/>
+            <valueUri value="http://hl7.org/fhir/ExpansionProfile/dc8fd4bc-091a-424a-8a3b-6198ef146891"/>
+          </parameter>
+          <parameter>
+            <name value="version"/>
+            <valueUri value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type|0.0.0"/>
+          </parameter>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
+            <code value="breast-imaging "/>
+            <display value="BREAST IMAGING "/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
+            <code value="consult"/>
+            <display value="CONSULTATION"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
+            <code value="ct"/>
+            <display value="COMPUTED TOMOGRAPHY SCAN(CT)"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
+            <code value="dental"/>
+            <display value="DENTAL"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
+            <code value="dxa"/>
+            <display value="DUAL-ENERGY X-RAY ABSORPTIOMETRY(DXA)"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
+            <code value="echo"/>
+            <display value="ECHOCARDIOGRAPHY(ECHO)"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
+            <code value="echo-stresstest"/>
+            <display value="ECHOCARDIOGRAPHY(ECHO) STRESS TEST"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
+            <code value="ed-followup"/>
+            <display value="EDUCATION FOLLOW UP"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
+            <code value="eeg"/>
+            <display value="ELECTROENCEPHALOGRAPHY(EEG)"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
+            <code value="egd"/>
+            <display value="ESOPHAGOGASTRODUODENOSCOPY(EGD)"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
+            <code value="ekg"/>
+            <display value="ELECTROCARDIOGRAM(EKG)"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
+            <code value="evaluation"/>
+            <display value="EVALUATION"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
+            <code value="flu-shot-clinic"/>
+            <display value="INFLUENZA VACCINATION CLINIC"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
+            <code value="fluoroscopy"/>
+            <display value="FLUOROSCOPY"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
+            <code value="follow-up"/>
+            <display value="FOLLOW UP"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
+            <code value="home-health"/>
+            <display value="HOME HEALTH VISIT"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
+            <code value="injection"/>
+            <display value="INJECTION"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
+            <code value="inter-rad"/>
+            <display value="INTERVENTIONAL RADIOLOGY"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
+            <code value="lab"/>
+            <display value="LABORATORY TESTS"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
+            <code value="minor-surgery"/>
+            <display value="MINOR SURGERY"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
+            <code value="mri"/>
+            <display value="MAGNETIC RESONANCE IMAGING(MRI)"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
+            <code value="new-patient"/>
+            <display value="NEW PATIENT"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
+            <code value="nuc-med"/>
+            <display value="NUCLEAR MEDICINE"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
+            <code value="occup-therapy"/>
+            <display value="OCCUPATIONAL THERAPY"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
+            <code value="office-visit"/>
+            <display value="OFFICE VISIT"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
+            <code value="physical"/>
+            <display value="PHYSICAL"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
+            <code value="post-op"/>
+            <display value="POST-OPERATIVE(POST-OP)"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
+            <code value="pre-admit-testing"/>
+            <display value="PRE-ADMISSION TESTING VISIT"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
+            <code value="pre-op"/>
+            <display value="PRE-OPERATIVE(PRE-OP)"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
+            <code value="procedure"/>
+            <display value="PROCEDURE"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
+            <code value="same-day"/>
+            <display value="SAME DAY"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
+            <code value="stress-test"/>
+            <display value="STRESS TEST"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
+            <code value="surgery"/>
+            <display value="SURGERY"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
+            <code value="treatment"/>
+            <display value="TREATMENT"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
+            <code value="ultrasound"/>
+            <display value="ULTRASOUND"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
+            <code value="urgent"/>
+            <display value="URGENT"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
+            <code value="vaccine"/>
+            <display value="VACCINATION"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
+            <code value="vision"/>
+            <display value="VISION"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
+            <code value="walk-in"/>
+            <display value="WALK IN"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
+            <code value="well-child"/>
+            <display value="WELL CHILD"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
+            <code value="x-ray"/>
+            <display value="X-RAY"/>
+          </contains>
+        </expansion>
+      </ValueSet>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://fhir.org/guides/argonaut-scheduling/ValueSet/status-reason"/>
+    <resource>
+      <ValueSet>
+        <id value="status-reason"/>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <p>This value set contains 32 concepts</p>
+            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px">Expansion based on http://fhir.org/guides/argonaut-scheduling/CodeSystem/status-reason version 0.0.0</p>
+            <p>All codes from system 
+              <a href="CodeSystem-status-reason.html">
+                <code>http://fhir.org/guides/argonaut-scheduling/CodeSystem/status-reason</code>
+              </a>
+            </p>
+            <table class="codes">
+              <tr>
+                <td style="white-space:nowrap">
+                  <b>Code</b>
+                </td>
+                <td>
+                  <b>Display</b>
+                </td>
+                <td>
+                  <b>Definition</b>
+                </td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-status-reason-abnormal-results"> </a>
+                  <a href="CodeSystem-status-reason.html#status-reason-abnormal-results">abnormal-results</a>
+                </td>
+                <td>Laboratory Test Results Out of Acceptable Range</td>
+                <td>An appointment for an patient was cancelled by the provider because the patient&#39;s laboratory test results were outside  of acceptable limits.</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-status-reason-cms-auth"> </a>
+                  <a href="CodeSystem-status-reason.html#status-reason-cms-auth">cms-auth</a>
+                </td>
+                <td>CMS Therapy Cap Service Not Authorized</td>
+                <td>An appointment for a patient was cancelled by the provider because the service not authorized by CMS.</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-status-reason-deceased"> </a>
+                  <a href="CodeSystem-status-reason.html#status-reason-deceased">deceased</a>
+                </td>
+                <td>Patient Deceased</td>
+                <td>An appointment for a patient was cancelled by the provider because the patient died.</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-status-reason-discharged"> </a>
+                  <a href="CodeSystem-status-reason.html#status-reason-discharged">discharged</a>
+                </td>
+                <td>Patient Discharged</td>
+                <td>An appointment for an inpatient was cancelled by the provider because the patient was discharged from the facility.</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-status-reason-disgruntled"> </a>
+                  <a href="CodeSystem-status-reason.html#status-reason-disgruntled">disgruntled</a>
+                </td>
+                <td>Patient Unhappy</td>
+                <td>An appointment for a patient was cancelled by the patient because the patient was unhappy with service or care.</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-status-reason-equip-unavail"> </a>
+                  <a href="CodeSystem-status-reason.html#status-reason-equip-unavail">equip-unavail</a>
+                </td>
+                <td>Equipment Not Available</td>
+                <td>An appointment for a patient was cancelled by the provider because needed equipment was not available (e.g., in use, out for repairs).</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-status-reason-financial"> </a>
+                  <a href="CodeSystem-status-reason.html#status-reason-financial">financial</a>
+                </td>
+                <td>Other Financial</td>
+                <td>An appointment for a patient was cancelled by the provider because of some unspecified financial reason ( e.g., no authorization.</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-status-reason-hospitalized"> </a>
+                  <a href="CodeSystem-status-reason.html#status-reason-hospitalized">hospitalized</a>
+                </td>
+                <td>Patient Hospitalized</td>
+                <td>An appointment for an outpatient was cancelled by the provider because the patient was hospitalized.</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-status-reason-improper-iv"> </a>
+                  <a href="CodeSystem-status-reason.html#status-reason-improper-iv">improper-iv</a>
+                </td>
+                <td>Improper IV Access/Infiltrate IV</td>
+                <td>An appointment for a patient was cancelled by the provider because the intravenous access was not satisfactory for the procedure.</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-status-reason-improved"> </a>
+                  <a href="CodeSystem-status-reason.html#status-reason-improved">improved</a>
+                </td>
+                <td>Patient Feeling Better</td>
+                <td>An appointment for a patient was cancelled by the patient because the patients signs and or symptoms improved and the patient no longer wanted care.</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-status-reason-interpreter-unavail"> </a>
+                  <a href="CodeSystem-status-reason.html#status-reason-interpreter-unavail">interpreter-unavail</a>
+                </td>
+                <td>Interpreter  Not Available</td>
+                <td>An appointment for a patient was cancelled by the provider because a  needed interpreter was not available.</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-status-reason-meeting"> </a>
+                  <a href="CodeSystem-status-reason.html#status-reason-meeting">meeting</a>
+                </td>
+                <td>Provider: Education or Meeting</td>
+                <td>??</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-status-reason-moved"> </a>
+                  <a href="CodeSystem-status-reason.html#status-reason-moved">moved</a>
+                </td>
+                <td>Patient Moved</td>
+                <td>An appointment for a patient was cancelled by the patient because the patient moved out of the area.</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-status-reason-needs-tests"> </a>
+                  <a href="CodeSystem-status-reason.html#status-reason-needs-tests">needs-tests</a>
+                </td>
+                <td>Patient Needs Tests</td>
+                <td>An appointment for a patient was cancelled by the patient because the patient did not have the prequisite diagnostic tests performed.</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-status-reason-new-provider"> </a>
+                  <a href="CodeSystem-status-reason.html#status-reason-new-provider">new-provider</a>
+                </td>
+                <td>Patient Changed Provider</td>
+                <td>An appointment for a patient was cancelled by the patient because the patient changed provider.</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-status-reason-no-show"> </a>
+                  <a href="CodeSystem-status-reason.html#status-reason-no-show">no-show</a>
+                </td>
+                <td>Patient No Show</td>
+                <td>An appointment for a patient was cancelled by the patient because the patient did not arrive for the appointment</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-status-reason-other"> </a>
+                  <a href="CodeSystem-status-reason.html#status-reason-other">other</a>
+                </td>
+                <td>Other</td>
+                <td>An appointment for a patient was cancelled by the provider because of some other reason not listed in this code list.</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-status-reason-patient-cancel"> </a>
+                  <a href="CodeSystem-status-reason.html#status-reason-patient-cancel">patient-cancel</a>
+                </td>
+                <td>Patient Cancel</td>
+                <td>An appointment for a patient was cancelled by the patient</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-status-reason-personal"> </a>
+                  <a href="CodeSystem-status-reason.html#status-reason-personal">personal</a>
+                </td>
+                <td>Provider Personal Reason?</td>
+                <td>??</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-status-reason-plan-changes"> </a>
+                  <a href="CodeSystem-status-reason.html#status-reason-plan-changes">plan-changes</a>
+                </td>
+                <td>Treatment Plan Changes</td>
+                <td>An appointment for an patient was cancelled by the provider because the patient&#39;s treatment plan changed</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-status-reason-pregnant"> </a>
+                  <a href="CodeSystem-status-reason.html#status-reason-pregnant">pregnant</a>
+                </td>
+                <td>Patient Pregnant</td>
+                <td>An appointment for a patient was cancelled by the patient because the patient was pregnant.</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-status-reason-prep-incomplete"> </a>
+                  <a href="CodeSystem-status-reason.html#status-reason-prep-incomplete">prep-incomplete</a>
+                </td>
+                <td>Prep? Medications Incomplete</td>
+                <td>An appointment for a patient was cancelled by the provider because a  eeded preparatory insructions and/or medications not completed.</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-status-reason-prep-unavail"> </a>
+                  <a href="CodeSystem-status-reason.html#status-reason-prep-unavail">prep-unavail</a>
+                </td>
+                <td>Prep? or Medication or Test Results Unavailable</td>
+                <td>An appointment for a patient was cancelled by the provider because a  needed diagnostic test or medications were not available.</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-status-reason-refused"> </a>
+                  <a href="CodeSystem-status-reason.html#status-reason-refused">refused</a>
+                </td>
+                <td>Patient Refused Procedure</td>
+                <td>An appointment for a patient was cancelled by the patient because the patient decided they did not want the  service or procedure.</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-status-reason-room-unavial"> </a>
+                  <a href="CodeSystem-status-reason.html#status-reason-room-unavial">room-unavial</a>
+                </td>
+                <td>Room or Location Not Available.</td>
+                <td>An appointment for a patient was cancelled by the provider because the room or location was not available (e.g., in use, undergoing maintenance).</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-status-reason-scheduling-error"> </a>
+                  <a href="CodeSystem-status-reason.html#status-reason-scheduling-error">scheduling-error</a>
+                </td>
+                <td>Scheduling Error</td>
+                <td>An appointment for a patient was cancelled because it was made in error by the provider</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-status-reason-staff-cancel"> </a>
+                  <a href="CodeSystem-status-reason.html#status-reason-staff-cancel">staff-cancel</a>
+                </td>
+                <td>Staff Cancel</td>
+                <td>An appointment for a patient was cancelled by the provider</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-status-reason-terminated"> </a>
+                  <a href="CodeSystem-status-reason.html#status-reason-terminated">terminated</a>
+                </td>
+                <td>Patient Member Terminated</td>
+                <td>An appointment for a patient was cancelled by the patient because the patient&#39;s insurance membership was terminated.</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-status-reason-transportation"> </a>
+                  <a href="CodeSystem-status-reason.html#status-reason-transportation">transportation</a>
+                </td>
+                <td>Patient Lacked Transportation</td>
+                <td>An appointment for a patient was cancelled by the patient because the patients was not able to transport herself to the visit location.</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-status-reason-wait-list"> </a>
+                  <a href="CodeSystem-status-reason.html#status-reason-wait-list">wait-list</a>
+                </td>
+                <td>Patient Scheduled from Wait List</td>
+                <td>??</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-status-reason-walk-in-error"> </a>
+                  <a href="CodeSystem-status-reason.html#status-reason-walk-in-error">walk-in-error</a>
+                </td>
+                <td>Silent Walk In Error</td>
+                <td>??</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-status-reason-weather"> </a>
+                  <a href="CodeSystem-status-reason.html#status-reason-weather">weather</a>
+                </td>
+                <td>Weather</td>
+                <td>An appointment for a patient was cancelled by the provider or patient because of inclement weather.</td>
+              </tr>
+            </table>
+          </div>
+        </text>
+        <url value="http://fhir.org/guides/argonaut-scheduling/ValueSet/status-reason"/>
+        <version value="0.0.0"/>
+        <name value="Argonaut Appointment Event Reason Codes"/>
+        <status value="draft"/>
+        <date value="2017-10-10T00:40:10-07:00"/>
+        <description value="The reason for the current state of the Appointment."/>
+        <jurisdiction>
+          <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+          </coding>
+        </jurisdiction>
+        <expansion>
+          <identifier value="urn:uuid:e2e84bb2-5626-49a9-917e-d70637e19bb0"/>
+          <timestamp value="2018-01-10T14:24:24-08:00"/>
+          <total value="32"/>
+          <parameter>
+            <name value="profile"/>
+            <valueUri value="http://hl7.org/fhir/ExpansionProfile/dc8fd4bc-091a-424a-8a3b-6198ef146891"/>
+          </parameter>
+          <parameter>
+            <name value="version"/>
+            <valueUri value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/status-reason|0.0.0"/>
+          </parameter>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/status-reason"/>
+            <code value="abnormal-results"/>
+            <display value="Laboratory Test Results Out of Acceptable Range"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/status-reason"/>
+            <code value="cms-auth"/>
+            <display value="CMS Therapy Cap Service Not Authorized"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/status-reason"/>
+            <code value="deceased"/>
+            <display value="Patient Deceased"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/status-reason"/>
+            <code value="discharged"/>
+            <display value="Patient Discharged"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/status-reason"/>
+            <code value="disgruntled"/>
+            <display value="Patient Unhappy"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/status-reason"/>
+            <code value="equip-unavail"/>
+            <display value="Equipment Not Available"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/status-reason"/>
+            <code value="financial"/>
+            <display value="Other Financial"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/status-reason"/>
+            <code value="hospitalized"/>
+            <display value="Patient Hospitalized"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/status-reason"/>
+            <code value="improper-iv"/>
+            <display value="Improper IV Access/Infiltrate IV"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/status-reason"/>
+            <code value="improved"/>
+            <display value="Patient Feeling Better"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/status-reason"/>
+            <code value="interpreter-unavail"/>
+            <display value="Interpreter  Not Available"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/status-reason"/>
+            <code value="meeting"/>
+            <display value="Provider: Education or Meeting"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/status-reason"/>
+            <code value="moved"/>
+            <display value="Patient Moved"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/status-reason"/>
+            <code value="needs-tests"/>
+            <display value="Patient Needs Tests"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/status-reason"/>
+            <code value="new-provider"/>
+            <display value="Patient Changed Provider"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/status-reason"/>
+            <code value="no-show"/>
+            <display value="Patient No Show"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/status-reason"/>
+            <code value="other"/>
+            <display value="Other"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/status-reason"/>
+            <code value="patient-cancel"/>
+            <display value="Patient Cancel"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/status-reason"/>
+            <code value="personal"/>
+            <display value="Provider Personal Reason?"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/status-reason"/>
+            <code value="plan-changes"/>
+            <display value="Treatment Plan Changes"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/status-reason"/>
+            <code value="pregnant"/>
+            <display value="Patient Pregnant"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/status-reason"/>
+            <code value="prep-incomplete"/>
+            <display value="Prep? Medications Incomplete"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/status-reason"/>
+            <code value="prep-unavail"/>
+            <display value="Prep? or Medication or Test Results Unavailable"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/status-reason"/>
+            <code value="refused"/>
+            <display value="Patient Refused Procedure"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/status-reason"/>
+            <code value="room-unavial"/>
+            <display value="Room or Location Not Available."/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/status-reason"/>
+            <code value="scheduling-error"/>
+            <display value="Scheduling Error"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/status-reason"/>
+            <code value="staff-cancel"/>
+            <display value="Staff Cancel"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/status-reason"/>
+            <code value="terminated"/>
+            <display value="Patient Member Terminated"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/status-reason"/>
+            <code value="transportation"/>
+            <display value="Patient Lacked Transportation"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/status-reason"/>
+            <code value="wait-list"/>
+            <display value="Patient Scheduled from Wait List"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/status-reason"/>
+            <code value="walk-in-error"/>
+            <display value="Silent Walk In Error"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/status-reason"/>
+            <code value="weather"/>
+            <display value="Weather"/>
+          </contains>
+        </expansion>
+      </ValueSet>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://fhir.org/guides/argonaut-scheduling/ValueSet/appt-type"/>
+    <resource>
+      <ValueSet>
+        <id value="appt-type"/>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <p>This value set contains 10 concepts</p>
+            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px">Expansion based on http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-type version 0.0.0, http://hl7.org/fhir/v2/0276 version 2.8.2, http://hl7.org/fhir/ValueSet/v2-0276 version 2.8.2</p>
+            <table class="codes">
+              <tr>
+                <td style="white-space:nowrap">
+                  <b>Code</b>
+                </td>
+                <td>
+                  <b>System</b>
+                </td>
+                <td>
+                  <b>Display</b>
+                </td>
+                <td>
+                  <b>Definition</b>
+                </td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-appt-type-new-patient"> </a>
+                  <a href="CodeSystem-appt-type.html#appt-type-new-patient">new-patient</a>
+                </td>
+                <td>http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-type</td>
+                <td>New Patient</td>
+                <td>An appointment for a patient who is new to the provider</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-appt-type-post-op"> </a>
+                  <a href="CodeSystem-appt-type.html#appt-type-post-op">post-op</a>
+                </td>
+                <td>http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-type</td>
+                <td>Post-Op</td>
+                <td>An appointment to follow up on an operative procedure</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-appt-type-pre-op"> </a>
+                  <a href="CodeSystem-appt-type.html#appt-type-pre-op">pre-op</a>
+                </td>
+                <td>http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-type</td>
+                <td>Pre-Op</td>
+                <td>An appointment to prepare for an operative procedure</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-appt-type-same-day"> </a>
+                  <a href="CodeSystem-appt-type.html#appt-type-same-day">same-day</a>
+                </td>
+                <td>http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-type</td>
+                <td>Same Day</td>
+                <td>An appoinment to be seen by a provider the same day</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-appt-type-urgent"> </a>
+                  <a href="CodeSystem-appt-type.html#appt-type-urgent">urgent</a>
+                </td>
+                <td>http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-type</td>
+                <td>Urgent</td>
+                <td>An appointment for an urgent problem or condition</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---hl7.org-fhir-v2-0276-CHECKUP"> </a>
+                  <a href="http://hl7.org/fhir/STU3/v2/0276/index.html#v2-0276-CHECKUP">CHECKUP</a>
+                </td>
+                <td>http://hl7.org/fhir/v2/0276</td>
+                <td>A routine check-up, such as an annual physical</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---hl7.org-fhir-v2-0276-EMERGENCY"> </a>
+                  <a href="http://hl7.org/fhir/STU3/v2/0276/index.html#v2-0276-EMERGENCY">EMERGENCY</a>
+                </td>
+                <td>http://hl7.org/fhir/v2/0276</td>
+                <td>Emergency appointment</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---hl7.org-fhir-v2-0276-FOLLOWUP"> </a>
+                  <a href="http://hl7.org/fhir/STU3/v2/0276/index.html#v2-0276-FOLLOWUP">FOLLOWUP</a>
+                </td>
+                <td>http://hl7.org/fhir/v2/0276</td>
+                <td>A follow up visit from a previous appointment</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---hl7.org-fhir-v2-0276-ROUTINE"> </a>
+                  <a href="http://hl7.org/fhir/STU3/v2/0276/index.html#v2-0276-ROUTINE">ROUTINE</a>
+                </td>
+                <td>http://hl7.org/fhir/v2/0276</td>
+                <td>Routine appointment - default if not valued</td>
+                <td/>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---hl7.org-fhir-v2-0276-WALKIN"> </a>
+                  <a href="http://hl7.org/fhir/STU3/v2/0276/index.html#v2-0276-WALKIN">WALKIN</a>
+                </td>
+                <td>http://hl7.org/fhir/v2/0276</td>
+                <td>A previously unscheduled walk-in visit</td>
+                <td/>
+              </tr>
+            </table>
+          </div>
+        </text>
+        <url value="http://fhir.org/guides/argonaut-scheduling/ValueSet/appt-type"/>
+        <version value="0.0.0"/>
+        <name value="Argonaut Appointment Types"/>
+        <status value="draft"/>
+        <date value="2017-07-12T12:40:10-07:00"/>
+        <description value="The style of appointment or patient for appointment booking (not service type).  These concepts are used in the FHIR Appointment, Schedule and Slot resources. The [Argonaut Scheduling Visit Types](ConceptMap-visit-appt-map.html) are mapped to these concepts."/>
+        <jurisdiction>
+          <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+          </coding>
+        </jurisdiction>
+        <expansion>
+          <identifier value="urn:uuid:5e14586d-d0e2-42ed-8854-1ba4336538c1"/>
+          <timestamp value="2018-01-10T14:24:26-08:00"/>
+          <total value="10"/>
+          <parameter>
+            <name value="profile"/>
+            <valueUri value="http://hl7.org/fhir/ExpansionProfile/dc8fd4bc-091a-424a-8a3b-6198ef146891"/>
+          </parameter>
+          <parameter>
+            <name value="version"/>
+            <valueUri value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-type|0.0.0"/>
+          </parameter>
+          <parameter>
+            <name value="version"/>
+            <valueUri value="http://hl7.org/fhir/ValueSet/v2-0276|2.8.2"/>
+          </parameter>
+          <parameter>
+            <name value="version"/>
+            <valueUri value="http://hl7.org/fhir/v2/0276|2.8.2"/>
+          </parameter>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-type"/>
+            <code value="new-patient"/>
+            <display value="New Patient"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-type"/>
+            <code value="post-op"/>
+            <display value="Post-Op"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-type"/>
+            <code value="pre-op"/>
+            <display value="Pre-Op"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-type"/>
+            <code value="same-day"/>
+            <display value="Same Day"/>
+          </contains>
+          <contains>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-type"/>
+            <code value="urgent"/>
+            <display value="Urgent"/>
+          </contains>
+          <contains>
+            <system value="http://hl7.org/fhir/v2/0276"/>
+            <code value="CHECKUP"/>
+            <display value="A routine check-up, such as an annual physical"/>
+          </contains>
+          <contains>
+            <system value="http://hl7.org/fhir/v2/0276"/>
+            <code value="EMERGENCY"/>
+            <display value="Emergency appointment"/>
+          </contains>
+          <contains>
+            <system value="http://hl7.org/fhir/v2/0276"/>
+            <code value="FOLLOWUP"/>
+            <display value="A follow up visit from a previous appointment"/>
+          </contains>
+          <contains>
+            <system value="http://hl7.org/fhir/v2/0276"/>
+            <code value="ROUTINE"/>
+            <display value="Routine appointment - default if not valued"/>
+          </contains>
+          <contains>
+            <system value="http://hl7.org/fhir/v2/0276"/>
+            <code value="WALKIN"/>
+            <display value="A previously unscheduled walk-in visit"/>
+          </contains>
+        </expansion>
+      </ValueSet>
+    </resource>
+  </entry>
 </Bundle>

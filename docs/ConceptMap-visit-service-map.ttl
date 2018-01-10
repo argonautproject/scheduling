@@ -1,0 +1,383 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/argonaut-scheduling/ConceptMap/visit-service-map> a fhir:ConceptMap;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "visit-service-map"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>Argonaut Scheduiing Visit Type to Service Type Mapping (http://fhir.org/guides/argonaut-scheduling/ConceptMap/visit-service-map)</h2><p>Mapping from <a href=\"ValueSet-visit-type.html\">http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type</a> to <a href=\"ValueSet-service.html\">http://fhir.org/guides/argonaut-scheduling/ValueSet/service</a></p><p>DRAFT. Published on Oct 30, 2017 6:49:44 PM by Argonaut Project. </p><div><p>The source concepts are Argonaut Visit Types which are a prioritized valueset of the most common appointment types for scheduling and have been identified as the baseline use cases for the  Argonaut scheduling Implementation Guide.   The Visit types are mapped to the target concepts from the Argonaut Service Types Valueset in order to align with the FHIR Appointment, Schedule and Slot resources.</p>\n</div><br/><table class=\"grid\"><tr><td><b>Source Code</b></td><td><b>Equivalence</b></td><td><b>Destination Code</b></td><td><b>Comment</b></td></tr><tr><td>breast-imaging</td><td>wider</td><td>1310126000</td><td>Target concept may include more than mammography</td></tr><tr><td>consult (CONSULTATION)</td><td>equivalent</td><td>11429006</td><td/></tr><tr><td>ct (COMPUTED TOMOGRAPHY SCAN(CT))</td><td>equivalent</td><td>310128004</td><td/></tr><tr><td>dental</td><td>equivalent</td><td>3671000175100</td><td/></tr><tr><td>dxa (DUAL-ENERGY X-RAY ABSORPTIOMETRY(DXA))</td><td>equivalent</td><td>241686001</td><td/></tr><tr><td>echo (ECHOCARDIOGRAPHY(ECHO))</td><td>equivalent</td><td>310169008</td><td/></tr><tr><td>echo-stresstest (ECHOCARDIOGRAPHY(ECHO) STRESS TEST)</td><td>equivalent</td><td>433233004</td><td/></tr><tr><td>ed-followup (EDUCATION FOLLOW UP)</td><td>wider</td><td>409073007</td><td>Target concept not constrained to follow up temporal context</td></tr><tr><td>eeg (ELECTROENCEPHALOGRAPHY(EEG))</td><td>equivalent</td><td>54550000</td><td/></tr><tr><td>egd (ESOPHAGOGASTRODUODENOSCOPY(EGD))</td><td>equivalent</td><td>310030000</td><td/></tr><tr><td>ekg (ELECTROCARDIOGRAM(EKG))</td><td>equivalent</td><td>29303009</td><td/></tr><tr><td>evaluation</td><td>equivalent</td><td>386053000</td><td/></tr><tr><td>flu-shot-clinic (INFLUENZA VACCINATION CLINIC)</td><td>wider</td><td>86198006</td><td>Target concept not constrained to the context of a vaccine clinic'</td></tr><tr><td>fluoroscopy</td><td>equivalent</td><td>44491008</td><td/></tr><tr><td>follow-up</td><td>equivalent</td><td>185389009</td><td/></tr><tr><td>home-health (HOME HEALTH VISIT)</td><td>equivalent</td><td>439708006</td><td/></tr><tr><td>injection</td><td>equivalent</td><td>59108006</td><td/></tr><tr><td>inter-rad (INTERVENTIONAL RADIOLOGY)</td><td>equivalent</td><td>708174004</td><td/></tr><tr><td>lab (LABORATORY TESTS)</td><td>equivalent</td><td>708184003</td><td/></tr><tr><td>minor-surgery</td><td>narrower</td><td>711580002</td><td>The target restricts to ambulatory context</td></tr><tr><td>mri (MAGNETIC RESONANCE IMAGING(MRI))</td><td>equivalent</td><td>310127009</td><td/></tr><tr><td>new-patient</td><td>equivalent</td><td>185387006</td><td/></tr><tr><td>nuc-med (NUCLEAR MEDICINE)</td><td>equivalent</td><td>310058008</td><td/></tr><tr><td>occup-therapy (OCCUPATIONAL THERAPY)</td><td>equivalent</td><td>310093001</td><td/></tr><tr><td>office-visit</td><td>equivalent</td><td>11429006</td><td>Proposing that the US term 'office visit' is synonomous with the UK term 'consultation'</td></tr><tr><td>physical</td><td>equivalent</td><td>5880005</td><td/></tr><tr><td>post-op (POST-OPERATIVE(POST-OP))</td><td>equivalent</td><td>439740005</td><td/></tr><tr><td>pre-admit-testing (PRE-ADMISSION TESTING VISIT)</td><td>wider</td><td>406153003</td><td>Target concept in not constrained to testing</td></tr><tr><td>pre-op (PRE-OPERATIVE(PRE-OP))</td><td>equivalent</td><td>133858001</td><td/></tr><tr><td>procedure</td><td>equivalent</td><td>71388002</td><td/></tr><tr><td>same-day</td><td>inexact</td><td>11429006</td><td>Mapping assumes the source concept is a same-day office visit vs  same day testing or some other more specific service</td></tr><tr><td>stress-test</td><td>equivalent</td><td>76746007</td><td/></tr><tr><td>surgery</td><td>equivalent</td><td>310138009</td><td/></tr><tr><td>treatment</td><td>inexact</td><td>77132007</td><td>Assuming Treatment means 'with intent to cure'  vs 'rehabilitation'</td></tr><tr><td>ultrasound</td><td>equivalent</td><td>310169008</td><td/></tr><tr><td>urgent</td><td>inexact</td><td>11429006</td><td>Mapping assumes the source concept is an urgent office visit vs  urgent  testing or some other more specific service</td></tr><tr><td>vaccine (VACCINATION)</td><td>equivalent</td><td>127785005</td><td/></tr><tr><td>vision</td><td>equivalent</td><td>310160007</td><td/></tr><tr><td>walk-in</td><td>inexact</td><td>11429006</td><td>Mapping assumes the source concept is a walk in office visit vs walk in testing or some other more specific service</td></tr><tr><td>well-child</td><td>equivalent</td><td>410620009</td><td/></tr><tr><td>x-ray</td><td>equivalent</td><td>310125001</td><td/></tr></table></div>"
+  ];
+  fhir:ConceptMap.url [ fhir:value "http://fhir.org/guides/argonaut-scheduling/ConceptMap/visit-service-map"];
+  fhir:ConceptMap.version [ fhir:value "0.0.0"];
+  fhir:ConceptMap.name [ fhir:value "Argonaut Scheduiing Visit Type to Service Type Mapping"];
+  fhir:ConceptMap.status [ fhir:value "draft"];
+  fhir:ConceptMap.date [ fhir:value "2017-10-30T18:49:44-07:00"^^xsd:dateTime];
+  fhir:ConceptMap.publisher [ fhir:value "Argonaut Project"];
+  fhir:ConceptMap.description [ fhir:value "The source concepts are Argonaut Visit Types which are a prioritized valueset of the most common appointment types for scheduling and have been identified as the baseline use cases for the  Argonaut scheduling Implementation Guide.   The Visit types are mapped to the target concepts from the Argonaut Service Types Valueset in order to align with the FHIR Appointment, Schedule and Slot resources."];
+  fhir:ConceptMap.jurisdiction [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ];
+       fhir:Coding.code [ fhir:value "US" ]
+     ]
+  ];
+  fhir:ConceptMap.sourceUri [ fhir:value "http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type"];
+  fhir:ConceptMap.targetUri [ fhir:value "http://fhir.org/guides/argonaut-scheduling/ValueSet/service"];
+  fhir:ConceptMap.group [
+     fhir:index 0;
+     fhir:ConceptMap.group.source [ fhir:value "http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type" ];
+     fhir:ConceptMap.group.target [ fhir:value "http://snomed.info/sct" ];
+     fhir:ConceptMap.group.element [
+       fhir:index 0;
+       fhir:ConceptMap.group.element.code [ fhir:value "breast-imaging" ];
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "1310126000" ];
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "wider" ];
+         fhir:ConceptMap.group.element.target.comment [ fhir:value "Target concept may include more than mammography" ]
+       ]
+     ], [
+       fhir:index 1;
+       fhir:ConceptMap.group.element.code [ fhir:value "consult" ];
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "11429006" ];
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 2;
+       fhir:ConceptMap.group.element.code [ fhir:value "ct" ];
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "310128004" ];
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 3;
+       fhir:ConceptMap.group.element.code [ fhir:value "dental" ];
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "3671000175100" ];
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 4;
+       fhir:ConceptMap.group.element.code [ fhir:value "dxa" ];
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "241686001" ];
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 5;
+       fhir:ConceptMap.group.element.code [ fhir:value "echo" ];
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "310169008" ];
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 6;
+       fhir:ConceptMap.group.element.code [ fhir:value "echo-stresstest" ];
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "433233004" ];
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 7;
+       fhir:ConceptMap.group.element.code [ fhir:value "ed-followup" ];
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "409073007" ];
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "wider" ];
+         fhir:ConceptMap.group.element.target.comment [ fhir:value "Target concept not constrained to follow up temporal context" ]
+       ]
+     ], [
+       fhir:index 8;
+       fhir:ConceptMap.group.element.code [ fhir:value "eeg" ];
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "54550000" ];
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 9;
+       fhir:ConceptMap.group.element.code [ fhir:value "egd" ];
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "310030000" ];
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 10;
+       fhir:ConceptMap.group.element.code [ fhir:value "ekg" ];
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "29303009" ];
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 11;
+       fhir:ConceptMap.group.element.code [ fhir:value "evaluation" ];
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "386053000" ];
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 12;
+       fhir:ConceptMap.group.element.code [ fhir:value "flu-shot-clinic" ];
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "86198006" ];
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "wider" ];
+         fhir:ConceptMap.group.element.target.comment [ fhir:value "Target concept not constrained to the context of a vaccine clinic'" ]
+       ]
+     ], [
+       fhir:index 13;
+       fhir:ConceptMap.group.element.code [ fhir:value "fluoroscopy" ];
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "44491008" ];
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 14;
+       fhir:ConceptMap.group.element.code [ fhir:value "follow-up" ];
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "185389009" ];
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 15;
+       fhir:ConceptMap.group.element.code [ fhir:value "home-health" ];
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "439708006" ];
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 16;
+       fhir:ConceptMap.group.element.code [ fhir:value "injection" ];
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "59108006" ];
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 17;
+       fhir:ConceptMap.group.element.code [ fhir:value "inter-rad" ];
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "708174004" ];
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 18;
+       fhir:ConceptMap.group.element.code [ fhir:value "lab" ];
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "708184003" ];
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 19;
+       fhir:ConceptMap.group.element.code [ fhir:value "minor-surgery" ];
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "711580002" ];
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "narrower" ];
+         fhir:ConceptMap.group.element.target.comment [ fhir:value "The target restricts to ambulatory context" ]
+       ]
+     ], [
+       fhir:index 20;
+       fhir:ConceptMap.group.element.code [ fhir:value "mri" ];
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "310127009" ];
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 21;
+       fhir:ConceptMap.group.element.code [ fhir:value "new-patient" ];
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "185387006" ];
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 22;
+       fhir:ConceptMap.group.element.code [ fhir:value "nuc-med" ];
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "310058008" ];
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 23;
+       fhir:ConceptMap.group.element.code [ fhir:value "occup-therapy" ];
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "310093001" ];
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 24;
+       fhir:ConceptMap.group.element.code [ fhir:value "office-visit" ];
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "11429006" ];
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ];
+         fhir:ConceptMap.group.element.target.comment [ fhir:value "Proposing that the US term 'office visit' is synonomous with the UK term 'consultation'" ]
+       ]
+     ], [
+       fhir:index 25;
+       fhir:ConceptMap.group.element.code [ fhir:value "physical" ];
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "5880005" ];
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 26;
+       fhir:ConceptMap.group.element.code [ fhir:value "post-op" ];
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "439740005" ];
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 27;
+       fhir:ConceptMap.group.element.code [ fhir:value "pre-admit-testing" ];
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "406153003" ];
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "wider" ];
+         fhir:ConceptMap.group.element.target.comment [ fhir:value "Target concept in not constrained to testing" ]
+       ]
+     ], [
+       fhir:index 28;
+       fhir:ConceptMap.group.element.code [ fhir:value "pre-op" ];
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "133858001" ];
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 29;
+       fhir:ConceptMap.group.element.code [ fhir:value "procedure" ];
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "71388002" ];
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 30;
+       fhir:ConceptMap.group.element.code [ fhir:value "same-day" ];
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "11429006" ];
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "inexact" ];
+         fhir:ConceptMap.group.element.target.comment [ fhir:value "Mapping assumes the source concept is a same-day office visit vs  same day testing or some other more specific service" ]
+       ]
+     ], [
+       fhir:index 31;
+       fhir:ConceptMap.group.element.code [ fhir:value "stress-test" ];
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "76746007" ];
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 32;
+       fhir:ConceptMap.group.element.code [ fhir:value "surgery" ];
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "310138009" ];
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 33;
+       fhir:ConceptMap.group.element.code [ fhir:value "treatment" ];
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "77132007" ];
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "inexact" ];
+         fhir:ConceptMap.group.element.target.comment [ fhir:value "Assuming Treatment means 'with intent to cure'  vs 'rehabilitation'" ]
+       ]
+     ], [
+       fhir:index 34;
+       fhir:ConceptMap.group.element.code [ fhir:value "ultrasound" ];
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "310169008" ];
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 35;
+       fhir:ConceptMap.group.element.code [ fhir:value "urgent" ];
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "11429006" ];
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "inexact" ];
+         fhir:ConceptMap.group.element.target.comment [ fhir:value "Mapping assumes the source concept is an urgent office visit vs  urgent  testing or some other more specific service" ]
+       ]
+     ], [
+       fhir:index 36;
+       fhir:ConceptMap.group.element.code [ fhir:value "vaccine" ];
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "127785005" ];
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 37;
+       fhir:ConceptMap.group.element.code [ fhir:value "vision" ];
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "310160007" ];
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 38;
+       fhir:ConceptMap.group.element.code [ fhir:value "walk-in" ];
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "11429006" ];
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "inexact" ];
+         fhir:ConceptMap.group.element.target.comment [ fhir:value "Mapping assumes the source concept is a walk in office visit vs walk in testing or some other more specific service" ]
+       ]
+     ], [
+       fhir:index 39;
+       fhir:ConceptMap.group.element.code [ fhir:value "well-child" ];
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "410620009" ];
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ], [
+       fhir:index 40;
+       fhir:ConceptMap.group.element.code [ fhir:value "x-ray" ];
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "310125001" ];
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.org/guides/argonaut-scheduling/ConceptMap/visit-service-map.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

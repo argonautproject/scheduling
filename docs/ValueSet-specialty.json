@@ -1,0 +1,39 @@
+{
+  "resourceType": "ValueSet",
+  "id": "specialty",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>Argonaut Scheduling Specialties</h2><div><p>The specialties offered by providers and  that would be required to perform the service requested in this appointment.</p>\n</div><p><b>Copyright Statement:</b> This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement</p><p>This value set includes codes from the following code systems:</p><ul><li>Include codes from <a href=\"http://www.snomed.org/\"><code>http://snomed.info/sct</code></a> where concept  is-a  394658006</li></ul></div>"
+  },
+  "url": "http://fhir.org/guides/argonaut-scheduling/ValueSet/specialty",
+  "version": "0.0.0",
+  "name": "Argonaut Scheduling Specialties",
+  "status": "draft",
+  "date": "2017-07-12T12:40:10-07:00",
+  "description": "The specialties offered by providers and  that would be required to perform the service requested in this appointment. ",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "urn:iso:std:iso:3166",
+          "code": "US"
+        }
+      ]
+    }
+  ],
+  "copyright": "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "filter": [
+          {
+            "property": "concept",
+            "op": "is-a",
+            "value": "394658006"
+          }
+        ]
+      }
+    ]
+  }
+}

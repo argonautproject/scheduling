@@ -194,7 +194,7 @@
 
   <!-- ============BreadCrumb=============== -->
 
-<nav class="breadcrumb"><a name="1f89be48-ae47-4aba-9ac1-bbb0e2347054">​</a>
+<nav class="breadcrumb">
   
     
       <a href="toc.html" class="breadcrumb-item btn btn-link btn-sm">TOC</a><a href="index.html" class="breadcrumb-item">Home</a>
@@ -224,11 +224,11 @@ page source: patient-scheduling.md
   <li><a href="#retrieving-appointments" id="markdown-toc-retrieving-appointments">Retrieving appointments</a></li>
 </ul>
 
-<h3 id="introduction">Introduction</h3>
+<h2 id="introduction">Introduction</h2>
 
 <p>The Argonaut Scheduling Implementation Guide defines a series of interactions which cover the basic appointment creation workflow for patient base scheduling which includes: registration of patients and updating  coverage information, discovery of available appointments and booking the cancelling appointments. It also covers patient access to their appointments.  The basic workflow steps and Argonaut Scheduling APIs for three use cases are detailed below.</p>
 
-<h3 id="use-case-1-patient-portal-scheduling-for-existing-patients">Use Case 1: Patient Portal Scheduling for existing patients</h3>
+<h2 id="use-case-1-patient-portal-scheduling-for-existing-patients">Use Case 1: Patient Portal Scheduling for existing patients</h2>
 
 <p>This use case is focused on a patient scheduling through a healthcare organization’s patient portal.  The patient may be trying to book an appointment to see a particular Practitioner or for a service to be performed.</p>
 
@@ -240,7 +240,7 @@ page source: patient-scheduling.md
   <li>User level lgoin and trust</li>
 </ul>
 
-<h5 id="scenario-1a-existing-patient-schedules-directly-with-their-provider" class="no_toc">Scenario 1a: <strong>Existing Patient</strong> schedules directly with their provider</h5>
+<h4 id="scenario-1a-existing-patient-schedules-directly-with-their-provider" class="no_toc">Scenario 1a: <strong>Existing Patient</strong> schedules directly with their provider</h4>
 
 <p>This simple scenario serves as an effective means to scale up the complexity toward subsequent scenarios</p>
 
@@ -249,7 +249,7 @@ page source: patient-scheduling.md
 </code></pre>
 </div>
 
-<h5 id="scenario-1b-existing-patient-schedules-a-service-directly-with-their-health-care-service" class="no_toc">Scenario 1b: <strong>Existing Patient</strong> schedules a service directly with their health care service</h5>
+<h4 id="scenario-1b-existing-patient-schedules-a-service-directly-with-their-health-care-service" class="no_toc">Scenario 1b: <strong>Existing Patient</strong> schedules a service directly with their health care service</h4>
 
 <p>This scenario is the same as 1a except a Service or Specialty instead of a specific Provider is being scheduled.</p>
 
@@ -273,7 +273,7 @@ page source: patient-scheduling.md
 <p></p>
 </div>
 
-<h4 id="patient-login" class="no_toc">1. Patient login</h4>
+<h3 id="patient-login" class="no_toc">1. Patient login</h3>
 
 <p>Before a patient can begin, she must login in to the patient portal.  This step MAY include updating or confirmation of patient  and insurance coverage information.</p>
 
@@ -294,10 +294,10 @@ page source: patient-scheduling.md
 
 <ul>
   <li>Updates to patient demographic information MAY be included in the login step for some systems.  However the interactions to update this information are outside the scope of this specification</li>
-  <li><a name="1d060800-8c1b-4f06-ae17-7e0ccc249640">​</a>Updates to patient insurance coverage information are detailed in the <a href="#.html">section</a> below</li>
+  <li>Updates to patient insurance coverage information are detailed in <a href="#patient-registration-option-b">Use Case 2 Step 4</a> below</li>
 </ul>
 
-<h4 id="appointment-availability-discovery-and-search" class="no_toc">2. Appointment Availability Discovery and Search</h4>
+<h3 id="appointment-availability-discovery-and-search" class="no_toc">2. Appointment Availability Discovery and Search</h3>
 
 <p>This step is the key transaction for this scheduling Use case. It asks the questions: when to book?  It is dynamic and complex because of multiple dependencies.  <!-- (In contrast, a discovery operation - which is out of scope for this version - asks the question: what Service(/specialty/provider) to book?) --></p>
 
@@ -321,20 +321,20 @@ page source: patient-scheduling.md
   <li>available times</li>
   <li>location</li>
   <li>specialty</li>
-  <li><a name="00177c67-9cc8-48c1-9654-49d556effcd4">​</a>set of common <a href="ValueSet-visit-type.html">visit types</a>.</li>
+  <li>set of common <a href="ValueSet-visit-type.html">visit types</a>.</li>
 </ul>
 
-<h5 id="apis" class="no_toc">APIs</h5>
+<h4 id="apis" class="no_toc">APIs</h4>
 
 <p>The following Argonaut Scheduling artifacts are used in this transaction:</p>
 
 <ul>
-  <li><strong><a name="eb77194c-8eb7-4697-a44c-e2bb3512db3f">​</a><a href="OperationDefinition-appointment-find.html">Appointment Availability Operation API</a></strong>.</li>
+  <li><strong><a href="OperationDefinition-appointment-find.html">Appointment Availability Operation API</a></strong>.</li>
   <li><strong><a href="StructureDefinition-avail-bundle.html">Argonaut Availability Output Profile API</a></strong>.</li>
   <li><strong><a href="StructureDefinition-appt-output.html">Argonaut Appointment Output Profile</a></strong>.</li>
 </ul>
 
-<h5 id="usage" class="no_toc">Usage</h5>
+<h4 id="usage" class="no_toc">Usage</h4>
 
 <p>Using Both <code class="highlighter-rouge">GET</code> and <code class="highlighter-rouge">POST</code> Syntax the operation can be invoked as follows:</p>
 
@@ -342,7 +342,7 @@ page source: patient-scheduling.md
 
 <p><code class="highlighter-rouge">POST [base]/Appointment/$hold?{_count}</code></p>
 
-<h5 id="example" class="no_toc">Example</h5>
+<h4 id="example" class="no_toc">Example</h4>
 
 <p>appointment-find1a.md</p>
 
@@ -425,7 +425,7 @@ page source: patient-scheduling.md
 
 <p><br/></p>
 
-<h4 id="optional-hold-appointment-operation" class="no_toc">3. Optional Hold Appointment Operation</h4>
+<h3 id="optional-hold-appointment-operation" class="no_toc">3. Optional Hold Appointment Operation</h3>
 <p>This operation puts to appointment in a hold status to temporarily prevent the appointment from being booked by another client.  This optional step may be needed to allow the end-user to complete additional steps such as end user data entry before the booking can be completed.</p>
 
   <!-- all this Bootstrap html for getting an image to fit nicely in text - 640 pix wide -->
@@ -443,17 +443,17 @@ page source: patient-scheduling.md
 
 <p>The Client sends a hold request operation using the id of selected proposed appointment as the input parameter.  The Server determines if the appointment can be held and returns the Appointment resource with with an updated status. See the <a href="state-diagram.html">Scheduling State Diagram</a> for further details on statuses.</p>
 
-<h5 id="apis-1" class="no_toc">APIs</h5>
+<h4 id="apis-1" class="no_toc">APIs</h4>
 
 <p>The following Argonaut Scheduling artifacts are used in this transaction:</p>
 
 <ul>
-  <li><strong><a name="e80cd4ec-4dc3-472b-b382-db0766b3b8c7">​</a><a href="OperationDefinition-appointment-hold.html">Appointment Hold Operation API</a></strong>.</li>
+  <li><strong><a href="OperationDefinition-appointment-hold.html">Appointment Hold Operation API</a></strong>.</li>
   <li><strong><a href="StructureDefinition-avail-bundle.html">Argonaut Availability Output Profile API</a></strong>.</li>
   <li><strong><a href="StructureDefinition-appt-output.html">Argonaut Appointment Output Profile</a></strong>.</li>
 </ul>
 
-<h5 id="usage-1" class="no_toc">Usage</h5>
+<h4 id="usage-1" class="no_toc">Usage</h4>
 
 <p>source file: pages/_includes/docref/md</p>
 
@@ -507,7 +507,7 @@ page source: patient-scheduling.md
 
 <p><br/></p>
 
-<h4 id="book-appointment" class="no_toc">4. Book appointment</h4>
+<h3 id="book-appointment" class="no_toc">4. Book appointment</h3>
 <p>The actual booking of the appointment is completed in this step and the scheduling step is completed.</p>
 
   <!-- all this Bootstrap html for getting an image to fit nicely in text - 640 pix wide -->
@@ -525,17 +525,17 @@ page source: patient-scheduling.md
 
 <p>the Client sends a book operation using the id of selected proposed appointment, the patient(s) id and optionally any comments as the input parameters.  The Server determines if the appointment can be booked and returns the Appointment resource with with an updated status. See the <a href="state-diagram.html">Scheduling State Diagram</a> for further details on statuses.</p>
 
-<h5 id="apis-2" class="no_toc">APIs</h5>
+<h4 id="apis-2" class="no_toc">APIs</h4>
 
 <p>The following Argonaut Scheduling artifacts are used in this transaction:</p>
 
 <ul>
-  <li><strong><a name="d00115dd-a258-4009-9029-56eb84741df4">​</a><a href="OperationDefinition-appointment-hold.html">Appointment Hold Operation API</a></strong>.</li>
+  <li><strong><a href="OperationDefinition-appointment-hold.html">Appointment Hold Operation API</a></strong>.</li>
   <li><strong><a href="StructureDefinition-avail-bundle.html">Argonaut Availability Output Profile API</a></strong>.</li>
   <li><strong><a href="StructureDefinition-appt-output.html">Argonaut Appointment Output Profile</a></strong>.</li>
 </ul>
 
-<h5 id="usage-2" class="no_toc">Usage</h5>
+<h4 id="usage-2" class="no_toc">Usage</h4>
 
 <p>appointment-book.md</p>
 
@@ -643,7 +643,7 @@ page source: patient-scheduling.md
 
 <p><br/></p>
 
-<h3 id="use-case-2-open-scheduling-for-new-patient-or-existing-patient">Use Case 2: Open Scheduling for new patient or existing patient</h3>
+<h2 id="use-case-2-open-scheduling-for-new-patient-or-existing-patient">Use Case 2: Open Scheduling for new patient or existing patient</h2>
 
 <p>This use case is focused on scheduling through a third-party application where the patient is either a new or existing patient. In either case, the patient doesn’t need to be registered or logged in with the EHR to search for an open Appointment - which is defined as “Open scheduling” for this guide.  The patient may be trying to book an appointment to see a particular Practitioner or for a service to be performed. The primary difference between Use Case 2 and Use Case 1 above are the <em>registration steps</em>. The primary difference between Use Case 2 and Use Case 3 below is fetching data in <em>real time</em> in contrast to <em>prefetching</em> scheduling data</p>
 
@@ -657,14 +657,14 @@ page source: patient-scheduling.md
   <li>Fetching available appointments in real time</li>
 </ul>
 
-<h5 id="scenario-2a-new-patient-schedules-an-appointment-with-a-provider-without-being-in-health-system" class="no_toc">Scenario 2a. New Patient Schedules an Appointment with a Provider without being in health system</h5>
+<h4 id="scenario-2a-new-patient-schedules-an-appointment-with-a-provider-without-being-in-health-system" class="no_toc">Scenario 2a. New Patient Schedules an Appointment with a Provider without being in health system</h4>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>Patient: Bruce just moved to the area, has a rash.  He wants to set up an appointment with Dr X as soon as
          possible (within a week or so)
 </code></pre>
 </div>
 
-<h5 id="scenario-2b-patient-discovers-and-schedules-a-service-without-being-in-a-health-system" class="no_toc">Scenario 2b. Patient Discovers and Schedules a Service without being in a health system</h5>
+<h4 id="scenario-2b-patient-discovers-and-schedules-a-service-without-being-in-a-health-system" class="no_toc">Scenario 2b. Patient Discovers and Schedules a Service without being in a health system</h4>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>Patient: Bruce just moved to the area, has a rash.  He wants to set up an appointment with a local
         dermatologist as soon as possible (within a week or so).
@@ -688,11 +688,11 @@ page source: patient-scheduling.md
 <p></p>
 </div>
 
-<h4 id="patient-registration-option-a" class="no_toc">1. Patient Registration Option A</h4>
+<h3 id="patient-registration-option-a" class="no_toc">1. Patient Registration Option A</h3>
 
 <p>For this scenario a new patient will need to be registered or an existing patient fetched prior to booking.  This MAY occur at this step or prior to booking. This step is discussed in detail in <a href="#patient-registration-option-b">step 4</a> below.</p>
 
-<h4 id="appointment-availability-discovery-and-search-1" class="no_toc">2. Appointment Availability Discovery and Search</h4>
+<h3 id="appointment-availability-discovery-and-search-1" class="no_toc">2. Appointment Availability Discovery and Search</h3>
 
 <p>This step is the key transaction for this Scheduling Use Case. It asks the questions: when to book? It is dynamic and complex because of multiple dependencies.</p>
 
@@ -711,7 +711,7 @@ page source: patient-scheduling.md
 
 <p>This step is the same as described in <a href="#appointment-availability-discovery-and-search">Scenario-1</a>.</p>
 
-<h4 id="optional-hold-appointment-operation-1" class="no_toc">3. Optional Hold Appointment Operation</h4>
+<h3 id="optional-hold-appointment-operation-1" class="no_toc">3. Optional Hold Appointment Operation</h3>
 
 <p>This operation puts to appointment in a hold status to temporarily prevent the appointment from being booked by another client. This step is not optional if the patient was not registered in step 1 above. It is needed in order to register the patient prior to booking the appointment.</p>
 
@@ -728,9 +728,9 @@ page source: patient-scheduling.md
 <p></p>
 </div>
 
-<p><a name="fdc2501f-6eb2-4097-8ecd-5d213b22c741">​</a>The details of this step are the same as described in <a href="#pptional-hold-appointment-operation">Scenario-1</a>.</p>
+<p>The details of this step are the same as described in <a href="#optional-hold-appointment-operation">Scenario-1</a>.</p>
 
-<h4 id="patient-registration-option-b" class="no_toc">4. Patient Registration Option B</h4>
+<h3 id="patient-registration-option-b" class="no_toc">4. Patient Registration Option B</h3>
 
 <p>A new patient will need to be registered or an existing patient fetched prior to actually booking the appointment.   This MAY occur at this step prior to booking the appointment or at the beginning of the workflow in step 1.  This step MAY include updating or confirmation of patient and insurance coverage information as well.</p>
 
@@ -749,7 +749,7 @@ page source: patient-scheduling.md
 
 <p><strong>Registering or Fetching a Patient:</strong></p>
 
-<h5 id="usage-3" class="no_toc">Usage</h5>
+<h4 id="usage-3" class="no_toc">Usage</h4>
 
 <p>To register a new or existing patient, The Client SHALL use the standard FHIR RESTful <a href="http://hl7.org/fhir/STU3/http.html#create">create API</a> as shown ( and SHALL not use the ‘If-None-Exist’ header as described in FHIR <a href="http://hl7.org/fhir/STU3/http.html#ccreate">conditional create API</a>)</p>
 
@@ -757,7 +757,7 @@ page source: patient-scheduling.md
 
 <p>In response to this transaction, the server SHOULD create a new patient resource only if the patient resource does not already exist in the system.  If the patient is already registered within the system. The existing patient resource SHOULD be returned.</p>
 
-<h5 id="example-1" class="no_toc">Example</h5>
+<h4 id="example-1" class="no_toc">Example</h4>
 
 <div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="err">todo</span><span class="w"> </span><span class="err">inline</span><span class="w"> </span><span class="err">example</span><span class="w">
 </span></code></pre>
@@ -785,7 +785,7 @@ page source: patient-scheduling.md
 <p><code class="highlighter-rouge">PUT [base]/Coverage/[id]</code></p>
 
 <ul>
-  <li><a name="d5835689-5e12-4a68-9cdf-91b6748aea91">​</a>Note that the server MAY reject certain updates to the coverage information (for example, type of coverage) and SHOULD return an <a href="http://hl7.org/fhir/STU3/operationoutcome.html">OperationOutcome</a> explaining the reason.<a href="../issues/47">Issue #47</a></li>
+  <li><a name="a47c5f76-b0ce-4a81-8f1a-71ad1ff25c32">​</a>Note that the server MAY reject certain updates to the coverage information (for example, type of coverage) and SHOULD return an <a href="http://hl7.org/fhir/STU3/operationoutcome.html">OperationOutcome</a> explaining the reason.<a href="../issues/47">Issue #47</a></li>
 </ul>
 
 <h5 id="example">Example</h5>
@@ -798,7 +798,7 @@ page source: patient-scheduling.md
 
 <p><br/></p>
 
-<h4 id="book-appointment-1" class="no_toc">5. Book Appointment</h4>
+<h3 id="book-appointment-1" class="no_toc">5. Book Appointment</h3>
 
 <p>After the patient is registered the actual booking interaction can occur.</p>
 
@@ -817,11 +817,11 @@ page source: patient-scheduling.md
 
 <p>After the patient is registered the actual booking interaction can occur.  This step is the same as described in <a href="#book-appointment">Scenario-1</a>.</p>
 
-<h4 id="patient-coverage-update-option-c" class="no_toc">6. Patient Coverage Update Option C</h4>
+<h3 id="patient-coverage-update-option-c" class="no_toc">6. Patient Coverage Update Option C</h3>
 
 <p>For some systems, updating or confirmation of insurance coverage information MAY occur at this step after booking. The Coverage interaction is discussed in detail in <a href="#patient-registration-option-b">step 4</a> above.</p>
 
-<h3 id="use-case-3-prefetching-open-slots">Use Case 3 Prefetching Open Slots</h3>
+<h2 id="use-case-3-prefetching-open-slots">Use Case 3 Prefetching Open Slots</h2>
 
 <p>This use case is the same as <a href="#use-case-2-open-scheduling-for-new-patient-or-existing-patient">Use Case 2</a> above except data for available appointments are gathered in advance of end user login instead of determining available appointments in real-time. Therefore, in this use case open slots are queried and scheduling business rules need to be shared between the third-party app and EHR scheduler in order to determine appointment availability and create valid appointments.</p>
 
@@ -842,14 +842,14 @@ page source: patient-scheduling.md
   <li>FHIR Server maintain a version history</li>
 </ul>
 
-<h5 id="scenario-3a-new-patient-schedules-an-appointment-with-a-provider-without-being-in-health-system" class="no_toc">Scenario 3a. New Patient Schedules an Appointment with a Provider without being in health system</h5>
+<h4 id="scenario-3a-new-patient-schedules-an-appointment-with-a-provider-without-being-in-health-system" class="no_toc">Scenario 3a. New Patient Schedules an Appointment with a Provider without being in health system</h4>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>Patient: Bruce just moved to the area, has a rash.  He wants to set up an appointment with Dr X as soon as
          possible (within a week or so)
 </code></pre>
 </div>
 
-<h5 id="scenario-3b-patient-discovers-and-schedules-a-service-without-being-in-a-health-system" class="no_toc">Scenario 3b. Patient Discovers and Schedules a Service without being in a health system</h5>
+<h4 id="scenario-3b-patient-discovers-and-schedules-a-service-without-being-in-a-health-system" class="no_toc">Scenario 3b. Patient Discovers and Schedules a Service without being in a health system</h4>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>Patient: Bruce just moved to the area, has a rash.  He wants to set up an appointment with a local
         dermatologist as soon as possible (within a week or so).
@@ -865,7 +865,7 @@ page source: patient-scheduling.md
 <p>file:///assets/images/diagrams/Slide37.png</p>
 
 <div>
-<figure class="figure"><a name="348c2ed1-c1bf-44f7-9b4a-5ad8b5718fd8">​</a>
+<figure class="figure">
 <figcaption class="figure-caption"><strong>Figure 1: Prefetching Open Slots.</strong></figcaption>
   <img src="assets/images/diagrams/Slide37.png" alt="diagrams/Slide37.png" class="figure-img img-responsive img-rounded center-block"/>
 </figure>
@@ -873,7 +873,9 @@ page source: patient-scheduling.md
 <p></p>
 </div>
 
-<h4 id="share-business-rules" class="no_toc">1. Share Business Rules</h4>
+<p>Note that steps 6-9 are identical to Scenario 2 Steps 4-6.</p>
+
+<h3 id="share-business-rules" class="no_toc">1. Share Business Rules</h3>
 
 <p>The EHR/Hospital shares the business rules and logic for creating an appointment for a particular service with the third-party application. For example, which assets are needed. This is typically an “out of band” transaction. A FHIR based transaction is out of scope for this IG.</p>
 
@@ -890,7 +892,7 @@ page source: patient-scheduling.md
 <p></p>
 </div>
 
-<h4 id="initial-load" class="no_toc">2. Initial Load</h4>
+<h3 id="initial-load" class="no_toc">2. Initial Load</h3>
 
 <p>The third-party application fetches the ‘initial load’ of open slots.  It may be repeated to periodically refresh the data. This query may <code class="highlighter-rouge">_include</code> the relevant actors and and schedules so the client application is able to apply its business rules to create valid FHIR Appointment resources for transacting with the FHIR Scheduler/EHR.  Occasionally the Client server may need to repeat this step to reset its information.</p>
 
@@ -909,7 +911,7 @@ page source: patient-scheduling.md
 
 <p><strong>Fetching the ‘intial load’ of open slots:</strong></p>
 
-<h5 id="usage-4" class="no_toc">Usage</h5>
+<h4 id="usage-4" class="no_toc">Usage</h4>
 
 <p>To fetch all open slots for a period of time and include relevant Practitioners, Locations and Schedules, the Client SHALL use the standard FHIR RESTful <a href="http://hl7.org/fhir/STU3/search.html">search API</a> as shown along with these standard <a href="http://hl7.org/fhir/STU3/slot.html#search">search parameters</a>:</p>
 
@@ -931,13 +933,13 @@ page source: patient-scheduling.md
 </code></pre>
 </div>
 
-<h5 id="example-2" class="no_toc">Example</h5>
+<h4 id="example-2" class="no_toc">Example</h4>
 
 <div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="err">todo</span><span class="w"> </span><span class="err">inline</span><span class="w"> </span><span class="err">example</span><span class="w">
 </span></code></pre>
 </div>
 
-<h4 id="poll-for-updated-slots" class="no_toc">3. Poll for updated slots</h4>
+<h3 id="poll-for-updated-slots" class="no_toc">3. Poll for updated slots</h3>
 
 <p>After fetching the ‘initial load’ in step 2, the third-party application periodically polls for updated slots to keep the list of open slots current. The query would use the <code class="highlighter-rouge">_history</code> interaction to fetch only the slots that were either updated, deleted or created since the last query.  By reconciling the query results with its list of open slots, the Client application is able to synchronize its slots information with the FHIR Server.</p>
 
@@ -956,34 +958,34 @@ page source: patient-scheduling.md
 
 <p><strong>Fetching open slot updates:</strong></p>
 
-<h5 id="usage-5" class="no_toc">Usage</h5>
+<h4 id="usage-5" class="no_toc">Usage</h4>
 
 <p>To fetch all updated slots since the last update, the Client SHALL use:</p>
 
 <ul>
   <li>the standard FHIR RESTful <a href="http://hl7.org/fhir/STU3/http.html#history">history API</a></li>
-  <li>the <code class="highlighter-rouge">_since</code> parameter</li>
-  <li>the standard search parameters listed in step 2 above</li>
+  <li>the <code class="highlighter-rouge">_since</code> parameter to only include resource versions that were created at or after the last_update or initial load.</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>GET [base]/Slot/_history?_since=[last-update]&amp;status=free&amp;start=ge[date]&amp;start=le[date]{&amp;slot-type=[type1]{,[type2]...}
-&amp;schedule.actor=Practitioner/[id1],{Location/[id1],Practitioner/[id2],Location/[id2]...}}
+<div class="highlighter-rouge"><pre class="highlight"><code>GET [base]/Slot/_history?_since=[last-update]
 </code></pre>
 </div>
 
-<h5 id="example-3" class="no_toc">Example</h5>
+<p>Note that this operation <em>does not</em> contain any search parameters. The client must to perform additional filtering on the returned slots (for example, <code class="highlighter-rouge">status</code>=active ) to match the search criteria used for initial load in step 2.</p>
+
+<h4 id="example-3" class="no_toc">Example</h4>
 
 <div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="err">todo</span><span class="w"> </span><span class="err">inline</span><span class="w"> </span><span class="err">example</span><span class="w">
 </span></code></pre>
 </div>
 
-<h4 id="patient-registration-option-a-1" class="no_toc">4. Patient Registration Option A</h4>
+<h3 id="patient-registration-option-a-1" class="no_toc">4. Patient Registration Option A</h3>
 
 <p>This step is identical to <a href="#patient-registration-option-a">Scenario 2 Step 1.</a> above.</p>
 
-<h4 id="appointment-availability-discovery-and-search-2" class="no_toc">5. Appointment Availability Discovery and Search</h4>
+<h3 id="appointment-availability-discovery-and-search-2" class="no_toc">5. Appointment Availability Discovery and Search</h3>
 
-<p>Based on the shared business rules and user input, the client application server is able to create available appointments from the prefetched slot information (How this is done is out of scope) and return them to the end user.</p>
+<p>Based on the shared business rules and user input, the client application server is able to create available appointments from the prefetched slot information and return them to the end user.  How this is done is application specific and out of scope for this guide.</p>
 
   <!-- all this Bootstrap html for getting an image to fit nicely in text - 640 pix wide -->
 
@@ -998,144 +1000,25 @@ page source: patient-scheduling.md
 <p></p>
 </div>
 
-<p>The FHIR RESTful based interactions are the same as described in <a href="#appointment-availability-discovery-and-search">Scenario-1</a> noting that the role of the FHIR Scheduler (EHR) is replaced by the Client Application Server.  Other non-FHIR based solutions are possible as well.</p>
+<p>The FHIR RESTful based interactions are the same as described in <a href="#appointment-availability-discovery-and-search">Scenario-1 Step 2.</a> with the key difference that the role of the FHIR Scheduler (EHR) is replaced by the Client Application Server.  Other non-FHIR based solutions are possible as well.</p>
 
-<h4 id="optional-hold-appointment-operation-2" class="no_toc">3. Optional Hold Appointment Operation</h4>
+<h3 id="optional-hold-appointment-operation-2" class="no_toc">6. Optional Hold Appointment Operation</h3>
 
-<p>This operation puts to appointment in a hold status to temporarily prevent the appointment from being booked by another client. This step is not optional if the patient is not registered. It is needed in order to register the patient prior to booking the appointment.</p>
+<p>This step is identical to <a href="#optional-hold-appointment-operation-1">Scenario 2 Step 3</a> above..</p>
 
-  <!-- all this Bootstrap html for getting an image to fit nicely in text - 640 pix wide -->
+<h3 id="patient-registration-option-b-1" class="no_toc">7. Patient Registration Option B</h3>
 
-<p>file:///assets/images/diagrams/Slide11.png</p>
+<p>This step is identical to <a href="#patient-registration-option-b">Scenario 2 Step 4</a> above.</p>
 
-<div>
-<figure class="figure">
-<figcaption class="figure-caption"><strong>Figure 1: Optional Hold Appointment Operation.</strong></figcaption>
-  <img src="assets/images/diagrams/Slide11.png" alt="diagrams/Slide11.png" class="figure-img img-responsive img-rounded center-block"/>
-</figure>
+<h3 id="book-appointment-2" class="no_toc">8. Book Appointment</h3>
 
-<p></p>
-</div>
+<p>This step is identical to <a href="#book-appointment-1">Scenario 2 Step 5</a> above.</p>
 
-<p>The details of this step are the same as described in <a href="#optional-hold-appointment-operation">Scenario-1</a>.</p>
+<h3 id="patient-coverage-update-option-c-1" class="no_toc">9. Patient Coverage Update Option C</h3>
 
-<h4 id="patient-registration-option-b-1" class="no_toc">7. Patient Registration Option B</h4>
+<p>For some systems, updating or confirmation of insurance coverage information MAY occur at this step after booking. The Coverage interaction is discussed in detail in <a href="#patient-registration-option-b">Scenario 2 Step 4</a> above.</p>
 
-<p>This step is identical to <a href="#patient-registration-option-a">Scenario 2 Step 4.</a> above.</p>
-
-<h4 id="book-appointment-2" class="no_toc">5. Book Appointment</h4>
-
-<p>After the patient is registered the actual booking interaction can occur.</p>
-
-  <!-- all this Bootstrap html for getting an image to fit nicely in text - 640 pix wide -->
-
-<p>file:///assets/images/diagrams/Slide06.png</p>
-
-<div>
-<figure class="figure">
-<figcaption class="figure-caption"><strong>Figure 1: Book Appointment.</strong></figcaption>
-  <img src="assets/images/diagrams/Slide06.png" alt="diagrams/Slide06.png" class="figure-img img-responsive img-rounded center-block"/>
-</figure>
-
-<p></p>
-</div>
-
-<p>After the patient is registered the actual booking interaction can occur.  This step is the same as described in <a href="#book-appointment">Scenario-1</a>.</p>
-
-<h4 id="patient-coverage-update-option-c-1" class="no_toc">6. Patient Coverage Update Option C</h4>
-
-<p>For some systems, updating or confirmation of insurance coverage information MAY occur at this step after booking. The Coverage interaction is discussed in detail in <a href="#patient-registration-option-b">step 4</a> above.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Step</th>
-      <th>Title</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>A</td>
-      <td>Share Business Rules</td>
-      <td>EHR/Hospital shares with client application the business rules and logic for creating an appointment for a particular service.  For example, which assets are needed.   This is typically an “out of band” transaction. A FHIR based Transaction is out of scope for this this IG.</td>
-    </tr>
-    <tr>
-      <td>AA</td>
-      <td>Initial Load</td>
-      <td>Client application fetches the ‘intial load’ of open slots.  This is needed for options 2 and 3 listed above. It may be repeated to periodically refresh the data. The query would have to <code class="highlighter-rouge">_include</code> the relevant actors and and schedules so the client application could apply its business rules to create appointments to transact with the FHIR Scheduler/EHR.</td>
-    </tr>
-    <tr>
-      <td>B</td>
-      <td>Poll for updated slots</td>
-      <td>With this option need to get an “initial load”.  The query results updates the previous one to keep the list of open slots current.  The query would use the <code class="highlighter-rouge">_history</code> interaction to retrieve the slots that were updated, deleted or created since the last query.  See the <a href="https://github.com/argonautproject/scheduling/issues/44">Issue #44</a> for more details. The query would have to <code class="highlighter-rouge">_include</code> the relevant actors and and schedules so the client application could apply its business rules to create appointments to transact with the FHIR Scheduler/EHR.</td>
-    </tr>
-    <tr>
-      <td>C</td>
-      <td>End user search for available appointments</td>
-      <td>This is this same as for all other scenarios. The End User provides basic input data like preferred dates, location, basic demographic data and possibley insurance information</td>
-    </tr>
-    <tr>
-      <td>D</td>
-      <td>Client App Returns available appointments</td>
-      <td>Based on the shared business rules the client application is able to create and return available appointments to the end user</td>
-    </tr>
-    <tr>
-      <td>E</td>
-      <td>End user selects from available appointments</td>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <td>F</td>
-      <td>Holds Appointment</td>
-      <td>Client Application PUT/POST the created Appointment to the FHIR Server</td>
-    </tr>
-    <tr>
-      <td>G</td>
-      <td>Returns BookingConfirmation or Rejection</td>
-      <td>FHIR Scheduler, (EHR) returns confirmation or rejection of tentative appointment using the OperationOutcome to indicate the reason for rejection.</td>
-    </tr>
-    <tr>
-      <td>H</td>
-      <td>booking on hold until completed by End User</td>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <td>I</td>
-      <td>End user enters  patient information</td>
-      <td><em>Optional step</em> Provide needed additional information. For example, to register the patient.</td>
-    </tr>
-    <tr>
-      <td>J</td>
-      <td>Fetch or Register Patient</td>
-      <td><em>Optional step</em> The client application sends patient registration information to the FHIR Server</td>
-    </tr>
-    <tr>
-      <td>K</td>
-      <td>Returns Patient Id</td>
-      <td><em>Optional step</em>  The FHIR Server returns the Patient ID</td>
-    </tr>
-    <tr>
-      <td>L</td>
-      <td>Book Appointment</td>
-      <td>Client Application PUTs the updated Appointment to the FHIR Server.</td>
-    </tr>
-    <tr>
-      <td>M</td>
-      <td>Returns BookingConfirmation or Rejection</td>
-      <td>The FHIR Server returns confirmation or rejection of booked appointment using the OperationOutcome to indicate the reason for rejection.</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4 id="todo" class="no_toc">TODO</h4>
-
-<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="err">todo</span><span class="w"> </span><span class="err">inline</span><span class="w"> </span><span class="err">example</span><span class="w">
-</span></code></pre>
-</div>
-<p><br/></p>
-
-<h3 id="cancelling-appointments">Cancelling appointments</h3>
+<h2 id="cancelling-appointments">Cancelling appointments</h2>
 
   <!-- all this Bootstrap html for getting an image to fit nicely in text - 640 pix wide -->
 
@@ -1163,7 +1046,7 @@ page source: patient-scheduling.md
     </ol>
   </li>
   <li>Note the Server SHALL declare support for JSON, XML, or FHIRPath Patch in the <a href="server-capstatement.html">CapabilityStatement</a></li>
-  <li><a name="a3d480e4-0a1d-4278-bf7e-f7243353780f">​</a>not sure what server options are - discuss?  <a href="../issues/30">#30</a></li>
+  <li><a name="b15975c2-7003-4e4d-92c8-f250df4f7647">​</a>not sure what server options are - discuss?  <a href="../issues/30">#30</a></li>
 </ul>
 
 <div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="err">todo</span><span class="w"> </span><span class="err">inline</span><span class="w"> </span><span class="err">example</span><span class="w">
@@ -1171,7 +1054,7 @@ page source: patient-scheduling.md
 </div>
 <p><br/></p>
 
-<h3 id="retrieving-appointments">Retrieving appointments</h3>
+<h2 id="retrieving-appointments">Retrieving appointments</h2>
 
   <!-- all this Bootstrap html for getting an image to fit nicely in text - 640 pix wide -->
 
@@ -1186,15 +1069,39 @@ page source: patient-scheduling.md
 <p></p>
 </div>
 
-<p>Patient access to their scheduled appointments uses the standard FHIR search API.  The supported search criteria for this transaction are described in:</p>
+<p>Patient access to their scheduled appointments uses the standard FHIR <a href="http://hl7.org/fhir/STU3/search.html">search API</a>.</p>
+
+<p><strong>API</strong></p>
+
+<p>The following Argonaut Scheduling artifacts are used in this transaction:</p>
 
 <ul>
   <li><strong><a href="StructureDefinition-appt-output.html">Argonaut Appointment Output Profile</a></strong>.</li>
 </ul>
 
-<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="err">todo</span><span class="w"> </span><span class="err">inline</span><span class="w"> </span><span class="err">example</span><span class="w">
-</span></code></pre>
-</div>
+<p><strong>Usage</strong></p>
+
+<p>To fetch scheduled appointments for a patient the Client SHALL use the standard RESTful <a href="http://hl7.org/fhir/STU3/search.html">search API</a> as shown along with these standard <a href="http://hl7.org/fhir/STU3/appointment.html#search">search parameters</a>:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">patient</code> (required) filter by the patient</li>
+  <li><code class="highlighter-rouge">status</code> (optional) filter by status such as ‘booked’</li>
+  <li><code class="highlighter-rouge">date</code> (optional) filter by a date or a date range ( including the date modifiers ‘ge’,’le’,’gt’,’lt’)</li>
+  <li><code class="highlighter-rouge">practitioner</code> (optional) filter by a practitioner(s)</li>
+</ul>
+
+<p>GET [base]/Appointment?patient=[id]{&amp;status=[status]}{&amp;date=[date]{&amp;date=[date]}}{&amp;practitioner=[id]}</p>
+
+<p><strong>Examples</strong></p>
+
+<p>Search for all appointments for a patient with Resource ID 1234: <code class="highlighter-rouge">GET [base]/Appointment?patient=1234</code></p>
+
+<p>Search for all booked appointments for this patient: <code class="highlighter-rouge">GET [base]/Appointment?patient=1234&amp;status=booked</code></p>
+
+<p>Fetch all completed appointments for this patient since January: <code class="highlighter-rouge">GET [base]/Appointment?patient=1234&amp;status=fulfilled&amp;date=ge2017-01-01</code></p>
+
+<p>Fetch all completed appointments with Dr Y for this patient since January : <code class="highlighter-rouge">GET [base]/Appointment?patient=1234&amp;status=fulfilled&amp;date=ge2017-01-01&amp;practitioner=Dr+Y</code></p>
+
 <p><br/></p>
 
 
@@ -1225,7 +1132,7 @@ page source: patient-scheduling.md
   <div class="container">    <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Wed, Jan 3, 2018 23:09-0800. |
+            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Wed, Jan 10, 2018 14:34-0800. |
                <!-- <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a rel="license" style="color: #81BEF7" href="http://hl7.org/fhir/STU3license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a>
         

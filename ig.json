@@ -15,19 +15,19 @@
       "template-base": "ex.html"
     },
     "CapabilityStatement": {
-      "template-base": "capst.html"
+      "template-base": "base.html"
     },
     "CodeSystem": {
-      "template-base": "codesys.html"
+      "template-base": "base.html"
     },
     "ConceptMap": {
-      "template-base": "cm.html"
+      "template-base": "base.html"
     },
     "Coverage": {
       "template-base": "ex.html"
     },
     "OperationDefinition": {
-      "template-base": "op.html"
+      "template-base": "base.html"
     },
     "OperationOutcome": {
       "template-base": "ex.html"
@@ -50,7 +50,7 @@
       "template-base": "base.html"
     },
     "ValueSet": {
-      "template-base": "vs.html"
+      "template-base": "base.html"
     }
   },
   "dependencyList": [
