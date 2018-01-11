@@ -20,6 +20,14 @@ The following data-elements are mandatory (i.e data MUST be present).
 1. a list of participants and their individual statuses (e.g., the patient will be there)
 1. the times that were requested for this appointment
 
+**The system [Must Support]({{site.data.fhir.uscore}}guidance.html#must-support) if available:**
+
+1. An Appointment resource ID
+1. A visit type
+1. Specialty
+1. Appointment type
+1. Status reason
+
 **Additional Profile specific implementation guidance:**
 
  - The [Scheduling State Diagram](state-diagram.html) SHOULD be referenced to when considering the statuses of the scheduling resources during the scheduling workflow.
@@ -29,3 +37,4 @@ The following data-elements are mandatory (i.e data MUST be present).
 - [Proposed Appt 1](Appointment-proposed-appt1.html)
 - [Proposed Appt 2](Appointment-proposed-appt2.html)
 - [Proposed Appt 3](Appointment-proposed-appt3.html)
+-proposed-appt3.html)

@@ -154,13 +154,13 @@
       "base": "CodeSystem-visit-type.html",
       "source": "codesystem-visit-type.xml"
     },
-    "ConceptMap/visit-appt-map": {
-      "base": "ConceptMap-visit-appt-map.html",
+    "ConceptMap/visit-snomed-map": {
+      "base": "ConceptMap-visit-snomed-map.html",
       "source": "conceptmap-visit-appt.xml"
     },
-    "ConceptMap/visit-service-map": {
-      "base": "ConceptMap-visit-service-map.html",
-      "source": "conceptmap-visit-service.xml"
+    "ConceptMap/visit-appt-map": {
+      "base": "ConceptMap-visit-appt-map.html",
+      "source": "conceptmap-visit-snomed.xml"
     },
     "Coverage/argo-sch-1": {
       "base": "Coverage-argo-sch-1.html",
@@ -198,6 +198,10 @@
       "base": "Practitioner-dr-y.html",
       "source": "practitioner-1.xml"
     },
+    "StructureDefinition/prefetch-slot": {
+      "base": "StructureDefinition-prefetch-slot.html",
+      "defns": "StructureDefinition-prefetch-slot-definitions.html"
+    },
     "StructureDefinition/appt-output": {
       "base": "StructureDefinition-appt-output.html",
       "defns": "StructureDefinition-appt-output-definitions.html"
@@ -218,10 +222,6 @@
     "ValueSet/appt-type": {
       "base": "ValueSet-appt-type.html",
       "source": "valueset-appt-type.xml"
-    },
-    "ValueSet/service": {
-      "base": "ValueSet-service.html",
-      "source": "valueset-service.xml"
     },
     "ValueSet/specialty": {
       "base": "ValueSet-specialty.html",
@@ -244,7 +244,8 @@
   ],
   "spreadsheets": [
     "appt-out-spreadsheet.xml",
-    "argo-coverage-spreadsheet.xml"
+    "argo-coverage-spreadsheet.xml",
+    "prefetch-slot-spreadsheet.xml"
   ],
   "status": "draft",
   "structuremaps": [

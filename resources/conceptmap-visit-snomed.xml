@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ConceptMap xmlns:xhtml="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://hl7.org/fhir file:///C:/Users/Eric/Documents/HL7/FHIR/BUILD_EDIT_FILES/fhir-all-xsd/conceptmap.xsd" xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<id value="visit-service-map"/>
-	<url value="http://fhir.org/guides/argonaut-scheduling/ConceptMap/visit-service-map"/>
-	<name value="Argonaut Scheduiing Visit Type to Service Type Mapping"/>
+	<id value="visit-snomed-map"/>
+	<url value="http://fhir.org/guides/argonaut-scheduling/ConceptMap/visit-snomed-map"/>
+	<name value="Argonaut Scheduiing Visit Type to SNOMED CT Mapping"/>
 	<status value="draft"/>
 	<date value="2017-10-30T18:49:44.331-07:00"/>
 	<publisher value="Argonaut Project"/>
-	<description value="The source concepts are Argonaut Visit Types which are a prioritized valueset of the most common appointment types for scheduling and have been identified as the baseline use cases for the  Argonaut scheduling Implementation Guide.   The Visit types are mapped to the target concepts from the Argonaut Service Types Valueset in order to align with the FHIR Appointment, Schedule and Slot resources."/>
+	<description value="The source concepts are Argonaut Visit Types which are a prioritized valueset of the most common appointment types for scheduling and have been identified as the baseline use cases for the  Argonaut scheduling Implementation Guide.   The Visit types are mapped to the target concepts from [SNOMED CT](http://snomed.info/sct)."/>
 	<sourceUri value="http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type"/>
-	<targetUri value="http://fhir.org/guides/argonaut-scheduling/ValueSet/service"/>
 	<group>
 		<source value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
 		<target value="http://snomed.info/sct"/>

@@ -26,6 +26,7 @@
   <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
 	<link href="assets/css/jquery-ui.css" rel="stylesheet"/>
 
+
   <!-- Favicons -->
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
@@ -208,7 +209,7 @@
       /
       <a class="breadcrumb-item" href="profiles.html">Profiles</a>
       /
-      <span class="breadcrumb-item active">ConceptMap-visit-service-map</span>
+      <span class="breadcrumb-item active">StructureDefinition-prefetch-slot-mappings</span>
       
       
       
@@ -231,30 +232,30 @@
 	<li class="active"><a href="#">Narrative Content</a></li>
 
 <!--
-{ % if ConceptMap == "StructureDefinition"  % }
+{ % if StructureDefinition == "StructureDefinition"  % }
 	{ % if content == "definitions"  % }
 		<li class="active"><a href="#">Detailed Descriptions</a></li>
 	{ % else % }
-		<li><a href="ConceptMap-visit-service-map-definitions.html">Detailed Descriptions</a></li>
+		<li><a href="StructureDefinition-prefetch-slot-definitions.html">Detailed Descriptions</a></li>
 	{ % endif % }
 	{ % if content == "mappings" % }
 		<li class="active"><a href="#">Mappings</a></li>
 	{ % else % }
-		<li><a href="ConceptMap-visit-service-map-mappings.html">Mappings</a></li>
+		<li><a href="StructureDefinition-prefetch-slot-mappings.html">Mappings</a></li>
 	{ % endif % }
 { % endif % }
 -->
 
-<li><a href="ConceptMap-visit-service-map.xml.html">XML</a></li>
+<li><a href="StructureDefinition-prefetch-slot.xml.html">XML</a></li>
 
 
-	<li><a href="ConceptMap-visit-service-map.json.html">JSON</a></li>
+	<li><a href="StructureDefinition-prefetch-slot.json.html">JSON</a></li>
 
 <!--
 { % if content == "turtle" % }
 	<li class="active"><a href="#">Turtle</a></li>
 { % else % }
-	<li><a href="ConceptMap-visit-service-map.ttl.html">Turtle</a></li>
+	<li><a href="StructureDefinition-prefetch-slot.ttl.html">Turtle</a></li>
 { % endif % }
 -->
 </ul>
@@ -264,30 +265,37 @@
   <!-- ============CONTENT CONTENT=============== -->
 
 
-<!-- ig template for many conformance resource html pages  ('base' in definitions file)  can not be used for conformance resources that have more that a single base template. e.g.,  sd since there are mapping and definitions templates for it as well  they need to be split out into 3 separate templates -->
+<!-- ============CONTENT CONTENT=============== -->
 
-<!-- ============ CONTENT CONTENT=============== -->
+<h3>Mappings for the StructureDefinition-prefetch-slot Profile.</h3>
 
+<a name="rim"> </a><h3>Mappings for RIM Mapping (http://hl7.org/v3)</h3><table class="grid">
+ <tr><td colspan="3"><b>Argonaut Prefetch Slot Profile</b></td></tr>
+ <tr><td>Slot</td><td>Entity. Role, or Act</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;text</td><td>Act.text?</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;contained</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
+</table>
+<a name="ical"> </a><h3>Mappings for iCalendar (http://www.ietf.org/rfc/rfc2445.txt)</h3><table class="grid">
+ <tr><td colspan="3"><b>Argonaut Prefetch Slot Profile</b></td></tr>
+ <tr><td>Slot</td><td>(refer to the Availability resource for the header mapping details)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>FREEBUSY;FBTYPE=(freeBusyType):19980314T233000Z/19980315T003000Z If the freeBusyType is BUSY, then this value can be excluded</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;start</td><td>FREEBUSY;FBTYPE=FREE:(start)/19980315T003000Z If the freeBusyType is BUSY, then this value can be excluded</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;end</td><td>FREEBUSY:19980314T233000Z/(end) If the freeBusyType is BUSY, then this value can be excluded (as shown)</td> </tr>
+</table>
+<a name="w5"> </a><h3>Mappings for W5 Mapping (http://hl7.org/fhir/w5)</h3><table class="grid">
+ <tr><td colspan="3"><b>Argonaut Prefetch Slot Profile</b></td></tr>
+ <tr><td>Slot</td><td>workflow.scheduling</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>id</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;serviceCategory</td><td>class</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;serviceType</td><td>class</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;specialty</td><td>class</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;appointmentType</td><td>class</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;start</td><td>when.planned</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;end</td><td>when.planned</td> </tr>
+</table>
 
-<!-- ============CodeSystem ConceptMap CapabilityStatement CONTENT CONTENT=============== -->
-
-  <h2>ConceptMap: visit-service-map</h2>
-
-  <div xmlns="http://www.w3.org/1999/xhtml"><h2>Argonaut Scheduiing Visit Type to Service Type Mapping (http://fhir.org/guides/argonaut-scheduling/ConceptMap/visit-service-map)</h2><p>Mapping from <a href="ValueSet-visit-type.html">http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type</a> to <a href="ValueSet-service.html">http://fhir.org/guides/argonaut-scheduling/ValueSet/service</a></p><p>DRAFT. Published on Oct 30, 2017 6:49:44 PM by Argonaut Project. </p><div><p>The source concepts are Argonaut Visit Types which are a prioritized valueset of the most common appointment types for scheduling and have been identified as the baseline use cases for the  Argonaut scheduling Implementation Guide.   The Visit types are mapped to the target concepts from the Argonaut Service Types Valueset in order to align with the FHIR Appointment, Schedule and Slot resources.</p>
-</div><br/><table class="grid"><tr><td><b>Source Code</b></td><td><b>Equivalence</b></td><td><b>Destination Code</b></td><td><b>Comment</b></td></tr><tr><td>breast-imaging</td><td>wider</td><td>1310126000</td><td>Target concept may include more than mammography</td></tr><tr><td>consult (CONSULTATION)</td><td>equivalent</td><td>11429006</td><td/></tr><tr><td>ct (COMPUTED TOMOGRAPHY SCAN(CT))</td><td>equivalent</td><td>310128004</td><td/></tr><tr><td>dental</td><td>equivalent</td><td>3671000175100</td><td/></tr><tr><td>dxa (DUAL-ENERGY X-RAY ABSORPTIOMETRY(DXA))</td><td>equivalent</td><td>241686001</td><td/></tr><tr><td>echo (ECHOCARDIOGRAPHY(ECHO))</td><td>equivalent</td><td>310169008</td><td/></tr><tr><td>echo-stresstest (ECHOCARDIOGRAPHY(ECHO) STRESS TEST)</td><td>equivalent</td><td>433233004</td><td/></tr><tr><td>ed-followup (EDUCATION FOLLOW UP)</td><td>wider</td><td>409073007</td><td>Target concept not constrained to follow up temporal context</td></tr><tr><td>eeg (ELECTROENCEPHALOGRAPHY(EEG))</td><td>equivalent</td><td>54550000</td><td/></tr><tr><td>egd (ESOPHAGOGASTRODUODENOSCOPY(EGD))</td><td>equivalent</td><td>310030000</td><td/></tr><tr><td>ekg (ELECTROCARDIOGRAM(EKG))</td><td>equivalent</td><td>29303009</td><td/></tr><tr><td>evaluation</td><td>equivalent</td><td>386053000</td><td/></tr><tr><td>flu-shot-clinic (INFLUENZA VACCINATION CLINIC)</td><td>wider</td><td>86198006</td><td>Target concept not constrained to the context of a vaccine clinic'</td></tr><tr><td>fluoroscopy</td><td>equivalent</td><td>44491008</td><td/></tr><tr><td>follow-up</td><td>equivalent</td><td>185389009</td><td/></tr><tr><td>home-health (HOME HEALTH VISIT)</td><td>equivalent</td><td>439708006</td><td/></tr><tr><td>injection</td><td>equivalent</td><td>59108006</td><td/></tr><tr><td>inter-rad (INTERVENTIONAL RADIOLOGY)</td><td>equivalent</td><td>708174004</td><td/></tr><tr><td>lab (LABORATORY TESTS)</td><td>equivalent</td><td>708184003</td><td/></tr><tr><td>minor-surgery</td><td>narrower</td><td>711580002</td><td>The target restricts to ambulatory context</td></tr><tr><td>mri (MAGNETIC RESONANCE IMAGING(MRI))</td><td>equivalent</td><td>310127009</td><td/></tr><tr><td>new-patient</td><td>equivalent</td><td>185387006</td><td/></tr><tr><td>nuc-med (NUCLEAR MEDICINE)</td><td>equivalent</td><td>310058008</td><td/></tr><tr><td>occup-therapy (OCCUPATIONAL THERAPY)</td><td>equivalent</td><td>310093001</td><td/></tr><tr><td>office-visit</td><td>equivalent</td><td>11429006</td><td>Proposing that the US term 'office visit' is synonomous with the UK term 'consultation'</td></tr><tr><td>physical</td><td>equivalent</td><td>5880005</td><td/></tr><tr><td>post-op (POST-OPERATIVE(POST-OP))</td><td>equivalent</td><td>439740005</td><td/></tr><tr><td>pre-admit-testing (PRE-ADMISSION TESTING VISIT)</td><td>wider</td><td>406153003</td><td>Target concept in not constrained to testing</td></tr><tr><td>pre-op (PRE-OPERATIVE(PRE-OP))</td><td>equivalent</td><td>133858001</td><td/></tr><tr><td>procedure</td><td>equivalent</td><td>71388002</td><td/></tr><tr><td>same-day</td><td>inexact</td><td>11429006</td><td>Mapping assumes the source concept is a same-day office visit vs  same day testing or some other more specific service</td></tr><tr><td>stress-test</td><td>equivalent</td><td>76746007</td><td/></tr><tr><td>surgery</td><td>equivalent</td><td>310138009</td><td/></tr><tr><td>treatment</td><td>inexact</td><td>77132007</td><td>Assuming Treatment means 'with intent to cure'  vs 'rehabilitation'</td></tr><tr><td>ultrasound</td><td>equivalent</td><td>310169008</td><td/></tr><tr><td>urgent</td><td>inexact</td><td>11429006</td><td>Mapping assumes the source concept is an urgent office visit vs  urgent  testing or some other more specific service</td></tr><tr><td>vaccine (VACCINATION)</td><td>equivalent</td><td>127785005</td><td/></tr><tr><td>vision</td><td>equivalent</td><td>310160007</td><td/></tr><tr><td>walk-in</td><td>inexact</td><td>11429006</td><td>Mapping assumes the source concept is a walk in office visit vs walk in testing or some other more specific service</td></tr><tr><td>well-child</td><td>equivalent</td><td>410620009</td><td/></tr><tr><td>x-ray</td><td>equivalent</td><td>310125001</td><td/></tr></table></div>
-  <!-- ============CodeSystem ConceptMap CapabilityStatement CONTENT CONTENT=============== -->
-
-
-
-
-<!-- simple format links
-<p>
-Formats: <a href="ConceptMap-visit-service-map.html">Narrative</a>, <a href="ConceptMap-visit-service-map.xml.html">XML</a>, <a href="ConceptMap-visit-service-map.json.html">JSON</a>, <a href="ConceptMap-visit-service-map.ttl.html">Turtle</a>
-</p>
--->
-
-
-  <!-- ==============END CONTENT END CONTENT=================== -->
 
 
 
@@ -318,7 +326,7 @@ Formats: <a href="ConceptMap-visit-service-map.html">Narrative</a>, <a href="Con
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Wed, Jan 10, 2018 14:34-0800. |
+            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Thu, Jan 11, 2018 10:00-0800. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/STU3license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

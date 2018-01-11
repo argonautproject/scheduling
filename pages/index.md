@@ -17,7 +17,7 @@ source pages/\_include/{{page.md_filename}}.md  file
 
 ### Introduction
 
-The [Argonaut Scheduling Project](#.html) is a vendor agnostic specification providing FHIR RESTful APIs and guidance for access to and booking of appointments for patients by both patient and practitioner end users. This specification is based on [FHIR Version 3.0.1]({{site.data.fhir.path}}) and specifically the [Scheduling and Appointment resources]({{site.data.fhir.path}}/administration-module.html#sched).
+The [Argonaut](http://argonautwiki.hl7.org/) Scheduling Project(#.html) is a vendor agnostic specification providing FHIR RESTful APIs and guidance for access to and booking of appointments for patients by both patient and practitioner end users. This specification is based on [FHIR Version 3.0.1]({{site.data.fhir.path}}) and specifically the [Scheduling and Appointment resources]({{site.data.fhir.path}}/administration-module.html#sched).
 
 These requirements were developed and defined by the [Argonaut](http://argonautwiki.hl7.org) pilot implementations.
 

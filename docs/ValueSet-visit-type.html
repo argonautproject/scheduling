@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
 	<link rel="stylesheet" href="assets/css/jquery-ui.css"/>
 
+
     <!-- Favicons -->
   <link sizes="144x144" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
   <link sizes="114x114" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
@@ -265,15 +266,18 @@
   <table class="grid">
  <tbody><tr><td>Defining URL:</td><td>http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type</td></tr>
  <tr><td>Name:</td><td>Argonaut Visit Types</td></tr>
- <tr><td>Definition:</td><td><p><a name="1bb9a958-67ba-4c20-9de8-8373527e63b0">​</a>The Argonaut Visit Types are a prioritized valueset of the most common 'business types' for scheduling and have been identified as the baseline use cases for the  Argonaut scheduling Implementation Guide.  This is intended to facilitates implementation of the IG by provide a common starting point for interoperability.  The Visit types can be extended by implementers to meet there use cases.  In order to align with the FHIR Appointment, Schedule and Slot resources, these concepts are mapped to the <a href="http://hl7.org/fhir/STU3ConceptMap-visit-appt-map.html">Argonaut Appointment Types</a> and <a href="http://hl7.org/fhir/STU3ConceptMap-visit-service-map.html">Argonaut Scheduling Services</a> valuesets.</p>
+ <tr><td>Definition:</td><td><p><a name="76473816-a6b9-4fa6-bb49-e3cd32dac366">​</a>The Argonaut Visit Types are a prioritized valueset of the most common 'business types' for scheduling and have been identified as the baseline use cases for the  Argonaut scheduling Implementation Guide.  This is intended to facilitates implementation of the IG by provide a common starting point for interoperability.  These concept are used in the Argonaut Appointment, Schedule and Slot resources.  The Visit types can be extended by implementers to meet there use cases.  In order to address overlap between <code>serviceType</code> and <code>appointmentType</code>, these concepts are mapped to the <a href="http://hl7.org/fhir/STU3ConceptMap-visit-appt-map.html">Argonaut Appointment Types</a>.  A mapping to <a href="http://hl7.org/fhir/STU3ConceptMap-visit-snomed-map.html">SNOMED CT </a> is also provided.</p>
 </td></tr>
  <tr><td>Source Resource</td><td><a href="ValueSet-visit-type.xml.html">XML</a> / <a href="ValueSet-visit-type.json.html">JSON</a> / <a href="ValueSet-visit-type.ttl.html">Turtle</a></td></tr>
 </tbody></table>
 
   
-<p>This value set is not used</p>
+<ul>
+ <li><a href="StructureDefinition-appt-output.html">Argonaut Appointment Output Profile</a></li>
+ <li><a href="StructureDefinition-prefetch-slot.html">Argonaut Prefetch Slot Profile</a></li>
+</ul>
 
-  <div xmlns="http://www.w3.org/1999/xhtml"><h2>Argonaut Visit Types</h2><div><p>The Argonaut Visit Types are a prioritized valueset of the most common 'business types' for scheduling and have been identified as the baseline use cases for the  Argonaut scheduling Implementation Guide.  This is intended to facilitates implementation of the IG by provide a common starting point for interoperability.  The Visit types can be extended by implementers to meet there use cases.  In order to align with the FHIR Appointment, Schedule and Slot resources, these concepts are mapped to the <a href="ConceptMap-visit-appt-map.html">Argonaut Appointment Types</a> and <a href="ConceptMap-visit-service-map.html">Argonaut Scheduling Services</a> valuesets.</p>
+  <div xmlns="http://www.w3.org/1999/xhtml"><h2>Argonaut Visit Types</h2><div><p>The Argonaut Visit Types are a prioritized valueset of the most common 'business types' for scheduling and have been identified as the baseline use cases for the  Argonaut scheduling Implementation Guide.  This is intended to facilitates implementation of the IG by provide a common starting point for interoperability.  These concept are used in the Argonaut Appointment, Schedule and Slot resources.  The Visit types can be extended by implementers to meet there use cases.  In order to address overlap between <code>serviceType</code> and <code>appointmentType</code>, these concepts are mapped to the <a href="ConceptMap-visit-appt-map.html">Argonaut Appointment Types</a>.  A mapping to <a href="ConceptMap-visit-snomed-map.html">SNOMED CT </a> is also provided.</p>
 </div><p>This value set includes codes from the following code systems:</p><ul><li>Include all codes defined in <a href="CodeSystem-visit-type.html"><code>http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type</code></a></li></ul></div>
 
   <h3>Expansion</h3>
@@ -345,7 +349,7 @@ Formats: <a href="ValueSet-visit-type.html">Narrative</a>, <a href="ValueSet-vis
   <div class="container">    <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Wed, Jan 10, 2018 14:34-0800. |
+            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Thu, Jan 11, 2018 10:00-0800. |
                <!-- <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a rel="license" style="color: #81BEF7" href="http://hl7.org/fhir/STU3license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a>
         

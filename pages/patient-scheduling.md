@@ -2,6 +2,7 @@
 title: Patient based Scheduling Use Cases
 layout: default
 active: quidance
+mycss: argo-sched.css
 ---
 
 <!-- TOC  the css styling for this is \pages\assets\css\project.css under 'markdown-toc'-->
@@ -47,7 +48,7 @@ This scenario is the same as 1a except a Service or Specialty instead of a speci
 
 {% include img.html img="diagrams/Slide28.png" caption="Figure 1: Patient Portal Scheduling for new or existing patient" %}
 
-### 1. Patient login
+###  Patient login
 {:.no_toc}
 
 Before a patient can begin, she must login in to the patient portal.  This step MAY include updating or confirmation of patient  and insurance coverage information.
@@ -59,7 +60,7 @@ The patient ID is returned or known. See the [Login and Trust](index.html#login-
 - Updates to patient demographic information MAY be included in the login step for some systems.  However the interactions to update this information are outside the scope of this specification
 - Updates to patient insurance coverage information are detailed in [Use Case 2 Step 4](#patient-registration-option-b) below
 
-### 2. Appointment Availability Discovery and Search
+###  Appointment Availability Discovery and Search
 {:.no_toc}
 
 This step is the key transaction for this scheduling Use case. It asks the questions: when to book?  It is dynamic and complex because of multiple dependencies.<!--(In contrast, a discovery operation - which is out of scope for this version - asks the question: what Service(/specialty/provider) to book?)-->
@@ -98,7 +99,7 @@ Using Both `GET` and `POST` Syntax the operation can be invoked as follows:
 {% capture my-include %}{% include appointment-find1a.md %}{% endcapture %}{{ my-include | markdownify }}
 <br />
 
-### 3. Optional Hold Appointment Operation
+###  Optional Hold Appointment Operation
 {:.no_toc}
 This operation puts to appointment in a hold status to temporarily prevent the appointment from being booked by another client.  This optional step may be needed to allow the end-user to complete additional steps such as end user data entry before the booking can be completed.
 
@@ -123,7 +124,7 @@ The following Argonaut Scheduling artifacts are used in this transaction:
 <br />
 
 
-### 4. Book appointment
+###  Book appointment
 {:.no_toc}
 The actual booking of the appointment is completed in this step and the scheduling step is completed.
 
@@ -177,13 +178,13 @@ In Scenario 2a and 2b we have introduced the complexities of a new patient and a
 
 {% include img.html img="diagrams/Slide29.png" caption="Figure 1: Open Scheduling for new or existing patient" %}
 
-### 1. Patient Registration Option A
+###  Patient Registration Option A
 {:.no_toc}
 
 For this scenario a new patient will need to be registered or an existing patient fetched prior to booking.  This MAY occur at this step or prior to booking. This step is discussed in detail in [step 4](#patient-registration-option-b) below.
 
 
-### 2. Appointment Availability Discovery and Search
+###  Appointment Availability Discovery and Search
 {:.no_toc}
 
 This step is the key transaction for this Scheduling Use Case. It asks the questions: when to book? It is dynamic and complex because of multiple dependencies.
@@ -192,7 +193,7 @@ This step is the key transaction for this Scheduling Use Case. It asks the quest
 
 This step is the same as described in [Scenario-1](#appointment-availability-discovery-and-search).
 
-### 3. Optional Hold Appointment Operation
+###  Optional Hold Appointment Operation
 {:.no_toc}
 
 This operation puts to appointment in a hold status to temporarily prevent the appointment from being booked by another client. This step is not optional if the patient was not registered in step 1 above. It is needed in order to register the patient prior to booking the appointment.
@@ -201,7 +202,7 @@ This operation puts to appointment in a hold status to temporarily prevent the a
 
 The details of this step are the same as described in [Scenario-1](#optional-hold-appointment-operation).
 
-### 4. Patient Registration Option B
+###  Patient Registration Option B
 {:.no_toc}
 
 A new patient will need to be registered or an existing patient fetched prior to actually booking the appointment.   This MAY occur at this step prior to booking the appointment or at the beginning of the workflow in step 1.  This step MAY include updating or confirmation of patient and insurance coverage information as well.
@@ -240,14 +241,25 @@ The following Argonaut Scheduling artifacts are used in this transaction:
 
 **Usage**
 
-{% capture my-include %}{% include argo-coverage-search.md %}{% endcapture %}{{ my-include | markdownify }}
+To update the existing insurance information or create it if it is new, The Client uses the standard FHIR RESTful [update and create API]({{site.data.fhir.path}}http.html) as shown:
+
+- update: `PUT [base]/Coverage/[id]`
+- create: `PUT or POST [base]/Coverage`
+
+​Note that the server MAY reject certain updates to the coverage information (for example, type of coverage) and SHOULD return an OperationOutcome explaining the reason. (see issue #47)
+
+Example
+
+~~~
+PUT [base]/Coverage/[id]....
+~~~
 
 
 <br />
 
 
 
-### 5. Book Appointment
+###  Book Appointment
 {:.no_toc}
 
 After the patient is registered the actual booking interaction can occur.
@@ -256,7 +268,7 @@ After the patient is registered the actual booking interaction can occur.
 
 After the patient is registered the actual booking interaction can occur.  This step is the same as described in [Scenario-1](#book-appointment).
 
-### 6. Patient Coverage Update Option C
+###  Patient Coverage Update Option C
 {:.no_toc}
 
 For some systems, updating or confirmation of insurance coverage information MAY occur at this step after booking. The Coverage interaction is discussed in detail in [step 4](#patient-registration-option-b) above.
@@ -298,14 +310,14 @@ In Scenario 3a and 3b we have introduced the complexities of a new patient and a
 
 Note that steps 6-9 are identical to Scenario 2 Steps 4-6.
 
-### 1. Share Business Rules
+###  Share Business Rules
 {:.no_toc}
 
 The EHR/Hospital shares the business rules and logic for creating an appointment for a particular service with the third-party application. For example, which assets are needed. This is typically an "out of band" transaction. A FHIR based transaction is out of scope for this IG.
 
 {% include img.html img="diagrams/Slide08.png" caption="Figure 1: Share Business Rules" %}
 
-### 2. Initial Load
+###  Initial Load
 {:.no_toc}
 
 The third-party application fetches the 'initial load' of open slots.  It may be repeated to periodically refresh the data. This query may `_include` the relevant actors and and schedules so the client application is able to apply its business rules to create valid FHIR Appointment resources for transacting with the FHIR Scheduler/EHR.  Occasionally the Client server may need to repeat this step to reset its information.
@@ -343,7 +355,7 @@ GET [base]/Slot?status=free&start=ge[date]&start=le[date]{&schedule.actor=Practi
 todo inline example
 ~~~
 
-### 3. Poll for updated slots
+###  Poll for updated slots
 {:.no_toc}
 
 After fetching the 'initial load' in step 2, the third-party application periodically polls for updated slots to keep the list of open slots current. The query would use the `_history` interaction to fetch only the slots that were either updated, deleted or created since the last query.  By reconciling the query results with its list of open slots, the Client application is able to synchronize its slots information with the FHIR Server.
@@ -373,13 +385,13 @@ Note that this operation *does not* contain any search parameters. The client mu
 todo inline example
 ~~~
 
-### 4. Patient Registration Option A
+###  Patient Registration Option A
 {:.no_toc}
 
 This step is identical to [Scenario 2 Step 1.](#patient-registration-option-a) above.
 
 
-### 5. Appointment Availability Discovery and Search
+###  Appointment Availability Discovery and Search
 {:.no_toc}
 
 Based on the shared business rules and user input, the client application server is able to create available appointments from the prefetched slot information and return them to the end user.  How this is done is application specific and out of scope for this guide.
@@ -388,22 +400,22 @@ Based on the shared business rules and user input, the client application server
 
 The FHIR RESTful based interactions are the same as described in [Scenario-1 Step 2.](#appointment-availability-discovery-and-search) with the key difference that the role of the FHIR Scheduler (EHR) is replaced by the Client Application Server.  Other non-FHIR based solutions are possible as well.
 
-### 6. Optional Hold Appointment Operation
+###  Optional Hold Appointment Operation
 {:.no_toc}
 
 This step is identical to [Scenario 2 Step 3](#optional-hold-appointment-operation-1) above..
 
-### 7. Patient Registration Option B
+###  Patient Registration Option B
 {:.no_toc}
 
 This step is identical to [Scenario 2 Step 4](#patient-registration-option-b) above.
 
-### 8. Book Appointment
+###  Book Appointment
 {:.no_toc}
 
 This step is identical to [Scenario 2 Step 5](#book-appointment-1) above.
 
-### 9. Patient Coverage Update Option C
+###  Patient Coverage Update Option C
 {:.no_toc}
 
 For some systems, updating or confirmation of insurance coverage information MAY occur at this step after booking. The Coverage interaction is discussed in detail in [Scenario 2 Step 4](#patient-registration-option-b) above.

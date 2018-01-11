@@ -23,6 +23,9 @@
   <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
 	<link rel="stylesheet" href="assets/css/jquery-ui.css"/>
 
+<link rel="stylesheet" href="assets/css/argo-sched.css"/>
+
+
     <!-- Favicons -->
   <link sizes="144x144" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
   <link sizes="114x114" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
@@ -273,7 +276,7 @@ page source: patient-scheduling.md
 <p></p>
 </div>
 
-<h3 id="patient-login" class="no_toc">1. Patient login</h3>
+<h3 id="patient-login" class="no_toc">Patient login</h3>
 
 <p>Before a patient can begin, she must login in to the patient portal.  This step MAY include updating or confirmation of patient  and insurance coverage information.</p>
 
@@ -297,7 +300,7 @@ page source: patient-scheduling.md
   <li>Updates to patient insurance coverage information are detailed in <a href="#patient-registration-option-b">Use Case 2 Step 4</a> below</li>
 </ul>
 
-<h3 id="appointment-availability-discovery-and-search" class="no_toc">2. Appointment Availability Discovery and Search</h3>
+<h3 id="appointment-availability-discovery-and-search" class="no_toc">Appointment Availability Discovery and Search</h3>
 
 <p>This step is the key transaction for this scheduling Use case. It asks the questions: when to book?  It is dynamic and complex because of multiple dependencies.  <!-- (In contrast, a discovery operation - which is out of scope for this version - asks the question: what Service(/specialty/provider) to book?) --></p>
 
@@ -425,7 +428,7 @@ page source: patient-scheduling.md
 
 <p><br/></p>
 
-<h3 id="optional-hold-appointment-operation" class="no_toc">3. Optional Hold Appointment Operation</h3>
+<h3 id="optional-hold-appointment-operation" class="no_toc">Optional Hold Appointment Operation</h3>
 <p>This operation puts to appointment in a hold status to temporarily prevent the appointment from being booked by another client.  This optional step may be needed to allow the end-user to complete additional steps such as end user data entry before the booking can be completed.</p>
 
   <!-- all this Bootstrap html for getting an image to fit nicely in text - 640 pix wide -->
@@ -507,7 +510,7 @@ page source: patient-scheduling.md
 
 <p><br/></p>
 
-<h3 id="book-appointment" class="no_toc">4. Book appointment</h3>
+<h3 id="book-appointment" class="no_toc">Book appointment</h3>
 <p>The actual booking of the appointment is completed in this step and the scheduling step is completed.</p>
 
   <!-- all this Bootstrap html for getting an image to fit nicely in text - 640 pix wide -->
@@ -688,11 +691,11 @@ page source: patient-scheduling.md
 <p></p>
 </div>
 
-<h3 id="patient-registration-option-a" class="no_toc">1. Patient Registration Option A</h3>
+<h3 id="patient-registration-option-a" class="no_toc">Patient Registration Option A</h3>
 
 <p>For this scenario a new patient will need to be registered or an existing patient fetched prior to booking.  This MAY occur at this step or prior to booking. This step is discussed in detail in <a href="#patient-registration-option-b">step 4</a> below.</p>
 
-<h3 id="appointment-availability-discovery-and-search-1" class="no_toc">2. Appointment Availability Discovery and Search</h3>
+<h3 id="appointment-availability-discovery-and-search-1" class="no_toc">Appointment Availability Discovery and Search</h3>
 
 <p>This step is the key transaction for this Scheduling Use Case. It asks the questions: when to book? It is dynamic and complex because of multiple dependencies.</p>
 
@@ -711,7 +714,7 @@ page source: patient-scheduling.md
 
 <p>This step is the same as described in <a href="#appointment-availability-discovery-and-search">Scenario-1</a>.</p>
 
-<h3 id="optional-hold-appointment-operation-1" class="no_toc">3. Optional Hold Appointment Operation</h3>
+<h3 id="optional-hold-appointment-operation-1" class="no_toc">Optional Hold Appointment Operation</h3>
 
 <p>This operation puts to appointment in a hold status to temporarily prevent the appointment from being booked by another client. This step is not optional if the patient was not registered in step 1 above. It is needed in order to register the patient prior to booking the appointment.</p>
 
@@ -730,7 +733,7 @@ page source: patient-scheduling.md
 
 <p>The details of this step are the same as described in <a href="#optional-hold-appointment-operation">Scenario-1</a>.</p>
 
-<h3 id="patient-registration-option-b" class="no_toc">4. Patient Registration Option B</h3>
+<h3 id="patient-registration-option-b" class="no_toc">Patient Registration Option B</h3>
 
 <p>A new patient will need to be registered or an existing patient fetched prior to actually booking the appointment.   This MAY occur at this step prior to booking the appointment or at the beginning of the workflow in step 1.  This step MAY include updating or confirmation of patient and insurance coverage information as well.</p>
 
@@ -778,27 +781,24 @@ page source: patient-scheduling.md
 
 <p><strong>Usage</strong></p>
 
-<p>\argo-coverage-search.md file</p>
-
-<p>To update the existing insurance information (or create it if it is new), The Client uses the standard FHIR RESTful <a href="http://hl7.org/fhir/STU3/http.html#update">update API</a> as shown:</p>
-
-<p><code class="highlighter-rouge">PUT [base]/Coverage/[id]</code></p>
+<p>To update the existing insurance information or create it if it is new, The Client uses the standard FHIR RESTful <a href="http://hl7.org/fhir/STU3http.html">update and create API</a> as shown:</p>
 
 <ul>
-  <li><a name="a47c5f76-b0ce-4a81-8f1a-71ad1ff25c32">​</a>Note that the server MAY reject certain updates to the coverage information (for example, type of coverage) and SHOULD return an <a href="http://hl7.org/fhir/STU3/operationoutcome.html">OperationOutcome</a> explaining the reason.<a href="../issues/47">Issue #47</a></li>
+  <li>update: <code class="highlighter-rouge">PUT [base]/Coverage/[id]</code></li>
+  <li>create: <code class="highlighter-rouge">PUT or POST [base]/Coverage</code></li>
 </ul>
 
-<h5 id="example">Example</h5>
+<p>​Note that the server MAY reject certain updates to the coverage information (for example, type of coverage) and SHOULD return an OperationOutcome explaining the reason. (see issue #47)</p>
+
+<p>Example</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>PUT [base]/Coverage/[id]....
-
 </code></pre>
 </div>
-<p><br/></p>
 
 <p><br/></p>
 
-<h3 id="book-appointment-1" class="no_toc">5. Book Appointment</h3>
+<h3 id="book-appointment-1" class="no_toc">Book Appointment</h3>
 
 <p>After the patient is registered the actual booking interaction can occur.</p>
 
@@ -817,7 +817,7 @@ page source: patient-scheduling.md
 
 <p>After the patient is registered the actual booking interaction can occur.  This step is the same as described in <a href="#book-appointment">Scenario-1</a>.</p>
 
-<h3 id="patient-coverage-update-option-c" class="no_toc">6. Patient Coverage Update Option C</h3>
+<h3 id="patient-coverage-update-option-c" class="no_toc">Patient Coverage Update Option C</h3>
 
 <p>For some systems, updating or confirmation of insurance coverage information MAY occur at this step after booking. The Coverage interaction is discussed in detail in <a href="#patient-registration-option-b">step 4</a> above.</p>
 
@@ -875,7 +875,7 @@ page source: patient-scheduling.md
 
 <p>Note that steps 6-9 are identical to Scenario 2 Steps 4-6.</p>
 
-<h3 id="share-business-rules" class="no_toc">1. Share Business Rules</h3>
+<h3 id="share-business-rules" class="no_toc">Share Business Rules</h3>
 
 <p>The EHR/Hospital shares the business rules and logic for creating an appointment for a particular service with the third-party application. For example, which assets are needed. This is typically an “out of band” transaction. A FHIR based transaction is out of scope for this IG.</p>
 
@@ -892,7 +892,7 @@ page source: patient-scheduling.md
 <p></p>
 </div>
 
-<h3 id="initial-load" class="no_toc">2. Initial Load</h3>
+<h3 id="initial-load" class="no_toc">Initial Load</h3>
 
 <p>The third-party application fetches the ‘initial load’ of open slots.  It may be repeated to periodically refresh the data. This query may <code class="highlighter-rouge">_include</code> the relevant actors and and schedules so the client application is able to apply its business rules to create valid FHIR Appointment resources for transacting with the FHIR Scheduler/EHR.  Occasionally the Client server may need to repeat this step to reset its information.</p>
 
@@ -939,7 +939,7 @@ page source: patient-scheduling.md
 </span></code></pre>
 </div>
 
-<h3 id="poll-for-updated-slots" class="no_toc">3. Poll for updated slots</h3>
+<h3 id="poll-for-updated-slots" class="no_toc">Poll for updated slots</h3>
 
 <p>After fetching the ‘initial load’ in step 2, the third-party application periodically polls for updated slots to keep the list of open slots current. The query would use the <code class="highlighter-rouge">_history</code> interaction to fetch only the slots that were either updated, deleted or created since the last query.  By reconciling the query results with its list of open slots, the Client application is able to synchronize its slots information with the FHIR Server.</p>
 
@@ -979,11 +979,11 @@ page source: patient-scheduling.md
 </span></code></pre>
 </div>
 
-<h3 id="patient-registration-option-a-1" class="no_toc">4. Patient Registration Option A</h3>
+<h3 id="patient-registration-option-a-1" class="no_toc">Patient Registration Option A</h3>
 
 <p>This step is identical to <a href="#patient-registration-option-a">Scenario 2 Step 1.</a> above.</p>
 
-<h3 id="appointment-availability-discovery-and-search-2" class="no_toc">5. Appointment Availability Discovery and Search</h3>
+<h3 id="appointment-availability-discovery-and-search-2" class="no_toc">Appointment Availability Discovery and Search</h3>
 
 <p>Based on the shared business rules and user input, the client application server is able to create available appointments from the prefetched slot information and return them to the end user.  How this is done is application specific and out of scope for this guide.</p>
 
@@ -1002,19 +1002,19 @@ page source: patient-scheduling.md
 
 <p>The FHIR RESTful based interactions are the same as described in <a href="#appointment-availability-discovery-and-search">Scenario-1 Step 2.</a> with the key difference that the role of the FHIR Scheduler (EHR) is replaced by the Client Application Server.  Other non-FHIR based solutions are possible as well.</p>
 
-<h3 id="optional-hold-appointment-operation-2" class="no_toc">6. Optional Hold Appointment Operation</h3>
+<h3 id="optional-hold-appointment-operation-2" class="no_toc">Optional Hold Appointment Operation</h3>
 
 <p>This step is identical to <a href="#optional-hold-appointment-operation-1">Scenario 2 Step 3</a> above..</p>
 
-<h3 id="patient-registration-option-b-1" class="no_toc">7. Patient Registration Option B</h3>
+<h3 id="patient-registration-option-b-1" class="no_toc">Patient Registration Option B</h3>
 
 <p>This step is identical to <a href="#patient-registration-option-b">Scenario 2 Step 4</a> above.</p>
 
-<h3 id="book-appointment-2" class="no_toc">8. Book Appointment</h3>
+<h3 id="book-appointment-2" class="no_toc">Book Appointment</h3>
 
 <p>This step is identical to <a href="#book-appointment-1">Scenario 2 Step 5</a> above.</p>
 
-<h3 id="patient-coverage-update-option-c-1" class="no_toc">9. Patient Coverage Update Option C</h3>
+<h3 id="patient-coverage-update-option-c-1" class="no_toc">Patient Coverage Update Option C</h3>
 
 <p>For some systems, updating or confirmation of insurance coverage information MAY occur at this step after booking. The Coverage interaction is discussed in detail in <a href="#patient-registration-option-b">Scenario 2 Step 4</a> above.</p>
 
@@ -1046,7 +1046,7 @@ page source: patient-scheduling.md
     </ol>
   </li>
   <li>Note the Server SHALL declare support for JSON, XML, or FHIRPath Patch in the <a href="server-capstatement.html">CapabilityStatement</a></li>
-  <li><a name="b15975c2-7003-4e4d-92c8-f250df4f7647">​</a>not sure what server options are - discuss?  <a href="../issues/30">#30</a></li>
+  <li><a name="bd5b5f64-54af-44ea-a5ce-8ccb73fa9182">​</a>not sure what server options are - discuss?  <a href="../issues/30">#30</a></li>
 </ul>
 
 <div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="err">todo</span><span class="w"> </span><span class="err">inline</span><span class="w"> </span><span class="err">example</span><span class="w">
@@ -1132,7 +1132,7 @@ page source: patient-scheduling.md
   <div class="container">    <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Wed, Jan 10, 2018 14:34-0800. |
+            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Thu, Jan 11, 2018 10:00-0800. |
                <!-- <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a rel="license" style="color: #81BEF7" href="http://hl7.org/fhir/STU3license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a>
         

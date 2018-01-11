@@ -1,4 +1,11 @@
 avail-bundle-search.md file
 
-    This is the search markdown file that gets inserted into the sd.html Quick Start section for explanation of the search requirements.
+Patient based Scheduling:
+
+- [Appointment Availability Discovery and Search](patient-scheduling.html#appointment-availability-discovery-and-search)
+- [Retrieving appointments](patient-scheduling.html#retrieving-appointments)
+
+Provider based Scheduling:
+
+...todo...
     

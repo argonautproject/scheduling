@@ -26,6 +26,7 @@
   <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
 	<link href="assets/css/jquery-ui.css" rel="stylesheet"/>
 
+
   <!-- Favicons -->
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
@@ -270,11 +271,9 @@
 
 <table class="dict">
   <tr><td colspan="2" class="structure"><a name="Appointment"> </a><b>Appointment</b></td></tr>
-  <tr><td>Definition</td><td><p>This is the output Appointment profile which is returned inside the Bundle resource as a result of the <em>Operation$find</em> operation.</p>
+  <tr><td>Definition</td><td><p>A booking of a healthcare event among patient(s), practitioner(s), related person(s) and/or device(s) for a specific date/time. This may result in one or more Encounter(s).</p>
 </td></tr>
   <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
-  <tr><td>Comments</td><td><p>blah.</p>
-</td></tr>
   <tr><td>Invariants</td><td><b>Defined on this element</b><br/>
 <b title="Formal Invariant Identifier">app-2</b>: Either start and end are specified, or neither (: start.empty() xor end.exists())<br/><b title="Formal Invariant Identifier">app-3</b>: Only proposed or cancelled appointments can be missing start/end dates (: (start.exists() and end.exists()) or (status in ('proposed' | 'cancelled')))<br/><b title="Formal Invariant Identifier">dom-1</b>: If the resource is contained in another resource, it SHALL NOT contain any narrative (: contained.text.empty())<br/><b title="Formal Invariant Identifier">dom-2</b>: If the resource is contained in another resource, it SHALL NOT contain nested Resources (: contained.contained.empty())<br/><b title="Formal Invariant Identifier">dom-3</b>: If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource (: contained.where(('#'+id in %resource.descendants().reference).not()).empty())<br/><b title="Formal Invariant Identifier">dom-4</b>: If a resource is contained in another resource, it SHALL NOT have a meta.versionId or a meta.lastUpdated (: contained.meta.versionId.empty() and contained.meta.lastUpdated.empty())</td></tr>
   <tr><td colspan="2" class="structure"><a name="Appointment.id"> </a><b>Appointment.id</b></td></tr>
@@ -282,6 +281,7 @@
 </td></tr>
   <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
   <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#id">id</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#mustSupport">Must Support</a></td><td>true</td></tr>
   <tr><td>Comments</td><td><p>The only time that a resource does not have an id is when it is being submitted to the server using a create operation.</p>
 </td></tr>
   <tr><td colspan="2" class="structure"><a name="Appointment.meta"> </a><b>Appointment.meta</b></td></tr>
@@ -363,7 +363,6 @@
   <tr><td>Comments</td><td><p>If the Appointment's status is &quot;cancelled&quot; then all participants are expected to have their calendars released for the appointment period, and as such any Slots that were marked as BUSY can be re-set to FREE.</p>
 <p>This element is labeled as a modifier because the status contains the code entered-in-error that mark the Appointment as not currently valid.</p>
 </td></tr>
-  <tr><td>Fixed Value</td><td>proposed</td></tr>
   <tr><td colspan="2" class="structure"><a name="Appointment.serviceCategory"> </a><b>Appointment.serviceCategory</b></td></tr>
   <tr><td>Definition</td><td><p>A broad categorisation of the service that is to be performed during this appointment.</p>
 </td></tr>
@@ -374,7 +373,7 @@
   <tr><td>Definition</td><td><p>The specific service that is to be performed during this appointment.</p>
 </td></tr>
   <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
-  <tr><td><a href="http://hl7.org/fhir/STU3/terminologies.html">Binding</a></td><td>The codes SHALL be taken from <a href="ValueSet-service.html">Argonaut Scheduling Services</a>; other codes may be used where these codes are not suitable</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/terminologies.html">Binding</a></td><td>The codes SHALL be taken from <a href="ValueSet-visit-type.html">Argonaut Visit Types</a>; other codes may be used where these codes are not suitable</td></tr>
   <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
   <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#mustSupport">Must Support</a></td><td>true</td></tr>
   <tr><td colspan="2" class="structure"><a name="Appointment.specialty"> </a><b>Appointment.specialty</b></td></tr>
@@ -522,7 +521,6 @@
   <tr><td><a href="http://hl7.org/fhir/STU3/terminologies.html">Binding</a></td><td>The Participation status of an appointment.<br/>The codes SHALL be taken from <a href="http://hl7.org/fhir/STU3/valueset-participationstatus.html">ParticipationStatus</a></td></tr>
   <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#code">code</a></td></tr>
   <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#mustSupport">Must Support</a></td><td>true</td></tr>
-  <tr><td>Fixed Value</td><td>needs-action</td></tr>
   <tr><td colspan="2" class="structure"><a name="Appointment.requestedPeriod"> </a><b>Appointment.requestedPeriod</b></td></tr>
   <tr><td>Definition</td><td><p>A set of date ranges (potentially including times) that the appointment is preferred to be scheduled within. When using these values, the minutes duration should be provided to indicate the length of the appointment to fill and populate the start/end times for the actual allocated time.</p>
 </td></tr>
@@ -565,7 +563,7 @@
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Wed, Jan 10, 2018 14:34-0800. |
+            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Thu, Jan 11, 2018 10:00-0800. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/STU3license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

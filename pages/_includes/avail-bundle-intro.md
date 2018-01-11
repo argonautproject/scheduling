@@ -1,20 +1,10 @@
 avail-bundle-intro.md file
 
-    This is the introduction markdown file that gets inserted into the sd.html template.
+This Appointment Bundle profile sets the minimum expectations for the Bundle resource which is returned as a result of the `$find` operation and when fetching appointments.
 
-    This profile sets minimum expectations for blah blah blah
+**Additional Profile specific implementation guidance:**
 
-    ##### Mandatory Data Elements and Terminology
-
-    The following data-elements are mandatory (i.e data MUST be present). blah blah blah
-
-    **must have:**
-
-    1. blah
-    1. blah
-    1. blah
-
-    **Additional Profile specific implementation guidance:**
+- None
 
 #### Examples
 

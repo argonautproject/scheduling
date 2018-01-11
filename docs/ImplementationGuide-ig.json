@@ -255,22 +255,22 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "ValueSet-service.html"
+              "valueUri": "ValueSet-appt-type.html"
             }
           ],
           "sourceReference": {
-            "reference": "ValueSet/service"
+            "reference": "ValueSet/appt-type"
           }
         },
         {
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "ValueSet-appt-type.html"
+              "valueUri": "StructureDefinition-prefetch-slot.html"
             }
           ],
           "sourceReference": {
-            "reference": "ValueSet/appt-type"
+            "reference": "StructureDefinition/prefetch-slot"
           }
         },
         {
@@ -321,11 +321,11 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "ConceptMap-visit-service-map.html"
+              "valueUri": "ConceptMap-visit-snomed-map.html"
             }
           ],
           "sourceReference": {
-            "reference": "ConceptMap/visit-service-map"
+            "reference": "ConceptMap/visit-snomed-map"
           }
         },
         {
@@ -438,6 +438,23 @@
           "name": "Argonaut Coverage Profile",
           "sourceReference": {
             "reference": "StructureDefinition/argo-coverage"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Argonaut Prefetch Slot Profile",
+      "resource": [
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "StructureDefinition-prefetch-slot.html"
+            }
+          ],
+          "name": "Argonaut Prefetch Slot Profile",
+          "sourceReference": {
+            "reference": "StructureDefinition/prefetch-slot"
           }
         }
       ]

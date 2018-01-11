@@ -191,18 +191,18 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="ValueSet-service.html"/>
-      </extension>
-      <sourceReference>
-        <reference value="ValueSet/service"/>
-      </sourceReference>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
         <valueUri value="ValueSet-appt-type.html"/>
       </extension>
       <sourceReference>
         <reference value="ValueSet/appt-type"/>
+      </sourceReference>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+        <valueUri value="StructureDefinition-prefetch-slot.html"/>
+      </extension>
+      <sourceReference>
+        <reference value="StructureDefinition/prefetch-slot"/>
       </sourceReference>
     </resource>
     <resource>
@@ -239,10 +239,10 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="ConceptMap-visit-service-map.html"/>
+        <valueUri value="ConceptMap-visit-snomed-map.html"/>
       </extension>
       <sourceReference>
-        <reference value="ConceptMap/visit-service-map"/>
+        <reference value="ConceptMap/visit-snomed-map"/>
       </sourceReference>
     </resource>
     <resource>
@@ -324,6 +324,18 @@
       <name value="Argonaut Coverage Profile"/>
       <sourceReference>
         <reference value="StructureDefinition/argo-coverage"/>
+      </sourceReference>
+    </resource>
+  </package>
+  <package>
+    <name value="Argonaut Prefetch Slot Profile"/>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+        <valueUri value="StructureDefinition-prefetch-slot.html"/>
+      </extension>
+      <name value="Argonaut Prefetch Slot Profile"/>
+      <sourceReference>
+        <reference value="StructureDefinition/prefetch-slot"/>
       </sourceReference>
     </resource>
   </package>

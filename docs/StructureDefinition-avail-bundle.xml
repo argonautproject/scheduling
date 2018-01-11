@@ -1232,7 +1232,6 @@
       <path value="Bundle.entry.resource"/>
       <short value="A resource in the bundle"/>
       <definition value="The Resources for the entry."/>
-      <comment value="blah."/>
       <min value="0"/>
       <max value="1"/>
       <base>

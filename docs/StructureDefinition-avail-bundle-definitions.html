@@ -26,6 +26,7 @@
   <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
 	<link href="assets/css/jquery-ui.css" rel="stylesheet"/>
 
+
   <!-- Favicons -->
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
@@ -635,8 +636,6 @@
   <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
   <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/appointment.html">Appointment</a>(<a href="StructureDefinition-appt-output.html" title="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/appt-output">Argonaut Appointment Output Profile</a>)</td></tr>
   <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#mustSupport">Must Support</a></td><td>true</td></tr>
-  <tr><td>Comments</td><td><p>blah.</p>
-</td></tr>
   <tr><td>Invariants</td><td><b>Defined on this element</b><br/>
 <b title="Formal Invariant Identifier">app-2</b>: Either start and end are specified, or neither (: start.empty() xor end.exists())<br/><b title="Formal Invariant Identifier">app-3</b>: Only proposed or cancelled appointments can be missing start/end dates (: (start.exists() and end.exists()) or (status in ('proposed' | 'cancelled')))<br/><b title="Formal Invariant Identifier">dom-1</b>: If the resource is contained in another resource, it SHALL NOT contain any narrative (: contained.text.empty())<br/><b title="Formal Invariant Identifier">dom-2</b>: If the resource is contained in another resource, it SHALL NOT contain nested Resources (: contained.contained.empty())<br/><b title="Formal Invariant Identifier">dom-3</b>: If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource (: contained.where(('#'+id in %resource.descendants().reference).not()).empty())<br/><b title="Formal Invariant Identifier">dom-4</b>: If a resource is contained in another resource, it SHALL NOT have a meta.versionId or a meta.lastUpdated (: contained.meta.versionId.empty() and contained.meta.lastUpdated.empty())</td></tr>
   <tr><td colspan="2" class="structure"><a name="Bundle.entry:appt-slice.search"> </a><a name="Bundle.entry.search"> </a><b>Bundle.entry.search</b></td></tr>
@@ -1070,7 +1069,7 @@
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Wed, Jan 10, 2018 14:34-0800. |
+            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Thu, Jan 11, 2018 10:00-0800. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/STU3license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

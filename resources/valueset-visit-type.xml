@@ -6,7 +6,7 @@
 	<name value="Argonaut Visit Types"/>
 	<status value="draft"/>
 	<date value="2017-07-30T19:40:10Z"/>
-	<description value="The Argonaut Visit Types are a prioritized valueset of the most common 'business types' for scheduling and have been identified as the baseline use cases for the  Argonaut scheduling Implementation Guide.  This is intended to facilitates implementation of the IG by provide a common starting point for interoperability.  The Visit types can be extended by implementers to meet there use cases.  In order to align with the FHIR Appointment, Schedule and Slot resources, these concepts are mapped to the [Argonaut Appointment Types](ConceptMap-visit-appt-map.html) and [Argonaut Scheduling Services](ConceptMap-visit-service-map.html) valuesets."/>
+	<description value="The Argonaut Visit Types are a prioritized valueset of the most common 'business types' for scheduling and have been identified as the baseline use cases for the  Argonaut scheduling Implementation Guide.  This is intended to facilitates implementation of the IG by provide a common starting point for interoperability.  These concept are used in the Argonaut Appointment, Schedule and Slot resources.  The Visit types can be extended by implementers to meet there use cases.  In order to address overlap between `serviceType` and `appointmentType`, these concepts are mapped to the [Argonaut Appointment Types](ConceptMap-visit-appt-map.html).  A mapping to [SNOMED CT ](ConceptMap-visit-snomed-map.html) is also provided."/>
 	<compose>
 		<include>
 			<system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>

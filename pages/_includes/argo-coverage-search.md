@@ -1,16 +1,8 @@
+Patient based Scheduling:
 
-\argo-coverage-search.md file
+- [Appointment Availability Discovery and Search](patient-scheduling.html#appointment-availability-discovery-and-search)
+- [Updating or creating Patient Coverage Information](patient-scheduling.html#patient-registration-option-b)
 
-To update the existing insurance information (or create it if it is new), The Client uses the standard FHIR RESTful [update API]({{site.data.fhir.path}}/http.html#update) as shown:
+Provider based Scheduling:
 
-   `PUT [base]/Coverage/[id]`
-
-- Note that the server MAY reject certain updates to the coverage information (for example, type of coverage) and SHOULD return an [OperationOutcome]({{site.data.fhir.path}}/operationoutcome.html) explaining the reason.[Issue #47](../issues/47)
-
-##### Example
-
-~~~
-PUT [base]/Coverage/[id]....
-
-~~~
-<br />
+...todo...

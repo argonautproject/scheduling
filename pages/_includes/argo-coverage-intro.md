@@ -1,22 +1,26 @@
 argo-coverage-intro.md file
 
-    This is the introduction markdown file that gets inserted into the sd.html template.
+This profile sets minimum expectations for Coverage resource to update or create patient coverage information for the use in scheduling appointments.
 
-    This profile sets minimum expectations for blah blah blah
+### Mandatory Data Elements
 
-    ##### Mandatory Data Elements and Terminology
+**Each Coverage must have:**
 
-    The following data-elements are mandatory (i.e data MUST be present). blah blah blah
+1. a status
+1. a payor
+1. a plan id and name
 
-    **must have:**
+**The system [Must Support]({{site.data.fhir.uscore}}guidance.html#must-support) if available:**
 
-    1. blah
-    1. blah
-    1. blah
+1. a Coverage resource ID
+1. a Subscriber ID
+1. a Subscriber (in case of dependent)
+1. type of coverage
+1. coverage period
 
 **Additional Profile specific implementation guidance:**
 
-1. The `Coverage.subscriber` element references a Patient resource directly or indirectly through the RelatedPerson resource. When the Patient Id is unknown:
+1. The `Coverage.subscriber` element references a Patient resource directly or indirectly through the RelatedPerson resource. If the Patient Id is unknown:
 
     - Option 1: Patient must be registered and Patient Id fetched before the Coverage interaction.
     - Option 2: Transmit Patient, Coverage and if needed RelatedPerson as a Bundle transaction following the Bundle [resource url rules]({{site.data.fhir.path}}/bundle.html#bundle-unique).

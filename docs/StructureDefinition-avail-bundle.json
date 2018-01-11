@@ -1498,7 +1498,6 @@
         "path": "Bundle.entry.resource",
         "short": "A resource in the bundle",
         "definition": "The Resources for the entry.",
-        "comment": "blah.",
         "min": 0,
         "max": "1",
         "base": {
