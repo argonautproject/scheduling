@@ -273,6 +273,17 @@
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "ValueSet-slot-bundle-type.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/ValueSet/slot-bundle-type>;
+         fhir:Reference.reference [ fhir:value "ValueSet/slot-bundle-type" ]
+       ]
+     ], [
+       fhir:index 22;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
          fhir:Extension.valueUri [ fhir:value "StructureDefinition-prefetch-slot.html" ]
        ];
        fhir:ImplementationGuide.package.resource.sourceReference [
@@ -280,7 +291,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/prefetch-slot" ]
        ]
      ], [
-       fhir:index 22;
+       fhir:index 23;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
@@ -291,7 +302,18 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/avail-bundle" ]
        ]
      ], [
-       fhir:index 23;
+       fhir:index 24;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "StructureDefinition-slot-bundle.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/StructureDefinition/slot-bundle>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/slot-bundle" ]
+       ]
+     ], [
+       fhir:index 25;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
@@ -302,7 +324,7 @@
          fhir:Reference.reference [ fhir:value "OperationDefinition/appointment-hold" ]
        ]
      ], [
-       fhir:index 24;
+       fhir:index 26;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
@@ -313,7 +335,7 @@
          fhir:Reference.reference [ fhir:value "OperationDefinition/appointment-find" ]
        ]
      ], [
-       fhir:index 25;
+       fhir:index 27;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
@@ -324,7 +346,7 @@
          fhir:Reference.reference [ fhir:value "OperationDefinition/appointment-book" ]
        ]
      ], [
-       fhir:index 26;
+       fhir:index 28;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
@@ -335,7 +357,7 @@
          fhir:Reference.reference [ fhir:value "ConceptMap/visit-snomed-map" ]
        ]
      ], [
-       fhir:index 27;
+       fhir:index 29;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
@@ -346,7 +368,7 @@
          fhir:Reference.reference [ fhir:value "ConceptMap/visit-appt-map" ]
        ]
      ], [
-       fhir:index 28;
+       fhir:index 30;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
@@ -357,7 +379,7 @@
          fhir:Reference.reference [ fhir:value "CodeSystem/visit-type" ]
        ]
      ], [
-       fhir:index 29;
+       fhir:index 31;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
@@ -368,7 +390,7 @@
          fhir:Reference.reference [ fhir:value "CodeSystem/status-reason" ]
        ]
      ], [
-       fhir:index 30;
+       fhir:index 32;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
@@ -379,7 +401,7 @@
          fhir:Reference.reference [ fhir:value "CodeSystem/appt-type" ]
        ]
      ], [
-       fhir:index 31;
+       fhir:index 33;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
@@ -390,7 +412,7 @@
          fhir:Reference.reference [ fhir:value "CapabilityStatement/server" ]
        ]
      ], [
-       fhir:index 32;
+       fhir:index 34;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
@@ -459,6 +481,38 @@
        fhir:ImplementationGuide.package.resource.sourceReference [
          fhir:link <http://fhir.org/guides/argonaut-scheduling/StructureDefinition/prefetch-slot>;
          fhir:Reference.reference [ fhir:value "StructureDefinition/prefetch-slot" ]
+       ]
+     ]
+  ], [
+     fhir:index 4;
+     fhir:ImplementationGuide.package.name [ fhir:value "Argonaut Appointment Output Bundle Profile" ];
+     fhir:ImplementationGuide.package.resource [
+       fhir:index 0;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "StructureDefinition-avail-bundle.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "Argonaut Appointment Output Bundle Profile" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/StructureDefinition/avail-bundle>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/avail-bundle" ]
+       ]
+     ]
+  ], [
+     fhir:index 5;
+     fhir:ImplementationGuide.package.name [ fhir:value "Argonaut Slot Bundle Profile" ];
+     fhir:ImplementationGuide.package.resource [
+       fhir:index 0;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "StructureDefinition-slot-bundle.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "Argonaut Slot Bundle Profile" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/StructureDefinition/slot-bundle>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/slot-bundle" ]
        ]
      ]
   ];

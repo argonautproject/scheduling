@@ -212,8 +212,11 @@
     },
     "StructureDefinition/avail-bundle": {
       "base": "StructureDefinition-avail-bundle.html",
-      "defns": "StructureDefinition-avail-bundle-definitions.html",
-      "source": "structuredefinition-avail-bundle.xml"
+      "defns": "StructureDefinition-avail-bundle-definitions.html"
+    },
+        "StructureDefinition/slot-bundle": {
+      "base": "StructureDefinition-slot-bundle.html",
+      "defns": "StructureDefinition-slot-bundle-definitions.html"
     },
     "StructureDefinition/extension-status-reason": {
       "base": "StructureDefinition-extension-status-reason.html",
@@ -234,6 +237,10 @@
     "ValueSet/visit-type": {
       "base": "ValueSet-visit-type.html",
       "source": "valueset-visit-type.xml"
+    },
+        "ValueSet/slot-bundle-type":{
+      "base": "ValueSet-slot-bundle-type.html",
+      "source": "valueset-slot-bundle-type.xml"
     }
   },
   "sct-edition": "http://snomed.info/sct/731000124108",
@@ -245,7 +252,9 @@
   "spreadsheets": [
     "appt-out-spreadsheet.xml",
     "argo-coverage-spreadsheet.xml",
-    "prefetch-slot-spreadsheet.xml"
+    "prefetch-slot-spreadsheet.xml",
+    "avail-bundle-out-spreadsheet.xml",
+     "slot-bundle-out-spreadsheet.xml"
   ],
   "status": "draft",
   "structuremaps": [

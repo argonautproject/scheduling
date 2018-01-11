@@ -1,29 +1,30 @@
 ﻿Argo-Scheduling : Validation Results
 =========================================
 
-err = 92, warn = 52, info = 370
-Generated Thu Jan 11 10:00:24 PST 2018. FHIR version 3.1.0 for 3.0.1
+err = 140, warn = 52, info = 424
+Generated Thu Jan 11 12:58:39 PST 2018. FHIR version 3.1.0 for 3.0.1
 
- Build Errors : 9 / 0
- /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/1a-avail-bundle : 3 / 33
- /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/2b-avail-bundle : 6 / 36
+ Build Errors : 5 / 0
+ /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/1a-avail-bundle : 11 / 62
+ /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/2b-avail-bundle : 14 / 68
  /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/coverage-example-1 : 0 / 0
  /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/coverage-example-2 : 2 / 8
  /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/operationoutcome-example : 0 / 0
  /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/patient-sch-example-1 : 0 / 20
  /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/patient-sch-example-2 : 0 / 19
  /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/practitioner-1 : 0 / 5
- /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/proposed-appt1 : 2 / 10
- /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/proposed-appt1a-1 : 1 / 9
- /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/proposed-appt1a-2 : 1 / 9
- /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/proposed-appt1a-3 : 1 / 9
- /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/proposed-appt2 : 2 / 10
- /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/proposed-appt2b-1 : 2 / 10
- /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/proposed-appt2b-2 : 2 / 10
- /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/proposed-appt2b-3 : 2 / 10
- /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/proposed-appt3 : 2 / 10
- /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/appt-out-spreadsheet : 0 / 0
- /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/argo-coverage-spreadsheet : 0 / 0
+ /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/proposed-appt1 : 2 / 6
+ /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/proposed-appt1a-1 : 1 / 5
+ /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/proposed-appt1a-2 : 1 / 5
+ /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/proposed-appt1a-3 : 1 / 5
+ /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/proposed-appt2 : 2 / 6
+ /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/proposed-appt2b-1 : 2 / 6
+ /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/proposed-appt2b-2 : 2 / 6
+ /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/proposed-appt2b-3 : 2 / 6
+ /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/proposed-appt3 : 2 / 6
+ /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/appt-out-spreadsheet : 0 / 1
+ /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/argo-coverage-spreadsheet : 0 / 1
+ /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/avail-bundle-out-spreadsheet : 3 / 0
  /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/capabilitystatement-client : 1 / 0
  /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/capabilitystatement-server : 1 / 0
  /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/codesystem-appt-type : 0 / 0
@@ -31,107 +32,181 @@ Generated Thu Jan 11 10:00:24 PST 2018. FHIR version 3.1.0 for 3.0.1
  /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/codesystem-visit-type : 1 / 1
  /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/conceptmap-visit-appt : 1 / 0
  /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/conceptmap-visit-snomed : 0 / 0
- /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/ig : 16 / 0
+ /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/ig : 18 / 0
  /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/operationdefinition-appointment-book : 0 / 0
  /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/operationdefinition-appointment-find6 : 0 / 1
  /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/operationdefinition-appointment-hold : 0 / 0
  /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/prefetch-slot-spreadsheet : 0 / 1
- /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/structuredefinition-avail-bundle : 0 / 0
+ /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/slot-bundle-out-spreadsheet : 3 / 0
  /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/valueset-appt-type : 0 / 0
+ /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/valueset-slot-bundle-type : 0 / 0
  /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/valueset-specialty : 0 / 0
  /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/valueset-status-reason : 0 / 0
  /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/valueset-visit-type : 0 / 0
 </table>
 == n/a ==
-ERROR: /Users/ehaas/Documents/FHIR/Argo-Scheduling/docs/patient-scheduling.html#/html/head/link/body/div/div/div/div/div/div/ul/li/a at Line 1052, column 53: The link '../issues/30' cannot be resolved
+ERROR: /Users/ehaas/Documents/FHIR/Argo-Scheduling/docs/patient-scheduling.html#/html/head/link/body/div/div/div/div/div/div/ul/li/a at Line 1056, column 53: The link '../issues/30' cannot be resolved
 ERROR: /Users/ehaas/Documents/FHIR/Argo-Scheduling/docs/provider-scheduling.html#/html/head/link/body/div/div/div/div/div/div/p/a at Line 440, column 61: The link '#scenario-1-scheduling-for-existing-patient-across-systems' cannot be resolved (valid targets: [page-content-wrapper, use-case-1-scheduling-across-systems, retrieving-providers-appointmentschedule, project-nav, scenario-1c-provider-schedules-a-procedure-on-behalf-of-patient-imaging-referral, markdown-toc-introduction, scenario-3-provider-schedules-an-follow-up-appointment-with-same-provider-on-behalf-of-patient-follow-up-appointment, segment-post-footer, markdown-toc-retrieving-patient-appointments, markdown-toc-use-case-2-scheduling-for-existing-patient-across-systems, scenario-1a-provider-schedules-an-appointment-with-a-patients-pcp-on-behalf-of-patient-discharge-follow-up, use-case-3-scheduling-for-existing-patient-within-a-system, scenario-1b-provider-schedules-an-appointment-with-a-provider-on-behalf-of-patient-dermatology-referral, scenario-2a-provider-schedules-a-follow-up-procedure-on-behalf-of-patient-imaging-referral, markdown-toc-retrieving-providers-appointmentschedule, stripe, segment-footer, logo, retrieving-patient-appointments, introduction, use-case-2-scheduling-for-existing-patient-across-systems, segment-header, hl7-logo, markdown-toc-use-case-3-scheduling-for-existing-patient-within-a-system, scenario-2a-provider-schedules-an-appointment-with-a-patients-pcp-on-behalf-of-patient-discharge-follow-up, cancelling-appointment, ig-status, markdown-toc, markdown-toc-use-case-1-scheduling-across-systems, segment-navbar, markdown-toc-cancelling-appointment])
 ERROR: /Users/ehaas/Documents/FHIR/Argo-Scheduling/docs/ValueSet-visit-type.html#/html/head/link/body/div/div/div/div/div/div/table/tbody/tr/td/p/a at Line 278, column 640: The link 'http://hl7.org/fhir/STU3ConceptMap-visit-appt-map.html' cannot be resolved
 ERROR: /Users/ehaas/Documents/FHIR/Argo-Scheduling/docs/ValueSet-visit-type.html#/html/head/link/body/div/div/div/div/div/div/table/tbody/tr/td/p/a at Line 278, column 751: The link 'http://hl7.org/fhir/STU3ConceptMap-visit-snomed-map.html' cannot be resolved
 ERROR: /Users/ehaas/Documents/FHIR/Argo-Scheduling/docs/ValueSet-appt-type.html#/html/head/link/body/div/div/div/div/div/div/table/tbody/tr/td/p/a at Line 278, column 198: The link 'http://hl7.org/fhir/STU3ConceptMap-visit-appt-map.html' cannot be resolved
-ERROR: /Users/ehaas/Documents/FHIR/Argo-Scheduling/docs/patient-scheduling.html#/html/head/link/body/div/div/div/div/div/div/ul/li/a at Line 1066, column 53: The link '../issues/30' cannot be resolved
-ERROR: /Users/ehaas/Documents/FHIR/Argo-Scheduling/docs/patient-scheduling.html#/html/head/link/body/div/div/div/div/div/div/ul/li/a at Line 1053, column 53: The link '../issues/30' cannot be resolved
-ERROR: /Users/ehaas/Documents/FHIR/Argo-Scheduling/docs/patient-scheduling.html#/html/head/link/body/div/div/div/div/div/div/ul/li/a at Line 1054, column 53: The link '../issues/30' cannot be resolved
-ERROR: /Users/ehaas/Documents/FHIR/Argo-Scheduling/docs/patient-scheduling.html#/html/head/link/body/div/div/div/div/div/div/ul/li/a at Line 1056, column 53: The link '../issues/30' cannot be resolved
 == /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/1a-avail-bundle.xml ==
+ERROR: Bundle/hal-dr-y-appts: Bundle.entry[1]: Could not match discriminator (resource) for slice Bundle.entry:apptslice in profile http://fhir.org/guides/argonaut-scheduling/StructureDefinition/avail-bundle - does not have fixed value, binding or existence assertions
+ERROR: Bundle/hal-dr-y-appts: Bundle.entry[2]: Could not match discriminator (resource) for slice Bundle.entry:apptslice in profile http://fhir.org/guides/argonaut-scheduling/StructureDefinition/avail-bundle - does not have fixed value, binding or existence assertions
+ERROR: Bundle/hal-dr-y-appts: Bundle.entry[3]: Could not match discriminator (resource) for slice Bundle.entry:apptslice in profile http://fhir.org/guides/argonaut-scheduling/StructureDefinition/avail-bundle - does not have fixed value, binding or existence assertions
+ERROR: Bundle/hal-dr-y-appts: Bundle.entry[4]: Could not match discriminator (resource) for slice Bundle.entry:apptslice in profile http://fhir.org/guides/argonaut-scheduling/StructureDefinition/avail-bundle - does not have fixed value, binding or existence assertions
+ERROR: Bundle/hal-dr-y-appts: Bundle.entry[1]: Could not match discriminator (resource) for slice Bundle.entry:ooslice in profile http://fhir.org/guides/argonaut-scheduling/StructureDefinition/avail-bundle - does not have fixed value, binding or existence assertions
+ERROR: Bundle/hal-dr-y-appts: Bundle.entry[2]: Could not match discriminator (resource) for slice Bundle.entry:ooslice in profile http://fhir.org/guides/argonaut-scheduling/StructureDefinition/avail-bundle - does not have fixed value, binding or existence assertions
+ERROR: Bundle/hal-dr-y-appts: Bundle.entry[3]: Could not match discriminator (resource) for slice Bundle.entry:ooslice in profile http://fhir.org/guides/argonaut-scheduling/StructureDefinition/avail-bundle - does not have fixed value, binding or existence assertions
+ERROR: Bundle/hal-dr-y-appts: Bundle.entry[4]: Could not match discriminator (resource) for slice Bundle.entry:ooslice in profile http://fhir.org/guides/argonaut-scheduling/StructureDefinition/avail-bundle - does not have fixed value, binding or existence assertions
 WARNING: Bundle/hal-dr-y-appts: Bundle.entry[1].resource.serviceType: None of the codes provided are in the value set http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type (http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type, and a code should come from this value set unless it has no suitable code) (codes = http://snomed.info/sct#11429006)
 ERROR: Bundle/hal-dr-y-appts: Bundle.entry[1].resource.serviceType.coding: null
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[1].resource.text: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[1].resource.status: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[1].resource.serviceType: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[1].resource.appointmentType: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[1].resource.start: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[1].resource.end: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[1].resource.participant[1]: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[1].resource.participant[2]: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[1].resource.requestedPeriod: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
 WARNING: Bundle/hal-dr-y-appts: Bundle.entry[2].resource.serviceType: None of the codes provided are in the value set http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type (http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type, and a code should come from this value set unless it has no suitable code) (codes = http://snomed.info/sct#11429006)
 ERROR: Bundle/hal-dr-y-appts: Bundle.entry[2].resource.serviceType.coding: null
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[2].resource.text: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[2].resource.status: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[2].resource.serviceType: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[2].resource.appointmentType: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[2].resource.start: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[2].resource.end: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[2].resource.participant[1]: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[2].resource.participant[2]: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[2].resource.requestedPeriod: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
 WARNING: Bundle/hal-dr-y-appts: Bundle.entry[3].resource.serviceType: None of the codes provided are in the value set http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type (http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type, and a code should come from this value set unless it has no suitable code) (codes = http://snomed.info/sct#11429006)
 ERROR: Bundle/hal-dr-y-appts: Bundle.entry[3].resource.serviceType.coding: null
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[3].resource.text: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[3].resource.status: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[3].resource.serviceType: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[3].resource.appointmentType: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[3].resource.start: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[3].resource.end: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[3].resource.participant[1]: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[3].resource.participant[2]: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[3].resource.requestedPeriod: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[4].resource.text: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[4].resource.issue: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
 INFORMATION: Bundle/hal-dr-y-appts: Bundle.id[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Bundle/hal-dr-y-appts: Bundle.meta[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[1].fullUrl[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
-INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[1].resource[1].id[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[1].resource[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[1].resource[1].meta[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[1].resource[1].text[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
-INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[1].resource[1].status[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[1].resource[1].participant[1].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
-INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[1].resource[1].participant[1].status[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[1].resource[1].participant[2].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
-INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[1].resource[1].participant[2].status[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[1].search[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[1].search[1].mode[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[2].fullUrl[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
-INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[2].resource[1].id[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[2].resource[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[2].resource[1].meta[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[2].resource[1].text[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
-INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[2].resource[1].status[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[2].resource[1].participant[1].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
-INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[2].resource[1].participant[1].status[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[2].resource[1].participant[2].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
-INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[2].resource[1].participant[2].status[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[2].search[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[2].search[1].mode[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[3].fullUrl[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
-INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[3].resource[1].id[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[3].resource[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[3].resource[1].meta[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[3].resource[1].text[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
-INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[3].resource[1].status[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[3].resource[1].participant[1].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
-INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[3].resource[1].participant[1].status[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[3].resource[1].participant[2].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
-INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[3].resource[1].participant[2].status[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[3].search[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[3].search[1].mode[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[4].fullUrl[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[4].resource[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[4].search[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/hal-dr-y-appts: Bundle.entry[4].search[1].mode[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 == /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/2b-avail-bundle.xml ==
+ERROR: Bundle/prefetch-derm-appts: Bundle.entry[1]: Could not match discriminator (resource) for slice Bundle.entry:apptslice in profile http://fhir.org/guides/argonaut-scheduling/StructureDefinition/avail-bundle - does not have fixed value, binding or existence assertions
+ERROR: Bundle/prefetch-derm-appts: Bundle.entry[2]: Could not match discriminator (resource) for slice Bundle.entry:apptslice in profile http://fhir.org/guides/argonaut-scheduling/StructureDefinition/avail-bundle - does not have fixed value, binding or existence assertions
+ERROR: Bundle/prefetch-derm-appts: Bundle.entry[3]: Could not match discriminator (resource) for slice Bundle.entry:apptslice in profile http://fhir.org/guides/argonaut-scheduling/StructureDefinition/avail-bundle - does not have fixed value, binding or existence assertions
+ERROR: Bundle/prefetch-derm-appts: Bundle.entry[4]: Could not match discriminator (resource) for slice Bundle.entry:apptslice in profile http://fhir.org/guides/argonaut-scheduling/StructureDefinition/avail-bundle - does not have fixed value, binding or existence assertions
+ERROR: Bundle/prefetch-derm-appts: Bundle.entry[1]: Could not match discriminator (resource) for slice Bundle.entry:ooslice in profile http://fhir.org/guides/argonaut-scheduling/StructureDefinition/avail-bundle - does not have fixed value, binding or existence assertions
+ERROR: Bundle/prefetch-derm-appts: Bundle.entry[2]: Could not match discriminator (resource) for slice Bundle.entry:ooslice in profile http://fhir.org/guides/argonaut-scheduling/StructureDefinition/avail-bundle - does not have fixed value, binding or existence assertions
+ERROR: Bundle/prefetch-derm-appts: Bundle.entry[3]: Could not match discriminator (resource) for slice Bundle.entry:ooslice in profile http://fhir.org/guides/argonaut-scheduling/StructureDefinition/avail-bundle - does not have fixed value, binding or existence assertions
+ERROR: Bundle/prefetch-derm-appts: Bundle.entry[4]: Could not match discriminator (resource) for slice Bundle.entry:ooslice in profile http://fhir.org/guides/argonaut-scheduling/StructureDefinition/avail-bundle - does not have fixed value, binding or existence assertions
 WARNING: Bundle/prefetch-derm-appts: Bundle.entry[1].resource.serviceType: None of the codes provided are in the value set http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type (http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type, and a code should come from this value set unless it has no suitable code) (codes = http://snomed.info/sct#11429006)
 ERROR: Bundle/prefetch-derm-appts: Bundle.entry[1].resource.serviceType.coding: null
 WARNING: Bundle/prefetch-derm-appts: Bundle.entry[1].resource.specialty: Could not confirm that the codes provided are in the value set http://fhir.org/guides/argonaut-scheduling/ValueSet/specialty and a code should come from this value set unless it has no suitable code (class = NOSERVICE)
 ERROR: Bundle/prefetch-derm-appts: Bundle.entry[1].resource.specialty.coding: null
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[1].resource.text: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[1].resource.status: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[1].resource.serviceType: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[1].resource.specialty: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[1].resource.appointmentType: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[1].resource.start: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[1].resource.end: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[1].resource.participant[1]: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[1].resource.participant[2]: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[1].resource.requestedPeriod: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
 WARNING: Bundle/prefetch-derm-appts: Bundle.entry[2].resource.serviceType: None of the codes provided are in the value set http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type (http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type, and a code should come from this value set unless it has no suitable code) (codes = http://snomed.info/sct#11429006)
 ERROR: Bundle/prefetch-derm-appts: Bundle.entry[2].resource.serviceType.coding: null
 WARNING: Bundle/prefetch-derm-appts: Bundle.entry[2].resource.specialty: Could not confirm that the codes provided are in the value set http://fhir.org/guides/argonaut-scheduling/ValueSet/specialty and a code should come from this value set unless it has no suitable code (class = NOSERVICE)
 ERROR: Bundle/prefetch-derm-appts: Bundle.entry[2].resource.specialty.coding: null
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[2].resource.text: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[2].resource.status: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[2].resource.serviceType: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[2].resource.specialty: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[2].resource.appointmentType: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[2].resource.start: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[2].resource.end: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[2].resource.participant[1]: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[2].resource.participant[2]: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[2].resource.requestedPeriod: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
 WARNING: Bundle/prefetch-derm-appts: Bundle.entry[3].resource.serviceType: None of the codes provided are in the value set http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type (http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type, and a code should come from this value set unless it has no suitable code) (codes = http://snomed.info/sct#11429006)
 ERROR: Bundle/prefetch-derm-appts: Bundle.entry[3].resource.serviceType.coding: null
 WARNING: Bundle/prefetch-derm-appts: Bundle.entry[3].resource.specialty: Could not confirm that the codes provided are in the value set http://fhir.org/guides/argonaut-scheduling/ValueSet/specialty and a code should come from this value set unless it has no suitable code (class = NOSERVICE)
 ERROR: Bundle/prefetch-derm-appts: Bundle.entry[3].resource.specialty.coding: null
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[3].resource.text: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[3].resource.status: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[3].resource.serviceType: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[3].resource.specialty: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[3].resource.appointmentType: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[3].resource.start: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[3].resource.end: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[3].resource.participant[1]: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[3].resource.participant[2]: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[3].resource.requestedPeriod: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[4].resource.text: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[4].resource.issue: Could not verify slice for profile http://hl7.org/fhir/StructureDefinition/Resource
 INFORMATION: Bundle/prefetch-derm-appts: Bundle.id[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Bundle/prefetch-derm-appts: Bundle.meta[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[1].fullUrl[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
-INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[1].resource[1].id[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[1].resource[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[1].resource[1].meta[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[1].resource[1].text[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
-INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[1].resource[1].status[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[1].resource[1].participant[1].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
-INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[1].resource[1].participant[1].status[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[1].resource[1].participant[2].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
-INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[1].resource[1].participant[2].status[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[1].search[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[1].search[1].mode[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[2].fullUrl[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
-INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[2].resource[1].id[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[2].resource[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[2].resource[1].meta[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[2].resource[1].text[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
-INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[2].resource[1].status[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[2].resource[1].participant[1].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
-INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[2].resource[1].participant[1].status[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[2].resource[1].participant[2].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
-INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[2].resource[1].participant[2].status[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[2].search[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[2].search[1].mode[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[3].fullUrl[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
-INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[3].resource[1].id[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[3].resource[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[3].resource[1].meta[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[3].resource[1].text[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
-INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[3].resource[1].status[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[3].resource[1].participant[1].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
-INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[3].resource[1].participant[1].status[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[3].resource[1].participant[2].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
-INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[3].resource[1].participant[2].status[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[3].search[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[3].search[1].mode[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[4].fullUrl[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[4].resource[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[4].search[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
+INFORMATION: Bundle/prefetch-derm-appts: Bundle.entry[4].search[1].mode[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 == /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/coverage-example-1.xml ==
 == /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/coverage-example-2.xml ==
 ERROR: Coverage/argo-sch-2: Coverage.contained.patient: Unable to resolve resource 'Patient/argo-sch-2'
@@ -197,114 +272,84 @@ WARNING: Appointment/proposed-appt1: Appointment.serviceType: None of the codes 
 ERROR: Appointment/proposed-appt1: Appointment.serviceType.coding: null
 WARNING: Appointment/proposed-appt1: Appointment.specialty: Could not confirm that the codes provided are in the value set http://fhir.org/guides/argonaut-scheduling/ValueSet/specialty and a code should come from this value set unless it has no suitable code (class = NOSERVICE)
 ERROR: Appointment/proposed-appt1: Appointment.specialty.coding: null
-INFORMATION: Appointment/proposed-appt1: Appointment.id[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Appointment/proposed-appt1: Appointment.meta[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Appointment/proposed-appt1: Appointment.text[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
-INFORMATION: Appointment/proposed-appt1: Appointment.status[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Appointment/proposed-appt1: Appointment.participant[1].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
-INFORMATION: Appointment/proposed-appt1: Appointment.participant[1].status[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Appointment/proposed-appt1: Appointment.participant[2].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
-INFORMATION: Appointment/proposed-appt1: Appointment.participant[2].status[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 == /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/proposed-appt1a-1.xml ==
 WARNING: Appointment/proposed-appt1a-1: Appointment.serviceType: None of the codes provided are in the value set http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type (http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type, and a code should come from this value set unless it has no suitable code) (codes = http://snomed.info/sct#11429006)
 ERROR: Appointment/proposed-appt1a-1: Appointment.serviceType.coding: null
-INFORMATION: Appointment/proposed-appt1a-1: Appointment.id[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Appointment/proposed-appt1a-1: Appointment.meta[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Appointment/proposed-appt1a-1: Appointment.text[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
-INFORMATION: Appointment/proposed-appt1a-1: Appointment.status[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Appointment/proposed-appt1a-1: Appointment.participant[1].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
-INFORMATION: Appointment/proposed-appt1a-1: Appointment.participant[1].status[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Appointment/proposed-appt1a-1: Appointment.participant[2].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
-INFORMATION: Appointment/proposed-appt1a-1: Appointment.participant[2].status[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 == /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/proposed-appt1a-2.xml ==
 WARNING: Appointment/proposed-appt1a-2: Appointment.serviceType: None of the codes provided are in the value set http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type (http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type, and a code should come from this value set unless it has no suitable code) (codes = http://snomed.info/sct#11429006)
 ERROR: Appointment/proposed-appt1a-2: Appointment.serviceType.coding: null
-INFORMATION: Appointment/proposed-appt1a-2: Appointment.id[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Appointment/proposed-appt1a-2: Appointment.meta[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Appointment/proposed-appt1a-2: Appointment.text[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
-INFORMATION: Appointment/proposed-appt1a-2: Appointment.status[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Appointment/proposed-appt1a-2: Appointment.participant[1].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
-INFORMATION: Appointment/proposed-appt1a-2: Appointment.participant[1].status[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Appointment/proposed-appt1a-2: Appointment.participant[2].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
-INFORMATION: Appointment/proposed-appt1a-2: Appointment.participant[2].status[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 == /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/proposed-appt1a-3.xml ==
 WARNING: Appointment/proposed-appt1a-3: Appointment.serviceType: None of the codes provided are in the value set http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type (http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type, and a code should come from this value set unless it has no suitable code) (codes = http://snomed.info/sct#11429006)
 ERROR: Appointment/proposed-appt1a-3: Appointment.serviceType.coding: null
-INFORMATION: Appointment/proposed-appt1a-3: Appointment.id[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Appointment/proposed-appt1a-3: Appointment.meta[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Appointment/proposed-appt1a-3: Appointment.text[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
-INFORMATION: Appointment/proposed-appt1a-3: Appointment.status[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Appointment/proposed-appt1a-3: Appointment.participant[1].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
-INFORMATION: Appointment/proposed-appt1a-3: Appointment.participant[1].status[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Appointment/proposed-appt1a-3: Appointment.participant[2].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
-INFORMATION: Appointment/proposed-appt1a-3: Appointment.participant[2].status[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 == /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/proposed-appt2.xml ==
 WARNING: Appointment/proposed-appt2: Appointment.serviceType: None of the codes provided are in the value set http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type (http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type, and a code should come from this value set unless it has no suitable code) (codes = http://snomed.info/sct#11429006)
 ERROR: Appointment/proposed-appt2: Appointment.serviceType.coding: null
 WARNING: Appointment/proposed-appt2: Appointment.specialty: Could not confirm that the codes provided are in the value set http://fhir.org/guides/argonaut-scheduling/ValueSet/specialty and a code should come from this value set unless it has no suitable code (class = NOSERVICE)
 ERROR: Appointment/proposed-appt2: Appointment.specialty.coding: null
-INFORMATION: Appointment/proposed-appt2: Appointment.id[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Appointment/proposed-appt2: Appointment.meta[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Appointment/proposed-appt2: Appointment.text[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
-INFORMATION: Appointment/proposed-appt2: Appointment.status[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Appointment/proposed-appt2: Appointment.participant[1].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
-INFORMATION: Appointment/proposed-appt2: Appointment.participant[1].status[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Appointment/proposed-appt2: Appointment.participant[2].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
-INFORMATION: Appointment/proposed-appt2: Appointment.participant[2].status[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 == /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/proposed-appt2b-1.xml ==
 WARNING: Appointment/proposed-appt2b-1: Appointment.serviceType: None of the codes provided are in the value set http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type (http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type, and a code should come from this value set unless it has no suitable code) (codes = http://snomed.info/sct#11429006)
 ERROR: Appointment/proposed-appt2b-1: Appointment.serviceType.coding: null
 WARNING: Appointment/proposed-appt2b-1: Appointment.specialty: Could not confirm that the codes provided are in the value set http://fhir.org/guides/argonaut-scheduling/ValueSet/specialty and a code should come from this value set unless it has no suitable code (class = NOSERVICE)
 ERROR: Appointment/proposed-appt2b-1: Appointment.specialty.coding: null
-INFORMATION: Appointment/proposed-appt2b-1: Appointment.id[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Appointment/proposed-appt2b-1: Appointment.meta[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Appointment/proposed-appt2b-1: Appointment.text[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
-INFORMATION: Appointment/proposed-appt2b-1: Appointment.status[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Appointment/proposed-appt2b-1: Appointment.participant[1].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
-INFORMATION: Appointment/proposed-appt2b-1: Appointment.participant[1].status[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Appointment/proposed-appt2b-1: Appointment.participant[2].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
-INFORMATION: Appointment/proposed-appt2b-1: Appointment.participant[2].status[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 == /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/proposed-appt2b-2.xml ==
 WARNING: Appointment/proposed-appt2b-2: Appointment.serviceType: None of the codes provided are in the value set http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type (http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type, and a code should come from this value set unless it has no suitable code) (codes = http://snomed.info/sct#11429006)
 ERROR: Appointment/proposed-appt2b-2: Appointment.serviceType.coding: null
 WARNING: Appointment/proposed-appt2b-2: Appointment.specialty: Could not confirm that the codes provided are in the value set http://fhir.org/guides/argonaut-scheduling/ValueSet/specialty and a code should come from this value set unless it has no suitable code (class = NOSERVICE)
 ERROR: Appointment/proposed-appt2b-2: Appointment.specialty.coding: null
-INFORMATION: Appointment/proposed-appt2b-2: Appointment.id[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Appointment/proposed-appt2b-2: Appointment.meta[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Appointment/proposed-appt2b-2: Appointment.text[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
-INFORMATION: Appointment/proposed-appt2b-2: Appointment.status[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Appointment/proposed-appt2b-2: Appointment.participant[1].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
-INFORMATION: Appointment/proposed-appt2b-2: Appointment.participant[1].status[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Appointment/proposed-appt2b-2: Appointment.participant[2].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
-INFORMATION: Appointment/proposed-appt2b-2: Appointment.participant[2].status[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 == /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/proposed-appt2b-3.xml ==
 WARNING: Appointment/proposed-appt2b-3: Appointment.serviceType: None of the codes provided are in the value set http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type (http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type, and a code should come from this value set unless it has no suitable code) (codes = http://snomed.info/sct#11429006)
 ERROR: Appointment/proposed-appt2b-3: Appointment.serviceType.coding: null
 WARNING: Appointment/proposed-appt2b-3: Appointment.specialty: Could not confirm that the codes provided are in the value set http://fhir.org/guides/argonaut-scheduling/ValueSet/specialty and a code should come from this value set unless it has no suitable code (class = NOSERVICE)
 ERROR: Appointment/proposed-appt2b-3: Appointment.specialty.coding: null
-INFORMATION: Appointment/proposed-appt2b-3: Appointment.id[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Appointment/proposed-appt2b-3: Appointment.meta[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Appointment/proposed-appt2b-3: Appointment.text[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
-INFORMATION: Appointment/proposed-appt2b-3: Appointment.status[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Appointment/proposed-appt2b-3: Appointment.participant[1].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
-INFORMATION: Appointment/proposed-appt2b-3: Appointment.participant[1].status[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Appointment/proposed-appt2b-3: Appointment.participant[2].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
-INFORMATION: Appointment/proposed-appt2b-3: Appointment.participant[2].status[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 == /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/proposed-appt3.xml ==
 WARNING: Appointment/proposed-appt3: Appointment.serviceType: None of the codes provided are in the value set http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type (http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type, and a code should come from this value set unless it has no suitable code) (codes = http://snomed.info/sct#11429006)
 ERROR: Appointment/proposed-appt3: Appointment.serviceType.coding: null
 WARNING: Appointment/proposed-appt3: Appointment.specialty: Could not confirm that the codes provided are in the value set http://fhir.org/guides/argonaut-scheduling/ValueSet/specialty and a code should come from this value set unless it has no suitable code (class = NOSERVICE)
 ERROR: Appointment/proposed-appt3: Appointment.specialty.coding: null
-INFORMATION: Appointment/proposed-appt3: Appointment.id[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Appointment/proposed-appt3: Appointment.meta[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Appointment/proposed-appt3: Appointment.text[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
-INFORMATION: Appointment/proposed-appt3: Appointment.status[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Appointment/proposed-appt3: Appointment.participant[1].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
-INFORMATION: Appointment/proposed-appt3: Appointment.participant[1].status[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 INFORMATION: Appointment/proposed-appt3: Appointment.participant[2].required[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
-INFORMATION: Appointment/proposed-appt3: Appointment.participant[2].status[1]: Instance includes element that is not marked as 'mustSupport' and was validated against profiles declaring mustSupport=true
 == /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/appt-out-spreadsheet.xml ==
+INFORMATION: /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/appt-out-spreadsheet: Resources generated by processing /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/appt-out-spreadsheet:  http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-status-reason ("Reason for current status")  http://fhir.org/guides/argonaut-scheduling/StructureDefinition/appt-output ("Argonaut Appointment Output Profile")
 == /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/argo-coverage-spreadsheet.xml ==
+INFORMATION: /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/argo-coverage-spreadsheet: Resources generated by processing /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/argo-coverage-spreadsheet:  http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-coverage ("Argonaut Coverage Profile")
+== /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/avail-bundle-out-spreadsheet.xml ==
+ERROR: StructureDefinition/avail-bundle: StructureDefinition.differential.element[4]: sliceName must be composed of proper tokens separated by "/" [sliceName.empty() or sliceName.matches('^[a-zA-Z0-9\\/\\-\\_]+$')]
+ERROR: StructureDefinition/avail-bundle: StructureDefinition.differential.element[5]: sliceName must be composed of proper tokens separated by "/" [sliceName.empty() or sliceName.matches('^[a-zA-Z0-9\\/\\-\\_]+$')]
+ERROR: StructureDefinition/avail-bundle: StructureDefinition.differential.element[9]: sliceName must be composed of proper tokens separated by "/" [sliceName.empty() or sliceName.matches('^[a-zA-Z0-9\\/\\-\\_]+$')]
 == /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/capabilitystatement-client.xml ==
 ERROR: CapabilityStatement/client: CapabilityStatement.profile: Unable to resolve resource 'http://fhir.org/guides/argonaut-scheduling/StructureDefinition/template-basic'
 == /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/capabilitystatement-server.xml ==
@@ -334,14 +379,20 @@ ERROR: ImplementationGuide/ig: ImplementationGuide.package.resource[30]: Profile
 ERROR: ImplementationGuide/ig: ImplementationGuide.package.resource[31]: Profile http://hl7.org/fhir/StructureDefinition/ImplementationGuide, Element 'ImplementationGuide.package.resource[31].example': minimum required = 1, but only found 0
 ERROR: ImplementationGuide/ig: ImplementationGuide.package.resource[32]: Profile http://hl7.org/fhir/StructureDefinition/ImplementationGuide, Element 'ImplementationGuide.package.resource[32].example': minimum required = 1, but only found 0
 ERROR: ImplementationGuide/ig: ImplementationGuide.package.resource[33]: Profile http://hl7.org/fhir/StructureDefinition/ImplementationGuide, Element 'ImplementationGuide.package.resource[33].example': minimum required = 1, but only found 0
+ERROR: ImplementationGuide/ig: ImplementationGuide.package.resource[34]: Profile http://hl7.org/fhir/StructureDefinition/ImplementationGuide, Element 'ImplementationGuide.package.resource[34].example': minimum required = 1, but only found 0
+ERROR: ImplementationGuide/ig: ImplementationGuide.package.resource[35]: Profile http://hl7.org/fhir/StructureDefinition/ImplementationGuide, Element 'ImplementationGuide.package.resource[35].example': minimum required = 1, but only found 0
 == /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/operationdefinition-appointment-book.xml ==
 == /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/operationdefinition-appointment-find6.xml ==
 WARNING: OperationDefinition/appointment-find: OperationDefinition.jurisdiction: Could not confirm that the codes provided are in the value set http://hl7.org/fhir/ValueSet/jurisdiction and a code should come from this value set unless it has no suitable code (class = NOSERVICE)
 == /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/operationdefinition-appointment-hold.xml ==
 == /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/prefetch-slot-spreadsheet.xml ==
 INFORMATION: /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/prefetch-slot-spreadsheet: Resources generated by processing /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/prefetch-slot-spreadsheet:  http://fhir.org/guides/argonaut-scheduling/StructureDefinition/prefetch-slot ("Argonaut Prefetch Slot Profile")
-== /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/structuredefinition-avail-bundle.xml ==
+== /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/slot-bundle-out-spreadsheet.xml ==
+ERROR: StructureDefinition/slot-bundle: StructureDefinition.differential.element[4]: sliceName must be composed of proper tokens separated by "/" [sliceName.empty() or sliceName.matches('^[a-zA-Z0-9\\/\\-\\_]+$')]
+ERROR: StructureDefinition/slot-bundle: StructureDefinition.differential.element[5]: sliceName must be composed of proper tokens separated by "/" [sliceName.empty() or sliceName.matches('^[a-zA-Z0-9\\/\\-\\_]+$')]
+ERROR: StructureDefinition/slot-bundle: StructureDefinition.differential.element[9]: sliceName must be composed of proper tokens separated by "/" [sliceName.empty() or sliceName.matches('^[a-zA-Z0-9\\/\\-\\_]+$')]
 == /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/valueset-appt-type.xml ==
+== /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/valueset-slot-bundle-type.xml ==
 == /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/valueset-specialty.xml ==
 == /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/valueset-status-reason.xml ==
 == /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/valueset-visit-type.xml ==

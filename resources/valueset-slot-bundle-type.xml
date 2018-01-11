@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir http://build.fhir.org/device.xsd">
+	<id value="slot-bundle-type"/>
+	<url value="http://fhir.org/guides/argonaut-scheduling/ValueSet/slot-bundle-type"/>
+	<version value="1.0.0"/>
+	<name value="Argonaut Slot BundleType Codes"/>
+	<status value="draft"/>
+	<date value="2017-01-10T07:40:10Z"/>
+	<description value="Slot Bundle Profile types constrained to 'history' and 'searchset'."/>
+	<compose>
+		<include>
+			<system value="http://hl7.org/fhir/bundle-type"/>
+			<concept>
+				<code value="searchset"></code>
+			</concept>
+			<concept>
+				<code value="history"></code>
+			</concept>
+		</include>
+	</compose>
+</ValueSet>

@@ -199,6 +199,14 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+        <valueUri value="ValueSet-slot-bundle-type.html"/>
+      </extension>
+      <sourceReference>
+        <reference value="ValueSet/slot-bundle-type"/>
+      </sourceReference>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
         <valueUri value="StructureDefinition-prefetch-slot.html"/>
       </extension>
       <sourceReference>
@@ -211,6 +219,14 @@
       </extension>
       <sourceReference>
         <reference value="StructureDefinition/avail-bundle"/>
+      </sourceReference>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+        <valueUri value="StructureDefinition-slot-bundle.html"/>
+      </extension>
+      <sourceReference>
+        <reference value="StructureDefinition/slot-bundle"/>
       </sourceReference>
     </resource>
     <resource>
@@ -336,6 +352,30 @@
       <name value="Argonaut Prefetch Slot Profile"/>
       <sourceReference>
         <reference value="StructureDefinition/prefetch-slot"/>
+      </sourceReference>
+    </resource>
+  </package>
+  <package>
+    <name value="Argonaut Appointment Output Bundle Profile"/>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+        <valueUri value="StructureDefinition-avail-bundle.html"/>
+      </extension>
+      <name value="Argonaut Appointment Output Bundle Profile"/>
+      <sourceReference>
+        <reference value="StructureDefinition/avail-bundle"/>
+      </sourceReference>
+    </resource>
+  </package>
+  <package>
+    <name value="Argonaut Slot Bundle Profile"/>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+        <valueUri value="StructureDefinition-slot-bundle.html"/>
+      </extension>
+      <name value="Argonaut Slot Bundle Profile"/>
+      <sourceReference>
+        <reference value="StructureDefinition/slot-bundle"/>
       </sourceReference>
     </resource>
   </package>

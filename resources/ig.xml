@@ -135,6 +135,12 @@
         <reference value="ValueSet/appt-type"/>
       </sourceReference>
     </resource>
+        <resource>
+      <example value="false"/>
+      <sourceReference>
+        <reference value="ValueSet/slot-bundle-type"/>
+      </sourceReference>
+    </resource>
     <resource>
       <example value="false"/>
       <sourceReference>
@@ -145,6 +151,12 @@
       <example value="false"/>
       <sourceReference>
         <reference value="StructureDefinition/avail-bundle"/>
+      </sourceReference>
+    </resource>
+        <resource>
+      <example value="false"/>
+      <sourceReference>
+        <reference value="StructureDefinition/slot-bundle"/>
       </sourceReference>
     </resource>
     <resource>

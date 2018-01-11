@@ -34,13 +34,13 @@ user content","",0,*,"","Y","","Extension
 ","The specialty of a practitioner that would be required to perform the service requested in this appointment","The specialty of a practitioner that would be required to perform the service requested in this appointment.","","","","","","","","","",,"preferred","Additional details about where the content was created (e.g. clinical specialty).","http://hl7.org/fhir/ValueSet/c80-practice-codes","",,,,"Slot.specialty",0,*,"","","class"
 "Slot.appointmentType","","","",0,1,"","","Y","CodeableConcept
 ","The style of appointment or patient that may be booked in the slot (not service type)","The style of appointment or patient that may be booked in the slot (not service type).","","","","","","","","","",,"preferred","","http://hl7.org/fhir/ValueSet/v2-0276","",,,,"Slot.appointmentType",0,1,"","","class"
-"Slot.schedule","","","",1,1,"","","Y","Reference {http://hl7.org/fhir/StructureDefinition/Schedule}
+"Slot.schedule","","","",1,1,"Y","","Y","Reference {http://hl7.org/fhir/StructureDefinition/Schedule}
 ","The schedule resource that this slot defines an interval of status information","The schedule resource that this slot defines an interval of status information.","","","","","","","","","",,,,,"",,,,"Slot.schedule",1,1,"",""
-"Slot.status","","","",1,1,"","","Y","code
+"Slot.status","","","",1,1,"Y","","Y","code
 ","busy | free | busy-unavailable | busy-tentative | entered-in-error","busy | free | busy-unavailable | busy-tentative | entered-in-error.","","","","","","","","","",,"required","The free/busy status of the slot.","http://hl7.org/fhir/ValueSet/slotstatus","",,,,"Slot.status",1,1,"","","FREEBUSY;FBTYPE=(freeBusyType):19980314T233000Z/19980315T003000Z If the freeBusyType is BUSY, then this value can be excluded"
-"Slot.start","","","",1,1,"","","Y","instant
+"Slot.start","","","",1,1,"Y","","Y","instant
 ","Date/Time that the slot is to begin","Date/Time that the slot is to begin.","","","","","","","","","",,,,,"",,,,"Slot.start",1,1,"","","FREEBUSY;FBTYPE=FREE:(start)/19980315T003000Z If the freeBusyType is BUSY, then this value can be excluded","when.planned"
-"Slot.end","","","",1,1,"","","Y","instant
+"Slot.end","","","",1,1,"Y","","Y","instant
 ","Date/Time that the slot is to conclude","Date/Time that the slot is to conclude.","","","","","","","","","",,,,,"",,,,"Slot.end",1,1,"","","FREEBUSY:19980314T233000Z/(end) If the freeBusyType is BUSY, then this value can be excluded (as shown)","when.planned"
 "Slot.overbooked","","","",0,1,"","","","boolean
 ","This slot has already been overbooked, appointments are unlikely to be accepted for this time","This slot has already been overbooked, appointments are unlikely to be accepted for this time.","","","","If overbooked is missing, systems may assume that there are still appointments available","","","","","",,,,,"",,,,"Slot.overbooked",0,1,"",""
