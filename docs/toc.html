@@ -219,9 +219,123 @@
 
 page source: toc.md
 
-<div class="highlighter-rouge"><pre class="highlight"><code> ...todo...
-</code></pre>
-</div>
+<h2 class="no_toc" id="home-page">Home Page</h2>
+
+<ul>
+  <li>Introduction</li>
+  <li>Scope</li>
+  <li>Future Scope</li>
+  <li>Actors</li>
+  <li>Assumptions</li>
+  <li>Security</li>
+  <li>Where to start/TOC</li>
+</ul>
+
+<h2 class="no_toc" id="use-cases">Use Cases</h2>
+
+<h3 class="no_toc" id="patient-based-scheduling">Patient Based Scheduling</h3>
+
+<ul>
+  <li>Scenario 1: Patient Portal/Scheduling for new or existing patient
+    <ul>
+      <li>Patient login/registration</li>
+      <li>Search for open appointments</li>
+      <li>Hold appointment</li>
+      <li>Book appointment</li>
+    </ul>
+  </li>
+  <li>Scenario 2: Open Scheduling for new patient
+    <ul>
+      <li>Patient registration (option)</li>
+      <li>Search for open appointments</li>
+      <li>Hold appointment</li>
+      <li>Patient registration (option)</li>
+      <li>Book appointment</li>
+    </ul>
+  </li>
+  <li>Scenario 3: Prefetching Open Slots for Scheduling patient
+    <ul>
+      <li>exchange logic</li>
+      <li>initial load of open slots</li>
+      <li>update open slots</li>
+      <li>Patient login/registration (option)</li>
+      <li>Search for open appointments</li>
+      <li>Hold appointment</li>
+      <li>Patient login/registration (option)</li>
+      <li>Book appointment</li>
+    </ul>
+  </li>
+  <li>Cancelling appointment</li>
+  <li>Retrieving appointments</li>
+</ul>
+
+<h3 class="no_toc" id="provider-based-scheduling">Provider based Scheduling</h3>
+
+<ul>
+  <li>Scenario 1: Scheduling for existing patient across systems
+    <ul>
+      <li>Patient Match</li>
+      <li>Search for open appointments</li>
+      <li>Hold appointment</li>
+      <li>Book appointment</li>
+    </ul>
+  </li>
+  <li>Scenario 2: Scheduling for new patient across systems
+    <ul>
+      <li>Patient registration (option)</li>
+      <li>Search for open appointments</li>
+      <li>Hold appointment</li>
+      <li>Patient registration (option)</li>
+      <li>Book appointment</li>
+    </ul>
+  </li>
+  <li>Scenario 3: Scheduling for existing patient within system</li>
+  <li>Cancelling appointment</li>
+  <li>Retrieving Patient appointments</li>
+  <li>Retrieving Providers appointment/Schedule</li>
+</ul>
+
+<h2 class="no_toc" id="operations">Operations</h2>
+<li><a href="OperationDefinition-appointment-hold.html">Appointment Hold</a></li>
+<li><a href="OperationDefinition-appointment-find.html">Appointment Availability Operation</a></li>
+<li><a href="OperationDefinition-appointment-book.html">Appointment Book</a></li>
+
+<h2 class="no_toc" id="profilesextensions">Profiles/Extensions</h2>
+
+<h3 class="no_toc" id="profiles">Profiles</h3>
+
+<li><a href="StructureDefinition-avail-bundle.html">Argonaut Appointment  Bundle Profile</a> The Argonaut Appointment  Bundle Profile is returned as a result of the '$find' operation and Appointment search.</li>
+<li><a href="StructureDefinition-appt-output.html">Argonaut Appointment Output Profile</a> The Argonaut Appointment Output Profile is used with the '$find', '$hold', and '$book' operations and when fetching appointments.</li>
+<li><a href="StructureDefinition-argo-coverage.html">Argonaut Coverage Profile</a> The Argonaut Coverage Profile profile is used to provide insurance information for scheduling an appointment and or registering a patient.</li>
+<li><a href="StructureDefinition-prefetch-slot.html">Argonaut Prefetch Slot Profile</a> The Argonaut Prefetch Slot Profile defines the Slots that are returned when prefetching slots.</li>
+<li class="li"><a href="StructureDefinition-slot-bundle.html">Argonaut Slot Bundle Profile</a> The Argonaut Slot Bundle Profile is returned as a result of the '$find' operation and Appointment search.</li>
+
+<h3 class="no_toc" id="extensions">Extensions</h3>
+
+<li><a href="StructureDefinition-extension-status-reason.html">Reason for current status</a> Captures the reason for the current state of the Appointment.</li>
+
+<h2 class="no_toc" id="terminology">Terminology</h2>
+
+<h3 class="no_toc" id="value-sets">Value Sets</h3>
+
+<h3 class="no_toc" id="code-systems">Code Systems</h3>
+
+<h3 class="no_toc" id="concept-maps">Concept Maps</h3>
+
+<h2 class="no_toc" id="capability">Capability</h2>
+
+<ul>
+  <li>Conformance requirements for Server</li>
+  <li>Conformance requirements for Client</li>
+</ul>
+
+<h2 class="no_toc" id="downloads">Downloads</h2>
+
+<ul>
+  <li>Validation pack and Definition files</li>
+  <li>Schematrons</li>
+  <li>Examples</li>
+</ul>
 
 
 
@@ -251,7 +365,7 @@ page source: toc.md
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Thu, Jan 11, 2018 12:58-0800. |
+            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Thu, Jan 11, 2018 16:43-0800. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/STU3license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

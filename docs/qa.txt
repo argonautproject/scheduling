@@ -1,10 +1,10 @@
 ﻿Argo-Scheduling : Validation Results
 =========================================
 
-err = 140, warn = 52, info = 424
-Generated Thu Jan 11 12:58:39 PST 2018. FHIR version 3.1.0 for 3.0.1
+err = 140, warn = 52, info = 428
+Generated Thu Jan 11 16:43:09 PST 2018. FHIR version 3.1.0 for 3.0.1
 
- Build Errors : 5 / 0
+ Build Errors : 6 / 0
  /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/1a-avail-bundle : 11 / 62
  /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/2b-avail-bundle : 14 / 68
  /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/coverage-example-1 : 0 / 0
@@ -24,7 +24,7 @@ Generated Thu Jan 11 12:58:39 PST 2018. FHIR version 3.1.0 for 3.0.1
  /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/proposed-appt3 : 2 / 6
  /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/appt-out-spreadsheet : 0 / 1
  /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/argo-coverage-spreadsheet : 0 / 1
- /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/avail-bundle-out-spreadsheet : 3 / 0
+ /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/avail-bundle-out-spreadsheet : 3 / 1
  /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/capabilitystatement-client : 1 / 0
  /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/capabilitystatement-server : 1 / 0
  /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/codesystem-appt-type : 0 / 0
@@ -37,7 +37,7 @@ Generated Thu Jan 11 12:58:39 PST 2018. FHIR version 3.1.0 for 3.0.1
  /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/operationdefinition-appointment-find6 : 0 / 1
  /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/operationdefinition-appointment-hold : 0 / 0
  /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/prefetch-slot-spreadsheet : 0 / 1
- /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/slot-bundle-out-spreadsheet : 3 / 0
+ /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/slot-bundle-out-spreadsheet : 3 / 1
  /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/valueset-appt-type : 0 / 0
  /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/valueset-slot-bundle-type : 0 / 0
  /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/valueset-specialty : 0 / 0
@@ -45,11 +45,12 @@ Generated Thu Jan 11 12:58:39 PST 2018. FHIR version 3.1.0 for 3.0.1
  /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/valueset-visit-type : 0 / 0
 </table>
 == n/a ==
-ERROR: /Users/ehaas/Documents/FHIR/Argo-Scheduling/docs/patient-scheduling.html#/html/head/link/body/div/div/div/div/div/div/ul/li/a at Line 1056, column 53: The link '../issues/30' cannot be resolved
-ERROR: /Users/ehaas/Documents/FHIR/Argo-Scheduling/docs/provider-scheduling.html#/html/head/link/body/div/div/div/div/div/div/p/a at Line 440, column 61: The link '#scenario-1-scheduling-for-existing-patient-across-systems' cannot be resolved (valid targets: [page-content-wrapper, use-case-1-scheduling-across-systems, retrieving-providers-appointmentschedule, project-nav, scenario-1c-provider-schedules-a-procedure-on-behalf-of-patient-imaging-referral, markdown-toc-introduction, scenario-3-provider-schedules-an-follow-up-appointment-with-same-provider-on-behalf-of-patient-follow-up-appointment, segment-post-footer, markdown-toc-retrieving-patient-appointments, markdown-toc-use-case-2-scheduling-for-existing-patient-across-systems, scenario-1a-provider-schedules-an-appointment-with-a-patients-pcp-on-behalf-of-patient-discharge-follow-up, use-case-3-scheduling-for-existing-patient-within-a-system, scenario-1b-provider-schedules-an-appointment-with-a-provider-on-behalf-of-patient-dermatology-referral, scenario-2a-provider-schedules-a-follow-up-procedure-on-behalf-of-patient-imaging-referral, markdown-toc-retrieving-providers-appointmentschedule, stripe, segment-footer, logo, retrieving-patient-appointments, introduction, use-case-2-scheduling-for-existing-patient-across-systems, segment-header, hl7-logo, markdown-toc-use-case-3-scheduling-for-existing-patient-within-a-system, scenario-2a-provider-schedules-an-appointment-with-a-patients-pcp-on-behalf-of-patient-discharge-follow-up, cancelling-appointment, ig-status, markdown-toc, markdown-toc-use-case-1-scheduling-across-systems, segment-navbar, markdown-toc-cancelling-appointment])
+ERROR: /Users/ehaas/Documents/FHIR/Argo-Scheduling/docs/patient-scheduling.html#/html/head/link/body/div/div/div/div/div/div/ul/li/a at Line 1060, column 104: The link 'best-practices.html' cannot be resolved
+ERROR: /Users/ehaas/Documents/FHIR/Argo-Scheduling/docs/provider-scheduling.html#/html/head/link/body/div/div/div/div/div/div/p/a at Line 442, column 61: The link '#scenario-1-scheduling-for-existing-patient-across-systems' cannot be resolved (valid targets: [page-content-wrapper, use-case-1-scheduling-across-systems, retrieving-providers-appointmentschedule, project-nav, scenario-1c-provider-schedules-a-procedure-on-behalf-of-patient-imaging-referral, markdown-toc-introduction, scenario-3-provider-schedules-an-follow-up-appointment-with-same-provider-on-behalf-of-patient-follow-up-appointment, segment-post-footer, markdown-toc-retrieving-patient-appointments, markdown-toc-use-case-2-scheduling-for-existing-patient-across-systems, scenario-1a-provider-schedules-an-appointment-with-a-patients-pcp-on-behalf-of-patient-discharge-follow-up, use-case-3-scheduling-for-existing-patient-within-a-system, scenario-1b-provider-schedules-an-appointment-with-a-provider-on-behalf-of-patient-dermatology-referral, scenario-2a-provider-schedules-a-follow-up-procedure-on-behalf-of-patient-imaging-referral, markdown-toc-retrieving-providers-appointmentschedule, stripe, segment-footer, logo, retrieving-patient-appointments, introduction, use-case-2-scheduling-for-existing-patient-across-systems, segment-header, hl7-logo, markdown-toc-use-case-3-scheduling-for-existing-patient-within-a-system, scenario-2a-provider-schedules-an-appointment-with-a-patients-pcp-on-behalf-of-patient-discharge-follow-up, cancelling-appointment, ig-status, markdown-toc, markdown-toc-use-case-1-scheduling-across-systems, segment-navbar, markdown-toc-cancelling-appointment])
 ERROR: /Users/ehaas/Documents/FHIR/Argo-Scheduling/docs/ValueSet-visit-type.html#/html/head/link/body/div/div/div/div/div/div/table/tbody/tr/td/p/a at Line 278, column 640: The link 'http://hl7.org/fhir/STU3ConceptMap-visit-appt-map.html' cannot be resolved
 ERROR: /Users/ehaas/Documents/FHIR/Argo-Scheduling/docs/ValueSet-visit-type.html#/html/head/link/body/div/div/div/div/div/div/table/tbody/tr/td/p/a at Line 278, column 751: The link 'http://hl7.org/fhir/STU3ConceptMap-visit-snomed-map.html' cannot be resolved
 ERROR: /Users/ehaas/Documents/FHIR/Argo-Scheduling/docs/ValueSet-appt-type.html#/html/head/link/body/div/div/div/div/div/div/table/tbody/tr/td/p/a at Line 278, column 198: The link 'http://hl7.org/fhir/STU3ConceptMap-visit-appt-map.html' cannot be resolved
+ERROR: /Users/ehaas/Documents/FHIR/Argo-Scheduling/docs/patient-scheduling.html#/html/head/link/body/div/div/div/div/div/div/p/a at Line 1046, column 93: The link 'best-practices.html' cannot be resolved
 == /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/1a-avail-bundle.xml ==
 ERROR: Bundle/hal-dr-y-appts: Bundle.entry[1]: Could not match discriminator (resource) for slice Bundle.entry:apptslice in profile http://fhir.org/guides/argonaut-scheduling/StructureDefinition/avail-bundle - does not have fixed value, binding or existence assertions
 ERROR: Bundle/hal-dr-y-appts: Bundle.entry[2]: Could not match discriminator (resource) for slice Bundle.entry:apptslice in profile http://fhir.org/guides/argonaut-scheduling/StructureDefinition/avail-bundle - does not have fixed value, binding or existence assertions
@@ -347,6 +348,7 @@ INFORMATION: /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/appt-out-spre
 == /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/argo-coverage-spreadsheet.xml ==
 INFORMATION: /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/argo-coverage-spreadsheet: Resources generated by processing /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/argo-coverage-spreadsheet:  http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-coverage ("Argonaut Coverage Profile")
 == /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/avail-bundle-out-spreadsheet.xml ==
+INFORMATION: /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/avail-bundle-out-spreadsheet: Resources generated by processing /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/avail-bundle-out-spreadsheet:  http://fhir.org/guides/argonaut-scheduling/StructureDefinition/avail-bundle ("Argonaut Appointment  Bundle Profile")
 ERROR: StructureDefinition/avail-bundle: StructureDefinition.differential.element[4]: sliceName must be composed of proper tokens separated by "/" [sliceName.empty() or sliceName.matches('^[a-zA-Z0-9\\/\\-\\_]+$')]
 ERROR: StructureDefinition/avail-bundle: StructureDefinition.differential.element[5]: sliceName must be composed of proper tokens separated by "/" [sliceName.empty() or sliceName.matches('^[a-zA-Z0-9\\/\\-\\_]+$')]
 ERROR: StructureDefinition/avail-bundle: StructureDefinition.differential.element[9]: sliceName must be composed of proper tokens separated by "/" [sliceName.empty() or sliceName.matches('^[a-zA-Z0-9\\/\\-\\_]+$')]
@@ -388,6 +390,7 @@ WARNING: OperationDefinition/appointment-find: OperationDefinition.jurisdiction:
 == /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/prefetch-slot-spreadsheet.xml ==
 INFORMATION: /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/prefetch-slot-spreadsheet: Resources generated by processing /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/prefetch-slot-spreadsheet:  http://fhir.org/guides/argonaut-scheduling/StructureDefinition/prefetch-slot ("Argonaut Prefetch Slot Profile")
 == /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/slot-bundle-out-spreadsheet.xml ==
+INFORMATION: /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/slot-bundle-out-spreadsheet: Resources generated by processing /Users/ehaas/Documents/FHIR/Argo-Scheduling/resources/slot-bundle-out-spreadsheet:  http://fhir.org/guides/argonaut-scheduling/StructureDefinition/slot-bundle ("Argonaut Slot Bundle Profile")
 ERROR: StructureDefinition/slot-bundle: StructureDefinition.differential.element[4]: sliceName must be composed of proper tokens separated by "/" [sliceName.empty() or sliceName.matches('^[a-zA-Z0-9\\/\\-\\_]+$')]
 ERROR: StructureDefinition/slot-bundle: StructureDefinition.differential.element[5]: sliceName must be composed of proper tokens separated by "/" [sliceName.empty() or sliceName.matches('^[a-zA-Z0-9\\/\\-\\_]+$')]
 ERROR: StructureDefinition/slot-bundle: StructureDefinition.differential.element[9]: sliceName must be composed of proper tokens separated by "/" [sliceName.empty() or sliceName.matches('^[a-zA-Z0-9\\/\\-\\_]+$')]

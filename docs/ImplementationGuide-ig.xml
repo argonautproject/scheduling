@@ -356,12 +356,12 @@
     </resource>
   </package>
   <package>
-    <name value="Argonaut Appointment Output Bundle Profile"/>
+    <name value="Argonaut Appointment  Bundle Profile"/>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
         <valueUri value="StructureDefinition-avail-bundle.html"/>
       </extension>
-      <name value="Argonaut Appointment Output Bundle Profile"/>
+      <name value="Argonaut Appointment  Bundle Profile"/>
       <sourceReference>
         <reference value="StructureDefinition/avail-bundle"/>
       </sourceReference>

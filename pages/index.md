@@ -2,6 +2,7 @@
 title: Argonaut Scheduling IG HomePage
 layout: default
 active: home
+mycss: argo-sched.css
 ---
 
 <!-- TOC  the css styling for this is \pages\assets\css\project.css under 'markdown-toc'-->
@@ -15,16 +16,16 @@ active: home
 
 source pages/\_include/{{page.md_filename}}.md  file
 
-### Introduction
+## Introduction
 
 The [Argonaut](http://argonautwiki.hl7.org/) Scheduling Project(#.html) is a vendor agnostic specification providing FHIR RESTful APIs and guidance for access to and booking of appointments for patients by both patient and practitioner end users. This specification is based on [FHIR Version 3.0.1]({{site.data.fhir.path}}) and specifically the [Scheduling and Appointment resources]({{site.data.fhir.path}}/administration-module.html#sched).
 
 These requirements were developed and defined by the [Argonaut](http://argonautwiki.hl7.org) pilot implementations.
 
-### Scope
+## Scope
 
 
-#### Patient Based Scheduling:
+### Patient Based Scheduling:
 {:.no_toc}
 
    - Patient searches for available appointment times for a service or procedure through an organization's on-line service ("patient portal") or a third-party application.
@@ -40,7 +41,7 @@ These requirements were developed and defined by the [Argonaut](http://argonautw
    - Patient cancels an appointment through a patient portal or a third-party application.
    - Patient retrieves their scheduled appointments through a patient portal or a third-party application.
 
-#### Provider based Scheduling:
+### Provider based Scheduling:
 {:.no_toc}
  Note that in this guide "provider"  =  individual, organization or healthcare service.
 
@@ -58,7 +59,7 @@ These requirements were developed and defined by the [Argonaut](http://argonautw
       - Exchange of coeverage and medical history ( document only )
    - Provider retrieves their existing appointments for all patients
 
-### Future Scope
+## Future Scope
 
 Throughout the development of the Argonaut Scheduling Guide several additional important items were reviewed for robust scheduling implementations. This page summarizes items under development, or things that should be considered for future efforts.
 
@@ -96,7 +97,7 @@ Throughout the development of the Argonaut Scheduling Guide several additional i
 1. Estimated out of pocket patient costs
 1. Provider based scheduling within an organization
 
-### Actors
+## Actors
 
 In FHIR, booking an appointment typically includes two main actors: the FHIR Server serving as the EHR scheduler and a Client as a scheduling application. For the patient based scheduling, the actors are depicted in figure 1 below.  Note that for the 3rd Party Application the scheduling application is both server for the end user application and a client of the FHIR Server.  In the patient portal use case the the end user application interacts directly with the FHIR Server.
 
@@ -107,14 +108,14 @@ For the provider based scheduling, the actors are depicted in figure 2 below.  T
 
 {% include img.html img="diagrams/Slide19.png" caption="Figure 2: Actors for Provider Based Scheduling" %}
 
-### Assumptions
+## Assumptions
 
-#### Third Party applications
+### Third Party applications
 {:.no_toc}
 1. A third party patient scheduling application may 'pre-fetch' open slots and create appointments or it may fetch open appointments in real time.
 
 
-#### Login and Trust
+### Login and Trust
 {:.no_toc}
 1. System level trust (more on this?)
 1. User Level Trust:
@@ -125,129 +126,29 @@ For the provider based scheduling, the actors are depicted in figure 2 below.  T
        - Later on in interaction a “patient level authorization” in order to create a new account and complete the appointment will be required.  The technical details for this are out of scope for this project.
        - Alternate approaches are out of scope for this project.
 
-#### Dependencies
+### Dependencies
 {:.no_toc}
 
 1. [US Core Profiles](http://hl7.org/fhir/us/core/index.html) are supported
 1. [US Core General Guidance](http://hl7.org/fhir/us/core/guidance.html) and conventions apply to this guide.
 
-#### Rescheduling
+### Rescheduling
 {:.no_toc}
 
 1. Rescheduling and appointment is a two step process of cancelling and rebooking.
 
-### Security
+## Security
 
 For general security consideration refer to the [Security section](http://hl7.org/fhir/us/core/security.html) in the US Core Implementation Guide.  See the [Assumptions](#login-and-trust) section above for a discussion of login and trust.
 
+## Best Practices
+
+[#29](https://github.com/argonautproject/scheduling/issues/29) add/document- prescribe best practices. + technical operations. ( check list of steps -e.g. Client SHALL verify successful cancellation prior to rebooking ) any outside resources (like a functional model)??
+
+...todo...
 
 
-### Site Contents
-
-#### Home Page
-{:.no_toc}
-
-- Introduction
-- Scope
-- Future Scope
-- Actors
-- Assumptions
-- Security
-- Where to start/TOC
-
-#### Use Cases
-{:.no_toc}
-
-##### Patient Based Scheduling
-{:.no_toc}
-
-- Scenario 1: Patient Portal/Scheduling for new or existing patient
-  - Patient login/registration
-  - Search for open appointments
-  - Hold appointment
-  - Book appointment
-- Scenario 2: Open Scheduling for new patient
-  - Patient registration (option)
-  - Search for open appointments
-  - Hold appointment
-  - Patient registration (option)
-  - Book appointment
-- Scenario 3: Prefetching Open Slots for Scheduling patient
-  - exchange logic
-  - initial load of open slots
-  - update open slots
-  - Patient login/registration (option)
-  - Search for open appointments
-  - Hold appointment
-  - Patient login/registration (option)
-  - Book appointment
-- Cancelling appointment
-- Retrieving appointments
-
-##### Provider based Scheduling
-{:.no_toc}
-
-- Scenario 1: Scheduling for existing patient across systems
-  - Patient Match
-  - Search for open appointments
-  - Hold appointment
-  - Book appointment
-- Scenario 2: Scheduling for new patient across systems
-  - Patient registration (option)
-  - Search for open appointments
-  - Hold appointment
-  - Patient registration (option)
-  - Book appointment
-- Scenario 3: Scheduling for existing patient within system
-- Cancelling appointment
-- Retrieving Patient appointments
-- Retrieving Providers appointment/Schedule
-
-#### Operations
-{:.no_toc}
-{% include list-simple-operationdefinitions.xhtml %}
-
-
-#### Profiles/Extensions
-{:.no_toc}
-
-##### Profiles
-{:.no_toc}
-
-{% include list-profiles.xhtml %}{:.li}
-
-##### Extensions
-{:.no_toc}
-
-{% include list-extensions.xhtml %}
-
-#### Terminology
-{:.no_toc}
-
-##### Value Sets
-{:.no_toc}
-
-##### Code Systems
-{:.no_toc}
-
-##### Concept Maps
-{:.no_toc}
-
-#### Capability
-{:.no_toc}
-
-- Conformance requirements for Server
-- Conformance requirements for Client
-
-#### Downloads
-{:.no_toc}
-
-- Validation pack and Definition files
-- Schematrons
-- Examples
-
-
-### Jekyll Site Variables(remove prior to publishing)
+## Jekyll Site Variables(remove prior to publishing)
 
 igName : Title of the implementation Guide (defined in ig.xml) -  {% raw %} {{site.data.fhir.igName}} {% endraw %}= {{site.data.fhir.igName}}
 

@@ -2,6 +2,7 @@
 title: Provider based Scheduling Use Cases
 layout: default
 active: guidance
+mycss: argo-sched.css
 ---
 
 <!-- TOC  the css styling for this is \pages\assets\css\project.css under 'markdown-toc'-->

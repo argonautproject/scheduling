@@ -2,6 +2,7 @@
 title: Downloads
 layout: default
 active: downloads
+mycss: argo-sched.css
 ---
 
 ## Validator Pack and Definitions:
@@ -21,10 +22,12 @@ These files should be the first choice whenever generating any implementation ar
 
 Schematrons for the profiles defined in this guide are also available and listed below:
 
-- [Argonaut Appointment Output Profile](appt-output.sch)
-- [Argonaut Coverage Profile](argo-coverage.sch)
-- [Argonaut Availability Output Profile](avail-bundle.sch)
-- [Reason for Current Status Extension](extension-status-reason.sch)
+<li><a href="extension-status-reason.sch">Reason for current status extension</a></li>
+<li><a href="appt-output.sch">Argonaut Appointment Output Profile</a></li>
+<li><a href="argo-coverage.sch">Argonaut Coverage Profile</a></li>
+<li><a href="prefetch-slot.sch">Argonaut Prefetch Slot Profile</a></li>
+<li><a href="avail-bundle.sch">Argonaut Appointment  Bundle Profile</a></li>
+<li><a href="slot-bundle.sch">Argonaut Slot Bundle Profile</a></li>
 
 ## Examples:
 

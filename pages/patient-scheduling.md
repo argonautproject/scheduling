@@ -420,12 +420,18 @@ This step is identical to [Scenario 2 Step 5](#book-appointment-1) above.
 
 For some systems, updating or confirmation of insurance coverage information MAY occur at this step after booking. The Coverage interaction is discussed in detail in [Scenario 2 Step 4](#patient-registration-option-b) above.
 
+## Cancelling/Rescheduling appointments
 
-## Cancelling appointments
+The end user may elect to cancel or reschedule an existing appointment.  Rescheduling is a two step process of cancelling and rebooking a new appointment.
 
-{% include img.html img="diagrams/Slide33.png" caption="Figure 1: Patient Cancel" %}
+{% include img.html img="diagrams/Slide33.png" caption="Figure 1: Patient Cancelling/Rescheduling appointments" %}
 
-In this scenario the end user wishes to cancels or cancel/reschedule an appointment. A cancelation is done using the standard FHIR  [`PATCH`](http://build.fhir.org/http.html#patch) transaction as shown:
+Cancelling and Rescheduling has the potential to introduces complex failure states. The [best practices](index.html#best-practices) guidance discusses how failures should be handled. See the [Scheduling State Diagram](state-diagram.html) for further details on statuses and state transitions.
+
+#### Usage
+{:.no_toc}
+
+To cancel an appointment the Client uses the standard FHIR [`PATCH`](http://build.fhir.org/http.html#patch) transaction as shown:
 
 `PATCH [Base]/Appointment/[id]`
 
@@ -433,29 +439,50 @@ In this scenario the end user wishes to cancels or cancel/reschedule an appointm
 
     1. cancel [reason code](#) or string
 
-
 - Note the Server SHALL declare support for JSON, XML, or FHIRPath Patch in the [CapabilityStatement](server-capstatement.html)
-- not sure what server options are - discuss?  [#30](../issues/30)
+
+#### Examples
+{:.no_toc}
+
+{% include cancel-examples.md %}
+
+## Releasing holds
+
+The length of an appointment hold is determined by the scheduling service's business rules, after which the status of the Appointment may change.  However, the Client may also elect to cancel a hold on an appointment before it expires.
+
+{% include img.html img="diagrams/Slide38.png" caption="Figure 1: Cancelling Appointment Hold" %}
+
+#### Usage
+{:.no_toc}
+
+This transaction is identical to cancelling an appointment as shown [above](patient-scheduling.html#usage-6).
+
+#### Examples
+{:.no_toc}
 
 ~~~json
 todo inline example
 ~~~
-<br />
+
 
 ## Retrieving appointments
+
+The patient searches for their appointments.
 
 {% include img.html img="diagrams/Slide34.png" caption="Figure 1: Patient Cancel" %}
 
 
 Patient access to their scheduled appointments uses the standard FHIR [search API]({{site.data.fhir.path}}/search.html).
 
-**API**
+#### APIs
+{:.no_toc}
 
 The following Argonaut Scheduling artifacts are used in this transaction:
 
 - **[Argonaut Appointment Output Profile](StructureDefinition-appt-output.html)**.
 
-**Usage**
+#### Usage
+{:.no_toc}
 
 To fetch scheduled appointments for a patient the Client SHALL use the standard RESTful [search API]({{site.data.fhir.path}}/search.html) as shown along with these standard [search parameters]({{site.data.fhir.path}}/appointment.html#search):
 
@@ -466,7 +493,8 @@ To fetch scheduled appointments for a patient the Client SHALL use the standard 
 
 GET [base]/Appointment?patient=[id]{&status=[status]}{&date=[date]{&date=[date]}}{&practitioner=[id]}
 
-**Examples**
+#### Examples
+{:.no_toc}
 
 Search for all appointments for a patient with Resource ID 1234: `GET [base]/Appointment?patient=1234`
 
