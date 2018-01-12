@@ -5,6 +5,7 @@ The operation can be invoked as follows:
    `POST [base]/Appointment/$hold`
 
 ##### Examples
+{:.no_toc}
 <!--
 - [Scenario-1](#scenario-1)
 - [Scenario-2](#scenario-2)

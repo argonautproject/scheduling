@@ -114,10 +114,13 @@ For the provider based scheduling, the actors are depicted in figure 2 below.  T
 {:.no_toc}
 1. A third party patient scheduling application may 'pre-fetch' open slots and create appointments or it may fetch open appointments in real time.
 
-
 ### Login and Trust
 {:.no_toc}
-1. System level trust (more on this?)
+1. System level trust:
+    1. Supports the [use case 5](http://argonautwiki.hl7.org/images/4/4c/Argonaut_UseCasesV1.pdf) defined for Phase 1 of the Argonaut Project.
+    1. One solution is to use access FHIR resources by requesting access tokens from OAuth 2.0 compliant authorization servers using [SMART Backend Services](http://docs.smarthealthit.org/authorization/backend-services/).
+    1. it is assumed that consent is managed elsewhere.
+
 1. User Level Trust:
     1. An client application has been authorized by the health system.
     1. Uses [SMART on FHIR](http://docs.smarthealthit.org/authorization/ ) authorization for apps that connect to EHR data.
@@ -143,7 +146,8 @@ For general security consideration refer to the [Security section](http://hl7.or
 
 ## Best Practices
 
-[#29](https://github.com/argonautproject/scheduling/issues/29) add/document- prescribe best practices. + technical operations. ( check list of steps -e.g. Client SHALL verify successful cancellation prior to rebooking ) any outside resources (like a functional model)??
+[#29](https://github.com/argonautproject/scheduling/issues/29) add/document- prescribe best practices. + technical operations. ( check list of steps -e.g. Client SHALL verify successful cancellation prior to rebooking ) any outside resources (like a functional model)
+ review :
 
 ...todo...
 

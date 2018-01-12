@@ -22,7 +22,7 @@ Preconditions:
 
 - Patient has relationship to health system
 - Patient uses a "patient portal" - an application hosted by his provider.
-- User level lgoin and trust
+- User level login and trust
 
 #### Scenario 1a: **Existing Patient** schedules directly with their provider
 {: .no_toc}
@@ -80,8 +80,8 @@ Based on the set of input parameters supplied by the Client, the Server determin
 
 The following Argonaut Scheduling artifacts are used in this transaction:
 
-- **[Appointment Availability Operation API](OperationDefinition-appointment-find.html)**.
-- **[Argonaut Availability Output Profile API](StructureDefinition-avail-bundle.html)**.
+- **[Appointment Availability Operation](OperationDefinition-appointment-find.html)**.
+- **[Argonaut Availability Output Profile](StructureDefinition-avail-bundle.html)**.
 - **[Argonaut Appointment Output Profile](StructureDefinition-appt-output.html)**.
 
 #### Usage
@@ -96,7 +96,8 @@ Using Both `GET` and `POST` Syntax the operation can be invoked as follows:
 #### Example
 {:.no_toc}
 
-{% capture my-include %}{% include appointment-find1a.md %}{% endcapture %}{{ my-include | markdownify }}
+{% include appointment-find1a.md %}
+
 <br />
 
 ###  Optional Hold Appointment Operation
@@ -113,18 +114,18 @@ This operation puts to appointment in a hold status to temporarily prevent the a
 
 The following Argonaut Scheduling artifacts are used in this transaction:
 
-  - **[Appointment Hold Operation API](OperationDefinition-appointment-hold.html)**.
-  - **[Argonaut Availability Output Profile API](StructureDefinition-avail-bundle.html)**.
+  - **[Appointment Hold Operation](OperationDefinition-appointment-hold.html)**.
+  - **[Argonaut Availability Output Profile](StructureDefinition-avail-bundle.html)**.
   - **[Argonaut Appointment Output Profile](StructureDefinition-appt-output.html)**.
 
 #### Usage
 {:.no_toc}
 
-{% capture my-include %}{% include appointment-hold.md %}{% endcapture %}{{ my-include | markdownify }}
+{% include appointment-hold.md %}
 <br />
 
 
-###  Book appointment
+###  Book Appointment
 {:.no_toc}
 The actual booking of the appointment is completed in this step and the scheduling step is completed.
 
@@ -137,14 +138,15 @@ the Client sends a book operation using the id of selected proposed appointment,
 
 The following Argonaut Scheduling artifacts are used in this transaction:
 
-  - **[Appointment Hold Operation API](OperationDefinition-appointment-hold.html)**.
-  - **[Argonaut Availability Output Profile API](StructureDefinition-avail-bundle.html)**.
+  - **[Appointment Hold Operation](OperationDefinition-appointment-hold.html)**.
+  - **[Argonaut Availability Output Profile](StructureDefinition-avail-bundle.html)**.
   - **[Argonaut Appointment Output Profile](StructureDefinition-appt-output.html)**.
 
 #### Usage
 {:.no_toc}
 
-{% capture my-include %}{% include appointment-book.md %}{% endcapture %}{{ my-include | markdownify }}
+{% include appointment-book.md %}
+
 <br />
 
 ## Use Case 2: Open Scheduling for new patient or existing patient
@@ -209,9 +211,10 @@ A new patient will need to be registered or an existing patient fetched prior to
 
 {% include img.html img="diagrams/Slide12.png" caption="Figure 1: Patient Registration" %}
 
-**Registering or Fetching a Patient:**
+#### Registering or Fetching a Patient:
+{:.no_toc}
 
-#### Usage
+##### Usage
 {:.no_toc}
 
 To register a new or existing patient, The Client SHALL use the standard FHIR RESTful [create API]({{site.data.fhir.path}}/http.html#create) as shown ( and SHALL not use the 'If-None-Exist' header as described in FHIR [conditional create API]({{site.data.fhir.path}}/http.html#ccreate))
@@ -221,7 +224,7 @@ POST [base]/Patient/[id]
 In response to this transaction, the server SHOULD create a new patient resource only if the patient resource does not already exist in the system.  If the patient is already registered within the system. The existing patient resource SHOULD be returned.
 
 
-#### Example
+##### Example
 {:.no_toc}
 
 ~~~json
@@ -229,17 +232,20 @@ todo inline example
 ~~~
 <br />
 
-**Updating or creating Patient Coverage Information:**
+#### Updating or creating Patient Coverage Information:
+{:.no_toc}
 
 Updates to patient coverage information MAY be associated with the login and registration steps for some systems or as a distinct step following booking.
 
-**API**
+##### API
+{:.no_toc}
 
 The following Argonaut Scheduling artifacts are used in this transaction:
 
 - **[Argonaut Coverage Profile](StructureDefinition-argo-coverage.html)**.
 
-**Usage**
+##### Usage
+{:.no_toc}
 
 To update the existing insurance information or create it if it is new, The Client uses the standard FHIR RESTful [update and create API]({{site.data.fhir.path}}http.html) as shown:
 
@@ -248,7 +254,8 @@ To update the existing insurance information or create it if it is new, The Clie
 
 ​Note that the server MAY reject certain updates to the coverage information (for example, type of coverage) and SHOULD return an OperationOutcome explaining the reason. (see issue #47)
 
-Example
+##### Example
+{:.no_toc}
 
 ~~~
 PUT [base]/Coverage/[id]....
@@ -362,9 +369,10 @@ After fetching the 'initial load' in step 2, the third-party application periodi
 
 {% include img.html img="diagrams/Slide15.png" caption="Figure 1: Poll for updated slots" %}
 
-**Fetching open slot updates:**
+#### Fetching open slot updates:
+{:.no_toc}
 
-#### Usage
+##### Usage
 {:.no_toc}
 
 To fetch all updated slots since the last update, the Client SHALL use:
@@ -378,7 +386,7 @@ GET [base]/Slot/_history?_since=[last-update]
 
 Note that this operation *does not* contain any search parameters. The client must to perform additional filtering on the returned slots (for example, `status`=active ) to match the search criteria used for initial load in step 2.
 
-#### Example
+##### Example
 {:.no_toc}
 
 ~~~json
@@ -469,7 +477,7 @@ todo inline example
 
 The patient searches for their appointments.
 
-{% include img.html img="diagrams/Slide34.png" caption="Figure 1: Patient Cancel" %}
+{% include img.html img="diagrams/Slide34.png" caption="Figure 1: Patient Retrieves Their Appointments" %}
 
 
 Patient access to their scheduled appointments uses the standard FHIR [search API]({{site.data.fhir.path}}/search.html).

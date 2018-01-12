@@ -246,7 +246,7 @@ page source: patient-scheduling.md
 <ul>
   <li>Patient has relationship to health system</li>
   <li>Patient uses a “patient portal” - an application hosted by his provider.</li>
-  <li>User level lgoin and trust</li>
+  <li>User level login and trust</li>
 </ul>
 
 <h4 class="no_toc" id="scenario-1a-existing-patient-schedules-directly-with-their-provider">Scenario 1a: <strong>Existing Patient</strong> schedules directly with their provider</h4>
@@ -338,8 +338,8 @@ page source: patient-scheduling.md
 <p>The following Argonaut Scheduling artifacts are used in this transaction:</p>
 
 <ul>
-  <li><strong><a href="OperationDefinition-appointment-find.html">Appointment Availability Operation API</a></strong>.</li>
-  <li><strong><a href="StructureDefinition-avail-bundle.html">Argonaut Availability Output Profile API</a></strong>.</li>
+  <li><strong><a href="OperationDefinition-appointment-find.html">Appointment Availability Operation</a></strong>.</li>
+  <li><strong><a href="StructureDefinition-avail-bundle.html">Argonaut Availability Output Profile</a></strong>.</li>
   <li><strong><a href="StructureDefinition-appt-output.html">Argonaut Appointment Output Profile</a></strong>.</li>
 </ul>
 
@@ -457,8 +457,8 @@ page source: patient-scheduling.md
 <p>The following Argonaut Scheduling artifacts are used in this transaction:</p>
 
 <ul>
-  <li><strong><a href="OperationDefinition-appointment-hold.html">Appointment Hold Operation API</a></strong>.</li>
-  <li><strong><a href="StructureDefinition-avail-bundle.html">Argonaut Availability Output Profile API</a></strong>.</li>
+  <li><strong><a href="OperationDefinition-appointment-hold.html">Appointment Hold Operation</a></strong>.</li>
+  <li><strong><a href="StructureDefinition-avail-bundle.html">Argonaut Availability Output Profile</a></strong>.</li>
   <li><strong><a href="StructureDefinition-appt-output.html">Argonaut Appointment Output Profile</a></strong>.</li>
 </ul>
 
@@ -470,8 +470,7 @@ page source: patient-scheduling.md
 
 <p><code class="highlighter-rouge">POST [base]/Appointment/$hold</code></p>
 
-<h5 id="example">Example</h5>
-
+<h5 class="no_toc" id="example-1">Example</h5>
 <div class="highlighter-rouge"><pre class="highlight"><code>##### Request
 
 `POST [base]/Appointment/$hold`
@@ -516,7 +515,7 @@ page source: patient-scheduling.md
 
 <p><br /></p>
 
-<h3 class="no_toc" id="book-appointment">Book appointment</h3>
+<h3 class="no_toc" id="book-appointment">Book Appointment</h3>
 <p>The actual booking of the appointment is completed in this step and the scheduling step is completed.</p>
 
 <!-- all this Bootstrap html for getting an image to fit nicely in text - 640 pix wide -->
@@ -539,8 +538,8 @@ page source: patient-scheduling.md
 <p>The following Argonaut Scheduling artifacts are used in this transaction:</p>
 
 <ul>
-  <li><strong><a href="OperationDefinition-appointment-hold.html">Appointment Hold Operation API</a></strong>.</li>
-  <li><strong><a href="StructureDefinition-avail-bundle.html">Argonaut Availability Output Profile API</a></strong>.</li>
+  <li><strong><a href="OperationDefinition-appointment-hold.html">Appointment Hold Operation</a></strong>.</li>
+  <li><strong><a href="StructureDefinition-avail-bundle.html">Argonaut Availability Output Profile</a></strong>.</li>
   <li><strong><a href="StructureDefinition-appt-output.html">Argonaut Appointment Output Profile</a></strong>.</li>
 </ul>
 
@@ -552,7 +551,7 @@ page source: patient-scheduling.md
 
 <p><code class="highlighter-rouge">POST [base]/Appointment/$hold</code></p>
 
-<h5 id="examples">Examples</h5>
+<h5 class="no_toc" id="examples">Examples</h5>
 <!--
 - [Scenario-1](#scenario-1)
 - [Scenario-2](#scenario-2)
@@ -758,9 +757,9 @@ page source: patient-scheduling.md
 <p></p>
 </div>
 
-<p><strong>Registering or Fetching a Patient:</strong></p>
+<h4 class="no_toc" id="registering-or-fetching-a-patient">Registering or Fetching a Patient:</h4>
 
-<h4 class="no_toc" id="usage-3">Usage</h4>
+<h5 class="no_toc" id="usage-3">Usage</h5>
 
 <p>To register a new or existing patient, The Client SHALL use the standard FHIR RESTful <a href="http://hl7.org/fhir/STU3/http.html#create">create API</a> as shown ( and SHALL not use the ‘If-None-Exist’ header as described in FHIR <a href="http://hl7.org/fhir/STU3/http.html#ccreate">conditional create API</a>)</p>
 
@@ -768,18 +767,18 @@ page source: patient-scheduling.md
 
 <p>In response to this transaction, the server SHOULD create a new patient resource only if the patient resource does not already exist in the system.  If the patient is already registered within the system. The existing patient resource SHOULD be returned.</p>
 
-<h4 class="no_toc" id="example-1">Example</h4>
+<h5 class="no_toc" id="example-2">Example</h5>
 
 <div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="err">todo</span><span class="w"> </span><span class="err">inline</span><span class="w"> </span><span class="err">example</span><span class="w">
 </span></code></pre>
 </div>
 <p><br /></p>
 
-<p><strong>Updating or creating Patient Coverage Information:</strong></p>
+<h4 class="no_toc" id="updating-or-creating-patient-coverage-information">Updating or creating Patient Coverage Information:</h4>
 
 <p>Updates to patient coverage information MAY be associated with the login and registration steps for some systems or as a distinct step following booking.</p>
 
-<p><strong>API</strong></p>
+<h5 class="no_toc" id="api">API</h5>
 
 <p>The following Argonaut Scheduling artifacts are used in this transaction:</p>
 
@@ -787,7 +786,7 @@ page source: patient-scheduling.md
   <li><strong><a href="StructureDefinition-argo-coverage.html">Argonaut Coverage Profile</a></strong>.</li>
 </ul>
 
-<p><strong>Usage</strong></p>
+<h5 class="no_toc" id="usage-4">Usage</h5>
 
 <p>To update the existing insurance information or create it if it is new, The Client uses the standard FHIR RESTful <a href="http://hl7.org/fhir/STU3http.html">update and create API</a> as shown:</p>
 
@@ -798,7 +797,7 @@ page source: patient-scheduling.md
 
 <p>​Note that the server MAY reject certain updates to the coverage information (for example, type of coverage) and SHOULD return an OperationOutcome explaining the reason. (see issue #47)</p>
 
-<p>Example</p>
+<h5 class="no_toc" id="example-3">Example</h5>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>PUT [base]/Coverage/[id]....
 </code></pre>
@@ -919,7 +918,7 @@ page source: patient-scheduling.md
 
 <p><strong>Fetching the ‘intial load’ of open slots:</strong></p>
 
-<h4 class="no_toc" id="usage-4">Usage</h4>
+<h4 class="no_toc" id="usage-5">Usage</h4>
 
 <p>To fetch all open slots for a period of time and include relevant Practitioners, Locations and Schedules, the Client SHALL use the standard FHIR RESTful <a href="http://hl7.org/fhir/STU3/search.html">search API</a> as shown along with these standard <a href="http://hl7.org/fhir/STU3/slot.html#search">search parameters</a>:</p>
 
@@ -941,7 +940,7 @@ page source: patient-scheduling.md
 </code></pre>
 </div>
 
-<h4 class="no_toc" id="example-2">Example</h4>
+<h4 class="no_toc" id="example-4">Example</h4>
 
 <div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="err">todo</span><span class="w"> </span><span class="err">inline</span><span class="w"> </span><span class="err">example</span><span class="w">
 </span></code></pre>
@@ -964,9 +963,9 @@ page source: patient-scheduling.md
 <p></p>
 </div>
 
-<p><strong>Fetching open slot updates:</strong></p>
+<h4 class="no_toc" id="fetching-open-slot-updates">Fetching open slot updates:</h4>
 
-<h4 class="no_toc" id="usage-5">Usage</h4>
+<h5 class="no_toc" id="usage-6">Usage</h5>
 
 <p>To fetch all updated slots since the last update, the Client SHALL use:</p>
 
@@ -981,7 +980,7 @@ page source: patient-scheduling.md
 
 <p>Note that this operation <em>does not</em> contain any search parameters. The client must to perform additional filtering on the returned slots (for example, <code class="highlighter-rouge">status</code>=active ) to match the search criteria used for initial load in step 2.</p>
 
-<h4 class="no_toc" id="example-3">Example</h4>
+<h5 class="no_toc" id="example-5">Example</h5>
 
 <div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="err">todo</span><span class="w"> </span><span class="err">inline</span><span class="w"> </span><span class="err">example</span><span class="w">
 </span></code></pre>
@@ -1045,7 +1044,7 @@ page source: patient-scheduling.md
 
 <p>Cancelling and Rescheduling has the potential to introduces complex failure states. The <a href="index.html#best-practices">best practices</a> guidance discusses how failures should be handled. See the <a href="state-diagram.html">Scheduling State Diagram</a> for further details on statuses and state transitions.</p>
 
-<h4 class="no_toc" id="usage-6">Usage</h4>
+<h4 class="no_toc" id="usage-7">Usage</h4>
 
 <p>To cancel an appointment the Client uses the standard FHIR <a href="http://build.fhir.org/http.html#patch"><code class="highlighter-rouge">PATCH</code></a> transaction as shown:</p>
 
@@ -1064,7 +1063,7 @@ page source: patient-scheduling.md
   </li>
 </ul>
 
-<h4 class="no_toc" id="examples">Examples</h4>
+<h4 class="no_toc" id="examples-1">Examples</h4>
 
 <h5 class="no_toc" id="a-json-example">A JSON example:</h5>
 
@@ -1253,11 +1252,11 @@ page source: patient-scheduling.md
 <p></p>
 </div>
 
-<h4 class="no_toc" id="usage-7">Usage</h4>
+<h4 class="no_toc" id="usage-8">Usage</h4>
 
 <p>This transaction is identical to cancelling an appointment as shown <a href="patient-scheduling.html#usage-6">above</a>.</p>
 
-<h4 class="no_toc" id="examples-1">Examples</h4>
+<h4 class="no_toc" id="examples-2">Examples</h4>
 
 <div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="err">todo</span><span class="w"> </span><span class="err">inline</span><span class="w"> </span><span class="err">example</span><span class="w">
 </span></code></pre>
@@ -1273,7 +1272,7 @@ page source: patient-scheduling.md
 
 <div>
 <figure class="figure">
-<figcaption class="figure-caption"><strong>Figure 1: Patient Cancel.</strong></figcaption>
+<figcaption class="figure-caption"><strong>Figure 1: Patient Retrieves Their Appointments.</strong></figcaption>
   <img src="assets/images/diagrams/Slide34.png" class="figure-img img-responsive img-rounded center-block" alt="diagrams/Slide34.png" />
 </figure>
 
@@ -1290,7 +1289,7 @@ page source: patient-scheduling.md
   <li><strong><a href="StructureDefinition-appt-output.html">Argonaut Appointment Output Profile</a></strong>.</li>
 </ul>
 
-<h4 class="no_toc" id="usage-8">Usage</h4>
+<h4 class="no_toc" id="usage-9">Usage</h4>
 
 <p>To fetch scheduled appointments for a patient the Client SHALL use the standard RESTful <a href="http://hl7.org/fhir/STU3/search.html">search API</a> as shown along with these standard <a href="http://hl7.org/fhir/STU3/appointment.html#search">search parameters</a>:</p>
 
@@ -1303,7 +1302,7 @@ page source: patient-scheduling.md
 
 <p>GET [base]/Appointment?patient=[id]{&amp;status=[status]}{&amp;date=[date]{&amp;date=[date]}}{&amp;practitioner=[id]}</p>
 
-<h4 class="no_toc" id="examples-2">Examples</h4>
+<h4 class="no_toc" id="examples-3">Examples</h4>
 
 <p>Search for all appointments for a patient with Resource ID 1234: <code class="highlighter-rouge">GET [base]/Appointment?patient=1234</code></p>
 
@@ -1343,7 +1342,7 @@ page source: patient-scheduling.md
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Thu, Jan 11, 2018 16:43-0800. |
+            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Fri, Jan 12, 2018 00:16-0800. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/STU3license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

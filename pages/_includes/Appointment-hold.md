@@ -5,7 +5,7 @@ The operation can be invoked as follows:
    `POST [base]/Appointment/$hold`
 
 ##### Example
-
+{:.no_toc}
 ~~~
 ##### Request
 
