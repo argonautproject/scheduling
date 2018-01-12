@@ -284,7 +284,7 @@
     "<a href="http://hl7.org/fhir/STU3/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;h2&gt;Appointment Hold&lt;/h2&gt;&lt;p&gt;OPERATION: Appointment Hold&lt;/p&gt;&lt;p&gt;The official URL for this operation definition is: &lt;/p&gt;&lt;pre&gt;http://fhir.org/guides/argonaut-scheduling/OperationDefinition/appointment-hold&lt;/pre&gt;&lt;div&gt;&lt;p&gt;Request for a hold on the selected proposed Appointment in order for the user to complete entering data for booking an appointment.  This operation precedes  the booking operation for an appointment and  follows the appointment availability operation ($find).  The server determines if the nominated appointment is still available (i.e., all the required actors and physical assets needed for the appointment are still available) . The length of the hold is defined by local business rules.&lt;/p&gt;
 &lt;/div&gt;&lt;p&gt;URL: [base]/Appointment/$hold&lt;/p&gt;&lt;p&gt;Parameters&lt;/p&gt;&lt;table class=&quot;grid&quot;&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Use&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Name&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Cardinality&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Type&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Binding&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Documentation&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;IN&lt;/td&gt;&lt;td&gt;appt-id&lt;/td&gt;&lt;td&gt;0..1&lt;/td&gt;&lt;td&gt;uri&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;A resource id for one of proposed Appointments returned by a prior $find operation (e.g., Resource/1234).  References can be to an absolute URL, but servers only perform this operation on their own appointments.&lt;/p&gt;
 &lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;OUT&lt;/td&gt;&lt;td&gt;return&lt;/td&gt;&lt;td&gt;0..1&lt;/td&gt;&lt;td&gt;Bundle&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;An &lt;a href=&quot;StructureDefinition-avail-bundle.html&quot;&gt;Appointment Availability Bundle profile&lt;/a&gt;  of type &lt;code&gt;searchset&lt;/code&gt; of requested held Appointment resource and may also contain an OperationOutcome with errors, warnings or information as a result of processing the operation.   The Appointment resource will have an updated &lt;code&gt;status&lt;/code&gt; of &amp;quot;pending&amp;quot; if the hold is approved or  &amp;quot;cancelled&amp;quot; if the hold is rejected.&lt;/p&gt;
-&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;div&gt;&lt;p&gt;This operation is not idempotent (see HTTP specification definition of idempotent ) may only be invoked by performing an HTTP POST.&lt;/p&gt;
+&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;div&gt;&lt;p&gt;This operation is not idempotent (see the HTTP specification definition of idempotent ) and may only be invoked by performing an HTTP POST.&lt;/p&gt;
 &lt;/div&gt;&lt;/div&gt;"
   },
   "<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.url">url</a>" : "http://fhir.org/guides/argonaut-scheduling/OperationDefinition/appointment-hold",
@@ -307,7 +307,7 @@
   ],
   "<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.idempotent">idempotent</a>" : false,
   "<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.code">code</a>" : "hold",
-  "<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.comment">comment</a>" : "This operation is not idempotent (see HTTP specification definition of idempotent ) may only be invoked by performing an HTTP POST.",
+  "<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.comment">comment</a>" : "This operation is not idempotent (see the HTTP specification definition of idempotent ) and may only be invoked by performing an HTTP POST.",
   "<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.resource">resource</a>" : [
     "Appointment"
   ],
@@ -379,7 +379,7 @@ Formats: <a href="OperationDefinition-appointment-hold.html">Narrative</a>, <a h
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Fri, Jan 12, 2018 00:16-0800. |
+            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Fri, Jan 12, 2018 00:57-0800. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/STU3license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

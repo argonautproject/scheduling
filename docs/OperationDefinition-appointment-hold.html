@@ -271,45 +271,11 @@
 
 
 <!-- ============OperationDefinition CONTENT CONTENT=============== -->
-  <!--  - choose what you want  comment out or Change what you don't-->
-<ul class="nav nav-tabs">
-
-	<li class="active"><a href="#">Narrative Content</a></li>
-
-<!--
-{ % if OperationDefinition == "StructureDefinition"  % }
-	{ % if content == "definitions"  % }
-		<li class="active"><a href="#">Detailed Descriptions</a></li>
-	{ % else % }
-		<li><a href="OperationDefinition-appointment-hold-definitions.html">Detailed Descriptions</a></li>
-	{ % endif % }
-	{ % if content == "mappings" % }
-		<li class="active"><a href="#">Mappings</a></li>
-	{ % else % }
-		<li><a href="OperationDefinition-appointment-hold-mappings.html">Mappings</a></li>
-	{ % endif % }
-{ % endif % }
--->
-
-<li><a href="OperationDefinition-appointment-hold.xml.html">XML</a></li>
-
-
-	<li><a href="OperationDefinition-appointment-hold.json.html">JSON</a></li>
-
-<!--
-{ % if content == "turtle" % }
-	<li class="active"><a href="#">Turtle</a></li>
-{ % else % }
-	<li><a href="OperationDefinition-appointment-hold.ttl.html">Turtle</a></li>
-{ % endif % }
--->
-</ul>
-
 
   <div xmlns="http://www.w3.org/1999/xhtml"><h2>Appointment Hold</h2><p>OPERATION: Appointment Hold</p><p>The official URL for this operation definition is: </p><pre>http://fhir.org/guides/argonaut-scheduling/OperationDefinition/appointment-hold</pre><div><p>Request for a hold on the selected proposed Appointment in order for the user to complete entering data for booking an appointment.  This operation precedes  the booking operation for an appointment and  follows the appointment availability operation ($find).  The server determines if the nominated appointment is still available (i.e., all the required actors and physical assets needed for the appointment are still available) . The length of the hold is defined by local business rules.</p>
 </div><p>URL: [base]/Appointment/$hold</p><p>Parameters</p><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>appt-id</td><td>0..1</td><td>uri</td><td/><td><div><p>A resource id for one of proposed Appointments returned by a prior $find operation (e.g., Resource/1234).  References can be to an absolute URL, but servers only perform this operation on their own appointments.</p>
 </div></td></tr><tr><td>OUT</td><td>return</td><td>0..1</td><td>Bundle</td><td/><td><div><p>An <a href="StructureDefinition-avail-bundle.html">Appointment Availability Bundle profile</a>  of type <code>searchset</code> of requested held Appointment resource and may also contain an OperationOutcome with errors, warnings or information as a result of processing the operation.   The Appointment resource will have an updated <code>status</code> of &quot;pending&quot; if the hold is approved or  &quot;cancelled&quot; if the hold is rejected.</p>
-</div></td></tr></table><div><p>This operation is not idempotent (see HTTP specification definition of idempotent ) may only be invoked by performing an HTTP POST.</p>
+</div></td></tr></table><div><p>This operation is not idempotent (see the HTTP specification definition of idempotent ) and may only be invoked by performing an HTTP POST.</p>
 </div></div>
 
   <p>source file: pages/_includes/docref/md</p>
@@ -404,7 +370,7 @@ Formats: <a href="OperationDefinition-appointment-hold.html">Narrative</a>, <a h
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Fri, Jan 12, 2018 00:16-0800. |
+            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Fri, Jan 12, 2018 00:57-0800. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/STU3license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

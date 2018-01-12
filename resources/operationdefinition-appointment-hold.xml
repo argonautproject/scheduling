@@ -10,7 +10,7 @@
 	<description value="Request for a hold on the selected proposed Appointment in order for the user to complete entering data for booking an appointment.  This operation precedes  the booking operation for an appointment and  follows the appointment availability operation ($find).  The server determines if the nominated appointment is still available (i.e., all the required actors and physical assets needed for the appointment are still available) . The length of the hold is defined by local business rules."/>
 	<idempotent value="false"/>
 	<code value="hold"/>
-	<comment value="This operation is not idempotent (see HTTP specification definition of idempotent ) may only be invoked by performing an HTTP POST."/>
+	<comment value="This operation is not idempotent (see the HTTP specification definition of idempotent ) and may only be invoked by performing an HTTP POST."/>
 	<resource value="Appointment"/>
 	<system value="false"/>
 	<type value="true"/>

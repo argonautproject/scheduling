@@ -1,5 +1,5 @@
 ---
-title: TOC
+title: Contents
 layout: default
 active: toc
 ---

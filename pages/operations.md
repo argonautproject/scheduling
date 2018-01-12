@@ -4,9 +4,7 @@ layout: default
 active: operations
 ---
 
-#### Operations
-
-These OperatioDefinitions have been defined for this implementation guide:
+The following OperationDefinitions have been defined for this implementation guide:
 
 {% include list-simple-operationdefinitions.xhtml %}
 
