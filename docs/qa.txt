@@ -2,7 +2,7 @@
 =========================================
 
 err = 126, warn = 50, info = 428
-Generated Sat Jan 13 03:01:45 PST 2018. FHIR version 3.1.0 for 3.0.1
+Generated Sat Jan 13 03:05:08 PST 2018. FHIR version 3.1.0 for 3.0.1
 
  Build Errors : 26 / 0
  /Users/ehaas/Documents/FHIR/Argo-Scheduling/examples/1a-avail-bundle : 11 / 62
