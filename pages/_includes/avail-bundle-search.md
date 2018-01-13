@@ -1,11 +1,8 @@
-avail-bundle-search.md file
+page source: _includes/avail-bundle-search.md
 
-Patient based Scheduling:
+Patient and Provider based Scheduling:
 
 - [Appointment Availability Discovery and Search](patient-scheduling.html#appointment-availability-discovery-and-search)
 - [Retrieving appointments](patient-scheduling.html#retrieving-appointments)
-
-Provider based Scheduling:
-
-...todo...
-    
+- [Hold Appointment Operation](patient-scheduling.html#optional-hold-appointment-operation)
+- [Book Appointment Operation](patient-scheduling.html#book-appointment)

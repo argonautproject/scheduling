@@ -20,7 +20,7 @@
   <WindowWidth>28485</WindowWidth>
   <WindowTopX>0</WindowTopX>
   <WindowTopY>465</WindowTopY>
-  <ActiveSheet>3</ActiveSheet>
+  <ActiveSheet>7</ActiveSheet>
   <ProtectStructure>False</ProtectStructure>
   <ProtectWindows>False</ProtectWindows>
  </ExcelWorkbook>
@@ -5117,7 +5117,6 @@
     <HorizontalResolution>600</HorizontalResolution>
     <VerticalResolution>600</VerticalResolution>
    </Print>
-   <Selected/>
    <FreezePanes/>
    <FrozenNoSplit/>
    <SplitHorizontal>1</SplitHorizontal>
@@ -5137,8 +5136,8 @@
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>34</ActiveRow>
-     <ActiveCol>3</ActiveCol>
+     <ActiveRow>18</ActiveRow>
+     <ActiveCol>4</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -7244,7 +7243,7 @@
    <NamedRange ss:Name="_FilterDatabase" ss:RefersTo="=Bindings!R1C1:R1C14"
     ss:Hidden="1"/>
   </Names>
-  <Table ss:ExpandedColumnCount="14" ss:ExpandedRowCount="31" x:FullColumns="1"
+  <Table ss:ExpandedColumnCount="14" ss:ExpandedRowCount="30" x:FullColumns="1"
    x:FullRows="1" ss:StyleID="s133" ss:DefaultColumnWidth="65.25"
    ss:DefaultRowHeight="15">
    <Column ss:StyleID="s133" ss:Width="158.25"/>
@@ -7389,22 +7388,6 @@
     <Cell ss:StyleID="s136"><Data ss:Type="String">preferred</Data></Cell>
     <Cell ss:StyleID="s136"><Data ss:Type="String">yes</Data></Cell>
     <Cell ss:StyleID="Default"><Data ss:Type="String">http://fhir.org/guides/argonaut-scheduling/ValueSet/status-reason</Data></Cell>
-    <Cell ss:StyleID="s136"/>
-    <Cell ss:StyleID="s136"/>
-    <Cell ss:StyleID="s136"/>
-    <Cell ss:StyleID="s136"/>
-    <Cell ss:StyleID="s136"/>
-    <Cell ss:StyleID="s136"/>
-    <Cell ss:StyleID="s136"/>
-    <Cell ss:StyleID="s137"/>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s105"/>
-    <Cell ss:StyleID="s107"/>
-    <Cell ss:StyleID="s136"/>
-    <Cell ss:StyleID="s136"/>
-    <Cell ss:StyleID="s136"/>
-    <Cell ss:StyleID="s136"/>
     <Cell ss:StyleID="s136"/>
     <Cell ss:StyleID="s136"/>
     <Cell ss:StyleID="s136"/>
@@ -7796,6 +7779,7 @@
     <HorizontalResolution>600</HorizontalResolution>
     <VerticalResolution>600</VerticalResolution>
    </Print>
+   <Selected/>
    <FreezePanes/>
    <FrozenNoSplit/>
    <SplitHorizontal>1</SplitHorizontal>
@@ -7815,8 +7799,8 @@
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>8</ActiveRow>
-     <ActiveCol>3</ActiveCol>
+     <ActiveRow>20</ActiveRow>
+     <RangeSelection>R20C2:R21C2</RangeSelection>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -7827,12 +7811,12 @@
    xmlns="urn:schemas-microsoft-com:office:excel">
   </AutoFilter>
  </Worksheet>
- <Worksheet ss:Name="appt-types">
+ <Worksheet ss:Name="booking-type">
   <Names>
-   <NamedRange ss:Name="_FilterDatabase" ss:RefersTo="='appt-types'!R1C1:R1C9"
+   <NamedRange ss:Name="_FilterDatabase" ss:RefersTo="='booking-type'!R1C1:R1C9"
     ss:Hidden="1"/>
   </Names>
-  <Table ss:ExpandedColumnCount="9" ss:ExpandedRowCount="51" x:FullColumns="1"
+  <Table ss:ExpandedColumnCount="9" ss:ExpandedRowCount="48" x:FullColumns="1"
    x:FullRows="1" ss:StyleID="s159" ss:DefaultColumnWidth="65.25"
    ss:DefaultRowHeight="15">
    <Column ss:StyleID="s159" ss:Width="80.25"/>
@@ -7881,56 +7865,23 @@
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="Default"><Data ss:Type="String">new-patient</Data></Cell>
+    <Cell ss:StyleID="s113"><Data ss:Type="String">book</Data></Cell>
     <Cell ss:StyleID="s147"><Data ss:Type="Number">1</Data></Cell>
     <Cell ss:StyleID="s146"/>
     <Cell ss:StyleID="s161"/>
-    <Cell ss:StyleID="s161"><Data ss:Type="String">New Patient</Data></Cell>
-    <Cell ss:StyleID="Default"><Data ss:Type="String">An appointment for a patient who is new to the provider</Data></Cell>
+    <Cell ss:StyleID="s161"><Data ss:Type="String">Book Operation</Data></Cell>
+    <Cell ss:StyleID="s113"><Data ss:Type="String">Type of booking operation is a request to hold the selected appointment to prevent the appointment from being taken by another user.</Data></Cell>
     <Cell ss:StyleID="s147"/>
     <Cell ss:StyleID="s147"/>
     <Cell ss:StyleID="s162"/>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="Default"><Data ss:Type="String">post-op</Data></Cell>
+    <Cell ss:StyleID="s113"><Data ss:Type="String">hold</Data></Cell>
     <Cell ss:StyleID="s150"><Data ss:Type="Number">2</Data></Cell>
     <Cell ss:StyleID="s136"/>
     <Cell ss:StyleID="s163"/>
-    <Cell ss:StyleID="s163"><Data ss:Type="String">Post-Op</Data></Cell>
-    <Cell ss:StyleID="Default"><Data ss:Type="String">An appointment to follow up on an operative procedure</Data></Cell>
-    <Cell ss:StyleID="s150"/>
-    <Cell ss:StyleID="s150"/>
-    <Cell ss:StyleID="s164"/>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="Default"><Data ss:Type="String">pre-op</Data></Cell>
-    <Cell ss:StyleID="s150"><Data ss:Type="Number">3</Data></Cell>
-    <Cell ss:StyleID="s136"/>
-    <Cell ss:StyleID="s163"/>
-    <Cell ss:StyleID="s163"><Data ss:Type="String">Pre-Op</Data></Cell>
-    <Cell ss:StyleID="Default"><Data ss:Type="String">An appointment to prepare for an operative procedure</Data></Cell>
-    <Cell ss:StyleID="s150"/>
-    <Cell ss:StyleID="s150"/>
-    <Cell ss:StyleID="s164"/>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="Default"><Data ss:Type="String">same-day</Data></Cell>
-    <Cell ss:StyleID="s150"><Data ss:Type="Number">4</Data></Cell>
-    <Cell ss:StyleID="s136"/>
-    <Cell ss:StyleID="s163"/>
-    <Cell ss:StyleID="s163"><Data ss:Type="String">Same Day</Data></Cell>
-    <Cell ss:StyleID="Default"><Data ss:Type="String">An appoinment to be seen by a provider the same day</Data></Cell>
-    <Cell ss:StyleID="s150"/>
-    <Cell ss:StyleID="s150"/>
-    <Cell ss:StyleID="s164"/>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="Default"><Data ss:Type="String">urgent</Data></Cell>
-    <Cell ss:StyleID="s150"><Data ss:Type="Number">5</Data></Cell>
-    <Cell ss:StyleID="s136"/>
-    <Cell ss:StyleID="s163"/>
-    <Cell ss:StyleID="s163"><Data ss:Type="String">Urgent</Data></Cell>
-    <Cell ss:StyleID="Default"><Data ss:Type="String">An appointment for an urgent problem or condition</Data></Cell>
+    <Cell ss:StyleID="s163"><Data ss:Type="String">Hold Operation</Data></Cell>
+    <Cell ss:StyleID="s113"><Data ss:Type="String">Type of booking operation is a request to book the selected appointment.</Data></Cell>
     <Cell ss:StyleID="s150"/>
     <Cell ss:StyleID="s150"/>
     <Cell ss:StyleID="s164"/>
@@ -8447,8 +8398,8 @@
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>19</ActiveRow>
-     <ActiveCol>2</ActiveCol>
+     <ActiveRow>31</ActiveRow>
+     <ActiveCol>4</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>

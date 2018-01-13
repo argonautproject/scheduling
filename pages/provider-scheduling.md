@@ -12,7 +12,7 @@ mycss: argo-sched.css
 
 ## Introduction
 
-The Argonaut Scheduling Implementation Guide defines a series of interactions which cover the basic appointment creation workflow for provider based scheduling on behalf of a patient which includes: registration of patients and updating  coverage information, discovery of available appointments and booking the cancelling appointments. It also covers provider access to their appointments.  The basic workflow steps and Argonaut Scheduling APIs for three use cases are detailed below.  Note that the primary difference between these scenarios are the *registration steps*.
+The Argonaut Scheduling Implementation Guide defines a series of interactions which cover the basic appointment creation workflow for provider based scheduling on behalf of a patient which includes: registration of patients and updating  coverage information, discovery of available appointments and booking the canceling appointments. It also covers provider access to their appointments.  The basic workflow steps and Argonaut Scheduling APIs for three use cases are detailed below.  Note that the primary difference between these scenarios are the *registration steps*.
 
 
 ## Use Case 1: Scheduling across systems
@@ -176,7 +176,7 @@ This is the simplest variation of the more general use case 1 above. The patient
 
 Preconditions:
 
-- same patient, provider, service, insurance - etc
+- same patient, provider, service, insurance
 
 #### Scenario 3 Provider schedules an follow-up appointment with same provider on behalf of patient. (follow-up appointment):
 {:.no_toc}      
@@ -189,13 +189,13 @@ This simple use case is covered by steps 2, 3, and 4 in [Scenario 1](#use-case-1
 
 ---
 
-## Cancelling/Rescheduling appointments
+## Canceling/Rescheduling appointments
 
-The practitioner or patient may elect to cancel or reschedule an existing appointment.  Rescheduling is a two step process of cancelling and rebooking a new appointment.
+The practitioner or patient may elect to cancel or reschedule an existing appointment.  Rescheduling is a two step process of canceling and rebooking a new appointment.
 
-{% include img.html img="diagrams/Slide25.png" caption="Figure 1: Cancelling/Rescheduling appointment" %}
+{% include img.html img="diagrams/Slide25.png" caption="Figure 1: Canceling/Rescheduling appointment" %}
 
-Usage and examples are described in the [Patient Use Cases](patient-scheduling.html#cancellingrescheduling-appointments).
+Usage and examples are described in the [Patient Use Cases](patient-scheduling.html#cancelingrescheduling-appointments).
 
 ## Releasing holds
 

@@ -7,10 +7,10 @@
 	<kind value="operation"/>
 	<date value="2017-08-09T11:36:05-07:00"/>
 	<publisher value="Argonaut Project"/>
-	<description value="Request to book the selected proposed Appointment.  This operation  follows the appointment availability (`$find`) and optional `$hold` operations.  The server determines if the nominated appointment is still available (i.e., all the required actors and physical assets needed for the appointment are still available) ."/>
+	<description value="Request to book a selected Appointment. This operation follows the appointment availability and optional hold interactiona.  This operaton completes the booking of an appointment.  The server determines if the nominated appointment is still available (i.e., all the required actors and physical assets needed for the appointment are still available) and either accepts or rejects the hold request and updates the resource status accordingly.  See the [Appointment State Diagram](state-diagram.html) for further details on statuses."/>
 	<idempotent value="false"/>
 	<code value="book"/>
-	<comment value="This operation is not idempotent (see the HTTP specification definition of idempotent ) and may only be invoked by performing an HTTP POST.&#xD;&#xD;
+	<comment value="This operation is not [idempotent](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html) and may only be invoked by performing an HTTP POST.&#xD;&#xD;
 It is assumed that the server has identified and secured the context appropriately, and can either associate the authorization context with the patient(s), or determine whether the context has the rights to the nominated patient(s), if there is one.  Specifying the relationship between the context, a user and patient records is outside the scope of this specification"/>
 	<resource value="Appointment"/>
 	<system value="false"/>
@@ -29,16 +29,18 @@ It is assumed that the server has identified and secured the context appropriate
 		<use value="in"/>
 		<min value="0"/>
 		<max value="1"/>
-		<documentation value="When prefetching Open Slots, an Argonaut Appointment Profile resource is created by the Client Application and is exchanged with the FHIR Scheduler (EHR). This parameter represents this profile and is the same profile as used for the `$hold` operation."/>
+		<documentation value="When prefetching open Slots, an [Argonaut Appointment Profile](StructureDefinition-argo-appt.html) resource is created by the Client Application and is exchanged with the FHIR Scheduler (EHR). This parameter represents this profile and is the same as used for the `$hold` operation."/>
 		<type value="Appointment"/>
-		<profile value="StructureDefinition/argo-appt"></profile>
+		<profile>
+			<reference value="StructureDefinition/argo-appt"/>
+		</profile>
 	</parameter>
 	<parameter>
 		<name value="cancelled-appt-id"/>
 		<use value="in"/>
 		<min value="0"/>
 		<max value="1"/>
-		<documentation value="For this implementation, rescheduling is two step process of cancelling an appointment and rebooking a new appointment.  This parameter represents the resource id (e.g., Resource/1234) of the *cancelled* Appointment and the `appt-id` parameter represents the *new* appointment when rescheduling and rebooking a new appointment.  This is the same cancelled resource id used in the `$hold` operation.  References can be to an absolute URL, but servers only perform this operation on their own appointments."/>
+		<documentation value="For this implementation, rescheduling is two step process of cancelling an appointment and rebooking a new appointment.  This parameter represents the resource id (e.g., Resource/1234) of the *cancelled* Appointment and the `appt-id` parameter represents the *new* appointment when rescheduling and rebooking a new appointment.  References can be to an absolute URL, but servers only perform this operation on their own appointments."/>
 		<type value="uri"/>
 	</parameter>
 	<parameter>

@@ -1,8 +1,8 @@
-appointment-book.md
+source file:  _includes/appointment-book.md
 
 The operation can be invoked as follows:
 
-   `POST [base]/Appointment/$hold`
+   `POST [base]/Appointment/$book`
 
 ##### Examples
 {:.no_toc}

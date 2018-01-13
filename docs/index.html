@@ -224,23 +224,20 @@ page source: index.md
 <ul id="markdown-toc">
   <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
   <li><a href="#scope" id="markdown-toc-scope">Scope</a></li>
-  <li><a href="#future-scope" id="markdown-toc-future-scope">Future Scope</a></li>
   <li><a href="#actors" id="markdown-toc-actors">Actors</a></li>
   <li><a href="#assumptions" id="markdown-toc-assumptions">Assumptions</a></li>
   <li><a href="#security" id="markdown-toc-security">Security</a></li>
   <li><a href="#best-practices" id="markdown-toc-best-practices">Best Practices</a></li>
-  <li><a href="#jekyll-site-variablesremove-prior-to-publishing" id="markdown-toc-jekyll-site-variablesremove-prior-to-publishing">Jekyll Site Variables(remove prior to publishing)</a></li>
+  <li><a href="#future-scope" id="markdown-toc-future-scope">Future Scope</a></li>
 </ul>
 
 <!-- end TOC -->
 
-<p>source pages/_include/.md  file</p>
-
 <h2 id="introduction">Introduction</h2>
 
-<p>The <a href="http://argonautwiki.hl7.org/">Argonaut</a> Scheduling Project(#.html) is a vendor agnostic specification providing FHIR RESTful APIs and guidance for access to and booking of appointments for patients by both patient and practitioner end users. This specification is based on <a href="http://hl7.org/fhir/STU3">FHIR Version 3.0.1</a> and specifically the <a href="http://hl7.org/fhir/STU3/administration-module.html#sched">Scheduling and Appointment resources</a>.</p>
+<p>The <a href="http://argonautwiki.hl7.org/">Argonaut</a> Scheduling Project is a vendor agnostic specification providing FHIR RESTful APIs and guidance for access to and booking of appointments for patients by both patient and practitioner end users. This specification is based on <a href="http://hl7.org/fhir/STU3">FHIR Version 3.0.1</a> and specifically the <a href="http://hl7.org/fhir/STU3/administration-module.html#sched">Scheduling and Appointment resources</a>.</p>
 
-<p>These requirements were developed and defined by the <a href="http://argonautwiki.hl7.org">Argonaut</a> pilot implementations.</p>
+<p>These requirements were developed and defined by the Argonaut pilot implementations and through the HL7 Connectathons.</p>
 
 <h2 id="scope">Scope</h2>
 
@@ -250,7 +247,7 @@ page source: index.md
   <li>Patient searches for available appointment times for a service or procedure through an organization’s on-line service (“patient portal”) or a third-party application.
     <ul>
       <li>Includes scenarios when patient is a new patient (“open-scheduling” through a third party application) or an existing patient (patient portal or third-party application).</li>
-      <li>Only those procedures/specialties/services based on the following “simple” inputs will be available:
+      <li>Only those procedures/specialties/services based on the following inputs will be available:
         <ul>
           <li>practitioner</li>
           <li>available times</li>
@@ -273,80 +270,24 @@ page source: index.md
 <ul>
   <li>Provider scheduling between organizations on behalf of a patient
     <ul>
-      <li>searches for available appointment times for a service or procedure
+      <li>searches for available appointment times for a service or procedure</li>
+      <li>Includes scenarios when patient is a new patient or an existing patient.</li>
+      <li>Only those procedures/specialties/services based on the following inputs will be available:
         <ul>
-          <li>Includes scenarios when patient is a new patient or an existing patient.</li>
-          <li>Only those procedures/specialties/services based on the following “simple” inputs will be available:
-            <ul>
-              <li>practitioner</li>
-              <li>available times</li>
-              <li>location</li>
-              <li>specialty</li>
-              <li>set of common <a href="ValueSet-visit-type.html">visit types</a></li>
-            </ul>
-          </li>
+          <li>practitioner</li>
+          <li>available times</li>
+          <li>location</li>
+          <li>specialty</li>
+          <li>set of common <a href="ValueSet-visit-type.html">visit types</a></li>
         </ul>
       </li>
       <li>books an appointment</li>
       <li>cancels an appointment</li>
-      <li>Exchange of coeverage and medical history ( document only )</li>
+      <li>Exchange of coverage and medical history</li>
     </ul>
   </li>
   <li>Provider retrieves their existing appointments for all patients</li>
 </ul>
-
-<h2 id="future-scope">Future Scope</h2>
-
-<p>Throughout the development of the Argonaut Scheduling Guide several additional important items were reviewed for robust scheduling implementations. This page summarizes items under development, or things that should be considered for future efforts.</p>
-
-<ol>
-  <li>“Discovery Operation”
-    <ul>
-      <li>Asks the key questions - What Service(/specialty/provider) are bookable?
-        <ul>
-          <li>This information is Static and is easy to prefetch.</li>
-          <li>It can be used as a filter when searching for appointment availability reducing the burden on server.</li>
-          <li>Consumer Facing apps can use this information to create appointments from slots.</li>
-          <li>in the future the Provider Directory (i.e., “common catalog”) can supply much of this key services information</li>
-          <li>In our initial scope, only those specialties/services based on the “simple inputs” - available times, location, specialty- will be available. Instead of a separate FHIR operation will document the need for an off-line exchange to coordinate the services/per provider (e.g. a spreadsheet)</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>Additional input requirements Operation
-    <ul>
-      <li>As stated above, in our initial scope, only those specialties/services based on the “simple inputs” - available times, location, specialty- will be available. Additional patient input and more advanced conflict checking which has been deferred to future scope.  Information like additional patient demographics, chief complaint/indication and other details to help with identifying the available appointments.</li>
-      <li>for example an <em>Appointment$input operation</em> could precede the Appointment Availability Operation to discover what inputs are needed for the service.  This operation would return a questionnaire to be filled out by the End User and submitted with the Appointment Availability Operation.  Alternatively the Operation#find operation could return an OperationOutcome informing the client that information is needed and a questionnaire to be completed first.</li>
-    </ul>
-  </li>
-  <li>Amending an appointment
-    <ul>
-      <li>Need to establish what if anything the consumer can update.</li>
-    </ul>
-  </li>
-  <li>Scheduling Requests
-    <ul>
-      <li>Requests are “everything that is not covered by Appointment$find”</li>
-      <li>Patient scheduling scenario - where system could not find appointment and need to figure out what want.. sometimes out of sync, out of band ( call-back)</li>
-      <li>May need have a separate interaction that users can just submit the request.</li>
-    </ul>
-  </li>
-  <li>Prior approvals including preauthorizations
-    <ul>
-      <li>Who has the authority to get pre-auth?</li>
-      <li>call center ( third party )</li>
-      <li>referring</li>
-      <li>referred-to Organization.</li>
-      <li>When is it needed</li>
-    </ul>
-  </li>
-  <li>Scheduling physical (rooms, modalities, etc.) resources</li>
-  <li>Initiating Transitions of Care</li>
-  <li>Language support</li>
-  <li>Multimedia support</li>
-  <li>Estimated out of pocket patient costs</li>
-  <li>Provider based scheduling within an organization</li>
-</ol>
 
 <h2 id="actors">Actors</h2>
 
@@ -388,26 +329,26 @@ page source: index.md
 </ol>
 
 <h3 class="no_toc" id="login-and-trust">Login and Trust</h3>
+
+<h4 class="no_toc" id="system-level-trust">System level trust:</h4>
+
 <ol>
-  <li>System level trust:
-    <ol>
-      <li>Supports the <a href="http://argonautwiki.hl7.org/images/4/4c/Argonaut_UseCasesV1.pdf">use case 5</a> defined for Phase 1 of the Argonaut Project.</li>
-      <li>One solution is to use access FHIR resources by requesting access tokens from OAuth 2.0 compliant authorization servers using <a href="http://docs.smarthealthit.org/authorization/backend-services/">SMART Backend Services</a>.</li>
-      <li>it is assumed that consent is managed elsewhere.</li>
-    </ol>
-  </li>
-  <li>User Level Trust:
-    <ol>
-      <li>An client application has been authorized by the health system.</li>
-      <li>Uses <a href="http://docs.smarthealthit.org/authorization/">SMART on FHIR</a> authorization for apps that connect to EHR data.</li>
-      <li>If the patient is successfully registered via a third-party application or logged into an EHR’s patient portal, the patient ID is returned or known.</li>
-      <li>‘Open-scheduling’:  Authorized applications can search for available appointments without Server having to “know” the patient.
-        <ul>
-          <li>Later on in interaction a “patient level authorization” in order to create a new account and complete the appointment will be required.  The technical details for this are out of scope for this project.</li>
-          <li>Alternate approaches are out of scope for this project.</li>
-        </ul>
-      </li>
-    </ol>
+  <li>Supports the <a href="http://argonautwiki.hl7.org/images/4/4c/Argonaut_UseCasesV1.pdf">use case 5</a> defined for Phase 1 of the Argonaut Project.</li>
+  <li>One solution is to use access FHIR resources by requesting access tokens from OAuth 2.0 compliant authorization servers using <a href="http://docs.smarthealthit.org/authorization/backend-services/">SMART Backend Services</a>.</li>
+  <li>it is assumed that consent is managed elsewhere.</li>
+</ol>
+
+<h4 class="no_toc" id="user-level-trust">User Level Trust:</h4>
+
+<ol>
+  <li>An client application has been authorized by the health system.</li>
+  <li>Uses <a href="http://docs.smarthealthit.org/authorization/">SMART on FHIR</a> authorization for apps that connect to EHR data.</li>
+  <li>If the patient is successfully registered via a third-party application or logged into an EHR’s patient portal, the patient ID is returned or known.</li>
+  <li>‘Open-scheduling’:  Authorized applications can search for available appointments without Server having to “know” the patient.
+    <ul>
+      <li>Later on in interaction a “patient level authorization” in order to create a new account and complete the appointment will be required.  The technical details for this are out of scope for this project.</li>
+      <li>Alternate approaches are out of scope for this project.</li>
+    </ul>
   </li>
 </ol>
 
@@ -421,7 +362,7 @@ page source: index.md
 <h3 class="no_toc" id="rescheduling">Rescheduling</h3>
 
 <ol>
-  <li>Rescheduling and appointment is a two step process of cancelling and rebooking.</li>
+  <li>Rescheduling and appointment is a two step process of canceling and rebooking.</li>
 </ol>
 
 <h2 id="security">Security</h2>
@@ -435,31 +376,46 @@ page source: index.md
 
 <p>…todo…</p>
 
-<h2 id="jekyll-site-variablesremove-prior-to-publishing">Jekyll Site Variables(remove prior to publishing)</h2>
+<h2 id="future-scope">Future Scope</h2>
 
-<p>igName : Title of the implementation Guide (defined in ig.xml) -   {{site.data.fhir.igName}} = Argo-Scheduling</p>
+<p>Throughout the development of the Argonaut Scheduling Guide several additional important items were reviewed for robust scheduling implementations. This page summarizes items under development, or things that should be considered for future efforts.</p>
 
-<p>path : path to the main FHIR specification (defined in ig.json)-   {{site.data.fhir.path}} = http://hl7.org/fhir/STU3</p>
-
-<p>canonical : canonical path to this specification (defined in ig.json)-   {{site.data.fhir.canonical}}  = http://fhir.org/guides/argonaut-scheduling</p>
-
-<p>dependency url -  “uscore” : Base url of a dependency implementation Guide (defined in ig.json) - {{site.data.fhir.uscore}} = http://hl7.org/fhir/us/core/stu1/</p>
-
-<p>errorCount : number of errors in the build file (not including HTML validation errors) -   {{site.data.fhir.errorCount}}  = 416</p>
-
-<p>version : version of FHIR -   {{site.data.fhir.version}}  = 3.0.1</p>
-
-<p>revision : revision of FHIR -   {{site.data.fhir.revision}}  = 11917</p>
-
-<p>versionFull : version-revision -   {{site.data.fhir.versionFull}}  = 3.0.1-11917</p>
-
-<p>totalFiles : total number of files found by the build -   {{site.data.fhir.totalFiles}}  = 38</p>
-
-<p>processedFiles : number of files genrated by the build -   {{site.data.fhir.processedFiles}}  = 1</p>
-
-<p>genDate : date of generation (so date stamps in the pages can match those in the conformance resources) -   {{site.data.fhir.genDate}}  = Fri, Jan 12, 2018 19:01-0800</p>
-
-<hr />
+<ol>
+  <li>“Discovery Operation”
+    <ul>
+      <li>This operation would asks the key questions - What Service(/specialty/provider) are bookable?  Off-line exchanges (e.g., a spreadsheet) are typically used to exchange this information. This information is Static and is easy to prefetch Amending can be used as a filter when searching for appointment availability reducing the burden on server.  Consumer Facing apps can use this information to create appointments from slots.  In the future the Provider Directory (i.e., “common catalog”) can supply much of this key services information.  But in our initial scope, only those specialties/services based on the “simple” inputs - available times, location, specialty- will be available.</li>
+    </ul>
+  </li>
+  <li>Additional input requirements
+    <ul>
+      <li>
+        <p>As stated above, in our initial scope, only those specialties/services based on a limited set of inputs are considered.  Additional patient input and more advanced conflict checking has been deferred.  Information like additional patient demographics, chief complaint/indication and other details can help with identifying the available appointments.</p>
+      </li>
+      <li>
+        <p>For example an operation could precede the search for appointment availability to discover what inputs are needed for the service.  This operation would return a questionnaire to be filled out by the end user and submitted with the appointment availability operation.  Alternatively, an operation could return an OperationOutcome resource informing the client that information is needed and a questionnaire to be completed first.</p>
+      </li>
+    </ul>
+  </li>
+  <li>Amending an appointment by an end user
+    <ul>
+      <li>Need to establish what if anything the consumer can update.</li>
+    </ul>
+  </li>
+  <li>Scheduling Requests
+    <ul>
+      <li>Appointment Requests are “everything that is not covered by an appointment availability operation”</li>
+      <li>Patient scheduling scenario - where system could not find appointment and need to figure out what wanted or needed.  This may sometimes results in out of sync, out of band ( call-back) responses.</li>
+      <li>May need have a separate interaction that users can just submit the request.</li>
+    </ul>
+  </li>
+  <li>Prior approvals including preauthorizations</li>
+  <li>Scheduling physical (rooms, modalities, etc.) resources</li>
+  <li>Initiating Transitions of Care</li>
+  <li>Language support</li>
+  <li>Multimedia support</li>
+  <li>Estimated out of pocket patient costs</li>
+  <li>Provider based scheduling within an organization</li>
+</ol>
 
 <p>Primary Authors: Eric Haas, Brett Marquard</p>
 
@@ -491,7 +447,7 @@ page source: index.md
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Fri, Jan 12, 2018 19:01-0800. |
+            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Sat, Jan 13, 2018 01:58-0800. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/STU3license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

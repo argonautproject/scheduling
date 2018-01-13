@@ -229,6 +229,17 @@
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "StructureDefinition-extension-status-reason.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-status-reason>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/extension-status-reason" ]
+       ]
+     ], [
+       fhir:index 18;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
          fhir:Extension.valueUri [ fhir:value "ValueSet-visit-type.html" ]
        ];
        fhir:ImplementationGuide.package.resource.sourceReference [
@@ -236,7 +247,7 @@
          fhir:Reference.reference [ fhir:value "ValueSet/visit-type" ]
        ]
      ], [
-       fhir:index 18;
+       fhir:index 19;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
@@ -247,7 +258,7 @@
          fhir:Reference.reference [ fhir:value "ValueSet/status-reason" ]
        ]
      ], [
-       fhir:index 19;
+       fhir:index 20;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
@@ -256,17 +267,6 @@
        fhir:ImplementationGuide.package.resource.sourceReference [
          fhir:link <http://fhir.org/guides/argonaut-scheduling/ValueSet/specialty>;
          fhir:Reference.reference [ fhir:value "ValueSet/specialty" ]
-       ]
-     ], [
-       fhir:index 20;
-       fhir:Element.extension [
-         fhir:index 0;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
-         fhir:Extension.valueUri [ fhir:value "ValueSet-appt-type.html" ]
-       ];
-       fhir:ImplementationGuide.package.resource.sourceReference [
-         fhir:link <http://fhir.org/guides/argonaut-scheduling/ValueSet/appt-type>;
-         fhir:Reference.reference [ fhir:value "ValueSet/appt-type" ]
        ]
      ], [
        fhir:index 21;
@@ -284,25 +284,14 @@
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
-         fhir:Extension.valueUri [ fhir:value "StructureDefinition-prefetch-slot.html" ]
+         fhir:Extension.valueUri [ fhir:value "ValueSet-appt-type.html" ]
        ];
        fhir:ImplementationGuide.package.resource.sourceReference [
-         fhir:link <http://fhir.org/guides/argonaut-scheduling/StructureDefinition/prefetch-slot>;
-         fhir:Reference.reference [ fhir:value "StructureDefinition/prefetch-slot" ]
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/ValueSet/appt-type>;
+         fhir:Reference.reference [ fhir:value "ValueSet/appt-type" ]
        ]
      ], [
        fhir:index 23;
-       fhir:Element.extension [
-         fhir:index 0;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
-         fhir:Extension.valueUri [ fhir:value "StructureDefinition-avail-bundle.html" ]
-       ];
-       fhir:ImplementationGuide.package.resource.sourceReference [
-         fhir:link <http://fhir.org/guides/argonaut-scheduling/StructureDefinition/avail-bundle>;
-         fhir:Reference.reference [ fhir:value "StructureDefinition/avail-bundle" ]
-       ]
-     ], [
-       fhir:index 24;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
@@ -311,6 +300,17 @@
        fhir:ImplementationGuide.package.resource.sourceReference [
          fhir:link <http://fhir.org/guides/argonaut-scheduling/StructureDefinition/slot-bundle>;
          fhir:Reference.reference [ fhir:value "StructureDefinition/slot-bundle" ]
+       ]
+     ], [
+       fhir:index 24;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "StructureDefinition-prefetch-slot.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/StructureDefinition/prefetch-slot>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/prefetch-slot" ]
        ]
      ], [
        fhir:index 25;
@@ -422,6 +422,39 @@
          fhir:link <http://fhir.org/guides/argonaut-scheduling/CapabilityStatement/client>;
          fhir:Reference.reference [ fhir:value "CapabilityStatement/client" ]
        ]
+     ], [
+       fhir:index 35;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "StructureDefinition-avail-bundle.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/StructureDefinition/avail-bundle>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/avail-bundle" ]
+       ]
+     ], [
+       fhir:index 36;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "StructureDefinition-argo-coverage.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-coverage>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/argo-coverage" ]
+       ]
+     ], [
+       fhir:index 37;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "StructureDefinition-argo-appt.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/argo-appt" ]
+       ]
      ]
   ], [
      fhir:index 1;
@@ -469,22 +502,6 @@
      ]
   ], [
      fhir:index 3;
-     fhir:ImplementationGuide.package.name [ fhir:value "Argonaut Prefetch Slot Profile" ];
-     fhir:ImplementationGuide.package.resource [
-       fhir:index 0;
-       fhir:Element.extension [
-         fhir:index 0;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
-         fhir:Extension.valueUri [ fhir:value "StructureDefinition-prefetch-slot.html" ]
-       ];
-       fhir:ImplementationGuide.package.resource.name [ fhir:value "Argonaut Prefetch Slot Profile" ];
-       fhir:ImplementationGuide.package.resource.sourceReference [
-         fhir:link <http://fhir.org/guides/argonaut-scheduling/StructureDefinition/prefetch-slot>;
-         fhir:Reference.reference [ fhir:value "StructureDefinition/prefetch-slot" ]
-       ]
-     ]
-  ], [
-     fhir:index 4;
      fhir:ImplementationGuide.package.name [ fhir:value "Argonaut Appointment Bundle Profile" ];
      fhir:ImplementationGuide.package.resource [
        fhir:index 0;
@@ -497,6 +514,22 @@
        fhir:ImplementationGuide.package.resource.sourceReference [
          fhir:link <http://fhir.org/guides/argonaut-scheduling/StructureDefinition/avail-bundle>;
          fhir:Reference.reference [ fhir:value "StructureDefinition/avail-bundle" ]
+       ]
+     ]
+  ], [
+     fhir:index 4;
+     fhir:ImplementationGuide.package.name [ fhir:value "Argonaut Prefetch Slot Profile" ];
+     fhir:ImplementationGuide.package.resource [
+       fhir:index 0;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "StructureDefinition-prefetch-slot.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "Argonaut Prefetch Slot Profile" ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/StructureDefinition/prefetch-slot>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/prefetch-slot" ]
        ]
      ]
   ], [
@@ -517,9 +550,60 @@
      ]
   ];
   fhir:ImplementationGuide.page [
-     fhir:ImplementationGuide.page.source [ fhir:value "index.html" ];
+     fhir:ImplementationGuide.page.source [ fhir:value "index.md" ];
      fhir:ImplementationGuide.page.title [ fhir:value "Argo-Scheduling Homepage" ];
-     fhir:ImplementationGuide.page.kind [ fhir:value "page" ]
+     fhir:ImplementationGuide.page.kind [ fhir:value "page" ];
+     fhir:ImplementationGuide.page.page [
+       fhir:index 0;
+       fhir:ImplementationGuide.page.source [ fhir:value "toc.md" ];
+       fhir:ImplementationGuide.page.title [ fhir:value "Argo-Scheduling Table of Contents" ];
+       fhir:ImplementationGuide.page.kind [ fhir:value "page" ]
+     ], [
+       fhir:index 1;
+       fhir:ImplementationGuide.page.source [ fhir:value "downloads.md" ];
+       fhir:ImplementationGuide.page.title [ fhir:value "Downloads" ];
+       fhir:ImplementationGuide.page.kind [ fhir:value "page" ]
+     ], [
+       fhir:index 2;
+       fhir:ImplementationGuide.page.source [ fhir:value "client-capstatement.md" ];
+       fhir:ImplementationGuide.page.title [ fhir:value "Client CapabilityStatement defined for this Guide" ];
+       fhir:ImplementationGuide.page.kind [ fhir:value "page" ]
+     ], [
+       fhir:index 3;
+       fhir:ImplementationGuide.page.source [ fhir:value "server-capstatement.md" ];
+       fhir:ImplementationGuide.page.title [ fhir:value "Server CapabilityStatement defined for this Guide" ];
+       fhir:ImplementationGuide.page.kind [ fhir:value "page" ]
+     ], [
+       fhir:index 4;
+       fhir:ImplementationGuide.page.source [ fhir:value "operations.md" ];
+       fhir:ImplementationGuide.page.title [ fhir:value "OperationDefinitions defined for this Guide" ];
+       fhir:ImplementationGuide.page.kind [ fhir:value "page" ]
+     ], [
+       fhir:index 5;
+       fhir:ImplementationGuide.page.source [ fhir:value "terminology.md" ];
+       fhir:ImplementationGuide.page.title [ fhir:value "ValueSets and CodeSystems defined as part of this Implementation Guide" ];
+       fhir:ImplementationGuide.page.kind [ fhir:value "page" ]
+     ], [
+       fhir:index 6;
+       fhir:ImplementationGuide.page.source [ fhir:value "profiles.md" ];
+       fhir:ImplementationGuide.page.title [ fhir:value "Profiles defined as part of this Guide" ];
+       fhir:ImplementationGuide.page.kind [ fhir:value "page" ]
+     ], [
+       fhir:index 7;
+       fhir:ImplementationGuide.page.source [ fhir:value "provider-scheduling.md" ];
+       fhir:ImplementationGuide.page.title [ fhir:value "Provider based Scheduling Use Cases" ];
+       fhir:ImplementationGuide.page.kind [ fhir:value "page" ]
+     ], [
+       fhir:index 8;
+       fhir:ImplementationGuide.page.source [ fhir:value "patient-scheduling.md" ];
+       fhir:ImplementationGuide.page.title [ fhir:value "Patient based Scheduling Use Cases" ];
+       fhir:ImplementationGuide.page.kind [ fhir:value "page" ]
+     ], [
+       fhir:index 9;
+       fhir:ImplementationGuide.page.source [ fhir:value "state-diagram.md" ];
+       fhir:ImplementationGuide.page.title [ fhir:value "Appointment State Diagram" ];
+       fhir:ImplementationGuide.page.kind [ fhir:value "page" ]
+     ]
   ] .
 
 # - ontology header ------------------------------------------------------------

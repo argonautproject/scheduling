@@ -7,10 +7,10 @@
 	<kind value="operation"/>
 	<date value="2017-08-09T11:36:05-07:00"/>
 	<publisher value="Argonaut Project"/>
-	<description value="Request for a hold on the selected proposed Appointment in order for the user to complete entering data for booking an appointment.  This operation precedes  the booking operation for an appointment and  follows the appointment availability operation ($find).  The server determines if the nominated appointment is still available (i.e., all the required actors and physical assets needed for the appointment are still available) . The length of the hold is defined by local business rules."/>
+	<description value="Request for a hold on a selected Appointment in order for the user to complete entering data for booking an appointment.  This operation precedes the booking and follows the appointment availability interaction.  The server determines if the nominated appointment is still available (i.e., all the required actors and physical assets needed for the appointment are still available) and either accepts or rejects the hold request and updates the resource status accordingly.  See the [Appointment State Diagram](state-diagram.html) for further details on statuses. The length of the hold is defined by local business rules."/>
 	<idempotent value="false"/>
 	<code value="hold"/>
-	<comment value="This operation is not idempotent (see the HTTP specification definition of idempotent ) and may only be invoked by performing an HTTP POST."/>
+	<comment value="This operation is not [idempotent](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html) and may only be invoked by performing an HTTP POST."/>
 	<resource value="Appointment"/>
 	<system value="false"/>
 	<type value="true"/>
@@ -22,6 +22,17 @@
 		<max value="1"/>
 		<documentation value="A resource id for one of proposed Appointments returned by a prior $find operation (e.g., Resource/1234).  References can be to an absolute URL, but servers only perform this operation on their own appointments."/>
 		<type value="uri"/>
+	</parameter>
+	<parameter>
+		<name value="appt-resource"/>
+		<use value="in"/>
+		<min value="0"/>
+		<max value="1"/>
+		<documentation value="When prefetching open Slots, an [Argonaut Appointment Profile](StructureDefinition-argo-appt.html) resource is created by the Client Application and is exchanged with the FHIR Scheduler (EHR). This parameter represents this profile and is the same as used for the `$book` operation."/>
+		<type value="Appointment"/>
+		<profile>
+			<reference value="StructureDefinition/argo-appt"/>
+		</profile>
 	</parameter>
 	<parameter>
 		<name value="return"/>

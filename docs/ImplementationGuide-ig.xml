@@ -167,6 +167,14 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+        <valueUri value="StructureDefinition-extension-status-reason.html"/>
+      </extension>
+      <sourceReference>
+        <reference value="StructureDefinition/extension-status-reason"/>
+      </sourceReference>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
         <valueUri value="ValueSet-visit-type.html"/>
       </extension>
       <sourceReference>
@@ -191,14 +199,6 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="ValueSet-appt-type.html"/>
-      </extension>
-      <sourceReference>
-        <reference value="ValueSet/appt-type"/>
-      </sourceReference>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
         <valueUri value="ValueSet-slot-bundle-type.html"/>
       </extension>
       <sourceReference>
@@ -207,18 +207,10 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="StructureDefinition-prefetch-slot.html"/>
+        <valueUri value="ValueSet-appt-type.html"/>
       </extension>
       <sourceReference>
-        <reference value="StructureDefinition/prefetch-slot"/>
-      </sourceReference>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="StructureDefinition-avail-bundle.html"/>
-      </extension>
-      <sourceReference>
-        <reference value="StructureDefinition/avail-bundle"/>
+        <reference value="ValueSet/appt-type"/>
       </sourceReference>
     </resource>
     <resource>
@@ -227,6 +219,14 @@
       </extension>
       <sourceReference>
         <reference value="StructureDefinition/slot-bundle"/>
+      </sourceReference>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+        <valueUri value="StructureDefinition-prefetch-slot.html"/>
+      </extension>
+      <sourceReference>
+        <reference value="StructureDefinition/prefetch-slot"/>
       </sourceReference>
     </resource>
     <resource>
@@ -309,6 +309,30 @@
         <reference value="CapabilityStatement/client"/>
       </sourceReference>
     </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+        <valueUri value="StructureDefinition-avail-bundle.html"/>
+      </extension>
+      <sourceReference>
+        <reference value="StructureDefinition/avail-bundle"/>
+      </sourceReference>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+        <valueUri value="StructureDefinition-argo-coverage.html"/>
+      </extension>
+      <sourceReference>
+        <reference value="StructureDefinition/argo-coverage"/>
+      </sourceReference>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+        <valueUri value="StructureDefinition-argo-appt.html"/>
+      </extension>
+      <sourceReference>
+        <reference value="StructureDefinition/argo-appt"/>
+      </sourceReference>
+    </resource>
   </package>
   <package>
     <name value="Argonaut Appointment Profile"/>
@@ -344,18 +368,6 @@
     </resource>
   </package>
   <package>
-    <name value="Argonaut Prefetch Slot Profile"/>
-    <resource>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="StructureDefinition-prefetch-slot.html"/>
-      </extension>
-      <name value="Argonaut Prefetch Slot Profile"/>
-      <sourceReference>
-        <reference value="StructureDefinition/prefetch-slot"/>
-      </sourceReference>
-    </resource>
-  </package>
-  <package>
     <name value="Argonaut Appointment Bundle Profile"/>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
@@ -364,6 +376,18 @@
       <name value="Argonaut Appointment Bundle Profile"/>
       <sourceReference>
         <reference value="StructureDefinition/avail-bundle"/>
+      </sourceReference>
+    </resource>
+  </package>
+  <package>
+    <name value="Argonaut Prefetch Slot Profile"/>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+        <valueUri value="StructureDefinition-prefetch-slot.html"/>
+      </extension>
+      <name value="Argonaut Prefetch Slot Profile"/>
+      <sourceReference>
+        <reference value="StructureDefinition/prefetch-slot"/>
       </sourceReference>
     </resource>
   </package>
@@ -380,8 +404,58 @@
     </resource>
   </package>
   <page>
-    <source value="index.html"/>
+    <source value="index.md"/>
     <title value="Argo-Scheduling Homepage"/>
     <kind value="page"/>
+    <page>
+      <source value="toc.md"/>
+      <title value="Argo-Scheduling Table of Contents"/>
+      <kind value="page"/>
+    </page>
+    <page>
+      <source value="downloads.md"/>
+      <title value="Downloads"/>
+      <kind value="page"/>
+    </page>
+    <page>
+      <source value="client-capstatement.md"/>
+      <title value="Client CapabilityStatement defined for this Guide"/>
+      <kind value="page"/>
+    </page>
+    <page>
+      <source value="server-capstatement.md"/>
+      <title value="Server CapabilityStatement defined for this Guide"/>
+      <kind value="page"/>
+    </page>
+    <page>
+      <source value="operations.md"/>
+      <title value="OperationDefinitions defined for this Guide"/>
+      <kind value="page"/>
+    </page>
+    <page>
+      <source value="terminology.md"/>
+      <title value="ValueSets and CodeSystems defined as part of this Implementation Guide"/>
+      <kind value="page"/>
+    </page>
+    <page>
+      <source value="profiles.md"/>
+      <title value="Profiles defined as part of this Guide"/>
+      <kind value="page"/>
+    </page>
+    <page>
+      <source value="provider-scheduling.md"/>
+      <title value="Provider based Scheduling Use Cases"/>
+      <kind value="page"/>
+    </page>
+    <page>
+      <source value="patient-scheduling.md"/>
+      <title value="Patient based Scheduling Use Cases"/>
+      <kind value="page"/>
+    </page>
+    <page>
+      <source value="state-diagram.md"/>
+      <title value="Appointment State Diagram"/>
+      <kind value="page"/>
+    </page>
   </page>
 </ImplementationGuide>

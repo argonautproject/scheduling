@@ -14,7 +14,7 @@
 	<count value="40"/>
 	<concept>
 		<code value="breast-imaging"/>
-		<display value="BREAST IMAGING "/>
+		<display value="BREAST IMAGING"/>
 		<definition value="breast imaging  visit"/>
 	</concept>
 	<concept>

@@ -418,11 +418,11 @@
 					<td>IN</td>
 					<td>patient-resource</td>
 					<td>0..*</td>
-					<td>Resource</td>
+					<td>Patient</td>
 					<td/>
 					<td>
 						<div>
-							<p>This parameter is a complex <code>Resource</code> type instead of a simple reference because the patient record may not exist when performing availablity searches. (If the Patient resource id is known, use the <code>patient-reference</code> parameter instead.)  It based on the <a href="http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient">US Core Patient Profile</a> and includes demographics and patient preferences that may be important for availaiblilty searches. If the appointment is for a new patient, the patient record should not be created until just before booking an appointment.  If multiple patient resources are listed, the response will contain appointments which is joint match for all patients - i.e., a group appointment.</p>
+							<p>This parameter uses the Patient resource type instead of a simple reference because the patient record may not exist when performing availablity searches. (If the Patient resource id is known, use the <code>patient-reference</code> parameter instead.)  It based on the <a href="http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient">US Core Patient Profile</a> and includes demographics and patient preferences that may be important for availaiblilty searches. If the appointment is for a new patient, the patient record should not be created until just before booking an appointment.  If multiple patient resources are listed, the response will contain appointments which is joint match for all patients - i.e., a group appointment.</p>
 						</div>
 					</td>
 				</tr>
@@ -430,11 +430,11 @@
 					<td>IN</td>
 					<td>coverage</td>
 					<td>0..*</td>
-					<td>Resource</td>
+					<td>Coverage</td>
 					<td/>
 					<td>
 						<div>
-							<p>This parameter is a complex <code>Resource</code> type. It based on the <a href="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-coverage">Argonaut Coverage Profile</a> and is used to provide insurance information for scheduling an appointment and or registering a patient. Do not transmit Coverage resource elements that require the Patient resource id if it is not known.  If multiple coverage resources are listed, the response will contain appointments which is joint match for all coverages and patients - i.e., a group appointment.</p>
+							<p>This parameter uses the Coverage resource type and is constrained to the the <a href="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-coverage">Argonaut Coverage Profile</a>. It provides insurance information for scheduling an appointment and or registering a patient.  Do not transmit Coverage resource elements that require the Patient resource id if it is not known. If multiple coverage resources are listed, the response will contain appointments which is joint match for all coverages and patients - i.e., a group appointment.</p>
 						</div>
 					</td>
 				</tr>
@@ -841,7 +841,7 @@ Formats: <a href="OperationDefinition-appointment-find.html">Narrative</a>, <a h
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Fri, Jan 12, 2018 19:01-0800. |
+            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Sat, Jan 13, 2018 01:58-0800. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/STU3license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

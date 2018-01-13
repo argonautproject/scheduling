@@ -10,7 +10,7 @@
   fhir:Resource.id [ fhir:value "server"];
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "generated" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n<ul><li>FHIR Version: 3.0.0</li><li>Supported formats: xml, json</li><li>Published: 2017-03-08</li><li>Published by: Health eData Inc</li></ul><p>The Section describes the expected capabilities etc....</p></div>"
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      <ul>\n        <li>FHIR Version: 3.0.1</li>\n        <li>Supported formats: xml, json</li>\n        <li>Published: 2017-03-08</li>\n        <li>Published by: Health eData Inc</li>\n      </ul>\n      <p>The Section describes the expected capabilities etc....</p>\n    </div>"
   ];
   fhir:CapabilityStatement.url [ fhir:value "http://fhir.org/guides/argonaut-scheduling/CapabilityStatement/server"];
   fhir:CapabilityStatement.version [ fhir:value "0.0.0"];
@@ -36,7 +36,7 @@
      ]
   ];
   fhir:CapabilityStatement.kind [ fhir:value "requirements"];
-  fhir:CapabilityStatement.fhirVersion [ fhir:value "3.0.0"];
+  fhir:CapabilityStatement.fhirVersion [ fhir:value "3.0.1"];
   fhir:CapabilityStatement.acceptUnknown [ fhir:value "extensions"];
   fhir:CapabilityStatement.format [
      fhir:value "xml";

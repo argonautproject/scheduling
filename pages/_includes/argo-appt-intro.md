@@ -1,4 +1,4 @@
-    argo-appt-intro.md file
+source file: _includes/argo-appt-intro.md
 
 
 This profile sets minimum expectations for the Appointment resource to record, search and fetch basic information about an individual appointment. It identifies which core elements, extensions, vocabularies and value sets SHALL be present in the resource when using this profile.
@@ -30,7 +30,7 @@ The following data-elements are mandatory (i.e data MUST be present).
 
 **Additional Profile specific implementation guidance:**
 
- - The [Scheduling State Diagram](state-diagram.html) SHOULD be referenced to when considering the statuses of the scheduling resources during the scheduling workflow.
+ - The [Appointment State Diagram](state-diagram.html) SHOULD be referenced to when considering the statuses of the scheduling resources during the scheduling workflow.
 
 #### Examples
 

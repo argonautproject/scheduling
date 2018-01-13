@@ -12,7 +12,7 @@ mycss: argo-sched.css
 
 ## Introduction
 
-The Argonaut Scheduling Implementation Guide defines a series of interactions which cover the basic appointment creation workflow for patient base scheduling which includes: registration of patients and updating  coverage information, discovery of available appointments and booking the cancelling appointments. It also covers patient access to their appointments.  The basic workflow steps and Argonaut Scheduling APIs for three use cases are detailed below.
+The Argonaut Scheduling Implementation Guide defines a series of interactions which cover the basic appointment creation workflow for patient based scheduling which includes: registration of patients and updating  coverage information, discovery of available appointments and booking the canceling appointments. It also covers patient access to their appointments.  The basic workflow steps and Argonaut Scheduling APIs for three use cases are detailed below.
 
 ## Use Case 1: Patient Portal Scheduling for existing patients
 
@@ -107,7 +107,7 @@ This operation puts to appointment in a hold status to temporarily prevent the a
 
 {% include img.html img="diagrams/Slide31.png" caption="Figure 4: Hold Appointment" %}
 
- The Client sends a hold request operation using the id of selected proposed appointment as the input parameter.  The Server determines if the appointment can be held and returns the Appointment resource with with an updated status. See the [Scheduling State Diagram](state-diagram.html) for further details on statuses.
+ The Client sends a hold request operation using the id of selected proposed appointment as the input parameter.  The Server determines if the appointment can be held and returns the Appointment resource with with an updated status. See the [Appointment State Diagram](state-diagram.html) for further details on statuses.
 
 #### APIs
 {:.no_toc}
@@ -131,7 +131,7 @@ The actual booking of the appointment is completed in this step and the scheduli
 
 {% include img.html img="diagrams/Slide32.png" caption="Figure 5: Book Appointment" %}
 
-the Client sends a book operation using the id of selected proposed appointment, the patient(s) id and optionally any comments as the input parameters.  The Server determines if the appointment can be booked and returns the Appointment resource with with an updated status. See the [Scheduling State Diagram](state-diagram.html) for further details on statuses.
+the Client sends a book operation using the id of selected proposed appointment, the patient(s) id and optionally any comments as the input parameters.  The Server determines if the appointment can be booked and returns the Appointment resource with with an updated status. See the [Appointment State Diagram](state-diagram.html) for further details on statuses.
 
 #### APIs
 {:.no_toc}
@@ -217,11 +217,11 @@ A new patient will need to be registered or an existing patient fetched prior to
 ##### Usage
 {:.no_toc}
 
-To register a new or existing patient, The Client SHALL use the standard FHIR RESTful [create API]({{site.data.fhir.path}}/http.html#create) as shown ( and SHALL not use the 'If-None-Exist' header as described in FHIR [conditional create API]({{site.data.fhir.path}}/http.html#ccreate))
+To register a new or existing patient, The Client SHALL use the standard FHIR RESTful [create API]({{site.data.fhir.path}}/http.html#create) as follows:
 
-POST [base]/Patient/[id]
+`POST [base]/Patient/[id]`
 
-In response to this transaction, the server SHOULD create a new patient resource only if the patient resource does not already exist in the system.  If the patient is already registered within the system. The existing patient resource SHOULD be returned.
+In response to this transaction, the server SHOULD create a new patient resource only if the patient resource does not already exist in the system.  If the patient is already registered within the system. The existing patient resource SHOULD be returned.  Note that the Client SHALL not use the 'If-None-Exist' header as described in FHIR [conditional create API]({{site.data.fhir.path}}/http.html#ccreate)).
 
 
 ##### Example
@@ -269,11 +269,11 @@ PUT [base]/Coverage/[id]....
 ###  Book Appointment
 {:.no_toc}
 
-After the patient is registered the actual booking interaction can occur.
+After the patient is registered, the actual booking interaction can occur.
 
 {% include img.html img="diagrams/Slide06.png" caption="Figure 1: Book Appointment" %}
 
-After the patient is registered the actual booking interaction can occur.  This step is the same as described in [Scenario-1](#book-appointment).
+This step is the same as described in [Scenario-1](#book-appointment).
 
 ###  Patient Coverage Update Option C
 {:.no_toc}
@@ -295,7 +295,7 @@ Preconditions:
 - Third Party App able to aquire:
   - Scheduling business rules for target organization
   - At a minimum FHIR resource ids for Location and Practitioner
-- FHIR Server maintain a version history
+- FHIR Scheduling Server maintains a version history of Slots
 
 #### Scenario 3a. New Patient Schedules an Appointment with a Provider without being in health system
 {:.no_toc}
@@ -331,7 +331,13 @@ The third-party application fetches the 'initial load' of open slots.  It may be
 
 {% include img.html img="diagrams/Slide14.png" caption="Figure 1: Initial Load" %}
 
-**Fetching the 'intial load' of open slots:**
+#### API
+{:.no_toc}
+
+The following Argonaut Scheduling artifacts are used in this transaction:
+
+- **[Argonaut Prefetch Slot Profile](StructureDefinition-prefetch-slot.html)**
+- **[Argonaut Slot Bundle Profile](StructureDefinition-slot-bundle.html)**.
 
 #### Usage
 {:.no_toc}
@@ -365,14 +371,20 @@ todo inline example
 ###  Poll for updated slots
 {:.no_toc}
 
-After fetching the 'initial load' in step 2, the third-party application periodically polls for updated slots to keep the list of open slots current. The query would use the `_history` interaction to fetch only the slots that were either updated, deleted or created since the last query.  By reconciling the query results with its list of open slots, the Client application is able to synchronize its slots information with the FHIR Server.
+After fetching the 'initial load' in step 2, the third-party application periodically polls for updated slots to keep the list of open slots current. The query SHALL use the `_history` interaction to fetch only the slots that were either updated, deleted or created since the last query.  By reconciling the query results with its list of open slots, the Client application is able to synchronize its slots information with the FHIR Server.
 
 {% include img.html img="diagrams/Slide15.png" caption="Figure 1: Poll for updated slots" %}
 
-#### Fetching open slot updates:
+#### API
 {:.no_toc}
 
-##### Usage
+The following Argonaut Scheduling artifacts are used in this transaction:
+
+- **[Argonaut Prefetch Slot Profile](StructureDefinition-prefetch-slot.html)**
+- **[Argonaut Slot Bundle Profile](StructureDefinition-slot-bundle.html)**.
+
+#### Usage
+
 {:.no_toc}
 
 To fetch all updated slots since the last update, the Client SHALL use:
@@ -386,7 +398,7 @@ GET [base]/Slot/_history?_since=[last-update]
 
 Note that this operation *does not* contain any search parameters. The client must to perform additional filtering on the returned slots (for example, `status`=active ) to match the search criteria used for initial load in step 2.
 
-##### Example
+#### Example
 {:.no_toc}
 
 ~~~json
@@ -411,7 +423,19 @@ The FHIR RESTful based interactions are the same as described in [Scenario-1 Ste
 ###  Optional Hold Appointment Operation
 {:.no_toc}
 
-This step is identical to [Scenario 2 Step 3](#optional-hold-appointment-operation-1) above..
+After the end user selects a preferred appointment time.  There may be additional steps such as end user data entry prior to actually booking the appointment.  The Client Application may request FHIR Scheduler (EHR) to hold this appointment to prevent it from being taken by another user.
+
+{% include img.html img="diagrams/Slide04.png" caption="Figure 1: Optional Hold Appointment Operation" %}
+
+ This step is similar to [Scenario 2 Step 3](#optional-hold-appointment-operation-1) above and its detailed usage is described in [Scenario-1](#optional-hold-appointment-operation).  However, in this case the Client generates an Argonaut Appointment Profile resource and exchanges it with the FHIR Scheduler as is shown in the example below.
+
+### Example
+{:.no_toc}
+
+~~~json
+todo inline example
+~~~
+
 
 ###  Patient Registration Option B
 {:.no_toc}
@@ -421,22 +445,33 @@ This step is identical to [Scenario 2 Step 4](#patient-registration-option-b) ab
 ###  Book Appointment
 {:.no_toc}
 
-This step is identical to [Scenario 2 Step 5](#book-appointment-1) above.
+The Client is ready to actually book the appointment and the request to book the selected Appointment is made to the FHIR Scheduler (EHR).
+
+{% include img.html img="diagrams/Slide06.png" caption="Figure 1: Optional Hold Appointment Operation" %}
+
+This step is similar to [Scenario 2 Step 5](#book-appointment-1) above and its detailed usage is described in [Scenario-1](#book-appointment).  However, in this case the Client generates an Argonaut Appointment Profile resource and exchanges it with the FHIR Scheduler as is shown in the example below.
+
+#### Example
+{:.no_toc}
+
+~~~json
+todo inline example
+~~~
 
 ###  Patient Coverage Update Option C
 {:.no_toc}
 
 For some systems, updating or confirmation of insurance coverage information MAY occur at this step after booking. The Coverage interaction is discussed in detail in [Scenario 2 Step 4](#patient-registration-option-b) above.
 
-## Cancelling/Rescheduling appointments
+## Canceling/Rescheduling appointments
 
-The end user may elect to cancel or reschedule an existing appointment.  Rescheduling is a two step process of cancelling and rebooking a new appointment.
+The end user may elect to cancel or reschedule an existing appointment.  Rescheduling is a two step process of canceling and rebooking a new appointment.
 
-{% include img.html img="diagrams/Slide33.png" caption="Figure 1: Patient Cancelling/Rescheduling appointments" %}
+{% include img.html img="diagrams/Slide33.png" caption="Figure 1: Patient Canceling/Rescheduling appointments" %}
 
-Cancelling and Rescheduling has the potential to introduces complex failure states. The [best practices](index.html#best-practices) guidance discusses how failures should be handled. See the [Scheduling State Diagram](state-diagram.html) for further details on statuses and state transitions.
+Canceling and Rescheduling has the potential to introduces complex failure states. The [best practices](index.html#best-practices) guidance discusses how failures should be handled. See the [Appointment State Diagram](state-diagram.html) for further details on statuses and state transitions.
 
-#### Usage
+### Usage
 {:.no_toc}
 
 To cancel an appointment the Client uses the standard FHIR [`PATCH`](http://build.fhir.org/http.html#patch) transaction as shown:
@@ -449,7 +484,7 @@ To cancel an appointment the Client uses the standard FHIR [`PATCH`](http://buil
 
 - Note the Server SHALL declare support for JSON, XML, or FHIRPath Patch in the [CapabilityStatement](server-capstatement.html)
 
-#### Examples
+### Examples
 {:.no_toc}
 
 {% include cancel-examples.md %}
@@ -458,14 +493,14 @@ To cancel an appointment the Client uses the standard FHIR [`PATCH`](http://buil
 
 The length of an appointment hold is determined by the scheduling service's business rules, after which the status of the Appointment may change.  However, the Client may also elect to cancel a hold on an appointment before it expires.
 
-{% include img.html img="diagrams/Slide38.png" caption="Figure 1: Cancelling Appointment Hold" %}
+{% include img.html img="diagrams/Slide38.png" caption="Figure 1: Canceling Appointment Hold" %}
 
-#### Usage
+### Usage
 {:.no_toc}
 
-This transaction is identical to cancelling an appointment as shown [above](patient-scheduling.html#usage-6).
+This transaction is identical to canceling an appointment as shown [above](patient-scheduling.html#usage-6).
 
-#### Examples
+### Examples
 {:.no_toc}
 
 ~~~json
@@ -482,14 +517,14 @@ The patient searches for their appointments.
 
 Patient access to their scheduled appointments uses the standard FHIR [search API]({{site.data.fhir.path}}/search.html).
 
-#### APIs
+### APIs
 {:.no_toc}
 
 The following Argonaut Scheduling artifacts are used in this transaction:
 
 - **[Argonaut Appointment Profile](StructureDefinition-argo-appt.html)**.
 
-#### Usage
+### Usage
 {:.no_toc}
 
 To fetch scheduled appointments for a patient the Client SHALL use the standard RESTful [search API]({{site.data.fhir.path}}/search.html) as shown along with these standard [search parameters]({{site.data.fhir.path}}/appointment.html#search):
@@ -501,7 +536,7 @@ To fetch scheduled appointments for a patient the Client SHALL use the standard 
 
 GET [base]/Appointment?patient=[id]{&status=[status]}{&date=[date]{&date=[date]}}{&practitioner=[id]}
 
-#### Examples
+### Examples
 {:.no_toc}
 
 Search for all appointments for a patient with Resource ID 1234: `GET [base]/Appointment?patient=1234`

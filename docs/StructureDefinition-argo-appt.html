@@ -293,9 +293,7 @@ Formats: <a href="StructureDefinition-argo-appt.html">Narrative</a>, <a href="St
 <a name="introduction"> </a>
 
 
-<div class="highlighter-rouge"><pre class="highlight"><code>argo-appt-intro.md file
-</code></pre>
-</div>
+<p>source file: _includes/argo-appt-intro.md</p>
 
 <p>This profile sets minimum expectations for the Appointment resource to record, search and fetch basic information about an individual appointment. It identifies which core elements, extensions, vocabularies and value sets SHALL be present in the resource when using this profile.</p>
 
@@ -333,7 +331,7 @@ Formats: <a href="StructureDefinition-argo-appt.html">Narrative</a>, <a href="St
 <p><strong>Additional Profile specific implementation guidance:</strong></p>
 
 <ul>
-  <li>The <a href="state-diagram.html">Scheduling State Diagram</a> SHOULD be referenced to when considering the statuses of the scheduling resources during the scheduling workflow.</li>
+  <li>The <a href="state-diagram.html">Appointment State Diagram</a> SHOULD be referenced to when considering the statuses of the scheduling resources during the scheduling workflow.</li>
 </ul>
 
 <h4 id="examples">Examples</h4>
@@ -529,18 +527,14 @@ Summary
 
 <p>source file:  _includes/argo-appt-search.md</p>
 
-<p>Patient based Scheduling:</p>
+<p>Patient and Provider based Scheduling:</p>
 
 <ul>
   <li><a href="patient-scheduling.html#appointment-availability-discovery-and-search">Appointment Availability Discovery and Search</a></li>
-  <li><a href="patient-scheduling.html#optional-hold-appointment-operation">Optional Hold Appointment Operation</a></li>
-  <li><a href="patient-scheduling.html#book-appointment">Booking appointments</a></li>
   <li><a href="patient-scheduling.html#retrieving-appointments">Retrieving appointments</a></li>
+  <li><a href="patient-scheduling.html#optional-hold-appointment-operation">Hold Appointment Operation</a></li>
+  <li><a href="patient-scheduling.html#book-appointment">Book Appointment Operation</a></li>
 </ul>
-
-<p>Provider based Scheduling:</p>
-
-<p>…todo…</p>
 
 
 
@@ -604,7 +598,7 @@ $( '#tabs' ).tabs({
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Fri, Jan 12, 2018 19:01-0800. |
+            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Sat, Jan 13, 2018 01:58-0800. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/STU3license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

@@ -114,6 +114,12 @@
     <resource>
       <example value="false"/>
       <sourceReference>
+        <reference value="StructureDefinition/extension-status-reason"/>
+      </sourceReference>
+    </resource>
+    <resource>
+      <example value="false"/>
+      <sourceReference>
         <reference value="ValueSet/visit-type"/>
       </sourceReference>
     </resource>
@@ -132,31 +138,25 @@
     <resource>
       <example value="false"/>
       <sourceReference>
-        <reference value="ValueSet/appt-type"/>
-      </sourceReference>
-    </resource>
-        <resource>
-      <example value="false"/>
-      <sourceReference>
         <reference value="ValueSet/slot-bundle-type"/>
       </sourceReference>
     </resource>
     <resource>
       <example value="false"/>
       <sourceReference>
-        <reference value="StructureDefinition/prefetch-slot"/>
+        <reference value="ValueSet/appt-type"/>
       </sourceReference>
     </resource>
     <resource>
       <example value="false"/>
       <sourceReference>
-        <reference value="StructureDefinition/avail-bundle"/>
+        <reference value="StructureDefinition/slot-bundle"/>
       </sourceReference>
     </resource>
-        <resource>
+    <resource>
       <example value="false"/>
       <sourceReference>
-        <reference value="StructureDefinition/slot-bundle"/>
+        <reference value="StructureDefinition/prefetch-slot"/>
       </sourceReference>
     </resource>
     <resource>
@@ -219,10 +219,79 @@
         <reference value="CapabilityStatement/client"/>
       </sourceReference>
     </resource>
+    <resource>
+      <example value="false"/>
+      <sourceReference>
+        <reference value="StructureDefinition/avail-bundle"/>
+      </sourceReference>
+    </resource>
+    <resource>
+      <example value="false"/>
+      <sourceReference>
+        <reference value="StructureDefinition/argo-coverage"/>
+      </sourceReference>
+    </resource>
+    <resource>
+      <example value="false"/>
+      <sourceReference>
+        <reference value="StructureDefinition/argo-appt"/>
+      </sourceReference>
+    </resource>
   </package>
   <page>
-    <source value="index.html"/>
+    <source value="index.md"/>
     <title value="Argo-Scheduling Homepage"/>
     <kind value="page"/>
+    <page>
+      <source value="toc.md"/>
+      <title value="Argo-Scheduling Table of Contents"/>
+      <kind value="page"/>
+    </page>
+    <page>
+      <source value="downloads.md"/>
+      <title value="Downloads"/>
+      <kind value="page"/>
+    </page>
+    <page>
+      <source value="client-capstatement.md"/>
+      <title value="Client CapabilityStatement defined for this Guide"/>
+      <kind value="page"/>
+    </page>
+    <page>
+      <source value="server-capstatement.md"/>
+      <title value="Server CapabilityStatement defined for this Guide"/>
+      <kind value="page"/>
+    </page>
+    <page>
+      <source value="operations.md"/>
+      <title value="OperationDefinitions defined for this Guide"/>
+      <kind value="page"/>
+    </page>
+    <page>
+      <source value="terminology.md"/>
+      <title value="ValueSets and CodeSystems defined as part of this Implementation Guide"/>
+      <kind value="page"/>
+    </page>
+    <page>
+      <source value="profiles.md"/>
+      <title value="Profiles defined as part of this Guide"/>
+      <kind value="page"/>
+    </page>
+    <page>
+      <source value="provider-scheduling.md"/>
+      <title value="Provider based Scheduling Use Cases"/>
+      <kind value="page"/>
+    </page>
+    <page>
+      <source value="patient-scheduling.md"/>
+      <title value="Patient based Scheduling Use Cases"/>
+      <kind value="page"/>
+    </page>
+    <page>
+      <source value="state-diagram.md"/>
+      <title value="Appointment State Diagram"/>
+      <kind value="page"/>
+    </page>
+
   </page>
 </ImplementationGuide>

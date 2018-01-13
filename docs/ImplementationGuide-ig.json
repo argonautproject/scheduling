@@ -222,6 +222,17 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "StructureDefinition-extension-status-reason.html"
+            }
+          ],
+          "sourceReference": {
+            "reference": "StructureDefinition/extension-status-reason"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
               "valueUri": "ValueSet-visit-type.html"
             }
           ],
@@ -255,17 +266,6 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "ValueSet-appt-type.html"
-            }
-          ],
-          "sourceReference": {
-            "reference": "ValueSet/appt-type"
-          }
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
               "valueUri": "ValueSet-slot-bundle-type.html"
             }
           ],
@@ -277,22 +277,11 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "StructureDefinition-prefetch-slot.html"
+              "valueUri": "ValueSet-appt-type.html"
             }
           ],
           "sourceReference": {
-            "reference": "StructureDefinition/prefetch-slot"
-          }
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "StructureDefinition-avail-bundle.html"
-            }
-          ],
-          "sourceReference": {
-            "reference": "StructureDefinition/avail-bundle"
+            "reference": "ValueSet/appt-type"
           }
         },
         {
@@ -304,6 +293,17 @@
           ],
           "sourceReference": {
             "reference": "StructureDefinition/slot-bundle"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "StructureDefinition-prefetch-slot.html"
+            }
+          ],
+          "sourceReference": {
+            "reference": "StructureDefinition/prefetch-slot"
           }
         },
         {
@@ -415,6 +415,39 @@
           "sourceReference": {
             "reference": "CapabilityStatement/client"
           }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "StructureDefinition-avail-bundle.html"
+            }
+          ],
+          "sourceReference": {
+            "reference": "StructureDefinition/avail-bundle"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "StructureDefinition-argo-coverage.html"
+            }
+          ],
+          "sourceReference": {
+            "reference": "StructureDefinition/argo-coverage"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "StructureDefinition-argo-appt.html"
+            }
+          ],
+          "sourceReference": {
+            "reference": "StructureDefinition/argo-appt"
+          }
         }
       ]
     },
@@ -465,23 +498,6 @@
       ]
     },
     {
-      "name": "Argonaut Prefetch Slot Profile",
-      "resource": [
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "StructureDefinition-prefetch-slot.html"
-            }
-          ],
-          "name": "Argonaut Prefetch Slot Profile",
-          "sourceReference": {
-            "reference": "StructureDefinition/prefetch-slot"
-          }
-        }
-      ]
-    },
-    {
       "name": "Argonaut Appointment Bundle Profile",
       "resource": [
         {
@@ -494,6 +510,23 @@
           "name": "Argonaut Appointment Bundle Profile",
           "sourceReference": {
             "reference": "StructureDefinition/avail-bundle"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Argonaut Prefetch Slot Profile",
+      "resource": [
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "StructureDefinition-prefetch-slot.html"
+            }
+          ],
+          "name": "Argonaut Prefetch Slot Profile",
+          "sourceReference": {
+            "reference": "StructureDefinition/prefetch-slot"
           }
         }
       ]
@@ -517,8 +550,60 @@
     }
   ],
   "page": {
-    "source": "index.html",
+    "source": "index.md",
     "title": "Argo-Scheduling Homepage",
-    "kind": "page"
+    "kind": "page",
+    "page": [
+      {
+        "source": "toc.md",
+        "title": "Argo-Scheduling Table of Contents",
+        "kind": "page"
+      },
+      {
+        "source": "downloads.md",
+        "title": "Downloads",
+        "kind": "page"
+      },
+      {
+        "source": "client-capstatement.md",
+        "title": "Client CapabilityStatement defined for this Guide",
+        "kind": "page"
+      },
+      {
+        "source": "server-capstatement.md",
+        "title": "Server CapabilityStatement defined for this Guide",
+        "kind": "page"
+      },
+      {
+        "source": "operations.md",
+        "title": "OperationDefinitions defined for this Guide",
+        "kind": "page"
+      },
+      {
+        "source": "terminology.md",
+        "title": "ValueSets and CodeSystems defined as part of this Implementation Guide",
+        "kind": "page"
+      },
+      {
+        "source": "profiles.md",
+        "title": "Profiles defined as part of this Guide",
+        "kind": "page"
+      },
+      {
+        "source": "provider-scheduling.md",
+        "title": "Provider based Scheduling Use Cases",
+        "kind": "page"
+      },
+      {
+        "source": "patient-scheduling.md",
+        "title": "Patient based Scheduling Use Cases",
+        "kind": "page"
+      },
+      {
+        "source": "state-diagram.md",
+        "title": "Appointment State Diagram",
+        "kind": "page"
+      }
+    ]
   }
 }
