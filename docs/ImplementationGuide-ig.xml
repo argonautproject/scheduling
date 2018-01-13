@@ -311,7 +311,7 @@
     </resource>
   </package>
   <package>
-    <name value="Argonaut Appointment Output Profile"/>
+    <name value="Argonaut Appointment Profile"/>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
         <valueUri value="StructureDefinition-extension-status-reason.html"/>
@@ -323,11 +323,11 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="StructureDefinition-appt-output.html"/>
+        <valueUri value="StructureDefinition-argo-appt.html"/>
       </extension>
-      <name value="Argonaut Appointment Output Profile"/>
+      <name value="Argonaut Appointment Profile"/>
       <sourceReference>
-        <reference value="StructureDefinition/appt-output"/>
+        <reference value="StructureDefinition/argo-appt"/>
       </sourceReference>
     </resource>
   </package>
@@ -356,12 +356,12 @@
     </resource>
   </package>
   <package>
-    <name value="Argonaut Appointment  Bundle Profile"/>
+    <name value="Argonaut Appointment Bundle Profile"/>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
         <valueUri value="StructureDefinition-avail-bundle.html"/>
       </extension>
-      <name value="Argonaut Appointment  Bundle Profile"/>
+      <name value="Argonaut Appointment Bundle Profile"/>
       <sourceReference>
         <reference value="StructureDefinition/avail-bundle"/>
       </sourceReference>

@@ -177,7 +177,7 @@
 					<td/>
 					<td>
 						<div>
-							<p>An <a href="StructureDefinition-avail-bundle.html">Appointment Availability Bundle profile</a> of type <code>searchset</code> with entries of proposed <a href="http://build.fhir.org/appointment.html">Appointment</a> resources and may also contain an <a href="http://build.fhir.org/operationoutcome.html">OperationOutcome</a> with errors, warnings or information as a result of processing the operation - e.g., an informational notice that the returned appointments are not within the requested start and end times.  An empty bundle means no available appointments based on inputs</p>
+							<p>An <a href="StructureDefinition-avail-bundle.html">Argonaut Appointment Bundle Profile</a> of type <code>searchset</code> with entries of proposed <a href="http://build.fhir.org/appointment.html">Appointment</a> resources and may also contain an <a href="http://build.fhir.org/operationoutcome.html">OperationOutcome</a> with errors, warnings or information as a result of processing the operation - e.g., an informational notice that the returned appointments are not within the requested start and end times.  An empty bundle means no available appointments based on inputs</p>
 						</div>
 					</td>
 				</tr>
@@ -328,7 +328,7 @@
 		<use value="out"/>
 		<min value="0"/>
 		<max value="1"/>
-		<documentation value="An [Appointment Availability Bundle profile](StructureDefinition-avail-bundle.html) of type `searchset` with entries of proposed [Appointment](http://build.fhir.org/appointment.html) resources and may also contain an [OperationOutcome](http://build.fhir.org/operationoutcome.html) with errors, warnings or information as a result of processing the operation - e.g., an informational notice that the returned appointments are not within the requested start and end times.  An empty bundle means no available appointments based on inputs"/>
+		<documentation value="An [Argonaut Appointment Bundle Profile](StructureDefinition-avail-bundle.html) of type `searchset` with entries of proposed [Appointment](http://build.fhir.org/appointment.html) resources and may also contain an [OperationOutcome](http://build.fhir.org/operationoutcome.html) with errors, warnings or information as a result of processing the operation - e.g., an informational notice that the returned appointments are not within the requested start and end times.  An empty bundle means no available appointments based on inputs"/>
 		<type value="Bundle"/>
 		<profile>
 			<reference value="StructureDefinition/avail-bundle"/>

@@ -425,7 +425,7 @@
      ]
   ], [
      fhir:index 1;
-     fhir:ImplementationGuide.package.name [ fhir:value "Argonaut Appointment Output Profile" ];
+     fhir:ImplementationGuide.package.name [ fhir:value "Argonaut Appointment Profile" ];
      fhir:ImplementationGuide.package.resource [
        fhir:index 0;
        fhir:Element.extension [
@@ -443,12 +443,12 @@
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
-         fhir:Extension.valueUri [ fhir:value "StructureDefinition-appt-output.html" ]
+         fhir:Extension.valueUri [ fhir:value "StructureDefinition-argo-appt.html" ]
        ];
-       fhir:ImplementationGuide.package.resource.name [ fhir:value "Argonaut Appointment Output Profile" ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "Argonaut Appointment Profile" ];
        fhir:ImplementationGuide.package.resource.sourceReference [
-         fhir:link <http://fhir.org/guides/argonaut-scheduling/StructureDefinition/appt-output>;
-         fhir:Reference.reference [ fhir:value "StructureDefinition/appt-output" ]
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/argo-appt" ]
        ]
      ]
   ], [
@@ -485,7 +485,7 @@
      ]
   ], [
      fhir:index 4;
-     fhir:ImplementationGuide.package.name [ fhir:value "Argonaut Appointment  Bundle Profile" ];
+     fhir:ImplementationGuide.package.name [ fhir:value "Argonaut Appointment Bundle Profile" ];
      fhir:ImplementationGuide.package.resource [
        fhir:index 0;
        fhir:Element.extension [
@@ -493,7 +493,7 @@
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
          fhir:Extension.valueUri [ fhir:value "StructureDefinition-avail-bundle.html" ]
        ];
-       fhir:ImplementationGuide.package.resource.name [ fhir:value "Argonaut Appointment  Bundle Profile" ];
+       fhir:ImplementationGuide.package.resource.name [ fhir:value "Argonaut Appointment Bundle Profile" ];
        fhir:ImplementationGuide.package.resource.sourceReference [
          fhir:link <http://fhir.org/guides/argonaut-scheduling/StructureDefinition/avail-bundle>;
          fhir:Reference.reference [ fhir:value "StructureDefinition/avail-bundle" ]

@@ -1,4 +1,4 @@
-    appt-output-intro.md file
+    argo-appt-intro.md file
 
 
 This profile sets minimum expectations for the Appointment resource to record, search and fetch basic information about an individual appointment. It identifies which core elements, extensions, vocabularies and value sets SHALL be present in the resource when using this profile.

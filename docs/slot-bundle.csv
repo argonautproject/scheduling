@@ -33,7 +33,7 @@ user contentmodifiers","",0,*,"","Y","Y","Extension
 ","See http://www.iana.org/assignments/link-relations/link-relations.xhtml#link-relations-1","A name which details the functional use for this link - see [http://www.iana.org/assignments/link-relations/link-relations.xhtml#link-relations-1](http://www.iana.org/assignments/link-relations/link-relations.xhtml#link-relations-1).","","","","","","","","","",,,,,"",,,,"Bundle.link.relation",1,1,"",""
 "Bundle.link.url","","","",1,1,"","","Y","uri
 ","Reference details for the link","The reference details for the link.","","","","","","","","","",,,,,"",,,,"Bundle.link.url",1,1,"",""
-"Bundle.entry","Entry Slice","","",1,*,"Y","","Y","BackboneElement
+"Bundle.entry","entryslices","","",1,*,"Y","","Y","BackboneElement
 ","Entry in the bundle - will have a resource, or information","An entry in a bundle resource - will either contain a resource, or information about a resource (transactions and history only).","","","","","","","","","",,,,,"","value:resource}
 ","",,"open","Bundle.entry",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() | (children().count() > id.count())}
 bdl-8:fullUrl cannot be a version specific reference {fullUrl.contains('/_history/').not()}bdl-5:must be a resource unless there's a request or response {resource.exists() or request.exists() or response.exists()}"
@@ -114,7 +114,7 @@ user contentmodifiers","",0,*,"","Y","Y","Extension
 ","Server's date time modified","The date/time that the resource was modified on the server.","This has to match the same time in the meta header if a resource is included.","","","","","","","","",,,,,"",,,,"Bundle.entry.response.lastModified",0,1,"",""
 "Bundle.entry.response.outcome","","","",0,1,"","","Y","Resource
 ","OperationOutcome with hints and warnings (for batch/transaction)","An OperationOutcome containing hints and warnings produced as part of processing this entry in a batch or transaction.","For a POST/PUT operation, this is the equivalent outcome that would be returned for prefer = operationoutcome - except that the resource is always returned whether or not the outcome is returned.","","","","","","","","",,,,,"",,,,"Bundle.entry.response.outcome",0,1,"",""
-"Bundle.entry","Appt Slice","","",0,*,"Y","","Y","BackboneElement
+"Bundle.entry","entryappt","","",0,*,"Y","","Y","BackboneElement
 ","Entry in the bundle - will have a resource, or information","An entry in a bundle resource - will either contain a resource, or information about a resource (transactions and history only).","","","","","","","","","",,,,,"",,,,"Bundle.entry",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() | (children().count() > id.count())}
 bdl-8:fullUrl cannot be a version specific reference {fullUrl.contains('/_history/').not()}bdl-5:must be a resource unless there's a request or response {resource.exists() or request.exists() or response.exists()}"
 "Bundle.entry.id","","","",0,1,"","","","string
@@ -195,7 +195,7 @@ user contentmodifiers","",0,*,"","Y","Y","Extension
 ","Server's date time modified","The date/time that the resource was modified on the server.","This has to match the same time in the meta header if a resource is included.","","","","","","","","",,,,,"",,,,"Bundle.entry.response.lastModified",0,1,"",""
 "Bundle.entry.response.outcome","","","",0,1,"","","Y","Resource
 ","OperationOutcome with hints and warnings (for batch/transaction)","An OperationOutcome containing hints and warnings produced as part of processing this entry in a batch or transaction.","For a POST/PUT operation, this is the equivalent outcome that would be returned for prefer = operationoutcome - except that the resource is always returned whether or not the outcome is returned.","","","","","","","","",,,,,"",,,,"Bundle.entry.response.outcome",0,1,"",""
-"Bundle.entry","OO Slice","","",0,*,"Y","","Y","BackboneElement
+"Bundle.entry","entryoo","","",0,*,"Y","","Y","BackboneElement
 ","Entry in the bundle - will have a resource, or information","An entry in a bundle resource - will either contain a resource, or information about a resource (transactions and history only).","","","","","","","","","",,,,,"",,,,"Bundle.entry",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() | (children().count() > id.count())}
 bdl-8:fullUrl cannot be a version specific reference {fullUrl.contains('/_history/').not()}bdl-5:must be a resource unless there's a request or response {resource.exists() or request.exists() or response.exists()}"
 "Bundle.entry.id","","","",0,1,"","","","string

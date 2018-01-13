@@ -3,11 +3,11 @@
   "id": "avail-bundle",
   "text": {
     "status": "generated",
-    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"border: 0px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;\"><tr style=\"border: 1px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;\"><th style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/STU3/formats.html#table\" title=\"The logical name of the element\">Name</a></th><th style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/STU3/formats.html#table\" title=\"Information about the use of the element\">Flags</a></th><th style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/STU3/formats.html#table\" title=\"Minimum and Maximum # of times the the element can appear in the instance\">Card.</a></th><th style=\"width: 100px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/STU3/formats.html#table\" title=\"Reference to the type of the element\">Type</a></th><th style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/STU3/formats.html#table\" title=\"Additional information about the element\">Description &amp; Constraints</a><span style=\"float: right\"><a href=\"http://hl7.org/fhir/STU3/formats.html#table\" title=\"Legend for this format\"><img src=\"http://hl7.org/fhir/STU3/help16.png\" alt=\"doco\" style=\"background-color: inherit\"/></a></span></th></tr><tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck1.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <a href=\"StructureDefinition-avail-bundle-definitions.html#Bundle\" title=\"This is the output Appointment Bundle profile which is returned as a result of the *Operation$find* operation.\">Bundle</a><a name=\"Bundle\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"opacity: 0.4\">0</span><span style=\"opacity: 0.5\">..</span><span style=\"opacity: 0.4\">*</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_primitive.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Primitive Data Type\" class=\"hierarchy\"/> <a href=\"StructureDefinition-avail-bundle-definitions.html#Bundle.type\">type</a><a name=\"Bundle.type\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"padding-left: 3px; padding-right: 3px; color: white; background-color: red\" title=\"This element must be supported\">S</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"opacity: 0.4\">1</span><span style=\"opacity: 0.5\">..</span><span style=\"opacity: 0.4\">1</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a style=\"opacity: 0.4\" href=\"http://hl7.org/fhir/STU3/datatypes.html#code\">code</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"font-weight:bold\">Fixed Value: </span><span style=\"color: darkgreen\">searchset</span></td></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <a href=\"StructureDefinition-avail-bundle-definitions.html#Bundle.total\">total</a><a name=\"Bundle.total\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"padding-left: 3px; padding-right: 3px; color: white; background-color: red\" title=\"This element must be supported\">S</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a style=\"opacity: 0.4\" href=\"http://hl7.org/fhir/STU3/datatypes.html#unsignedInt\">unsignedInt</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_slice.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Slice Definition\" class=\"hierarchy\"/> <a style=\"font-style: italic\" href=\"StructureDefinition-avail-bundle-definitions.html#Bundle.entry:entryslice\" title=\"Slice Entry Slice: \">entry</a><a name=\"Bundle.entry\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"padding-left: 3px; padding-right: 3px; color: white; background-color: red; font-style: italic\" title=\"This element must be supported\">S</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a style=\"opacity: 0.4; font-style: italic\" href=\"http://hl7.org/fhir/STU3/datatypes.html#BackboneElement\">BackboneElement</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"font-weight:bold; font-style: italic\">Slice: </span><span style=\"font-style: italic\">Unordered, Open by value:resource</span><br style=\"font-style: italic\"/></td></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck11.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <a href=\"StructureDefinition-avail-bundle-definitions.html#Bundle.entry:apptslice\" title=\"Slice Appt Slice: \">entry</a><a name=\"Bundle.entry\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"padding-left: 3px; padding-right: 3px; color: white; background-color: red\" title=\"This element must be supported\">S</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"opacity: 0.4\">0</span><span style=\"opacity: 0.5\">..</span><span style=\"opacity: 0.4\">*</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a style=\"opacity: 0.4\" href=\"http://hl7.org/fhir/STU3/datatypes.html#BackboneElement\">BackboneElement</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck110.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_resource.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Resource\" class=\"hierarchy\"/> <a href=\"StructureDefinition-avail-bundle-definitions.html#Bundle.entry:apptslice.resource\">resource</a><a name=\"Bundle.entry.resource\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"padding-left: 3px; padding-right: 3px; color: white; background-color: red\" title=\"This element must be supported\">S</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"opacity: 0.4\">0</span><span style=\"opacity: 0.5\">..</span><span style=\"opacity: 0.4\">1</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"StructureDefinition-appt-output.html\" title=\"Appointment\">Argonaut Appointment Output Profile</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck101.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <a href=\"StructureDefinition-avail-bundle-definitions.html#Bundle.entry:apptslice.search\">search</a><a name=\"Bundle.entry.search\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"padding-left: 3px; padding-right: 3px; color: white; background-color: red\" title=\"This element must be supported\">S</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"opacity: 0.4\">0</span><span style=\"opacity: 0.5\">..</span><span style=\"opacity: 0.4\">1</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a style=\"opacity: 0.4\" href=\"http://hl7.org/fhir/STU3/datatypes.html#BackboneElement\">BackboneElement</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck1000.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_primitive.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Primitive Data Type\" class=\"hierarchy\"/> <a href=\"StructureDefinition-avail-bundle-definitions.html#Bundle.entry:apptslice.search.mode\">mode</a><a name=\"Bundle.entry.search.mode\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"padding-left: 3px; padding-right: 3px; color: white; background-color: red\" title=\"This element must be supported\">S</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a style=\"opacity: 0.4\" href=\"http://hl7.org/fhir/STU3/datatypes.html#code\">code</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"font-weight:bold\">Fixed Value: </span><span style=\"color: darkgreen\">match</span></td></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck01.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <a href=\"StructureDefinition-avail-bundle-definitions.html#Bundle.entry:ooslice\" title=\"Slice OO Slice: \">entry</a><a name=\"Bundle.entry\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"padding-left: 3px; padding-right: 3px; color: white; background-color: red\" title=\"This element must be supported\">S</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"opacity: 0.4\">0</span><span style=\"opacity: 0.5\">..</span><span style=\"opacity: 0.4\">*</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a style=\"opacity: 0.4\" href=\"http://hl7.org/fhir/STU3/datatypes.html#BackboneElement\">BackboneElement</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_resource.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Resource\" class=\"hierarchy\"/> <a href=\"StructureDefinition-avail-bundle-definitions.html#Bundle.entry:ooslice.resource\">resource</a><a name=\"Bundle.entry.resource\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"padding-left: 3px; padding-right: 3px; color: white; background-color: red\" title=\"This element must be supported\">S</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"opacity: 0.4\">0</span><span style=\"opacity: 0.5\">..</span><span style=\"opacity: 0.4\">1</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/STU3/operationoutcome.html\">OperationOutcome</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck001.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <a href=\"StructureDefinition-avail-bundle-definitions.html#Bundle.entry:ooslice.search\">search</a><a name=\"Bundle.entry.search\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"padding-left: 3px; padding-right: 3px; color: white; background-color: red\" title=\"This element must be supported\">S</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"opacity: 0.4\">0</span><span style=\"opacity: 0.5\">..</span><span style=\"opacity: 0.4\">1</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a style=\"opacity: 0.4\" href=\"http://hl7.org/fhir/STU3/datatypes.html#BackboneElement\">BackboneElement</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck0000.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_primitive.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Primitive Data Type\" class=\"hierarchy\"/> <a href=\"StructureDefinition-avail-bundle-definitions.html#Bundle.entry:ooslice.search.mode\">mode</a><a name=\"Bundle.entry.search.mode\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"padding-left: 3px; padding-right: 3px; color: white; background-color: red\" title=\"This element must be supported\">S</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a style=\"opacity: 0.4\" href=\"http://hl7.org/fhir/STU3/datatypes.html#code\">code</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"font-weight:bold\">Fixed Value: </span><span style=\"color: darkgreen\">outcome</span></td></tr>\r\n<tr><td colspan=\"5\" class=\"hierarchy\"><br/><a href=\"http://hl7.org/fhir/STU3/formats.html#table\" title=\"Legend for this format\"><img src=\"http://hl7.org/fhir/STU3/help16.png\" alt=\"doco\" style=\"background-color: inherit\"/> Documentation for this format</a></td></tr></table></div>"
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"border: 0px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;\"><tr style=\"border: 1px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;\"><th style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/STU3/formats.html#table\" title=\"The logical name of the element\">Name</a></th><th style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/STU3/formats.html#table\" title=\"Information about the use of the element\">Flags</a></th><th style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/STU3/formats.html#table\" title=\"Minimum and Maximum # of times the the element can appear in the instance\">Card.</a></th><th style=\"width: 100px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/STU3/formats.html#table\" title=\"Reference to the type of the element\">Type</a></th><th style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/STU3/formats.html#table\" title=\"Additional information about the element\">Description &amp; Constraints</a><span style=\"float: right\"><a href=\"http://hl7.org/fhir/STU3/formats.html#table\" title=\"Legend for this format\"><img src=\"http://hl7.org/fhir/STU3/help16.png\" alt=\"doco\" style=\"background-color: inherit\"/></a></span></th></tr><tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck1.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <a href=\"StructureDefinition-avail-bundle-definitions.html#Bundle\" title=\"This is the output Appointment Bundle profile which is returned as a result of the *Operation$find* operation.\">Bundle</a><a name=\"Bundle\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"opacity: 0.4\">0</span><span style=\"opacity: 0.5\">..</span><span style=\"opacity: 0.4\">*</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_primitive.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Primitive Data Type\" class=\"hierarchy\"/> <a href=\"StructureDefinition-avail-bundle-definitions.html#Bundle.type\">type</a><a name=\"Bundle.type\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"padding-left: 3px; padding-right: 3px; color: white; background-color: red\" title=\"This element must be supported\">S</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"opacity: 0.4\">1</span><span style=\"opacity: 0.5\">..</span><span style=\"opacity: 0.4\">1</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a style=\"opacity: 0.4\" href=\"http://hl7.org/fhir/STU3/datatypes.html#code\">code</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"font-weight:bold\">Fixed Value: </span><span style=\"color: darkgreen\">searchset</span></td></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <a href=\"StructureDefinition-avail-bundle-definitions.html#Bundle.total\">total</a><a name=\"Bundle.total\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"padding-left: 3px; padding-right: 3px; color: white; background-color: red\" title=\"This element must be supported\">S</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a style=\"opacity: 0.4\" href=\"http://hl7.org/fhir/STU3/datatypes.html#unsignedInt\">unsignedInt</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_slice.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Slice Definition\" class=\"hierarchy\"/> <a style=\"font-style: italic\" href=\"StructureDefinition-avail-bundle-definitions.html#Bundle.entry:entry-slices\" title=\"Slice entry-slices: \">entry</a><a name=\"Bundle.entry\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"padding-left: 3px; padding-right: 3px; color: white; background-color: red; font-style: italic\" title=\"This element must be supported\">S</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a style=\"opacity: 0.4; font-style: italic\" href=\"http://hl7.org/fhir/STU3/datatypes.html#BackboneElement\">BackboneElement</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"font-weight:bold; font-style: italic\">Slice: </span><span style=\"font-style: italic\">Unordered, Open by value:resource</span><br style=\"font-style: italic\"/></td></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck11.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <a href=\"StructureDefinition-avail-bundle-definitions.html#Bundle.entry:entry-appt\" title=\"Slice entry-appt: \">entry</a><a name=\"Bundle.entry\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"padding-left: 3px; padding-right: 3px; color: white; background-color: red\" title=\"This element must be supported\">S</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"opacity: 0.4\">0</span><span style=\"opacity: 0.5\">..</span><span style=\"opacity: 0.4\">*</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a style=\"opacity: 0.4\" href=\"http://hl7.org/fhir/STU3/datatypes.html#BackboneElement\">BackboneElement</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck110.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_resource.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Resource\" class=\"hierarchy\"/> <a href=\"StructureDefinition-avail-bundle-definitions.html#Bundle.entry:entry-appt.resource\">resource</a><a name=\"Bundle.entry.resource\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"padding-left: 3px; padding-right: 3px; color: white; background-color: red\" title=\"This element must be supported\">S</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"opacity: 0.4\">0</span><span style=\"opacity: 0.5\">..</span><span style=\"opacity: 0.4\">1</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"StructureDefinition-argo-appt.html\" title=\"Appointment\">Argonaut Appointment Profile</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck101.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <a href=\"StructureDefinition-avail-bundle-definitions.html#Bundle.entry:entry-appt.search\">search</a><a name=\"Bundle.entry.search\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"padding-left: 3px; padding-right: 3px; color: white; background-color: red\" title=\"This element must be supported\">S</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"opacity: 0.4\">0</span><span style=\"opacity: 0.5\">..</span><span style=\"opacity: 0.4\">1</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a style=\"opacity: 0.4\" href=\"http://hl7.org/fhir/STU3/datatypes.html#BackboneElement\">BackboneElement</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck1000.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_primitive.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Primitive Data Type\" class=\"hierarchy\"/> <a href=\"StructureDefinition-avail-bundle-definitions.html#Bundle.entry:entry-appt.search.mode\">mode</a><a name=\"Bundle.entry.search.mode\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"padding-left: 3px; padding-right: 3px; color: white; background-color: red\" title=\"This element must be supported\">S</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a style=\"opacity: 0.4\" href=\"http://hl7.org/fhir/STU3/datatypes.html#code\">code</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"font-weight:bold\">Fixed Value: </span><span style=\"color: darkgreen\">match</span></td></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck01.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <a href=\"StructureDefinition-avail-bundle-definitions.html#Bundle.entry:entry-oo\" title=\"Slice entry-oo: \">entry</a><a name=\"Bundle.entry\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"padding-left: 3px; padding-right: 3px; color: white; background-color: red\" title=\"This element must be supported\">S</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"opacity: 0.4\">0</span><span style=\"opacity: 0.5\">..</span><span style=\"opacity: 0.4\">*</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a style=\"opacity: 0.4\" href=\"http://hl7.org/fhir/STU3/datatypes.html#BackboneElement\">BackboneElement</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_resource.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Resource\" class=\"hierarchy\"/> <a href=\"StructureDefinition-avail-bundle-definitions.html#Bundle.entry:entry-oo.resource\">resource</a><a name=\"Bundle.entry.resource\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"padding-left: 3px; padding-right: 3px; color: white; background-color: red\" title=\"This element must be supported\">S</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"opacity: 0.4\">0</span><span style=\"opacity: 0.5\">..</span><span style=\"opacity: 0.4\">1</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/STU3/operationoutcome.html\">OperationOutcome</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck001.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <a href=\"StructureDefinition-avail-bundle-definitions.html#Bundle.entry:entry-oo.search\">search</a><a name=\"Bundle.entry.search\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"padding-left: 3px; padding-right: 3px; color: white; background-color: red\" title=\"This element must be supported\">S</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"opacity: 0.4\">0</span><span style=\"opacity: 0.5\">..</span><span style=\"opacity: 0.4\">1</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a style=\"opacity: 0.4\" href=\"http://hl7.org/fhir/STU3/datatypes.html#BackboneElement\">BackboneElement</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck0000.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_primitive.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Primitive Data Type\" class=\"hierarchy\"/> <a href=\"StructureDefinition-avail-bundle-definitions.html#Bundle.entry:entry-oo.search.mode\">mode</a><a name=\"Bundle.entry.search.mode\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"padding-left: 3px; padding-right: 3px; color: white; background-color: red\" title=\"This element must be supported\">S</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a style=\"opacity: 0.4\" href=\"http://hl7.org/fhir/STU3/datatypes.html#code\">code</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"font-weight:bold\">Fixed Value: </span><span style=\"color: darkgreen\">outcome</span></td></tr>\r\n<tr><td colspan=\"5\" class=\"hierarchy\"><br/><a href=\"http://hl7.org/fhir/STU3/formats.html#table\" title=\"Legend for this format\"><img src=\"http://hl7.org/fhir/STU3/help16.png\" alt=\"doco\" style=\"background-color: inherit\"/> Documentation for this format</a></td></tr></table></div>"
   },
   "url": "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/avail-bundle",
   "version": "0.0.0",
-  "name": "Argonaut Appointment  Bundle Profile",
+  "name": "Argonaut Appointment Bundle Profile",
   "status": "draft",
   "date": "2018-01-11T00:00:00-08:00",
   "publisher": "Argonaut Project",
@@ -21,7 +21,7 @@
       ]
     }
   ],
-  "description": "The Argonaut Appointment  Bundle Profile is returned as a result of the '$find' operation and Appointment search.",
+  "description": "The Argonaut Appointment Bundle Profile is returned as a result of the '$find' operation and Appointment search.",
   "jurisdiction": [
     {
       "coding": [
@@ -488,9 +488,9 @@
         "isSummary": true
       },
       {
-        "id": "Bundle.entry:entryslice",
+        "id": "Bundle.entry:entry-slices",
         "path": "Bundle.entry",
-        "sliceName": "Entry Slice",
+        "sliceName": "entry-slices",
         "slicing": {
           "discriminator": [
             {
@@ -544,7 +544,7 @@
         "isSummary": true
       },
       {
-        "id": "Bundle.entry:entryslice.id",
+        "id": "Bundle.entry:entry-slices.id",
         "path": "Bundle.entry.id",
         "representation": [
           "xmlAttr"
@@ -571,7 +571,7 @@
         ]
       },
       {
-        "id": "Bundle.entry:entryslice.extension",
+        "id": "Bundle.entry:entry-slices.extension",
         "path": "Bundle.entry.extension",
         "short": "Additional Content defined by implementations",
         "definition": "May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
@@ -600,7 +600,7 @@
         ]
       },
       {
-        "id": "Bundle.entry:entryslice.modifierExtension",
+        "id": "Bundle.entry:entry-slices.modifierExtension",
         "path": "Bundle.entry.modifierExtension",
         "short": "Extensions that cannot be ignored",
         "definition": "May be used to represent additional information that is not part of the basic definition of the element, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.",
@@ -632,7 +632,7 @@
         ]
       },
       {
-        "id": "Bundle.entry:entryslice.link",
+        "id": "Bundle.entry:entry-slices.link",
         "path": "Bundle.entry.link",
         "short": "Links related to this entry",
         "definition": "A series of links that provide context to this entry.",
@@ -647,7 +647,7 @@
         "isSummary": true
       },
       {
-        "id": "Bundle.entry:entryslice.fullUrl",
+        "id": "Bundle.entry:entry-slices.fullUrl",
         "path": "Bundle.entry.fullUrl",
         "short": "Absolute URL for resource (server address, or UUID/OID)",
         "definition": "The Absolute URL for the resource.  The fullUrl SHALL not disagree with the id in the resource. The fullUrl is a version independent reference to the resource. The fullUrl element SHALL have a value except that: \n* fullUrl can be empty on a POST (although it does not need to when specifying a temporary id for reference in the bundle)\n* Results from operations might involve resources that are not identified.",
@@ -667,7 +667,7 @@
         "isSummary": true
       },
       {
-        "id": "Bundle.entry:entryslice.resource",
+        "id": "Bundle.entry:entry-slices.resource",
         "path": "Bundle.entry.resource",
         "short": "A resource in the bundle",
         "definition": "The Resources for the entry.",
@@ -686,7 +686,7 @@
         "isSummary": true
       },
       {
-        "id": "Bundle.entry:entryslice.search",
+        "id": "Bundle.entry:entry-slices.search",
         "path": "Bundle.entry.search",
         "short": "Search related information",
         "definition": "Information about the search process that lead to the creation of this entry.",
@@ -718,7 +718,7 @@
         "isSummary": true
       },
       {
-        "id": "Bundle.entry:entryslice.search.id",
+        "id": "Bundle.entry:entry-slices.search.id",
         "path": "Bundle.entry.search.id",
         "representation": [
           "xmlAttr"
@@ -745,7 +745,7 @@
         ]
       },
       {
-        "id": "Bundle.entry:entryslice.search.extension",
+        "id": "Bundle.entry:entry-slices.search.extension",
         "path": "Bundle.entry.search.extension",
         "short": "Additional Content defined by implementations",
         "definition": "May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
@@ -774,7 +774,7 @@
         ]
       },
       {
-        "id": "Bundle.entry:entryslice.search.modifierExtension",
+        "id": "Bundle.entry:entry-slices.search.modifierExtension",
         "path": "Bundle.entry.search.modifierExtension",
         "short": "Extensions that cannot be ignored",
         "definition": "May be used to represent additional information that is not part of the basic definition of the element, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.",
@@ -806,7 +806,7 @@
         ]
       },
       {
-        "id": "Bundle.entry:entryslice.search.mode",
+        "id": "Bundle.entry:entry-slices.search.mode",
         "path": "Bundle.entry.search.mode",
         "short": "match | include | outcome - why this is in the result set",
         "definition": "Why this entry is in the result set - whether it's included as a match or because of an _include requirement.",
@@ -839,7 +839,7 @@
         }
       },
       {
-        "id": "Bundle.entry:entryslice.search.score",
+        "id": "Bundle.entry:entry-slices.search.score",
         "path": "Bundle.entry.search.score",
         "short": "Search ranking (between 0 and 1)",
         "definition": "When searching, the server's search ranking score for the entry.",
@@ -859,7 +859,7 @@
         "isSummary": true
       },
       {
-        "id": "Bundle.entry:entryslice.request",
+        "id": "Bundle.entry:entry-slices.request",
         "path": "Bundle.entry.request",
         "short": "Transaction Related Information",
         "definition": "Additional information about how this entry should be processed as part of a transaction.",
@@ -891,7 +891,7 @@
         "isSummary": true
       },
       {
-        "id": "Bundle.entry:entryslice.request.id",
+        "id": "Bundle.entry:entry-slices.request.id",
         "path": "Bundle.entry.request.id",
         "representation": [
           "xmlAttr"
@@ -918,7 +918,7 @@
         ]
       },
       {
-        "id": "Bundle.entry:entryslice.request.extension",
+        "id": "Bundle.entry:entry-slices.request.extension",
         "path": "Bundle.entry.request.extension",
         "short": "Additional Content defined by implementations",
         "definition": "May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
@@ -947,7 +947,7 @@
         ]
       },
       {
-        "id": "Bundle.entry:entryslice.request.modifierExtension",
+        "id": "Bundle.entry:entry-slices.request.modifierExtension",
         "path": "Bundle.entry.request.modifierExtension",
         "short": "Extensions that cannot be ignored",
         "definition": "May be used to represent additional information that is not part of the basic definition of the element, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.",
@@ -979,7 +979,7 @@
         ]
       },
       {
-        "id": "Bundle.entry:entryslice.request.method",
+        "id": "Bundle.entry:entry-slices.request.method",
         "path": "Bundle.entry.request.method",
         "short": "GET | POST | PUT | DELETE",
         "definition": "The HTTP verb for this entry in either a change history, or a transaction/ transaction response.",
@@ -1011,7 +1011,7 @@
         }
       },
       {
-        "id": "Bundle.entry:entryslice.request.url",
+        "id": "Bundle.entry:entry-slices.request.url",
         "path": "Bundle.entry.request.url",
         "short": "URL for HTTP equivalent of this entry",
         "definition": "The URL for this entry, relative to the root (the address to which the request is posted).",
@@ -1031,7 +1031,7 @@
         "isSummary": true
       },
       {
-        "id": "Bundle.entry:entryslice.request.ifNoneMatch",
+        "id": "Bundle.entry:entry-slices.request.ifNoneMatch",
         "path": "Bundle.entry.request.ifNoneMatch",
         "short": "For managing cache currency",
         "definition": "If the ETag values match, return a 304 Not Modified status. See the API documentation for [\"Conditional Read\"](http.html#cread).",
@@ -1050,7 +1050,7 @@
         "isSummary": true
       },
       {
-        "id": "Bundle.entry:entryslice.request.ifModifiedSince",
+        "id": "Bundle.entry:entry-slices.request.ifModifiedSince",
         "path": "Bundle.entry.request.ifModifiedSince",
         "short": "For managing update contention",
         "definition": "Only perform the operation if the last updated date matches. See the API documentation for [\"Conditional Read\"](http.html#cread).",
@@ -1069,7 +1069,7 @@
         "isSummary": true
       },
       {
-        "id": "Bundle.entry:entryslice.request.ifMatch",
+        "id": "Bundle.entry:entry-slices.request.ifMatch",
         "path": "Bundle.entry.request.ifMatch",
         "short": "For managing update contention",
         "definition": "Only perform the operation if the Etag value matches. For more information, see the API section [\"Managing Resource Contention\"](http.html#concurrency).",
@@ -1088,7 +1088,7 @@
         "isSummary": true
       },
       {
-        "id": "Bundle.entry:entryslice.request.ifNoneExist",
+        "id": "Bundle.entry:entry-slices.request.ifNoneExist",
         "path": "Bundle.entry.request.ifNoneExist",
         "short": "For conditional creates",
         "definition": "Instruct the server not to perform the create if a specified resource already exists. For further information, see the API documentation for [\"Conditional Create\"](http.html#ccreate). This is just the query portion of the URL - what follows the \"?\" (not including the \"?\").",
@@ -1107,7 +1107,7 @@
         "isSummary": true
       },
       {
-        "id": "Bundle.entry:entryslice.response",
+        "id": "Bundle.entry:entry-slices.response",
         "path": "Bundle.entry.response",
         "short": "Transaction Related Information",
         "definition": "Additional information about how this entry should be processed as part of a transaction.",
@@ -1139,7 +1139,7 @@
         "isSummary": true
       },
       {
-        "id": "Bundle.entry:entryslice.response.id",
+        "id": "Bundle.entry:entry-slices.response.id",
         "path": "Bundle.entry.response.id",
         "representation": [
           "xmlAttr"
@@ -1166,7 +1166,7 @@
         ]
       },
       {
-        "id": "Bundle.entry:entryslice.response.extension",
+        "id": "Bundle.entry:entry-slices.response.extension",
         "path": "Bundle.entry.response.extension",
         "short": "Additional Content defined by implementations",
         "definition": "May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
@@ -1195,7 +1195,7 @@
         ]
       },
       {
-        "id": "Bundle.entry:entryslice.response.modifierExtension",
+        "id": "Bundle.entry:entry-slices.response.modifierExtension",
         "path": "Bundle.entry.response.modifierExtension",
         "short": "Extensions that cannot be ignored",
         "definition": "May be used to represent additional information that is not part of the basic definition of the element, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.",
@@ -1227,7 +1227,7 @@
         ]
       },
       {
-        "id": "Bundle.entry:entryslice.response.status",
+        "id": "Bundle.entry:entry-slices.response.status",
         "path": "Bundle.entry.response.status",
         "short": "Status response code (text optional)",
         "definition": "The status code returned by processing this entry. The status SHALL start with a 3 digit HTTP code (e.g. 404) and may contain the standard HTTP description associated with the status code.",
@@ -1246,7 +1246,7 @@
         "isSummary": true
       },
       {
-        "id": "Bundle.entry:entryslice.response.location",
+        "id": "Bundle.entry:entry-slices.response.location",
         "path": "Bundle.entry.response.location",
         "short": "The location, if the operation returns a location",
         "definition": "The location header created by processing this operation.",
@@ -1265,7 +1265,7 @@
         "isSummary": true
       },
       {
-        "id": "Bundle.entry:entryslice.response.etag",
+        "id": "Bundle.entry:entry-slices.response.etag",
         "path": "Bundle.entry.response.etag",
         "short": "The etag for the resource (if relevant)",
         "definition": "The etag for the resource, it the operation for the entry produced a versioned resource (see [Resource Metadata and Versioning](http.html#versioning) and [Managing Resource Contention](http.html#concurrency)).",
@@ -1285,7 +1285,7 @@
         "isSummary": true
       },
       {
-        "id": "Bundle.entry:entryslice.response.lastModified",
+        "id": "Bundle.entry:entry-slices.response.lastModified",
         "path": "Bundle.entry.response.lastModified",
         "short": "Server's date time modified",
         "definition": "The date/time that the resource was modified on the server.",
@@ -1305,7 +1305,7 @@
         "isSummary": true
       },
       {
-        "id": "Bundle.entry:entryslice.response.outcome",
+        "id": "Bundle.entry:entry-slices.response.outcome",
         "path": "Bundle.entry.response.outcome",
         "short": "OperationOutcome with hints and warnings (for batch/transaction)",
         "definition": "An OperationOutcome containing hints and warnings produced as part of processing this entry in a batch or transaction.",
@@ -1325,9 +1325,9 @@
         "isSummary": true
       },
       {
-        "id": "Bundle.entry:apptslice",
+        "id": "Bundle.entry:entry-appt",
         "path": "Bundle.entry",
-        "sliceName": "Appt Slice",
+        "sliceName": "entry-appt",
         "short": "Entry in the bundle - will have a resource, or information",
         "definition": "An entry in a bundle resource - will either contain a resource, or information about a resource (transactions and history only).",
         "min": 0,
@@ -1372,7 +1372,7 @@
         "isSummary": true
       },
       {
-        "id": "Bundle.entry:apptslice.id",
+        "id": "Bundle.entry:entry-appt.id",
         "path": "Bundle.entry.id",
         "representation": [
           "xmlAttr"
@@ -1399,7 +1399,7 @@
         ]
       },
       {
-        "id": "Bundle.entry:apptslice.extension",
+        "id": "Bundle.entry:entry-appt.extension",
         "path": "Bundle.entry.extension",
         "short": "Additional Content defined by implementations",
         "definition": "May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
@@ -1428,7 +1428,7 @@
         ]
       },
       {
-        "id": "Bundle.entry:apptslice.modifierExtension",
+        "id": "Bundle.entry:entry-appt.modifierExtension",
         "path": "Bundle.entry.modifierExtension",
         "short": "Extensions that cannot be ignored",
         "definition": "May be used to represent additional information that is not part of the basic definition of the element, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.",
@@ -1460,7 +1460,7 @@
         ]
       },
       {
-        "id": "Bundle.entry:apptslice.link",
+        "id": "Bundle.entry:entry-appt.link",
         "path": "Bundle.entry.link",
         "short": "Links related to this entry",
         "definition": "A series of links that provide context to this entry.",
@@ -1475,7 +1475,7 @@
         "isSummary": true
       },
       {
-        "id": "Bundle.entry:apptslice.fullUrl",
+        "id": "Bundle.entry:entry-appt.fullUrl",
         "path": "Bundle.entry.fullUrl",
         "short": "Absolute URL for resource (server address, or UUID/OID)",
         "definition": "The Absolute URL for the resource.  The fullUrl SHALL not disagree with the id in the resource. The fullUrl is a version independent reference to the resource. The fullUrl element SHALL have a value except that: \n* fullUrl can be empty on a POST (although it does not need to when specifying a temporary id for reference in the bundle)\n* Results from operations might involve resources that are not identified.",
@@ -1495,7 +1495,7 @@
         "isSummary": true
       },
       {
-        "id": "Bundle.entry:apptslice.resource",
+        "id": "Bundle.entry:entry-appt.resource",
         "path": "Bundle.entry.resource",
         "short": "A resource in the bundle",
         "definition": "The Resources for the entry.",
@@ -1509,7 +1509,7 @@
         "type": [
           {
             "code": "Appointment",
-            "profile": "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/appt-output"
+            "profile": "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt"
           }
         ],
         "constraint": [
@@ -1583,7 +1583,7 @@
         ]
       },
       {
-        "id": "Bundle.entry:apptslice.search",
+        "id": "Bundle.entry:entry-appt.search",
         "path": "Bundle.entry.search",
         "short": "Search related information",
         "definition": "Information about the search process that lead to the creation of this entry.",
@@ -1616,7 +1616,7 @@
         "isSummary": true
       },
       {
-        "id": "Bundle.entry:apptslice.search.id",
+        "id": "Bundle.entry:entry-appt.search.id",
         "path": "Bundle.entry.search.id",
         "representation": [
           "xmlAttr"
@@ -1643,7 +1643,7 @@
         ]
       },
       {
-        "id": "Bundle.entry:apptslice.search.extension",
+        "id": "Bundle.entry:entry-appt.search.extension",
         "path": "Bundle.entry.search.extension",
         "short": "Additional Content defined by implementations",
         "definition": "May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
@@ -1672,7 +1672,7 @@
         ]
       },
       {
-        "id": "Bundle.entry:apptslice.search.modifierExtension",
+        "id": "Bundle.entry:entry-appt.search.modifierExtension",
         "path": "Bundle.entry.search.modifierExtension",
         "short": "Extensions that cannot be ignored",
         "definition": "May be used to represent additional information that is not part of the basic definition of the element, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.",
@@ -1704,7 +1704,7 @@
         ]
       },
       {
-        "id": "Bundle.entry:apptslice.search.mode",
+        "id": "Bundle.entry:entry-appt.search.mode",
         "path": "Bundle.entry.search.mode",
         "short": "match | include | outcome - why this is in the result set",
         "definition": "Why this entry is in the result set - whether it's included as a match or because of an _include requirement.",
@@ -1739,7 +1739,7 @@
         }
       },
       {
-        "id": "Bundle.entry:apptslice.search.score",
+        "id": "Bundle.entry:entry-appt.search.score",
         "path": "Bundle.entry.search.score",
         "short": "Search ranking (between 0 and 1)",
         "definition": "When searching, the server's search ranking score for the entry.",
@@ -1759,7 +1759,7 @@
         "isSummary": true
       },
       {
-        "id": "Bundle.entry:apptslice.request",
+        "id": "Bundle.entry:entry-appt.request",
         "path": "Bundle.entry.request",
         "short": "Transaction Related Information",
         "definition": "Additional information about how this entry should be processed as part of a transaction.",
@@ -1791,7 +1791,7 @@
         "isSummary": true
       },
       {
-        "id": "Bundle.entry:apptslice.request.id",
+        "id": "Bundle.entry:entry-appt.request.id",
         "path": "Bundle.entry.request.id",
         "representation": [
           "xmlAttr"
@@ -1818,7 +1818,7 @@
         ]
       },
       {
-        "id": "Bundle.entry:apptslice.request.extension",
+        "id": "Bundle.entry:entry-appt.request.extension",
         "path": "Bundle.entry.request.extension",
         "short": "Additional Content defined by implementations",
         "definition": "May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
@@ -1847,7 +1847,7 @@
         ]
       },
       {
-        "id": "Bundle.entry:apptslice.request.modifierExtension",
+        "id": "Bundle.entry:entry-appt.request.modifierExtension",
         "path": "Bundle.entry.request.modifierExtension",
         "short": "Extensions that cannot be ignored",
         "definition": "May be used to represent additional information that is not part of the basic definition of the element, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.",
@@ -1879,7 +1879,7 @@
         ]
       },
       {
-        "id": "Bundle.entry:apptslice.request.method",
+        "id": "Bundle.entry:entry-appt.request.method",
         "path": "Bundle.entry.request.method",
         "short": "GET | POST | PUT | DELETE",
         "definition": "The HTTP verb for this entry in either a change history, or a transaction/ transaction response.",
@@ -1911,7 +1911,7 @@
         }
       },
       {
-        "id": "Bundle.entry:apptslice.request.url",
+        "id": "Bundle.entry:entry-appt.request.url",
         "path": "Bundle.entry.request.url",
         "short": "URL for HTTP equivalent of this entry",
         "definition": "The URL for this entry, relative to the root (the address to which the request is posted).",
@@ -1931,7 +1931,7 @@
         "isSummary": true
       },
       {
-        "id": "Bundle.entry:apptslice.request.ifNoneMatch",
+        "id": "Bundle.entry:entry-appt.request.ifNoneMatch",
         "path": "Bundle.entry.request.ifNoneMatch",
         "short": "For managing cache currency",
         "definition": "If the ETag values match, return a 304 Not Modified status. See the API documentation for [\"Conditional Read\"](http.html#cread).",
@@ -1950,7 +1950,7 @@
         "isSummary": true
       },
       {
-        "id": "Bundle.entry:apptslice.request.ifModifiedSince",
+        "id": "Bundle.entry:entry-appt.request.ifModifiedSince",
         "path": "Bundle.entry.request.ifModifiedSince",
         "short": "For managing update contention",
         "definition": "Only perform the operation if the last updated date matches. See the API documentation for [\"Conditional Read\"](http.html#cread).",
@@ -1969,7 +1969,7 @@
         "isSummary": true
       },
       {
-        "id": "Bundle.entry:apptslice.request.ifMatch",
+        "id": "Bundle.entry:entry-appt.request.ifMatch",
         "path": "Bundle.entry.request.ifMatch",
         "short": "For managing update contention",
         "definition": "Only perform the operation if the Etag value matches. For more information, see the API section [\"Managing Resource Contention\"](http.html#concurrency).",
@@ -1988,7 +1988,7 @@
         "isSummary": true
       },
       {
-        "id": "Bundle.entry:apptslice.request.ifNoneExist",
+        "id": "Bundle.entry:entry-appt.request.ifNoneExist",
         "path": "Bundle.entry.request.ifNoneExist",
         "short": "For conditional creates",
         "definition": "Instruct the server not to perform the create if a specified resource already exists. For further information, see the API documentation for [\"Conditional Create\"](http.html#ccreate). This is just the query portion of the URL - what follows the \"?\" (not including the \"?\").",
@@ -2007,7 +2007,7 @@
         "isSummary": true
       },
       {
-        "id": "Bundle.entry:apptslice.response",
+        "id": "Bundle.entry:entry-appt.response",
         "path": "Bundle.entry.response",
         "short": "Transaction Related Information",
         "definition": "Additional information about how this entry should be processed as part of a transaction.",
@@ -2039,7 +2039,7 @@
         "isSummary": true
       },
       {
-        "id": "Bundle.entry:apptslice.response.id",
+        "id": "Bundle.entry:entry-appt.response.id",
         "path": "Bundle.entry.response.id",
         "representation": [
           "xmlAttr"
@@ -2066,7 +2066,7 @@
         ]
       },
       {
-        "id": "Bundle.entry:apptslice.response.extension",
+        "id": "Bundle.entry:entry-appt.response.extension",
         "path": "Bundle.entry.response.extension",
         "short": "Additional Content defined by implementations",
         "definition": "May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
@@ -2095,7 +2095,7 @@
         ]
       },
       {
-        "id": "Bundle.entry:apptslice.response.modifierExtension",
+        "id": "Bundle.entry:entry-appt.response.modifierExtension",
         "path": "Bundle.entry.response.modifierExtension",
         "short": "Extensions that cannot be ignored",
         "definition": "May be used to represent additional information that is not part of the basic definition of the element, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.",
@@ -2127,7 +2127,7 @@
         ]
       },
       {
-        "id": "Bundle.entry:apptslice.response.status",
+        "id": "Bundle.entry:entry-appt.response.status",
         "path": "Bundle.entry.response.status",
         "short": "Status response code (text optional)",
         "definition": "The status code returned by processing this entry. The status SHALL start with a 3 digit HTTP code (e.g. 404) and may contain the standard HTTP description associated with the status code.",
@@ -2146,7 +2146,7 @@
         "isSummary": true
       },
       {
-        "id": "Bundle.entry:apptslice.response.location",
+        "id": "Bundle.entry:entry-appt.response.location",
         "path": "Bundle.entry.response.location",
         "short": "The location, if the operation returns a location",
         "definition": "The location header created by processing this operation.",
@@ -2165,7 +2165,7 @@
         "isSummary": true
       },
       {
-        "id": "Bundle.entry:apptslice.response.etag",
+        "id": "Bundle.entry:entry-appt.response.etag",
         "path": "Bundle.entry.response.etag",
         "short": "The etag for the resource (if relevant)",
         "definition": "The etag for the resource, it the operation for the entry produced a versioned resource (see [Resource Metadata and Versioning](http.html#versioning) and [Managing Resource Contention](http.html#concurrency)).",
@@ -2185,7 +2185,7 @@
         "isSummary": true
       },
       {
-        "id": "Bundle.entry:apptslice.response.lastModified",
+        "id": "Bundle.entry:entry-appt.response.lastModified",
         "path": "Bundle.entry.response.lastModified",
         "short": "Server's date time modified",
         "definition": "The date/time that the resource was modified on the server.",
@@ -2205,7 +2205,7 @@
         "isSummary": true
       },
       {
-        "id": "Bundle.entry:apptslice.response.outcome",
+        "id": "Bundle.entry:entry-appt.response.outcome",
         "path": "Bundle.entry.response.outcome",
         "short": "OperationOutcome with hints and warnings (for batch/transaction)",
         "definition": "An OperationOutcome containing hints and warnings produced as part of processing this entry in a batch or transaction.",
@@ -2225,9 +2225,9 @@
         "isSummary": true
       },
       {
-        "id": "Bundle.entry:ooslice",
+        "id": "Bundle.entry:entry-oo",
         "path": "Bundle.entry",
-        "sliceName": "OO Slice",
+        "sliceName": "entry-oo",
         "short": "Entry in the bundle - will have a resource, or information",
         "definition": "An entry in a bundle resource - will either contain a resource, or information about a resource (transactions and history only).",
         "min": 0,
@@ -2272,7 +2272,7 @@
         "isSummary": true
       },
       {
-        "id": "Bundle.entry:ooslice.id",
+        "id": "Bundle.entry:entry-oo.id",
         "path": "Bundle.entry.id",
         "representation": [
           "xmlAttr"
@@ -2299,7 +2299,7 @@
         ]
       },
       {
-        "id": "Bundle.entry:ooslice.extension",
+        "id": "Bundle.entry:entry-oo.extension",
         "path": "Bundle.entry.extension",
         "short": "Additional Content defined by implementations",
         "definition": "May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
@@ -2328,7 +2328,7 @@
         ]
       },
       {
-        "id": "Bundle.entry:ooslice.modifierExtension",
+        "id": "Bundle.entry:entry-oo.modifierExtension",
         "path": "Bundle.entry.modifierExtension",
         "short": "Extensions that cannot be ignored",
         "definition": "May be used to represent additional information that is not part of the basic definition of the element, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.",
@@ -2360,7 +2360,7 @@
         ]
       },
       {
-        "id": "Bundle.entry:ooslice.link",
+        "id": "Bundle.entry:entry-oo.link",
         "path": "Bundle.entry.link",
         "short": "Links related to this entry",
         "definition": "A series of links that provide context to this entry.",
@@ -2375,7 +2375,7 @@
         "isSummary": true
       },
       {
-        "id": "Bundle.entry:ooslice.fullUrl",
+        "id": "Bundle.entry:entry-oo.fullUrl",
         "path": "Bundle.entry.fullUrl",
         "short": "Absolute URL for resource (server address, or UUID/OID)",
         "definition": "The Absolute URL for the resource.  The fullUrl SHALL not disagree with the id in the resource. The fullUrl is a version independent reference to the resource. The fullUrl element SHALL have a value except that: \n* fullUrl can be empty on a POST (although it does not need to when specifying a temporary id for reference in the bundle)\n* Results from operations might involve resources that are not identified.",
@@ -2395,7 +2395,7 @@
         "isSummary": true
       },
       {
-        "id": "Bundle.entry:ooslice.resource",
+        "id": "Bundle.entry:entry-oo.resource",
         "path": "Bundle.entry.resource",
         "short": "A resource in the bundle",
         "definition": "The Resources for the entry.",
@@ -2415,7 +2415,7 @@
         "isSummary": true
       },
       {
-        "id": "Bundle.entry:ooslice.search",
+        "id": "Bundle.entry:entry-oo.search",
         "path": "Bundle.entry.search",
         "short": "Search related information",
         "definition": "Information about the search process that lead to the creation of this entry.",
@@ -2448,7 +2448,7 @@
         "isSummary": true
       },
       {
-        "id": "Bundle.entry:ooslice.search.id",
+        "id": "Bundle.entry:entry-oo.search.id",
         "path": "Bundle.entry.search.id",
         "representation": [
           "xmlAttr"
@@ -2475,7 +2475,7 @@
         ]
       },
       {
-        "id": "Bundle.entry:ooslice.search.extension",
+        "id": "Bundle.entry:entry-oo.search.extension",
         "path": "Bundle.entry.search.extension",
         "short": "Additional Content defined by implementations",
         "definition": "May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
@@ -2504,7 +2504,7 @@
         ]
       },
       {
-        "id": "Bundle.entry:ooslice.search.modifierExtension",
+        "id": "Bundle.entry:entry-oo.search.modifierExtension",
         "path": "Bundle.entry.search.modifierExtension",
         "short": "Extensions that cannot be ignored",
         "definition": "May be used to represent additional information that is not part of the basic definition of the element, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.",
@@ -2536,7 +2536,7 @@
         ]
       },
       {
-        "id": "Bundle.entry:ooslice.search.mode",
+        "id": "Bundle.entry:entry-oo.search.mode",
         "path": "Bundle.entry.search.mode",
         "short": "match | include | outcome - why this is in the result set",
         "definition": "Why this entry is in the result set - whether it's included as a match or because of an _include requirement.",
@@ -2571,7 +2571,7 @@
         }
       },
       {
-        "id": "Bundle.entry:ooslice.search.score",
+        "id": "Bundle.entry:entry-oo.search.score",
         "path": "Bundle.entry.search.score",
         "short": "Search ranking (between 0 and 1)",
         "definition": "When searching, the server's search ranking score for the entry.",
@@ -2591,7 +2591,7 @@
         "isSummary": true
       },
       {
-        "id": "Bundle.entry:ooslice.request",
+        "id": "Bundle.entry:entry-oo.request",
         "path": "Bundle.entry.request",
         "short": "Transaction Related Information",
         "definition": "Additional information about how this entry should be processed as part of a transaction.",
@@ -2623,7 +2623,7 @@
         "isSummary": true
       },
       {
-        "id": "Bundle.entry:ooslice.request.id",
+        "id": "Bundle.entry:entry-oo.request.id",
         "path": "Bundle.entry.request.id",
         "representation": [
           "xmlAttr"
@@ -2650,7 +2650,7 @@
         ]
       },
       {
-        "id": "Bundle.entry:ooslice.request.extension",
+        "id": "Bundle.entry:entry-oo.request.extension",
         "path": "Bundle.entry.request.extension",
         "short": "Additional Content defined by implementations",
         "definition": "May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
@@ -2679,7 +2679,7 @@
         ]
       },
       {
-        "id": "Bundle.entry:ooslice.request.modifierExtension",
+        "id": "Bundle.entry:entry-oo.request.modifierExtension",
         "path": "Bundle.entry.request.modifierExtension",
         "short": "Extensions that cannot be ignored",
         "definition": "May be used to represent additional information that is not part of the basic definition of the element, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.",
@@ -2711,7 +2711,7 @@
         ]
       },
       {
-        "id": "Bundle.entry:ooslice.request.method",
+        "id": "Bundle.entry:entry-oo.request.method",
         "path": "Bundle.entry.request.method",
         "short": "GET | POST | PUT | DELETE",
         "definition": "The HTTP verb for this entry in either a change history, or a transaction/ transaction response.",
@@ -2743,7 +2743,7 @@
         }
       },
       {
-        "id": "Bundle.entry:ooslice.request.url",
+        "id": "Bundle.entry:entry-oo.request.url",
         "path": "Bundle.entry.request.url",
         "short": "URL for HTTP equivalent of this entry",
         "definition": "The URL for this entry, relative to the root (the address to which the request is posted).",
@@ -2763,7 +2763,7 @@
         "isSummary": true
       },
       {
-        "id": "Bundle.entry:ooslice.request.ifNoneMatch",
+        "id": "Bundle.entry:entry-oo.request.ifNoneMatch",
         "path": "Bundle.entry.request.ifNoneMatch",
         "short": "For managing cache currency",
         "definition": "If the ETag values match, return a 304 Not Modified status. See the API documentation for [\"Conditional Read\"](http.html#cread).",
@@ -2782,7 +2782,7 @@
         "isSummary": true
       },
       {
-        "id": "Bundle.entry:ooslice.request.ifModifiedSince",
+        "id": "Bundle.entry:entry-oo.request.ifModifiedSince",
         "path": "Bundle.entry.request.ifModifiedSince",
         "short": "For managing update contention",
         "definition": "Only perform the operation if the last updated date matches. See the API documentation for [\"Conditional Read\"](http.html#cread).",
@@ -2801,7 +2801,7 @@
         "isSummary": true
       },
       {
-        "id": "Bundle.entry:ooslice.request.ifMatch",
+        "id": "Bundle.entry:entry-oo.request.ifMatch",
         "path": "Bundle.entry.request.ifMatch",
         "short": "For managing update contention",
         "definition": "Only perform the operation if the Etag value matches. For more information, see the API section [\"Managing Resource Contention\"](http.html#concurrency).",
@@ -2820,7 +2820,7 @@
         "isSummary": true
       },
       {
-        "id": "Bundle.entry:ooslice.request.ifNoneExist",
+        "id": "Bundle.entry:entry-oo.request.ifNoneExist",
         "path": "Bundle.entry.request.ifNoneExist",
         "short": "For conditional creates",
         "definition": "Instruct the server not to perform the create if a specified resource already exists. For further information, see the API documentation for [\"Conditional Create\"](http.html#ccreate). This is just the query portion of the URL - what follows the \"?\" (not including the \"?\").",
@@ -2839,7 +2839,7 @@
         "isSummary": true
       },
       {
-        "id": "Bundle.entry:ooslice.response",
+        "id": "Bundle.entry:entry-oo.response",
         "path": "Bundle.entry.response",
         "short": "Transaction Related Information",
         "definition": "Additional information about how this entry should be processed as part of a transaction.",
@@ -2871,7 +2871,7 @@
         "isSummary": true
       },
       {
-        "id": "Bundle.entry:ooslice.response.id",
+        "id": "Bundle.entry:entry-oo.response.id",
         "path": "Bundle.entry.response.id",
         "representation": [
           "xmlAttr"
@@ -2898,7 +2898,7 @@
         ]
       },
       {
-        "id": "Bundle.entry:ooslice.response.extension",
+        "id": "Bundle.entry:entry-oo.response.extension",
         "path": "Bundle.entry.response.extension",
         "short": "Additional Content defined by implementations",
         "definition": "May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
@@ -2927,7 +2927,7 @@
         ]
       },
       {
-        "id": "Bundle.entry:ooslice.response.modifierExtension",
+        "id": "Bundle.entry:entry-oo.response.modifierExtension",
         "path": "Bundle.entry.response.modifierExtension",
         "short": "Extensions that cannot be ignored",
         "definition": "May be used to represent additional information that is not part of the basic definition of the element, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.",
@@ -2959,7 +2959,7 @@
         ]
       },
       {
-        "id": "Bundle.entry:ooslice.response.status",
+        "id": "Bundle.entry:entry-oo.response.status",
         "path": "Bundle.entry.response.status",
         "short": "Status response code (text optional)",
         "definition": "The status code returned by processing this entry. The status SHALL start with a 3 digit HTTP code (e.g. 404) and may contain the standard HTTP description associated with the status code.",
@@ -2978,7 +2978,7 @@
         "isSummary": true
       },
       {
-        "id": "Bundle.entry:ooslice.response.location",
+        "id": "Bundle.entry:entry-oo.response.location",
         "path": "Bundle.entry.response.location",
         "short": "The location, if the operation returns a location",
         "definition": "The location header created by processing this operation.",
@@ -2997,7 +2997,7 @@
         "isSummary": true
       },
       {
-        "id": "Bundle.entry:ooslice.response.etag",
+        "id": "Bundle.entry:entry-oo.response.etag",
         "path": "Bundle.entry.response.etag",
         "short": "The etag for the resource (if relevant)",
         "definition": "The etag for the resource, it the operation for the entry produced a versioned resource (see [Resource Metadata and Versioning](http.html#versioning) and [Managing Resource Contention](http.html#concurrency)).",
@@ -3017,7 +3017,7 @@
         "isSummary": true
       },
       {
-        "id": "Bundle.entry:ooslice.response.lastModified",
+        "id": "Bundle.entry:entry-oo.response.lastModified",
         "path": "Bundle.entry.response.lastModified",
         "short": "Server's date time modified",
         "definition": "The date/time that the resource was modified on the server.",
@@ -3037,7 +3037,7 @@
         "isSummary": true
       },
       {
-        "id": "Bundle.entry:ooslice.response.outcome",
+        "id": "Bundle.entry:entry-oo.response.outcome",
         "path": "Bundle.entry.response.outcome",
         "short": "OperationOutcome with hints and warnings (for batch/transaction)",
         "definition": "An OperationOutcome containing hints and warnings produced as part of processing this entry in a batch or transaction.",
@@ -3109,9 +3109,9 @@
         "isModifier": false
       },
       {
-        "id": "Bundle.entry:entryslice",
+        "id": "Bundle.entry:entry-slices",
         "path": "Bundle.entry",
-        "sliceName": "Entry Slice",
+        "sliceName": "entry-slices",
         "slicing": {
           "discriminator": [
             {
@@ -3127,28 +3127,28 @@
         "isModifier": false
       },
       {
-        "id": "Bundle.entry:apptslice",
+        "id": "Bundle.entry:entry-appt",
         "path": "Bundle.entry",
-        "sliceName": "Appt Slice",
+        "sliceName": "entry-appt",
         "mustSupport": true,
         "isModifier": false
       },
       {
-        "id": "Bundle.entry:apptslice.resource",
+        "id": "Bundle.entry:entry-appt.resource",
         "path": "Bundle.entry.resource",
         "min": 0,
         "max": "1",
         "type": [
           {
             "code": "Appointment",
-            "profile": "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/appt-output"
+            "profile": "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt"
           }
         ],
         "mustSupport": true,
         "isModifier": false
       },
       {
-        "id": "Bundle.entry:apptslice.search",
+        "id": "Bundle.entry:entry-appt.search",
         "path": "Bundle.entry.search",
         "min": 0,
         "max": "1",
@@ -3156,7 +3156,7 @@
         "isModifier": false
       },
       {
-        "id": "Bundle.entry:apptslice.search.mode",
+        "id": "Bundle.entry:entry-appt.search.mode",
         "path": "Bundle.entry.search.mode",
         "min": 1,
         "max": "1",
@@ -3170,14 +3170,14 @@
         "isModifier": false
       },
       {
-        "id": "Bundle.entry:ooslice",
+        "id": "Bundle.entry:entry-oo",
         "path": "Bundle.entry",
-        "sliceName": "OO Slice",
+        "sliceName": "entry-oo",
         "mustSupport": true,
         "isModifier": false
       },
       {
-        "id": "Bundle.entry:ooslice.resource",
+        "id": "Bundle.entry:entry-oo.resource",
         "path": "Bundle.entry.resource",
         "min": 0,
         "max": "1",
@@ -3190,7 +3190,7 @@
         "isModifier": false
       },
       {
-        "id": "Bundle.entry:ooslice.search",
+        "id": "Bundle.entry:entry-oo.search",
         "path": "Bundle.entry.search",
         "min": 0,
         "max": "1",
@@ -3198,7 +3198,7 @@
         "isModifier": false
       },
       {
-        "id": "Bundle.entry:ooslice.search.mode",
+        "id": "Bundle.entry:entry-oo.search.mode",
         "path": "Bundle.entry.search.mode",
         "min": 1,
         "max": "1",

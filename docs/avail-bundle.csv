@@ -33,7 +33,7 @@ user contentmodifiers","",0,*,"","Y","Y","Extension
 ","See http://www.iana.org/assignments/link-relations/link-relations.xhtml#link-relations-1","A name which details the functional use for this link - see [http://www.iana.org/assignments/link-relations/link-relations.xhtml#link-relations-1](http://www.iana.org/assignments/link-relations/link-relations.xhtml#link-relations-1).","","","","","","","","","",,,,,"",,,,"Bundle.link.relation",1,1,"",""
 "Bundle.link.url","","","",1,1,"","","Y","uri
 ","Reference details for the link","The reference details for the link.","","","","","","","","","",,,,,"",,,,"Bundle.link.url",1,1,"",""
-"Bundle.entry","Entry Slice","","",1,*,"Y","","Y","BackboneElement
+"Bundle.entry","entry-slices","","",1,*,"Y","","Y","BackboneElement
 ","Entry in the bundle - will have a resource, or information","An entry in a bundle resource - will either contain a resource, or information about a resource (transactions and history only).","","","","","","","","","",,,,,"","value:resource}
 ","",,"open","Bundle.entry",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() | (children().count() > id.count())}
 bdl-8:fullUrl cannot be a version specific reference {fullUrl.contains('/_history/').not()}bdl-5:must be a resource unless there's a request or response {resource.exists() or request.exists() or response.exists()}"
@@ -114,7 +114,7 @@ user contentmodifiers","",0,*,"","Y","Y","Extension
 ","Server's date time modified","The date/time that the resource was modified on the server.","This has to match the same time in the meta header if a resource is included.","","","","","","","","",,,,,"",,,,"Bundle.entry.response.lastModified",0,1,"",""
 "Bundle.entry.response.outcome","","","",0,1,"","","Y","Resource
 ","OperationOutcome with hints and warnings (for batch/transaction)","An OperationOutcome containing hints and warnings produced as part of processing this entry in a batch or transaction.","For a POST/PUT operation, this is the equivalent outcome that would be returned for prefer = operationoutcome - except that the resource is always returned whether or not the outcome is returned.","","","","","","","","",,,,,"",,,,"Bundle.entry.response.outcome",0,1,"",""
-"Bundle.entry","Appt Slice","","",0,*,"Y","","Y","BackboneElement
+"Bundle.entry","entry-appt","","",0,*,"Y","","Y","BackboneElement
 ","Entry in the bundle - will have a resource, or information","An entry in a bundle resource - will either contain a resource, or information about a resource (transactions and history only).","","","","","","","","","",,,,,"",,,,"Bundle.entry",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() | (children().count() > id.count())}
 bdl-8:fullUrl cannot be a version specific reference {fullUrl.contains('/_history/').not()}bdl-5:must be a resource unless there's a request or response {resource.exists() or request.exists() or response.exists()}"
 "Bundle.entry.id","","","",0,1,"","","","string
@@ -130,7 +130,7 @@ user contentmodifiers","",0,*,"","Y","Y","Extension
 ","Absolute URL for resource (server address, or UUID/OID)","The Absolute URL for the resource.  The fullUrl SHALL not disagree with the id in the resource. The fullUrl is a version independent reference to the resource. The fullUrl element SHALL have a value except that: 
 * fullUrl can be empty on a POST (although it does not need to when specifying a temporary id for reference in the bundle)
 * Results from operations might involve resources that are not identified.","fullUrl may not be [unique in the context of a resource](bundle.html#bundle-unique). Note that since [FHIR resources do not need to be served through the FHIR API](references.html), the absolute URL may not end with the logical id of the resource (Resource.id), but if the fullUrl does look like a RESTful server URL (e.g. meets the [regex](references.html#regex), then it SHALL end with the Resource.id.","","","","","","","","",,,,,"",,,,"Bundle.entry.fullUrl",0,1,"",""
-"Bundle.entry.resource","","","",0,1,"Y","","","Appointment {http://fhir.org/guides/argonaut-scheduling/StructureDefinition/appt-output}
+"Bundle.entry.resource","","","",0,1,"Y","","","Appointment {http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt}
 ","A resource in the bundle","The Resources for the entry.","","","","","","","","","",,,,,"",,,,"Bundle.entry.resource",0,1,"","dom-2:If the resource is contained in another resource, it SHALL NOT contain nested Resources {contained.contained.empty()}
 dom-1:If the resource is contained in another resource, it SHALL NOT contain any narrative {contained.text.empty()}dom-4:If a resource is contained in another resource, it SHALL NOT have a meta.versionId or a meta.lastUpdated {contained.meta.versionId.empty() and contained.meta.lastUpdated.empty()}dom-3:If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource {contained.where(('#'+id in %resource.descendants().reference).not()).empty()}app-3:Only proposed or cancelled appointments can be missing start/end dates {(start.exists() and end.exists()) or (status in ('proposed' | 'cancelled'))}app-2:Either start and end are specified, or neither {start.empty() xor end.exists()}","Entity. Role, or Act","Act[@moodCode <= 'INT']","workflow.scheduling"
 "Bundle.entry.search","","","",0,1,"Y","","Y","BackboneElement
@@ -195,7 +195,7 @@ user contentmodifiers","",0,*,"","Y","Y","Extension
 ","Server's date time modified","The date/time that the resource was modified on the server.","This has to match the same time in the meta header if a resource is included.","","","","","","","","",,,,,"",,,,"Bundle.entry.response.lastModified",0,1,"",""
 "Bundle.entry.response.outcome","","","",0,1,"","","Y","Resource
 ","OperationOutcome with hints and warnings (for batch/transaction)","An OperationOutcome containing hints and warnings produced as part of processing this entry in a batch or transaction.","For a POST/PUT operation, this is the equivalent outcome that would be returned for prefer = operationoutcome - except that the resource is always returned whether or not the outcome is returned.","","","","","","","","",,,,,"",,,,"Bundle.entry.response.outcome",0,1,"",""
-"Bundle.entry","OO Slice","","",0,*,"Y","","Y","BackboneElement
+"Bundle.entry","entry-oo","","",0,*,"Y","","Y","BackboneElement
 ","Entry in the bundle - will have a resource, or information","An entry in a bundle resource - will either contain a resource, or information about a resource (transactions and history only).","","","","","","","","","",,,,,"",,,,"Bundle.entry",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() | (children().count() > id.count())}
 bdl-8:fullUrl cannot be a version specific reference {fullUrl.contains('/_history/').not()}bdl-5:must be a resource unless there's a request or response {resource.exists() or request.exists() or response.exists()}"
 "Bundle.entry.id","","","",0,1,"","","","string

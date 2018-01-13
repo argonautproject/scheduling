@@ -16,7 +16,7 @@
         "id": "proposed-appt1a-1",
         "meta": {
           "profile": [
-            "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/appt-output"
+            "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt"
           ]
         },
         "text": {
@@ -82,7 +82,7 @@
         "id": "proposed-appt1a-2",
         "meta": {
           "profile": [
-            "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/appt-output"
+            "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt"
           ]
         },
         "text": {
@@ -148,7 +148,7 @@
         "id": "proposed-appt1a-3",
         "meta": {
           "profile": [
-            "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/appt-output"
+            "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt"
           ]
         },
         "text": {

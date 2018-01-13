@@ -1,4 +1,4 @@
-source file:  _includes/appt-output-search.md
+source file:  _includes/argo-appt-search.md
 
 Patient based Scheduling:
 

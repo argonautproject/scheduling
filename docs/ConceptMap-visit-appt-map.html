@@ -204,15 +204,14 @@
   
     
     
-      <!-- default -->
-      <a class="breadcrumb-item btn btn-link btn-sm" href="toc.html">TOC</a><a class="breadcrumb-item" href="index.html">Home</a>
-      /
-      <a class="breadcrumb-item" href="profiles.html">Profiles</a>
-      /
-      <span class="breadcrumb-item active">ConceptMap-visit-appt-map</span>
       
       
       
+        <a class="breadcrumb-item btn btn-link btn-sm" href="toc.html">TOC</a><a class="breadcrumb-item" href="index.html">Home</a>
+        /
+        <a class="breadcrumb-item" href="terminology.html">Terminology</a>
+        /
+        <span class="breadcrumb-item active">ConceptMap-visit-appt-map</span>
       
       
       
@@ -221,6 +220,7 @@
 
 
 </nav>
+
 
 
 <!-- ============nav-tabs=============== -->
@@ -275,7 +275,478 @@
   <h2>ConceptMap: visit-appt-map</h2>
 
   <div xmlns="http://www.w3.org/1999/xhtml">
-<h2>Argonaut Scheduling Visit Type to Appointment Type Mapping(http://fhir.org/guides/argonaut-scheduling/ConceptMap/visit-appt-map)</h2><p>Mapping from <a href="http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type">http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type</a> to <a href="http://fhir.org/guides/argonaut-scheduling/ValueSet/appt-type">http://fhir.org/guides/argonaut-scheduling/ValueSet/appt-type</a></p><p>DRAFT. Published on Oct 30, 2017 6:49:44 PM by Argonaut Project</p><p>The source concepts are Argonaut Visit Types which are a prioritized valueset of the most common appointment types for scheduling and have been identified as the baseline use cases for the  Argonaut scheduling Implementation Guide.   The Visit types are mapped to the target concepts from the Argonaut Appointment Types Valueset in order to align with the FHIR Appointment, Schedule and Slot resources.  <strong>Note</strong>: where the there is no mapping the appointment type is assumed to be 'ROUTINE'.</p><br/><table class="grid"><thead><tr><th><strong>Source Code</strong></th><th><strong>Equivalence</strong></th><th><strong>Destination Code</strong></th><th><strong>Destination CodeSystem</strong></th><th><strong>Comment</strong></th></tr></thead><tbody><tr><td>breast-imaging</td><td/><td/><td/><td/></tr><tr><td>consult</td><td/><td/><td/><td/></tr><tr><td>ct</td><td/><td/><td/><td/></tr><tr><td>dental</td><td/><td/><td/><td/></tr><tr><td>dxa</td><td/><td/><td/><td/></tr><tr><td>echo</td><td/><td/><td/><td/></tr><tr><td>echo-stresstest</td><td/><td/><td/><td/></tr><tr><td>ed-followup</td><td>equivalent</td><td>FOLLOWUP</td><td><a href="http://hl7.org/fhir/v2/0276">http://hl7.org/fhir/v2/0276</a></td><td/></tr><tr><td>eeg</td><td/><td/><td/><td/></tr><tr><td>egd</td><td/><td/><td/><td/></tr><tr><td>ekg</td><td/><td/><td/><td/></tr><tr><td>evaluation</td><td/><td/><td/><td/></tr><tr><td>flu-shot-clinic</td><td/><td/><td/><td/></tr><tr><td>fluoroscopy</td><td/><td/><td/><td/></tr><tr><td>follow-up</td><td>equivalent</td><td>FOLLOWUP</td><td><a href="http://hl7.org/fhir/v2/0276">http://hl7.org/fhir/v2/0276</a></td><td/></tr><tr><td>home-heath visit</td><td/><td/><td/><td/></tr><tr><td>injection</td><td/><td/><td/><td/></tr><tr><td>interventional-rad</td><td/><td/><td/><td/></tr><tr><td>lab</td><td/><td/><td/><td/></tr><tr><td>minor-surgery</td><td/><td/><td/><td/></tr><tr><td>mri</td><td/><td/><td/><td/></tr><tr><td>new-patient</td><td>equal</td><td>new-patient</td><td><a href="http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-types">http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-types</a></td><td/></tr><tr><td>nuc-med</td><td/><td/><td/><td/></tr><tr><td>occup-therapy</td><td/><td/><td/><td/></tr><tr><td>office-visit</td><td/><td/><td/><td/></tr><tr><td>physical</td><td/><td/><td/><td/></tr><tr><td>post-op</td><td>equal</td><td>post-op</td><td><a href="http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-types">http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-types</a></td><td/></tr><tr><td>pre-admit-testing</td><td/><td/><td/><td/></tr><tr><td>pre-op</td><td>equal</td><td>pre-op</td><td><a href="http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-types">http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-types</a></td><td/></tr><tr><td>procedure</td><td/><td/><td/><td/></tr><tr><td>same-day</td><td>equal</td><td>same-day</td><td><a href="http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-types">http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-types</a></td><td/></tr><tr><td>stress-test</td><td/><td/><td/><td/></tr><tr><td>surgery</td><td/><td/><td/><td/></tr><tr><td>treatment</td><td/><td/><td/><td/></tr><tr><td>ultrasound</td><td/><td/><td/><td/></tr><tr><td>urgent</td><td>equal</td><td>urgent</td><td><a href="http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-types">http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-types</a></td><td/></tr><tr><td>vaccine</td><td/><td/><td/><td/></tr><tr><td>vision</td><td/><td/><td/><td/></tr><tr><td>walk-in</td><td>equivalent</td><td>WALKIN</td><td><a href="http://hl7.org/fhir/v2/0276">http://hl7.org/fhir/v2/0276</a></td><td/></tr><tr><td>well-child</td><td/><td/><td/><td/></tr><tr><td>x-ray</td><td/><td/><td/><td/></tr></tbody></table>
+			<h2>Argonaut Scheduling Visit Type to Appointment Type Mapping(http://fhir.org/guides/argonaut-scheduling/ConceptMap/visit-appt-map)</h2>
+			<p>Mapping from <a href="http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type">http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type</a> to <a href="http://fhir.org/guides/argonaut-scheduling/ValueSet/appt-type">http://fhir.org/guides/argonaut-scheduling/ValueSet/appt-type</a>
+			</p>
+			<p>DRAFT. Published on Oct 30, 2017 6:49:44 PM by Argonaut Project</p>
+			<p>The source concepts are Argonaut Visit Types which are a prioritized valueset of the most common appointment types for scheduling and have been identified as the baseline use cases for the  Argonaut scheduling Implementation Guide.   The Visit types are mapped to the target concepts from the Argonaut Appointment Types Valueset in order to align with the FHIR Appointment, Schedule and Slot resources.  <strong>Note</strong>: where the there is no mapping the appointment type is assumed to be 'ROUTINE'.</p>
+			<br/>
+			<table class="grid">
+				<thead>
+					<tr>
+						<th>
+							<strong>Source Code</strong>
+						</th>
+						<th>
+							<strong>Equivalence</strong>
+						</th>
+						<th>
+							<strong>Destination Code</strong>
+						</th>
+						<th>
+							<strong>Destination CodeSystem</strong>
+						</th>
+						<th>
+							<strong>Comment</strong>
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>breast-imaging</td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+					</tr>
+					<tr>
+						<td>consult</td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+					</tr>
+					<tr>
+						<td>ct</td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+					</tr>
+					<tr>
+						<td>dental</td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+					</tr>
+					<tr>
+						<td>dxa</td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+					</tr>
+					<tr>
+						<td>echo</td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+					</tr>
+					<tr>
+						<td>echo-stresstest</td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+					</tr>
+					<tr>
+						<td>ed-followup</td>
+						<td>equivalent</td>
+						<td>FOLLOWUP</td>
+						<td>
+							<a href="http://hl7.org/fhir/v2/0276">http://hl7.org/fhir/v2/0276</a>
+						</td>
+						<td>
+          </td>
+					</tr>
+					<tr>
+						<td>eeg</td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+					</tr>
+					<tr>
+						<td>egd</td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+					</tr>
+					<tr>
+						<td>ekg</td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+					</tr>
+					<tr>
+						<td>evaluation</td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+					</tr>
+					<tr>
+						<td>flu-shot-clinic</td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+					</tr>
+					<tr>
+						<td>fluoroscopy</td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+					</tr>
+					<tr>
+						<td>follow-up</td>
+						<td>equivalent</td>
+						<td>FOLLOWUP</td>
+						<td>
+							<a href="http://hl7.org/fhir/v2/0276">http://hl7.org/fhir/v2/0276</a>
+						</td>
+						<td>
+          </td>
+					</tr>
+					<tr>
+						<td>home-heath visit</td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+					</tr>
+					<tr>
+						<td>injection</td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+					</tr>
+					<tr>
+						<td>interventional-rad</td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+					</tr>
+					<tr>
+						<td>lab</td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+					</tr>
+					<tr>
+						<td>minor-surgery</td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+					</tr>
+					<tr>
+						<td>mri</td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+					</tr>
+					<tr>
+						<td>new-patient</td>
+						<td>equal</td>
+						<td>new-patient</td>
+						<td>
+							<a href="http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-types">http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-types</a>
+						</td>
+						<td>
+          </td>
+					</tr>
+					<tr>
+						<td>nuc-med</td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+					</tr>
+					<tr>
+						<td>occup-therapy</td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+					</tr>
+					<tr>
+						<td>office-visit</td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+					</tr>
+					<tr>
+						<td>physical</td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+					</tr>
+					<tr>
+						<td>post-op</td>
+						<td>equal</td>
+						<td>post-op</td>
+						<td>
+							<a href="http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-types">http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-types</a>
+						</td>
+						<td>
+          </td>
+					</tr>
+					<tr>
+						<td>pre-admit-testing</td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+					</tr>
+					<tr>
+						<td>pre-op</td>
+						<td>equal</td>
+						<td>pre-op</td>
+						<td>
+							<a href="http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-types">http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-types</a>
+						</td>
+						<td>
+          </td>
+					</tr>
+					<tr>
+						<td>procedure</td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+					</tr>
+					<tr>
+						<td>same-day</td>
+						<td>equal</td>
+						<td>same-day</td>
+						<td>
+							<a href="http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-types">http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-types</a>
+						</td>
+						<td>
+          </td>
+					</tr>
+					<tr>
+						<td>stress-test</td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+					</tr>
+					<tr>
+						<td>surgery</td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+					</tr>
+					<tr>
+						<td>treatment</td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+					</tr>
+					<tr>
+						<td>ultrasound</td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+					</tr>
+					<tr>
+						<td>urgent</td>
+						<td>equal</td>
+						<td>urgent</td>
+						<td>
+							<a href="http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-types">http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-types</a>
+						</td>
+						<td>
+          </td>
+					</tr>
+					<tr>
+						<td>vaccine</td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+					</tr>
+					<tr>
+						<td>vision</td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+					</tr>
+					<tr>
+						<td>walk-in</td>
+						<td>equivalent</td>
+						<td>WALKIN</td>
+						<td>
+							<a href="http://hl7.org/fhir/v2/0276">http://hl7.org/fhir/v2/0276</a>
+						</td>
+						<td>
+          </td>
+					</tr>
+					<tr>
+						<td>well-child</td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+					</tr>
+					<tr>
+						<td>x-ray</td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+						<td>
+          </td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
   <!-- ============CodeSystem ConceptMap CapabilityStatement CONTENT CONTENT=============== -->
 
@@ -320,7 +791,7 @@ Formats: <a href="ConceptMap-visit-appt-map.html">Narrative</a>, <a href="Concep
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Fri, Jan 12, 2018 00:57-0800. |
+            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Fri, Jan 12, 2018 19:01-0800. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/STU3license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

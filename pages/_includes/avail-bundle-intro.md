@@ -1,4 +1,4 @@
-The Appointment Bundle profile sets the minimum expectations for the Bundle resource which is returned as a result of the `$find` operation and when fetching appointments.
+The Argonaut Appointment Bundle profile sets the minimum expectations for the Bundle resource which is returned as a result of the `$find` operation and when fetching appointments.
 
 ### Mandatory Data Elements
 

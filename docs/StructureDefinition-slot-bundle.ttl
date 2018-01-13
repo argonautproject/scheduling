@@ -10,7 +10,7 @@
   fhir:Resource.id [ fhir:value "slot-bundle"];
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "generated" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"border: 0px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;\"><tr style=\"border: 1px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;\"><th style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/STU3/formats.html#table\" title=\"The logical name of the element\">Name</a></th><th style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/STU3/formats.html#table\" title=\"Information about the use of the element\">Flags</a></th><th style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/STU3/formats.html#table\" title=\"Minimum and Maximum # of times the the element can appear in the instance\">Card.</a></th><th style=\"width: 100px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/STU3/formats.html#table\" title=\"Reference to the type of the element\">Type</a></th><th style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/STU3/formats.html#table\" title=\"Additional information about the element\">Description &amp; Constraints</a><span style=\"float: right\"><a href=\"http://hl7.org/fhir/STU3/formats.html#table\" title=\"Legend for this format\"><img src=\"http://hl7.org/fhir/STU3/help16.png\" alt=\"doco\" style=\"background-color: inherit\"/></a></span></th></tr><tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck1.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <a href=\"StructureDefinition-slot-bundle-definitions.html#Bundle\" title=\"This is the output Appointment Bundle profile which is returned as a result of the *Operation$find* operation.\">Bundle</a><a name=\"Bundle\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"opacity: 0.4\">0</span><span style=\"opacity: 0.5\">..</span><span style=\"opacity: 0.4\">*</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_primitive.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Primitive Data Type\" class=\"hierarchy\"/> <a href=\"StructureDefinition-slot-bundle-definitions.html#Bundle.type\">type</a><a name=\"Bundle.type\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"padding-left: 3px; padding-right: 3px; color: white; background-color: red\" title=\"This element must be supported\">S</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"opacity: 0.4\">1</span><span style=\"opacity: 0.5\">..</span><span style=\"opacity: 0.4\">1</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a style=\"opacity: 0.4\" href=\"http://hl7.org/fhir/STU3/datatypes.html#code\">code</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">searchset|history<br/><span style=\"font-weight:bold\">Binding: </span><a href=\"ValueSet-slot-bundle-type.html\">Argonaut Slot BundleType Codes</a> (<a href=\"http://hl7.org/fhir/STU3/terminologies.html#required\" title=\"To be conformant, the concept in this element SHALL be from the specified value set\">required</a>)</td></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <a href=\"StructureDefinition-slot-bundle-definitions.html#Bundle.total\">total</a><a name=\"Bundle.total\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"padding-left: 3px; padding-right: 3px; color: white; background-color: red\" title=\"This element must be supported\">S</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a style=\"opacity: 0.4\" href=\"http://hl7.org/fhir/STU3/datatypes.html#unsignedInt\">unsignedInt</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_slice.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Slice Definition\" class=\"hierarchy\"/> <a style=\"font-style: italic\" href=\"StructureDefinition-slot-bundle-definitions.html#Bundle.entry:entryslice\" title=\"Slice Entry Slice: \">entry</a><a name=\"Bundle.entry\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"padding-left: 3px; padding-right: 3px; color: white; background-color: red; font-style: italic\" title=\"This element must be supported\">S</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a style=\"opacity: 0.4; font-style: italic\" href=\"http://hl7.org/fhir/STU3/datatypes.html#BackboneElement\">BackboneElement</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"font-weight:bold; font-style: italic\">Slice: </span><span style=\"font-style: italic\">Unordered, Open by value:resource</span><br style=\"font-style: italic\"/></td></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck11.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <a href=\"StructureDefinition-slot-bundle-definitions.html#Bundle.entry:apptslice\" title=\"Slice Appt Slice: \">entry</a><a name=\"Bundle.entry\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"padding-left: 3px; padding-right: 3px; color: white; background-color: red\" title=\"This element must be supported\">S</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"opacity: 0.4\">0</span><span style=\"opacity: 0.5\">..</span><span style=\"opacity: 0.4\">*</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a style=\"opacity: 0.4\" href=\"http://hl7.org/fhir/STU3/datatypes.html#BackboneElement\">BackboneElement</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck110.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_resource.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Resource\" class=\"hierarchy\"/> <a href=\"StructureDefinition-slot-bundle-definitions.html#Bundle.entry:apptslice.resource\">resource</a><a name=\"Bundle.entry.resource\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"padding-left: 3px; padding-right: 3px; color: white; background-color: red\" title=\"This element must be supported\">S</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"opacity: 0.4\">0</span><span style=\"opacity: 0.5\">..</span><span style=\"opacity: 0.4\">1</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"StructureDefinition-prefetch-slot.html\" title=\"Appointment\">Argonaut Prefetch Slot Profile</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck101.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <a href=\"StructureDefinition-slot-bundle-definitions.html#Bundle.entry:apptslice.search\">search</a><a name=\"Bundle.entry.search\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"padding-left: 3px; padding-right: 3px; color: white; background-color: red\" title=\"This element must be supported\">S</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"opacity: 0.4\">0</span><span style=\"opacity: 0.5\">..</span><span style=\"opacity: 0.4\">1</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a style=\"opacity: 0.4\" href=\"http://hl7.org/fhir/STU3/datatypes.html#BackboneElement\">BackboneElement</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck1000.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_primitive.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Primitive Data Type\" class=\"hierarchy\"/> <a href=\"StructureDefinition-slot-bundle-definitions.html#Bundle.entry:apptslice.search.mode\">mode</a><a name=\"Bundle.entry.search.mode\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"padding-left: 3px; padding-right: 3px; color: white; background-color: red\" title=\"This element must be supported\">S</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a style=\"opacity: 0.4\" href=\"http://hl7.org/fhir/STU3/datatypes.html#code\">code</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"font-weight:bold\">Fixed Value: </span><span style=\"color: darkgreen\">match</span></td></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck01.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <a href=\"StructureDefinition-slot-bundle-definitions.html#Bundle.entry:ooslice\" title=\"Slice OO Slice: \">entry</a><a name=\"Bundle.entry\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"padding-left: 3px; padding-right: 3px; color: white; background-color: red\" title=\"This element must be supported\">S</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"opacity: 0.4\">0</span><span style=\"opacity: 0.5\">..</span><span style=\"opacity: 0.4\">*</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a style=\"opacity: 0.4\" href=\"http://hl7.org/fhir/STU3/datatypes.html#BackboneElement\">BackboneElement</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_resource.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Resource\" class=\"hierarchy\"/> <a href=\"StructureDefinition-slot-bundle-definitions.html#Bundle.entry:ooslice.resource\">resource</a><a name=\"Bundle.entry.resource\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"padding-left: 3px; padding-right: 3px; color: white; background-color: red\" title=\"This element must be supported\">S</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"opacity: 0.4\">0</span><span style=\"opacity: 0.5\">..</span><span style=\"opacity: 0.4\">1</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/STU3/operationoutcome.html\">OperationOutcome</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck001.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <a href=\"StructureDefinition-slot-bundle-definitions.html#Bundle.entry:ooslice.search\">search</a><a name=\"Bundle.entry.search\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"padding-left: 3px; padding-right: 3px; color: white; background-color: red\" title=\"This element must be supported\">S</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"opacity: 0.4\">0</span><span style=\"opacity: 0.5\">..</span><span style=\"opacity: 0.4\">1</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a style=\"opacity: 0.4\" href=\"http://hl7.org/fhir/STU3/datatypes.html#BackboneElement\">BackboneElement</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck0000.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_primitive.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Primitive Data Type\" class=\"hierarchy\"/> <a href=\"StructureDefinition-slot-bundle-definitions.html#Bundle.entry:ooslice.search.mode\">mode</a><a name=\"Bundle.entry.search.mode\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"padding-left: 3px; padding-right: 3px; color: white; background-color: red\" title=\"This element must be supported\">S</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a style=\"opacity: 0.4\" href=\"http://hl7.org/fhir/STU3/datatypes.html#code\">code</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"font-weight:bold\">Fixed Value: </span><span style=\"color: darkgreen\">outcome</span></td></tr>\r\n<tr><td colspan=\"5\" class=\"hierarchy\"><br/><a href=\"http://hl7.org/fhir/STU3/formats.html#table\" title=\"Legend for this format\"><img src=\"http://hl7.org/fhir/STU3/help16.png\" alt=\"doco\" style=\"background-color: inherit\"/> Documentation for this format</a></td></tr></table></div>"
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"border: 0px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;\"><tr style=\"border: 1px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;\"><th style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/STU3/formats.html#table\" title=\"The logical name of the element\">Name</a></th><th style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/STU3/formats.html#table\" title=\"Information about the use of the element\">Flags</a></th><th style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/STU3/formats.html#table\" title=\"Minimum and Maximum # of times the the element can appear in the instance\">Card.</a></th><th style=\"width: 100px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/STU3/formats.html#table\" title=\"Reference to the type of the element\">Type</a></th><th style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/STU3/formats.html#table\" title=\"Additional information about the element\">Description &amp; Constraints</a><span style=\"float: right\"><a href=\"http://hl7.org/fhir/STU3/formats.html#table\" title=\"Legend for this format\"><img src=\"http://hl7.org/fhir/STU3/help16.png\" alt=\"doco\" style=\"background-color: inherit\"/></a></span></th></tr><tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck1.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <a href=\"StructureDefinition-slot-bundle-definitions.html#Bundle\" title=\"This is the output Appointment Bundle profile which is returned as a result of the *Operation$find* operation.\">Bundle</a><a name=\"Bundle\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"opacity: 0.4\">0</span><span style=\"opacity: 0.5\">..</span><span style=\"opacity: 0.4\">*</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_primitive.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Primitive Data Type\" class=\"hierarchy\"/> <a href=\"StructureDefinition-slot-bundle-definitions.html#Bundle.type\">type</a><a name=\"Bundle.type\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"padding-left: 3px; padding-right: 3px; color: white; background-color: red\" title=\"This element must be supported\">S</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"opacity: 0.4\">1</span><span style=\"opacity: 0.5\">..</span><span style=\"opacity: 0.4\">1</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a style=\"opacity: 0.4\" href=\"http://hl7.org/fhir/STU3/datatypes.html#code\">code</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">searchset|history<br/><span style=\"font-weight:bold\">Binding: </span><a href=\"ValueSet-slot-bundle-type.html\">Argonaut Slot BundleType Codes</a> (<a href=\"http://hl7.org/fhir/STU3/terminologies.html#required\" title=\"To be conformant, the concept in this element SHALL be from the specified value set\">required</a>)</td></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <a href=\"StructureDefinition-slot-bundle-definitions.html#Bundle.total\">total</a><a name=\"Bundle.total\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"padding-left: 3px; padding-right: 3px; color: white; background-color: red\" title=\"This element must be supported\">S</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a style=\"opacity: 0.4\" href=\"http://hl7.org/fhir/STU3/datatypes.html#unsignedInt\">unsignedInt</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_slice.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Slice Definition\" class=\"hierarchy\"/> <a style=\"font-style: italic\" href=\"StructureDefinition-slot-bundle-definitions.html#Bundle.entry:entryslices\" title=\"Slice entryslices: \">entry</a><a name=\"Bundle.entry\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"padding-left: 3px; padding-right: 3px; color: white; background-color: red; font-style: italic\" title=\"This element must be supported\">S</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a style=\"opacity: 0.4; font-style: italic\" href=\"http://hl7.org/fhir/STU3/datatypes.html#BackboneElement\">BackboneElement</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"font-weight:bold; font-style: italic\">Slice: </span><span style=\"font-style: italic\">Unordered, Open by value:resource</span><br style=\"font-style: italic\"/></td></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck11.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <a href=\"StructureDefinition-slot-bundle-definitions.html#Bundle.entry:entryappt\" title=\"Slice entryappt: \">entry</a><a name=\"Bundle.entry\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"padding-left: 3px; padding-right: 3px; color: white; background-color: red\" title=\"This element must be supported\">S</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"opacity: 0.4\">0</span><span style=\"opacity: 0.5\">..</span><span style=\"opacity: 0.4\">*</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a style=\"opacity: 0.4\" href=\"http://hl7.org/fhir/STU3/datatypes.html#BackboneElement\">BackboneElement</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck110.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_resource.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Resource\" class=\"hierarchy\"/> <a href=\"StructureDefinition-slot-bundle-definitions.html#Bundle.entry:entryappt.resource\">resource</a><a name=\"Bundle.entry.resource\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"padding-left: 3px; padding-right: 3px; color: white; background-color: red\" title=\"This element must be supported\">S</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"opacity: 0.4\">0</span><span style=\"opacity: 0.5\">..</span><span style=\"opacity: 0.4\">1</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"StructureDefinition-prefetch-slot.html\" title=\"Appointment\">Argonaut Prefetch Slot Profile</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck101.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <a href=\"StructureDefinition-slot-bundle-definitions.html#Bundle.entry:entryappt.search\">search</a><a name=\"Bundle.entry.search\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"padding-left: 3px; padding-right: 3px; color: white; background-color: red\" title=\"This element must be supported\">S</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"opacity: 0.4\">0</span><span style=\"opacity: 0.5\">..</span><span style=\"opacity: 0.4\">1</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a style=\"opacity: 0.4\" href=\"http://hl7.org/fhir/STU3/datatypes.html#BackboneElement\">BackboneElement</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck1000.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_primitive.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Primitive Data Type\" class=\"hierarchy\"/> <a href=\"StructureDefinition-slot-bundle-definitions.html#Bundle.entry:entryappt.search.mode\">mode</a><a name=\"Bundle.entry.search.mode\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"padding-left: 3px; padding-right: 3px; color: white; background-color: red\" title=\"This element must be supported\">S</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a style=\"opacity: 0.4\" href=\"http://hl7.org/fhir/STU3/datatypes.html#code\">code</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"font-weight:bold\">Fixed Value: </span><span style=\"color: darkgreen\">match</span></td></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck01.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <a href=\"StructureDefinition-slot-bundle-definitions.html#Bundle.entry:entryoo\" title=\"Slice entryoo: \">entry</a><a name=\"Bundle.entry\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"padding-left: 3px; padding-right: 3px; color: white; background-color: red\" title=\"This element must be supported\">S</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"opacity: 0.4\">0</span><span style=\"opacity: 0.5\">..</span><span style=\"opacity: 0.4\">*</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a style=\"opacity: 0.4\" href=\"http://hl7.org/fhir/STU3/datatypes.html#BackboneElement\">BackboneElement</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_resource.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Resource\" class=\"hierarchy\"/> <a href=\"StructureDefinition-slot-bundle-definitions.html#Bundle.entry:entryoo.resource\">resource</a><a name=\"Bundle.entry.resource\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"padding-left: 3px; padding-right: 3px; color: white; background-color: red\" title=\"This element must be supported\">S</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"opacity: 0.4\">0</span><span style=\"opacity: 0.5\">..</span><span style=\"opacity: 0.4\">1</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/STU3/operationoutcome.html\">OperationOutcome</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck001.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <a href=\"StructureDefinition-slot-bundle-definitions.html#Bundle.entry:entryoo.search\">search</a><a name=\"Bundle.entry.search\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"padding-left: 3px; padding-right: 3px; color: white; background-color: red\" title=\"This element must be supported\">S</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"opacity: 0.4\">0</span><span style=\"opacity: 0.5\">..</span><span style=\"opacity: 0.4\">1</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a style=\"opacity: 0.4\" href=\"http://hl7.org/fhir/STU3/datatypes.html#BackboneElement\">BackboneElement</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck0000.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_primitive.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Primitive Data Type\" class=\"hierarchy\"/> <a href=\"StructureDefinition-slot-bundle-definitions.html#Bundle.entry:entryoo.search.mode\">mode</a><a name=\"Bundle.entry.search.mode\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"padding-left: 3px; padding-right: 3px; color: white; background-color: red\" title=\"This element must be supported\">S</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a style=\"opacity: 0.4\" href=\"http://hl7.org/fhir/STU3/datatypes.html#code\">code</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"font-weight:bold\">Fixed Value: </span><span style=\"color: darkgreen\">outcome</span></td></tr>\r\n<tr><td colspan=\"5\" class=\"hierarchy\"><br/><a href=\"http://hl7.org/fhir/STU3/formats.html#table\" title=\"Legend for this format\"><img src=\"http://hl7.org/fhir/STU3/help16.png\" alt=\"doco\" style=\"background-color: inherit\"/> Documentation for this format</a></td></tr></table></div>"
   ];
   fhir:StructureDefinition.url [ fhir:value "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/slot-bundle"];
   fhir:StructureDefinition.version [ fhir:value "0.0.0"];
@@ -474,9 +474,9 @@
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index 14;
-       fhir:Element.id [ fhir:value "Bundle.entry:entryslice" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryslices" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry" ];
-       fhir:ElementDefinition.sliceName [ fhir:value "Entry Slice" ];
+       fhir:ElementDefinition.sliceName [ fhir:value "entryslices" ];
        fhir:ElementDefinition.slicing [
          fhir:ElementDefinition.slicing.discriminator [
            fhir:index 0;
@@ -527,7 +527,7 @@
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index 15;
-       fhir:Element.id [ fhir:value "Bundle.entry:entryslice.id" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryslices.id" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.id" ];
        fhir:ElementDefinition.representation [
          fhir:value "xmlAttr";
@@ -553,7 +553,7 @@
        ]
      ], [
        fhir:index 16;
-       fhir:Element.id [ fhir:value "Bundle.entry:entryslice.extension" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryslices.extension" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.extension" ];
        fhir:ElementDefinition.short [ fhir:value "Additional Content defined by implementations" ];
        fhir:ElementDefinition.definition [ fhir:value "May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension." ];
@@ -583,7 +583,7 @@
        ]
      ], [
        fhir:index 17;
-       fhir:Element.id [ fhir:value "Bundle.entry:entryslice.modifierExtension" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryslices.modifierExtension" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.modifierExtension" ];
        fhir:ElementDefinition.short [ fhir:value "Extensions that cannot be ignored" ];
        fhir:ElementDefinition.definition [ fhir:value "May be used to represent additional information that is not part of the basic definition of the element, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions." ];
@@ -618,7 +618,7 @@
        ]
      ], [
        fhir:index 18;
-       fhir:Element.id [ fhir:value "Bundle.entry:entryslice.link" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryslices.link" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.link" ];
        fhir:ElementDefinition.short [ fhir:value "Links related to this entry" ];
        fhir:ElementDefinition.definition [ fhir:value "A series of links that provide context to this entry." ];
@@ -633,7 +633,7 @@
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index 19;
-       fhir:Element.id [ fhir:value "Bundle.entry:entryslice.fullUrl" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryslices.fullUrl" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.fullUrl" ];
        fhir:ElementDefinition.short [ fhir:value "Absolute URL for resource (server address, or UUID/OID)" ];
        fhir:ElementDefinition.definition [ fhir:value "The Absolute URL for the resource.  The fullUrl SHALL not disagree with the id in the resource. The fullUrl is a version independent reference to the resource. The fullUrl element SHALL have a value except that: \n* fullUrl can be empty on a POST (although it does not need to when specifying a temporary id for reference in the bundle)\n* Results from operations might involve resources that are not identified." ];
@@ -652,7 +652,7 @@
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index 20;
-       fhir:Element.id [ fhir:value "Bundle.entry:entryslice.resource" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryslices.resource" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.resource" ];
        fhir:ElementDefinition.short [ fhir:value "A resource in the bundle" ];
        fhir:ElementDefinition.definition [ fhir:value "The Resources for the entry." ];
@@ -670,7 +670,7 @@
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index 21;
-       fhir:Element.id [ fhir:value "Bundle.entry:entryslice.search" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryslices.search" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.search" ];
        fhir:ElementDefinition.short [ fhir:value "Search related information" ];
        fhir:ElementDefinition.definition [ fhir:value "Information about the search process that lead to the creation of this entry." ];
@@ -701,7 +701,7 @@
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index 22;
-       fhir:Element.id [ fhir:value "Bundle.entry:entryslice.search.id" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryslices.search.id" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.search.id" ];
        fhir:ElementDefinition.representation [
          fhir:value "xmlAttr";
@@ -727,7 +727,7 @@
        ]
      ], [
        fhir:index 23;
-       fhir:Element.id [ fhir:value "Bundle.entry:entryslice.search.extension" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryslices.search.extension" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.search.extension" ];
        fhir:ElementDefinition.short [ fhir:value "Additional Content defined by implementations" ];
        fhir:ElementDefinition.definition [ fhir:value "May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension." ];
@@ -757,7 +757,7 @@
        ]
      ], [
        fhir:index 24;
-       fhir:Element.id [ fhir:value "Bundle.entry:entryslice.search.modifierExtension" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryslices.search.modifierExtension" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.search.modifierExtension" ];
        fhir:ElementDefinition.short [ fhir:value "Extensions that cannot be ignored" ];
        fhir:ElementDefinition.definition [ fhir:value "May be used to represent additional information that is not part of the basic definition of the element, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions." ];
@@ -792,7 +792,7 @@
        ]
      ], [
        fhir:index 25;
-       fhir:Element.id [ fhir:value "Bundle.entry:entryslice.search.mode" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryslices.search.mode" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.search.mode" ];
        fhir:ElementDefinition.short [ fhir:value "match | include | outcome - why this is in the result set" ];
        fhir:ElementDefinition.definition [ fhir:value "Why this entry is in the result set - whether it's included as a match or because of an _include requirement." ];
@@ -824,7 +824,7 @@
        ]
      ], [
        fhir:index 26;
-       fhir:Element.id [ fhir:value "Bundle.entry:entryslice.search.score" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryslices.search.score" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.search.score" ];
        fhir:ElementDefinition.short [ fhir:value "Search ranking (between 0 and 1)" ];
        fhir:ElementDefinition.definition [ fhir:value "When searching, the server's search ranking score for the entry." ];
@@ -843,7 +843,7 @@
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index 27;
-       fhir:Element.id [ fhir:value "Bundle.entry:entryslice.request" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryslices.request" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.request" ];
        fhir:ElementDefinition.short [ fhir:value "Transaction Related Information" ];
        fhir:ElementDefinition.definition [ fhir:value "Additional information about how this entry should be processed as part of a transaction." ];
@@ -874,7 +874,7 @@
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index 28;
-       fhir:Element.id [ fhir:value "Bundle.entry:entryslice.request.id" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryslices.request.id" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.request.id" ];
        fhir:ElementDefinition.representation [
          fhir:value "xmlAttr";
@@ -900,7 +900,7 @@
        ]
      ], [
        fhir:index 29;
-       fhir:Element.id [ fhir:value "Bundle.entry:entryslice.request.extension" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryslices.request.extension" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.request.extension" ];
        fhir:ElementDefinition.short [ fhir:value "Additional Content defined by implementations" ];
        fhir:ElementDefinition.definition [ fhir:value "May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension." ];
@@ -930,7 +930,7 @@
        ]
      ], [
        fhir:index 30;
-       fhir:Element.id [ fhir:value "Bundle.entry:entryslice.request.modifierExtension" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryslices.request.modifierExtension" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.request.modifierExtension" ];
        fhir:ElementDefinition.short [ fhir:value "Extensions that cannot be ignored" ];
        fhir:ElementDefinition.definition [ fhir:value "May be used to represent additional information that is not part of the basic definition of the element, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions." ];
@@ -965,7 +965,7 @@
        ]
      ], [
        fhir:index 31;
-       fhir:Element.id [ fhir:value "Bundle.entry:entryslice.request.method" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryslices.request.method" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.request.method" ];
        fhir:ElementDefinition.short [ fhir:value "GET | POST | PUT | DELETE" ];
        fhir:ElementDefinition.definition [ fhir:value "The HTTP verb for this entry in either a change history, or a transaction/ transaction response." ];
@@ -996,7 +996,7 @@
        ]
      ], [
        fhir:index 32;
-       fhir:Element.id [ fhir:value "Bundle.entry:entryslice.request.url" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryslices.request.url" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.request.url" ];
        fhir:ElementDefinition.short [ fhir:value "URL for HTTP equivalent of this entry" ];
        fhir:ElementDefinition.definition [ fhir:value "The URL for this entry, relative to the root (the address to which the request is posted)." ];
@@ -1015,7 +1015,7 @@
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index 33;
-       fhir:Element.id [ fhir:value "Bundle.entry:entryslice.request.ifNoneMatch" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryslices.request.ifNoneMatch" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.request.ifNoneMatch" ];
        fhir:ElementDefinition.short [ fhir:value "For managing cache currency" ];
        fhir:ElementDefinition.definition [ fhir:value "If the ETag values match, return a 304 Not Modified status. See the API documentation for [\"Conditional Read\"](http.html#cread)." ];
@@ -1033,7 +1033,7 @@
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index 34;
-       fhir:Element.id [ fhir:value "Bundle.entry:entryslice.request.ifModifiedSince" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryslices.request.ifModifiedSince" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.request.ifModifiedSince" ];
        fhir:ElementDefinition.short [ fhir:value "For managing update contention" ];
        fhir:ElementDefinition.definition [ fhir:value "Only perform the operation if the last updated date matches. See the API documentation for [\"Conditional Read\"](http.html#cread)." ];
@@ -1051,7 +1051,7 @@
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index 35;
-       fhir:Element.id [ fhir:value "Bundle.entry:entryslice.request.ifMatch" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryslices.request.ifMatch" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.request.ifMatch" ];
        fhir:ElementDefinition.short [ fhir:value "For managing update contention" ];
        fhir:ElementDefinition.definition [ fhir:value "Only perform the operation if the Etag value matches. For more information, see the API section [\"Managing Resource Contention\"](http.html#concurrency)." ];
@@ -1069,7 +1069,7 @@
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index 36;
-       fhir:Element.id [ fhir:value "Bundle.entry:entryslice.request.ifNoneExist" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryslices.request.ifNoneExist" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.request.ifNoneExist" ];
        fhir:ElementDefinition.short [ fhir:value "For conditional creates" ];
        fhir:ElementDefinition.definition [ fhir:value "Instruct the server not to perform the create if a specified resource already exists. For further information, see the API documentation for [\"Conditional Create\"](http.html#ccreate). This is just the query portion of the URL - what follows the \"?\" (not including the \"?\")." ];
@@ -1087,7 +1087,7 @@
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index 37;
-       fhir:Element.id [ fhir:value "Bundle.entry:entryslice.response" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryslices.response" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.response" ];
        fhir:ElementDefinition.short [ fhir:value "Transaction Related Information" ];
        fhir:ElementDefinition.definition [ fhir:value "Additional information about how this entry should be processed as part of a transaction." ];
@@ -1118,7 +1118,7 @@
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index 38;
-       fhir:Element.id [ fhir:value "Bundle.entry:entryslice.response.id" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryslices.response.id" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.response.id" ];
        fhir:ElementDefinition.representation [
          fhir:value "xmlAttr";
@@ -1144,7 +1144,7 @@
        ]
      ], [
        fhir:index 39;
-       fhir:Element.id [ fhir:value "Bundle.entry:entryslice.response.extension" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryslices.response.extension" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.response.extension" ];
        fhir:ElementDefinition.short [ fhir:value "Additional Content defined by implementations" ];
        fhir:ElementDefinition.definition [ fhir:value "May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension." ];
@@ -1174,7 +1174,7 @@
        ]
      ], [
        fhir:index 40;
-       fhir:Element.id [ fhir:value "Bundle.entry:entryslice.response.modifierExtension" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryslices.response.modifierExtension" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.response.modifierExtension" ];
        fhir:ElementDefinition.short [ fhir:value "Extensions that cannot be ignored" ];
        fhir:ElementDefinition.definition [ fhir:value "May be used to represent additional information that is not part of the basic definition of the element, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions." ];
@@ -1209,7 +1209,7 @@
        ]
      ], [
        fhir:index 41;
-       fhir:Element.id [ fhir:value "Bundle.entry:entryslice.response.status" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryslices.response.status" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.response.status" ];
        fhir:ElementDefinition.short [ fhir:value "Status response code (text optional)" ];
        fhir:ElementDefinition.definition [ fhir:value "The status code returned by processing this entry. The status SHALL start with a 3 digit HTTP code (e.g. 404) and may contain the standard HTTP description associated with the status code." ];
@@ -1227,7 +1227,7 @@
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index 42;
-       fhir:Element.id [ fhir:value "Bundle.entry:entryslice.response.location" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryslices.response.location" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.response.location" ];
        fhir:ElementDefinition.short [ fhir:value "The location, if the operation returns a location" ];
        fhir:ElementDefinition.definition [ fhir:value "The location header created by processing this operation." ];
@@ -1245,7 +1245,7 @@
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index 43;
-       fhir:Element.id [ fhir:value "Bundle.entry:entryslice.response.etag" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryslices.response.etag" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.response.etag" ];
        fhir:ElementDefinition.short [ fhir:value "The etag for the resource (if relevant)" ];
        fhir:ElementDefinition.definition [ fhir:value "The etag for the resource, it the operation for the entry produced a versioned resource (see [Resource Metadata and Versioning](http.html#versioning) and [Managing Resource Contention](http.html#concurrency))." ];
@@ -1264,7 +1264,7 @@
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index 44;
-       fhir:Element.id [ fhir:value "Bundle.entry:entryslice.response.lastModified" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryslices.response.lastModified" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.response.lastModified" ];
        fhir:ElementDefinition.short [ fhir:value "Server's date time modified" ];
        fhir:ElementDefinition.definition [ fhir:value "The date/time that the resource was modified on the server." ];
@@ -1283,7 +1283,7 @@
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index 45;
-       fhir:Element.id [ fhir:value "Bundle.entry:entryslice.response.outcome" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryslices.response.outcome" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.response.outcome" ];
        fhir:ElementDefinition.short [ fhir:value "OperationOutcome with hints and warnings (for batch/transaction)" ];
        fhir:ElementDefinition.definition [ fhir:value "An OperationOutcome containing hints and warnings produced as part of processing this entry in a batch or transaction." ];
@@ -1302,9 +1302,9 @@
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index 46;
-       fhir:Element.id [ fhir:value "Bundle.entry:apptslice" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryappt" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry" ];
-       fhir:ElementDefinition.sliceName [ fhir:value "Appt Slice" ];
+       fhir:ElementDefinition.sliceName [ fhir:value "entryappt" ];
        fhir:ElementDefinition.short [ fhir:value "Entry in the bundle - will have a resource, or information" ];
        fhir:ElementDefinition.definition [ fhir:value "An entry in a bundle resource - will either contain a resource, or information about a resource (transactions and history only)." ];
        fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
@@ -1347,7 +1347,7 @@
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index 47;
-       fhir:Element.id [ fhir:value "Bundle.entry:apptslice.id" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryappt.id" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.id" ];
        fhir:ElementDefinition.representation [
          fhir:value "xmlAttr";
@@ -1373,7 +1373,7 @@
        ]
      ], [
        fhir:index 48;
-       fhir:Element.id [ fhir:value "Bundle.entry:apptslice.extension" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryappt.extension" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.extension" ];
        fhir:ElementDefinition.short [ fhir:value "Additional Content defined by implementations" ];
        fhir:ElementDefinition.definition [ fhir:value "May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension." ];
@@ -1403,7 +1403,7 @@
        ]
      ], [
        fhir:index 49;
-       fhir:Element.id [ fhir:value "Bundle.entry:apptslice.modifierExtension" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryappt.modifierExtension" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.modifierExtension" ];
        fhir:ElementDefinition.short [ fhir:value "Extensions that cannot be ignored" ];
        fhir:ElementDefinition.definition [ fhir:value "May be used to represent additional information that is not part of the basic definition of the element, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions." ];
@@ -1438,7 +1438,7 @@
        ]
      ], [
        fhir:index 50;
-       fhir:Element.id [ fhir:value "Bundle.entry:apptslice.link" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryappt.link" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.link" ];
        fhir:ElementDefinition.short [ fhir:value "Links related to this entry" ];
        fhir:ElementDefinition.definition [ fhir:value "A series of links that provide context to this entry." ];
@@ -1453,7 +1453,7 @@
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index 51;
-       fhir:Element.id [ fhir:value "Bundle.entry:apptslice.fullUrl" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryappt.fullUrl" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.fullUrl" ];
        fhir:ElementDefinition.short [ fhir:value "Absolute URL for resource (server address, or UUID/OID)" ];
        fhir:ElementDefinition.definition [ fhir:value "The Absolute URL for the resource.  The fullUrl SHALL not disagree with the id in the resource. The fullUrl is a version independent reference to the resource. The fullUrl element SHALL have a value except that: \n* fullUrl can be empty on a POST (although it does not need to when specifying a temporary id for reference in the bundle)\n* Results from operations might involve resources that are not identified." ];
@@ -1472,7 +1472,7 @@
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index 52;
-       fhir:Element.id [ fhir:value "Bundle.entry:apptslice.resource" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryappt.resource" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.resource" ];
        fhir:ElementDefinition.short [ fhir:value "A resource in the bundle" ];
        fhir:ElementDefinition.definition [ fhir:value "The Resources for the entry." ];
@@ -1541,7 +1541,7 @@
        ]
      ], [
        fhir:index 53;
-       fhir:Element.id [ fhir:value "Bundle.entry:apptslice.search" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryappt.search" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.search" ];
        fhir:ElementDefinition.short [ fhir:value "Search related information" ];
        fhir:ElementDefinition.definition [ fhir:value "Information about the search process that lead to the creation of this entry." ];
@@ -1573,7 +1573,7 @@
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index 54;
-       fhir:Element.id [ fhir:value "Bundle.entry:apptslice.search.id" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryappt.search.id" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.search.id" ];
        fhir:ElementDefinition.representation [
          fhir:value "xmlAttr";
@@ -1599,7 +1599,7 @@
        ]
      ], [
        fhir:index 55;
-       fhir:Element.id [ fhir:value "Bundle.entry:apptslice.search.extension" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryappt.search.extension" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.search.extension" ];
        fhir:ElementDefinition.short [ fhir:value "Additional Content defined by implementations" ];
        fhir:ElementDefinition.definition [ fhir:value "May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension." ];
@@ -1629,7 +1629,7 @@
        ]
      ], [
        fhir:index 56;
-       fhir:Element.id [ fhir:value "Bundle.entry:apptslice.search.modifierExtension" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryappt.search.modifierExtension" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.search.modifierExtension" ];
        fhir:ElementDefinition.short [ fhir:value "Extensions that cannot be ignored" ];
        fhir:ElementDefinition.definition [ fhir:value "May be used to represent additional information that is not part of the basic definition of the element, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions." ];
@@ -1664,7 +1664,7 @@
        ]
      ], [
        fhir:index 57;
-       fhir:Element.id [ fhir:value "Bundle.entry:apptslice.search.mode" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryappt.search.mode" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.search.mode" ];
        fhir:ElementDefinition.short [ fhir:value "match | include | outcome - why this is in the result set" ];
        fhir:ElementDefinition.definition [ fhir:value "Why this entry is in the result set - whether it's included as a match or because of an _include requirement." ];
@@ -1698,7 +1698,7 @@
        ]
      ], [
        fhir:index 58;
-       fhir:Element.id [ fhir:value "Bundle.entry:apptslice.search.score" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryappt.search.score" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.search.score" ];
        fhir:ElementDefinition.short [ fhir:value "Search ranking (between 0 and 1)" ];
        fhir:ElementDefinition.definition [ fhir:value "When searching, the server's search ranking score for the entry." ];
@@ -1717,7 +1717,7 @@
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index 59;
-       fhir:Element.id [ fhir:value "Bundle.entry:apptslice.request" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryappt.request" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.request" ];
        fhir:ElementDefinition.short [ fhir:value "Transaction Related Information" ];
        fhir:ElementDefinition.definition [ fhir:value "Additional information about how this entry should be processed as part of a transaction." ];
@@ -1748,7 +1748,7 @@
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index 60;
-       fhir:Element.id [ fhir:value "Bundle.entry:apptslice.request.id" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryappt.request.id" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.request.id" ];
        fhir:ElementDefinition.representation [
          fhir:value "xmlAttr";
@@ -1774,7 +1774,7 @@
        ]
      ], [
        fhir:index 61;
-       fhir:Element.id [ fhir:value "Bundle.entry:apptslice.request.extension" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryappt.request.extension" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.request.extension" ];
        fhir:ElementDefinition.short [ fhir:value "Additional Content defined by implementations" ];
        fhir:ElementDefinition.definition [ fhir:value "May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension." ];
@@ -1804,7 +1804,7 @@
        ]
      ], [
        fhir:index 62;
-       fhir:Element.id [ fhir:value "Bundle.entry:apptslice.request.modifierExtension" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryappt.request.modifierExtension" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.request.modifierExtension" ];
        fhir:ElementDefinition.short [ fhir:value "Extensions that cannot be ignored" ];
        fhir:ElementDefinition.definition [ fhir:value "May be used to represent additional information that is not part of the basic definition of the element, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions." ];
@@ -1839,7 +1839,7 @@
        ]
      ], [
        fhir:index 63;
-       fhir:Element.id [ fhir:value "Bundle.entry:apptslice.request.method" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryappt.request.method" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.request.method" ];
        fhir:ElementDefinition.short [ fhir:value "GET | POST | PUT | DELETE" ];
        fhir:ElementDefinition.definition [ fhir:value "The HTTP verb for this entry in either a change history, or a transaction/ transaction response." ];
@@ -1870,7 +1870,7 @@
        ]
      ], [
        fhir:index 64;
-       fhir:Element.id [ fhir:value "Bundle.entry:apptslice.request.url" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryappt.request.url" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.request.url" ];
        fhir:ElementDefinition.short [ fhir:value "URL for HTTP equivalent of this entry" ];
        fhir:ElementDefinition.definition [ fhir:value "The URL for this entry, relative to the root (the address to which the request is posted)." ];
@@ -1889,7 +1889,7 @@
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index 65;
-       fhir:Element.id [ fhir:value "Bundle.entry:apptslice.request.ifNoneMatch" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryappt.request.ifNoneMatch" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.request.ifNoneMatch" ];
        fhir:ElementDefinition.short [ fhir:value "For managing cache currency" ];
        fhir:ElementDefinition.definition [ fhir:value "If the ETag values match, return a 304 Not Modified status. See the API documentation for [\"Conditional Read\"](http.html#cread)." ];
@@ -1907,7 +1907,7 @@
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index 66;
-       fhir:Element.id [ fhir:value "Bundle.entry:apptslice.request.ifModifiedSince" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryappt.request.ifModifiedSince" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.request.ifModifiedSince" ];
        fhir:ElementDefinition.short [ fhir:value "For managing update contention" ];
        fhir:ElementDefinition.definition [ fhir:value "Only perform the operation if the last updated date matches. See the API documentation for [\"Conditional Read\"](http.html#cread)." ];
@@ -1925,7 +1925,7 @@
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index 67;
-       fhir:Element.id [ fhir:value "Bundle.entry:apptslice.request.ifMatch" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryappt.request.ifMatch" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.request.ifMatch" ];
        fhir:ElementDefinition.short [ fhir:value "For managing update contention" ];
        fhir:ElementDefinition.definition [ fhir:value "Only perform the operation if the Etag value matches. For more information, see the API section [\"Managing Resource Contention\"](http.html#concurrency)." ];
@@ -1943,7 +1943,7 @@
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index 68;
-       fhir:Element.id [ fhir:value "Bundle.entry:apptslice.request.ifNoneExist" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryappt.request.ifNoneExist" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.request.ifNoneExist" ];
        fhir:ElementDefinition.short [ fhir:value "For conditional creates" ];
        fhir:ElementDefinition.definition [ fhir:value "Instruct the server not to perform the create if a specified resource already exists. For further information, see the API documentation for [\"Conditional Create\"](http.html#ccreate). This is just the query portion of the URL - what follows the \"?\" (not including the \"?\")." ];
@@ -1961,7 +1961,7 @@
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index 69;
-       fhir:Element.id [ fhir:value "Bundle.entry:apptslice.response" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryappt.response" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.response" ];
        fhir:ElementDefinition.short [ fhir:value "Transaction Related Information" ];
        fhir:ElementDefinition.definition [ fhir:value "Additional information about how this entry should be processed as part of a transaction." ];
@@ -1992,7 +1992,7 @@
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index 70;
-       fhir:Element.id [ fhir:value "Bundle.entry:apptslice.response.id" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryappt.response.id" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.response.id" ];
        fhir:ElementDefinition.representation [
          fhir:value "xmlAttr";
@@ -2018,7 +2018,7 @@
        ]
      ], [
        fhir:index 71;
-       fhir:Element.id [ fhir:value "Bundle.entry:apptslice.response.extension" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryappt.response.extension" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.response.extension" ];
        fhir:ElementDefinition.short [ fhir:value "Additional Content defined by implementations" ];
        fhir:ElementDefinition.definition [ fhir:value "May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension." ];
@@ -2048,7 +2048,7 @@
        ]
      ], [
        fhir:index 72;
-       fhir:Element.id [ fhir:value "Bundle.entry:apptslice.response.modifierExtension" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryappt.response.modifierExtension" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.response.modifierExtension" ];
        fhir:ElementDefinition.short [ fhir:value "Extensions that cannot be ignored" ];
        fhir:ElementDefinition.definition [ fhir:value "May be used to represent additional information that is not part of the basic definition of the element, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions." ];
@@ -2083,7 +2083,7 @@
        ]
      ], [
        fhir:index 73;
-       fhir:Element.id [ fhir:value "Bundle.entry:apptslice.response.status" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryappt.response.status" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.response.status" ];
        fhir:ElementDefinition.short [ fhir:value "Status response code (text optional)" ];
        fhir:ElementDefinition.definition [ fhir:value "The status code returned by processing this entry. The status SHALL start with a 3 digit HTTP code (e.g. 404) and may contain the standard HTTP description associated with the status code." ];
@@ -2101,7 +2101,7 @@
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index 74;
-       fhir:Element.id [ fhir:value "Bundle.entry:apptslice.response.location" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryappt.response.location" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.response.location" ];
        fhir:ElementDefinition.short [ fhir:value "The location, if the operation returns a location" ];
        fhir:ElementDefinition.definition [ fhir:value "The location header created by processing this operation." ];
@@ -2119,7 +2119,7 @@
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index 75;
-       fhir:Element.id [ fhir:value "Bundle.entry:apptslice.response.etag" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryappt.response.etag" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.response.etag" ];
        fhir:ElementDefinition.short [ fhir:value "The etag for the resource (if relevant)" ];
        fhir:ElementDefinition.definition [ fhir:value "The etag for the resource, it the operation for the entry produced a versioned resource (see [Resource Metadata and Versioning](http.html#versioning) and [Managing Resource Contention](http.html#concurrency))." ];
@@ -2138,7 +2138,7 @@
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index 76;
-       fhir:Element.id [ fhir:value "Bundle.entry:apptslice.response.lastModified" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryappt.response.lastModified" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.response.lastModified" ];
        fhir:ElementDefinition.short [ fhir:value "Server's date time modified" ];
        fhir:ElementDefinition.definition [ fhir:value "The date/time that the resource was modified on the server." ];
@@ -2157,7 +2157,7 @@
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index 77;
-       fhir:Element.id [ fhir:value "Bundle.entry:apptslice.response.outcome" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryappt.response.outcome" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.response.outcome" ];
        fhir:ElementDefinition.short [ fhir:value "OperationOutcome with hints and warnings (for batch/transaction)" ];
        fhir:ElementDefinition.definition [ fhir:value "An OperationOutcome containing hints and warnings produced as part of processing this entry in a batch or transaction." ];
@@ -2176,9 +2176,9 @@
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index 78;
-       fhir:Element.id [ fhir:value "Bundle.entry:ooslice" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryoo" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry" ];
-       fhir:ElementDefinition.sliceName [ fhir:value "OO Slice" ];
+       fhir:ElementDefinition.sliceName [ fhir:value "entryoo" ];
        fhir:ElementDefinition.short [ fhir:value "Entry in the bundle - will have a resource, or information" ];
        fhir:ElementDefinition.definition [ fhir:value "An entry in a bundle resource - will either contain a resource, or information about a resource (transactions and history only)." ];
        fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
@@ -2221,7 +2221,7 @@
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index 79;
-       fhir:Element.id [ fhir:value "Bundle.entry:ooslice.id" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryoo.id" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.id" ];
        fhir:ElementDefinition.representation [
          fhir:value "xmlAttr";
@@ -2247,7 +2247,7 @@
        ]
      ], [
        fhir:index 80;
-       fhir:Element.id [ fhir:value "Bundle.entry:ooslice.extension" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryoo.extension" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.extension" ];
        fhir:ElementDefinition.short [ fhir:value "Additional Content defined by implementations" ];
        fhir:ElementDefinition.definition [ fhir:value "May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension." ];
@@ -2277,7 +2277,7 @@
        ]
      ], [
        fhir:index 81;
-       fhir:Element.id [ fhir:value "Bundle.entry:ooslice.modifierExtension" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryoo.modifierExtension" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.modifierExtension" ];
        fhir:ElementDefinition.short [ fhir:value "Extensions that cannot be ignored" ];
        fhir:ElementDefinition.definition [ fhir:value "May be used to represent additional information that is not part of the basic definition of the element, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions." ];
@@ -2312,7 +2312,7 @@
        ]
      ], [
        fhir:index 82;
-       fhir:Element.id [ fhir:value "Bundle.entry:ooslice.link" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryoo.link" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.link" ];
        fhir:ElementDefinition.short [ fhir:value "Links related to this entry" ];
        fhir:ElementDefinition.definition [ fhir:value "A series of links that provide context to this entry." ];
@@ -2327,7 +2327,7 @@
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index 83;
-       fhir:Element.id [ fhir:value "Bundle.entry:ooslice.fullUrl" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryoo.fullUrl" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.fullUrl" ];
        fhir:ElementDefinition.short [ fhir:value "Absolute URL for resource (server address, or UUID/OID)" ];
        fhir:ElementDefinition.definition [ fhir:value "The Absolute URL for the resource.  The fullUrl SHALL not disagree with the id in the resource. The fullUrl is a version independent reference to the resource. The fullUrl element SHALL have a value except that: \n* fullUrl can be empty on a POST (although it does not need to when specifying a temporary id for reference in the bundle)\n* Results from operations might involve resources that are not identified." ];
@@ -2346,7 +2346,7 @@
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index 84;
-       fhir:Element.id [ fhir:value "Bundle.entry:ooslice.resource" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryoo.resource" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.resource" ];
        fhir:ElementDefinition.short [ fhir:value "A resource in the bundle" ];
        fhir:ElementDefinition.definition [ fhir:value "The Resources for the entry." ];
@@ -2365,7 +2365,7 @@
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index 85;
-       fhir:Element.id [ fhir:value "Bundle.entry:ooslice.search" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryoo.search" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.search" ];
        fhir:ElementDefinition.short [ fhir:value "Search related information" ];
        fhir:ElementDefinition.definition [ fhir:value "Information about the search process that lead to the creation of this entry." ];
@@ -2397,7 +2397,7 @@
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index 86;
-       fhir:Element.id [ fhir:value "Bundle.entry:ooslice.search.id" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryoo.search.id" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.search.id" ];
        fhir:ElementDefinition.representation [
          fhir:value "xmlAttr";
@@ -2423,7 +2423,7 @@
        ]
      ], [
        fhir:index 87;
-       fhir:Element.id [ fhir:value "Bundle.entry:ooslice.search.extension" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryoo.search.extension" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.search.extension" ];
        fhir:ElementDefinition.short [ fhir:value "Additional Content defined by implementations" ];
        fhir:ElementDefinition.definition [ fhir:value "May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension." ];
@@ -2453,7 +2453,7 @@
        ]
      ], [
        fhir:index 88;
-       fhir:Element.id [ fhir:value "Bundle.entry:ooslice.search.modifierExtension" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryoo.search.modifierExtension" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.search.modifierExtension" ];
        fhir:ElementDefinition.short [ fhir:value "Extensions that cannot be ignored" ];
        fhir:ElementDefinition.definition [ fhir:value "May be used to represent additional information that is not part of the basic definition of the element, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions." ];
@@ -2488,7 +2488,7 @@
        ]
      ], [
        fhir:index 89;
-       fhir:Element.id [ fhir:value "Bundle.entry:ooslice.search.mode" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryoo.search.mode" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.search.mode" ];
        fhir:ElementDefinition.short [ fhir:value "match | include | outcome - why this is in the result set" ];
        fhir:ElementDefinition.definition [ fhir:value "Why this entry is in the result set - whether it's included as a match or because of an _include requirement." ];
@@ -2522,7 +2522,7 @@
        ]
      ], [
        fhir:index 90;
-       fhir:Element.id [ fhir:value "Bundle.entry:ooslice.search.score" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryoo.search.score" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.search.score" ];
        fhir:ElementDefinition.short [ fhir:value "Search ranking (between 0 and 1)" ];
        fhir:ElementDefinition.definition [ fhir:value "When searching, the server's search ranking score for the entry." ];
@@ -2541,7 +2541,7 @@
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index 91;
-       fhir:Element.id [ fhir:value "Bundle.entry:ooslice.request" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryoo.request" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.request" ];
        fhir:ElementDefinition.short [ fhir:value "Transaction Related Information" ];
        fhir:ElementDefinition.definition [ fhir:value "Additional information about how this entry should be processed as part of a transaction." ];
@@ -2572,7 +2572,7 @@
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index 92;
-       fhir:Element.id [ fhir:value "Bundle.entry:ooslice.request.id" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryoo.request.id" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.request.id" ];
        fhir:ElementDefinition.representation [
          fhir:value "xmlAttr";
@@ -2598,7 +2598,7 @@
        ]
      ], [
        fhir:index 93;
-       fhir:Element.id [ fhir:value "Bundle.entry:ooslice.request.extension" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryoo.request.extension" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.request.extension" ];
        fhir:ElementDefinition.short [ fhir:value "Additional Content defined by implementations" ];
        fhir:ElementDefinition.definition [ fhir:value "May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension." ];
@@ -2628,7 +2628,7 @@
        ]
      ], [
        fhir:index 94;
-       fhir:Element.id [ fhir:value "Bundle.entry:ooslice.request.modifierExtension" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryoo.request.modifierExtension" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.request.modifierExtension" ];
        fhir:ElementDefinition.short [ fhir:value "Extensions that cannot be ignored" ];
        fhir:ElementDefinition.definition [ fhir:value "May be used to represent additional information that is not part of the basic definition of the element, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions." ];
@@ -2663,7 +2663,7 @@
        ]
      ], [
        fhir:index 95;
-       fhir:Element.id [ fhir:value "Bundle.entry:ooslice.request.method" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryoo.request.method" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.request.method" ];
        fhir:ElementDefinition.short [ fhir:value "GET | POST | PUT | DELETE" ];
        fhir:ElementDefinition.definition [ fhir:value "The HTTP verb for this entry in either a change history, or a transaction/ transaction response." ];
@@ -2694,7 +2694,7 @@
        ]
      ], [
        fhir:index 96;
-       fhir:Element.id [ fhir:value "Bundle.entry:ooslice.request.url" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryoo.request.url" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.request.url" ];
        fhir:ElementDefinition.short [ fhir:value "URL for HTTP equivalent of this entry" ];
        fhir:ElementDefinition.definition [ fhir:value "The URL for this entry, relative to the root (the address to which the request is posted)." ];
@@ -2713,7 +2713,7 @@
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index 97;
-       fhir:Element.id [ fhir:value "Bundle.entry:ooslice.request.ifNoneMatch" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryoo.request.ifNoneMatch" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.request.ifNoneMatch" ];
        fhir:ElementDefinition.short [ fhir:value "For managing cache currency" ];
        fhir:ElementDefinition.definition [ fhir:value "If the ETag values match, return a 304 Not Modified status. See the API documentation for [\"Conditional Read\"](http.html#cread)." ];
@@ -2731,7 +2731,7 @@
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index 98;
-       fhir:Element.id [ fhir:value "Bundle.entry:ooslice.request.ifModifiedSince" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryoo.request.ifModifiedSince" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.request.ifModifiedSince" ];
        fhir:ElementDefinition.short [ fhir:value "For managing update contention" ];
        fhir:ElementDefinition.definition [ fhir:value "Only perform the operation if the last updated date matches. See the API documentation for [\"Conditional Read\"](http.html#cread)." ];
@@ -2749,7 +2749,7 @@
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index 99;
-       fhir:Element.id [ fhir:value "Bundle.entry:ooslice.request.ifMatch" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryoo.request.ifMatch" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.request.ifMatch" ];
        fhir:ElementDefinition.short [ fhir:value "For managing update contention" ];
        fhir:ElementDefinition.definition [ fhir:value "Only perform the operation if the Etag value matches. For more information, see the API section [\"Managing Resource Contention\"](http.html#concurrency)." ];
@@ -2767,7 +2767,7 @@
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index 100;
-       fhir:Element.id [ fhir:value "Bundle.entry:ooslice.request.ifNoneExist" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryoo.request.ifNoneExist" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.request.ifNoneExist" ];
        fhir:ElementDefinition.short [ fhir:value "For conditional creates" ];
        fhir:ElementDefinition.definition [ fhir:value "Instruct the server not to perform the create if a specified resource already exists. For further information, see the API documentation for [\"Conditional Create\"](http.html#ccreate). This is just the query portion of the URL - what follows the \"?\" (not including the \"?\")." ];
@@ -2785,7 +2785,7 @@
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index 101;
-       fhir:Element.id [ fhir:value "Bundle.entry:ooslice.response" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryoo.response" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.response" ];
        fhir:ElementDefinition.short [ fhir:value "Transaction Related Information" ];
        fhir:ElementDefinition.definition [ fhir:value "Additional information about how this entry should be processed as part of a transaction." ];
@@ -2816,7 +2816,7 @@
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index 102;
-       fhir:Element.id [ fhir:value "Bundle.entry:ooslice.response.id" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryoo.response.id" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.response.id" ];
        fhir:ElementDefinition.representation [
          fhir:value "xmlAttr";
@@ -2842,7 +2842,7 @@
        ]
      ], [
        fhir:index 103;
-       fhir:Element.id [ fhir:value "Bundle.entry:ooslice.response.extension" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryoo.response.extension" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.response.extension" ];
        fhir:ElementDefinition.short [ fhir:value "Additional Content defined by implementations" ];
        fhir:ElementDefinition.definition [ fhir:value "May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension." ];
@@ -2872,7 +2872,7 @@
        ]
      ], [
        fhir:index 104;
-       fhir:Element.id [ fhir:value "Bundle.entry:ooslice.response.modifierExtension" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryoo.response.modifierExtension" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.response.modifierExtension" ];
        fhir:ElementDefinition.short [ fhir:value "Extensions that cannot be ignored" ];
        fhir:ElementDefinition.definition [ fhir:value "May be used to represent additional information that is not part of the basic definition of the element, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions." ];
@@ -2907,7 +2907,7 @@
        ]
      ], [
        fhir:index 105;
-       fhir:Element.id [ fhir:value "Bundle.entry:ooslice.response.status" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryoo.response.status" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.response.status" ];
        fhir:ElementDefinition.short [ fhir:value "Status response code (text optional)" ];
        fhir:ElementDefinition.definition [ fhir:value "The status code returned by processing this entry. The status SHALL start with a 3 digit HTTP code (e.g. 404) and may contain the standard HTTP description associated with the status code." ];
@@ -2925,7 +2925,7 @@
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index 106;
-       fhir:Element.id [ fhir:value "Bundle.entry:ooslice.response.location" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryoo.response.location" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.response.location" ];
        fhir:ElementDefinition.short [ fhir:value "The location, if the operation returns a location" ];
        fhir:ElementDefinition.definition [ fhir:value "The location header created by processing this operation." ];
@@ -2943,7 +2943,7 @@
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index 107;
-       fhir:Element.id [ fhir:value "Bundle.entry:ooslice.response.etag" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryoo.response.etag" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.response.etag" ];
        fhir:ElementDefinition.short [ fhir:value "The etag for the resource (if relevant)" ];
        fhir:ElementDefinition.definition [ fhir:value "The etag for the resource, it the operation for the entry produced a versioned resource (see [Resource Metadata and Versioning](http.html#versioning) and [Managing Resource Contention](http.html#concurrency))." ];
@@ -2962,7 +2962,7 @@
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index 108;
-       fhir:Element.id [ fhir:value "Bundle.entry:ooslice.response.lastModified" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryoo.response.lastModified" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.response.lastModified" ];
        fhir:ElementDefinition.short [ fhir:value "Server's date time modified" ];
        fhir:ElementDefinition.definition [ fhir:value "The date/time that the resource was modified on the server." ];
@@ -2981,7 +2981,7 @@
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index 109;
-       fhir:Element.id [ fhir:value "Bundle.entry:ooslice.response.outcome" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryoo.response.outcome" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.response.outcome" ];
        fhir:ElementDefinition.short [ fhir:value "OperationOutcome with hints and warnings (for batch/transaction)" ];
        fhir:ElementDefinition.definition [ fhir:value "An OperationOutcome containing hints and warnings produced as part of processing this entry in a batch or transaction." ];
@@ -3057,9 +3057,9 @@
        fhir:ElementDefinition.isModifier [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index 3;
-       fhir:Element.id [ fhir:value "Bundle.entry:entryslice" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryslices" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry" ];
-       fhir:ElementDefinition.sliceName [ fhir:value "Entry Slice" ];
+       fhir:ElementDefinition.sliceName [ fhir:value "entryslices" ];
        fhir:ElementDefinition.slicing [
          fhir:ElementDefinition.slicing.discriminator [
            fhir:index 0;
@@ -3074,14 +3074,14 @@
        fhir:ElementDefinition.isModifier [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index 4;
-       fhir:Element.id [ fhir:value "Bundle.entry:apptslice" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryappt" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry" ];
-       fhir:ElementDefinition.sliceName [ fhir:value "Appt Slice" ];
+       fhir:ElementDefinition.sliceName [ fhir:value "entryappt" ];
        fhir:ElementDefinition.mustSupport [ fhir:value "true"^^xsd:boolean ];
        fhir:ElementDefinition.isModifier [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index 5;
-       fhir:Element.id [ fhir:value "Bundle.entry:apptslice.resource" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryappt.resource" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.resource" ];
        fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
        fhir:ElementDefinition.max [ fhir:value "1" ];
@@ -3094,7 +3094,7 @@
        fhir:ElementDefinition.isModifier [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index 6;
-       fhir:Element.id [ fhir:value "Bundle.entry:apptslice.search" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryappt.search" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.search" ];
        fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
        fhir:ElementDefinition.max [ fhir:value "1" ];
@@ -3102,7 +3102,7 @@
        fhir:ElementDefinition.isModifier [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index 7;
-       fhir:Element.id [ fhir:value "Bundle.entry:apptslice.search.mode" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryappt.search.mode" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.search.mode" ];
        fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
        fhir:ElementDefinition.max [ fhir:value "1" ];
@@ -3115,14 +3115,14 @@
        fhir:ElementDefinition.isModifier [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index 8;
-       fhir:Element.id [ fhir:value "Bundle.entry:ooslice" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryoo" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry" ];
-       fhir:ElementDefinition.sliceName [ fhir:value "OO Slice" ];
+       fhir:ElementDefinition.sliceName [ fhir:value "entryoo" ];
        fhir:ElementDefinition.mustSupport [ fhir:value "true"^^xsd:boolean ];
        fhir:ElementDefinition.isModifier [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index 9;
-       fhir:Element.id [ fhir:value "Bundle.entry:ooslice.resource" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryoo.resource" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.resource" ];
        fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
        fhir:ElementDefinition.max [ fhir:value "1" ];
@@ -3134,7 +3134,7 @@
        fhir:ElementDefinition.isModifier [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index 10;
-       fhir:Element.id [ fhir:value "Bundle.entry:ooslice.search" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryoo.search" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.search" ];
        fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
        fhir:ElementDefinition.max [ fhir:value "1" ];
@@ -3142,7 +3142,7 @@
        fhir:ElementDefinition.isModifier [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index 11;
-       fhir:Element.id [ fhir:value "Bundle.entry:ooslice.search.mode" ];
+       fhir:Element.id [ fhir:value "Bundle.entry:entryoo.search.mode" ];
        fhir:ElementDefinition.path [ fhir:value "Bundle.entry.search.mode" ];
        fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
        fhir:ElementDefinition.max [ fhir:value "1" ];

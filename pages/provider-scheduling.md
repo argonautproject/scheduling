@@ -166,7 +166,7 @@ This is a basic referral scenario in which the patient is registered with the re
 {% include img.html img="diagrams/Slide35.png" caption="Figure 1: Provider Scheduling for existing patient across systems" %}
 
 
-This use case is discussed in detail in steps 1, 3, 4, 6, 7 in [Scenario 1](#scenario-1-scheduling-for-existing-patient-across-systems) above.
+This use case is discussed in detail in steps 1, 3, 4, 6, 7 in [Scenario 1](#use-case-1-scheduling-across-systems) above.
 
 ---
 
@@ -185,7 +185,7 @@ Preconditions:
 
 {% include img.html img="diagrams/Slide40.png" caption="Figure 1: Provider Scheduling for Existing Patient *within* system" %}
 
-This simple use case is covered by steps 2, 3, and 4 in [Scenario 1](#scenario-1-scheduling-for-existing-patient-across-systems) above.
+This simple use case is covered by steps 2, 3, and 4 in [Scenario 1](#use-case-1-scheduling-across-systems) above.
 
 ---
 
@@ -218,7 +218,7 @@ Provider access to their scheduled appointments uses the standard FHIR [search A
 
 The following Argonaut Scheduling artifacts are used in this transaction:
 
-- **[Argonaut Appointment Output Profile](StructureDefinition-appt-output.html)**.
+- **[Argonaut Appointment Profile](StructureDefinition-argo-appt.html)**.
 
 #### Usage
 {:.no_toc}

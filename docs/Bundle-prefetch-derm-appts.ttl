@@ -51,7 +51,7 @@
   fhir:Resource.id [ fhir:value "proposed-appt2b-1"];
   fhir:Resource.meta [
      fhir:Meta.profile [
-       fhir:value "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/appt-output";
+       fhir:value "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt";
        fhir:index 0
      ]
   ];
@@ -119,7 +119,7 @@
   fhir:Resource.id [ fhir:value "proposed-appt2b-2"];
   fhir:Resource.meta [
      fhir:Meta.profile [
-       fhir:value "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/appt-output";
+       fhir:value "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt";
        fhir:index 0
      ]
   ];
@@ -187,7 +187,7 @@
   fhir:Resource.id [ fhir:value "proposed-appt2b-3"];
   fhir:Resource.meta [
      fhir:Meta.profile [
-       fhir:value "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/appt-output";
+       fhir:value "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt";
        fhir:index 0
      ]
   ];

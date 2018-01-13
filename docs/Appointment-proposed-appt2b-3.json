@@ -3,7 +3,7 @@
   "id": "proposed-appt2b-3",
   "meta": {
     "profile": [
-      "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/appt-output"
+      "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt"
     ]
   },
   "text": {

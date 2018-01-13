@@ -2,7 +2,7 @@
 <Appointment xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir http://build.fhir.org/device.xsd">
 	<id value="proposed-appt1a-1"/>
 	<meta>
-		<profile value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/appt-output"/>
+		<profile value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt"/>
 	</meta>
 	<status value="proposed"/>
 	<serviceType>

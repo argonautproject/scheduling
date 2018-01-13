@@ -3,7 +3,7 @@
 	<id value="avail-bundle"/>
 	<url value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/avail-bundle"/>
 	<version value="0.0.0"/>
-	<name value="Argonaut Availability Output Profile"/>
+	<name value="Argonaut Appointment Bundle Profile"/>
 	<status value="draft"/>
 	<date value="2017-11-13"/>
 	<publisher value="Argonaut Project"/>
@@ -85,7 +85,7 @@
 			<path value="Bundle.entry.resource"/>
 			<type>
 				<code value="Appointment"/>
-				<profile value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/appt-output"/>
+				<profile value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt"/>
 			</type>
 			<mustSupport value="true"/>
 			<isModifier value="false"/>

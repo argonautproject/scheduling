@@ -81,8 +81,8 @@ Based on the set of input parameters supplied by the Client, the Server determin
 The following Argonaut Scheduling artifacts are used in this transaction:
 
 - **[Appointment Availability Operation](OperationDefinition-appointment-find.html)**.
-- **[Argonaut Availability Output Profile](StructureDefinition-avail-bundle.html)**.
-- **[Argonaut Appointment Output Profile](StructureDefinition-appt-output.html)**.
+- **[Argonaut Appointment Bundle Profile](StructureDefinition-avail-bundle.html)**.
+- **[Argonaut Appointment Profile](StructureDefinition-argo-appt.html)**.
 
 #### Usage
 {:.no_toc}
@@ -115,8 +115,8 @@ This operation puts to appointment in a hold status to temporarily prevent the a
 The following Argonaut Scheduling artifacts are used in this transaction:
 
   - **[Appointment Hold Operation](OperationDefinition-appointment-hold.html)**.
-  - **[Argonaut Availability Output Profile](StructureDefinition-avail-bundle.html)**.
-  - **[Argonaut Appointment Output Profile](StructureDefinition-appt-output.html)**.
+  - **[Argonaut Appointment Bundle Profile](StructureDefinition-avail-bundle.html)**.
+  - **[Argonaut Appointment Profile](StructureDefinition-argo-appt.html)**.
 
 #### Usage
 {:.no_toc}
@@ -139,8 +139,8 @@ the Client sends a book operation using the id of selected proposed appointment,
 The following Argonaut Scheduling artifacts are used in this transaction:
 
   - **[Appointment Hold Operation](OperationDefinition-appointment-hold.html)**.
-  - **[Argonaut Availability Output Profile](StructureDefinition-avail-bundle.html)**.
-  - **[Argonaut Appointment Output Profile](StructureDefinition-appt-output.html)**.
+  - **[Argonaut Appointment Bundle Profile](StructureDefinition-avail-bundle.html)**.
+  - **[Argonaut Appointment Profile](StructureDefinition-argo-appt.html)**.
 
 #### Usage
 {:.no_toc}
@@ -487,7 +487,7 @@ Patient access to their scheduled appointments uses the standard FHIR [search AP
 
 The following Argonaut Scheduling artifacts are used in this transaction:
 
-- **[Argonaut Appointment Output Profile](StructureDefinition-appt-output.html)**.
+- **[Argonaut Appointment Profile](StructureDefinition-argo-appt.html)**.
 
 #### Usage
 {:.no_toc}

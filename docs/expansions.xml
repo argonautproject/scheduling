@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Bundle xmlns="http://hl7.org/fhir">
-  <id value="7f8656de-4fd3-4568-8788-a5a25b9e8ac8"/>
+  <id value="6d1671b8-118e-45f9-a2e4-70cca5f0c042"/>
   <meta>
-    <lastUpdated value="2018-01-12T00:57:08.441-08:00"/>
+    <lastUpdated value="2018-01-12T19:01:12.417-08:00"/>
   </meta>
   <type value="collection"/>
   <entry>
@@ -35,8 +35,8 @@
               </tr>
               <tr>
                 <td style="white-space:nowrap">
-                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-visit-type-breast-imaging-"> </a>
-                  <a href="CodeSystem-visit-type.html#visit-type-breast-imaging">breast-imaging </a>
+                  <a name="http---fhir.org-guides-argonaut-scheduling-CodeSystem-visit-type-breast-imaging"> </a>
+                  <a href="CodeSystem-visit-type.html#visit-type-breast-imaging">breast-imaging</a>
                 </td>
                 <td>BREAST IMAGING </td>
                 <td>breast imaging  visit</td>
@@ -377,8 +377,8 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:448b2836-995e-4b87-b921-62bfbf4b9bd7"/>
-          <timestamp value="2018-01-10T14:24:23-08:00"/>
+          <identifier value="urn:uuid:f8d125c0-3002-4bab-8279-789dd1596099"/>
+          <timestamp value="2018-01-12T01:24:39-08:00"/>
           <total value="41"/>
           <parameter>
             <name value="profile"/>
@@ -390,7 +390,7 @@
           </parameter>
           <contains>
             <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
-            <code value="breast-imaging "/>
+            <code value="breast-imaging"/>
             <display value="BREAST IMAGING "/>
           </contains>
           <contains>

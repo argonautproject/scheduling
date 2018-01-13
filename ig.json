@@ -202,9 +202,9 @@
       "base": "StructureDefinition-prefetch-slot.html",
       "defns": "StructureDefinition-prefetch-slot-definitions.html"
     },
-    "StructureDefinition/appt-output": {
-      "base": "StructureDefinition-appt-output.html",
-      "defns": "StructureDefinition-appt-output-definitions.html"
+    "StructureDefinition/argo-appt": {
+      "base": "StructureDefinition-argo-appt.html",
+      "defns": "StructureDefinition-argo-appt-definitions.html"
     },
     "StructureDefinition/argo-coverage": {
       "base": "StructureDefinition-argo-coverage.html",

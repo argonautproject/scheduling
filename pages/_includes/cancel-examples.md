@@ -8,7 +8,7 @@ Target Appointment:
       "id" : "proposed-appt1",
       "meta" : {
         "profile" : [
-          "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/appt-output"
+          "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt"
         ]
       },
       "text" : {
@@ -35,7 +35,7 @@ Resulting cancelled Appointment:
       "id" : "proposed-appt1",
       "meta" : {
         "profile" : [
-          "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/appt-output"
+          "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt"
         ]
       },
       "text" : {
@@ -56,7 +56,7 @@ Target Appointment:
        <id value="proposed-appt1"/>
        <meta>
          <profile
-                  value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/appt-output"/>
+                  value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt"/>
        </meta>
        <text>
       ...snip
@@ -83,7 +83,7 @@ Resulting cancelled Appointment:
        <id value="proposed-appt1"/>
        <meta>
          <profile
-                  value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/appt-output"/>
+                  value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt"/>
        </meta>
        <text>
       ...snip...
@@ -101,7 +101,7 @@ Target Appointment:
       "id" : "proposed-appt1",
       "meta" : {
         "profile" : [
-          "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/appt-output"
+          "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt"
         ]
       },
       "text" : {
@@ -143,7 +143,7 @@ Resulting cancelled Appointment:
       "id" : "proposed-appt1",
       "meta" : {
         "profile" : [
-          "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/appt-output"
+          "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt"
         ]
       },
       "text" : {

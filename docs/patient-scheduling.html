@@ -339,8 +339,8 @@ page source: patient-scheduling.md
 
 <ul>
   <li><strong><a href="OperationDefinition-appointment-find.html">Appointment Availability Operation</a></strong>.</li>
-  <li><strong><a href="StructureDefinition-avail-bundle.html">Argonaut Availability Output Profile</a></strong>.</li>
-  <li><strong><a href="StructureDefinition-appt-output.html">Argonaut Appointment Output Profile</a></strong>.</li>
+  <li><strong><a href="StructureDefinition-avail-bundle.html">Argonaut Appointment Bundle Profile</a></strong>.</li>
+  <li><strong><a href="StructureDefinition-argo-appt.html">Argonaut Appointment Profile</a></strong>.</li>
 </ul>
 
 <h4 class="no_toc" id="usage">Usage</h4>
@@ -458,8 +458,8 @@ page source: patient-scheduling.md
 
 <ul>
   <li><strong><a href="OperationDefinition-appointment-hold.html">Appointment Hold Operation</a></strong>.</li>
-  <li><strong><a href="StructureDefinition-avail-bundle.html">Argonaut Availability Output Profile</a></strong>.</li>
-  <li><strong><a href="StructureDefinition-appt-output.html">Argonaut Appointment Output Profile</a></strong>.</li>
+  <li><strong><a href="StructureDefinition-avail-bundle.html">Argonaut Appointment Bundle Profile</a></strong>.</li>
+  <li><strong><a href="StructureDefinition-argo-appt.html">Argonaut Appointment Profile</a></strong>.</li>
 </ul>
 
 <h4 class="no_toc" id="usage-1">Usage</h4>
@@ -539,8 +539,8 @@ page source: patient-scheduling.md
 
 <ul>
   <li><strong><a href="OperationDefinition-appointment-hold.html">Appointment Hold Operation</a></strong>.</li>
-  <li><strong><a href="StructureDefinition-avail-bundle.html">Argonaut Availability Output Profile</a></strong>.</li>
-  <li><strong><a href="StructureDefinition-appt-output.html">Argonaut Appointment Output Profile</a></strong>.</li>
+  <li><strong><a href="StructureDefinition-avail-bundle.html">Argonaut Appointment Bundle Profile</a></strong>.</li>
+  <li><strong><a href="StructureDefinition-argo-appt.html">Argonaut Appointment Profile</a></strong>.</li>
 </ul>
 
 <h4 class="no_toc" id="usage-2">Usage</h4>
@@ -1074,7 +1074,7 @@ page source: patient-scheduling.md
   </span><span class="nt">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"proposed-appt1"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"meta"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nt">"profile"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="s2">"http://fhir.org/guides/argonaut-scheduling/StructureDefinition/appt-output"</span><span class="w">
+      </span><span class="s2">"http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt"</span><span class="w">
     </span><span class="p">]</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nt">"text"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -1105,7 +1105,7 @@ page source: patient-scheduling.md
   </span><span class="nt">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"proposed-appt1"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"meta"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nt">"profile"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="s2">"http://fhir.org/guides/argonaut-scheduling/StructureDefinition/appt-output"</span><span class="w">
+      </span><span class="s2">"http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt"</span><span class="w">
     </span><span class="p">]</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nt">"text"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -1126,7 +1126,7 @@ page source: patient-scheduling.md
    &lt;id value="proposed-appt1"/&gt;
    &lt;meta&gt;
      &lt;profile
-              value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/appt-output"/&gt;
+              value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt"/&gt;
    &lt;/meta&gt;
    &lt;text&gt;
   ...snip
@@ -1157,7 +1157,7 @@ page source: patient-scheduling.md
    &lt;id value="proposed-appt1"/&gt;
    &lt;meta&gt;
      &lt;profile
-              value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/appt-output"/&gt;
+              value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt"/&gt;
    &lt;/meta&gt;
    &lt;text&gt;
   ...snip...
@@ -1176,7 +1176,7 @@ page source: patient-scheduling.md
   </span><span class="nt">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"proposed-appt1"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"meta"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nt">"profile"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="s2">"http://fhir.org/guides/argonaut-scheduling/StructureDefinition/appt-output"</span><span class="w">
+      </span><span class="s2">"http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt"</span><span class="w">
     </span><span class="p">]</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nt">"text"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -1221,7 +1221,7 @@ page source: patient-scheduling.md
   </span><span class="nt">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"proposed-appt1"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"meta"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nt">"profile"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="s2">"http://fhir.org/guides/argonaut-scheduling/StructureDefinition/appt-output"</span><span class="w">
+      </span><span class="s2">"http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt"</span><span class="w">
     </span><span class="p">]</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nt">"text"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -1286,7 +1286,7 @@ page source: patient-scheduling.md
 <p>The following Argonaut Scheduling artifacts are used in this transaction:</p>
 
 <ul>
-  <li><strong><a href="StructureDefinition-appt-output.html">Argonaut Appointment Output Profile</a></strong>.</li>
+  <li><strong><a href="StructureDefinition-argo-appt.html">Argonaut Appointment Profile</a></strong>.</li>
 </ul>
 
 <h4 class="no_toc" id="usage-9">Usage</h4>
@@ -1342,7 +1342,7 @@ page source: patient-scheduling.md
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Fri, Jan 12, 2018 00:57-0800. |
+            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Fri, Jan 12, 2018 19:01-0800. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/STU3license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

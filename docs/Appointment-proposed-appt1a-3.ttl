@@ -11,7 +11,7 @@
   fhir:Resource.id [ fhir:value "proposed-appt1a-3"];
   fhir:Resource.meta [
      fhir:Meta.profile [
-       fhir:value "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/appt-output";
+       fhir:value "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt";
        fhir:index 0
      ]
   ];

@@ -20,7 +20,7 @@
   <WindowWidth>25260</WindowWidth>
   <WindowTopX>-15</WindowTopX>
   <WindowTopY>-15</WindowTopY>
-  <ActiveSheet>1</ActiveSheet>
+  <ActiveSheet>2</ActiveSheet>
   <FirstVisibleSheet>1</FirstVisibleSheet>
   <ProtectStructure>False</ProtectStructure>
   <ProtectWindows>False</ProtectWindows>
@@ -948,7 +948,7 @@
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s74"><Data ss:Type="String">name</Data></Cell>
-    <Cell ss:StyleID="s75"><Data ss:Type="String">Argonaut Appointment  Bundle Profile</Data></Cell>
+    <Cell ss:StyleID="s75"><Data ss:Type="String">Argonaut Appointment Bundle Profile</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s74"><Data ss:Type="String">display</Data></Cell>
@@ -968,7 +968,7 @@
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="64.5">
     <Cell ss:StyleID="s74"><Data ss:Type="String">description</Data></Cell>
-    <Cell><Data ss:Type="String">The Argonaut Appointment  Bundle Profile is returned as a result of the '$find' operation and Appointment search.</Data></Cell>
+    <Cell><Data ss:Type="String">The Argonaut Appointment Bundle Profile is returned as a result of the '$find' operation and Appointment search.</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s74"><Data ss:Type="String">status</Data></Cell>
@@ -1012,7 +1012,6 @@
     <HorizontalResolution>600</HorizontalResolution>
     <VerticalResolution>600</VerticalResolution>
    </Print>
-   <Selected/>
    <FreezePanes/>
    <FrozenNoSplit/>
    <SplitHorizontal>1</SplitHorizontal>
@@ -1265,7 +1264,7 @@
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s103"/>
     <Cell ss:StyleID="s104"><Data ss:Type="String">slice on type = appt and oo</Data></Cell>
-    <Cell ss:StyleID="s105"><Data ss:Type="String">Entry Slice</Data><NamedCell
+    <Cell ss:StyleID="s105"><Data ss:Type="String">entry-slices</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s107"><Data ss:Type="String">resource</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -1298,7 +1297,7 @@
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s103"/>
     <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s105"><Data ss:Type="String">Appt Slice</Data><NamedCell
+    <Cell ss:StyleID="s105"><Data ss:Type="String">entry-appt</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -1341,7 +1340,7 @@
     <Cell ss:StyleID="s107"><Data ss:Type="String">0..1</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s107"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s107"><Data ss:Type="String">Appointment{http://fhir.org/guides/argonaut-scheduling/StructureDefinition/appt-output}</Data><NamedCell
+    <Cell ss:StyleID="s107"><Data ss:Type="String">Appointment{http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt}</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s107"><Data ss:Type="String">Y</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -1428,7 +1427,7 @@
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s103"/>
     <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s105"><Data ss:Type="String">OO Slice</Data><NamedCell
+    <Cell ss:StyleID="s105"><Data ss:Type="String">entry-oo</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -4486,6 +4485,7 @@
     <VerticalResolution>600</VerticalResolution>
    </Print>
    <Zoom>90</Zoom>
+   <Selected/>
    <FreezePanes/>
    <FrozenNoSplit/>
    <SplitHorizontal>1</SplitHorizontal>
@@ -4506,8 +4506,8 @@
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>13</ActiveRow>
-     <ActiveCol>3</ActiveCol>
+     <ActiveRow>14</ActiveRow>
+     <ActiveCol>2</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
