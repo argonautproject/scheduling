@@ -384,7 +384,6 @@ The following Argonaut Scheduling artifacts are used in this transaction:
 - **[Argonaut Slot Bundle Profile](StructureDefinition-slot-bundle.html)**.
 
 #### Usage
-
 {:.no_toc}
 
 To fetch all updated slots since the last update, the Client SHALL use:

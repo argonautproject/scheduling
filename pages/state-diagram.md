@@ -9,7 +9,7 @@ active: state
 It is important to understand the state transitions during the scheduling process and the typical flow of statuses for an Appointment and associated Slot resources.  This State Diagram should be referenced to when considering the statuses of the scheduling resources.
 
 
-{% include img.html img="Appt-state.png" caption="Figure 1: Appointment State Diagram based on the Appointment.status codes" %}
+{% include img.html img="appt-state.png" caption="Figure 1: Appointment State Diagram based on the Appointment.status codes" %}
 
 
 
