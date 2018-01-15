@@ -427,7 +427,7 @@
 					&lt;td&gt;IN&lt;/td&gt;
 					&lt;td&gt;patient-resource&lt;/td&gt;
 					&lt;td&gt;0..*&lt;/td&gt;
-					&lt;td&gt;Patient&lt;/td&gt;
+					&lt;td&gt;Patient (&lt;a href=&quot;http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient&quot;&gt;US Core Patient Profile&lt;/a&gt;)&lt;/td&gt;
 					&lt;td/&gt;
 					&lt;td&gt;
 						&lt;div&gt;
@@ -439,11 +439,24 @@
 					&lt;td&gt;IN&lt;/td&gt;
 					&lt;td&gt;coverage&lt;/td&gt;
 					&lt;td&gt;0..*&lt;/td&gt;
-					&lt;td&gt;Coverage&lt;/td&gt;
+					&lt;td&gt;Coverage (&lt;a href=&quot;http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-coverage&quot;&gt;Argonaut Coverage Profile&lt;/a&gt;)&lt;/td&gt;
 					&lt;td/&gt;
 					&lt;td&gt;
 						&lt;div&gt;
-							&lt;p&gt;This parameter uses the Coverage resource type and is constrained to the the &lt;a href=&quot;http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-coverage&quot;&gt;Argonaut Coverage Profile&lt;/a&gt;. It provides insurance information for scheduling an appointment and or registering a patient.  Do not transmit Coverage resource elements that require the Patient resource id if it is not known. If multiple coverage resources are listed, the response will contain appointments which is joint match for all coverages and patients - i.e., a group appointment.&lt;/p&gt;
+							&lt;p&gt;This parameter uses the Coverage type and is constrained to the the &lt;a href=&quot;http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-coverage&quot;&gt;Argonaut Coverage Profile&lt;/a&gt;. It provides insurance information for scheduling an appointment and or registering a patient.  Do not transmit Coverage resource elements that require the Patient resource id if it is not known. If multiple coverage resources are listed, the response will contain appointments which is joint match for all coverages and patients - i.e., a group appointment.&lt;/p&gt;
+						&lt;/div&gt;
+					&lt;/td&gt;
+				&lt;/tr&gt;
+				&lt;tr&gt;
+					&lt;td&gt;IN&lt;/td&gt;
+					&lt;td&gt;reason&lt;/td&gt;
+					&lt;td&gt;0..*&lt;/td&gt;
+					&lt;td&gt;string (&lt;a href=&quot;http://hl7.org/fhir/STU3/search.html#token&quot;&gt;token&lt;/a&gt;)&lt;/td&gt;
+					&lt;td&gt;
+						&lt;a href=&quot;http://hl7.org/fhir/STU3/valueset-condition-code.html&quot;&gt;http://hl7.org/fhir/ValueSet/condition-code&lt;/a&gt; (Preferred)&lt;/td&gt;
+					&lt;td&gt;
+						&lt;div&gt;
+							&lt;p&gt;A clinical sign, symptom, diagnosis or health concern that this appointment is intended to treat. This may  is used in conjunction with the specialty to determine which schedulable resources are needed for the visit. For example, for an orthopedics appointment, the reason may drive whether a hip specialist or knee specialist is preferred. Each parameter value SHALL contain both the system property and the code property for a code using the general syntax &lt;code&gt;specialty=[system]|[code]&lt;/code&gt;. See the examples below for how this is implemented.&lt;/p&gt;
 						&lt;/div&gt;
 					&lt;/td&gt;
 				&lt;/tr&gt;
@@ -451,7 +464,7 @@
 					&lt;td&gt;OUT&lt;/td&gt;
 					&lt;td&gt;return&lt;/td&gt;
 					&lt;td&gt;0..1&lt;/td&gt;
-					&lt;td&gt;Bundle&lt;/td&gt;
+					&lt;td&gt;Bundle (&lt;a href=&quot;StructureDefinition-avail-bundle.html&quot;&gt;Argonaut Appointment Bundle Profile&lt;/a&gt;)&lt;/td&gt;
 					&lt;td/&gt;
 					&lt;td&gt;
 						&lt;div&gt;
@@ -610,6 +623,21 @@
       }
     },
     {
+      "<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.parameter.name">name</a>" : "reason",
+      "<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.parameter.use">use</a>" : "in",
+      "<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.parameter.min">min</a>" : 0,
+      "<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.parameter.max">max</a>" : "*",
+      "<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.parameter.documentation">documentation</a>" : "A clinical sign, symptom, diagnosis or health concern that this appointment is intended to treat. This may  is used in conjunction with the specialty to determine which schedulable resources are needed for the visit. For example, for an orthopedics appointment, the reason may drive whether a hip specialist or knee specialist is preferred. Each parameter value SHALL contain both the system property and the code property for a code using the general syntax `specialty=[system]|[code]`. See the examples below for how this is implemented.",
+      "<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.parameter.type">type</a>" : "string",
+      "<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.parameter.searchType">searchType</a>" : "token",
+      "<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.parameter.binding">binding</a>" : {
+        "<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.parameter.binding.strength">strength</a>" : "preferred",
+        "<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.parameter.binding.valueSet[x]">valueSetReference</a>" : {
+          "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "http://hl7.org/fhir/ValueSet/condition-code"
+        }
+      }
+    },
+    {
       "<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.parameter.name">name</a>" : "return",
       "<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.parameter.use">use</a>" : "out",
       "<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.parameter.min">min</a>" : 0,
@@ -617,7 +645,7 @@
       "<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.parameter.documentation">documentation</a>" : "An [Argonaut Appointment Bundle Profile](StructureDefinition-avail-bundle.html) of type `searchset` with entries of proposed [Appointment](http://build.fhir.org/appointment.html) resources and may also contain an [OperationOutcome](http://build.fhir.org/operationoutcome.html) with errors, warnings or information as a result of processing the operation - e.g., an informational notice that the returned appointments are not within the requested start and end times.  An empty bundle means no available appointments based on inputs",
       "<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.parameter.type">type</a>" : "Bundle",
       "<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.parameter.profile">profile</a>" : {
-        "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "StructureDefinition/avail-bundle"
+        "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "http://hl7.org/fhir/ValueSet/condition-code"
       }
     }
   ]
@@ -665,7 +693,7 @@ Formats: <a href="OperationDefinition-appointment-find.html">Narrative</a>, <a h
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Sat, Jan 13, 2018 03:04-0800. |
+            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Mon, Jan 15, 2018 10:52-0800. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/STU3license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

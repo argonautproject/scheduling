@@ -149,7 +149,7 @@
 					<td>IN</td>
 					<td>patient-resource</td>
 					<td>0..*</td>
-					<td>Patient</td>
+					<td>Patient (<a href="http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient">US Core Patient Profile</a>)</td>
 					<td/>
 					<td>
 						<div>
@@ -161,11 +161,24 @@
 					<td>IN</td>
 					<td>coverage</td>
 					<td>0..*</td>
-					<td>Coverage</td>
+					<td>Coverage (<a href="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-coverage">Argonaut Coverage Profile</a>)</td>
 					<td/>
 					<td>
 						<div>
-							<p>This parameter uses the Coverage resource type and is constrained to the the <a href="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-coverage">Argonaut Coverage Profile</a>. It provides insurance information for scheduling an appointment and or registering a patient.  Do not transmit Coverage resource elements that require the Patient resource id if it is not known. If multiple coverage resources are listed, the response will contain appointments which is joint match for all coverages and patients - i.e., a group appointment.</p>
+							<p>This parameter uses the Coverage type and is constrained to the the <a href="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-coverage">Argonaut Coverage Profile</a>. It provides insurance information for scheduling an appointment and or registering a patient.  Do not transmit Coverage resource elements that require the Patient resource id if it is not known. If multiple coverage resources are listed, the response will contain appointments which is joint match for all coverages and patients - i.e., a group appointment.</p>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>IN</td>
+					<td>reason</td>
+					<td>0..*</td>
+					<td>string (<a href="http://hl7.org/fhir/STU3/search.html#token">token</a>)</td>
+					<td>
+						<a href="http://hl7.org/fhir/STU3/valueset-condition-code.html">http://hl7.org/fhir/ValueSet/condition-code</a> (Preferred)</td>
+					<td>
+						<div>
+							<p>A clinical sign, symptom, diagnosis or health concern that this appointment is intended to treat. This may  is used in conjunction with the specialty to determine which schedulable resources are needed for the visit. For example, for an orthopedics appointment, the reason may drive whether a hip specialist or knee specialist is preferred. Each parameter value SHALL contain both the system property and the code property for a code using the general syntax <code>specialty=[system]|[code]</code>. See the examples below for how this is implemented.</p>
 						</div>
 					</td>
 				</tr>
@@ -173,7 +186,7 @@
 					<td>OUT</td>
 					<td>return</td>
 					<td>0..1</td>
-					<td>Bundle</td>
+					<td>Bundle (<a href="StructureDefinition-avail-bundle.html">Argonaut Appointment Bundle Profile</a>)</td>
 					<td/>
 					<td>
 						<div>
@@ -323,6 +336,21 @@
     </profile>
   </parameter>
   <parameter>
+    <name value="reason"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="*"/>
+    <documentation value="A clinical sign, symptom, diagnosis or health concern that this appointment is intended to treat. This may  is used in conjunction with the specialty to determine which schedulable resources are needed for the visit. For example, for an orthopedics appointment, the reason may drive whether a hip specialist or knee specialist is preferred. Each parameter value SHALL contain both the system property and the code property for a code using the general syntax `specialty=[system]|[code]`. See the examples below for how this is implemented."/>
+    <type value="string"/>
+    <searchType value="token"/>
+    <binding>
+      <strength value="preferred"/>
+      <valueSetReference>
+        <reference value="http://hl7.org/fhir/ValueSet/condition-code"/>
+      </valueSetReference>
+    </binding>
+  </parameter>
+  <parameter>
     <name value="return"/>
     <use value="out"/>
     <min value="0"/>
@@ -330,7 +358,7 @@
     <documentation value="An [Argonaut Appointment Bundle Profile](StructureDefinition-avail-bundle.html) of type `searchset` with entries of proposed [Appointment](http://build.fhir.org/appointment.html) resources and may also contain an [OperationOutcome](http://build.fhir.org/operationoutcome.html) with errors, warnings or information as a result of processing the operation - e.g., an informational notice that the returned appointments are not within the requested start and end times.  An empty bundle means no available appointments based on inputs"/>
     <type value="Bundle"/>
     <profile>
-      <reference value="StructureDefinition/avail-bundle"/>
+      <reference value="http://hl7.org/fhir/ValueSet/condition-code"/>
     </profile>
   </parameter>
 </OperationDefinition>
