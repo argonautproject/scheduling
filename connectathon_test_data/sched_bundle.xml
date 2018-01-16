@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- template for batch transaction bundle -->
+<Bundle xmlns="http://hl7.org/fhir">
+<!--  don't need an id right now
+  <id value="bundle-transaction"/>
+-->
+<!--    this bundle is a transaction     -->
+  <type value="transaction"/>
+  <entry>
+    <fullUrl value="http://sqlonfhir-stu3.azurewebsites.net/fhir/Schedule/arg-s-1"/>
+    <resource>
+     <Schedule>
+<id value="arg-s-1"/>
+<text>
+  <status value="generated">
+  </status>
+  <div xmlns="http://www.w3.org/1999/xhtml">
+    <p>
+      <b>id</b>: arg-s-1</p>
+      <p>two week schedule for Dr. Philip Boyce</p>
+    </div>
+  </text>
+  <active value="true"/>
+  <specialty>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="394582007"/>
+      <display value="Dermatology"/>
+    </coding>
+  </specialty>
+  <actor>
+    <reference value="Practitioner/arg-s-1"/>
+    <display value="Dr. Philip Boyce"/>
+  </actor>
+  <!--two week horizon-->
+  <planningHorizon>
+    <start value="2017-08-28"/>
+    <end value="2017-09-08"/>
+  </planningHorizon>
+  <comment value="two week schedule for Dr. Philip Boyce"/>
+</Schedule>
+
+     </resource>
+    <request>
+    <!--    POST to [base]/Schedule - that's a create - in a transaction, you don't specify the [base],
+         so [base]/Schedule becomes just 'Schedule':
+          For a Schedule Update, the method would be PUT, and the URL would be "Schedule/[id]". -->
+      <method value="PUT"/>
+      <url value="Schedule/arg-s-1"/>
+    </request>
+  </entry><entry>
+    <fullUrl value="http://sqlonfhir-stu3.azurewebsites.net/fhir/Schedule/arg-s-2"/>
+    <resource>
+     <Schedule>
+<id value="arg-s-2"/>
+<text>
+  <status value="generated">
+  </status>
+  <div xmlns="http://www.w3.org/1999/xhtml">
+    <p>
+      <b>id</b>: arg-s-2</p>
+      <p>two week schedule for Dr. Phlox Billingsley</p>
+    </div>
+  </text>
+  <active value="true"/>
+  <specialty>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="394582007"/>
+      <display value="Dermatology"/>
+    </coding>
+  </specialty>
+  <actor>
+    <reference value="Practitioner/arg-s-2"/>
+    <display value="Dr. Phlox Billingsley"/>
+  </actor>
+  <!--two week horizon-->
+  <planningHorizon>
+    <start value="2017-09-08"/>
+    <end value="2017-08-28"/>
+  </planningHorizon>
+  <comment value="two week schedule for Dr. Phlox Billingsley"/>
+</Schedule>
+
+     </resource>
+    <request>
+    <!--    POST to [base]/Schedule - that's a create - in a transaction, you don't specify the [base],
+         so [base]/Schedule becomes just 'Schedule':
+          For a Schedule Update, the method would be PUT, and the URL would be "Schedule/[id]". -->
+      <method value="PUT"/>
+      <url value="Schedule/arg-s-2"/>
+    </request>
+  </entry><entry>
+    <fullUrl value="http://sqlonfhir-stu3.azurewebsites.net/fhir/Schedule/arg-s-3"/>
+    <resource>
+     <Schedule>
+<id value="arg-s-3"/>
+<text>
+  <status value="generated">
+  </status>
+  <div xmlns="http://www.w3.org/1999/xhtml">
+    <p>
+      <b>id</b>: arg-s-3</p>
+      <p>two week schedule for Dr. Leonard McCoy</p>
+    </div>
+  </text>
+  <active value="true"/>
+  <specialty>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="419772000"/>
+      <display value="Family Medicine"/>
+    </coding>
+  </specialty>
+  <actor>
+    <reference value="Practitioner/arg-s-3"/>
+    <display value="Dr. Leonard McCoy"/>
+  </actor>
+  <!--two week horizon-->
+  <planningHorizon>
+    <start value="2017-09-08"/>
+    <end value="2017-08-28"/>
+  </planningHorizon>
+  <comment value="two week schedule for Dr. Leonard McCoy"/>
+</Schedule>
+
+     </resource>
+    <request>
+    <!--    POST to [base]/Schedule - that's a create - in a transaction, you don't specify the [base],
+         so [base]/Schedule becomes just 'Schedule':
+          For a Schedule Update, the method would be PUT, and the URL would be "Schedule/[id]". -->
+      <method value="PUT"/>
+      <url value="Schedule/arg-s-3"/>
+    </request>
+  </entry><entry>
+    <fullUrl value="http://sqlonfhir-stu3.azurewebsites.net/fhir/Schedule/arg-s-4"/>
+    <resource>
+     <Schedule>
+<id value="arg-s-4"/>
+<text>
+  <status value="generated">
+  </status>
+  <div xmlns="http://www.w3.org/1999/xhtml">
+    <p>
+      <b>id</b>: arg-s-4</p>
+      <p>two week schedule for Dr. Katherine Pulaski</p>
+    </div>
+  </text>
+  <active value="true"/>
+  <specialty>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="419772000"/>
+      <display value="Family Medicine"/>
+    </coding>
+  </specialty>
+  <actor>
+    <reference value="Practitioner/arg-s-4"/>
+    <display value="Dr. Katherine Pulaski"/>
+  </actor>
+  <!--two week horizon-->
+  <planningHorizon>
+    <start value="2017-09-08"/>
+    <end value="2017-08-28"/>
+  </planningHorizon>
+  <comment value="two week schedule for Dr. Katherine Pulaski"/>
+</Schedule>
+
+     </resource>
+    <request>
+    <!--    POST to [base]/Schedule - that's a create - in a transaction, you don't specify the [base],
+         so [base]/Schedule becomes just 'Schedule':
+          For a Schedule Update, the method would be PUT, and the URL would be "Schedule/[id]". -->
+      <method value="PUT"/>
+      <url value="Schedule/arg-s-4"/>
+    </request>
+  </entry><entry>
+    <fullUrl value="http://sqlonfhir-stu3.azurewebsites.net/fhir/Schedule/arg-s-5"/>
+    <resource>
+     <Schedule>
+<id value="arg-s-5"/>
+<text>
+  <status value="generated">
+  </status>
+  <div xmlns="http://www.w3.org/1999/xhtml">
+    <p>
+      <b>id</b>: arg-s-5</p>
+      <p>two week schedule for Dr. Lewis Zimmerman</p>
+    </div>
+  </text>
+  <active value="true"/>
+  <specialty>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="419772000"/>
+      <display value="Family Medicine"/>
+    </coding>
+  </specialty>
+  <actor>
+    <reference value="Practitioner/arg-s-5"/>
+    <display value="Dr. Lewis Zimmerman"/>
+  </actor>
+  <!--two week horizon-->
+  <planningHorizon>
+    <start value="2017-09-08"/>
+    <end value="2017-08-28"/>
+  </planningHorizon>
+  <comment value="two week schedule for Dr. Lewis Zimmerman"/>
+</Schedule>
+
+     </resource>
+    <request>
+    <!--    POST to [base]/Schedule - that's a create - in a transaction, you don't specify the [base],
+         so [base]/Schedule becomes just 'Schedule':
+          For a Schedule Update, the method would be PUT, and the URL would be "Schedule/[id]". -->
+      <method value="PUT"/>
+      <url value="Schedule/arg-s-5"/>
+    </request>
+  </entry><entry>
+    <fullUrl value="http://sqlonfhir-stu3.azurewebsites.net/fhir/Schedule/arg-s-6"/>
+    <resource>
+     <Schedule>
+<id value="arg-s-6"/>
+<text>
+  <status value="generated">
+  </status>
+  <div xmlns="http://www.w3.org/1999/xhtml">
+    <p>
+      <b>id</b>: arg-s-6</p>
+      <p>two week schedule for Dr. Elizabeth Lense</p>
+    </div>
+  </text>
+  <active value="true"/>
+  <specialty>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="419772000"/>
+      <display value="Family Medicine"/>
+    </coding>
+  </specialty>
+  <actor>
+    <reference value="Practitioner/arg-s-6"/>
+    <display value="Dr. Elizabeth Lense"/>
+  </actor>
+  <!--two week horizon-->
+  <planningHorizon>
+    <start value="2017-09-08"/>
+    <end value="2017-08-28"/>
+  </planningHorizon>
+  <comment value="two week schedule for Dr. Elizabeth Lense"/>
+</Schedule>
+
+     </resource>
+    <request>
+    <!--    POST to [base]/Schedule - that's a create - in a transaction, you don't specify the [base],
+         so [base]/Schedule becomes just 'Schedule':
+          For a Schedule Update, the method would be PUT, and the URL would be "Schedule/[id]". -->
+      <method value="PUT"/>
+      <url value="Schedule/arg-s-6"/>
+    </request>
+  </entry><entry>
+    <fullUrl value="http://sqlonfhir-stu3.azurewebsites.net/fhir/Schedule/arg-s-7"/>
+    <resource>
+     <Schedule>
+<id value="arg-s-7"/>
+<text>
+  <status value="generated">
+  </status>
+  <div xmlns="http://www.w3.org/1999/xhtml">
+    <p>
+      <b>id</b>: arg-s-7</p>
+      <p>two week schedule for Dr. Christine Chapel</p>
+    </div>
+  </text>
+  <active value="true"/>
+  <specialty>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="394584008"/>
+      <display value="Gastroenterology"/>
+    </coding>
+  </specialty>
+  <actor>
+    <reference value="Practitioner/arg-s-7"/>
+    <display value="Dr. Christine Chapel"/>
+  </actor>
+  <!--two week horizon-->
+  <planningHorizon>
+    <start value="2017-09-08"/>
+    <end value="2017-08-28"/>
+  </planningHorizon>
+  <comment value="two week schedule for Dr. Christine Chapel"/>
+</Schedule>
+
+     </resource>
+    <request>
+    <!--    POST to [base]/Schedule - that's a create - in a transaction, you don't specify the [base],
+         so [base]/Schedule becomes just 'Schedule':
+          For a Schedule Update, the method would be PUT, and the URL would be "Schedule/[id]". -->
+      <method value="PUT"/>
+      <url value="Schedule/arg-s-7"/>
+    </request>
+  </entry><entry>
+    <fullUrl value="http://sqlonfhir-stu3.azurewebsites.net/fhir/Schedule/arg-s-8"/>
+    <resource>
+     <Schedule>
+<id value="arg-s-8"/>
+<text>
+  <status value="generated">
+  </status>
+  <div xmlns="http://www.w3.org/1999/xhtml">
+    <p>
+      <b>id</b>: arg-s-8</p>
+      <p>two week schedule for Dr. Beverly Crusher</p>
+    </div>
+  </text>
+  <active value="true"/>
+  <specialty>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="394537008"/>
+      <display value="Pediatrics"/>
+    </coding>
+  </specialty>
+  <actor>
+    <reference value="Practitioner/arg-s-8"/>
+    <display value="Dr. Beverly Crusher"/>
+  </actor>
+  <!--two week horizon-->
+  <planningHorizon>
+    <start value="2017-09-08"/>
+    <end value="2017-08-28"/>
+  </planningHorizon>
+  <comment value="two week schedule for Dr. Beverly Crusher"/>
+</Schedule>
+
+     </resource>
+    <request>
+    <!--    POST to [base]/Schedule - that's a create - in a transaction, you don't specify the [base],
+         so [base]/Schedule becomes just 'Schedule':
+          For a Schedule Update, the method would be PUT, and the URL would be "Schedule/[id]". -->
+      <method value="PUT"/>
+      <url value="Schedule/arg-s-8"/>
+    </request>
+  </entry><entry>
+    <fullUrl value="http://sqlonfhir-stu3.azurewebsites.net/fhir/Schedule/arg-s-9"/>
+    <resource>
+     <Schedule>
+<id value="arg-s-9"/>
+<text>
+  <status value="generated">
+  </status>
+  <div xmlns="http://www.w3.org/1999/xhtml">
+    <p>
+      <b>id</b>: arg-s-9</p>
+      <p>two week schedule for Dr. Julian Bashir</p>
+    </div>
+  </text>
+  <active value="true"/>
+  <specialty>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="394537008"/>
+      <display value="Pediatrics"/>
+    </coding>
+  </specialty>
+  <actor>
+    <reference value="Practitioner/arg-s-9"/>
+    <display value="Dr. Julian Bashir"/>
+  </actor>
+  <!--two week horizon-->
+  <planningHorizon>
+    <start value="2017-09-08"/>
+    <end value="2017-08-28"/>
+  </planningHorizon>
+  <comment value="two week schedule for Dr. Julian Bashir"/>
+</Schedule>
+
+     </resource>
+    <request>
+    <!--    POST to [base]/Schedule - that's a create - in a transaction, you don't specify the [base],
+         so [base]/Schedule becomes just 'Schedule':
+          For a Schedule Update, the method would be PUT, and the URL would be "Schedule/[id]". -->
+      <method value="PUT"/>
+      <url value="Schedule/arg-s-9"/>
+    </request>
+  </entry>
+</Bundle>

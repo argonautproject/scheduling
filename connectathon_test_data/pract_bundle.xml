@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- template for batch transaction bundle -->
+<Bundle xmlns="http://hl7.org/fhir">
+<!--  don't need an id right now
+  <id value="bundle-transaction"/>
+-->
+<!--    this bundle is a transaction     -->
+  <type value="transaction"/>
+  <entry>
+    <fullUrl value="http://sqlonfhir-stu3.azurewebsites.net/fhir/Practitioner/arg-s-1"/>
+    <resource>
+     <Practitioner>
+      <id value="arg-s-1"/>
+      <meta>
+        <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"/>
+      </meta>
+      <text>
+        <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: arg-s-1</p><p><b>meta</b>: </p><p><b>NPI</b>:1521001101, 25456</p><p><b>name</b>: Dr. Philip Boyce</p></div>
+      </text>
+      <identifier>
+        <system value="http://hl7.org.fhir/sid/us-npi"/>
+        <value value="1521001101"/>
+      </identifier>
+      <name>
+        <family value="Boyce"/>
+        <given value="Philip"/>
+        <prefix value="Dr"/>
+      </name>
+      <gender value = "male"/>
+     </Practitioner>
+     </resource>
+    <request>
+    <!--    POST to [base]/Practitioner - that's a create - in a transaction, you don't specify the [base],
+         so [base]/Practitioner becomes just 'Practitioner':
+          For a Practitioner Update, the method would be PUT, and the URL would be "Practitioner/[id]". -->
+      <method value="PUT"/>
+      <url value="Practitioner/arg-s-1"/>
+    </request>
+  </entry><entry>
+    <fullUrl value="http://sqlonfhir-stu3.azurewebsites.net/fhir/Practitioner/arg-s-2"/>
+    <resource>
+     <Practitioner>
+      <id value="arg-s-2"/>
+      <meta>
+        <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"/>
+      </meta>
+      <text>
+        <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: arg-s-2</p><p><b>meta</b>: </p><p><b>NPI</b>:1521001102, 25456</p><p><b>name</b>: Dr. Phlox Billingsley</p></div>
+      </text>
+      <identifier>
+        <system value="http://hl7.org.fhir/sid/us-npi"/>
+        <value value="1521001102"/>
+      </identifier>
+      <name>
+        <family value="Billingsley"/>
+        <given value="Phlox"/>
+        <prefix value="Dr"/>
+      </name>
+      <gender value = "male"/>
+     </Practitioner>
+     </resource>
+    <request>
+    <!--    POST to [base]/Practitioner - that's a create - in a transaction, you don't specify the [base],
+         so [base]/Practitioner becomes just 'Practitioner':
+          For a Practitioner Update, the method would be PUT, and the URL would be "Practitioner/[id]". -->
+      <method value="PUT"/>
+      <url value="Practitioner/arg-s-2"/>
+    </request>
+  </entry><entry>
+    <fullUrl value="http://sqlonfhir-stu3.azurewebsites.net/fhir/Practitioner/arg-s-3"/>
+    <resource>
+     <Practitioner>
+      <id value="arg-s-3"/>
+      <meta>
+        <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"/>
+      </meta>
+      <text>
+        <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: arg-s-3</p><p><b>meta</b>: </p><p><b>NPI</b>:1521001103, 25456</p><p><b>name</b>: Dr. Leonard McCoy</p></div>
+      </text>
+      <identifier>
+        <system value="http://hl7.org.fhir/sid/us-npi"/>
+        <value value="1521001103"/>
+      </identifier>
+      <name>
+        <family value="McCoy"/>
+        <given value="Leonard"/>
+        <prefix value="Dr"/>
+      </name>
+      <gender value = "male"/>
+     </Practitioner>
+     </resource>
+    <request>
+    <!--    POST to [base]/Practitioner - that's a create - in a transaction, you don't specify the [base],
+         so [base]/Practitioner becomes just 'Practitioner':
+          For a Practitioner Update, the method would be PUT, and the URL would be "Practitioner/[id]". -->
+      <method value="PUT"/>
+      <url value="Practitioner/arg-s-3"/>
+    </request>
+  </entry><entry>
+    <fullUrl value="http://sqlonfhir-stu3.azurewebsites.net/fhir/Practitioner/arg-s-4"/>
+    <resource>
+     <Practitioner>
+      <id value="arg-s-4"/>
+      <meta>
+        <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"/>
+      </meta>
+      <text>
+        <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: arg-s-4</p><p><b>meta</b>: </p><p><b>NPI</b>:1521001104, 25456</p><p><b>name</b>: Dr. Katherine Pulaski</p></div>
+      </text>
+      <identifier>
+        <system value="http://hl7.org.fhir/sid/us-npi"/>
+        <value value="1521001104"/>
+      </identifier>
+      <name>
+        <family value="Pulaski"/>
+        <given value="Katherine"/>
+        <prefix value="Dr"/>
+      </name>
+      <gender value = "female"/>
+     </Practitioner>
+     </resource>
+    <request>
+    <!--    POST to [base]/Practitioner - that's a create - in a transaction, you don't specify the [base],
+         so [base]/Practitioner becomes just 'Practitioner':
+          For a Practitioner Update, the method would be PUT, and the URL would be "Practitioner/[id]". -->
+      <method value="PUT"/>
+      <url value="Practitioner/arg-s-4"/>
+    </request>
+  </entry><entry>
+    <fullUrl value="http://sqlonfhir-stu3.azurewebsites.net/fhir/Practitioner/arg-s-5"/>
+    <resource>
+     <Practitioner>
+      <id value="arg-s-5"/>
+      <meta>
+        <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"/>
+      </meta>
+      <text>
+        <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: arg-s-5</p><p><b>meta</b>: </p><p><b>NPI</b>:1521001105, 25456</p><p><b>name</b>: Dr. Lewis Zimmerman</p></div>
+      </text>
+      <identifier>
+        <system value="http://hl7.org.fhir/sid/us-npi"/>
+        <value value="1521001105"/>
+      </identifier>
+      <name>
+        <family value="Zimmerman"/>
+        <given value="Lewis"/>
+        <prefix value="Dr"/>
+      </name>
+      <gender value = "male"/>
+     </Practitioner>
+     </resource>
+    <request>
+    <!--    POST to [base]/Practitioner - that's a create - in a transaction, you don't specify the [base],
+         so [base]/Practitioner becomes just 'Practitioner':
+          For a Practitioner Update, the method would be PUT, and the URL would be "Practitioner/[id]". -->
+      <method value="PUT"/>
+      <url value="Practitioner/arg-s-5"/>
+    </request>
+  </entry><entry>
+    <fullUrl value="http://sqlonfhir-stu3.azurewebsites.net/fhir/Practitioner/arg-s-6"/>
+    <resource>
+     <Practitioner>
+      <id value="arg-s-6"/>
+      <meta>
+        <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"/>
+      </meta>
+      <text>
+        <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: arg-s-6</p><p><b>meta</b>: </p><p><b>NPI</b>:1521001106, 25456</p><p><b>name</b>: Dr. Elizabeth Lense</p></div>
+      </text>
+      <identifier>
+        <system value="http://hl7.org.fhir/sid/us-npi"/>
+        <value value="1521001106"/>
+      </identifier>
+      <name>
+        <family value="Lense"/>
+        <given value="Elizabeth"/>
+        <prefix value="Dr"/>
+      </name>
+      <gender value = "female"/>
+     </Practitioner>
+     </resource>
+    <request>
+    <!--    POST to [base]/Practitioner - that's a create - in a transaction, you don't specify the [base],
+         so [base]/Practitioner becomes just 'Practitioner':
+          For a Practitioner Update, the method would be PUT, and the URL would be "Practitioner/[id]". -->
+      <method value="PUT"/>
+      <url value="Practitioner/arg-s-6"/>
+    </request>
+  </entry><entry>
+    <fullUrl value="http://sqlonfhir-stu3.azurewebsites.net/fhir/Practitioner/arg-s-7"/>
+    <resource>
+     <Practitioner>
+      <id value="arg-s-7"/>
+      <meta>
+        <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"/>
+      </meta>
+      <text>
+        <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: arg-s-7</p><p><b>meta</b>: </p><p><b>NPI</b>:1521001107, 25456</p><p><b>name</b>: Dr. Christine Chapel</p></div>
+      </text>
+      <identifier>
+        <system value="http://hl7.org.fhir/sid/us-npi"/>
+        <value value="1521001107"/>
+      </identifier>
+      <name>
+        <family value="Chapel"/>
+        <given value="Christine"/>
+        <prefix value="Dr"/>
+      </name>
+      <gender value = "female"/>
+     </Practitioner>
+     </resource>
+    <request>
+    <!--    POST to [base]/Practitioner - that's a create - in a transaction, you don't specify the [base],
+         so [base]/Practitioner becomes just 'Practitioner':
+          For a Practitioner Update, the method would be PUT, and the URL would be "Practitioner/[id]". -->
+      <method value="PUT"/>
+      <url value="Practitioner/arg-s-7"/>
+    </request>
+  </entry><entry>
+    <fullUrl value="http://sqlonfhir-stu3.azurewebsites.net/fhir/Practitioner/arg-s-8"/>
+    <resource>
+     <Practitioner>
+      <id value="arg-s-8"/>
+      <meta>
+        <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"/>
+      </meta>
+      <text>
+        <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: arg-s-8</p><p><b>meta</b>: </p><p><b>NPI</b>:1521001108, 25456</p><p><b>name</b>: Dr. Beverly Crusher</p></div>
+      </text>
+      <identifier>
+        <system value="http://hl7.org.fhir/sid/us-npi"/>
+        <value value="1521001108"/>
+      </identifier>
+      <name>
+        <family value="Crusher"/>
+        <given value="Beverly"/>
+        <prefix value="Dr"/>
+      </name>
+      <gender value = "female"/>
+     </Practitioner>
+     </resource>
+    <request>
+    <!--    POST to [base]/Practitioner - that's a create - in a transaction, you don't specify the [base],
+         so [base]/Practitioner becomes just 'Practitioner':
+          For a Practitioner Update, the method would be PUT, and the URL would be "Practitioner/[id]". -->
+      <method value="PUT"/>
+      <url value="Practitioner/arg-s-8"/>
+    </request>
+  </entry><entry>
+    <fullUrl value="http://sqlonfhir-stu3.azurewebsites.net/fhir/Practitioner/arg-s-9"/>
+    <resource>
+     <Practitioner>
+      <id value="arg-s-9"/>
+      <meta>
+        <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"/>
+      </meta>
+      <text>
+        <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: arg-s-9</p><p><b>meta</b>: </p><p><b>NPI</b>:1521001109, 25456</p><p><b>name</b>: Dr. Julian Bashir</p></div>
+      </text>
+      <identifier>
+        <system value="http://hl7.org.fhir/sid/us-npi"/>
+        <value value="1521001109"/>
+      </identifier>
+      <name>
+        <family value="Bashir"/>
+        <given value="Julian"/>
+        <prefix value="Dr"/>
+      </name>
+      <gender value = "male"/>
+     </Practitioner>
+     </resource>
+    <request>
+    <!--    POST to [base]/Practitioner - that's a create - in a transaction, you don't specify the [base],
+         so [base]/Practitioner becomes just 'Practitioner':
+          For a Practitioner Update, the method would be PUT, and the URL would be "Practitioner/[id]". -->
+      <method value="PUT"/>
+      <url value="Practitioner/arg-s-9"/>
+    </request>
+  </entry>
+</Bundle>

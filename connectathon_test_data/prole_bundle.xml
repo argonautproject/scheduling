@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- template for batch transaction bundle -->
+<Bundle xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir http://build.fhir.org/device.xsd">
+	<!--  don't need an id right now
+  <id value="bundle-transaction"/>
+-->
+	<!--    this bundle is a transaction     -->
+	<type value="transaction"/>
+	<entry>
+		<fullUrl value="http://sqlonfhir-stu3.azurewebsites.net/fhir/PractitionerRole/arg-s-1"/>
+		<resource>
+			<PractitionerRole>
+				<id value="arg-s-1"/>
+				<meta>
+					<profile value="http://fhir.org/guides/argonaut-pd/StructureDefinition/argo-practitionerrole"/>
+				</meta>
+				<text>
+					<status value="generated"/>
+					<div xmlns="http://www.w3.org/1999/xhtml">
+						<p>
+							<b>Generated Narrative with Details</b>
+						</p>
+						<p>
+							<b>id</b>: arg-s-1</p>
+						<p>
+							<b>practitioner</b>: Dr. Philip Boyce</p>
+						<p>
+							<b>organization</b>: San Jose Dermatology Clinic</p>
+						<p>
+							<b>specialty</b>: Dermatology SCT Code: 394582007</p>
+						<p>
+							<b>location</b>: San Jose</p>
+					</div>
+				</text>
+				<practitioner>
+					<reference value="Practitioner/arg-s-1"/>
+					<display value="Dr. Philip Boyce"/>
+				</practitioner>
+				<organization>
+					<reference value="Organization/arg-s-1"/>
+					<display value="San Jose Dermatology Clinic"/>
+				</organization>
+				<code>
+					<coding>
+						<system value="http://nucc.org/provider-taxonomy"/>
+						<code value="261QP2300X"/>
+						<display value="Doctor"/>
+					</coding>
+				</code>
+				<specialty>
+					<coding>
+						<system value="http://snomed.info.sct"/>
+						<code value="394582007"/>
+						<display value="Dermatology"/>
+					</coding>
+				</specialty>
+				<location>
+					<reference value="Location/arg-s-1"/>
+					<display value="San Jose"/>
+				</location>
+			</PractitionerRole>
+		</resource>
+		<request>
+			<!--    POST to [base]/PractitionerRole - that's a create - in a transaction, you don't specify the [base],
+         so [base]/PractitionerRole becomes just 'PractitionerRole':
+          For a PractitionerRole Update, the method would be PUT, and the URL would be "PractitionerRole/[id]". -->
+			<method value="PUT"/>
+			<url value="PractitionerRole/arg-s-1"/>
+		</request>
+	</entry>
+	<entry>
+		<fullUrl value="http://sqlonfhir-stu3.azurewebsites.net/fhir/PractitionerRole/arg-s-2"/>
+		<resource>
+			<PractitionerRole>
+				<id value="arg-s-2"/>
+				<meta>
+					<profile value="http://fhir.org/guides/argonaut-pd/StructureDefinition/argo-practitionerrole"/>
+				</meta>
+				<text>
+					<status value="generated"/>
+					<div xmlns="http://www.w3.org/1999/xhtml">
+						<p>
+							<b>Generated Narrative with Details</b>
+						</p>
+						<p>
+							<b>id</b>: arg-s-2</p>
+						<p>
+							<b>practitioner</b>: Dr. Phlox Billingsley</p>
+						<p>
+							<b>organization</b>: San Jose Dermatology Clinic</p>
+						<p>
+							<b>specialty</b>: Dermatology SCT Code: 394582007</p>
+						<p>
+							<b>location</b>: San Jose</p>
+					</div>
+				</text>
+				<practitioner>
+					<reference value="Practitioner/arg-s-2"/>
+					<display value="Dr. Phlox Billingsley"/>
+				</practitioner>
+				<organization>
+					<reference value="Organization/arg-s-2"/>
+					<display value="San Jose Dermatology Clinic"/>
+				</organization>
+				<code>
+					<coding>
+						<system value="http://nucc.org/provider-taxonomy"/>
+						<code value="261QP2300X"/>
+						<display value="Doctor"/>
+					</coding>
+				</code>
+				<specialty>
+					<coding>
+						<system value="http://snomed.info.sct"/>
+						<code value="394582007"/>
+						<display value="Dermatology"/>
+					</coding>
+				</specialty>
+				<location>
+					<reference value="Location/arg-s-2"/>
+					<display value="San Jose"/>
+				</location>
+			</PractitionerRole>
+		</resource>
+		<request>
+			<!--    POST to [base]/PractitionerRole - that's a create - in a transaction, you don't specify the [base],
+         so [base]/PractitionerRole becomes just 'PractitionerRole':
+          For a PractitionerRole Update, the method would be PUT, and the URL would be "PractitionerRole/[id]". -->
+			<method value="PUT"/>
+			<url value="PractitionerRole/arg-s-2"/>
+		</request>
+	</entry>
+	<entry>
+		<fullUrl value="http://sqlonfhir-stu3.azurewebsites.net/fhir/PractitionerRole/arg-s-3"/>
+		<resource>
+			<PractitionerRole>
+				<id value="arg-s-3"/>
+				<meta>
+					<profile value="http://fhir.org/guides/argonaut-pd/StructureDefinition/argo-practitionerrole"/>
+				</meta>
+				<text>
+					<status value="generated"/>
+					<div xmlns="http://www.w3.org/1999/xhtml">
+						<p>
+							<b>Generated Narrative with Details</b>
+						</p>
+						<p>
+							<b>id</b>: arg-s-3</p>
+						<p>
+							<b>practitioner</b>: Dr. Leonard McCoy</p>
+						<p>
+							<b>organization</b>: San Francisco Family Care</p>
+						<p>
+							<b>specialty</b>: Family Medicine SCT Code: 419772000</p>
+						<p>
+							<b>location</b>: San Francisco</p>
+					</div>
+				</text>
+				<practitioner>
+					<reference value="Practitioner/arg-s-3"/>
+					<display value="Dr. Leonard McCoy"/>
+				</practitioner>
+				<organization>
+					<reference value="Organization/arg-s-3"/>
+					<display value="San Francisco Family Care"/>
+				</organization>
+				<code>
+					<coding>
+						<system value="http://nucc.org/provider-taxonomy"/>
+						<code value="261QP2300X"/>
+						<display value="Doctor"/>
+					</coding>
+				</code>
+				<specialty>
+					<coding>
+						<system value="http://snomed.info.sct"/>
+						<code value="419772000"/>
+						<display value="Family Medicine"/>
+					</coding>
+				</specialty>
+				<location>
+					<reference value="Location/arg-s-3"/>
+					<display value="San Francisco"/>
+				</location>
+			</PractitionerRole>
+		</resource>
+		<request>
+			<!--    POST to [base]/PractitionerRole - that's a create - in a transaction, you don't specify the [base],
+         so [base]/PractitionerRole becomes just 'PractitionerRole':
+          For a PractitionerRole Update, the method would be PUT, and the URL would be "PractitionerRole/[id]". -->
+			<method value="PUT"/>
+			<url value="PractitionerRole/arg-s-3"/>
+		</request>
+	</entry>
+	<entry>
+		<fullUrl value="http://sqlonfhir-stu3.azurewebsites.net/fhir/PractitionerRole/arg-s-4"/>
+		<resource>
+			<PractitionerRole>
+				<id value="arg-s-4"/>
+				<meta>
+					<profile value="http://fhir.org/guides/argonaut-pd/StructureDefinition/argo-practitionerrole"/>
+				</meta>
+				<text>
+					<status value="generated"/>
+					<div xmlns="http://www.w3.org/1999/xhtml">
+						<p>
+							<b>Generated Narrative with Details</b>
+						</p>
+						<p>
+							<b>id</b>: arg-s-4</p>
+						<p>
+							<b>practitioner</b>: Dr. Katherine Pulaski</p>
+						<p>
+							<b>organization</b>: San Francisco Family Care</p>
+						<p>
+							<b>specialty</b>: Family Medicine SCT Code: 419772000</p>
+						<p>
+							<b>location</b>: San Francisco</p>
+					</div>
+				</text>
+				<practitioner>
+					<reference value="Practitioner/arg-s-4"/>
+					<display value="Dr. Katherine Pulaski"/>
+				</practitioner>
+				<organization>
+					<reference value="Organization/arg-s-4"/>
+					<display value="San Francisco Family Care"/>
+				</organization>
+				<code>
+					<coding>
+						<system value="http://nucc.org/provider-taxonomy"/>
+						<code value="261QP2300X"/>
+						<display value="Doctor"/>
+					</coding>
+				</code>
+				<specialty>
+					<coding>
+						<system value="http://snomed.info.sct"/>
+						<code value="419772000"/>
+						<display value="Family Medicine"/>
+					</coding>
+				</specialty>
+				<location>
+					<reference value="Location/arg-s-4"/>
+					<display value="San Francisco"/>
+				</location>
+			</PractitionerRole>
+		</resource>
+		<request>
+			<!--    POST to [base]/PractitionerRole - that's a create - in a transaction, you don't specify the [base],
+         so [base]/PractitionerRole becomes just 'PractitionerRole':
+          For a PractitionerRole Update, the method would be PUT, and the URL would be "PractitionerRole/[id]". -->
+			<method value="PUT"/>
+			<url value="PractitionerRole/arg-s-4"/>
+		</request>
+	</entry>
+	<entry>
+		<fullUrl value="http://sqlonfhir-stu3.azurewebsites.net/fhir/PractitionerRole/arg-s-5"/>
+		<resource>
+			<PractitionerRole>
+				<id value="arg-s-5"/>
+				<meta>
+					<profile value="http://fhir.org/guides/argonaut-pd/StructureDefinition/argo-practitionerrole"/>
+				</meta>
+				<text>
+					<status value="generated"/>
+					<div xmlns="http://www.w3.org/1999/xhtml">
+						<p>
+							<b>Generated Narrative with Details</b>
+						</p>
+						<p>
+							<b>id</b>: arg-s-5</p>
+						<p>
+							<b>practitioner</b>: Dr. Lewis Zimmerman</p>
+						<p>
+							<b>organization</b>: San Jose Family Clinic</p>
+						<p>
+							<b>specialty</b>: Family Medicine SCT Code: 419772000</p>
+						<p>
+							<b>location</b>: San Jose</p>
+					</div>
+				</text>
+				<practitioner>
+					<reference value="Practitioner/arg-s-5"/>
+					<display value="Dr. Lewis Zimmerman"/>
+				</practitioner>
+				<organization>
+					<reference value="Organization/arg-s-5"/>
+					<display value="San Jose Family Clinic"/>
+				</organization>
+				<code>
+					<coding>
+						<system value="http://nucc.org/provider-taxonomy"/>
+						<code value="261QP2300X"/>
+						<display value="Doctor"/>
+					</coding>
+				</code>
+				<specialty>
+					<coding>
+						<system value="http://snomed.info.sct"/>
+						<code value="419772000"/>
+						<display value="Family Medicine"/>
+					</coding>
+				</specialty>
+				<location>
+					<reference value="Location/arg-s-5"/>
+					<display value="San Jose"/>
+				</location>
+			</PractitionerRole>
+		</resource>
+		<request>
+			<!--    POST to [base]/PractitionerRole - that's a create - in a transaction, you don't specify the [base],
+         so [base]/PractitionerRole becomes just 'PractitionerRole':
+          For a PractitionerRole Update, the method would be PUT, and the URL would be "PractitionerRole/[id]". -->
+			<method value="PUT"/>
+			<url value="PractitionerRole/arg-s-5"/>
+		</request>
+	</entry>
+	<entry>
+		<fullUrl value="http://sqlonfhir-stu3.azurewebsites.net/fhir/PractitionerRole/arg-s-6"/>
+		<resource>
+			<PractitionerRole>
+				<id value="arg-s-6"/>
+				<meta>
+					<profile value="http://fhir.org/guides/argonaut-pd/StructureDefinition/argo-practitionerrole"/>
+				</meta>
+				<text>
+					<status value="generated"/>
+					<div xmlns="http://www.w3.org/1999/xhtml">
+						<p>
+							<b>Generated Narrative with Details</b>
+						</p>
+						<p>
+							<b>id</b>: arg-s-6</p>
+						<p>
+							<b>practitioner</b>: Dr. Elizabeth Lense</p>
+						<p>
+							<b>organization</b>: Sacramento Family Clinic</p>
+						<p>
+							<b>specialty</b>: Family Medicine SCT Code: 419772000</p>
+						<p>
+							<b>location</b>: Sacramento</p>
+					</div>
+				</text>
+				<practitioner>
+					<reference value="Practitioner/arg-s-6"/>
+					<display value="Dr. Elizabeth Lense"/>
+				</practitioner>
+				<organization>
+					<reference value="Organization/arg-s-6"/>
+					<display value="Sacramento Family Clinic"/>
+				</organization>
+				<code>
+					<coding>
+						<system value="http://nucc.org/provider-taxonomy"/>
+						<code value="261QP2300X"/>
+						<display value="Doctor"/>
+					</coding>
+				</code>
+				<specialty>
+					<coding>
+						<system value="http://snomed.info.sct"/>
+						<code value="419772000"/>
+						<display value="Family Medicine"/>
+					</coding>
+				</specialty>
+				<location>
+					<reference value="Location/arg-s-6"/>
+					<display value="Sacramento"/>
+				</location>
+			</PractitionerRole>
+		</resource>
+		<request>
+			<!--    POST to [base]/PractitionerRole - that's a create - in a transaction, you don't specify the [base],
+         so [base]/PractitionerRole becomes just 'PractitionerRole':
+          For a PractitionerRole Update, the method would be PUT, and the URL would be "PractitionerRole/[id]". -->
+			<method value="PUT"/>
+			<url value="PractitionerRole/arg-s-6"/>
+		</request>
+	</entry>
+	<entry>
+		<fullUrl value="http://sqlonfhir-stu3.azurewebsites.net/fhir/PractitionerRole/arg-s-7"/>
+		<resource>
+			<PractitionerRole>
+				<id value="arg-s-7"/>
+				<meta>
+					<profile value="http://fhir.org/guides/argonaut-pd/StructureDefinition/argo-practitionerrole"/>
+				</meta>
+				<text>
+					<status value="generated"/>
+					<div xmlns="http://www.w3.org/1999/xhtml">
+						<p>
+							<b>Generated Narrative with Details</b>
+						</p>
+						<p>
+							<b>id</b>: arg-s-7</p>
+						<p>
+							<b>practitioner</b>: Dr. Christine Chapel</p>
+						<p>
+							<b>organization</b>: San Francisco Gastroenterology</p>
+						<p>
+							<b>specialty</b>: Gastroenterology SCT Code: 394584008</p>
+						<p>
+							<b>location</b>: San Francisco</p>
+					</div>
+				</text>
+				<practitioner>
+					<reference value="Practitioner/arg-s-7"/>
+					<display value="Dr. Christine Chapel"/>
+				</practitioner>
+				<organization>
+					<reference value="Organization/arg-s-7"/>
+					<display value="San Francisco Gastroenterology"/>
+				</organization>
+				<code>
+					<coding>
+						<system value="http://nucc.org/provider-taxonomy"/>
+						<code value="261QP2300X"/>
+						<display value="Doctor"/>
+					</coding>
+				</code>
+				<specialty>
+					<coding>
+						<system value="http://snomed.info.sct"/>
+						<code value="394584008"/>
+						<display value="Gastroenterology"/>
+					</coding>
+				</specialty>
+				<location>
+					<reference value="Location/arg-s-7"/>
+					<display value="San Francisco"/>
+				</location>
+			</PractitionerRole>
+		</resource>
+		<request>
+			<!--    POST to [base]/PractitionerRole - that's a create - in a transaction, you don't specify the [base],
+         so [base]/PractitionerRole becomes just 'PractitionerRole':
+          For a PractitionerRole Update, the method would be PUT, and the URL would be "PractitionerRole/[id]". -->
+			<method value="PUT"/>
+			<url value="PractitionerRole/arg-s-7"/>
+		</request>
+	</entry>
+	<entry>
+		<fullUrl value="http://sqlonfhir-stu3.azurewebsites.net/fhir/PractitionerRole/arg-s-8"/>
+		<resource>
+			<PractitionerRole>
+				<id value="arg-s-8"/>
+				<meta>
+					<profile value="http://fhir.org/guides/argonaut-pd/StructureDefinition/argo-practitionerrole"/>
+				</meta>
+				<text>
+					<status value="generated"/>
+					<div xmlns="http://www.w3.org/1999/xhtml">
+						<p>
+							<b>Generated Narrative with Details</b>
+						</p>
+						<p>
+							<b>id</b>: arg-s-8</p>
+						<p>
+							<b>practitioner</b>: Dr. Beverly Crusher</p>
+						<p>
+							<b>organization</b>: San Jose Family Clinic</p>
+						<p>
+							<b>specialty</b>: Pediatrics SCT Code: 394537008</p>
+						<p>
+							<b>location</b>: San Jose</p>
+					</div>
+				</text>
+				<practitioner>
+					<reference value="Practitioner/arg-s-8"/>
+					<display value="Dr. Beverly Crusher"/>
+				</practitioner>
+				<organization>
+					<reference value="Organization/arg-s-8"/>
+					<display value="San Jose Family Clinic"/>
+				</organization>
+				<code>
+					<coding>
+						<system value="http://nucc.org/provider-taxonomy"/>
+						<code value="261QP2300X"/>
+						<display value="Doctor"/>
+					</coding>
+				</code>
+				<specialty>
+					<coding>
+						<system value="http://snomed.info.sct"/>
+						<code value="394537008"/>
+						<display value="Pediatrics"/>
+					</coding>
+				</specialty>
+				<location>
+					<reference value="Location/arg-s-8"/>
+					<display value="San Jose"/>
+				</location>
+			</PractitionerRole>
+		</resource>
+		<request>
+			<!--    POST to [base]/PractitionerRole - that's a create - in a transaction, you don't specify the [base],
+         so [base]/PractitionerRole becomes just 'PractitionerRole':
+          For a PractitionerRole Update, the method would be PUT, and the URL would be "PractitionerRole/[id]". -->
+			<method value="PUT"/>
+			<url value="PractitionerRole/arg-s-8"/>
+		</request>
+	</entry>
+	<entry>
+		<fullUrl value="http://sqlonfhir-stu3.azurewebsites.net/fhir/PractitionerRole/arg-s-9"/>
+		<resource>
+			<PractitionerRole>
+				<id value="arg-s-9"/>
+				<meta>
+					<profile value="http://fhir.org/guides/argonaut-pd/StructureDefinition/argo-practitionerrole"/>
+				</meta>
+				<text>
+					<status value="generated"/>
+					<div xmlns="http://www.w3.org/1999/xhtml">
+						<p>
+							<b>Generated Narrative with Details</b>
+						</p>
+						<p>
+							<b>id</b>: arg-s-9</p>
+						<p>
+							<b>practitioner</b>: Dr. Julian Bashir</p>
+						<p>
+							<b>organization</b>: San Francisco Children's Clinic</p>
+						<p>
+							<b>specialty</b>: Pediatrics SCT Code: 394537008</p>
+						<p>
+							<b>location</b>: San Francisco</p>
+					</div>
+				</text>
+				<practitioner>
+					<reference value="Practitioner/arg-s-9"/>
+					<display value="Dr. Julian Bashir"/>
+				</practitioner>
+				<organization>
+					<reference value="Organization/arg-s-9"/>
+					<display value="San Francisco Children's Clinic"/>
+				</organization>
+				<code>
+					<coding>
+						<system value="http://nucc.org/provider-taxonomy"/>
+						<code value="261QP2300X"/>
+						<display value="Doctor"/>
+					</coding>
+				</code>
+				<specialty>
+					<coding>
+						<system value="http://snomed.info.sct"/>
+						<code value="394537008"/>
+						<display value="Pediatrics"/>
+					</coding>
+				</specialty>
+				<location>
+					<reference value="Location/arg-s-9"/>
+					<display value="San Francisco"/>
+				</location>
+			</PractitionerRole>
+		</resource>
+		<request>
+			<!--    POST to [base]/PractitionerRole - that's a create - in a transaction, you don't specify the [base],
+         so [base]/PractitionerRole becomes just 'PractitionerRole':
+          For a PractitionerRole Update, the method would be PUT, and the URL would be "PractitionerRole/[id]". -->
+			<method value="PUT"/>
+			<url value="PractitionerRole/arg-s-9"/>
+		</request>
+	</entry>
+</Bundle>

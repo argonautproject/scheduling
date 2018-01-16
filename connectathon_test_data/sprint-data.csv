@@ -1,0 +1,10 @@
+id,name_prefix,fname,lname,gender,npi,specialty_name,specialty_code,specialty_code2,specialty_name2,organization,location,zip,Working Hours
+arg-s-1,Dr.,Philip,Boyce,male,1521001101,Dermatology,394582007,,Cosmetic Dermatology,San Jose Dermatology Clinic,San Jose,94121,M-F 10am - 5pm
+arg-s-2,Dr.,Phlox,Billingsley,male,1521001102,Dermatology,394582007,,,San Jose Dermatology Clinic,San Jose,94121,M-F 10am - 5pm
+arg-s-3,Dr.,Leonard,McCoy,male,1521001103,Family Medicine,419772000,,,San Francisco Family Care,San Francisco,94016,M-F 8am - 4pm
+arg-s-4,Dr.,Katherine,Pulaski,female,1521001104,Family Medicine,419772000,,,San Francisco Family Care,San Francisco,94016,"M, W, F 8am - 4pm"
+arg-s-5,Dr.,Lewis,Zimmerman,male,1521001105,Family Medicine,419772000,,,San Jose Family Clinic,San Jose,95014,M-Th 9am - 5pm
+arg-s-6,Dr.,Elizabeth,Lense,female,1521001106,Family Medicine,419772000,,,Sacramento Family Clinic,Sacramento,95815,M-Th 8am - 5pm
+arg-s-7,Dr.,Christine,Chapel,female,1521001107,Gastroenterology,394584008,,,San Francisco Gastroenterology,San Francisco,94132,"M, Th 10am - 3pm"
+arg-s-8,Dr.,Beverly,Crusher,female,1521001108,Pediatrics,394537008,419772000,Family Medicine,San Jose Family Clinic,San Jose,95014,M-Th 9am - 5pm
+arg-s-9,Dr.,Julian,Bashir,male,1521001109,Pediatrics,394537008,,,San Francisco Children's Clinic,San Francisco,94110,Tue-F 8am - 5pm

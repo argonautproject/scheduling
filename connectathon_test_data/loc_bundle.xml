@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- template for batch transaction bundle -->
+<Bundle xmlns="http://hl7.org/fhir">
+<!--  don't need an id right now
+  <id value="bundle-transaction"/>
+-->
+<!--    this bundle is a transaction     -->
+  <type value="transaction"/>
+  <entry>
+    <fullUrl value="http://sqlonfhir-stu3.azurewebsites.net/fhir/Location/arg-s-1"/>
+    <resource>
+     <Location>
+  <id value="arg-s-1"/>
+  <meta>
+    <profile
+             value="http://fhir.org/guides/argonaut-pd/StructureDefinition/argo-location"/>
+  </meta>
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    <p><b>Generated Narrative with Details</b></p>
+    <p><b>id</b>: arg-s-1</p>
+    <p><b>status</b>: active</p>
+    <p><b>name</b>: San Jose</p>
+    <p><b>telecom</b>: ph: (+1) 734-677-7777, fax: (+1) 734-677-6622, hq@HL7.org</p>
+    <p><b>address</b>: San Jose Dermatology Clinic, San Jose CA 94121</p>
+    </div>
+  </text>
+  <status value="active"/>
+  <name value="San Jose"/>
+  <telecom>
+    <system value="phone"/>
+    <value value="(+1) 734-677-7777"/>
+  </telecom>
+  <telecom>
+    <system value="fax"/>
+    <value value="(+1) 734-677-6622"/>
+  </telecom>
+  <telecom>
+    <system value="email"/>
+    <value value="hq@HL7.org"/>
+  </telecom>
+  <address>
+    <text value="San Jose Dermatology Clinic, San Jose CA 94121"/>
+    <line value="San Jose Dermatology Clinic"/>
+    <city value="location"/>
+    <state value="CA"/>
+    <postalCode value="94121"/>
+  </address>
+  <managingOrganization>
+    <reference value="Organization/arg-s-1"/>
+  </managingOrganization>
+</Location>
+
+     </resource>
+    <request>
+    <!--    POST to [base]/Location - that's a create - in a transaction, you don't specify the [base],
+         so [base]/Location becomes just 'Location':
+          For a Location Update, the method would be PUT, and the URL would be "Location/[id]". -->
+      <method value="PUT"/>
+      <url value="Location/arg-s-1"/>
+    </request>
+  </entry><entry>
+    <fullUrl value="http://sqlonfhir-stu3.azurewebsites.net/fhir/Location/arg-s-2"/>
+    <resource>
+     <Location>
+  <id value="arg-s-2"/>
+  <meta>
+    <profile
+             value="http://fhir.org/guides/argonaut-pd/StructureDefinition/argo-location"/>
+  </meta>
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    <p><b>Generated Narrative with Details</b></p>
+    <p><b>id</b>: arg-s-2</p>
+    <p><b>status</b>: active</p>
+    <p><b>name</b>: San Jose</p>
+    <p><b>telecom</b>: ph: (+1) 734-677-7777, fax: (+1) 734-677-6622, hq@HL7.org</p>
+    <p><b>address</b>: San Jose Dermatology Clinic, San Jose CA 94121</p>
+    </div>
+  </text>
+  <status value="active"/>
+  <name value="San Jose"/>
+  <telecom>
+    <system value="phone"/>
+    <value value="(+1) 734-677-7777"/>
+  </telecom>
+  <telecom>
+    <system value="fax"/>
+    <value value="(+1) 734-677-6622"/>
+  </telecom>
+  <telecom>
+    <system value="email"/>
+    <value value="hq@HL7.org"/>
+  </telecom>
+  <address>
+    <text value="San Jose Dermatology Clinic, San Jose CA 94121"/>
+    <line value="San Jose Dermatology Clinic"/>
+    <city value="location"/>
+    <state value="CA"/>
+    <postalCode value="94121"/>
+  </address>
+  <managingOrganization>
+    <reference value="Organization/arg-s-2"/>
+  </managingOrganization>
+</Location>
+
+     </resource>
+    <request>
+    <!--    POST to [base]/Location - that's a create - in a transaction, you don't specify the [base],
+         so [base]/Location becomes just 'Location':
+          For a Location Update, the method would be PUT, and the URL would be "Location/[id]". -->
+      <method value="PUT"/>
+      <url value="Location/arg-s-2"/>
+    </request>
+  </entry><entry>
+    <fullUrl value="http://sqlonfhir-stu3.azurewebsites.net/fhir/Location/arg-s-3"/>
+    <resource>
+     <Location>
+  <id value="arg-s-3"/>
+  <meta>
+    <profile
+             value="http://fhir.org/guides/argonaut-pd/StructureDefinition/argo-location"/>
+  </meta>
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    <p><b>Generated Narrative with Details</b></p>
+    <p><b>id</b>: arg-s-3</p>
+    <p><b>status</b>: active</p>
+    <p><b>name</b>: San Francisco</p>
+    <p><b>telecom</b>: ph: (+1) 734-677-7777, fax: (+1) 734-677-6622, hq@HL7.org</p>
+    <p><b>address</b>: San Francisco Family Care, San Francisco CA 94016</p>
+    </div>
+  </text>
+  <status value="active"/>
+  <name value="San Francisco"/>
+  <telecom>
+    <system value="phone"/>
+    <value value="(+1) 734-677-7777"/>
+  </telecom>
+  <telecom>
+    <system value="fax"/>
+    <value value="(+1) 734-677-6622"/>
+  </telecom>
+  <telecom>
+    <system value="email"/>
+    <value value="hq@HL7.org"/>
+  </telecom>
+  <address>
+    <text value="San Francisco Family Care, San Francisco CA 94016"/>
+    <line value="San Francisco Family Care"/>
+    <city value="location"/>
+    <state value="CA"/>
+    <postalCode value="94016"/>
+  </address>
+  <managingOrganization>
+    <reference value="Organization/arg-s-3"/>
+  </managingOrganization>
+</Location>
+
+     </resource>
+    <request>
+    <!--    POST to [base]/Location - that's a create - in a transaction, you don't specify the [base],
+         so [base]/Location becomes just 'Location':
+          For a Location Update, the method would be PUT, and the URL would be "Location/[id]". -->
+      <method value="PUT"/>
+      <url value="Location/arg-s-3"/>
+    </request>
+  </entry><entry>
+    <fullUrl value="http://sqlonfhir-stu3.azurewebsites.net/fhir/Location/arg-s-4"/>
+    <resource>
+     <Location>
+  <id value="arg-s-4"/>
+  <meta>
+    <profile
+             value="http://fhir.org/guides/argonaut-pd/StructureDefinition/argo-location"/>
+  </meta>
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    <p><b>Generated Narrative with Details</b></p>
+    <p><b>id</b>: arg-s-4</p>
+    <p><b>status</b>: active</p>
+    <p><b>name</b>: San Francisco</p>
+    <p><b>telecom</b>: ph: (+1) 734-677-7777, fax: (+1) 734-677-6622, hq@HL7.org</p>
+    <p><b>address</b>: San Francisco Family Care, San Francisco CA 94016</p>
+    </div>
+  </text>
+  <status value="active"/>
+  <name value="San Francisco"/>
+  <telecom>
+    <system value="phone"/>
+    <value value="(+1) 734-677-7777"/>
+  </telecom>
+  <telecom>
+    <system value="fax"/>
+    <value value="(+1) 734-677-6622"/>
+  </telecom>
+  <telecom>
+    <system value="email"/>
+    <value value="hq@HL7.org"/>
+  </telecom>
+  <address>
+    <text value="San Francisco Family Care, San Francisco CA 94016"/>
+    <line value="San Francisco Family Care"/>
+    <city value="location"/>
+    <state value="CA"/>
+    <postalCode value="94016"/>
+  </address>
+  <managingOrganization>
+    <reference value="Organization/arg-s-4"/>
+  </managingOrganization>
+</Location>
+
+     </resource>
+    <request>
+    <!--    POST to [base]/Location - that's a create - in a transaction, you don't specify the [base],
+         so [base]/Location becomes just 'Location':
+          For a Location Update, the method would be PUT, and the URL would be "Location/[id]". -->
+      <method value="PUT"/>
+      <url value="Location/arg-s-4"/>
+    </request>
+  </entry><entry>
+    <fullUrl value="http://sqlonfhir-stu3.azurewebsites.net/fhir/Location/arg-s-5"/>
+    <resource>
+     <Location>
+  <id value="arg-s-5"/>
+  <meta>
+    <profile
+             value="http://fhir.org/guides/argonaut-pd/StructureDefinition/argo-location"/>
+  </meta>
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    <p><b>Generated Narrative with Details</b></p>
+    <p><b>id</b>: arg-s-5</p>
+    <p><b>status</b>: active</p>
+    <p><b>name</b>: San Jose</p>
+    <p><b>telecom</b>: ph: (+1) 734-677-7777, fax: (+1) 734-677-6622, hq@HL7.org</p>
+    <p><b>address</b>: San Jose Family Clinic, San Jose CA 95014</p>
+    </div>
+  </text>
+  <status value="active"/>
+  <name value="San Jose"/>
+  <telecom>
+    <system value="phone"/>
+    <value value="(+1) 734-677-7777"/>
+  </telecom>
+  <telecom>
+    <system value="fax"/>
+    <value value="(+1) 734-677-6622"/>
+  </telecom>
+  <telecom>
+    <system value="email"/>
+    <value value="hq@HL7.org"/>
+  </telecom>
+  <address>
+    <text value="San Jose Family Clinic, San Jose CA 95014"/>
+    <line value="San Jose Family Clinic"/>
+    <city value="location"/>
+    <state value="CA"/>
+    <postalCode value="95014"/>
+  </address>
+  <managingOrganization>
+    <reference value="Organization/arg-s-5"/>
+  </managingOrganization>
+</Location>
+
+     </resource>
+    <request>
+    <!--    POST to [base]/Location - that's a create - in a transaction, you don't specify the [base],
+         so [base]/Location becomes just 'Location':
+          For a Location Update, the method would be PUT, and the URL would be "Location/[id]". -->
+      <method value="PUT"/>
+      <url value="Location/arg-s-5"/>
+    </request>
+  </entry><entry>
+    <fullUrl value="http://sqlonfhir-stu3.azurewebsites.net/fhir/Location/arg-s-6"/>
+    <resource>
+     <Location>
+  <id value="arg-s-6"/>
+  <meta>
+    <profile
+             value="http://fhir.org/guides/argonaut-pd/StructureDefinition/argo-location"/>
+  </meta>
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    <p><b>Generated Narrative with Details</b></p>
+    <p><b>id</b>: arg-s-6</p>
+    <p><b>status</b>: active</p>
+    <p><b>name</b>: Sacramento</p>
+    <p><b>telecom</b>: ph: (+1) 734-677-7777, fax: (+1) 734-677-6622, hq@HL7.org</p>
+    <p><b>address</b>: Sacramento Family Clinic, Sacramento CA 95815</p>
+    </div>
+  </text>
+  <status value="active"/>
+  <name value="Sacramento"/>
+  <telecom>
+    <system value="phone"/>
+    <value value="(+1) 734-677-7777"/>
+  </telecom>
+  <telecom>
+    <system value="fax"/>
+    <value value="(+1) 734-677-6622"/>
+  </telecom>
+  <telecom>
+    <system value="email"/>
+    <value value="hq@HL7.org"/>
+  </telecom>
+  <address>
+    <text value="Sacramento Family Clinic, Sacramento CA 95815"/>
+    <line value="Sacramento Family Clinic"/>
+    <city value="location"/>
+    <state value="CA"/>
+    <postalCode value="95815"/>
+  </address>
+  <managingOrganization>
+    <reference value="Organization/arg-s-6"/>
+  </managingOrganization>
+</Location>
+
+     </resource>
+    <request>
+    <!--    POST to [base]/Location - that's a create - in a transaction, you don't specify the [base],
+         so [base]/Location becomes just 'Location':
+          For a Location Update, the method would be PUT, and the URL would be "Location/[id]". -->
+      <method value="PUT"/>
+      <url value="Location/arg-s-6"/>
+    </request>
+  </entry><entry>
+    <fullUrl value="http://sqlonfhir-stu3.azurewebsites.net/fhir/Location/arg-s-7"/>
+    <resource>
+     <Location>
+  <id value="arg-s-7"/>
+  <meta>
+    <profile
+             value="http://fhir.org/guides/argonaut-pd/StructureDefinition/argo-location"/>
+  </meta>
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    <p><b>Generated Narrative with Details</b></p>
+    <p><b>id</b>: arg-s-7</p>
+    <p><b>status</b>: active</p>
+    <p><b>name</b>: San Francisco</p>
+    <p><b>telecom</b>: ph: (+1) 734-677-7777, fax: (+1) 734-677-6622, hq@HL7.org</p>
+    <p><b>address</b>: San Francisco Gastroenterology, San Francisco CA 94132</p>
+    </div>
+  </text>
+  <status value="active"/>
+  <name value="San Francisco"/>
+  <telecom>
+    <system value="phone"/>
+    <value value="(+1) 734-677-7777"/>
+  </telecom>
+  <telecom>
+    <system value="fax"/>
+    <value value="(+1) 734-677-6622"/>
+  </telecom>
+  <telecom>
+    <system value="email"/>
+    <value value="hq@HL7.org"/>
+  </telecom>
+  <address>
+    <text value="San Francisco Gastroenterology, San Francisco CA 94132"/>
+    <line value="San Francisco Gastroenterology"/>
+    <city value="location"/>
+    <state value="CA"/>
+    <postalCode value="94132"/>
+  </address>
+  <managingOrganization>
+    <reference value="Organization/arg-s-7"/>
+  </managingOrganization>
+</Location>
+
+     </resource>
+    <request>
+    <!--    POST to [base]/Location - that's a create - in a transaction, you don't specify the [base],
+         so [base]/Location becomes just 'Location':
+          For a Location Update, the method would be PUT, and the URL would be "Location/[id]". -->
+      <method value="PUT"/>
+      <url value="Location/arg-s-7"/>
+    </request>
+  </entry><entry>
+    <fullUrl value="http://sqlonfhir-stu3.azurewebsites.net/fhir/Location/arg-s-8"/>
+    <resource>
+     <Location>
+  <id value="arg-s-8"/>
+  <meta>
+    <profile
+             value="http://fhir.org/guides/argonaut-pd/StructureDefinition/argo-location"/>
+  </meta>
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    <p><b>Generated Narrative with Details</b></p>
+    <p><b>id</b>: arg-s-8</p>
+    <p><b>status</b>: active</p>
+    <p><b>name</b>: San Jose</p>
+    <p><b>telecom</b>: ph: (+1) 734-677-7777, fax: (+1) 734-677-6622, hq@HL7.org</p>
+    <p><b>address</b>: San Jose Family Clinic, San Jose CA 95014</p>
+    </div>
+  </text>
+  <status value="active"/>
+  <name value="San Jose"/>
+  <telecom>
+    <system value="phone"/>
+    <value value="(+1) 734-677-7777"/>
+  </telecom>
+  <telecom>
+    <system value="fax"/>
+    <value value="(+1) 734-677-6622"/>
+  </telecom>
+  <telecom>
+    <system value="email"/>
+    <value value="hq@HL7.org"/>
+  </telecom>
+  <address>
+    <text value="San Jose Family Clinic, San Jose CA 95014"/>
+    <line value="San Jose Family Clinic"/>
+    <city value="location"/>
+    <state value="CA"/>
+    <postalCode value="95014"/>
+  </address>
+  <managingOrganization>
+    <reference value="Organization/arg-s-8"/>
+  </managingOrganization>
+</Location>
+
+     </resource>
+    <request>
+    <!--    POST to [base]/Location - that's a create - in a transaction, you don't specify the [base],
+         so [base]/Location becomes just 'Location':
+          For a Location Update, the method would be PUT, and the URL would be "Location/[id]". -->
+      <method value="PUT"/>
+      <url value="Location/arg-s-8"/>
+    </request>
+  </entry><entry>
+    <fullUrl value="http://sqlonfhir-stu3.azurewebsites.net/fhir/Location/arg-s-9"/>
+    <resource>
+     <Location>
+  <id value="arg-s-9"/>
+  <meta>
+    <profile
+             value="http://fhir.org/guides/argonaut-pd/StructureDefinition/argo-location"/>
+  </meta>
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    <p><b>Generated Narrative with Details</b></p>
+    <p><b>id</b>: arg-s-9</p>
+    <p><b>status</b>: active</p>
+    <p><b>name</b>: San Francisco</p>
+    <p><b>telecom</b>: ph: (+1) 734-677-7777, fax: (+1) 734-677-6622, hq@HL7.org</p>
+    <p><b>address</b>: San Francisco Children's Clinic, San Francisco CA 94110</p>
+    </div>
+  </text>
+  <status value="active"/>
+  <name value="San Francisco"/>
+  <telecom>
+    <system value="phone"/>
+    <value value="(+1) 734-677-7777"/>
+  </telecom>
+  <telecom>
+    <system value="fax"/>
+    <value value="(+1) 734-677-6622"/>
+  </telecom>
+  <telecom>
+    <system value="email"/>
+    <value value="hq@HL7.org"/>
+  </telecom>
+  <address>
+    <text value="San Francisco Children's Clinic, San Francisco CA 94110"/>
+    <line value="San Francisco Children's Clinic"/>
+    <city value="location"/>
+    <state value="CA"/>
+    <postalCode value="94110"/>
+  </address>
+  <managingOrganization>
+    <reference value="Organization/arg-s-9"/>
+  </managingOrganization>
+</Location>
+
+     </resource>
+    <request>
+    <!--    POST to [base]/Location - that's a create - in a transaction, you don't specify the [base],
+         so [base]/Location becomes just 'Location':
+          For a Location Update, the method would be PUT, and the URL would be "Location/[id]". -->
+      <method value="PUT"/>
+      <url value="Location/arg-s-9"/>
+    </request>
+  </entry>
+</Bundle>
