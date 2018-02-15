@@ -1,0 +1,202 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/argonaut-scheduling/CodeSystem/status-reason> a fhir:CodeSystem;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "status-reason"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>Argonaut Appointment Event Reason Codes</h2><div><p>The reason for the current state of the Appointment.</p>\n</div><p>This code system http://fhir.org/guides/argonaut-scheduling/CodeSystem/status-reason defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">abnormal-results<a name=\"status-reason-abnormal-results\"> </a></td><td>Laboratory Test Results Out of Acceptable Range</td><td>An appointment for an patient was cancelled by the provider because the patient's laboratory test results were outside  of acceptable limits.</td></tr><tr><td style=\"white-space:nowrap\">cms-auth<a name=\"status-reason-cms-auth\"> </a></td><td>CMS Therapy Cap Service Not Authorized</td><td>An appointment for a patient was cancelled by the provider because the service not authorized by CMS.</td></tr><tr><td style=\"white-space:nowrap\">deceased<a name=\"status-reason-deceased\"> </a></td><td>Patient Deceased</td><td>An appointment for a patient was cancelled by the provider because the patient died.</td></tr><tr><td style=\"white-space:nowrap\">discharged<a name=\"status-reason-discharged\"> </a></td><td>Patient Discharged</td><td>An appointment for an inpatient was cancelled by the provider because the patient was discharged from the facility.</td></tr><tr><td style=\"white-space:nowrap\">disgruntled<a name=\"status-reason-disgruntled\"> </a></td><td>Patient Unhappy</td><td>An appointment for a patient was cancelled by the patient because the patient was unhappy with service or care.</td></tr><tr><td style=\"white-space:nowrap\">equip-unavail<a name=\"status-reason-equip-unavail\"> </a></td><td>Equipment Not Available</td><td>An appointment for a patient was cancelled by the provider because needed equipment was not available (e.g., in use, out for repairs).</td></tr><tr><td style=\"white-space:nowrap\">financial<a name=\"status-reason-financial\"> </a></td><td>Other Financial</td><td>An appointment for a patient was cancelled by the provider because of some unspecified financial reason ( e.g., no authorization.</td></tr><tr><td style=\"white-space:nowrap\">hospitalized<a name=\"status-reason-hospitalized\"> </a></td><td>Patient Hospitalized</td><td>An appointment for an outpatient was cancelled by the provider because the patient was hospitalized.</td></tr><tr><td style=\"white-space:nowrap\">improper-iv<a name=\"status-reason-improper-iv\"> </a></td><td>Improper IV Access/Infiltrate IV</td><td>An appointment for a patient was cancelled by the provider because the intravenous access was not satisfactory for the procedure.</td></tr><tr><td style=\"white-space:nowrap\">improved<a name=\"status-reason-improved\"> </a></td><td>Patient Feeling Better</td><td>An appointment for a patient was cancelled by the patient because the patients signs and or symptoms improved and the patient no longer wanted care.</td></tr><tr><td style=\"white-space:nowrap\">interpreter-unavail<a name=\"status-reason-interpreter-unavail\"> </a></td><td>Interpreter  Not Available</td><td>An appointment for a patient was cancelled by the provider because a  needed interpreter was not available.</td></tr><tr><td style=\"white-space:nowrap\">meeting<a name=\"status-reason-meeting\"> </a></td><td>Provider: Education or Meeting</td><td>??</td></tr><tr><td style=\"white-space:nowrap\">moved<a name=\"status-reason-moved\"> </a></td><td>Patient Moved</td><td>An appointment for a patient was cancelled by the patient because the patient moved out of the area.</td></tr><tr><td style=\"white-space:nowrap\">needs-tests<a name=\"status-reason-needs-tests\"> </a></td><td>Patient Needs Tests</td><td>An appointment for a patient was cancelled by the patient because the patient did not have the prequisite diagnostic tests performed.</td></tr><tr><td style=\"white-space:nowrap\">new-provider<a name=\"status-reason-new-provider\"> </a></td><td>Patient Changed Provider</td><td>An appointment for a patient was cancelled by the patient because the patient changed provider.</td></tr><tr><td style=\"white-space:nowrap\">no-show<a name=\"status-reason-no-show\"> </a></td><td>Patient No Show</td><td>An appointment for a patient was cancelled by the patient because the patient did not arrive for the appointment</td></tr><tr><td style=\"white-space:nowrap\">other<a name=\"status-reason-other\"> </a></td><td>Other</td><td>An appointment for a patient was cancelled by the provider because of some other reason not listed in this code list.</td></tr><tr><td style=\"white-space:nowrap\">patient-cancel<a name=\"status-reason-patient-cancel\"> </a></td><td>Patient Cancel</td><td>An appointment for a patient was cancelled by the patient</td></tr><tr><td style=\"white-space:nowrap\">personal<a name=\"status-reason-personal\"> </a></td><td>Provider Personal Reason?</td><td>??</td></tr><tr><td style=\"white-space:nowrap\">plan-changes<a name=\"status-reason-plan-changes\"> </a></td><td>Treatment Plan Changes</td><td>An appointment for an patient was cancelled by the provider because the patient's treatment plan changed</td></tr><tr><td style=\"white-space:nowrap\">pregnant<a name=\"status-reason-pregnant\"> </a></td><td>Patient Pregnant</td><td>An appointment for a patient was cancelled by the patient because the patient was pregnant.</td></tr><tr><td style=\"white-space:nowrap\">prep-incomplete<a name=\"status-reason-prep-incomplete\"> </a></td><td>Prep? Medications Incomplete</td><td>An appointment for a patient was cancelled by the provider because a  eeded preparatory insructions and/or medications not completed.</td></tr><tr><td style=\"white-space:nowrap\">prep-unavail<a name=\"status-reason-prep-unavail\"> </a></td><td>Prep? or Medication or Test Results Unavailable</td><td>An appointment for a patient was cancelled by the provider because a  needed diagnostic test or medications were not available.</td></tr><tr><td style=\"white-space:nowrap\">refused<a name=\"status-reason-refused\"> </a></td><td>Patient Refused Procedure</td><td>An appointment for a patient was cancelled by the patient because the patient decided they did not want the  service or procedure.</td></tr><tr><td style=\"white-space:nowrap\">room-unavial<a name=\"status-reason-room-unavial\"> </a></td><td>Room or Location Not Available.</td><td>An appointment for a patient was cancelled by the provider because the room or location was not available (e.g., in use, undergoing maintenance).</td></tr><tr><td style=\"white-space:nowrap\">scheduling-error<a name=\"status-reason-scheduling-error\"> </a></td><td>Scheduling Error</td><td>An appointment for a patient was cancelled because it was made in error by the provider</td></tr><tr><td style=\"white-space:nowrap\">staff-cancel<a name=\"status-reason-staff-cancel\"> </a></td><td>Staff Cancel</td><td>An appointment for a patient was cancelled by the provider</td></tr><tr><td style=\"white-space:nowrap\">terminated<a name=\"status-reason-terminated\"> </a></td><td>Patient Member Terminated</td><td>An appointment for a patient was cancelled by the patient because the patient's insurance membership was terminated.</td></tr><tr><td style=\"white-space:nowrap\">transportation<a name=\"status-reason-transportation\"> </a></td><td>Patient Lacked Transportation</td><td>An appointment for a patient was cancelled by the patient because the patients was not able to transport herself to the visit location.</td></tr><tr><td style=\"white-space:nowrap\">wait-list<a name=\"status-reason-wait-list\"> </a></td><td>Patient Scheduled from Wait List</td><td>??</td></tr><tr><td style=\"white-space:nowrap\">walk-in-error<a name=\"status-reason-walk-in-error\"> </a></td><td>Silent Walk In Error</td><td>??</td></tr><tr><td style=\"white-space:nowrap\">weather<a name=\"status-reason-weather\"> </a></td><td>Weather</td><td>An appointment for a patient was cancelled by the provider or patient because of inclement weather.</td></tr></table></div>"
+  ];
+  fhir:CodeSystem.url [ fhir:value "http://fhir.org/guides/argonaut-scheduling/CodeSystem/status-reason"];
+  fhir:CodeSystem.version [ fhir:value "0.0.0"];
+  fhir:CodeSystem.name [ fhir:value "Argonaut Appointment Event Reason Codes"];
+  fhir:CodeSystem.status [ fhir:value "draft"];
+  fhir:CodeSystem.experimental [ fhir:value "false"^^xsd:boolean];
+  fhir:CodeSystem.date [ fhir:value "2017-10-10T07:46:45-07:00"^^xsd:dateTime];
+  fhir:CodeSystem.description [ fhir:value "The reason for the current state of the Appointment."];
+  fhir:CodeSystem.jurisdiction [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ];
+       fhir:Coding.code [ fhir:value "US" ];
+       fhir:Coding.display [ fhir:value "United States of America" ]
+     ]
+  ];
+  fhir:CodeSystem.caseSensitive [ fhir:value "true"^^xsd:boolean];
+  fhir:CodeSystem.valueSet [ fhir:value "http://fhir.org/guides/argonaut-scheduling/ValueSet/status-reason"];
+  fhir:CodeSystem.content [ fhir:value "complete"];
+  fhir:CodeSystem.concept [
+     fhir:index 0;
+     fhir:CodeSystem.concept.code [ fhir:value "abnormal-results" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Laboratory Test Results Out of Acceptable Range" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "An appointment for an patient was cancelled by the provider because the patient's laboratory test results were outside  of acceptable limits." ]
+  ], [
+     fhir:index 1;
+     fhir:CodeSystem.concept.code [ fhir:value "cms-auth" ];
+     fhir:CodeSystem.concept.display [ fhir:value "CMS Therapy Cap Service Not Authorized" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "An appointment for a patient was cancelled by the provider because the service not authorized by CMS." ]
+  ], [
+     fhir:index 2;
+     fhir:CodeSystem.concept.code [ fhir:value "deceased" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Patient Deceased" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "An appointment for a patient was cancelled by the provider because the patient died." ]
+  ], [
+     fhir:index 3;
+     fhir:CodeSystem.concept.code [ fhir:value "discharged" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Patient Discharged" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "An appointment for an inpatient was cancelled by the provider because the patient was discharged from the facility." ]
+  ], [
+     fhir:index 4;
+     fhir:CodeSystem.concept.code [ fhir:value "disgruntled" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Patient Unhappy" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "An appointment for a patient was cancelled by the patient because the patient was unhappy with service or care." ]
+  ], [
+     fhir:index 5;
+     fhir:CodeSystem.concept.code [ fhir:value "equip-unavail" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Equipment Not Available" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "An appointment for a patient was cancelled by the provider because needed equipment was not available (e.g., in use, out for repairs)." ]
+  ], [
+     fhir:index 6;
+     fhir:CodeSystem.concept.code [ fhir:value "financial" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Other Financial" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "An appointment for a patient was cancelled by the provider because of some unspecified financial reason ( e.g., no authorization." ]
+  ], [
+     fhir:index 7;
+     fhir:CodeSystem.concept.code [ fhir:value "hospitalized" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Patient Hospitalized" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "An appointment for an outpatient was cancelled by the provider because the patient was hospitalized." ]
+  ], [
+     fhir:index 8;
+     fhir:CodeSystem.concept.code [ fhir:value "improper-iv" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Improper IV Access/Infiltrate IV" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "An appointment for a patient was cancelled by the provider because the intravenous access was not satisfactory for the procedure." ]
+  ], [
+     fhir:index 9;
+     fhir:CodeSystem.concept.code [ fhir:value "improved" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Patient Feeling Better" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "An appointment for a patient was cancelled by the patient because the patients signs and or symptoms improved and the patient no longer wanted care." ]
+  ], [
+     fhir:index 10;
+     fhir:CodeSystem.concept.code [ fhir:value "interpreter-unavail" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Interpreter  Not Available" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "An appointment for a patient was cancelled by the provider because a  needed interpreter was not available." ]
+  ], [
+     fhir:index 11;
+     fhir:CodeSystem.concept.code [ fhir:value "meeting" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Provider: Education or Meeting" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "??" ]
+  ], [
+     fhir:index 12;
+     fhir:CodeSystem.concept.code [ fhir:value "moved" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Patient Moved" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "An appointment for a patient was cancelled by the patient because the patient moved out of the area." ]
+  ], [
+     fhir:index 13;
+     fhir:CodeSystem.concept.code [ fhir:value "needs-tests" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Patient Needs Tests" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "An appointment for a patient was cancelled by the patient because the patient did not have the prequisite diagnostic tests performed." ]
+  ], [
+     fhir:index 14;
+     fhir:CodeSystem.concept.code [ fhir:value "new-provider" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Patient Changed Provider" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "An appointment for a patient was cancelled by the patient because the patient changed provider." ]
+  ], [
+     fhir:index 15;
+     fhir:CodeSystem.concept.code [ fhir:value "no-show" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Patient No Show" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "An appointment for a patient was cancelled by the patient because the patient did not arrive for the appointment" ]
+  ], [
+     fhir:index 16;
+     fhir:CodeSystem.concept.code [ fhir:value "other" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Other" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "An appointment for a patient was cancelled by the provider because of some other reason not listed in this code list." ]
+  ], [
+     fhir:index 17;
+     fhir:CodeSystem.concept.code [ fhir:value "patient-cancel" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Patient Cancel" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "An appointment for a patient was cancelled by the patient" ]
+  ], [
+     fhir:index 18;
+     fhir:CodeSystem.concept.code [ fhir:value "personal" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Provider Personal Reason?" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "??" ]
+  ], [
+     fhir:index 19;
+     fhir:CodeSystem.concept.code [ fhir:value "plan-changes" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Treatment Plan Changes" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "An appointment for an patient was cancelled by the provider because the patient's treatment plan changed" ]
+  ], [
+     fhir:index 20;
+     fhir:CodeSystem.concept.code [ fhir:value "pregnant" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Patient Pregnant" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "An appointment for a patient was cancelled by the patient because the patient was pregnant." ]
+  ], [
+     fhir:index 21;
+     fhir:CodeSystem.concept.code [ fhir:value "prep-incomplete" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Prep? Medications Incomplete" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "An appointment for a patient was cancelled by the provider because a  eeded preparatory insructions and/or medications not completed." ]
+  ], [
+     fhir:index 22;
+     fhir:CodeSystem.concept.code [ fhir:value "prep-unavail" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Prep? or Medication or Test Results Unavailable" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "An appointment for a patient was cancelled by the provider because a  needed diagnostic test or medications were not available." ]
+  ], [
+     fhir:index 23;
+     fhir:CodeSystem.concept.code [ fhir:value "refused" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Patient Refused Procedure" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "An appointment for a patient was cancelled by the patient because the patient decided they did not want the  service or procedure." ]
+  ], [
+     fhir:index 24;
+     fhir:CodeSystem.concept.code [ fhir:value "room-unavial" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Room or Location Not Available." ];
+     fhir:CodeSystem.concept.definition [ fhir:value "An appointment for a patient was cancelled by the provider because the room or location was not available (e.g., in use, undergoing maintenance)." ]
+  ], [
+     fhir:index 25;
+     fhir:CodeSystem.concept.code [ fhir:value "scheduling-error" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Scheduling Error" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "An appointment for a patient was cancelled because it was made in error by the provider" ]
+  ], [
+     fhir:index 26;
+     fhir:CodeSystem.concept.code [ fhir:value "staff-cancel" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Staff Cancel" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "An appointment for a patient was cancelled by the provider" ]
+  ], [
+     fhir:index 27;
+     fhir:CodeSystem.concept.code [ fhir:value "terminated" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Patient Member Terminated" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "An appointment for a patient was cancelled by the patient because the patient's insurance membership was terminated." ]
+  ], [
+     fhir:index 28;
+     fhir:CodeSystem.concept.code [ fhir:value "transportation" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Patient Lacked Transportation" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "An appointment for a patient was cancelled by the patient because the patients was not able to transport herself to the visit location." ]
+  ], [
+     fhir:index 29;
+     fhir:CodeSystem.concept.code [ fhir:value "wait-list" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Patient Scheduled from Wait List" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "??" ]
+  ], [
+     fhir:index 30;
+     fhir:CodeSystem.concept.code [ fhir:value "walk-in-error" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Silent Walk In Error" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "??" ]
+  ], [
+     fhir:index 31;
+     fhir:CodeSystem.concept.code [ fhir:value "weather" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Weather" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "An appointment for a patient was cancelled by the provider or patient because of inclement weather." ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.org/guides/argonaut-scheduling/CodeSystem/status-reason.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

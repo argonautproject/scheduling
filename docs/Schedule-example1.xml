@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Schedule xmlns="http://hl7.org/fhir">
+  <id value="example1"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: example1</p><p><b>actor</b>: <a href="Practitioner/1">Crusher, Beverly</a></p><p><b>planningHorizon</b>: Feb 13, 2018 --&gt; Feb 13, 2018</p></div>
+  </text>
+  <actor>
+    <reference value="Practitioner/1"/>
+    <display value="Crusher, Beverly"/>
+  </actor>
+  <planningHorizon>
+    <start value="2018-02-13"/>
+    <end value="2018-02-13"/>
+  </planningHorizon>
+</Schedule>

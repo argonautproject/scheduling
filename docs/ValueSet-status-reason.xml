@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="status-reason"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><h2>Argonaut Appointment Event Reason Codes</h2><div><p>The reason for the current state of the Appointment.</p>
+</div><p>This value set includes codes from the following code systems:</p><ul><li>Include all codes defined in <a href="CodeSystem-status-reason.html"><code>http://fhir.org/guides/argonaut-scheduling/CodeSystem/status-reason</code></a></li></ul></div>
+  </text>
+  <url value="http://fhir.org/guides/argonaut-scheduling/ValueSet/status-reason"/>
+  <version value="0.0.0"/>
+  <name value="Argonaut Appointment Event Reason Codes"/>
+  <status value="draft"/>
+  <date value="2017-10-10T00:40:10-07:00"/>
+  <description value="The reason for the current state of the Appointment."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+      <display value="United States of America"/>
+    </coding>
+  </jurisdiction>
+  <compose>
+    <include>
+      <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/status-reason"/>
+    </include>
+  </compose>
+</ValueSet>

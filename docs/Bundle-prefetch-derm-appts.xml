@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Bundle xmlns="http://hl7.org/fhir">
+  <id value="prefetch-derm-appts"/>
+<!--    this example bundle is a search set    -->
+  <meta>
+    <profile value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/avail-bundle"/>
+  </meta>
+  <type value="searchset"/>
+<!--    the total number of matches.   -->
+  <total value="3"/>
+<!--    now, the actual entries    -->
+  <entry>
+    <fullUrl value="https://example.com/base/Appointment/proposed-appt2b-1"/>
+    <resource>
+      <Appointment>
+        <id value="proposed-appt2b-1"/>
+        <meta>
+          <profile value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: proposed-appt2b-1</p><p><b>meta</b>: </p><p><b>status</b>: proposed</p><p><b>serviceType</b>: Office Call <span style="background: LightGoldenRodYellow">(Details : {SNOMED CT code '11429006' = '11429006', given as 'Consultation (procedure)'})</span></p><p><b>specialty</b>: Dermatology <span style="background: LightGoldenRodYellow">(Details : {SNOMED CT code '394582007' = '394582007', given as 'Dermatology'})</span></p><p><b>appointmentType</b>: Routine <span style="background: LightGoldenRodYellow">(Details : {http://hl7.org/fhir/v2/0276 code 'ROUTINE' = 'Routine appointment - default if not valued)</span></p><p><b>start</b>: Jul 17, 2017 12:45:00 AM</p><p><b>end</b>: Jul 17, 2017 1:00:00 AM</p><blockquote><p><b>participant</b></p><p><b>actor</b>: <a href="Practitioner-dr-y.html">Dr Y. Generated Summary: id: dr-y; 9941339108, 25456; Y </a></p><p><b>required</b>: required</p><p><b>status</b>: needs-action</p></blockquote><blockquote><p><b>participant</b></p><p><b>actor</b>: Napa Office</p><p><b>required</b>: required</p><p><b>status</b>: needs-action</p></blockquote><p><b>requestedPeriod</b>: Jul 15, 2017 8:00:00 PM --&gt; Aug 17, 2017 8:00:00 PM</p></div>
+        </text>
+        <status value="proposed"/>
+        <serviceType>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="11429006"/>
+            <display value="Consultation (procedure)"/>
+          </coding>
+          <text value="Office Call"/>
+        </serviceType>
+        <specialty>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="394582007"/>
+            <display value="Dermatology"/>
+          </coding>
+          <text value="Dermatology"/>
+        </specialty>
+        <appointmentType>
+          <coding>
+            <system value="http://hl7.org/fhir/v2/0276"/>
+            <code value="ROUTINE"/>
+          </coding>
+          <text value="Routine"/>
+        </appointmentType>
+        <start value="2017-07-17T00:45:00Z"/>
+        <end value="2017-07-17T01:00:00Z"/>
+        <participant>
+          <actor>
+            <reference value="Practitioner/dr-y"/>
+            <display value="Dr Y"/>
+          </actor>
+          <required value="required"/>
+          <status value="needs-action"/>
+        </participant>
+        <participant>
+          <actor>
+            <display value="Napa Office"/>
+          </actor>
+          <required value="required"/>
+          <status value="needs-action"/>
+        </participant>
+        <requestedPeriod>
+          <start value="2017-07-15T20:00:00Z"/>
+          <end value="2017-08-17T20:00:00Z"/>
+        </requestedPeriod>
+      </Appointment>
+    </resource>
+  <!--    and now optional search information    -->
+    <search>
+    <!--    this resource included as a match to the search criteria.
+         Servers are not required to populate this, but should, because
+         there are a few cases where it might be ambiguous whether a
+         resource is added because it's a match or an include            -->
+      <mode value="match"/>
+    </search>
+  </entry>
+  <entry>
+    <fullUrl value="https://example.com/base/Appointment/proposed-appt2b-2"/>
+    <resource>
+      <Appointment>
+        <id value="proposed-appt2b-2"/>
+        <meta>
+          <profile value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: proposed-appt2b-2</p><p><b>meta</b>: </p><p><b>status</b>: proposed</p><p><b>serviceType</b>: Office Call <span style="background: LightGoldenRodYellow">(Details : {SNOMED CT code '11429006' = '11429006', given as 'Consultation (procedure)'})</span></p><p><b>specialty</b>: Dermatology <span style="background: LightGoldenRodYellow">(Details : {SNOMED CT code '394582007' = '394582007', given as 'Dermatology'})</span></p><p><b>appointmentType</b>: Routine <span style="background: LightGoldenRodYellow">(Details : {http://hl7.org/fhir/v2/0276 code 'ROUTINE' = 'Routine appointment - default if not valued)</span></p><p><b>start</b>: Jul 17, 2017 1:00:00 AM</p><p><b>end</b>: Aug 17, 2017 1:15:00 AM</p><blockquote><p><b>participant</b></p><p><b>actor</b>: <a href="Practitioner-dr-y.html">Dr Y. Generated Summary: id: dr-y; 9941339108, 25456; Y </a></p><p><b>required</b>: required</p><p><b>status</b>: needs-action</p></blockquote><blockquote><p><b>participant</b></p><p><b>actor</b>: Napa Office</p><p><b>required</b>: required</p><p><b>status</b>: needs-action</p></blockquote><p><b>requestedPeriod</b>: Jul 15, 2017 8:00:00 PM --&gt; Jul 17, 2017 8:00:00 PM</p></div>
+        </text>
+        <status value="proposed"/>
+        <serviceType>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="11429006"/>
+            <display value="Consultation (procedure)"/>
+          </coding>
+          <text value="Office Call"/>
+        </serviceType>
+        <specialty>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="394582007"/>
+            <display value="Dermatology"/>
+          </coding>
+          <text value="Dermatology"/>
+        </specialty>
+        <appointmentType>
+          <coding>
+            <system value="http://hl7.org/fhir/v2/0276"/>
+            <code value="ROUTINE"/>
+          </coding>
+          <text value="Routine"/>
+        </appointmentType>
+        <start value="2017-07-17T01:00:00Z"/>
+        <end value="2017-08-17T01:15:00Z"/>
+        <participant>
+          <actor>
+            <reference value="Practitioner/dr-y"/>
+            <display value="Dr Y"/>
+          </actor>
+          <required value="required"/>
+          <status value="needs-action"/>
+        </participant>
+        <participant>
+          <actor>
+            <display value="Napa Office"/>
+          </actor>
+          <required value="required"/>
+          <status value="needs-action"/>
+        </participant>
+        <requestedPeriod>
+          <start value="2017-07-15T20:00:00Z"/>
+          <end value="2017-07-17T20:00:00Z"/>
+        </requestedPeriod>
+      </Appointment>
+    </resource>
+  <!--    and now optional search information    -->
+    <search>
+    <!--    this resource included as a match to the search criteria.
+         Servers are not required to populate this, but should, because
+         there are a few cases where it might be ambiguous whether a
+         resource is added because it's a match or an include            -->
+      <mode value="match"/>
+    </search>
+  </entry>
+  <entry>
+    <fullUrl value="https://example.com/base/Appointment/proposed-appt2b-3"/>
+    <resource>
+      <Appointment>
+        <id value="proposed-appt2b-3"/>
+        <meta>
+          <profile value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: proposed-appt2b-3</p><p><b>meta</b>: </p><p><b>status</b>: proposed</p><p><b>serviceType</b>: Office Call <span style="background: LightGoldenRodYellow">(Details : {SNOMED CT code '11429006' = '11429006', given as 'Consultation (procedure)'})</span></p><p><b>specialty</b>: Dermatology <span style="background: LightGoldenRodYellow">(Details : {SNOMED CT code '394582007' = '394582007', given as 'Dermatology'})</span></p><p><b>appointmentType</b>: Routine <span style="background: LightGoldenRodYellow">(Details : {http://hl7.org/fhir/v2/0276 code 'ROUTINE' = 'Routine appointment - default if not valued)</span></p><p><b>start</b>: Jul 17, 2017 2:00:00 AM</p><p><b>end</b>: Jul 17, 2017 2:15:00 AM</p><blockquote><p><b>participant</b></p><p><b>actor</b>: <a href="Practitioner-dr-y.html">Dr Y. Generated Summary: id: dr-y; 9941339108, 25456; Y </a></p><p><b>required</b>: required</p><p><b>status</b>: needs-action</p></blockquote><blockquote><p><b>participant</b></p><p><b>actor</b>: Napa Office</p><p><b>required</b>: required</p><p><b>status</b>: needs-action</p></blockquote><p><b>requestedPeriod</b>: Jul 15, 2017 8:00:00 PM --&gt; Aug 17, 2017 8:00:00 PM</p></div>
+        </text>
+        <status value="proposed"/>
+        <serviceType>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="11429006"/>
+            <display value="Consultation (procedure)"/>
+          </coding>
+          <text value="Office Call"/>
+        </serviceType>
+        <specialty>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="394582007"/>
+            <display value="Dermatology"/>
+          </coding>
+          <text value="Dermatology"/>
+        </specialty>
+        <appointmentType>
+          <coding>
+            <system value="http://hl7.org/fhir/v2/0276"/>
+            <code value="ROUTINE"/>
+          </coding>
+          <text value="Routine"/>
+        </appointmentType>
+        <start value="2017-07-17T02:00:00Z"/>
+        <end value="2017-07-17T02:15:00Z"/>
+        <participant>
+          <actor>
+            <reference value="Practitioner/dr-y"/>
+            <display value="Dr Y"/>
+          </actor>
+          <required value="required"/>
+          <status value="needs-action"/>
+        </participant>
+        <participant>
+          <actor>
+            <display value="Napa Office"/>
+          </actor>
+          <required value="required"/>
+          <status value="needs-action"/>
+        </participant>
+        <requestedPeriod>
+          <start value="2017-07-15T20:00:00Z"/>
+          <end value="2017-08-17T20:00:00Z"/>
+        </requestedPeriod>
+      </Appointment>
+    </resource>
+  <!--    and now optional search information    -->
+    <search>
+    <!--    this resource included as a match to the search criteria.
+         Servers are not required to populate this, but should, because
+         there are a few cases where it might be ambiguous whether a
+         resource is added because it's a match or an include            -->
+      <mode value="match"/>
+    </search>
+  </entry>
+  <entry>
+    <fullUrl value="https://example.com/base/OperationOutcome/example"/>
+    <resource>
+      <OperationOutcome>
+        <id value="example"/>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: example</p><h3>Issues</h3><table class="grid"><tr><td>-</td><td><b>Severity</b></td><td><b>Code</b></td><td><b>Details</b></td></tr><tr><td>*</td><td>information</td><td>informational</td><td>the appointment availability operation was successful <span style="background: LightGoldenRodYellow">(Details )</span></td></tr></table></div>
+        </text>
+        <issue>
+          <severity value="information"/>
+          <code value="informational"/>
+          <details>
+            <text value="the appointment availability operation was successful"/>
+          </details>
+        </issue>
+      </OperationOutcome>
+    </resource>
+  <!--    and now optional search information    -->
+    <search>
+    <!--    this resource included as an OperationOutcome that provides additional information about the processing of a search.  -->
+      <mode value="outcome"/>
+    </search>
+  </entry>
+</Bundle>

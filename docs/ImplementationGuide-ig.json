@@ -3,13 +3,13 @@
   "id": "ig",
   "text": {
     "status": "generated",
-    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>IG-Test3</h2><p>The official URL for this implementation guide is: </p><pre>http://www.fhir.org/guides/test3/ImplementationGuide/ig</pre></div>"
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>Argo-Scheduling</h2><p>The official URL for this implementation guide is: </p><pre>http://fhir.org/guides/argonaut-scheduling/ImplementationGuide/ig</pre></div>"
   },
-  "url": "http://www.fhir.org/guides/test3/ImplementationGuide/ig",
-  "name": "IG-Test3",
+  "url": "http://fhir.org/guides/argonaut-scheduling/ImplementationGuide/ig",
+  "name": "Argo-Scheduling",
   "status": "draft",
   "experimental": true,
-  "publisher": "Health eData Inc",
+  "publisher": "Argonaut Project",
   "package": [
     {
       "name": "base",
@@ -18,67 +18,470 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "Observation-example.html"
+              "valueUri": "Subscription-example.html"
             }
           ],
           "example": true,
           "sourceReference": {
-            "reference": "Observation/example"
+            "reference": "Subscription/example"
           }
         },
         {
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "StructureDefinition-extension-complex.html"
+              "valueUri": "Schedule-example1.html"
             }
           ],
+          "example": true,
           "sourceReference": {
-            "reference": "StructureDefinition/extension-complex"
+            "reference": "Schedule/example1"
           }
         },
         {
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "StructureDefinition-extension-blah.html"
+              "valueUri": "Appointment-proposed-appt3.html"
             }
           ],
+          "example": true,
           "sourceReference": {
-            "reference": "StructureDefinition/extension-blah"
+            "reference": "Appointment/proposed-appt3"
           }
         },
         {
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "StructureDefinition-template-basic.html"
+              "valueUri": "Appointment-proposed-appt2b-3.html"
             }
           ],
+          "example": true,
           "sourceReference": {
-            "reference": "StructureDefinition/template-basic"
+            "reference": "Appointment/proposed-appt2b-3"
           }
         },
         {
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "StructureMap-Foo.html"
+              "valueUri": "Appointment-proposed-appt2b-2.html"
             }
           ],
+          "example": true,
           "sourceReference": {
-            "reference": "StructureMap/Foo"
+            "reference": "Appointment/proposed-appt2b-2"
           }
         },
         {
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "StructureDefinition-ifr.html"
+              "valueUri": "Appointment-proposed-appt2b-1.html"
+            }
+          ],
+          "example": true,
+          "sourceReference": {
+            "reference": "Appointment/proposed-appt2b-1"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "Appointment-proposed-appt2.html"
+            }
+          ],
+          "example": true,
+          "sourceReference": {
+            "reference": "Appointment/proposed-appt2"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "Appointment-proposed-appt1a-3.html"
+            }
+          ],
+          "example": true,
+          "sourceReference": {
+            "reference": "Appointment/proposed-appt1a-3"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "Appointment-proposed-appt1a-2.html"
+            }
+          ],
+          "example": true,
+          "sourceReference": {
+            "reference": "Appointment/proposed-appt1a-2"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "Appointment-proposed-appt1a-1.html"
+            }
+          ],
+          "example": true,
+          "sourceReference": {
+            "reference": "Appointment/proposed-appt1a-1"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "Appointment-proposed-appt1.html"
+            }
+          ],
+          "example": true,
+          "sourceReference": {
+            "reference": "Appointment/proposed-appt1"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "Practitioner-dr-y.html"
+            }
+          ],
+          "example": true,
+          "sourceReference": {
+            "reference": "Practitioner/dr-y"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "Patient-argo-sch-patient-2.html"
+            }
+          ],
+          "example": true,
+          "sourceReference": {
+            "reference": "Patient/argo-sch-patient-2"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "Patient-argo-sch-patient-1.html"
+            }
+          ],
+          "example": true,
+          "sourceReference": {
+            "reference": "Patient/argo-sch-patient-1"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "OperationOutcome-example.html"
+            }
+          ],
+          "example": true,
+          "sourceReference": {
+            "reference": "OperationOutcome/example"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "Coverage-argo-sch-2.html"
+            }
+          ],
+          "example": true,
+          "sourceReference": {
+            "reference": "Coverage/argo-sch-2"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "Coverage-argo-sch-1.html"
+            }
+          ],
+          "example": true,
+          "sourceReference": {
+            "reference": "Coverage/argo-sch-1"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "Bundle-prefetch-derm-appts.html"
+            }
+          ],
+          "example": true,
+          "sourceReference": {
+            "reference": "Bundle/prefetch-derm-appts"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "Bundle-hal-dr-y-appts.html"
+            }
+          ],
+          "example": true,
+          "sourceReference": {
+            "reference": "Bundle/hal-dr-y-appts"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "StructureDefinition-extension-payload-profile.html"
             }
           ],
           "sourceReference": {
-            "reference": "StructureDefinition/ifr"
+            "reference": "StructureDefinition/extension-payload-profile"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "StructureDefinition-extension-event-focus.html"
+            }
+          ],
+          "sourceReference": {
+            "reference": "StructureDefinition/extension-event-focus"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "StructureDefinition-extension-trigger-event.html"
+            }
+          ],
+          "sourceReference": {
+            "reference": "StructureDefinition/extension-trigger-event"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "StructureDefinition-extension-status-reason.html"
+            }
+          ],
+          "sourceReference": {
+            "reference": "StructureDefinition/extension-status-reason"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "ValueSet-visit-type.html"
+            }
+          ],
+          "sourceReference": {
+            "reference": "ValueSet/visit-type"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "ValueSet-status-reason.html"
+            }
+          ],
+          "sourceReference": {
+            "reference": "ValueSet/status-reason"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "ValueSet-specialty.html"
+            }
+          ],
+          "sourceReference": {
+            "reference": "ValueSet/specialty"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "ValueSet-slot-bundle-type.html"
+            }
+          ],
+          "sourceReference": {
+            "reference": "ValueSet/slot-bundle-type"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "ValueSet-appt-type.html"
+            }
+          ],
+          "sourceReference": {
+            "reference": "ValueSet/appt-type"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "StructureDefinition-argo-sub-notif.html"
+            }
+          ],
+          "sourceReference": {
+            "reference": "StructureDefinition/argo-sub-notif"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "StructureDefinition-slot-bundle.html"
+            }
+          ],
+          "sourceReference": {
+            "reference": "StructureDefinition/slot-bundle"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "StructureDefinition-argo-sched-notif.html"
+            }
+          ],
+          "sourceReference": {
+            "reference": "StructureDefinition/argo-sched-notif"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "StructureDefinition-prefetch-slot.html"
+            }
+          ],
+          "sourceReference": {
+            "reference": "StructureDefinition/prefetch-slot"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "OperationDefinition-slot-prefetch.html"
+            }
+          ],
+          "sourceReference": {
+            "reference": "OperationDefinition/slot-prefetch"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "OperationDefinition-appointment-hold.html"
+            }
+          ],
+          "sourceReference": {
+            "reference": "OperationDefinition/appointment-hold"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "OperationDefinition-appointment-find.html"
+            }
+          ],
+          "sourceReference": {
+            "reference": "OperationDefinition/appointment-find"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "OperationDefinition-appointment-book.html"
+            }
+          ],
+          "sourceReference": {
+            "reference": "OperationDefinition/appointment-book"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "ConceptMap-visit-snomed-map.html"
+            }
+          ],
+          "sourceReference": {
+            "reference": "ConceptMap/visit-snomed-map"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "ConceptMap-visit-appt-map.html"
+            }
+          ],
+          "sourceReference": {
+            "reference": "ConceptMap/visit-appt-map"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "CodeSystem-visit-type.html"
+            }
+          ],
+          "sourceReference": {
+            "reference": "CodeSystem/visit-type"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "CodeSystem-status-reason.html"
+            }
+          ],
+          "sourceReference": {
+            "reference": "CodeSystem/status-reason"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "CodeSystem-appt-type.html"
+            }
+          ],
+          "sourceReference": {
+            "reference": "CodeSystem/appt-type"
           }
         },
         {
@@ -107,110 +510,200 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "StructureDefinition-bt.html"
+              "valueUri": "StructureDefinition-avail-bundle.html"
             }
           ],
           "sourceReference": {
-            "reference": "StructureDefinition/bt"
+            "reference": "StructureDefinition/avail-bundle"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "StructureDefinition-argo-coverage.html"
+            }
+          ],
+          "sourceReference": {
+            "reference": "StructureDefinition/argo-coverage"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "StructureDefinition-argo-appt.html"
+            }
+          ],
+          "sourceReference": {
+            "reference": "StructureDefinition/argo-appt"
           }
         }
       ]
     },
     {
-      "name": "/Users/ehaas/Documents/FHIR/IG-Template2/source/resources/bt-profile-spreadsheet",
+      "name": "Argonaut Appointment Profile",
       "resource": [
         {
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "StructureDefinition-bt.html"
+              "valueUri": "StructureDefinition-extension-status-reason.html"
             }
           ],
-          "name": "This is a draft Blood Type Profile",
+          "name": "Reason for current status",
           "sourceReference": {
-            "reference": "StructureDefinition/bt"
+            "reference": "StructureDefinition/extension-status-reason"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "StructureDefinition-argo-appt.html"
+            }
+          ],
+          "name": "Argonaut Appointment Profile",
+          "sourceReference": {
+            "reference": "StructureDefinition/argo-appt"
           }
         }
       ]
     },
     {
-      "name": "Identifer Free Reference Data Type",
+      "name": "Argonaut Coverage Profile",
       "resource": [
         {
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "StructureDefinition-ifr.html"
+              "valueUri": "StructureDefinition-argo-coverage.html"
             }
           ],
-          "name": "Identifer Free Reference Data Type",
+          "name": "Argonaut Coverage Profile",
           "sourceReference": {
-            "reference": "StructureDefinition/ifr"
+            "reference": "StructureDefinition/argo-coverage"
           }
         }
       ]
     },
     {
-      "name": "/Users/ehaas/Documents/FHIR/IG-Template2/source/resources/template-profile-spreadsheet",
+      "name": "Argonaut Appointment Bundle Profile",
       "resource": [
         {
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "ValueSet-blah-codes.html"
+              "valueUri": "StructureDefinition-avail-bundle.html"
             }
           ],
-          "name": "BlahCodes",
+          "name": "Argonaut Appointment Bundle Profile",
           "sourceReference": {
-            "reference": "ValueSet/blah-codes"
+            "reference": "StructureDefinition/avail-bundle"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Argonaut Prefetch Slot Profile",
+      "resource": [
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "StructureDefinition-prefetch-slot.html"
+            }
+          ],
+          "name": "Argonaut Prefetch Slot Profile",
+          "sourceReference": {
+            "reference": "StructureDefinition/prefetch-slot"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Argonaut Scheduling Schedule Notification Profile",
+      "resource": [
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "StructureDefinition-argo-sched-notif.html"
+            }
+          ],
+          "name": "Argonaut Scheduling Schedule Notification Profile",
+          "sourceReference": {
+            "reference": "StructureDefinition/argo-sched-notif"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Argonaut Slot Bundle Profile",
+      "resource": [
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "StructureDefinition-slot-bundle.html"
+            }
+          ],
+          "name": "Argonaut Slot Bundle Profile",
+          "sourceReference": {
+            "reference": "StructureDefinition/slot-bundle"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Argonaut Scheduling Subscription Profile",
+      "resource": [
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "StructureDefinition-extension-trigger-event.html"
+            }
+          ],
+          "name": "Subscription Trigger Event Extension",
+          "sourceReference": {
+            "reference": "StructureDefinition/extension-trigger-event"
           }
         },
         {
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "CodeSystem-blah-codes.html"
+              "valueUri": "StructureDefinition-extension-event-focus.html"
             }
           ],
-          "name": "BlahCodes",
+          "name": "Subscription  Event Focus Extension",
           "sourceReference": {
-            "reference": "CodeSystem/blah-codes"
+            "reference": "StructureDefinition/extension-event-focus"
           }
         },
         {
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "StructureDefinition-extension-blah.html"
+              "valueUri": "StructureDefinition-extension-payload-profile.html"
             }
           ],
-          "name": "Example Extension",
+          "name": "Subscription Payload Profile Extension",
           "sourceReference": {
-            "reference": "StructureDefinition/extension-blah"
+            "reference": "StructureDefinition/extension-payload-profile"
           }
         },
         {
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "StructureDefinition-extension-complex.html"
+              "valueUri": "StructureDefinition-argo-sub-notif.html"
             }
           ],
-          "name": "Complex Extension",
+          "name": "Argonaut Scheduling Subscription Profile",
           "sourceReference": {
-            "reference": "StructureDefinition/extension-complex"
-          }
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "StructureDefinition-template-basic.html"
-            }
-          ],
-          "name": "Profile template-basic",
-          "sourceReference": {
-            "reference": "StructureDefinition/template-basic"
+            "reference": "StructureDefinition/argo-sub-notif"
           }
         }
       ]
@@ -218,12 +711,12 @@
   ],
   "page": {
     "source": "index.md",
-    "title": "IG-Test3 Homepage",
+    "title": "Argo-Scheduling Homepage",
     "kind": "page",
     "page": [
       {
         "source": "_includes/toc.md",
-        "title": "IG-Test3 Table of Contents",
+        "title": "Argo-Scheduling Table of Contents",
         "kind": "page"
       }
     ]

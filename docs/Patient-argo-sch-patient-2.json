@@ -1,0 +1,104 @@
+{
+  "resourceType": "Patient",
+  "id": "argo-sch-patient-2",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
+    ]
+  },
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: argo-sch-patient-2</p><p><b>meta</b>: </p><p><b>identifier</b>: Medical Record Number = 1032704 (USUAL)</p><p><b>active</b>: true</p><p><b>name</b>: Daughter M LastName </p><p><b>telecom</b>: ph: 555-555-5555(HOME), myemail@example.com</p><p><b>gender</b>: female</p><p><b>birthDate</b>: Oct 21, 1996</p><p><b>address</b>: 123 Main St San Luis Obispo CA 98855 US </p></div>"
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+      "extension": [
+        {
+          "url": "ombCategory",
+          "valueCoding": {
+            "system": "urn:oid:2.16.840.1.113883.6.238",
+            "code": "2106-3",
+            "display": "White"
+          }
+        },
+        {
+          "url": "text",
+          "valueString": "White"
+        }
+      ]
+    },
+    {
+      "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+      "extension": [
+        {
+          "url": "ombCategory",
+          "valueCoding": {
+            "system": "urn:oid:2.16.840.1.113883.6.238",
+            "code": "2135-2",
+            "display": "Hispanic or Latino"
+          }
+        },
+        {
+          "url": "text",
+          "valueString": "Hispanic or Latino"
+        }
+      ]
+    },
+    {
+      "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex",
+      "valueCode": "F"
+    }
+  ],
+  "identifier": [
+    {
+      "use": "usual",
+      "type": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/v2/0203",
+            "code": "MR",
+            "display": "Medical Record Number"
+          }
+        ],
+        "text": "Medical Record Number"
+      },
+      "system": "http://hospital.smarthealthit.org",
+      "value": "1032704"
+    }
+  ],
+  "active": true,
+  "name": [
+    {
+      "family": "LastName",
+      "given": [
+        "Daughter",
+        "M"
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "555-555-5555",
+      "use": "home"
+    },
+    {
+      "system": "email",
+      "value": "myemail@example.com"
+    }
+  ],
+  "gender": "female",
+  "birthDate": "1996-10-21",
+  "address": [
+    {
+      "line": [
+        "123 Main St"
+      ],
+      "city": "San Luis Obispo",
+      "state": "CA",
+      "postalCode": "98855",
+      "country": "US"
+    }
+  ]
+}

@@ -1,0 +1,242 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/argonaut-scheduling/Bundle/hal-dr-y-appts> a fhir:Bundle;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "hal-dr-y-appts"];
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/avail-bundle";
+       fhir:index 0
+     ]
+  ];
+  fhir:Bundle.type [ fhir:value "searchset"];
+  fhir:Bundle.total [ fhir:value "3"^^xsd:nonNegativeInteger];
+  fhir:Bundle.entry [
+     fhir:index 0;
+     fhir:Bundle.entry.fullUrl [ fhir:value "https://example.com/base/Appointment/proposed-appt1a-1" ];
+     fhir:Bundle.entry.resource <https://example.com/base/Appointment/proposed-appt1a-1>;
+     fhir:Bundle.entry.search [
+       fhir:Bundle.entry.search.mode [ fhir:value "match" ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:Bundle.entry.fullUrl [ fhir:value "https://example.com/base/Appointment/proposed-appt1a-2" ];
+     fhir:Bundle.entry.resource <https://example.com/base/Appointment/proposed-appt1a-2>;
+     fhir:Bundle.entry.search [
+       fhir:Bundle.entry.search.mode [ fhir:value "match" ]
+     ]
+  ], [
+     fhir:index 2;
+     fhir:Bundle.entry.fullUrl [ fhir:value "https://example.com/base/Appointment/proposed-appt1a-3" ];
+     fhir:Bundle.entry.resource <https://example.com/base/Appointment/proposed-appt1a-3>;
+     fhir:Bundle.entry.search [
+       fhir:Bundle.entry.search.mode [ fhir:value "match" ]
+     ]
+  ], [
+     fhir:index 3;
+     fhir:Bundle.entry.fullUrl [ fhir:value "https://example.com/base/OperationOutcome/example" ];
+     fhir:Bundle.entry.resource <https://example.com/base/OperationOutcome/example>;
+     fhir:Bundle.entry.search [
+       fhir:Bundle.entry.search.mode [ fhir:value "outcome" ]
+     ]
+  ] .
+
+<https://example.com/base/Appointment/proposed-appt1a-1> a fhir:Appointment;
+  fhir:Resource.id [ fhir:value "proposed-appt1a-1"];
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt";
+       fhir:index 0
+     ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: proposed-appt1a-1</p><p><b>meta</b>: </p><p><b>status</b>: proposed</p><p><b>serviceType</b>: Office Call <span style=\"background: LightGoldenRodYellow\">(Details : {SNOMED CT code '11429006' = '11429006', given as 'Consultation (procedure)'})</span></p><p><b>appointmentType</b>: Routine <span style=\"background: LightGoldenRodYellow\">(Details : {http://hl7.org/fhir/v2/0276 code 'ROUTINE' = 'Routine appointment - default if not valued)</span></p><p><b>start</b>: Jul 17, 2017 12:45:00 AM</p><p><b>end</b>: Jul 17, 2017 1:00:00 AM</p><blockquote><p><b>participant</b></p><p><b>actor</b>: <a href=\"Practitioner-dr-y.html\">Dr Y. Generated Summary: id: dr-y; 9941339108, 25456; Y </a></p><p><b>required</b>: required</p><p><b>status</b>: needs-action</p></blockquote><blockquote><p><b>participant</b></p><p><b>actor</b>: Napa Office</p><p><b>required</b>: required</p><p><b>status</b>: needs-action</p></blockquote><p><b>requestedPeriod</b>: Jul 15, 2017 8:00:00 PM --&gt; Jul 17, 2017 8:00:00 PM</p></div>"
+  ];
+  fhir:Appointment.status [ fhir:value "proposed"];
+  fhir:Appointment.serviceType [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:11429006;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "11429006" ];
+       fhir:Coding.display [ fhir:value "Consultation (procedure)" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Office Call" ]
+  ];
+  fhir:Appointment.appointmentType [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://hl7.org/fhir/v2/0276" ];
+       fhir:Coding.code [ fhir:value "ROUTINE" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Routine" ]
+  ];
+  fhir:Appointment.start [ fhir:value "2017-07-17T00:45:00Z"^^xsd:dateTime];
+  fhir:Appointment.end [ fhir:value "2017-07-17T01:00:00Z"^^xsd:dateTime];
+  fhir:Appointment.participant [
+     fhir:index 0;
+     fhir:Appointment.participant.actor [
+       fhir:link <http://fhir.org/guides/argonaut-scheduling/Practitioner/dr-y>;
+       fhir:Reference.reference [ fhir:value "Practitioner/dr-y" ];
+       fhir:Reference.display [ fhir:value "Dr Y" ]
+     ];
+     fhir:Appointment.participant.required [ fhir:value "required" ];
+     fhir:Appointment.participant.status [ fhir:value "needs-action" ]
+  ], [
+     fhir:index 1;
+     fhir:Appointment.participant.actor [
+       fhir:Reference.display [ fhir:value "Napa Office" ]
+     ];
+     fhir:Appointment.participant.required [ fhir:value "required" ];
+     fhir:Appointment.participant.status [ fhir:value "needs-action" ]
+  ];
+  fhir:Appointment.requestedPeriod [
+     fhir:index 0;
+     fhir:Period.start [ fhir:value "2017-07-15T20:00:00Z"^^xsd:dateTime ];
+     fhir:Period.end [ fhir:value "2017-07-17T20:00:00Z"^^xsd:dateTime ]
+  ] .
+
+<https://example.com/base/Appointment/proposed-appt1a-2> a fhir:Appointment;
+  fhir:Resource.id [ fhir:value "proposed-appt1a-2"];
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt";
+       fhir:index 0
+     ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: proposed-appt1a-2</p><p><b>meta</b>: </p><p><b>status</b>: proposed</p><p><b>serviceType</b>: Office Call <span style=\"background: LightGoldenRodYellow\">(Details : {SNOMED CT code '11429006' = '11429006', given as 'Consultation (procedure)'})</span></p><p><b>appointmentType</b>: Routine <span style=\"background: LightGoldenRodYellow\">(Details : {http://hl7.org/fhir/v2/0276 code 'ROUTINE' = 'Routine appointment - default if not valued)</span></p><p><b>start</b>: Jul 17, 2017 1:00:00 AM</p><p><b>end</b>: Jul 17, 2017 1:15:00 AM</p><blockquote><p><b>participant</b></p><p><b>actor</b>: <a href=\"Practitioner-dr-y.html\">Dr Y. Generated Summary: id: dr-y; 9941339108, 25456; Y </a></p><p><b>required</b>: required</p><p><b>status</b>: needs-action</p></blockquote><blockquote><p><b>participant</b></p><p><b>actor</b>: Napa Office</p><p><b>required</b>: required</p><p><b>status</b>: needs-action</p></blockquote><p><b>requestedPeriod</b>: Jul 15, 2017 8:00:00 PM --&gt; Jul 17, 2017 8:00:00 PM</p></div>"
+  ];
+  fhir:Appointment.status [ fhir:value "proposed"];
+  fhir:Appointment.serviceType [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:11429006;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "11429006" ];
+       fhir:Coding.display [ fhir:value "Consultation (procedure)" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Office Call" ]
+  ];
+  fhir:Appointment.appointmentType [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://hl7.org/fhir/v2/0276" ];
+       fhir:Coding.code [ fhir:value "ROUTINE" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Routine" ]
+  ];
+  fhir:Appointment.start [ fhir:value "2017-07-17T01:00:00Z"^^xsd:dateTime];
+  fhir:Appointment.end [ fhir:value "2017-07-17T01:15:00Z"^^xsd:dateTime];
+  fhir:Appointment.participant [
+     fhir:index 0;
+     fhir:Appointment.participant.actor [
+       fhir:link <http://fhir.org/guides/argonaut-scheduling/Practitioner/dr-y>;
+       fhir:Reference.reference [ fhir:value "Practitioner/dr-y" ];
+       fhir:Reference.display [ fhir:value "Dr Y" ]
+     ];
+     fhir:Appointment.participant.required [ fhir:value "required" ];
+     fhir:Appointment.participant.status [ fhir:value "needs-action" ]
+  ], [
+     fhir:index 1;
+     fhir:Appointment.participant.actor [
+       fhir:Reference.display [ fhir:value "Napa Office" ]
+     ];
+     fhir:Appointment.participant.required [ fhir:value "required" ];
+     fhir:Appointment.participant.status [ fhir:value "needs-action" ]
+  ];
+  fhir:Appointment.requestedPeriod [
+     fhir:index 0;
+     fhir:Period.start [ fhir:value "2017-07-15T20:00:00Z"^^xsd:dateTime ];
+     fhir:Period.end [ fhir:value "2017-07-17T20:00:00Z"^^xsd:dateTime ]
+  ] .
+
+<https://example.com/base/Appointment/proposed-appt1a-3> a fhir:Appointment;
+  fhir:Resource.id [ fhir:value "proposed-appt1a-3"];
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt";
+       fhir:index 0
+     ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: proposed-appt1a-3</p><p><b>meta</b>: </p><p><b>status</b>: proposed</p><p><b>serviceType</b>: Office Call <span style=\"background: LightGoldenRodYellow\">(Details : {SNOMED CT code '11429006' = '11429006', given as 'Consultation (procedure)'})</span></p><p><b>appointmentType</b>: Routine <span style=\"background: LightGoldenRodYellow\">(Details : {http://hl7.org/fhir/v2/0276 code 'ROUTINE' = 'Routine appointment - default if not valued)</span></p><p><b>start</b>: Jul 17, 2017 2:00:00 AM</p><p><b>end</b>: Jul 17, 2017 2:15:00 AM</p><blockquote><p><b>participant</b></p><p><b>actor</b>: <a href=\"Practitioner-dr-y.html\">Dr Y. Generated Summary: id: dr-y; 9941339108, 25456; Y </a></p><p><b>required</b>: required</p><p><b>status</b>: needs-action</p></blockquote><blockquote><p><b>participant</b></p><p><b>actor</b>: Napa Office</p><p><b>required</b>: required</p><p><b>status</b>: needs-action</p></blockquote><p><b>requestedPeriod</b>: Jul 15, 2017 8:00:00 PM --&gt; Jul 17, 2017 8:00:00 PM</p></div>"
+  ];
+  fhir:Appointment.status [ fhir:value "proposed"];
+  fhir:Appointment.serviceType [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:11429006;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "11429006" ];
+       fhir:Coding.display [ fhir:value "Consultation (procedure)" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Office Call" ]
+  ];
+  fhir:Appointment.appointmentType [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://hl7.org/fhir/v2/0276" ];
+       fhir:Coding.code [ fhir:value "ROUTINE" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Routine" ]
+  ];
+  fhir:Appointment.start [ fhir:value "2017-07-17T02:00:00Z"^^xsd:dateTime];
+  fhir:Appointment.end [ fhir:value "2017-07-17T02:15:00Z"^^xsd:dateTime];
+  fhir:Appointment.participant [
+     fhir:index 0;
+     fhir:Appointment.participant.actor [
+       fhir:link <http://fhir.org/guides/argonaut-scheduling/Practitioner/dr-y>;
+       fhir:Reference.reference [ fhir:value "Practitioner/dr-y" ];
+       fhir:Reference.display [ fhir:value "Dr Y" ]
+     ];
+     fhir:Appointment.participant.required [ fhir:value "required" ];
+     fhir:Appointment.participant.status [ fhir:value "needs-action" ]
+  ], [
+     fhir:index 1;
+     fhir:Appointment.participant.actor [
+       fhir:Reference.display [ fhir:value "Napa Office" ]
+     ];
+     fhir:Appointment.participant.required [ fhir:value "required" ];
+     fhir:Appointment.participant.status [ fhir:value "needs-action" ]
+  ];
+  fhir:Appointment.requestedPeriod [
+     fhir:index 0;
+     fhir:Period.start [ fhir:value "2017-07-15T20:00:00Z"^^xsd:dateTime ];
+     fhir:Period.end [ fhir:value "2017-07-17T20:00:00Z"^^xsd:dateTime ]
+  ] .
+
+<https://example.com/base/OperationOutcome/example> a fhir:OperationOutcome;
+  fhir:Resource.id [ fhir:value "example"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: example</p><h3>Issues</h3><table class=\"grid\"><tr><td>-</td><td><b>Severity</b></td><td><b>Code</b></td><td><b>Details</b></td></tr><tr><td>*</td><td>information</td><td>informational</td><td>the appointment availability operation was successful <span style=\"background: LightGoldenRodYellow\">(Details )</span></td></tr></table></div>"
+  ];
+  fhir:OperationOutcome.issue [
+     fhir:index 0;
+     fhir:OperationOutcome.issue.severity [ fhir:value "information" ];
+     fhir:OperationOutcome.issue.code [ fhir:value "informational" ];
+     fhir:OperationOutcome.issue.details [
+       fhir:CodeableConcept.text [ fhir:value "the appointment availability operation was successful" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.org/guides/argonaut-scheduling/Bundle/hal-dr-y-appts.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

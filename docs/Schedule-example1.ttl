@@ -1,0 +1,32 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/argonaut-scheduling/Schedule/example1> a fhir:Schedule;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "example1"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: example1</p><p><b>actor</b>: <a href=\"Practitioner/1\">Crusher, Beverly</a></p><p><b>planningHorizon</b>: Feb 13, 2018 --&gt; Feb 13, 2018</p></div>"
+  ];
+  fhir:Schedule.actor [
+     fhir:index 0;
+     fhir:link <http://fhir.org/guides/argonaut-scheduling/Practitioner/1>;
+     fhir:Reference.reference [ fhir:value "Practitioner/1" ];
+     fhir:Reference.display [ fhir:value "Crusher, Beverly" ]
+  ];
+  fhir:Schedule.planningHorizon [
+     fhir:Period.start [ fhir:value "2018-02-13"^^xsd:date ];
+     fhir:Period.end [ fhir:value "2018-02-13"^^xsd:date ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.org/guides/argonaut-scheduling/Schedule/example1.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

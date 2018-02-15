@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="status-reason"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><h2>Argonaut Appointment Event Reason Codes</h2><div><p>The reason for the current state of the Appointment.</p>
+</div><p>This code system http://fhir.org/guides/argonaut-scheduling/CodeSystem/status-reason defines the following codes:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style="white-space:nowrap">abnormal-results<a name="status-reason-abnormal-results"> </a></td><td>Laboratory Test Results Out of Acceptable Range</td><td>An appointment for an patient was cancelled by the provider because the patient's laboratory test results were outside  of acceptable limits.</td></tr><tr><td style="white-space:nowrap">cms-auth<a name="status-reason-cms-auth"> </a></td><td>CMS Therapy Cap Service Not Authorized</td><td>An appointment for a patient was cancelled by the provider because the service not authorized by CMS.</td></tr><tr><td style="white-space:nowrap">deceased<a name="status-reason-deceased"> </a></td><td>Patient Deceased</td><td>An appointment for a patient was cancelled by the provider because the patient died.</td></tr><tr><td style="white-space:nowrap">discharged<a name="status-reason-discharged"> </a></td><td>Patient Discharged</td><td>An appointment for an inpatient was cancelled by the provider because the patient was discharged from the facility.</td></tr><tr><td style="white-space:nowrap">disgruntled<a name="status-reason-disgruntled"> </a></td><td>Patient Unhappy</td><td>An appointment for a patient was cancelled by the patient because the patient was unhappy with service or care.</td></tr><tr><td style="white-space:nowrap">equip-unavail<a name="status-reason-equip-unavail"> </a></td><td>Equipment Not Available</td><td>An appointment for a patient was cancelled by the provider because needed equipment was not available (e.g., in use, out for repairs).</td></tr><tr><td style="white-space:nowrap">financial<a name="status-reason-financial"> </a></td><td>Other Financial</td><td>An appointment for a patient was cancelled by the provider because of some unspecified financial reason ( e.g., no authorization.</td></tr><tr><td style="white-space:nowrap">hospitalized<a name="status-reason-hospitalized"> </a></td><td>Patient Hospitalized</td><td>An appointment for an outpatient was cancelled by the provider because the patient was hospitalized.</td></tr><tr><td style="white-space:nowrap">improper-iv<a name="status-reason-improper-iv"> </a></td><td>Improper IV Access/Infiltrate IV</td><td>An appointment for a patient was cancelled by the provider because the intravenous access was not satisfactory for the procedure.</td></tr><tr><td style="white-space:nowrap">improved<a name="status-reason-improved"> </a></td><td>Patient Feeling Better</td><td>An appointment for a patient was cancelled by the patient because the patients signs and or symptoms improved and the patient no longer wanted care.</td></tr><tr><td style="white-space:nowrap">interpreter-unavail<a name="status-reason-interpreter-unavail"> </a></td><td>Interpreter  Not Available</td><td>An appointment for a patient was cancelled by the provider because a  needed interpreter was not available.</td></tr><tr><td style="white-space:nowrap">meeting<a name="status-reason-meeting"> </a></td><td>Provider: Education or Meeting</td><td>??</td></tr><tr><td style="white-space:nowrap">moved<a name="status-reason-moved"> </a></td><td>Patient Moved</td><td>An appointment for a patient was cancelled by the patient because the patient moved out of the area.</td></tr><tr><td style="white-space:nowrap">needs-tests<a name="status-reason-needs-tests"> </a></td><td>Patient Needs Tests</td><td>An appointment for a patient was cancelled by the patient because the patient did not have the prequisite diagnostic tests performed.</td></tr><tr><td style="white-space:nowrap">new-provider<a name="status-reason-new-provider"> </a></td><td>Patient Changed Provider</td><td>An appointment for a patient was cancelled by the patient because the patient changed provider.</td></tr><tr><td style="white-space:nowrap">no-show<a name="status-reason-no-show"> </a></td><td>Patient No Show</td><td>An appointment for a patient was cancelled by the patient because the patient did not arrive for the appointment</td></tr><tr><td style="white-space:nowrap">other<a name="status-reason-other"> </a></td><td>Other</td><td>An appointment for a patient was cancelled by the provider because of some other reason not listed in this code list.</td></tr><tr><td style="white-space:nowrap">patient-cancel<a name="status-reason-patient-cancel"> </a></td><td>Patient Cancel</td><td>An appointment for a patient was cancelled by the patient</td></tr><tr><td style="white-space:nowrap">personal<a name="status-reason-personal"> </a></td><td>Provider Personal Reason?</td><td>??</td></tr><tr><td style="white-space:nowrap">plan-changes<a name="status-reason-plan-changes"> </a></td><td>Treatment Plan Changes</td><td>An appointment for an patient was cancelled by the provider because the patient's treatment plan changed</td></tr><tr><td style="white-space:nowrap">pregnant<a name="status-reason-pregnant"> </a></td><td>Patient Pregnant</td><td>An appointment for a patient was cancelled by the patient because the patient was pregnant.</td></tr><tr><td style="white-space:nowrap">prep-incomplete<a name="status-reason-prep-incomplete"> </a></td><td>Prep? Medications Incomplete</td><td>An appointment for a patient was cancelled by the provider because a  eeded preparatory insructions and/or medications not completed.</td></tr><tr><td style="white-space:nowrap">prep-unavail<a name="status-reason-prep-unavail"> </a></td><td>Prep? or Medication or Test Results Unavailable</td><td>An appointment for a patient was cancelled by the provider because a  needed diagnostic test or medications were not available.</td></tr><tr><td style="white-space:nowrap">refused<a name="status-reason-refused"> </a></td><td>Patient Refused Procedure</td><td>An appointment for a patient was cancelled by the patient because the patient decided they did not want the  service or procedure.</td></tr><tr><td style="white-space:nowrap">room-unavial<a name="status-reason-room-unavial"> </a></td><td>Room or Location Not Available.</td><td>An appointment for a patient was cancelled by the provider because the room or location was not available (e.g., in use, undergoing maintenance).</td></tr><tr><td style="white-space:nowrap">scheduling-error<a name="status-reason-scheduling-error"> </a></td><td>Scheduling Error</td><td>An appointment for a patient was cancelled because it was made in error by the provider</td></tr><tr><td style="white-space:nowrap">staff-cancel<a name="status-reason-staff-cancel"> </a></td><td>Staff Cancel</td><td>An appointment for a patient was cancelled by the provider</td></tr><tr><td style="white-space:nowrap">terminated<a name="status-reason-terminated"> </a></td><td>Patient Member Terminated</td><td>An appointment for a patient was cancelled by the patient because the patient's insurance membership was terminated.</td></tr><tr><td style="white-space:nowrap">transportation<a name="status-reason-transportation"> </a></td><td>Patient Lacked Transportation</td><td>An appointment for a patient was cancelled by the patient because the patients was not able to transport herself to the visit location.</td></tr><tr><td style="white-space:nowrap">wait-list<a name="status-reason-wait-list"> </a></td><td>Patient Scheduled from Wait List</td><td>??</td></tr><tr><td style="white-space:nowrap">walk-in-error<a name="status-reason-walk-in-error"> </a></td><td>Silent Walk In Error</td><td>??</td></tr><tr><td style="white-space:nowrap">weather<a name="status-reason-weather"> </a></td><td>Weather</td><td>An appointment for a patient was cancelled by the provider or patient because of inclement weather.</td></tr></table></div>
+  </text>
+  <url value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/status-reason"/>
+  <version value="0.0.0"/>
+  <name value="Argonaut Appointment Event Reason Codes"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <date value="2017-10-10T07:46:45-07:00"/>
+  <description value="The reason for the current state of the Appointment."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+      <display value="United States of America"/>
+    </coding>
+  </jurisdiction>
+  <caseSensitive value="true"/>
+  <valueSet value="http://fhir.org/guides/argonaut-scheduling/ValueSet/status-reason"/>
+  <content value="complete"/>
+  <concept>
+    <code value="abnormal-results"/>
+    <display value="Laboratory Test Results Out of Acceptable Range"/>
+    <definition value="An appointment for an patient was cancelled by the provider because the patient&#39;s laboratory test results were outside  of acceptable limits."/>
+  </concept>
+  <concept>
+    <code value="cms-auth"/>
+    <display value="CMS Therapy Cap Service Not Authorized"/>
+    <definition value="An appointment for a patient was cancelled by the provider because the service not authorized by CMS."/>
+  </concept>
+  <concept>
+    <code value="deceased"/>
+    <display value="Patient Deceased"/>
+    <definition value="An appointment for a patient was cancelled by the provider because the patient died."/>
+  </concept>
+  <concept>
+    <code value="discharged"/>
+    <display value="Patient Discharged"/>
+    <definition value="An appointment for an inpatient was cancelled by the provider because the patient was discharged from the facility."/>
+  </concept>
+  <concept>
+    <code value="disgruntled"/>
+    <display value="Patient Unhappy"/>
+    <definition value="An appointment for a patient was cancelled by the patient because the patient was unhappy with service or care."/>
+  </concept>
+  <concept>
+    <code value="equip-unavail"/>
+    <display value="Equipment Not Available"/>
+    <definition value="An appointment for a patient was cancelled by the provider because needed equipment was not available (e.g., in use, out for repairs)."/>
+  </concept>
+  <concept>
+    <code value="financial"/>
+    <display value="Other Financial"/>
+    <definition value="An appointment for a patient was cancelled by the provider because of some unspecified financial reason ( e.g., no authorization."/>
+  </concept>
+  <concept>
+    <code value="hospitalized"/>
+    <display value="Patient Hospitalized"/>
+    <definition value="An appointment for an outpatient was cancelled by the provider because the patient was hospitalized."/>
+  </concept>
+  <concept>
+    <code value="improper-iv"/>
+    <display value="Improper IV Access/Infiltrate IV"/>
+    <definition value="An appointment for a patient was cancelled by the provider because the intravenous access was not satisfactory for the procedure."/>
+  </concept>
+  <concept>
+    <code value="improved"/>
+    <display value="Patient Feeling Better"/>
+    <definition value="An appointment for a patient was cancelled by the patient because the patients signs and or symptoms improved and the patient no longer wanted care."/>
+  </concept>
+  <concept>
+    <code value="interpreter-unavail"/>
+    <display value="Interpreter  Not Available"/>
+    <definition value="An appointment for a patient was cancelled by the provider because a  needed interpreter was not available."/>
+  </concept>
+  <concept>
+    <code value="meeting"/>
+    <display value="Provider: Education or Meeting"/>
+    <definition value="??"/>
+  </concept>
+  <concept>
+    <code value="moved"/>
+    <display value="Patient Moved"/>
+    <definition value="An appointment for a patient was cancelled by the patient because the patient moved out of the area."/>
+  </concept>
+  <concept>
+    <code value="needs-tests"/>
+    <display value="Patient Needs Tests"/>
+    <definition value="An appointment for a patient was cancelled by the patient because the patient did not have the prequisite diagnostic tests performed."/>
+  </concept>
+  <concept>
+    <code value="new-provider"/>
+    <display value="Patient Changed Provider"/>
+    <definition value="An appointment for a patient was cancelled by the patient because the patient changed provider."/>
+  </concept>
+  <concept>
+    <code value="no-show"/>
+    <display value="Patient No Show"/>
+    <definition value="An appointment for a patient was cancelled by the patient because the patient did not arrive for the appointment"/>
+  </concept>
+  <concept>
+    <code value="other"/>
+    <display value="Other"/>
+    <definition value="An appointment for a patient was cancelled by the provider because of some other reason not listed in this code list."/>
+  </concept>
+  <concept>
+    <code value="patient-cancel"/>
+    <display value="Patient Cancel"/>
+    <definition value="An appointment for a patient was cancelled by the patient"/>
+  </concept>
+  <concept>
+    <code value="personal"/>
+    <display value="Provider Personal Reason?"/>
+    <definition value="??"/>
+  </concept>
+  <concept>
+    <code value="plan-changes"/>
+    <display value="Treatment Plan Changes"/>
+    <definition value="An appointment for an patient was cancelled by the provider because the patient&#39;s treatment plan changed"/>
+  </concept>
+  <concept>
+    <code value="pregnant"/>
+    <display value="Patient Pregnant"/>
+    <definition value="An appointment for a patient was cancelled by the patient because the patient was pregnant."/>
+  </concept>
+  <concept>
+    <code value="prep-incomplete"/>
+    <display value="Prep? Medications Incomplete"/>
+    <definition value="An appointment for a patient was cancelled by the provider because a  eeded preparatory insructions and/or medications not completed."/>
+  </concept>
+  <concept>
+    <code value="prep-unavail"/>
+    <display value="Prep? or Medication or Test Results Unavailable"/>
+    <definition value="An appointment for a patient was cancelled by the provider because a  needed diagnostic test or medications were not available."/>
+  </concept>
+  <concept>
+    <code value="refused"/>
+    <display value="Patient Refused Procedure"/>
+    <definition value="An appointment for a patient was cancelled by the patient because the patient decided they did not want the  service or procedure."/>
+  </concept>
+  <concept>
+    <code value="room-unavial"/>
+    <display value="Room or Location Not Available."/>
+    <definition value="An appointment for a patient was cancelled by the provider because the room or location was not available (e.g., in use, undergoing maintenance)."/>
+  </concept>
+  <concept>
+    <code value="scheduling-error"/>
+    <display value="Scheduling Error"/>
+    <definition value="An appointment for a patient was cancelled because it was made in error by the provider"/>
+  </concept>
+  <concept>
+    <code value="staff-cancel"/>
+    <display value="Staff Cancel"/>
+    <definition value="An appointment for a patient was cancelled by the provider"/>
+  </concept>
+  <concept>
+    <code value="terminated"/>
+    <display value="Patient Member Terminated"/>
+    <definition value="An appointment for a patient was cancelled by the patient because the patient&#39;s insurance membership was terminated."/>
+  </concept>
+  <concept>
+    <code value="transportation"/>
+    <display value="Patient Lacked Transportation"/>
+    <definition value="An appointment for a patient was cancelled by the patient because the patients was not able to transport herself to the visit location."/>
+  </concept>
+  <concept>
+    <code value="wait-list"/>
+    <display value="Patient Scheduled from Wait List"/>
+    <definition value="??"/>
+  </concept>
+  <concept>
+    <code value="walk-in-error"/>
+    <display value="Silent Walk In Error"/>
+    <definition value="??"/>
+  </concept>
+  <concept>
+    <code value="weather"/>
+    <display value="Weather"/>
+    <definition value="An appointment for a patient was cancelled by the provider or patient because of inclement weather."/>
+  </concept>
+</CodeSystem>

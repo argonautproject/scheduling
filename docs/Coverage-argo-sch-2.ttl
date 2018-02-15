@@ -1,0 +1,110 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/argonaut-scheduling/Coverage/argo-sch-2> a fhir:Coverage;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "argo-sch-2"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: argo-sch-2</p><p><b>contained</b>: </p><p><b>identifier</b>: DZW9200000001</p><p><b>status</b>: active</p><p><b>type</b>: health insurance plan policy <span style=\"background: LightGoldenRodYellow\">(Details : {http://hl7.org/fhir/v3/ActCode code 'HIP' = 'health insurance plan policy', given as 'health insurance plan policy'})</span></p><p><b>subscriber</b>: First M LastName Jr. Generated Summary: unknown resource contained</p><p><b>subscriberId</b>: DZW9200000000</p><p><b>relationship</b>: Daughter <span style=\"background: LightGoldenRodYellow\">(Details : {http://hl7.org/fhir/policyholder-relationship code 'child' = 'Child', given as 'Child'})</span></p><p><b>period</b>: Jan 1, 2016 --&gt; (ongoing)</p><p><b>payor</b>: Anthem Blue Cross of California</p><h3>Groupings</h3><table class=\"grid\"><tr><td>-</td><td><b>Plan</b></td><td><b>PlanDisplay</b></td></tr><tr><td>*</td><td>1FZQ</td><td>Anthem Bronze 60 D HSA PPO</td></tr></table></div>"
+  ];
+  fhir:DomainResource.contained [
+     a fhir:RelatedPerson;
+     fhir:index 0;
+     fhir:Resource.id [ fhir:value "argo-sch-1" ];
+     fhir:RelatedPerson.active [ fhir:value "true"^^xsd:boolean ];
+     fhir:RelatedPerson.patient [
+       fhir:link <http://fhir.org/guides/argonaut-scheduling/Patient/argo-sch-2>;
+       fhir:Reference.reference [ fhir:value "Patient/argo-sch-2" ];
+       fhir:Reference.display [ fhir:value "Daughter M LastName" ]
+     ];
+     fhir:RelatedPerson.name [
+       fhir:index 0;
+       fhir:HumanName.family [ fhir:value "LastName" ];
+       fhir:HumanName.given [
+         fhir:value "First";
+         fhir:index 0
+       ], [
+         fhir:value "M";
+         fhir:index 1
+       ];
+       fhir:HumanName.suffix [
+         fhir:value "Jr";
+         fhir:index 0
+       ]
+     ];
+     fhir:RelatedPerson.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "phone" ];
+       fhir:ContactPoint.value [ fhir:value "555-555-5555" ];
+       fhir:ContactPoint.use [ fhir:value "home" ]
+     ], [
+       fhir:index 1;
+       fhir:ContactPoint.system [ fhir:value "email" ];
+       fhir:ContactPoint.value [ fhir:value "myemail@example.com" ]
+     ];
+     fhir:RelatedPerson.gender [ fhir:value "male" ];
+     fhir:RelatedPerson.birthDate [ fhir:value "1964-06-19"^^xsd:date ];
+     fhir:RelatedPerson.address [
+       fhir:index 0;
+       fhir:Address.line [
+         fhir:value "123 Main St";
+         fhir:index 0
+       ];
+       fhir:Address.city [ fhir:value "Santa Rosa" ];
+       fhir:Address.state [ fhir:value "CA" ];
+       fhir:Address.postalCode [ fhir:value "95555" ];
+       fhir:Address.country [ fhir:value "US" ]
+     ]
+  ];
+  fhir:Coverage.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "https://www.anthem.com/ca" ];
+     fhir:Identifier.value [ fhir:value "DZW9200000001" ]
+  ];
+  fhir:Coverage.status [ fhir:value "active"];
+  fhir:Coverage.type [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://hl7.org/fhir/v3/ActCode" ];
+       fhir:Coding.code [ fhir:value "HIP" ];
+       fhir:Coding.display [ fhir:value "health insurance plan policy" ]
+     ]
+  ];
+  fhir:Coverage.subscriber [
+     fhir:Reference.reference [ fhir:value "#argo-sch-1" ];
+     fhir:Reference.display [ fhir:value "First M LastName Jr" ]
+  ];
+  fhir:Coverage.subscriberId [ fhir:value "DZW9200000000"];
+  fhir:Coverage.relationship [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://hl7.org/fhir/policyholder-relationship" ];
+       fhir:Coding.code [ fhir:value "child" ];
+       fhir:Coding.display [ fhir:value "Child" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Daughter" ]
+  ];
+  fhir:Coverage.period [
+     fhir:Period.start [ fhir:value "2016-01-01"^^xsd:date ]
+  ];
+  fhir:Coverage.payor [
+     fhir:index 0;
+     fhir:Reference.display [ fhir:value "Anthem Blue Cross of California" ]
+  ];
+  fhir:Coverage.grouping [
+     fhir:Coverage.grouping.plan [ fhir:value "1FZQ" ];
+     fhir:Coverage.grouping.planDisplay [ fhir:value "Anthem Bronze 60 D HSA PPO" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.org/guides/argonaut-scheduling/Coverage/argo-sch-2.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+
