@@ -1,0 +1,58 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "blah-codes",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>BlahCodes</h2><div><p>A bunch of example codes</p>\n</div><p>This code system http://www.fhir.org/guides/test3/CodeSystem/blah-codes defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">blah<a name=\"blah-codes-blah\"> </a></td><td>Blah</td><td>example code 1</td></tr><tr><td style=\"white-space:nowrap\">foo<a name=\"blah-codes-foo\"> </a></td><td>Foo</td><td>example code 2</td></tr><tr><td style=\"white-space:nowrap\">bar<a name=\"blah-codes-bar\"> </a></td><td>Bar</td><td>example code 3</td></tr></table></div>"
+  },
+  "url": "http://www.fhir.org/guides/test3/CodeSystem/blah-codes",
+  "version": "0.0.0",
+  "name": "BlahCodes",
+  "status": "draft",
+  "experimental": false,
+  "date": "2018-02-14T23:20:36-08:00",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url"
+        },
+        {
+          "system": "email"
+        }
+      ]
+    }
+  ],
+  "description": "A bunch of example codes",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "urn:iso:std:iso:3166",
+          "code": "US",
+          "display": "United States of America"
+        }
+      ]
+    }
+  ],
+  "caseSensitive": true,
+  "valueSet": "http://www.fhir.org/guides/test3/ValueSet/blah-codes",
+  "content": "complete",
+  "concept": [
+    {
+      "code": "blah",
+      "display": "Blah",
+      "definition": "example code 1"
+    },
+    {
+      "code": "foo",
+      "display": "Foo",
+      "definition": "example code 2"
+    },
+    {
+      "code": "bar",
+      "display": "Bar",
+      "definition": "example code 3"
+    }
+  ]
+}

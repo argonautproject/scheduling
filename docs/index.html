@@ -5,11 +5,11 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
    <meta charset="UTF-8"/>
-  <title>Argo-Scheduling</title>
+  <title>IG-Test3</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Argo-Scheduling Implemenation Guide" />
-<meta name="author" content="Argonaut Project"/>
+<meta name="description" content="IG-Test3 Implemenation Guide" />
+<meta name="author" content="Health eData Inc"/>
   <link href="fhir.css" rel="stylesheet"/>
 
 
@@ -26,8 +26,6 @@
   <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
 	<link href="assets/css/jquery-ui.css" rel="stylesheet"/>
 
-<link href="assets/css/argo-sched.css" rel="stylesheet"/>
-
 
   <!-- Favicons -->
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
@@ -41,30 +39,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <div id="segment-header" class="segment">
   <!-- segment-header -->
-  <div class="container">
-    <!-- container --> <a id="logo" no-external="true" href="http://hl7.org/fhir">
-      <img alt="logo fhir" src="assets/images/fhir-logo-www.png"/>
+  <div class="container"><!-- container -->
+
+<!-- hl7 logo -->
+    <a no-external="true" href="http://hl7.org/fhir">
+      <img alt="FHIR Homepage" class="img-responsive logo" src="assets/images/fhir-logo-www.png"/>
     </a>
-      <div id="project-nav">
+<!-- end hl7 logo -->
+
+
+ <!-- org logo -->
              <!--
 <a id="your-logo" no-external="true" href="http://www.hl7.org">
 <img height="50" alt="visit the hl7 website" width="42" src="assets/images/hl7-logo.png"/>
 </a>
 
-================THIS IS FOR THE PROJECT LOGO AND URL ===============
+your logo here
+
+[![visit our website](assets/images/org_logo.png)](your web site.html)
+{: .img-responsive #org_logo}
+
+can only resize using html  or css ;-(
+
 -->
 
-<p class="img-responsive" id="hl7-logo"><a href="http://argonautwiki.hl7.org"><img src="assets/images/ArgonautProject_logo_black.png" alt="visit the our website" height="65px" /></a></p>
 
-      </div>
-      <div id="ig-status" class="text-center">
+<a no-external="true" href="http://www.openmhealth.org/">
+<img alt="visit our website" class="img-responsive project-logo" src="assets/images/org_logo.jpg"/>
+</a>
+
+  <!-- end org logo -->
+
+
+      <div id="project-status" class="project-status"> <!-- ig title text -->
 
       
-      <strong>Argo-Scheduling Implementation Guide CI Build</strong>
+      <strong>IG-Test3 Implementation Guide CI Build</strong>
       
 
-    </div>
-  </div>
+    </div><!-- end ig title text -->
+
+  </div><!-- end container -->
   <div class="container">
     <!-- container -->
   </div>
@@ -92,50 +107,19 @@
         <a class="navbar-brand hidden" href="http://hl7.org/fhir/STU3/index.html">FHIR</a>
         <div class="nav-collapse collapse navbar-inverse-collapse">
 
-       
-<!--{:.nav .navbar-nav} don't remove the line above - to add or remove a menu item commeent in or out - [Home](index.html)- [Use Cases...](guidance.html){: .dropdown-toggle data-toggle="dropdown"}  - [Patient Based Scheduling](patient-scheduling.html)  - [Provider based Scheduling](provider-scheduling.html)  {: .dropdown-menu}- [Operations](operations.html)- [Profiles/Extensions](profiles.html)- [Terminology](terminology.html)- [Capability Statements...](capstatements.html){: .dropdown-toggle data-toggle="dropdown"}  - [Conformance requirements for Server](server-capstatement.html)  - [Conformance requirements for Client](client-capstatement.html)  {: .dropdown-menu}- [Downloads](downloads.html)-->
+       <!-- don't remove the line above - to add or remove a menu item commeent in or out -->
 <ul class="nav navbar-nav">
-  <li>
-    <a href="index.html">Home</a>
-  </li>
-  <li class="dropdown">
-    <a href="#" data-toggle="dropdown" class="dropdown-toggle">Use Cases<b class="caret">
-    </b>
-  </a>
-  <ul class="dropdown-menu">
-    <li>
-      <a href="patient-scheduling.html">Patient Based Scheduling</a>
-    </li>
-    <li>
-      <a href="provider-scheduling.html">Provider Based Scheduling</a>
-    </li>
-  </ul>
-</li>
-<li>
-  <a href="operations.html">Operations</a>
-</li>
-<li>
-  <a href="profiles.html">Profiles/Extensions</a>
-</li>
-<li>
-  <a href="terminology.html">Terminology</a>
-</li>
-<li class="dropdown">
-  <a href="#" data-toggle="dropdown" class="dropdown-toggle">Capability Statements<b class="caret">
-  </b>
-</a>
-<ul class="dropdown-menu">
-  <li>
-    <a href="server-capstatement.html">Conformance requirements for Server</a>
-  </li>
-  <li>
-    <a href="client-capstatement.html">Conformance requirements for Client</a>
-  </li>
-</ul>
-</li>
-<li>
-  <a href="downloads.html">Downloads</a>
-</li>
+  <li><a href="index.html">Home</a></li>
+  <li><a href="guidance.html">General Guidance</a></li>
+  <li><a href="profiles.html">Profiles and Logical Models</a></li>
+  <li><a href="structuremaps.html">Mappings</a>
+<!-- - [Extensions](extensions.html) --></li>
+  <li><a href="terminology.html">Terminology</a>
+<!-- - [Search Parameters](searchparams.html) --></li>
+  <li><a href="capstatements.html">Capability Statements</a>
+<!-- - [Security](security.html) -->
+<!-- - [Examples](examples.html) --></li>
+  <li><a href="downloads.html">Downloads</a></li>
 </ul>
 
 
@@ -215,209 +199,114 @@
 
   <!-- ============CONTENT CONTENT=============== -->
 
-<h1>Argonaut Scheduling IG HomePage</h1>
+<h1>Test IG HomePage</h1>
 
 page source: index.md
+
+<p id="publish-box">
+This is the Continuous Integration Build <!-- Current officially released version --> of the IG-Test3 Implementation Guide, based on FHIR 3.0.1. See the Directory of published versions  based on <a href="http://hl7.org/fhir/STU3">FHIR Version 3.0.1</a>. See the <a href="#">Directory of published versions <img src="external.png" /></a>
+</p>
 
 <!-- TOC  the css styling for this is \pages\assets\css\project.css under 'markdown-toc'-->
 
 <ul id="markdown-toc">
+  <li><a href="#cat-facts-to-show-how-the-text-wraps-around-the-contents-block" id="markdown-toc-cat-facts-to-show-how-the-text-wraps-around-the-contents-block">Cat Facts (To Show How the Text Wraps around the Contents Block)</a></li>
+  <li><a href="#jekyll-site-variables" id="markdown-toc-jekyll-site-variables">Jekyll Site Variables</a></li>
   <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
-  <li><a href="#scope" id="markdown-toc-scope">Scope</a></li>
-  <li><a href="#actors" id="markdown-toc-actors">Actors</a></li>
-  <li><a href="#assumptions" id="markdown-toc-assumptions">Assumptions</a></li>
-  <li><a href="#security" id="markdown-toc-security">Security</a></li>
-  <li><a href="#best-practices" id="markdown-toc-best-practices">Best Practices</a></li>
-  <li><a href="#future-scope" id="markdown-toc-future-scope">Future Scope</a></li>
+  <li><a href="#more-stuff" id="markdown-toc-more-stuff">More Stuff</a>    <ul>
+      <li><a href="#and-more-stuff" id="markdown-toc-and-more-stuff">And More Stuff</a></li>
+    </ul>
+  </li>
 </ul>
 
 <!-- end TOC -->
 
-<h2 id="introduction">Introduction</h2>
+<h3 id="cat-facts-to-show-how-the-text-wraps-around-the-contents-block">Cat Facts (To Show How the Text Wraps around the Contents Block)</h3>
 
-<p>The <a href="http://argonautwiki.hl7.org/">Argonaut</a> Scheduling Project is a vendor agnostic specification providing FHIR RESTful APIs and guidance for access to and booking of appointments for patients by both patient and practitioner end users. This specification is based on <a href="http://hl7.org/fhir/STU3">FHIR Version 3.0.1</a> and specifically the <a href="http://hl7.org/fhir/STU3/administration-module.html#sched">Scheduling and Appointment resources</a>.</p>
+<p>The domestic cat[1][5] (Latin: Felis catus) is a small, typically furry, carnivorous mammal. They are often called house cats when kept as indoor pets or simply cats when there is no need to distinguish them from other felids and felines.[6] Cats are often valued by humans for companionship and for their ability to hunt vermin. There are more than 70 cat breeds, though different associations proclaim different numbers according to their standards.</p>
 
-<p>These requirements were developed and defined by the Argonaut pilot implementations and through the HL7 Connectathons.</p>
+<p>Cats are similar in anatomy to the other felids, with a strong flexible body, quick reflexes, sharp retractable claws, and teeth adapted to killing small prey. Cat senses fit a crepuscular and predatory ecological niche. Cats can hear sounds too faint or too high in frequency for human ears, such as those made by mice and other small animals. They can see in near darkness. Like most other mammals, cats have poorer color vision and a better sense of smell than humans. Cats, despite being solitary hunters, are a social species and cat communication includes the use of a variety of vocalizations (mewing, purring, trilling, hissing, growling, and grunting), as well as cat pheromones and types of cat-specific body language.[7]</p>
 
-<h2 id="scope">Scope</h2>
+<p>Cats have a high breeding rate.[8] Under controlled breeding, they can be bred and shown as registered pedigree pets, a hobby known as cat fancy. Failure to control the breeding of pet cats by neutering, as well as the abandonment of former household pets, has resulted in large numbers of feral cats worldwide, requiring population control.[9] In certain areas outside cats’ native range, this has contributed, along with habitat destruction and other factors, to the extinction of many bird species. Cats have been known to extirpate a bird species within specific regions and may have contributed to the extinction of isolated island populations.[10] Cats are thought to be primarily responsible for the extinction of 33 species of birds, and the presence of feral and free-ranging cats makes some otherwise suitable locations unsuitable for attempted species reintroduction.[11]</p>
 
-<h3 class="no_toc" id="patient-based-scheduling">Patient Based Scheduling:</h3>
+<p>Since cats were venerated in ancient Egypt, they were commonly believed to have been domesticated there,[12] but there may have been instances of domestication as early as the Neolithic from around 9,500 years ago (7,500 BC).[13] A genetic study in 2007 concluded that domestic cats are descended from Near Eastern wildcats, having diverged around 8,000 BC in the Middle East.[12][14] A 2016 study found that leopard cats were undergoing domestication independently in China around 5,500 BC, though this line of partially domesticated cats leaves no trace in the domesticated populations of today.[15][16]</p>
 
-<ul>
-  <li>Patient searches for available appointment times for a service or procedure through an organization’s on-line service (“patient portal”) or a third-party application.
-    <ul>
-      <li>Includes scenarios when patient is a new patient (“open-scheduling” through a third party application) or an existing patient (patient portal or third-party application).</li>
-      <li>Only those procedures/specialties/services based on the following inputs will be available:
-        <ul>
-          <li>practitioner</li>
-          <li>available times</li>
-          <li>location</li>
-          <li>specialty</li>
-          <li>set of common <a href="ValueSet-visit-type.html">visit types</a>.</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>Patient registers and provides coverage information through a patient portal or a third-party application.</li>
-  <li>Patient books an appointment through a patient portal or a third-party application.</li>
-  <li>Patient cancels an appointment through a patient portal or a third-party application.</li>
-  <li>Patient retrieves their scheduled appointments through a patient portal or a third-party application.</li>
-</ul>
+<p>As of a 2007 study, cats are the second most popular pet in the US by number of pets owned, behind freshwater fish.[17] In a 2010 study they were ranked the third most popular pet in the UK, after fish and dogs, with around 8 million being owned.[18]</p>
 
-<h3 class="no_toc" id="provider-based-scheduling">Provider based Scheduling:</h3>
-<p>Note that in this guide “provider”  =  individual, organization or healthcare service.</p>
-
-<ul>
-  <li>Provider scheduling between organizations on behalf of a patient
-    <ul>
-      <li>searches for available appointment times for a service or procedure</li>
-      <li>Includes scenarios when patient is a new patient or an existing patient.</li>
-      <li>Only those procedures/specialties/services based on the following inputs will be available:
-        <ul>
-          <li>practitioner</li>
-          <li>available times</li>
-          <li>location</li>
-          <li>specialty</li>
-          <li>set of common <a href="ValueSet-visit-type.html">visit types</a></li>
-        </ul>
-      </li>
-      <li>books an appointment</li>
-      <li>cancels an appointment</li>
-      <li>Exchange of coverage and medical history</li>
-    </ul>
-  </li>
-  <li>Provider retrieves their existing appointments for all patients</li>
-</ul>
-
-<h2 id="actors">Actors</h2>
-
-<p>In FHIR, booking an appointment typically includes two main actors: the FHIR Server serving as the EHR scheduler and a Client as a scheduling application. For the patient based scheduling, the actors are depicted in figure 1 below.  Note that for the 3rd Party Application the scheduling application is both server for the end user application and a client of the FHIR Server.  In the patient portal use case the the end user application interacts directly with the FHIR Server.</p>
+<p>Figure 1 is a picture of a cat to show how to insert an image using markdown.</p>
 
 <!-- all this Bootstrap html for getting an image to fit nicely in text - 640 pix wide -->
 
-<p>file:///assets/images/diagrams/Slide27.png</p>
+<p>file:///assets/images/cat.jpg</p>
 
 <div>
 <figure class="figure">
-<figcaption class="figure-caption"><strong>Figure 1: Actors for Patient Based Scheduling.</strong></figcaption>
-  <img src="assets/images/diagrams/Slide27.png" class="figure-img img-responsive img-rounded center-block" alt="diagrams/Slide27.png" />
+<figcaption class="figure-caption"><strong>Figure 1: Meow.</strong></figcaption>
+  <img src="assets/images/cat.jpg" class="figure-img img-responsive img-rounded center-block" alt="cat.jpg" />
 </figure>
 
 <p></p>
 </div>
 
-<p>For the provider based scheduling, the actors are depicted in figure 2 below.  The referring provider’s scheduling application is the client and may schedule with or without patient input.</p>
+<h3 id="jekyll-site-variables">Jekyll Site Variables</h3>
 
-<!-- all this Bootstrap html for getting an image to fit nicely in text - 640 pix wide -->
+<p>These are the site variables defined <a href="http://wiki.hl7.org/index.php?title=IG_Publisher_Documentation#Jekyll">here</a>:</p>
 
-<p>file:///assets/images/diagrams/Slide19.png</p>
-
-<div>
-<figure class="figure">
-<figcaption class="figure-caption"><strong>Figure 2: Actors for Provider Based Scheduling.</strong></figcaption>
-  <img src="assets/images/diagrams/Slide19.png" class="figure-img img-responsive img-rounded center-block" alt="diagrams/Slide19.png" />
-</figure>
-
-<p></p>
-</div>
-
-<h2 id="assumptions">Assumptions</h2>
-
-<h3 class="no_toc" id="third-party-applications">Third Party applications</h3>
-<ol>
-  <li>A third party patient scheduling application may ‘pre-fetch’ open slots and create appointments or it may fetch open appointments in real time.</li>
-</ol>
-
-<h3 class="no_toc" id="login-and-trust">Login and Trust</h3>
-
-<h4 class="no_toc" id="system-level-trust">System level trust:</h4>
-
-<ol>
-  <li>Supports the <a href="http://argonautwiki.hl7.org/images/4/4c/Argonaut_UseCasesV1.pdf">use case 5</a> defined for Phase 1 of the Argonaut Project.</li>
-  <li>One solution is to use access FHIR resources by requesting access tokens from OAuth 2.0 compliant authorization servers using <a href="http://docs.smarthealthit.org/authorization/backend-services/">SMART Backend Services</a>.</li>
-  <li>it is assumed that consent is managed elsewhere.</li>
-</ol>
-
-<h4 class="no_toc" id="user-level-trust">User Level Trust:</h4>
-
-<ol>
-  <li>An client application has been authorized by the health system.</li>
-  <li>Uses <a href="http://docs.smarthealthit.org/authorization/">SMART on FHIR</a> authorization for apps that connect to EHR data.</li>
-  <li>If the patient is successfully registered via a third-party application or logged into an EHR’s patient portal, the patient ID is returned or known.</li>
-  <li>‘Open-scheduling’:  Authorized applications can search for available appointments without Server having to “know” the patient.
-    <ul>
-      <li>Later on in interaction a “patient level authorization” in order to create a new account and complete the appointment will be required.  The technical details for this are out of scope for this project.</li>
-      <li>Alternate approaches are out of scope for this project.</li>
-    </ul>
+<ul>
+  <li>
+    <p>IG Business version specification (defined in ig.json)- {{site.data.fhir.ig.version}}  = 0.0.0</p>
   </li>
-</ol>
-
-<h3 class="no_toc" id="dependencies">Dependencies</h3>
-
-<ol>
-  <li><a href="http://hl7.org/fhir/us/core/index.html">US Core Profiles</a> are supported</li>
-  <li><a href="http://hl7.org/fhir/us/core/guidance.html">US Core General Guidance</a> and conventions apply to this guide.</li>
-</ol>
-
-<h3 class="no_toc" id="rescheduling">Rescheduling</h3>
-
-<ol>
-  <li>Rescheduling and appointment is a two step process of canceling and rebooking.</li>
-</ol>
-
-<h2 id="security">Security</h2>
-
-<p>For general security consideration refer to the <a href="http://hl7.org/fhir/us/core/security.html">Security section</a> in the US Core Implementation Guide.  See the <a href="#login-and-trust">Assumptions</a> section above for a discussion of login and trust.</p>
-
-<h2 id="best-practices">Best Practices</h2>
-
-<p><a href="https://github.com/argonautproject/scheduling/issues/29">#29</a> add/document- prescribe best practices. + technical operations. ( check list of steps -e.g. Client SHALL verify successful cancellation prior to rebooking ) any outside resources (like a functional model)
- review :</p>
-
-<p>…todo…</p>
-
-<h2 id="future-scope">Future Scope</h2>
-
-<p>Throughout the development of the Argonaut Scheduling Guide several additional important items were reviewed for robust scheduling implementations. This page summarizes items under development, or things that should be considered for future efforts.</p>
-
-<ol>
-  <li>“Discovery Operation”
-    <ul>
-      <li>This operation would asks the key questions - What Service(/specialty/provider) are bookable?  Off-line exchanges (e.g., a spreadsheet) are typically used to exchange this information. This information is Static and is easy to prefetch Amending can be used as a filter when searching for appointment availability reducing the burden on server.  Consumer Facing apps can use this information to create appointments from slots.  In the future the Provider Directory (i.e., “common catalog”) can supply much of this key services information.  But in our initial scope, only those specialties/services based on the “simple” inputs - available times, location, specialty- will be available.</li>
-    </ul>
+  <li>
+    <p>IG status (defined in ig.xml)- {{site.data.fhir.ig.status}}  = draft</p>
   </li>
-  <li>Additional input requirements
-    <ul>
-      <li>
-        <p>As stated above, in our initial scope, only those specialties/services based on a limited set of inputs are considered.  Additional patient input and more advanced conflict checking has been deferred.  Information like additional patient demographics, chief complaint/indication and other details can help with identifying the available appointments.</p>
-      </li>
-      <li>
-        <p>For example an operation could precede the search for appointment availability to discover what inputs are needed for the service.  This operation would return a questionnaire to be filled out by the end user and submitted with the appointment availability operation.  Alternatively, an operation could return an OperationOutcome resource informing the client that information is needed and a questionnaire to be completed first.</p>
-      </li>
-    </ul>
+  <li>
+    <p>Whether is experimental IG (defined in ig.xml) - {{site.data.fhir.ig.experimental}}  = true</p>
   </li>
-  <li>Amending an appointment by an end user
-    <ul>
-      <li>Need to establish what if anything the consumer can update.</li>
-    </ul>
+  <li>
+    <p>IG Publisher name (defined in ig.xml) - {{site.data.fhir.ig.publisher}}  = Health eData Inc</p>
   </li>
-  <li>Scheduling Requests
-    <ul>
-      <li>Appointment Requests are “everything that is not covered by an appointment availability operation”</li>
-      <li>Patient scheduling scenario - where system could not find appointment and need to figure out what wanted or needed.  This may sometimes results in out of sync, out of band ( call-back) responses.</li>
-      <li>May need have a separate interaction that users can just submit the request.</li>
-    </ul>
+  <li>
+    <p>dependency url - e.g. “uscore” : Base url of a dependency implementation Guide (defined in ig.json) -   {{site.data.fhir.uscore}} =</p>
   </li>
-  <li>Prior approvals including preauthorizations</li>
-  <li>Scheduling physical (rooms, modalities, etc.) resources</li>
-  <li>Initiating Transitions of Care</li>
-  <li>Language support</li>
-  <li>Multimedia support</li>
-  <li>Estimated out of pocket patient costs</li>
-  <li>Provider based scheduling within an organization</li>
-</ol>
+  <li>
+    <p>igName : Title of the implementation Guide (defined in ig.xml) -   {{site.data.fhir.igName}} = IG-Test3</p>
+  </li>
+  <li>
+    <p>path : path to the main FHIR specification (defined in ig.json)-   {{site.data.fhir.path}} = http://hl7.org/fhir/STU3</p>
+  </li>
+  <li>
+    <p>canonical : canonical path to this specification (defined in ig.json)-   {{site.data.fhir.canonical}}  = http://www.fhir.org/guides/test3</p>
+  </li>
+  <li>
+    <p>errorCount : number of errors in the build file (not including HTML validation errors) -   {{site.data.fhir.errorCount}}  = 19</p>
+  </li>
+  <li>
+    <p>version : version of FHIR -   {{site.data.fhir.version}}  = 3.0.1</p>
+  </li>
+  <li>
+    <p>revision : revision of FHIR -   {{site.data.fhir.revision}}  = 11917</p>
+  </li>
+  <li>
+    <p>versionFull : version-revision -   {{site.data.fhir.versionFull}}  = 3.0.1-11917</p>
+  </li>
+  <li>
+    <p>totalFiles : total number of files found by the build -   {{site.data.fhir.totalFiles}}  = 8</p>
+  </li>
+  <li>
+    <p>processedFiles : number of files genrated by the build -   {{site.data.fhir.processedFiles}}  = 1</p>
+  </li>
+  <li>
+    <p>genDate : date of generation (so date stamps in the pages can match those in the conformance resources) -   {{site.data.fhir.genDate}}  = Wed, Feb 14, 2018 23:25-0800</p>
+  </li>
+</ul>
 
-<p>Primary Authors: Eric Haas, Brett Marquard</p>
+<h3 id="introduction">Introduction</h3>
+
+<p>blah blah blah</p>
+
+<h3 id="more-stuff">More Stuff</h3>
+
+<h4 id="and-more-stuff">And More Stuff</h4>
 
 
 
@@ -447,7 +336,7 @@ page source: index.md
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Mon, Jan 15, 2018 10:52-0800. |
+            IG-Test3 Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Wed, Feb 14, 2018 23:25-0800. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/STU3license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

@@ -3,294 +3,62 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir">
   <id value="ig"/>
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><h2>Argo-Scheduling</h2><p>The official URL for this implementation guide is: </p><pre>http://fhir.org/guides/argonaut-scheduling/ImplementationGuide/ig</pre></div>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><h2>IG-Test3</h2><p>The official URL for this implementation guide is: </p><pre>http://www.fhir.org/guides/test3/ImplementationGuide/ig</pre></div>
   </text>
-  <url value="http://fhir.org/guides/argonaut-scheduling/ImplementationGuide/ig"/>
-  <name value="Argo-Scheduling"/>
+  <url value="http://www.fhir.org/guides/test3/ImplementationGuide/ig"/>
+  <name value="IG-Test3"/>
   <status value="draft"/>
   <experimental value="true"/>
-  <publisher value="Argonaut Project"/>
+  <publisher value="Health eData Inc"/>
   <package>
     <name value="base"/>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="Appointment-proposed-appt3.html"/>
+        <valueUri value="Observation-example.html"/>
       </extension>
       <example value="true"/>
       <sourceReference>
-        <reference value="Appointment/proposed-appt3"/>
+        <reference value="Observation/example"/>
       </sourceReference>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="Appointment-proposed-appt2b-3.html"/>
+        <valueUri value="StructureDefinition-extension-complex.html"/>
       </extension>
-      <example value="true"/>
       <sourceReference>
-        <reference value="Appointment/proposed-appt2b-3"/>
+        <reference value="StructureDefinition/extension-complex"/>
       </sourceReference>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="Appointment-proposed-appt2b-2.html"/>
+        <valueUri value="StructureDefinition-extension-blah.html"/>
       </extension>
-      <example value="true"/>
       <sourceReference>
-        <reference value="Appointment/proposed-appt2b-2"/>
+        <reference value="StructureDefinition/extension-blah"/>
       </sourceReference>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="Appointment-proposed-appt2b-1.html"/>
+        <valueUri value="StructureDefinition-template-basic.html"/>
       </extension>
-      <example value="true"/>
       <sourceReference>
-        <reference value="Appointment/proposed-appt2b-1"/>
+        <reference value="StructureDefinition/template-basic"/>
       </sourceReference>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="Appointment-proposed-appt2.html"/>
+        <valueUri value="StructureMap-Foo.html"/>
       </extension>
-      <example value="true"/>
       <sourceReference>
-        <reference value="Appointment/proposed-appt2"/>
+        <reference value="StructureMap/Foo"/>
       </sourceReference>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="Appointment-proposed-appt1a-3.html"/>
-      </extension>
-      <example value="true"/>
-      <sourceReference>
-        <reference value="Appointment/proposed-appt1a-3"/>
-      </sourceReference>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="Appointment-proposed-appt1a-2.html"/>
-      </extension>
-      <example value="true"/>
-      <sourceReference>
-        <reference value="Appointment/proposed-appt1a-2"/>
-      </sourceReference>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="Appointment-proposed-appt1a-1.html"/>
-      </extension>
-      <example value="true"/>
-      <sourceReference>
-        <reference value="Appointment/proposed-appt1a-1"/>
-      </sourceReference>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="Appointment-proposed-appt1.html"/>
-      </extension>
-      <example value="true"/>
-      <sourceReference>
-        <reference value="Appointment/proposed-appt1"/>
-      </sourceReference>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="Practitioner-dr-y.html"/>
-      </extension>
-      <example value="true"/>
-      <sourceReference>
-        <reference value="Practitioner/dr-y"/>
-      </sourceReference>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="Patient-argo-sch-patient-2.html"/>
-      </extension>
-      <example value="true"/>
-      <sourceReference>
-        <reference value="Patient/argo-sch-patient-2"/>
-      </sourceReference>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="Patient-argo-sch-patient-1.html"/>
-      </extension>
-      <example value="true"/>
-      <sourceReference>
-        <reference value="Patient/argo-sch-patient-1"/>
-      </sourceReference>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="OperationOutcome-example.html"/>
-      </extension>
-      <example value="true"/>
-      <sourceReference>
-        <reference value="OperationOutcome/example"/>
-      </sourceReference>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="Coverage-argo-sch-2.html"/>
-      </extension>
-      <example value="true"/>
-      <sourceReference>
-        <reference value="Coverage/argo-sch-2"/>
-      </sourceReference>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="Coverage-argo-sch-1.html"/>
-      </extension>
-      <example value="true"/>
-      <sourceReference>
-        <reference value="Coverage/argo-sch-1"/>
-      </sourceReference>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="Bundle-prefetch-derm-appts.html"/>
-      </extension>
-      <example value="true"/>
-      <sourceReference>
-        <reference value="Bundle/prefetch-derm-appts"/>
-      </sourceReference>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="Bundle-hal-dr-y-appts.html"/>
-      </extension>
-      <example value="true"/>
-      <sourceReference>
-        <reference value="Bundle/hal-dr-y-appts"/>
-      </sourceReference>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="StructureDefinition-extension-status-reason.html"/>
+        <valueUri value="StructureDefinition-ifr.html"/>
       </extension>
       <sourceReference>
-        <reference value="StructureDefinition/extension-status-reason"/>
-      </sourceReference>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="ValueSet-visit-type.html"/>
-      </extension>
-      <sourceReference>
-        <reference value="ValueSet/visit-type"/>
-      </sourceReference>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="ValueSet-status-reason.html"/>
-      </extension>
-      <sourceReference>
-        <reference value="ValueSet/status-reason"/>
-      </sourceReference>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="ValueSet-specialty.html"/>
-      </extension>
-      <sourceReference>
-        <reference value="ValueSet/specialty"/>
-      </sourceReference>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="ValueSet-slot-bundle-type.html"/>
-      </extension>
-      <sourceReference>
-        <reference value="ValueSet/slot-bundle-type"/>
-      </sourceReference>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="ValueSet-appt-type.html"/>
-      </extension>
-      <sourceReference>
-        <reference value="ValueSet/appt-type"/>
-      </sourceReference>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="StructureDefinition-slot-bundle.html"/>
-      </extension>
-      <sourceReference>
-        <reference value="StructureDefinition/slot-bundle"/>
-      </sourceReference>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="StructureDefinition-prefetch-slot.html"/>
-      </extension>
-      <sourceReference>
-        <reference value="StructureDefinition/prefetch-slot"/>
-      </sourceReference>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="OperationDefinition-appointment-hold.html"/>
-      </extension>
-      <sourceReference>
-        <reference value="OperationDefinition/appointment-hold"/>
-      </sourceReference>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="OperationDefinition-appointment-find.html"/>
-      </extension>
-      <sourceReference>
-        <reference value="OperationDefinition/appointment-find"/>
-      </sourceReference>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="OperationDefinition-appointment-book.html"/>
-      </extension>
-      <sourceReference>
-        <reference value="OperationDefinition/appointment-book"/>
-      </sourceReference>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="ConceptMap-visit-snomed-map.html"/>
-      </extension>
-      <sourceReference>
-        <reference value="ConceptMap/visit-snomed-map"/>
-      </sourceReference>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="ConceptMap-visit-appt-map.html"/>
-      </extension>
-      <sourceReference>
-        <reference value="ConceptMap/visit-appt-map"/>
-      </sourceReference>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="CodeSystem-visit-type.html"/>
-      </extension>
-      <sourceReference>
-        <reference value="CodeSystem/visit-type"/>
-      </sourceReference>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="CodeSystem-status-reason.html"/>
-      </extension>
-      <sourceReference>
-        <reference value="CodeSystem/status-reason"/>
-      </sourceReference>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="CodeSystem-appt-type.html"/>
-      </extension>
-      <sourceReference>
-        <reference value="CodeSystem/appt-type"/>
+        <reference value="StructureDefinition/ifr"/>
       </sourceReference>
     </resource>
     <resource>
@@ -311,150 +79,92 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="StructureDefinition-avail-bundle.html"/>
+        <valueUri value="StructureDefinition-bt.html"/>
       </extension>
       <sourceReference>
-        <reference value="StructureDefinition/avail-bundle"/>
-      </sourceReference>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="StructureDefinition-argo-coverage.html"/>
-      </extension>
-      <sourceReference>
-        <reference value="StructureDefinition/argo-coverage"/>
-      </sourceReference>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="StructureDefinition-argo-appt.html"/>
-      </extension>
-      <sourceReference>
-        <reference value="StructureDefinition/argo-appt"/>
+        <reference value="StructureDefinition/bt"/>
       </sourceReference>
     </resource>
   </package>
   <package>
-    <name value="Argonaut Appointment Profile"/>
+    <name value="/Users/ehaas/Documents/FHIR/IG-Template2/source/resources/bt-profile-spreadsheet"/>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="StructureDefinition-extension-status-reason.html"/>
+        <valueUri value="StructureDefinition-bt.html"/>
       </extension>
-      <name value="Reason for current status"/>
+      <name value="This is a draft Blood Type Profile"/>
       <sourceReference>
-        <reference value="StructureDefinition/extension-status-reason"/>
-      </sourceReference>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="StructureDefinition-argo-appt.html"/>
-      </extension>
-      <name value="Argonaut Appointment Profile"/>
-      <sourceReference>
-        <reference value="StructureDefinition/argo-appt"/>
+        <reference value="StructureDefinition/bt"/>
       </sourceReference>
     </resource>
   </package>
   <package>
-    <name value="Argonaut Coverage Profile"/>
+    <name value="Identifer Free Reference Data Type"/>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="StructureDefinition-argo-coverage.html"/>
+        <valueUri value="StructureDefinition-ifr.html"/>
       </extension>
-      <name value="Argonaut Coverage Profile"/>
+      <name value="Identifer Free Reference Data Type"/>
       <sourceReference>
-        <reference value="StructureDefinition/argo-coverage"/>
+        <reference value="StructureDefinition/ifr"/>
       </sourceReference>
     </resource>
   </package>
   <package>
-    <name value="Argonaut Appointment Bundle Profile"/>
+    <name value="/Users/ehaas/Documents/FHIR/IG-Template2/source/resources/template-profile-spreadsheet"/>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="StructureDefinition-avail-bundle.html"/>
+        <valueUri value="ValueSet-blah-codes.html"/>
       </extension>
-      <name value="Argonaut Appointment Bundle Profile"/>
+      <name value="BlahCodes"/>
       <sourceReference>
-        <reference value="StructureDefinition/avail-bundle"/>
+        <reference value="ValueSet/blah-codes"/>
       </sourceReference>
     </resource>
-  </package>
-  <package>
-    <name value="Argonaut Prefetch Slot Profile"/>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="StructureDefinition-prefetch-slot.html"/>
+        <valueUri value="CodeSystem-blah-codes.html"/>
       </extension>
-      <name value="Argonaut Prefetch Slot Profile"/>
+      <name value="BlahCodes"/>
       <sourceReference>
-        <reference value="StructureDefinition/prefetch-slot"/>
+        <reference value="CodeSystem/blah-codes"/>
       </sourceReference>
     </resource>
-  </package>
-  <package>
-    <name value="Argonaut Slot Bundle Profile"/>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="StructureDefinition-slot-bundle.html"/>
+        <valueUri value="StructureDefinition-extension-blah.html"/>
       </extension>
-      <name value="Argonaut Slot Bundle Profile"/>
+      <name value="Example Extension"/>
       <sourceReference>
-        <reference value="StructureDefinition/slot-bundle"/>
+        <reference value="StructureDefinition/extension-blah"/>
+      </sourceReference>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+        <valueUri value="StructureDefinition-extension-complex.html"/>
+      </extension>
+      <name value="Complex Extension"/>
+      <sourceReference>
+        <reference value="StructureDefinition/extension-complex"/>
+      </sourceReference>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+        <valueUri value="StructureDefinition-template-basic.html"/>
+      </extension>
+      <name value="Profile template-basic"/>
+      <sourceReference>
+        <reference value="StructureDefinition/template-basic"/>
       </sourceReference>
     </resource>
   </package>
   <page>
     <source value="index.md"/>
-    <title value="Argo-Scheduling Homepage"/>
+    <title value="IG-Test3 Homepage"/>
     <kind value="page"/>
     <page>
-      <source value="toc.md"/>
-      <title value="Argo-Scheduling Table of Contents"/>
-      <kind value="page"/>
-    </page>
-    <page>
-      <source value="downloads.md"/>
-      <title value="Downloads"/>
-      <kind value="page"/>
-    </page>
-    <page>
-      <source value="client-capstatement.md"/>
-      <title value="Client CapabilityStatement defined for this Guide"/>
-      <kind value="page"/>
-    </page>
-    <page>
-      <source value="server-capstatement.md"/>
-      <title value="Server CapabilityStatement defined for this Guide"/>
-      <kind value="page"/>
-    </page>
-    <page>
-      <source value="operations.md"/>
-      <title value="OperationDefinitions defined for this Guide"/>
-      <kind value="page"/>
-    </page>
-    <page>
-      <source value="terminology.md"/>
-      <title value="ValueSets and CodeSystems defined as part of this Implementation Guide"/>
-      <kind value="page"/>
-    </page>
-    <page>
-      <source value="profiles.md"/>
-      <title value="Profiles defined as part of this Guide"/>
-      <kind value="page"/>
-    </page>
-    <page>
-      <source value="provider-scheduling.md"/>
-      <title value="Provider based Scheduling Use Cases"/>
-      <kind value="page"/>
-    </page>
-    <page>
-      <source value="patient-scheduling.md"/>
-      <title value="Patient based Scheduling Use Cases"/>
-      <kind value="page"/>
-    </page>
-    <page>
-      <source value="state-diagram.md"/>
-      <title value="Appointment State Diagram"/>
+      <source value="_includes/toc.md"/>
+      <title value="IG-Test3 Table of Contents"/>
       <kind value="page"/>
     </page>
   </page>

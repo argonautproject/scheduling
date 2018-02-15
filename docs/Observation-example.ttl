@@ -1,0 +1,79 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <http://loinc.org/rdf#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://www.fhir.org/guides/test3/Observation/example> a fhir:Observation;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "example"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: example</p><p><b>category</b>: Vital Signs <span style=\"background: LightGoldenRodYellow\">(Details : {http://hl7.org/fhir/observation-category code 'vital-signs' = 'Vital Signs', given as 'Vital Signs'})</span></p><p><b>code</b>: Body Weight <span style=\"background: LightGoldenRodYellow\">(Details : {LOINC code '29463-7' = '29463-7', given as 'Body Weight'}; {LOINC code '3141-9' = '3141-9', given as 'Body weight Measured'}; {SNOMED CT code '27113001' = '27113001', given as 'Body weight'}; {http://acme.org/devices/clinical-codes code 'body-weight' = 'body-weight', given as 'Body Weight'})</span></p><p><b>subject</b>: <a href=\"Patient/example\">Patient/example</a></p><p><b>context</b>: <a href=\"Encounter/example\">Encounter/example</a></p><p><b>effective</b>: Mar 28, 2016</p><p><b>performer</b>: <a href=\"Practitioner/practitioner-1\">Practitioner/practitioner-1</a></p><p><b>value</b>: 185 lbs<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM code [lb_av] = '[lb_av]')</span></p></div>"
+  ];
+  fhir:Observation.category [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://hl7.org/fhir/observation-category" ];
+       fhir:Coding.code [ fhir:value "vital-signs" ];
+       fhir:Coding.display [ fhir:value "Vital Signs" ]
+     ]
+  ];
+  fhir:Observation.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a loinc:29463-7;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ];
+       fhir:Coding.code [ fhir:value "29463-7" ];
+       fhir:Coding.display [ fhir:value "Body Weight" ]
+     ], [
+       fhir:index 1;
+       a loinc:3141-9;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ];
+       fhir:Coding.code [ fhir:value "3141-9" ];
+       fhir:Coding.display [ fhir:value "Body weight Measured" ]
+     ], [
+       fhir:index 2;
+       a sct:27113001;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "27113001" ];
+       fhir:Coding.display [ fhir:value "Body weight" ]
+     ], [
+       fhir:index 3;
+       fhir:Coding.system [ fhir:value "http://acme.org/devices/clinical-codes" ];
+       fhir:Coding.code [ fhir:value "body-weight" ];
+       fhir:Coding.display [ fhir:value "Body Weight" ]
+     ]
+  ];
+  fhir:Observation.subject [
+     fhir:link <http://www.fhir.org/guides/test3/Patient/example>;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ];
+  fhir:Observation.context [
+     fhir:link <http://www.fhir.org/guides/test3/Encounter/example>;
+     fhir:Reference.reference [ fhir:value "Encounter/example" ]
+  ];
+  fhir:Observation.effectiveDateTime [ fhir:value "2016-03-28"^^xsd:date];
+  fhir:Observation.performer [
+     fhir:index 0;
+     fhir:link <http://www.fhir.org/guides/test3/Practitioner/practitioner-1>;
+     fhir:Reference.reference [ fhir:value "Practitioner/practitioner-1" ]
+  ];
+  fhir:Observation.valueQuantity [
+     fhir:Quantity.value [ fhir:value "185"^^xsd:decimal ];
+     fhir:Quantity.unit [ fhir:value "lbs" ];
+     fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ];
+     fhir:Quantity.code [ fhir:value "[lb_av]" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://www.fhir.org/guides/test3/Observation/example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

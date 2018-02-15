@@ -1,0 +1,197 @@
+{
+  "resourceType": "StructureMap",
+  "id": "Foo",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><pre>map &quot;http://www.fhir.org/guides/test3/StructureMap/Foo&quot; = &quot;LogicalModel --&gt; Foo Mapping&quot;\n\nuses &quot;http://www.fhir.org/guides/test3/StructureDefinition/LogicalModel&quot; as source\n\ngroup for types LogicalModel\n  input source : LogicalModel as source\n\n  LogicalModel : for source make create(&quot;Appointment&quot;) as appt then {\n    LogicalModel.UniqueID : for source.UniqueID : string 1..1 as v make  appt.identifier as t,  t.value = v\n    LogicalModel.foo : for source.foo : backboneelement 1..1 as bbe then {\n      LogicalModel.foo.bar : for bbe.bar : code 1..1 as v make appt.status = v\n      LogicalModel.foo.baz : for bbe.baz : string 0..1 as v make appt.description = v\n    }\n\n    LogicalModel.blah : for source.blah : string 0..1 as v make  appt.slot as t,  t.display = v\n  }\n\n\nendgroup\n</pre></div>"
+  },
+  "url": "http://www.fhir.org/guides/test3/StructureMap/Foo",
+  "version": "0.0.0",
+  "name": "LogicalModel --> Foo Mapping",
+  "status": "draft",
+  "date": "2017-07-18T13:39:26-07:00",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "urn:iso:std:iso:3166",
+          "code": "US",
+          "display": "United States of America"
+        }
+      ]
+    }
+  ],
+  "structure": [
+    {
+      "url": "http://www.fhir.org/guides/test3/StructureDefinition/LogicalModel",
+      "mode": "source"
+    }
+  ],
+  "group": [
+    {
+      "name": "LogicalModel",
+      "typeMode": "none",
+      "input": [
+        {
+          "name": "source",
+          "type": "LogicalModel",
+          "mode": "source"
+        }
+      ],
+      "rule": [
+        {
+          "name": "LogicalModel",
+          "source": [
+            {
+              "context": "source"
+            }
+          ],
+          "target": [
+            {
+              "variable": "appt",
+              "transform": "create",
+              "parameter": [
+                {
+                  "valueString": "Appointment"
+                }
+              ]
+            }
+          ],
+          "rule": [
+            {
+              "name": "LogicalModel.UniqueID",
+              "source": [
+                {
+                  "context": "source",
+                  "min": 1,
+                  "max": "1",
+                  "type": "string",
+                  "element": "UniqueID",
+                  "variable": "v"
+                }
+              ],
+              "target": [
+                {
+                  "context": "appt",
+                  "contextType": "variable",
+                  "element": "identifier",
+                  "variable": "t"
+                },
+                {
+                  "context": "t",
+                  "contextType": "variable",
+                  "element": "value",
+                  "transform": "copy",
+                  "parameter": [
+                    {
+                      "valueId": "v"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "LogicalModel.foo",
+              "source": [
+                {
+                  "context": "source",
+                  "min": 1,
+                  "max": "1",
+                  "type": "backboneelement",
+                  "element": "foo",
+                  "variable": "bbe"
+                }
+              ],
+              "rule": [
+                {
+                  "name": "LogicalModel.foo.bar",
+                  "source": [
+                    {
+                      "context": "bbe",
+                      "min": 1,
+                      "max": "1",
+                      "type": "code",
+                      "element": "bar",
+                      "variable": "v"
+                    }
+                  ],
+                  "target": [
+                    {
+                      "context": "appt",
+                      "contextType": "variable",
+                      "element": "status",
+                      "transform": "copy",
+                      "parameter": [
+                        {
+                          "valueId": "v"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "LogicalModel.foo.baz",
+                  "source": [
+                    {
+                      "context": "bbe",
+                      "min": 0,
+                      "max": "1",
+                      "type": "string",
+                      "element": "baz",
+                      "variable": "v"
+                    }
+                  ],
+                  "target": [
+                    {
+                      "context": "appt",
+                      "contextType": "variable",
+                      "element": "description",
+                      "transform": "copy",
+                      "parameter": [
+                        {
+                          "valueId": "v"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "LogicalModel.blah",
+              "source": [
+                {
+                  "context": "source",
+                  "min": 0,
+                  "max": "1",
+                  "type": "string",
+                  "element": "blah",
+                  "variable": "v"
+                }
+              ],
+              "target": [
+                {
+                  "context": "appt",
+                  "contextType": "variable",
+                  "element": "slot",
+                  "variable": "t"
+                },
+                {
+                  "context": "t",
+                  "contextType": "variable",
+                  "element": "display",
+                  "transform": "copy",
+                  "parameter": [
+                    {
+                      "valueId": "v"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -5,11 +5,11 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
    <meta charset="UTF-8"/>
-  <title>Argo-Scheduling</title>
+  <title>IG-Test3</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Argo-Scheduling Implemenation Guide" />
-<meta name="author" content="Argonaut Project"/>
+<meta name="description" content="IG-Test3 Implemenation Guide" />
+<meta name="author" content="Health eData Inc"/>
   <link href="fhir.css" rel="stylesheet"/>
 
 
@@ -39,30 +39,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <div id="segment-header" class="segment">
   <!-- segment-header -->
-  <div class="container">
-    <!-- container --> <a id="logo" no-external="true" href="http://hl7.org/fhir">
-      <img alt="logo fhir" src="assets/images/fhir-logo-www.png"/>
+  <div class="container"><!-- container -->
+
+<!-- hl7 logo -->
+    <a no-external="true" href="http://hl7.org/fhir">
+      <img alt="FHIR Homepage" class="img-responsive logo" src="assets/images/fhir-logo-www.png"/>
     </a>
-      <div id="project-nav">
+<!-- end hl7 logo -->
+
+
+ <!-- org logo -->
              <!--
 <a id="your-logo" no-external="true" href="http://www.hl7.org">
 <img height="50" alt="visit the hl7 website" width="42" src="assets/images/hl7-logo.png"/>
 </a>
 
-================THIS IS FOR THE PROJECT LOGO AND URL ===============
+your logo here
+
+[![visit our website](assets/images/org_logo.png)](your web site.html)
+{: .img-responsive #org_logo}
+
+can only resize using html  or css ;-(
+
 -->
 
-<p class="img-responsive" id="hl7-logo"><a href="http://argonautwiki.hl7.org"><img src="assets/images/ArgonautProject_logo_black.png" alt="visit the our website" height="65px" /></a></p>
 
-      </div>
-      <div id="ig-status" class="text-center">
+<a no-external="true" href="http://www.openmhealth.org/">
+<img alt="visit our website" class="img-responsive project-logo" src="assets/images/org_logo.jpg"/>
+</a>
+
+  <!-- end org logo -->
+
+
+      <div id="project-status" class="project-status"> <!-- ig title text -->
 
       
-      <strong>Argo-Scheduling Implementation Guide CI Build</strong>
+      <strong>IG-Test3 Implementation Guide CI Build</strong>
       
 
-    </div>
-  </div>
+    </div><!-- end ig title text -->
+
+  </div><!-- end container -->
   <div class="container">
     <!-- container -->
   </div>
@@ -90,50 +107,19 @@
         <a class="navbar-brand hidden" href="http://hl7.org/fhir/STU3/index.html">FHIR</a>
         <div class="nav-collapse collapse navbar-inverse-collapse">
 
-       
-<!--{:.nav .navbar-nav} don't remove the line above - to add or remove a menu item commeent in or out - [Home](index.html)- [Use Cases...](guidance.html){: .dropdown-toggle data-toggle="dropdown"}  - [Patient Based Scheduling](patient-scheduling.html)  - [Provider based Scheduling](provider-scheduling.html)  {: .dropdown-menu}- [Operations](operations.html)- [Profiles/Extensions](profiles.html)- [Terminology](terminology.html)- [Capability Statements...](capstatements.html){: .dropdown-toggle data-toggle="dropdown"}  - [Conformance requirements for Server](server-capstatement.html)  - [Conformance requirements for Client](client-capstatement.html)  {: .dropdown-menu}- [Downloads](downloads.html)-->
+       <!-- don't remove the line above - to add or remove a menu item commeent in or out -->
 <ul class="nav navbar-nav">
-  <li>
-    <a href="index.html">Home</a>
-  </li>
-  <li class="dropdown">
-    <a href="#" data-toggle="dropdown" class="dropdown-toggle">Use Cases<b class="caret">
-    </b>
-  </a>
-  <ul class="dropdown-menu">
-    <li>
-      <a href="patient-scheduling.html">Patient Based Scheduling</a>
-    </li>
-    <li>
-      <a href="provider-scheduling.html">Provider Based Scheduling</a>
-    </li>
-  </ul>
-</li>
-<li>
-  <a href="operations.html">Operations</a>
-</li>
-<li>
-  <a href="profiles.html">Profiles/Extensions</a>
-</li>
-<li>
-  <a href="terminology.html">Terminology</a>
-</li>
-<li class="dropdown">
-  <a href="#" data-toggle="dropdown" class="dropdown-toggle">Capability Statements<b class="caret">
-  </b>
-</a>
-<ul class="dropdown-menu">
-  <li>
-    <a href="server-capstatement.html">Conformance requirements for Server</a>
-  </li>
-  <li>
-    <a href="client-capstatement.html">Conformance requirements for Client</a>
-  </li>
-</ul>
-</li>
-<li>
-  <a href="downloads.html">Downloads</a>
-</li>
+  <li><a href="index.html">Home</a></li>
+  <li><a href="guidance.html">General Guidance</a></li>
+  <li><a href="profiles.html">Profiles and Logical Models</a></li>
+  <li><a href="structuremaps.html">Mappings</a>
+<!-- - [Extensions](extensions.html) --></li>
+  <li><a href="terminology.html">Terminology</a>
+<!-- - [Search Parameters](searchparams.html) --></li>
+  <li><a href="capstatements.html">Capability Statements</a>
+<!-- - [Security](security.html) -->
+<!-- - [Examples](examples.html) --></li>
+  <li><a href="downloads.html">Downloads</a></li>
 </ul>
 
 
@@ -221,27 +207,14 @@ page source: terminology.md
 
 <h4 id="value-sets">Value Sets</h4>
 
-<p>These value sets have been defined for this implementation guide.</p>
-<li><a href="ValueSet-visit-type.html">Argonaut Visit Types</a></li>
-<li><a href="ValueSet-status-reason.html">Argonaut Appointment Event Reason Codes</a></li>
-<li><a href="ValueSet-specialty.html">Argonaut Scheduling Specialties</a></li>
-<li><a href="ValueSet-slot-bundle-type.html">Argonaut Slot BundleType Codes</a></li>
-<li><a href="ValueSet-appt-type.html">Argonaut Appointment Types</a></li>
+<p>These value sets have been defined for this implementation guide:</p>
+<li><a href="ValueSet-blah-codes.html">BlahCodes</a></li>
 
 <h4 id="code-systems">Code Systems</h4>
 
 <p><strong>Code systems published in this IG</strong> - Includes US Core defined code systems and externally defined code systems</p>
-<li><a href="CodeSystem-visit-type.html">Argonaut Visit Types</a></li>
-<li><a href="CodeSystem-status-reason.html">Argonaut Appointment Event Reason Codes</a></li>
-<li><a href="CodeSystem-appt-type.html">AppointmentTypes</a></li>
+<li><a href="CodeSystem-blah-codes.html">BlahCodes</a></li>
 
-<h4 id="concept-maps">Concept Maps</h4>
-
-<p>These concept mappings have been defined for this implementation guide.</p>
-<li><a href="ConceptMap-visit-snomed-map.html">Argonaut Scheduiing Visit Type to SNOMED CT Mapping</a></li>
-<li><a href="ConceptMap-visit-appt-map.html">Argonaut Scheduiing Visit Type to Appointment Type Mapping</a></li>
-
-<p><br /></p>
 
 
 
@@ -271,7 +244,7 @@ page source: terminology.md
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Mon, Jan 15, 2018 10:52-0800. |
+            IG-Test3 Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Wed, Feb 14, 2018 23:25-0800. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/STU3license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

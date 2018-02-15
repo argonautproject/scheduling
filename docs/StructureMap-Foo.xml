@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<StructureMap xmlns="http://hl7.org/fhir">
+  <id value="Foo"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><pre>map &quot;http://www.fhir.org/guides/test3/StructureMap/Foo&quot; = &quot;LogicalModel --&gt; Foo Mapping&quot;
+
+uses &quot;http://www.fhir.org/guides/test3/StructureDefinition/LogicalModel&quot; as source
+
+group for types LogicalModel
+  input source : LogicalModel as source
+
+  LogicalModel : for source make create(&quot;Appointment&quot;) as appt then {
+    LogicalModel.UniqueID : for source.UniqueID : string 1..1 as v make  appt.identifier as t,  t.value = v
+    LogicalModel.foo : for source.foo : backboneelement 1..1 as bbe then {
+      LogicalModel.foo.bar : for bbe.bar : code 1..1 as v make appt.status = v
+      LogicalModel.foo.baz : for bbe.baz : string 0..1 as v make appt.description = v
+    }
+
+    LogicalModel.blah : for source.blah : string 0..1 as v make  appt.slot as t,  t.display = v
+  }
+
+
+endgroup
+</pre></div>
+  </text>
+  <url value="http://www.fhir.org/guides/test3/StructureMap/Foo"/>
+  <version value="0.0.0"/>
+  <name value="LogicalModel --&gt; Foo Mapping"/>
+  <status value="draft"/>
+  <date value="2017-07-18T13:39:26-07:00"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+      <display value="United States of America"/>
+    </coding>
+  </jurisdiction>
+  <structure>
+    <url value="http://www.fhir.org/guides/test3/StructureDefinition/LogicalModel"/>
+    <mode value="source"/>
+  </structure>
+  <group>
+    <name value="LogicalModel"/>
+    <typeMode value="none"/>
+    <input>
+      <name value="source"/>
+      <type value="LogicalModel"/>
+      <mode value="source"/>
+    </input>
+    <rule>
+      <name value="LogicalModel"/>
+      <source>
+        <context value="source"/>
+      </source>
+      <target>
+        <variable value="appt"/>
+        <transform value="create"/>
+        <parameter>
+          <valueString value="Appointment"/>
+        </parameter>
+      </target>
+      <rule>
+        <name value="LogicalModel.UniqueID"/>
+        <source>
+          <context value="source"/>
+          <min value="1"/>
+          <max value="1"/>
+          <type value="string"/>
+          <element value="UniqueID"/>
+          <variable value="v"/>
+        </source>
+        <target>
+          <context value="appt"/>
+          <contextType value="variable"/>
+          <element value="identifier"/>
+          <variable value="t"/>
+        </target>
+        <target>
+          <context value="t"/>
+          <contextType value="variable"/>
+          <element value="value"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueId value="v"/>
+          </parameter>
+        </target>
+      </rule>
+      <rule>
+        <name value="LogicalModel.foo"/>
+        <source>
+          <context value="source"/>
+          <min value="1"/>
+          <max value="1"/>
+          <type value="backboneelement"/>
+          <element value="foo"/>
+          <variable value="bbe"/>
+        </source>
+        <rule>
+          <name value="LogicalModel.foo.bar"/>
+          <source>
+            <context value="bbe"/>
+            <min value="1"/>
+            <max value="1"/>
+            <type value="code"/>
+            <element value="bar"/>
+            <variable value="v"/>
+          </source>
+          <target>
+            <context value="appt"/>
+            <contextType value="variable"/>
+            <element value="status"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueId value="v"/>
+            </parameter>
+          </target>
+        </rule>
+        <rule>
+          <name value="LogicalModel.foo.baz"/>
+          <source>
+            <context value="bbe"/>
+            <min value="0"/>
+            <max value="1"/>
+            <type value="string"/>
+            <element value="baz"/>
+            <variable value="v"/>
+          </source>
+          <target>
+            <context value="appt"/>
+            <contextType value="variable"/>
+            <element value="description"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueId value="v"/>
+            </parameter>
+          </target>
+        </rule>
+      </rule>
+      <rule>
+        <name value="LogicalModel.blah"/>
+        <source>
+          <context value="source"/>
+          <min value="0"/>
+          <max value="1"/>
+          <type value="string"/>
+          <element value="blah"/>
+          <variable value="v"/>
+        </source>
+        <target>
+          <context value="appt"/>
+          <contextType value="variable"/>
+          <element value="slot"/>
+          <variable value="t"/>
+        </target>
+        <target>
+          <context value="t"/>
+          <contextType value="variable"/>
+          <element value="display"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueId value="v"/>
+          </parameter>
+        </target>
+      </rule>
+    </rule>
+  </group>
+</StructureMap>

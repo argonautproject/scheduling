@@ -3,9 +3,9 @@
   "id": "server",
   "text": {
     "status": "generated",
-    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      <ul>\n        <li>FHIR Version: 3.0.1</li>\n        <li>Supported formats: xml, json</li>\n        <li>Published: 2017-03-08</li>\n        <li>Published by: Health eData Inc</li>\n      </ul>\n      <p>The Section describes the expected capabilities etc....</p>\n    </div>"
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n<ul><li>FHIR Version: 3.0.0</li><li>Supported formats: xml, json</li><li>Published: 2017-03-08</li><li>Published by: Health eData Inc</li></ul><p>The Section describes the expected capabilities etc....</p></div>"
   },
-  "url": "http://fhir.org/guides/argonaut-scheduling/CapabilityStatement/server",
+  "url": "http://www.fhir.org/guides/test3/CapabilityStatement/server",
   "version": "0.0.0",
   "name": "Server",
   "status": "draft",
@@ -27,13 +27,14 @@
       "coding": [
         {
           "system": "urn:iso:std:iso:3166",
-          "code": "US"
+          "code": "US",
+          "display": "United States of America"
         }
       ]
     }
   ],
   "kind": "requirements",
-  "fhirVersion": "3.0.1",
+  "fhirVersion": "3.0.0",
   "acceptUnknown": "extensions",
   "format": [
     "xml",

@@ -4,16 +4,9 @@
   <id value="client"/>
   <text>
     <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml">
-      <ul>
-        <li>FHIR Version: 3.0.1</li>
-        <li>Supported formats: xml, json</li>
-        <li>Published: 2017-03-08</li>
-        <li>Published by: Health eData Inc</li>
-      </ul>
-      <p>The Section describes the expected capabilities etc....</p>
-    </div>
+<ul><li>FHIR Version: 3.0.0</li><li>Supported formats: xml, json</li><li>Published: 2017-03-08</li><li>Published by: Health eData Inc</li></ul><p>The Section describes the expected capabilities etc....</p></div>
   </text>
-  <url value="http://fhir.org/guides/argonaut-scheduling/CapabilityStatement/client"/>
+  <url value="http://www.fhir.org/guides/test3/CapabilityStatement/client"/>
   <version value="0.0.0"/>
   <name value="Client"/>
   <status value="draft"/>
@@ -30,17 +23,18 @@
     <coding>
       <system value="urn:iso:std:iso:3166"/>
       <code value="US"/>
+      <display value="United States of America"/>
     </coding>
   </jurisdiction>
   <kind value="requirements"/>
-  <fhirVersion value="3.0.1"/>
+  <fhirVersion value="3.0.0"/>
   <acceptUnknown value="extensions"/>
   <format value="xml"/>
   <format value="json"/>
   <rest>
     <mode value="client"/>
     <resource>
-      <type value="Slot"/>
+      <type value="Basic"/>
       <interaction>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
           <valueCode value="SHOULD"/>

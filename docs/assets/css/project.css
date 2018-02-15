@@ -105,45 +105,42 @@ body {
 }
 /* SCAFFOlDING OBJECTS
 ----------------------------------------------------------------------------------------*/
-#logo {
+.logo {
   float: left;
   margin-top: 6px;
   margin-left: 20px;
   margin-bottom: 4px;
-  display: block;
 }
-#logo img {
-  max-width: 100%;
-}
-#hl7-nav {
+
+#project-nav {
   line-height: 50px;
   float: right;
   margin-top: 16px;
   color: #808080;
 }
-#hl7-nav a {
+#project-nav a {
   color: inherit;
 }
-#hl7-status {
+.project-status {
+  margin-top: 16px;
+  color: maroon;
+}
+#project-search {
   line-height: 50px;
   float: left;
   margin-top: 16px;
   color: maroon;
 }
-#hl7-search {
-  line-height: 50px;
-  float: right;
-  margin-top: 16px;
-  color: maroon;
-}
-#hl7-search a {
+#project-search a {
   color: inherit;
 }
-#hl7-logo {
+.project-logo {
   float: right;
-  margin-left: 6px;
-  margin-right: 6px;
+  margin-right: 20px;
+  margin-top: 6px;
+  margin-bottom: 4px;
 }
+
 #stripe {
   position: absolute;
   left: 0;
