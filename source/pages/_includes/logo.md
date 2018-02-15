@@ -6,6 +6,6 @@
 ================THIS IS FOR THE PROJECT LOGO AND URL ===============
 -->
 
-
-[![visit the our website](assets/images/ArgonautProject_logo_black.png){:height="65px"}](http://argonautwiki.hl7.org)
-{: .img-responsive #hl7-logo}
+<a no-external="true" href="http://argonautwiki.hl7.org">
+<img alt="visit our website" class="img-responsive project-logo" src="assets/images/ArgonautProject_logo_black.png"/>
+</a>

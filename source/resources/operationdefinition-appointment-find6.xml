@@ -358,7 +358,7 @@
 		<documentation value="An [Argonaut Appointment Bundle Profile](StructureDefinition-avail-bundle.html) of type `searchset` with entries of proposed [Appointment](http://build.fhir.org/appointment.html) resources and may also contain an [OperationOutcome](http://build.fhir.org/operationoutcome.html) with errors, warnings or information as a result of processing the operation - e.g., an informational notice that the returned appointments are not within the requested start and end times.  An empty bundle means no available appointments based on inputs"/>
 		<type value="Bundle"/>
 		<profile>
-			<reference value="http://hl7.org/fhir/ValueSet/condition-code"/>
+			<reference value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/avail-bundle"/>
 		</profile>
 	</parameter>
 </OperationDefinition>

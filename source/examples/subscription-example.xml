@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Subscription xmlns="http://hl7.org/fhir">
+	<id value="example"/>
+	<status value="active"/>
+	<reason value="Notify subscriber of schedule changes to trigger the subscriber prefetch updated slots"/>
+	<criteria>
+		<extension url="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-trigger-event">
+			<valueString value="schedule where any slot that reference it has changed"/>
+		</extension>
+		<extension url="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-event-focus">
+			<valueCode value="Schedule"/>
+		</extension>
+	</criteria>
+	<channel>
+		<extension url="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-payload-profile">
+			<valueUri value="//fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-sched-notif"/>
+		</extension>
+		<type value="rest-hook"/>
+		<endpoint value="https://feed-handler.com/notification"/>
+		<payload value="application/fhir+json"/>
+	</channel>
+</Subscription>

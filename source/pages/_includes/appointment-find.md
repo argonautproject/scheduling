@@ -1,8 +1,8 @@
 Using Both `GET` and `POST` Syntax the operation can be invoked as follows:
 
-`GET [base]/Appointment/$hold?{parameters}&?{_count}`
+`GET [base]/Appointment/$find?{parameters}&?{_count}`
 
-`POST [base]/Appointment/$hold?{_count}`
+`POST [base]/Appointment/$find?{_count}`
 
 ## Examples
 

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Schedule xmlns="http://hl7.org/fhir">
+	<id value="example1"/>
+	<actor>
+		<reference value="Practitioner/1"/>
+		<display value="Crusher, Beverly"/>
+	</actor>
+	<planningHorizon>
+		<start value="2018-02-13"/>
+		<end value="2018-02-13"/>
+	</planningHorizon>
+</Schedule>

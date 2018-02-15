@@ -283,7 +283,7 @@ For some systems, updating or confirmation of insurance coverage information MAY
 
 ## Use Case 3 Prefetching Open Slots
 
-This use case is the same as [Use Case 2](#use-case-2-open-scheduling-for-new-patient-or-existing-patient) above except data for available appointments are gathered in advance of end user login instead of determining available appointments in real-time. Therefore, in this use case open slots are queried and scheduling business rules need to be shared between the third-party app and EHR scheduler in order to determine appointment availability and create valid appointments.
+As in Use Case 2 above, this use case is focused on scheduling through a third-party application where the patient is either a new or existing patient. The patient may be trying to book an appointment to see a particular Practitioner or for a service to be performed. In contrast to determining available appointments in real-time, in this use case: 1) the scheduling data is fetched *prior* to the end user request, 2) the appointment availability is based upon third party application business rules, and 3) a valid appointment resources created and exchanged with the scheduling server (EHR). This is defined as "prefetching" for this guide.
 
 Preconditions:
 
@@ -291,11 +291,13 @@ Preconditions:
 - Patient uses a third-party application to schedule an appointment
 - Open scheduling model
 - User level Login and trust
-- Prefetching available open slots
-- Third Party App able to aquire:
+- Third Party App able to acquire:
   - Scheduling business rules for target organization
   - At a minimum FHIR resource ids for Location and Practitioner
-- FHIR Scheduling Server maintains a version history of Slots
+  - Accepts subscription notifications
+- FHIR Scheduling Server:
+  - Supports FHIR event based subscriptions
+  - Allows writing of Appointments by 3rd party applications
 
 #### Scenario 3a. New Patient Schedules an Appointment with a Provider without being in health system
 {:.no_toc}
@@ -315,8 +317,6 @@ In Scenario 3a and 3b we have introduced the complexities of a new patient and a
 
 {% include img.html img="diagrams/Slide37.png" caption="Figure 1: Prefetching Open Slots" %}
 
-Note that steps 6-9 are identical to Scenario 2 Steps 4-6.
-
 ###  Share Business Rules
 {:.no_toc}
 
@@ -327,7 +327,7 @@ The EHR/Hospital shares the business rules and logic for creating an appointment
 ###  Initial Load
 {:.no_toc}
 
-The third-party application fetches the 'initial load' of open slots.  It may be repeated to periodically refresh the data. This query may `_include` the relevant actors and and schedules so the client application is able to apply its business rules to create valid FHIR Appointment resources for transacting with the FHIR Scheduler/EHR.  Occasionally the Client server may need to repeat this step to reset its information.
+The third-party application fetches the "initial load" of open slots to get all the data needed supporting the creation of new appointments. The query is made for the maximum date ranges for the available slots for each provider or service and is typically repeated daily to reset or to resynchronize its information with a scheduling server.  It may `_include` the relevant actor and schedule resources so the client application is able to apply its business rules to create valid FHIR Appointment resources for transacting with the FHIR Scheduler/EHR.  
 
 {% include img.html img="diagrams/Slide14.png" caption="Figure 1: Initial Load" %}
 
@@ -336,44 +336,39 @@ The third-party application fetches the 'initial load' of open slots.  It may be
 
 The following Argonaut Scheduling artifacts are used in this transaction:
 
+- **[Argonaut Availability Prefetch Operation](OperationDefinition-slot-prefetch.html)**
 - **[Argonaut Prefetch Slot Profile](StructureDefinition-prefetch-slot.html)**
 - **[Argonaut Slot Bundle Profile](StructureDefinition-slot-bundle.html)**.
 
 #### Usage
 {:.no_toc}
 
-To fetch all open slots for a period of time and include relevant Practitioners, Locations and Schedules, the Client SHALL use the standard FHIR RESTful [search API]({{site.data.fhir.path}}/search.html) as shown along with these standard [search parameters]({{site.data.fhir.path}}/slot.html#search):
+Using Both `GET` and `POST` Syntax the operation can be invoked as follows to fetch all open slots for the maximum period of time for relevant Practitioners, Locations and Services:
 
-- status (required = "free")
-- start (required)
-- slot-type (optional)
-- the [chained]({{site.data.fhir.path}}/search.html#chaining) schedule.actor parameter to limit to Practitioner or Location actor(s) (optional)
+`GET [base]/Slot/$prefetch?{parameters}`
 
-~~~
-GET [base]/Slot?status=free&start=ge[date]&start=le[date]{&slot-type=[type1]{,[type2]...}&schedule.actor=Practitioner/[id1],
-{Location/[id1],Practitioner/[id2],Location/[id2]...}}
-~~~
+`POST [base]/Slot/$prefetch`
 
-In addition, Clients may use the `_include` parameter and `:recurse` modifier to fetch the Schedule and the actor (i.e., Practitioner or Location) resources related to the slot search results.
-
-~~~
-GET [base]/Slot?status=free&start=ge[date]&start=le[date]{&schedule.actor=Practitioner/[id1]_include=Slot:schedule&_include:recurse=Schedule:actor}
-~~~
-
-
-#### Example
-{:.no_toc}
-
-~~~json
-todo inline example
-~~~
+{% include slot-prefetch1.md %}
 
 ###  Poll for updated slots
 {:.no_toc}
 
-After fetching the 'initial load' in step 2, the third-party application periodically polls for updated slots to keep the list of open slots current. The query SHALL use the `_history` interaction to fetch only the slots that were either updated, deleted or created since the last query.  By reconciling the query results with its list of open slots, the Client application is able to synchronize its slots information with the FHIR Server.
+After fetching the "initial load" in step 2, the third-party application periodically polls for updated slots to keep the list of open slots current.
 
-{% include img.html img="diagrams/Slide15.png" caption="Figure 1: Poll for updated slots" %}
+Outline:  
+
+1. Subscribe for notifications when the "lowest schedulable entity's" schedule changes  (i.e. a Practitioner's Schedule)
+1. Nofifications (essentially a feed)  payload = stripped down schedule with an actor and period
+  - "heartbeat" notification with no payload
+1. Subscriber uses notification to fetch the slots for that actor and time period using the same operation as the initial load above.
+
+Detailed Documentation pending....
+
+
+<!--
+
+{ % include img.html img="diagrams/Slide15.png" caption="Figure 1: Poll for updated slots" % }
 
 #### API
 {:.no_toc}
@@ -403,6 +398,8 @@ Note that this operation *does not* contain any search parameters. The client mu
 ~~~json
 todo inline example
 ~~~
+
+-->
 
 ###  Patient Registration Option A
 {:.no_toc}

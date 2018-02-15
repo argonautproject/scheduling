@@ -6,19 +6,19 @@ dependencyList.location,http://hl7.org/fhir/us/core/stu1/
 dependencyList.name,uscore
 dependencyList.source,dependencies/uscore
 do-transforms,FALSE
-extensions,extension-status-reason
+extensions,extension-status-reason|extension-trigger-event|extension-event-focus|extension-payload-profile
 fixed-business-version,0.0.0
 gen-examples,FALSE
-igtemplate-dir,/Users/ehaas/Documents/FHIR/IG-Template-New/
+igtemplate-dir,/Users/ehaas/Documents/FHIR/IG-Template2/
 jurisdiction,US
 no-inactive-codes,FALSE
-paths.output,../Argo-Scheduling/docs
-paths.pages,pages|../Argo-Scheduling/pages
-paths.qa,qa
-paths.resources,../Argo-Scheduling/resources|../Argo-Scheduling/examples
+paths.output,docs
+paths.pages,framework|source/pages
+paths.qa,generated_output/qa
+paths.resources,source/resources|source/examples
 paths.specification,http://hl7.org/fhir/STU3
-paths.temp,temp
-paths.txCache,txCache
+paths.temp,generated_output/temp
+paths.txCache,generated_output/txCache
 publisher,Argonaut Project
 sct-edition,http://snomed.info/sct/731000124108
 searches,

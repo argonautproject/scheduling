@@ -32,10 +32,10 @@
 </a>
 <ul class="dropdown-menu">
   <li>
-    <a href="server-capstatement.html">Conformance requirements for Server</a>
+    <a href="CapabilityStatement-server.html">Conformance requirements for Server</a>
   </li>
   <li>
-    <a href="client-capstatement.html">Conformance requirements for Client</a>
+    <a href="CapabilityStatement-client.html">Conformance requirements for Client</a>
   </li>
 </ul>
 </li>
