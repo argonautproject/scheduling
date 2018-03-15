@@ -3,7 +3,8 @@
 	<id value="slot-bundle-type"/>
 	<url value="http://fhir.org/guides/argonaut-scheduling/ValueSet/slot-bundle-type"/>
 	<version value="1.0.0"/>
-	<name value="Argonaut Slot BundleType Codes"/>
+	<name value="Argonaut_Slot_BundleType_Codes"/>
+	<title value="Argonaut Slot BundleType Codes"/>
 	<status value="draft"/>
 	<date value="2017-01-10T07:40:10Z"/>
 	<description value="Slot Bundle Profile types constrained to 'history' and 'searchset'."/>
@@ -11,10 +12,10 @@
 		<include>
 			<system value="http://hl7.org/fhir/bundle-type"/>
 			<concept>
-				<code value="searchset"></code>
+				<code value="searchset"/>
 			</concept>
 			<concept>
-				<code value="history"></code>
+				<code value="history"/>
 			</concept>
 		</include>
 	</compose>

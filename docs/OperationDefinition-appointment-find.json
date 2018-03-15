@@ -7,7 +7,7 @@
   },
   "url": "http://fhir.org/guides/argonaut-scheduling/OperationDefinition/appointment-find",
   "version": "0.0.0",
-  "name": "Appointment Availability Operation",
+  "name": "Appointment_Availability_Operation",
   "status": "draft",
   "kind": "operation",
   "date": "2017-10-31T00:00:00-07:00",
@@ -58,9 +58,7 @@
       "searchType": "token",
       "binding": {
         "strength": "extensible",
-        "valueSetReference": {
-          "reference": "http://fhir.org/guides/argonaut-scheduling/ValueSet/specialty"
-        }
+        "valueSetUri": "http://fhir.org/guides/argonaut-scheduling/ValueSet/specialty"
       }
     },
     {
@@ -73,9 +71,7 @@
       "searchType": "token",
       "binding": {
         "strength": "extensible",
-        "valueSetReference": {
-          "reference": "http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type"
-        }
+        "valueSetUri": "http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type"
       }
     },
     {
@@ -151,9 +147,7 @@
       "searchType": "token",
       "binding": {
         "strength": "preferred",
-        "valueSetReference": {
-          "reference": "http://hl7.org/fhir/ValueSet/condition-code"
-        }
+        "valueSetUri": "http://hl7.org/fhir/ValueSet/condition-code"
       }
     },
     {

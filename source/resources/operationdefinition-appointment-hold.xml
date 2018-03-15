@@ -2,7 +2,8 @@
 <OperationDefinition xmlns="http://hl7.org/fhir">
 	<id value="appointment-hold"/>
 	<url value="http://fhir.org/guides/argonaut-scheduling/OperationDefinition/appointment-hold"/>
-	<name value="Appointment Hold"/>
+	<name value="Appointment_Hold"/>
+	<!-- <title value="Appointment Hold"/> -->
 	<status value="draft"/>
 	<kind value="operation"/>
 	<date value="2017-08-09T11:36:05-07:00"/>

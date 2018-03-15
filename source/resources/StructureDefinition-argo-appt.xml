@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+	<id value="argo-appt"/>
+	<url value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt"/>
+	<version value="0.0.0"/>
+	<name value="Argonaut_Appointment_Profile"/>
+	<title value="Argonaut Appointment Profile"/>
+	<status value="draft"/>
+	<date value="2017-06-13"/>
+	<publisher value="Argonaut Project"/>
+	<contact>
+		<telecom>
+			<system value="url"/>
+			<value value="http://argonautwiki.hl7.org"/>
+		</telecom>
+	</contact>
+	<description value="The Argonaut Appointment Profile is used with the '$find', '$hold', and '$book' operations and when fetching appointments."/>
+	<jurisdiction>
+		<coding>
+			<system value="urn:iso:std:iso:3166"/>
+			<code value="US"/>
+			<display value="United States of America"/>
+		</coding>
+	</jurisdiction>
+	<fhirVersion value="3.0.1"/>
+	<kind value="resource"/>
+	<abstract value="false"/>
+	<type value="Appointment"/>
+	<baseDefinition value="http://hl7.org/fhir/StructureDefinition/Appointment"/>
+	<derivation value="constraint"/>
+	<differential>
+		<element id="Appointment">
+			<path value="Appointment"/>
+			<mustSupport value="false"/>
+		</element>
+		<element id="Appointment.id">
+			<path value="Appointment.id"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Appointment.extension:status-reason-extension">
+			<path value="Appointment.extension"/>
+			<sliceName value="status-reason-extension"/>
+			<min value="0"/>
+			<max value="1"/>
+			<type>
+				<code value="Extension"/>
+				<profile value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-status-reason"/>
+			</type>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Appointment.status">
+			<path value="Appointment.status"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Appointment.serviceType">
+			<path value="Appointment.serviceType"/>
+			<min value="0"/>
+			<max value="*"/>
+			<mustSupport value="true"/>
+			<binding>
+				<strength value="extensible"/>
+				<valueSetReference>
+					<reference value="http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type"/>
+				</valueSetReference>
+			</binding>
+		</element>
+		<element id="Appointment.specialty">
+			<path value="Appointment.specialty"/>
+			<min value="0"/>
+			<max value="*"/>
+			<mustSupport value="true"/>
+			<binding>
+				<strength value="extensible"/>
+				<valueSetReference>
+					<reference value="http://fhir.org/guides/argonaut-scheduling/ValueSet/specialty"/>
+				</valueSetReference>
+			</binding>
+		</element>
+		<element id="Appointment.appointmentType">
+			<path value="Appointment.appointmentType"/>
+			<alias value="`"/>
+			<min value="0"/>
+			<max value="1"/>
+			<mustSupport value="true"/>
+			<binding>
+				<strength value="extensible"/>
+				<valueSetReference>
+					<reference value="http://fhir.org/guides/argonaut-scheduling/ValueSet/appt-type"/>
+				</valueSetReference>
+			</binding>
+		</element>
+		<element id="Appointment.start">
+			<path value="Appointment.start"/>
+			<min value="1"/>
+			<max value="1"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Appointment.end">
+			<path value="Appointment.end"/>
+			<min value="1"/>
+			<max value="1"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Appointment.participant:p-1">
+			<path value="Appointment.participant"/>
+			<sliceName value="p-1"/>
+			<min value="1"/>
+			<max value="*"/>
+			<type>
+				<code value="BackboneElement"/>
+			</type>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Appointment.participant:p-1.actor">
+			<path value="Appointment.participant.actor"/>
+			<min value="1"/>
+			<max value="1"/>
+			<type>
+				<code value="Reference"/>
+				<targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-location"/>
+			</type>
+			<type>
+				<code value="Reference"/>
+				<targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"/>
+			</type>
+			<type>
+				<code value="Reference"/>
+				<targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"/>
+			</type>
+			<type>
+				<code value="Reference"/>
+				<targetProfile value="http://hl7.org/fhir/StructureDefinition/HealthcareService"/>
+			</type>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Appointment.participant:p-1.status">
+			<path value="Appointment.participant.status"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Appointment.requestedPeriod">
+			<path value="Appointment.requestedPeriod"/>
+			<min value="1"/>
+			<max value="1"/>
+			<mustSupport value="true"/>
+		</element>
+	</differential>
+</StructureDefinition>

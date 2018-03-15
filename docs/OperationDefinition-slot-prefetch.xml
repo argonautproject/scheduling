@@ -127,7 +127,7 @@
   </text>
   <url value="http://fhir.org/guides/argonaut-scheduling/OperationDefinition/slot-prefetch"/>
   <version value="0.0.0"/>
-  <name value="Availability Prefetch Operation"/>
+  <name value="Availability_Prefetch_Operation"/>
   <status value="draft"/>
   <kind value="operation"/>
   <date value="2018-02-12T00:00:00-08:00"/>

@@ -296,13 +296,14 @@
   "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet">resourceType</a>" : "ValueSet",
   "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.id">id</a>" : "visit-type",
   "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.text">text</a>" : {
-    "<a href="http://hl7.org/fhir/STU3/datatypes.html#Narrative#Narrative.status">status</a>" : "generated",
-    "<a href="http://hl7.org/fhir/STU3/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;h2&gt;Argonaut Visit Types&lt;/h2&gt;&lt;div&gt;&lt;p&gt;The Argonaut Visit Types are a prioritized valueset of the most common 'business types' for scheduling and have been identified as the baseline use cases for the  Argonaut scheduling Implementation Guide.  This is intended to facilitates implementation of the IG by provide a common starting point for interoperability.  These concept are used in the Argonaut Appointment, Schedule and Slot resources.  The Visit types can be extended by implementers to meet there use cases.  In order to address overlap between &lt;code&gt;serviceType&lt;/code&gt; and &lt;code&gt;appointmentType&lt;/code&gt;, these concepts are mapped to the &lt;a href=&quot;ConceptMap-visit-appt-map.html&quot;&gt;Argonaut Appointment Types&lt;/a&gt;.  A mapping to &lt;a href=&quot;ConceptMap-visit-snomed-map.html&quot;&gt;SNOMED CT &lt;/a&gt; is also provided.&lt;/p&gt;
-&lt;/div&gt;&lt;p&gt;This value set includes codes from the following code systems:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Include all codes defined in &lt;a href=&quot;CodeSystem-visit-type.html&quot;&gt;&lt;code&gt;http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;"
+    "<a href="http://hl7.org/fhir/STU3/datatypes.html#Narrative#Narrative.status">status</a>" : "extensions",
+    "<a href="http://hl7.org/fhir/STU3/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;h2&gt;Argonaut_Visit_Types&lt;/h2&gt;&lt;div&gt;&lt;p&gt;The Argonaut Visit Types are a prioritized valueset of the most common 'business types' for scheduling and have been identified as the baseline use cases for the  Argonaut scheduling Implementation Guide.  This is intended to facilitates implementation of the IG by provide a common starting point for interoperability.  These concept are used in the Argonaut Appointment, Schedule and Slot resources.  The Visit types can be extended by implementers to meet there use cases.  In order to address overlap between &lt;code&gt;serviceType&lt;/code&gt; and &lt;code&gt;appointmentType&lt;/code&gt;, these concepts are mapped to the &lt;a href=&quot;ConceptMap-visit-appt-map.html&quot;&gt;Argonaut Appointment Types&lt;/a&gt;.  A mapping to &lt;a href=&quot;ConceptMap-visit-snomed-map.html&quot;&gt;SNOMED CT &lt;/a&gt; is also provided.&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;This value set includes codes from the following code systems:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Include these codes as defined in &lt;a href=&quot;CodeSystem-visit-type.html&quot;&gt;&lt;code&gt;http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type&lt;/code&gt;&lt;/a&gt;&lt;table class=&quot;none&quot;&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;&lt;b&gt;Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Display&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Definition&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;CodeSystem-visit-type.html#visit-type-breast-imaging&quot;&gt;breast-imaging&lt;/a&gt;&lt;/td&gt;&lt;td&gt;BREAST IMAGING&lt;/td&gt;&lt;td&gt;breast imaging  visit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;CodeSystem-visit-type.html#visit-type-consult&quot;&gt;consult&lt;/a&gt;&lt;/td&gt;&lt;td&gt;CONSULTATION&lt;/td&gt;&lt;td&gt;consultation visit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;CodeSystem-visit-type.html#visit-type-ct&quot;&gt;ct&lt;/a&gt;&lt;/td&gt;&lt;td&gt;COMPUTED TOMOGRAPHY SCAN(CT)&lt;/td&gt;&lt;td&gt;computed tomography scan(ct) visit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;CodeSystem-visit-type.html#visit-type-dental&quot;&gt;dental&lt;/a&gt;&lt;/td&gt;&lt;td&gt;DENTAL&lt;/td&gt;&lt;td&gt;dental visit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;CodeSystem-visit-type.html#visit-type-dxa&quot;&gt;dxa&lt;/a&gt;&lt;/td&gt;&lt;td&gt;DUAL-ENERGY X-RAY ABSORPTIOMETRY(DXA)&lt;/td&gt;&lt;td&gt;Dual-energy X-ray absorptiometry(dxa) visit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;CodeSystem-visit-type.html#visit-type-echo&quot;&gt;echo&lt;/a&gt;&lt;/td&gt;&lt;td&gt;ECHOCARDIOGRAPHY(ECHO)&lt;/td&gt;&lt;td&gt;echocardiography(echo) visit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;CodeSystem-visit-type.html#visit-type-echo-stresstest&quot;&gt;echo-stresstest&lt;/a&gt;&lt;/td&gt;&lt;td&gt;ECHOCARDIOGRAPHY(ECHO) STRESS TEST&lt;/td&gt;&lt;td&gt;echocardiography(echo) stress test visit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;CodeSystem-visit-type.html#visit-type-ed-followup&quot;&gt;ed-followup&lt;/a&gt;&lt;/td&gt;&lt;td&gt;EDUCATION FOLLOW UP&lt;/td&gt;&lt;td&gt;education follow up visit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;CodeSystem-visit-type.html#visit-type-eeg&quot;&gt;eeg&lt;/a&gt;&lt;/td&gt;&lt;td&gt;ELECTROENCEPHALOGRAPHY(EEG)&lt;/td&gt;&lt;td&gt;Electroencephalography(eeg) visit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;CodeSystem-visit-type.html#visit-type-egd&quot;&gt;egd&lt;/a&gt;&lt;/td&gt;&lt;td&gt;ESOPHAGOGASTRODUODENOSCOPY(EGD)&lt;/td&gt;&lt;td&gt;esophagogastroduodenoscopy(egd) visit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;CodeSystem-visit-type.html#visit-type-ekg&quot;&gt;ekg&lt;/a&gt;&lt;/td&gt;&lt;td&gt;ELECTROCARDIOGRAM(EKG)&lt;/td&gt;&lt;td&gt;electrocardiogram(ekg) visit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;CodeSystem-visit-type.html#visit-type-evaluation&quot;&gt;evaluation&lt;/a&gt;&lt;/td&gt;&lt;td&gt;EVALUATION&lt;/td&gt;&lt;td&gt;evaluation visit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;CodeSystem-visit-type.html#visit-type-flu-shot-clinic&quot;&gt;flu-shot-clinic&lt;/a&gt;&lt;/td&gt;&lt;td&gt;INFLUENZA VACCINATION CLINIC&lt;/td&gt;&lt;td&gt;Influenza vaccination clinic visit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;CodeSystem-visit-type.html#visit-type-fluoroscopy&quot;&gt;fluoroscopy&lt;/a&gt;&lt;/td&gt;&lt;td&gt;FLUOROSCOPY&lt;/td&gt;&lt;td&gt;fluoroscopy visit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;CodeSystem-visit-type.html#visit-type-follow-up&quot;&gt;follow-up&lt;/a&gt;&lt;/td&gt;&lt;td&gt;FOLLOW UP&lt;/td&gt;&lt;td&gt;follow up visit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;CodeSystem-visit-type.html#visit-type-home-health&quot;&gt;home-health&lt;/a&gt;&lt;/td&gt;&lt;td&gt;HOME HEALTH VISIT&lt;/td&gt;&lt;td&gt;home health visit visit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;CodeSystem-visit-type.html#visit-type-injection&quot;&gt;injection&lt;/a&gt;&lt;/td&gt;&lt;td&gt;INJECTION&lt;/td&gt;&lt;td&gt;injection visit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;CodeSystem-visit-type.html#visit-type-inter-rad&quot;&gt;inter-rad&lt;/a&gt;&lt;/td&gt;&lt;td&gt;INTERVENTIONAL RADIOLOGY&lt;/td&gt;&lt;td&gt;interventional radiology visit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;CodeSystem-visit-type.html#visit-type-lab&quot;&gt;lab&lt;/a&gt;&lt;/td&gt;&lt;td&gt;LABORATORY TESTS&lt;/td&gt;&lt;td&gt;Laboratory Testing visit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;CodeSystem-visit-type.html#visit-type-minor-surgery&quot;&gt;minor-surgery&lt;/a&gt;&lt;/td&gt;&lt;td&gt;MINOR SURGERY&lt;/td&gt;&lt;td&gt;minor surgery visit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;CodeSystem-visit-type.html#visit-type-mri&quot;&gt;mri&lt;/a&gt;&lt;/td&gt;&lt;td&gt;MAGNETIC RESONANCE IMAGING(MRI)&lt;/td&gt;&lt;td&gt;magnetic resonance imaging(mri) visit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;CodeSystem-visit-type.html#visit-type-new-patient&quot;&gt;new-patient&lt;/a&gt;&lt;/td&gt;&lt;td&gt;NEW PATIENT&lt;/td&gt;&lt;td&gt;new patient visit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;CodeSystem-visit-type.html#visit-type-nuc-med&quot;&gt;nuc-med&lt;/a&gt;&lt;/td&gt;&lt;td&gt;NUCLEAR MEDICINE&lt;/td&gt;&lt;td&gt;nuclear medicine visit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;CodeSystem-visit-type.html#visit-type-occup-therapy&quot;&gt;occup-therapy&lt;/a&gt;&lt;/td&gt;&lt;td&gt;OCCUPATIONAL THERAPY&lt;/td&gt;&lt;td&gt;occupational therapy visit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;CodeSystem-visit-type.html#visit-type-office-visit&quot;&gt;office-visit&lt;/a&gt;&lt;/td&gt;&lt;td&gt;OFFICE VISIT&lt;/td&gt;&lt;td&gt;office visit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;CodeSystem-visit-type.html#visit-type-physical&quot;&gt;physical&lt;/a&gt;&lt;/td&gt;&lt;td&gt;PHYSICAL&lt;/td&gt;&lt;td&gt;physical visit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;CodeSystem-visit-type.html#visit-type-post-op&quot;&gt;post-op&lt;/a&gt;&lt;/td&gt;&lt;td&gt;POST-OPERATIVE(POST-OP)&lt;/td&gt;&lt;td&gt;post-operative visit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;CodeSystem-visit-type.html#visit-type-pre-admit-testing&quot;&gt;pre-admit-testing&lt;/a&gt;&lt;/td&gt;&lt;td&gt;PRE-ADMISSION TESTING VISIT&lt;/td&gt;&lt;td&gt;pre-admission testing visit visit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;CodeSystem-visit-type.html#visit-type-pre-op&quot;&gt;pre-op&lt;/a&gt;&lt;/td&gt;&lt;td&gt;PRE-OPERATIVE(PRE-OP)&lt;/td&gt;&lt;td&gt;pre-operative(pre-op) visit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;CodeSystem-visit-type.html#visit-type-procedure&quot;&gt;procedure&lt;/a&gt;&lt;/td&gt;&lt;td&gt;PROCEDURE&lt;/td&gt;&lt;td&gt;procedure visit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;CodeSystem-visit-type.html#visit-type-same-day&quot;&gt;same-day&lt;/a&gt;&lt;/td&gt;&lt;td&gt;SAME DAY&lt;/td&gt;&lt;td&gt;same day visit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;CodeSystem-visit-type.html#visit-type-stress-test&quot;&gt;stress-test&lt;/a&gt;&lt;/td&gt;&lt;td&gt;STRESS TEST&lt;/td&gt;&lt;td&gt;stress test visit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;CodeSystem-visit-type.html#visit-type-surgery&quot;&gt;surgery&lt;/a&gt;&lt;/td&gt;&lt;td&gt;SURGERY&lt;/td&gt;&lt;td&gt;surgery visit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;CodeSystem-visit-type.html#visit-type-treatment&quot;&gt;treatment&lt;/a&gt;&lt;/td&gt;&lt;td&gt;TREATMENT&lt;/td&gt;&lt;td&gt;treatment visit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;CodeSystem-visit-type.html#visit-type-ultrasound&quot;&gt;ultrasound&lt;/a&gt;&lt;/td&gt;&lt;td&gt;ULTRASOUND&lt;/td&gt;&lt;td&gt;ultrasound visit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;CodeSystem-visit-type.html#visit-type-urgent&quot;&gt;urgent&lt;/a&gt;&lt;/td&gt;&lt;td&gt;URGENT&lt;/td&gt;&lt;td&gt;urgent visit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;CodeSystem-visit-type.html#visit-type-vaccine&quot;&gt;vaccine&lt;/a&gt;&lt;/td&gt;&lt;td&gt;VACCINATION&lt;/td&gt;&lt;td&gt;vaccination visit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;CodeSystem-visit-type.html#visit-type-vision&quot;&gt;vision&lt;/a&gt;&lt;/td&gt;&lt;td&gt;VISION&lt;/td&gt;&lt;td&gt;vision visit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;CodeSystem-visit-type.html#visit-type-walk-in&quot;&gt;walk-in&lt;/a&gt;&lt;/td&gt;&lt;td&gt;WALK IN&lt;/td&gt;&lt;td&gt;walk in visit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;CodeSystem-visit-type.html#visit-type-well-child&quot;&gt;well-child&lt;/a&gt;&lt;/td&gt;&lt;td&gt;WELL CHILD&lt;/td&gt;&lt;td&gt;well child visit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;CodeSystem-visit-type.html#visit-type-x-ray&quot;&gt;x-ray&lt;/a&gt;&lt;/td&gt;&lt;td&gt;X-RAY&lt;/td&gt;&lt;td&gt;x-ray visit&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;"
   },
   "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.url">url</a>" : "http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type",
   "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.version">version</a>" : "0.0.0",
-  "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.name">name</a>" : "Argonaut Visit Types",
+  "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.name">name</a>" : "Argonaut_Visit_Types",
+  "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.title">title</a>" : "Argonaut Visit Types",
   "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.status">status</a>" : "draft",
   "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.date">date</a>" : "2017-07-30T12:40:10-07:00",
   "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.description">description</a>" : "The Argonaut Visit Types are a prioritized valueset of the most common 'business types' for scheduling and have been identified as the baseline use cases for the  Argonaut scheduling Implementation Guide.  This is intended to facilitates implementation of the IG by provide a common starting point for interoperability.  These concept are used in the Argonaut Appointment, Schedule and Slot resources.  The Visit types can be extended by implementers to meet there use cases.  In order to address overlap between `serviceType` and `appointmentType`, these concepts are mapped to the [Argonaut Appointment Types](ConceptMap-visit-appt-map.html).  A mapping to [SNOMED CT ](ConceptMap-visit-snomed-map.html) is also provided.",
@@ -320,7 +321,419 @@
   "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose">compose</a>" : {
     "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include">include</a>" : [
       {
-        "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.system">system</a>" : "http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"
+        "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.system">system</a>" : "http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type",
+        "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept">concept</a>" : [
+          {
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.extension">extension</a>" : [
+              {
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueString</a>" : "breast imaging  visit"
+              }
+            ],
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "breast-imaging",
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "BREAST IMAGING"
+          },
+          {
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.extension">extension</a>" : [
+              {
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueString</a>" : "consultation visit"
+              }
+            ],
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "consult",
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "CONSULTATION"
+          },
+          {
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.extension">extension</a>" : [
+              {
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueString</a>" : "computed tomography scan(ct) visit"
+              }
+            ],
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "ct",
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "COMPUTED TOMOGRAPHY SCAN(CT)"
+          },
+          {
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.extension">extension</a>" : [
+              {
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueString</a>" : "dental visit"
+              }
+            ],
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "dental",
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "DENTAL"
+          },
+          {
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.extension">extension</a>" : [
+              {
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueString</a>" : "Dual-energy X-ray absorptiometry(dxa) visit"
+              }
+            ],
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "dxa",
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "DUAL-ENERGY X-RAY ABSORPTIOMETRY(DXA)"
+          },
+          {
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.extension">extension</a>" : [
+              {
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueString</a>" : "echocardiography(echo) visit"
+              }
+            ],
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "echo",
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "ECHOCARDIOGRAPHY(ECHO)"
+          },
+          {
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.extension">extension</a>" : [
+              {
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueString</a>" : "echocardiography(echo) stress test visit"
+              }
+            ],
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "echo-stresstest",
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "ECHOCARDIOGRAPHY(ECHO) STRESS TEST"
+          },
+          {
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.extension">extension</a>" : [
+              {
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueString</a>" : "education follow up visit"
+              }
+            ],
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "ed-followup",
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "EDUCATION FOLLOW UP"
+          },
+          {
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.extension">extension</a>" : [
+              {
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueString</a>" : "Electroencephalography(eeg) visit"
+              }
+            ],
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "eeg",
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "ELECTROENCEPHALOGRAPHY(EEG)"
+          },
+          {
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.extension">extension</a>" : [
+              {
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueString</a>" : "esophagogastroduodenoscopy(egd) visit"
+              }
+            ],
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "egd",
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "ESOPHAGOGASTRODUODENOSCOPY(EGD)"
+          },
+          {
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.extension">extension</a>" : [
+              {
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueString</a>" : "electrocardiogram(ekg) visit"
+              }
+            ],
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "ekg",
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "ELECTROCARDIOGRAM(EKG)"
+          },
+          {
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.extension">extension</a>" : [
+              {
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueString</a>" : "evaluation visit"
+              }
+            ],
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "evaluation",
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "EVALUATION"
+          },
+          {
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.extension">extension</a>" : [
+              {
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueString</a>" : "Influenza vaccination clinic visit"
+              }
+            ],
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "flu-shot-clinic",
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "INFLUENZA VACCINATION CLINIC"
+          },
+          {
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.extension">extension</a>" : [
+              {
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueString</a>" : "fluoroscopy visit"
+              }
+            ],
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "fluoroscopy",
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "FLUOROSCOPY"
+          },
+          {
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.extension">extension</a>" : [
+              {
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueString</a>" : "follow up visit"
+              }
+            ],
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "follow-up",
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "FOLLOW UP"
+          },
+          {
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.extension">extension</a>" : [
+              {
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueString</a>" : "home health visit visit"
+              }
+            ],
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "home-health",
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "HOME HEALTH VISIT"
+          },
+          {
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.extension">extension</a>" : [
+              {
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueString</a>" : "injection visit"
+              }
+            ],
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "injection",
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "INJECTION"
+          },
+          {
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.extension">extension</a>" : [
+              {
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueString</a>" : "interventional radiology visit"
+              }
+            ],
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "inter-rad",
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "INTERVENTIONAL RADIOLOGY"
+          },
+          {
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.extension">extension</a>" : [
+              {
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueString</a>" : "Laboratory Testing visit"
+              }
+            ],
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "lab",
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "LABORATORY TESTS"
+          },
+          {
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.extension">extension</a>" : [
+              {
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueString</a>" : "minor surgery visit"
+              }
+            ],
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "minor-surgery",
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "MINOR SURGERY"
+          },
+          {
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.extension">extension</a>" : [
+              {
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueString</a>" : "magnetic resonance imaging(mri) visit"
+              }
+            ],
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "mri",
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "MAGNETIC RESONANCE IMAGING(MRI)"
+          },
+          {
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.extension">extension</a>" : [
+              {
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueString</a>" : "new patient visit"
+              }
+            ],
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "new-patient",
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "NEW PATIENT"
+          },
+          {
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.extension">extension</a>" : [
+              {
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueString</a>" : "nuclear medicine visit"
+              }
+            ],
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "nuc-med",
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "NUCLEAR MEDICINE"
+          },
+          {
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.extension">extension</a>" : [
+              {
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueString</a>" : "occupational therapy visit"
+              }
+            ],
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "occup-therapy",
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "OCCUPATIONAL THERAPY"
+          },
+          {
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.extension">extension</a>" : [
+              {
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueString</a>" : "office visit"
+              }
+            ],
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "office-visit",
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "OFFICE VISIT"
+          },
+          {
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.extension">extension</a>" : [
+              {
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueString</a>" : "physical visit"
+              }
+            ],
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "physical",
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "PHYSICAL"
+          },
+          {
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.extension">extension</a>" : [
+              {
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueString</a>" : "post-operative visit"
+              }
+            ],
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "post-op",
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "POST-OPERATIVE(POST-OP)"
+          },
+          {
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.extension">extension</a>" : [
+              {
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueString</a>" : "pre-admission testing visit visit"
+              }
+            ],
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "pre-admit-testing",
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "PRE-ADMISSION TESTING VISIT"
+          },
+          {
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.extension">extension</a>" : [
+              {
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueString</a>" : "pre-operative(pre-op) visit"
+              }
+            ],
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "pre-op",
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "PRE-OPERATIVE(PRE-OP)"
+          },
+          {
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.extension">extension</a>" : [
+              {
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueString</a>" : "procedure visit"
+              }
+            ],
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "procedure",
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "PROCEDURE"
+          },
+          {
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.extension">extension</a>" : [
+              {
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueString</a>" : "same day visit"
+              }
+            ],
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "same-day",
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "SAME DAY"
+          },
+          {
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.extension">extension</a>" : [
+              {
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueString</a>" : "stress test visit"
+              }
+            ],
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "stress-test",
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "STRESS TEST"
+          },
+          {
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.extension">extension</a>" : [
+              {
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueString</a>" : "surgery visit"
+              }
+            ],
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "surgery",
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "SURGERY"
+          },
+          {
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.extension">extension</a>" : [
+              {
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueString</a>" : "treatment visit"
+              }
+            ],
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "treatment",
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "TREATMENT"
+          },
+          {
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.extension">extension</a>" : [
+              {
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueString</a>" : "ultrasound visit"
+              }
+            ],
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "ultrasound",
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "ULTRASOUND"
+          },
+          {
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.extension">extension</a>" : [
+              {
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueString</a>" : "urgent visit"
+              }
+            ],
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "urgent",
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "URGENT"
+          },
+          {
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.extension">extension</a>" : [
+              {
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueString</a>" : "vaccination visit"
+              }
+            ],
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "vaccine",
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "VACCINATION"
+          },
+          {
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.extension">extension</a>" : [
+              {
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueString</a>" : "vision visit"
+              }
+            ],
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "vision",
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "VISION"
+          },
+          {
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.extension">extension</a>" : [
+              {
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueString</a>" : "walk in visit"
+              }
+            ],
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "walk-in",
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "WALK IN"
+          },
+          {
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.extension">extension</a>" : [
+              {
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueString</a>" : "well child visit"
+              }
+            ],
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "well-child",
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "WELL CHILD"
+          },
+          {
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.extension">extension</a>" : [
+              {
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+                "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueString</a>" : "x-ray visit"
+              }
+            ],
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "x-ray",
+            "<a href="http://hl7.org/fhir/STU3/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "X-RAY"
+          }
+        ]
       }
     ]
   }
@@ -368,7 +781,7 @@ Formats: <a href="ValueSet-visit-type.html">Narrative</a>, <a href="ValueSet-vis
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Thu, Feb 15, 2018 00:13-0800. |
+            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Wed, Mar 14, 2018 19:21-0700. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/STU3license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

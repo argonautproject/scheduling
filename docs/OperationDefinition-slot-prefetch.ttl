@@ -14,7 +14,7 @@
   ];
   fhir:OperationDefinition.url [ fhir:value "http://fhir.org/guides/argonaut-scheduling/OperationDefinition/slot-prefetch"];
   fhir:OperationDefinition.version [ fhir:value "0.0.0"];
-  fhir:OperationDefinition.name [ fhir:value "Availability Prefetch Operation"];
+  fhir:OperationDefinition.name [ fhir:value "Availability_Prefetch_Operation"];
   fhir:OperationDefinition.status [ fhir:value "draft"];
   fhir:OperationDefinition.kind [ fhir:value "operation"];
   fhir:OperationDefinition.date [ fhir:value "2018-02-12T00:00:00-08:00"^^xsd:dateTime];

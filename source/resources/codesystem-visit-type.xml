@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CodeSystem xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir http://build.fhir.org/device.xsd">
+<CodeSystem xmlns="http://hl7.org/fhir">
 	<id value="visit-type"/>
 	<url value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
 	<version value="0.0.0"/>
-	<name value="Argonaut Visit Types"/>
+	<name value="Argonaut_Visit_Types_Codes"/>
+	<title value="Argonaut Visit Type Codes"/>
 	<status value="draft"/>
 	<experimental value="false"/>
 	<date value="2017-07-30T09:46:45-07:00"/>
@@ -11,7 +12,6 @@
 	<caseSensitive value="true"/>
 	<valueSet value="http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type"/>
 	<content value="complete"/>
-	<count value="40"/>
 	<concept>
 		<code value="breast-imaging"/>
 		<display value="BREAST IMAGING"/>

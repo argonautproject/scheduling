@@ -283,7 +283,7 @@ For some systems, updating or confirmation of insurance coverage information MAY
 
 ## Use Case 3 Prefetching Open Slots
 
-As in Use Case 2 above, this use case is focused on scheduling through a third-party application where the patient is either a new or existing patient. The patient may be trying to book an appointment to see a particular Practitioner or for a service to be performed. In contrast to determining available appointments in real-time, in this use case: 1) the scheduling data is fetched *prior* to the end user request, 2) the appointment availability is based upon third party application business rules, and 3) a valid appointment resources created and exchanged with the scheduling server (EHR). This is defined as "prefetching" for this guide.
+As in Use Case 2 above, this use case is focused on scheduling through a third-party application where the patient is either a new or existing patient. The patient may be trying to book an appointment to see a particular Practitioner or for a service to be performed. In contrast to determining available appointments in real-time, in this use case: 1) the scheduling data is fetched *prior* to the end user request as FHIR [Slots]({{site.data.fhir.path}}/slot.html), 2) the appointment availability is based upon third party application business rules, and 3) a valid appointment resources created and exchanged with the scheduling server (EHR). This is defined as "prefetching" for this guide.
 
 Preconditions:
 
@@ -317,17 +317,86 @@ In Scenario 3a and 3b we have introduced the complexities of a new patient and a
 
 {% include img.html img="diagrams/Slide37.png" caption="Figure 1: Prefetching Open Slots" %}
 
+{% include img.html img="diagrams/Slide42.png" caption="Figure 1: Open Scheduling for new or existing patients" %}
+
 ###  Share Business Rules
 {:.no_toc}
 
-The EHR/Hospital shares the business rules and logic for creating an appointment for a particular service with the third-party application. For example, which assets are needed. This is typically an "out of band" transaction. A FHIR based transaction is out of scope for this IG.
+The EHR/Hospital shares the business rules and logic for creating an appointment for a particular service with the third-party application. For example, which assets are needed and determination of whether the shared slot are a fixed size (e.g., 5 or 15 minutes) or variable sized slots. This is typically an "out of band" transaction and a FHIR based transaction is out of scope for this IG.
 
 {% include img.html img="diagrams/Slide08.png" caption="Figure 1: Share Business Rules" %}
+
+### Subscribe for Schedule Change Notifications
+{:.no_toc}
+
+The third-party application subscribes to the FHIR Scheduler to receive notifications of schedule changes for the "lowest schedulable entity".  This may be a provider, facility, device, etc depending on the system.  The notification of the schedule change informs the client which slots to prefetch to update their slot data and the notification triggers SHALL include:
+
+- Changes to the schedule for the "lowest schedulable entity"
+- Visit type changes
+- Changes in availability of a service for third party scheduling
+
+ The time horizon is determined by the client and events beyond it would be discarded.  Note this can be considered a notification feed and there are several architectures to implement it such as using a "feed handler" as a intermediary system.
+
+ {% include img.html img="diagrams/Slide43.png" caption="Figure 1: Subscribe for Schedule Change Notifications" %}
+
+#### API
+{:.no_toc}
+
+The following Argonaut Scheduling artifacts are used in this transaction:
+
+- **[Argonaut Scheduling Subscription Profile](StructureDefinition-argo-sub-notif.html)**
+- **[Subscription Trigger event Extension](StructureDefinition-extension-trigger-event.html)**
+- **[Subscription_Payload_Profile_Extension](StructureDefinition-extension-payload-profile.html)**
+- **[Subscription_Event_Focus_Extension](StructureDefinition-extension-event-focus.html)**
+
+#### Usage
+{:.no_toc}
+
+`POST [base]/Subscription`
+
+#### Example
+{:.no_toc}
+
+~~~
+POST [base]/Subscription
+
+    **payload:**
+
+    {
+      "resourceType": "Subscription",
+      "id": "example",
+      "status": "active",
+      "reason": "Notify subscriber of schedule changes to trigger the subscriber prefetch updated slots",
+      "_criteria": {
+        "extension": [
+          {
+            "url": "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-trigger-event",
+            "valueString": "schedule where any slot that reference it has changed"
+          },
+          {
+            "url": "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-event-focus",
+            "valueCode": "Schedule"
+          }
+        ]
+      },
+      "channel": {
+        "extension": [
+          {
+            "url": "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-payload-profile",
+            "valueUri": "//fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-sched-notif"
+          }
+        ],
+        "type": "rest-hook",
+        "endpoint": "https://feed-handler.com/notification",
+        "payload": "application/fhir+json"
+      }
+    }
+~~~
 
 ###  Initial Load
 {:.no_toc}
 
-The third-party application fetches the "initial load" of open slots to get all the data needed supporting the creation of new appointments. The query is made for the maximum date ranges for the available slots for each provider or service and is typically repeated daily to reset or to resynchronize its information with a scheduling server.  It may `_include` the relevant actor and schedule resources so the client application is able to apply its business rules to create valid FHIR Appointment resources for transacting with the FHIR Scheduler/EHR.  
+The third-party application fetches the "initial load" of open slots to get all the data needed supporting the creation of new appointments. The query is made for the maximum date ranges for the available slots for each provider or service and is typically repeated daily to reset or to resynchronize its information with a scheduling server.  
 
 {% include img.html img="diagrams/Slide14.png" caption="Figure 1: Initial Load" %}
 

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+	<id value="argo-coverage"/>
+	<url value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-coverage"/>
+	<version value="0.0.0"/>
+	<name value="Argonaut_Coverage_Profile"/>
+	<title value="Argonaut Coverage Profile"/>
+	<status value="draft"/>
+	<date value="2017-11-07"/>
+	<publisher value="Argonaut Project"/>
+	<contact>
+		<telecom>
+			<system value="url"/>
+			<value value="http://argonautwiki.hl7.org"/>
+		</telecom>
+	</contact>
+	<description value="The Argonaut Coverage Profile profile is used to provide insurance information for scheduling an appointment and or registering a patient."/>
+	<jurisdiction>
+		<coding>
+			<system value="urn:iso:std:iso:3166"/>
+			<code value="US"/>
+			<display value="United States of America"/>
+		</coding>
+	</jurisdiction>
+	<fhirVersion value="3.0.1"/>
+	<kind value="resource"/>
+	<abstract value="false"/>
+	<type value="Coverage"/>
+	<baseDefinition value="http://hl7.org/fhir/StructureDefinition/Coverage"/>
+	<derivation value="constraint"/>
+	<differential>
+		<element id="Coverage">
+			<path value="Coverage"/>
+			<definition value="This is the Coverage profile which is used to provide insurance information for scheduling an appointment and or registering a patient."/>
+			<mustSupport value="false"/>
+		</element>
+		<element id="Coverage.id">
+			<path value="Coverage.id"/>
+			<comment value="This may be the same as the SubscriberID or the Concatenetation of the SubscriberID + the Subscriber suffix."/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Coverage.identifier">
+			<path value="Coverage.identifier"/>
+			<comment value="This may be the same as the SubscriberID or the Concatenetation of the SubscriberID + the Subscriber suffix."/>
+			<alias value="SubscriberID"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Coverage.status">
+			<path value="Coverage.status"/>
+			<min value="1"/>
+			<max value="1"/>
+			<type>
+				<code value="code"/>
+			</type>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Coverage.type">
+			<path value="Coverage.type"/>
+			<type>
+				<code value="CodeableConcept"/>
+			</type>
+			<mustSupport value="true"/>
+			<binding>
+				<strength value="extensible"/>
+				<valueSetReference>
+					<reference value="http://hl7.org/fhir/ValueSet/coverage-type"/>
+				</valueSetReference>
+			</binding>
+		</element>
+		<element id="Coverage.subscriber">
+			<path value="Coverage.subscriber"/>
+			<short value="Suscriber (in case dependent is patient)"/>
+			<min value="0"/>
+			<max value="1"/>
+			<type>
+				<code value="Reference"/>
+				<targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"/>
+			</type>
+			<type>
+				<code value="Reference"/>
+				<targetProfile value="http://hl7.org/fhir/StructureDefinition/RelatedPerson"/>
+			</type>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Coverage.subscriberId">
+			<path value="Coverage.subscriberId"/>
+			<short value="Subscriber ID"/>
+			<min value="0"/>
+			<max value="1"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Coverage.relationship">
+			<path value="Coverage.relationship"/>
+			<min value="0"/>
+			<max value="1"/>
+			<type>
+				<code value="CodeableConcept"/>
+			</type>
+			<mustSupport value="true"/>
+			<binding>
+				<strength value="extensible"/>
+				<valueSetReference>
+					<reference value="http://hl7.org/fhir/ValueSet/policyholder-relationship"/>
+				</valueSetReference>
+			</binding>
+		</element>
+		<element id="Coverage.period">
+			<path value="Coverage.period"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Coverage.payor">
+			<path value="Coverage.payor"/>
+			<short value="Payer"/>
+			<min value="1"/>
+			<max value="*"/>
+			<type>
+				<code value="Reference"/>
+				<targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization"/>
+			</type>
+			<type>
+				<code value="Reference"/>
+				<targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"/>
+			</type>
+			<type>
+				<code value="Reference"/>
+				<targetProfile value="http://hl7.org/fhir/StructureDefinition/RelatedPerson"/>
+			</type>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Coverage.grouping">
+			<path value="Coverage.grouping"/>
+			<min value="1"/>
+			<max value="1"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Coverage.grouping.plan">
+			<path value="Coverage.grouping.plan"/>
+			<short value="Plan ID"/>
+			<min value="1"/>
+			<max value="1"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Coverage.grouping.planDisplay">
+			<path value="Coverage.grouping.planDisplay"/>
+			<short value="Plan Name"/>
+			<min value="1"/>
+			<max value="1"/>
+			<mustSupport value="true"/>
+		</element>
+	</differential>
+</StructureDefinition>

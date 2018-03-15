@@ -2,7 +2,8 @@
 <OperationDefinition xmlns="http://hl7.org/fhir">
 	<id value="appointment-book"/>
 	<url value="http://fhir.org/guides/argonaut-scheduling/OperationDefinition/appointment-book"/>
-	<name value="Appointment Book"/>
+	<name value="Appointment_Book"/>
+	<!-- <title value="Appointment Book"/> -->
 	<status value="draft"/>
 	<kind value="operation"/>
 	<date value="2017-08-09T11:36:05-07:00"/>
@@ -10,8 +11,7 @@
 	<description value="Request to book a selected Appointment. This operation follows the appointment availability and optional hold interactiona.  This operaton completes the booking of an appointment.  The server determines if the nominated appointment is still available (i.e., all the required actors and physical assets needed for the appointment are still available) and either accepts or rejects the hold request and updates the resource status accordingly.  See the [Appointment State Diagram](state-diagram.html) for further details on statuses."/>
 	<idempotent value="false"/>
 	<code value="book"/>
-	<comment value="This operation is not [idempotent](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html) and may only be invoked by performing an HTTP POST.&#xD;&#xD;
-It is assumed that the server has identified and secured the context appropriately, and can either associate the authorization context with the patient(s), or determine whether the context has the rights to the nominated patient(s), if there is one.  Specifying the relationship between the context, a user and patient records is outside the scope of this specification"/>
+	<comment value="This operation is not [idempotent](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html) and may only be invoked by performing an HTTP POST.&#xD;&#xD; It is assumed that the server has identified and secured the context appropriately, and can either associate the authorization context with the patient(s), or determine whether the context has the rights to the nominated patient(s), if there is one.  Specifying the relationship between the context, a user and patient records is outside the scope of this specification"/>
 	<resource value="Appointment"/>
 	<system value="false"/>
 	<type value="true"/>
@@ -48,8 +48,7 @@ It is assumed that the server has identified and secured the context appropriate
 		<use value="in"/>
 		<min value="0"/>
 		<max value="*"/>
-		<documentation value="A resource id for the Patient(s) participant in the resource (e.g., Patient/1234).  References can be to an absolute URL, but servers only perform this operation on their own patients.  For existing patients the client may need to fetch Patient ID using RESTful `GET` to the FHIR Server
-(i.e., [US-Core Patient Search]({site.data.fhir.uscore}/StructureDefinition-us-core-patient.html#search)). For new patients client needs to fetch Patient ID using RESTful `POST` to register the patient on the FHIR Server (see [create]({site.data.fhir.path}/http.html#create) and [conditional create]({site.data.fhir.path}/http.html#ccreate))"/>
+		<documentation value="A resource id for the Patient(s) participant in the resource (e.g., Patient/1234).  References can be to an absolute URL, but servers only perform this operation on their own patients.  For existing patients the client may need to fetch Patient ID using RESTful `GET` to the FHIR Server (i.e., [US-Core Patient Search]({site.data.fhir.uscore}/StructureDefinition-us-core-patient.html#search)). For new patients client needs to fetch Patient ID using RESTful `POST` to register the patient on the FHIR Server (see [create]({site.data.fhir.path}/http.html#create) and [conditional create]({site.data.fhir.path}/http.html#ccreate))"/>
 		<type value="uri"/>
 	</parameter>
 	<parameter>
@@ -59,8 +58,7 @@ It is assumed that the server has identified and secured the context appropriate
 		<max value="1"/>
 		<documentation value="Comments or special instructions"/>
 		<type value="string"/>
-	</parameter>
-	<!--
+	</parameter><!--
 	<parameter>
 		<name value="patient-resource"/>
 		<use value="in"/>
@@ -69,8 +67,7 @@ It is assumed that the server has identified and secured the context appropriate
 		<documentation value="If the appointment is for a new patient, the patient record should not be created until just before booking an appointment. Because the patient record does not exist on the booking system, this parameter is  a Patient resource that includes demographics and patient preferences."/>
 		<type value="Resource"/>
 	</parameter>
--->
-	<parameter>
+--><parameter>
 		<name value="return"/>
 		<use value="out"/>
 		<min value="0"/>

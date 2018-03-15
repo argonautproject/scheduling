@@ -3,13 +3,301 @@
 	<id value="visit-type"/>
 	<url value="http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type"/>
 	<version value="1.0.0"/>
-	<name value="Argonaut Visit Types"/>
+	<name value="Argonaut_Visit_Types"/>
+	<title value="Argonaut Visit Types"/>
 	<status value="draft"/>
 	<date value="2017-07-30T19:40:10Z"/>
 	<description value="The Argonaut Visit Types are a prioritized valueset of the most common 'business types' for scheduling and have been identified as the baseline use cases for the  Argonaut scheduling Implementation Guide.  This is intended to facilitates implementation of the IG by provide a common starting point for interoperability.  These concept are used in the Argonaut Appointment, Schedule and Slot resources.  The Visit types can be extended by implementers to meet there use cases.  In order to address overlap between `serviceType` and `appointmentType`, these concepts are mapped to the [Argonaut Appointment Types](ConceptMap-visit-appt-map.html).  A mapping to [SNOMED CT ](ConceptMap-visit-snomed-map.html) is also provided."/>
 	<compose>
 		<include>
 			<system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
+			<concept>
+				<code value="breast-imaging"/>
+				<display value="BREAST IMAGING"/>
+				<extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+					<valueString value="breast imaging  visit"/>
+				</extension>
+			</concept>
+			<concept>
+				<code value="consult"/>
+				<display value="CONSULTATION"/>
+				<extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+					<valueString value="consultation visit"/>
+				</extension>
+			</concept>
+			<concept>
+				<code value="ct"/>
+				<display value="COMPUTED TOMOGRAPHY SCAN(CT)"/>
+				<extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+					<valueString value="computed tomography scan(ct) visit"/>
+				</extension>
+			</concept>
+			<concept>
+				<code value="dental"/>
+				<display value="DENTAL"/>
+				<extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+					<valueString value="dental visit"/>
+				</extension>
+			</concept>
+			<concept>
+				<code value="dxa"/>
+				<display value="DUAL-ENERGY X-RAY ABSORPTIOMETRY(DXA)"/>
+				<extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+					<valueString value="Dual-energy X-ray absorptiometry(dxa) visit"/>
+				</extension>
+			</concept>
+			<concept>
+				<code value="echo"/>
+				<display value="ECHOCARDIOGRAPHY(ECHO)"/>
+				<extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+					<valueString value="echocardiography(echo) visit"/>
+				</extension>
+			</concept>
+			<concept>
+				<code value="echo-stresstest"/>
+				<display value="ECHOCARDIOGRAPHY(ECHO) STRESS TEST"/>
+				<extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+					<valueString value="echocardiography(echo) stress test visit"/>
+				</extension>
+			</concept>
+			<concept>
+				<code value="ed-followup"/>
+				<display value="EDUCATION FOLLOW UP"/>
+				<extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+					<valueString value="education follow up visit"/>
+				</extension>
+			</concept>
+			<concept>
+				<code value="eeg"/>
+				<display value="ELECTROENCEPHALOGRAPHY(EEG)"/>
+				<extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+					<valueString value="Electroencephalography(eeg) visit"/>
+				</extension>
+			</concept>
+			<concept>
+				<code value="egd"/>
+				<display value="ESOPHAGOGASTRODUODENOSCOPY(EGD)"/>
+				<extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+					<valueString value="esophagogastroduodenoscopy(egd) visit"/>
+				</extension>
+			</concept>
+			<concept>
+				<code value="ekg"/>
+				<display value="ELECTROCARDIOGRAM(EKG)"/>
+				<extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+					<valueString value="electrocardiogram(ekg) visit"/>
+				</extension>
+			</concept>
+			<concept>
+				<code value="evaluation"/>
+				<display value="EVALUATION"/>
+				<extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+					<valueString value="evaluation visit"/>
+				</extension>
+			</concept>
+			<concept>
+				<code value="flu-shot-clinic"/>
+				<display value="INFLUENZA VACCINATION CLINIC"/>
+				<extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+					<valueString value="Influenza vaccination clinic visit"/>
+				</extension>
+			</concept>
+			<concept>
+				<code value="fluoroscopy"/>
+				<display value="FLUOROSCOPY"/>
+				<extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+					<valueString value="fluoroscopy visit"/>
+				</extension>
+			</concept>
+			<concept>
+				<code value="follow-up"/>
+				<display value="FOLLOW UP"/>
+				<extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+					<valueString value="follow up visit"/>
+				</extension>
+			</concept>
+			<concept>
+				<code value="home-health"/>
+				<display value="HOME HEALTH VISIT"/>
+				<extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+					<valueString value="home health visit visit"/>
+				</extension>
+			</concept>
+			<concept>
+				<code value="injection"/>
+				<display value="INJECTION"/>
+				<extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+					<valueString value="injection visit"/>
+				</extension>
+			</concept>
+			<concept>
+				<code value="inter-rad"/>
+				<display value="INTERVENTIONAL RADIOLOGY"/>
+				<extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+					<valueString value="interventional radiology visit"/>
+				</extension>
+			</concept>
+			<concept>
+				<code value="lab"/>
+				<display value="LABORATORY TESTS"/>
+				<extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+					<valueString value="Laboratory Testing visit"/>
+				</extension>
+			</concept>
+			<concept>
+				<code value="minor-surgery"/>
+				<display value="MINOR SURGERY"/>
+				<extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+					<valueString value="minor surgery visit"/>
+				</extension>
+			</concept>
+			<concept>
+				<code value="mri"/>
+				<display value="MAGNETIC RESONANCE IMAGING(MRI)"/>
+				<extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+					<valueString value="magnetic resonance imaging(mri) visit"/>
+				</extension>
+			</concept>
+			<concept>
+				<code value="new-patient"/>
+				<display value="NEW PATIENT"/>
+				<extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+					<valueString value="new patient visit"/>
+				</extension>
+			</concept>
+			<concept>
+				<code value="nuc-med"/>
+				<display value="NUCLEAR MEDICINE"/>
+				<extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+					<valueString value="nuclear medicine visit"/>
+				</extension>
+			</concept>
+			<concept>
+				<code value="occup-therapy"/>
+				<display value="OCCUPATIONAL THERAPY"/>
+				<extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+					<valueString value="occupational therapy visit"/>
+				</extension>
+			</concept>
+			<concept>
+				<code value="office-visit"/>
+				<display value="OFFICE VISIT"/>
+				<extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+					<valueString value="office visit"/>
+				</extension>
+			</concept>
+			<concept>
+				<code value="physical"/>
+				<display value="PHYSICAL"/>
+				<extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+					<valueString value="physical visit"/>
+				</extension>
+			</concept>
+			<concept>
+				<code value="post-op"/>
+				<display value="POST-OPERATIVE(POST-OP)"/>
+				<extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+					<valueString value="post-operative visit"/>
+				</extension>
+			</concept>
+			<concept>
+				<code value="pre-admit-testing"/>
+				<display value="PRE-ADMISSION TESTING VISIT"/>
+				<extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+					<valueString value="pre-admission testing visit visit"/>
+				</extension>
+			</concept>
+			<concept>
+				<code value="pre-op"/>
+				<display value="PRE-OPERATIVE(PRE-OP)"/>
+				<extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+					<valueString value="pre-operative(pre-op) visit"/>
+				</extension>
+			</concept>
+			<concept>
+				<code value="procedure"/>
+				<display value="PROCEDURE"/>
+				<extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+					<valueString value="procedure visit"/>
+				</extension>
+			</concept>
+			<concept>
+				<code value="same-day"/>
+				<display value="SAME DAY"/>
+				<extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+					<valueString value="same day visit"/>
+				</extension>
+			</concept>
+			<concept>
+				<code value="stress-test"/>
+				<display value="STRESS TEST"/>
+				<extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+					<valueString value="stress test visit"/>
+				</extension>
+			</concept>
+			<concept>
+				<code value="surgery"/>
+				<display value="SURGERY"/>
+				<extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+					<valueString value="surgery visit"/>
+				</extension>
+			</concept>
+			<concept>
+				<code value="treatment"/>
+				<display value="TREATMENT"/>
+				<extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+					<valueString value="treatment visit"/>
+				</extension>
+			</concept>
+			<concept>
+				<code value="ultrasound"/>
+				<display value="ULTRASOUND"/>
+				<extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+					<valueString value="ultrasound visit"/>
+				</extension>
+			</concept>
+			<concept>
+				<code value="urgent"/>
+				<display value="URGENT"/>
+				<extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+					<valueString value="urgent visit"/>
+				</extension>
+			</concept>
+			<concept>
+				<code value="vaccine"/>
+				<display value="VACCINATION"/>
+				<extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+					<valueString value="vaccination visit"/>
+				</extension>
+			</concept>
+			<concept>
+				<code value="vision"/>
+				<display value="VISION"/>
+				<extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+					<valueString value="vision visit"/>
+				</extension>
+			</concept>
+			<concept>
+				<code value="walk-in"/>
+				<display value="WALK IN"/>
+				<extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+					<valueString value="walk in visit"/>
+				</extension>
+			</concept>
+			<concept>
+				<code value="well-child"/>
+				<display value="WELL CHILD"/>
+				<extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+					<valueString value="well child visit"/>
+				</extension>
+			</concept>
+			<concept>
+				<code value="x-ray"/>
+				<display value="X-RAY"/>
+				<extension url="http://hl7.org/fhir/StructureDefinition/valueset-definition">
+					<valueString value="x-ray visit"/>
+				</extension>
+			</concept>
 		</include>
 	</compose>
 </ValueSet>

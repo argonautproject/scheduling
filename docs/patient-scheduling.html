@@ -233,12 +233,6 @@ page source: patient-scheduling.md
   <li><a href="#use-case-1-patient-portal-scheduling-for-existing-patients" id="markdown-toc-use-case-1-patient-portal-scheduling-for-existing-patients">Use Case 1: Patient Portal Scheduling for existing patients</a></li>
   <li><a href="#use-case-2-open-scheduling-for-new-patient-or-existing-patient" id="markdown-toc-use-case-2-open-scheduling-for-new-patient-or-existing-patient">Use Case 2: Open Scheduling for new patient or existing patient</a></li>
   <li><a href="#use-case-3-prefetching-open-slots" id="markdown-toc-use-case-3-prefetching-open-slots">Use Case 3 Prefetching Open Slots</a></li>
-  <li><a href="#examples-1" id="markdown-toc-examples-1">Examples</a>    <ul>
-      <li><a href="#request-using-get-syntax-to-prefetch-open-slots-from-july-152017-to-august-172017" id="markdown-toc-request-using-get-syntax-to-prefetch-open-slots-from-july-152017-to-august-172017">Request using <code class="highlighter-rouge">GET</code> Syntax to prefetch open slots from July 15,2017 to August 17,2017</a></li>
-      <li><a href="#request-using-post-syntax" id="markdown-toc-request-using-post-syntax">Request using <code class="highlighter-rouge">POST</code> Syntax</a></li>
-      <li><a href="#response" id="markdown-toc-response">Response</a></li>
-    </ul>
-  </li>
   <li><a href="#cancelingrescheduling-appointments" id="markdown-toc-cancelingrescheduling-appointments">Canceling/Rescheduling appointments</a></li>
   <li><a href="#releasing-holds" id="markdown-toc-releasing-holds">Releasing holds</a></li>
   <li><a href="#retrieving-appointments" id="markdown-toc-retrieving-appointments">Retrieving appointments</a></li>
@@ -839,7 +833,7 @@ page source: patient-scheduling.md
 
 <h2 id="use-case-3-prefetching-open-slots">Use Case 3 Prefetching Open Slots</h2>
 
-<p>As in Use Case 2 above, this use case is focused on scheduling through a third-party application where the patient is either a new or existing patient. The patient may be trying to book an appointment to see a particular Practitioner or for a service to be performed. In contrast to determining available appointments in real-time, in this use case: 1) the scheduling data is fetched <em>prior</em> to the end user request, 2) the appointment availability is based upon third party application business rules, and 3) a valid appointment resources created and exchanged with the scheduling server (EHR). This is defined as “prefetching” for this guide.</p>
+<p>As in Use Case 2 above, this use case is focused on scheduling through a third-party application where the patient is either a new or existing patient. The patient may be trying to book an appointment to see a particular Practitioner or for a service to be performed. In contrast to determining available appointments in real-time, in this use case: 1) the scheduling data is fetched <em>prior</em> to the end user request as FHIR <a href="http://hl7.org/fhir/STU3/slot.html">Slots</a>, 2) the appointment availability is based upon third party application business rules, and 3) a valid appointment resources created and exchanged with the scheduling server (EHR). This is defined as “prefetching” for this guide.</p>
 
 <p>Preconditions:</p>
 
@@ -894,9 +888,22 @@ page source: patient-scheduling.md
 <p></p>
 </div>
 
+  <!-- all this Bootstrap html for getting an image to fit nicely in text - 640 pix wide -->
+
+<p>file:///assets/images/diagrams/Slide42.png</p>
+
+<div>
+<figure class="figure">
+<figcaption class="figure-caption"><strong>Figure 1: Open Scheduling for new or existing patients.</strong></figcaption>
+  <img src="assets/images/diagrams/Slide42.png" alt="diagrams/Slide42.png" class="figure-img img-responsive img-rounded center-block"/>
+</figure>
+
+<p></p>
+</div>
+
 <h3 id="share-business-rules" class="no_toc">Share Business Rules</h3>
 
-<p>The EHR/Hospital shares the business rules and logic for creating an appointment for a particular service with the third-party application. For example, which assets are needed. This is typically an “out of band” transaction. A FHIR based transaction is out of scope for this IG.</p>
+<p>The EHR/Hospital shares the business rules and logic for creating an appointment for a particular service with the third-party application. For example, which assets are needed and determination of whether the shared slot are a fixed size (e.g., 5 or 15 minutes) or variable sized slots. This is typically an “out of band” transaction and a FHIR based transaction is out of scope for this IG.</p>
 
   <!-- all this Bootstrap html for getting an image to fit nicely in text - 640 pix wide -->
 
@@ -911,9 +918,87 @@ page source: patient-scheduling.md
 <p></p>
 </div>
 
+<h3 id="subscribe-for-schedule-change-notifications" class="no_toc">Subscribe for Schedule Change Notifications</h3>
+
+<p>The third-party application subscribes to the FHIR Scheduler to receive notifications of schedule changes for the “lowest schedulable entity”.  This may be a provider, facility, device, etc depending on the system.  The notification of the schedule change informs the client which slots to prefetch to update their slot data and the notification triggers SHALL include:</p>
+
+<ul>
+  <li>Changes to the schedule for the “lowest schedulable entity”</li>
+  <li>Visit type changes</li>
+  <li>Changes in availability of a service for third party scheduling</li>
+</ul>
+
+<p>The time horizon is determined by the client and events beyond it would be discarded.  Note this can be considered a notification feed and there are several architectures to implement it such as using a “feed handler” as a intermediary system.</p>
+
+<p>  <!-- all this Bootstrap html for getting an image to fit nicely in text - 640 pix wide --></p>
+
+<p>file:///assets/images/diagrams/Slide43.png</p>
+
+<div>
+<figure class="figure">
+<figcaption class="figure-caption"><strong>Figure 1: Subscribe for Schedule Change Notifications.</strong></figcaption>
+  <img src="assets/images/diagrams/Slide43.png" alt="diagrams/Slide43.png" class="figure-img img-responsive img-rounded center-block"/>
+</figure>
+
+<p></p>
+</div>
+
+<h4 id="api-1" class="no_toc">API</h4>
+
+<p>The following Argonaut Scheduling artifacts are used in this transaction:</p>
+
+<ul>
+  <li><strong><a href="StructureDefinition-argo-sub-notif.html">Argonaut Scheduling Subscription Profile</a></strong></li>
+  <li><strong><a href="StructureDefinition-extension-trigger-event.html">Subscription Trigger event Extension</a></strong></li>
+  <li><strong><a href="StructureDefinition-extension-payload-profile.html">Subscription_Payload_Profile_Extension</a></strong></li>
+  <li><strong><a href="StructureDefinition-extension-event-focus.html">Subscription_Event_Focus_Extension</a></strong></li>
+</ul>
+
+<h4 id="usage-5" class="no_toc">Usage</h4>
+
+<p><code class="highlighter-rouge">POST [base]/Subscription</code></p>
+
+<h4 id="example-4" class="no_toc">Example</h4>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>POST [base]/Subscription
+
+    **payload:**
+
+    {
+      "resourceType": "Subscription",
+      "id": "example",
+      "status": "active",
+      "reason": "Notify subscriber of schedule changes to trigger the subscriber prefetch updated slots",
+      "_criteria": {
+        "extension": [
+          {
+            "url": "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-trigger-event",
+            "valueString": "schedule where any slot that reference it has changed"
+          },
+          {
+            "url": "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-event-focus",
+            "valueCode": "Schedule"
+          }
+        ]
+      },
+      "channel": {
+        "extension": [
+          {
+            "url": "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-payload-profile",
+            "valueUri": "//fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-sched-notif"
+          }
+        ],
+        "type": "rest-hook",
+        "endpoint": "https://feed-handler.com/notification",
+        "payload": "application/fhir+json"
+      }
+    }
+</code></pre>
+</div>
+
 <h3 id="initial-load" class="no_toc">Initial Load</h3>
 
-<p>The third-party application fetches the “initial load” of open slots to get all the data needed supporting the creation of new appointments. The query is made for the maximum date ranges for the available slots for each provider or service and is typically repeated daily to reset or to resynchronize its information with a scheduling server.  It may <code class="highlighter-rouge">_include</code> the relevant actor and schedule resources so the client application is able to apply its business rules to create valid FHIR Appointment resources for transacting with the FHIR Scheduler/EHR.</p>
+<p>The third-party application fetches the “initial load” of open slots to get all the data needed supporting the creation of new appointments. The query is made for the maximum date ranges for the available slots for each provider or service and is typically repeated daily to reset or to resynchronize its information with a scheduling server.</p>
 
   <!-- all this Bootstrap html for getting an image to fit nicely in text - 640 pix wide -->
 
@@ -928,7 +1013,7 @@ page source: patient-scheduling.md
 <p></p>
 </div>
 
-<h4 id="api-1" class="no_toc">API</h4>
+<h4 id="api-2" class="no_toc">API</h4>
 
 <p>The following Argonaut Scheduling artifacts are used in this transaction:</p>
 
@@ -938,7 +1023,7 @@ page source: patient-scheduling.md
   <li><strong><a href="StructureDefinition-slot-bundle.html">Argonaut Slot Bundle Profile</a></strong>.</li>
 </ul>
 
-<h4 id="usage-5" class="no_toc">Usage</h4>
+<h4 id="usage-6" class="no_toc">Usage</h4>
 
 <p>Using Both <code class="highlighter-rouge">GET</code> and <code class="highlighter-rouge">POST</code> Syntax the operation can be invoked as follows to fetch all open slots for the maximum period of time for relevant Practitioners, Locations and Services:</p>
 
@@ -946,14 +1031,13 @@ page source: patient-scheduling.md
 
 <p><code class="highlighter-rouge">POST [base]/Slot/$prefetch</code></p>
 
-<h2 id="examples-1">Examples</h2>
+<h4 id="examples-1" class="no_toc">Examples</h4>
 
-<h5 id="request-using-get-syntax-to-prefetch-open-slots-from-july-152017-to-august-172017">Request using <code class="highlighter-rouge">GET</code> Syntax to prefetch open slots from July 15,2017 to August 17,2017</h5>
+<h5 id="request-using-get-syntax-to-prefetch-open-slots-from-july-152017-to-august-172017" class="no_toc">Request using <code class="highlighter-rouge">GET</code> Syntax to prefetch open slots from July 15,2017 to August 17,2017</h5>
 
 <p><code class="highlighter-rouge">GET  [base]/Slot/$prefetch?start=2017-07-15T20:00:00Z&amp;end=2017-07-17T20:00:00Z</code></p>
 
-<h5 id="request-using-post-syntax">Request using <code class="highlighter-rouge">POST</code> Syntax</h5>
-
+<h5 id="request-using-post-syntax" class="no_toc">Request using <code class="highlighter-rouge">POST</code> Syntax</h5>
 <p><code class="highlighter-rouge">POST [base]/Slot/$prefetch</code></p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>**payload:**
@@ -975,8 +1059,7 @@ page source: patient-scheduling.md
 </code></pre>
 </div>
 
-<h5 id="response">Response</h5>
-
+<h5 id="response" class="no_toc">Response</h5>
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bundle"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prefetch-1"</span><span class="p">,</span><span class="w">
@@ -1109,7 +1192,7 @@ todo inline example
 
 <p>This step is similar to <a href="#optional-hold-appointment-operation-1">Scenario 2 Step 3</a> above and its detailed usage is described in <a href="#optional-hold-appointment-operation">Scenario-1</a>.  However, in this case the Client generates an Argonaut Appointment Profile resource and exchanges it with the FHIR Scheduler as is shown in the example below.</p>
 
-<h3 id="example-4" class="no_toc">Example</h3>
+<h3 id="example-5" class="no_toc">Example</h3>
 
 <div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="err">todo</span><span class="w"> </span><span class="err">inline</span><span class="w"> </span><span class="err">example</span><span class="w">
 </span></code></pre>
@@ -1138,7 +1221,7 @@ todo inline example
 
 <p>This step is similar to <a href="#book-appointment-1">Scenario 2 Step 5</a> above and its detailed usage is described in <a href="#book-appointment">Scenario-1</a>.  However, in this case the Client generates an Argonaut Appointment Profile resource and exchanges it with the FHIR Scheduler as is shown in the example below.</p>
 
-<h4 id="example-5" class="no_toc">Example</h4>
+<h4 id="example-6" class="no_toc">Example</h4>
 
 <div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="err">todo</span><span class="w"> </span><span class="err">inline</span><span class="w"> </span><span class="err">example</span><span class="w">
 </span></code></pre>
@@ -1167,7 +1250,7 @@ todo inline example
 
 <p>Canceling and Rescheduling has the potential to introduces complex failure states. The <a href="index.html#best-practices">best practices</a> guidance discusses how failures should be handled. See the <a href="state-diagram.html">Appointment State Diagram</a> for further details on statuses and state transitions.</p>
 
-<h3 id="usage-6" class="no_toc">Usage</h3>
+<h3 id="usage-7" class="no_toc">Usage</h3>
 
 <p>To cancel an appointment the Client uses the standard FHIR <a href="http://build.fhir.org/http.html#patch"><code class="highlighter-rouge">PATCH</code></a> transaction as shown:</p>
 
@@ -1182,7 +1265,7 @@ todo inline example
     </ol>
   </li>
   <li>
-    <p><a name="5308fb1a-76cd-40e1-ad60-186f2b0a2c89">​</a>Note the Server SHALL declare support for JSON, XML, or FHIRPath Patch in the <a href="server-capstatement.html">CapabilityStatement</a></p>
+    <p><a name="cc84666f-0405-45be-ab60-5c65c917c329">​</a>Note the Server SHALL declare support for JSON, XML, or FHIRPath Patch in the <a href="server-capstatement.html">CapabilityStatement</a></p>
   </li>
 </ul>
 
@@ -1375,7 +1458,7 @@ todo inline example
 <p></p>
 </div>
 
-<h3 id="usage-7" class="no_toc">Usage</h3>
+<h3 id="usage-8" class="no_toc">Usage</h3>
 
 <p>This transaction is identical to canceling an appointment as shown <a href="patient-scheduling.html#usage-6">above</a>.</p>
 
@@ -1412,7 +1495,7 @@ todo inline example
   <li><strong><a href="StructureDefinition-argo-appt.html">Argonaut Appointment Profile</a></strong>.</li>
 </ul>
 
-<h3 id="usage-8" class="no_toc">Usage</h3>
+<h3 id="usage-9" class="no_toc">Usage</h3>
 
 <p>To fetch scheduled appointments for a patient the Client SHALL use the standard RESTful <a href="http://hl7.org/fhir/STU3/search.html">search API</a> as shown along with these standard <a href="http://hl7.org/fhir/STU3/appointment.html#search">search parameters</a>:</p>
 
@@ -1465,7 +1548,7 @@ todo inline example
   <div class="container">    <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Thu, Feb 15, 2018 00:13-0800. |
+            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Wed, Mar 14, 2018 19:21-0700. |
                <!-- <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a rel="license" style="color: #81BEF7" href="http://hl7.org/fhir/STU3license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a>
         

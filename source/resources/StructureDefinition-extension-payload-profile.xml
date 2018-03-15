@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+	<id value="extension-payload-profile"/>
+	<url value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-payload-profile"/>
+	<version value="0.0.0"/>
+	<name value="Subscription_Payload_Profile_Extension"/>
+	<title value="Subscription Payload Profile Extension"/>
+	<status value="draft"/>
+	<date value="2018-02-13"/>
+	<publisher value="Argonaut Project"/>
+	<contact>
+		<telecom>
+			<system value="url"/>
+			<value value="http://argonautwiki.hl7.org"/>
+		</telecom>
+	</contact>
+	<description value="The profile of the required data to be sent in the payload.  The base resource of the profile is set in the [Subscription Event Focus Extension](StructureDefinition-extension-event-focus.html)."/>
+	<jurisdiction>
+		<coding>
+			<system value="urn:iso:std:iso:3166"/>
+			<code value="US"/>
+			<display value="United States of America"/>
+		</coding>
+	</jurisdiction>
+	<fhirVersion value="3.0.1"/>
+	<kind value="complex-type"/>
+	<abstract value="false"/>
+	<contextType value="resource"/>
+	<context value="Subscription.channel"/>
+	<type value="Extension"/>
+	<baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+	<derivation value="constraint"/>
+	<differential>
+		<element id="Extension:payload-profile">
+			<path value="Extension"/>
+			<short value="Subscription Payload Profile Extension"/>
+			<definition value="The profile of the required data to be sent in the payload.  The base resource of the profile is set in the [Subscription Event Focus Extension](StructureDefinition-extension-event-focus.html)."/>
+			<min value="0"/>
+			<max value="1"/>
+		</element>
+		<element id="Extension:payload-profile.url">
+			<path value="Extension.url"/>
+			<fixedUri value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-payload-profile"/>
+		</element>
+		<element id="Extension:payload-profile.valueUri">
+			<path value="Extension.valueUri"/>
+			<type>
+				<code value="uri"/>
+			</type>
+		</element>
+	</differential>
+</StructureDefinition>

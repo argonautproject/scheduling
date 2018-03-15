@@ -1,16 +1,298 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ConceptMap xmlns:xhtml="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://hl7.org/fhir file:///C:/Users/Eric/Documents/HL7/FHIR/BUILD_EDIT_FILES/fhir-all-xsd/conceptmap.xsd" xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<ConceptMap xmlns="http://hl7.org/fhir">
 	<id value="visit-snomed-map"/>
+	<text>
+		<status value="generated"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			<h2>Argonaut Scheduiing Visit Type to SNOMED CT Mapping (http://fhir.org/guides/argonaut-scheduling/ConceptMap/visit-snomed-map)</h2>
+			<p>Mapping from <a href="ValueSet-visit-type.html">http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type</a> to (not specified)</p>
+			<p>DRAFT. Published on Oct 30, 2017 6:49:44 PM by Argonaut Project. </p>
+			<div>
+				<p>The source concepts are Argonaut Visit Types which are a prioritized valueset of the most common appointment types for scheduling and have been identified as the baseline use cases for the  Argonaut scheduling Implementation Guide.   The Visit types are mapped to the target concepts from <a href="http://snomed.info/sct">SNOMED CT</a>.</p>
+			</div>
+			<br/>
+			<table class="grid">
+				<tr>
+					<td>
+						<b>Source Code</b>
+					</td>
+					<td>
+						<b>Equivalence</b>
+					</td>
+					<td>
+						<b>Destination Code</b>
+					</td>
+					<td>
+						<b>Comment</b>
+					</td>
+				</tr>
+				<tr>
+					<td>breast-imaging</td>
+					<td>wider</td>
+					<td>1310126000</td>
+					<td>Target concept may include more than mammography</td>
+				</tr>
+				<tr>
+					<td>consult (CONSULTATION)</td>
+					<td>equivalent</td>
+					<td>11429006</td>
+					<td/>
+				</tr>
+				<tr>
+					<td>ct (COMPUTED TOMOGRAPHY SCAN(CT))</td>
+					<td>equivalent</td>
+					<td>310128004</td>
+					<td/>
+				</tr>
+				<tr>
+					<td>dental</td>
+					<td>equivalent</td>
+					<td>3671000175100</td>
+					<td/>
+				</tr>
+				<tr>
+					<td>dxa (DUAL-ENERGY X-RAY ABSORPTIOMETRY(DXA))</td>
+					<td>equivalent</td>
+					<td>241686001</td>
+					<td/>
+				</tr>
+				<tr>
+					<td>echo (ECHOCARDIOGRAPHY(ECHO))</td>
+					<td>equivalent</td>
+					<td>310169008</td>
+					<td/>
+				</tr>
+				<tr>
+					<td>echo-stresstest (ECHOCARDIOGRAPHY(ECHO) STRESS TEST)</td>
+					<td>equivalent</td>
+					<td>433233004</td>
+					<td/>
+				</tr>
+				<tr>
+					<td>ed-followup (EDUCATION FOLLOW UP)</td>
+					<td>wider</td>
+					<td>409073007</td>
+					<td>Target concept not constrained to follow up temporal context</td>
+				</tr>
+				<tr>
+					<td>eeg (ELECTROENCEPHALOGRAPHY(EEG))</td>
+					<td>equivalent</td>
+					<td>54550000</td>
+					<td/>
+				</tr>
+				<tr>
+					<td>egd (ESOPHAGOGASTRODUODENOSCOPY(EGD))</td>
+					<td>equivalent</td>
+					<td>310030000</td>
+					<td/>
+				</tr>
+				<tr>
+					<td>ekg (ELECTROCARDIOGRAM(EKG))</td>
+					<td>equivalent</td>
+					<td>29303009</td>
+					<td/>
+				</tr>
+				<tr>
+					<td>evaluation</td>
+					<td>equivalent</td>
+					<td>386053000</td>
+					<td/>
+				</tr>
+				<tr>
+					<td>flu-shot-clinic (INFLUENZA VACCINATION CLINIC)</td>
+					<td>wider</td>
+					<td>86198006</td>
+					<td>Target concept not constrained to the context of a vaccine clinic'</td>
+				</tr>
+				<tr>
+					<td>fluoroscopy</td>
+					<td>equivalent</td>
+					<td>44491008</td>
+					<td/>
+				</tr>
+				<tr>
+					<td>follow-up</td>
+					<td>equivalent</td>
+					<td>185389009</td>
+					<td/>
+				</tr>
+				<tr>
+					<td>home-health (HOME HEALTH VISIT)</td>
+					<td>equivalent</td>
+					<td>439708006</td>
+					<td/>
+				</tr>
+				<tr>
+					<td>injection</td>
+					<td>equivalent</td>
+					<td>59108006</td>
+					<td/>
+				</tr>
+				<tr>
+					<td>inter-rad (INTERVENTIONAL RADIOLOGY)</td>
+					<td>equivalent</td>
+					<td>708174004</td>
+					<td/>
+				</tr>
+				<tr>
+					<td>lab (LABORATORY TESTS)</td>
+					<td>equivalent</td>
+					<td>708184003</td>
+					<td/>
+				</tr>
+				<tr>
+					<td>minor-surgery</td>
+					<td>narrower</td>
+					<td>711580002</td>
+					<td>The target restricts to ambulatory context</td>
+				</tr>
+				<tr>
+					<td>mri (MAGNETIC RESONANCE IMAGING(MRI))</td>
+					<td>equivalent</td>
+					<td>310127009</td>
+					<td/>
+				</tr>
+				<tr>
+					<td>new-patient</td>
+					<td>equivalent</td>
+					<td>185387006</td>
+					<td/>
+				</tr>
+				<tr>
+					<td>nuc-med (NUCLEAR MEDICINE)</td>
+					<td>equivalent</td>
+					<td>310058008</td>
+					<td/>
+				</tr>
+				<tr>
+					<td>occup-therapy (OCCUPATIONAL THERAPY)</td>
+					<td>equivalent</td>
+					<td>310093001</td>
+					<td/>
+				</tr>
+				<tr>
+					<td>office-visit</td>
+					<td>equivalent</td>
+					<td>11429006</td>
+					<td>Proposing that the US term 'office visit' is synonomous with the UK term 'consultation'</td>
+				</tr>
+				<tr>
+					<td>physical</td>
+					<td>equivalent</td>
+					<td>5880005</td>
+					<td/>
+				</tr>
+				<tr>
+					<td>post-op (POST-OPERATIVE(POST-OP))</td>
+					<td>equivalent</td>
+					<td>439740005</td>
+					<td/>
+				</tr>
+				<tr>
+					<td>pre-admit-testing (PRE-ADMISSION TESTING VISIT)</td>
+					<td>wider</td>
+					<td>406153003</td>
+					<td>Target concept in not constrained to testing</td>
+				</tr>
+				<tr>
+					<td>pre-op (PRE-OPERATIVE(PRE-OP))</td>
+					<td>equivalent</td>
+					<td>133858001</td>
+					<td/>
+				</tr>
+				<tr>
+					<td>procedure</td>
+					<td>equivalent</td>
+					<td>71388002</td>
+					<td/>
+				</tr>
+				<tr>
+					<td>same-day</td>
+					<td>inexact</td>
+					<td>11429006</td>
+					<td>Mapping assumes the source concept is a same-day office visit vs  same day testing or some other more specific service</td>
+				</tr>
+				<tr>
+					<td>stress-test</td>
+					<td>equivalent</td>
+					<td>76746007</td>
+					<td/>
+				</tr>
+				<tr>
+					<td>surgery</td>
+					<td>equivalent</td>
+					<td>310138009</td>
+					<td/>
+				</tr>
+				<tr>
+					<td>treatment</td>
+					<td>inexact</td>
+					<td>77132007</td>
+					<td>Assuming Treatment means 'with intent to cure'  vs 'rehabilitation'</td>
+				</tr>
+				<tr>
+					<td>ultrasound</td>
+					<td>equivalent</td>
+					<td>310169008</td>
+					<td/>
+				</tr>
+				<tr>
+					<td>urgent</td>
+					<td>inexact</td>
+					<td>11429006</td>
+					<td>Mapping assumes the source concept is an urgent office visit vs  urgent  testing or some other more specific service</td>
+				</tr>
+				<tr>
+					<td>vaccine (VACCINATION)</td>
+					<td>equivalent</td>
+					<td>127785005</td>
+					<td/>
+				</tr>
+				<tr>
+					<td>vision</td>
+					<td>equivalent</td>
+					<td>310160007</td>
+					<td/>
+				</tr>
+				<tr>
+					<td>walk-in</td>
+					<td>inexact</td>
+					<td>11429006</td>
+					<td>Mapping assumes the source concept is a walk in office visit vs walk in testing or some other more specific service</td>
+				</tr>
+				<tr>
+					<td>well-child</td>
+					<td>equivalent</td>
+					<td>410620009</td>
+					<td/>
+				</tr>
+				<tr>
+					<td>x-ray</td>
+					<td>equivalent</td>
+					<td>310125001</td>
+					<td/>
+				</tr>
+			</table>
+		</div>
+	</text>
 	<url value="http://fhir.org/guides/argonaut-scheduling/ConceptMap/visit-snomed-map"/>
-	<name value="Argonaut Scheduiing Visit Type to SNOMED CT Mapping"/>
+	<version value="0.0.0"/>
+	<name value="Argonaut_Scheduiing_Visit_Type_to_SNOMED_CT_Mapping"/>
+	<title value="Argonaut Scheduiing Visit Type to SNOMED CT Mapping"/>
 	<status value="draft"/>
-	<date value="2017-10-30T18:49:44.331-07:00"/>
+	<date value="2017-10-30T18:49:44-07:00"/>
 	<publisher value="Argonaut Project"/>
 	<description value="The source concepts are Argonaut Visit Types which are a prioritized valueset of the most common appointment types for scheduling and have been identified as the baseline use cases for the  Argonaut scheduling Implementation Guide.   The Visit types are mapped to the target concepts from [SNOMED CT](http://snomed.info/sct)."/>
+	<jurisdiction>
+		<coding>
+			<system value="urn:iso:std:iso:3166"/>
+			<code value="US"/>
+			<display value="United States of America"/>
+		</coding>
+	</jurisdiction>
 	<sourceUri value="http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type"/>
+	<targetUri value="http://fhir.org/guides/argonaut-scheduling/ValueSet/sct-services"/>
 	<group>
-		<source value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
-		<target value="http://snomed.info/sct"/>
 		<element>
 			<code value="breast-imaging"/>
 			<target>
@@ -102,7 +384,7 @@
 			<target>
 				<code value="86198006"/>
 				<equivalence value="wider"/>
-				<comment value="Target concept not constrained to the context of a vaccine clinic&apos;"/>
+				<comment value="Target concept not constrained to the context of a vaccine clinic'"/>
 			</target>
 		</element>
 		<element>
@@ -188,7 +470,7 @@
 			<target>
 				<code value="11429006"/>
 				<equivalence value="equivalent"/>
-				<comment value="Proposing that the US term &apos;office visit&apos; is synonomous with the UK term &apos;consultation&apos;"/>
+				<comment value="Proposing that the US term 'office visit' is synonomous with the UK term 'consultation'"/>
 			</target>
 		</element>
 		<element>
@@ -254,7 +536,7 @@
 			<target>
 				<code value="77132007"/>
 				<equivalence value="inexact"/>
-				<comment value="Assuming Treatment means &apos;with intent to cure&apos;  vs &apos;rehabilitation&apos;"/>
+				<comment value="Assuming Treatment means 'with intent to cure'  vs 'rehabilitation'"/>
 			</target>
 		</element>
 		<element>

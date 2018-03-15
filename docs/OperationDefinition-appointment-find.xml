@@ -209,7 +209,7 @@
   </text>
   <url value="http://fhir.org/guides/argonaut-scheduling/OperationDefinition/appointment-find"/>
   <version value="0.0.0"/>
-  <name value="Appointment Availability Operation"/>
+  <name value="Appointment_Availability_Operation"/>
   <status value="draft"/>
   <kind value="operation"/>
   <date value="2017-10-31T00:00:00-07:00"/>
@@ -253,9 +253,7 @@
     <searchType value="token"/>
     <binding>
       <strength value="extensible"/>
-      <valueSetReference>
-        <reference value="http://fhir.org/guides/argonaut-scheduling/ValueSet/specialty"/>
-      </valueSetReference>
+      <valueSetUri value="http://fhir.org/guides/argonaut-scheduling/ValueSet/specialty"/>
     </binding>
   </parameter>
   <parameter>
@@ -268,9 +266,7 @@
     <searchType value="token"/>
     <binding>
       <strength value="extensible"/>
-      <valueSetReference>
-        <reference value="http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type"/>
-      </valueSetReference>
+      <valueSetUri value="http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type"/>
     </binding>
   </parameter>
   <parameter>
@@ -346,9 +342,7 @@
     <searchType value="token"/>
     <binding>
       <strength value="preferred"/>
-      <valueSetReference>
-        <reference value="http://hl7.org/fhir/ValueSet/condition-code"/>
-      </valueSetReference>
+      <valueSetUri value="http://hl7.org/fhir/ValueSet/condition-code"/>
     </binding>
   </parameter>
   <parameter>

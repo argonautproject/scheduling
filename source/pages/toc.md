@@ -139,9 +139,9 @@ active: toc
 
 {% include list-simple-conceptmaps.xhtml %}
 
-### [Conformance requirements for Server](server-capstatement.html)
+### [Conformance requirements for Server](CapabilityStatement-server.html)
 
-### [Conformance requirements for Client](client-capstatement.html)
+### [Conformance requirements for Client](CapabilityStatement-client.html)
 
 ### [Downloads](downloads.html)
 

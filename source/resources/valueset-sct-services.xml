@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir http://build.fhir.org/device.xsd">
+	<id value="sct-services"/>
+	<url value="http://fhir.org/guides/argonaut-scheduling/ValueSet/sct-services"/>
+	<version value="1.0.0"/>
+	<name value="Argonaut_Snomed_CT_Services"/>
+	<title value="Argonaut Snomed CT Services"/>
+	<status value="draft"/>
+	<date value="2018-03-14T19:40:10Z"/>
+	<description value="The Snomed CT services and procedures concepts that represent visit types for scheduling appointments. These concepts are mapped to the [Argonaut Visit Types](ConceptMap-visit-snomed-map.html)."/>
+	<copyright value="This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement"/>
+	<compose>
+		<include>
+			<system value="http://snomed.info/sct"/>
+			<filter>
+				<property value="concept"/>
+				<op value="is-a"/>
+				<value value="224891009"/>
+			</filter>
+		</include>
+		<include>
+			<system value="http://snomed.info/sct"/>
+			<concept>
+				<code value="11429006"/>
+			</concept>
+			<concept>
+				<code value="241686001"/>
+			</concept>
+			<concept>
+				<code value="40701008"/>
+			</concept>
+			<concept>
+				<code value="433233004"/>
+			</concept>
+			<concept>
+				<code value="409073007"/>
+			</concept>
+			<concept>
+				<code value="54550000"/>
+			</concept>
+			<concept>
+				<code value="29303009"/>
+			</concept>
+			<concept>
+				<code value="386053000"/>
+			</concept>
+			<concept>
+				<code value="86198006"/>
+			</concept>
+			<concept>
+				<code value="44491008"/>
+			</concept>
+			<concept>
+				<code value="185389009"/>
+			</concept>
+			<concept>
+				<code value="439708006"/>
+			</concept>
+			<concept>
+				<code value="59108006"/>
+			</concept>
+			<concept>
+				<code value="185387006"/>
+			</concept>
+			<concept>
+				<code value="310058008"/>
+			</concept>
+			<concept>
+				<code value="11429006"/>
+			</concept>
+			<concept>
+				<code value="5880005"/>
+			</concept>
+			<concept>
+				<code value="439740005"/>
+			</concept>
+			<concept>
+				<code value="406153003"/>
+			</concept>
+			<concept>
+				<code value="262068006"/>
+			</concept>
+			<concept>
+				<code value="71388002"/>
+			</concept>
+			<concept>
+				<code value="11429006"/>
+			</concept>
+			<concept>
+				<code value="76746007"/>
+			</concept>
+			<concept>
+				<code value="77132007"/>
+			</concept>
+			<concept>
+				<code value="103391001"/>
+			</concept>
+			<concept>
+				<code value="127785005"/>
+			</concept>
+			<concept>
+				<code value="11429006"/>
+			</concept>
+			<concept>
+				<code value="410620009"/>
+			</concept>
+		</include>
+	</compose>
+</ValueSet>

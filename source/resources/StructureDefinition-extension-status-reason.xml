@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+	<id value="extension-status-reason"/>
+	<url value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-status-reason"/>
+	<version value="0.0.0"/>
+	<name value="Reason_for_current_status"/>
+	<title value="Reason for current status"/>
+	<status value="draft"/>
+	<date value="2017-06-13"/>
+	<publisher value="Argonaut Project"/>
+	<contact>
+		<telecom>
+			<system value="url"/>
+			<value value="http://argonautwiki.hl7.org"/>
+		</telecom>
+	</contact>
+	<description value="Captures the reason for the current state of the Appointment."/>
+	<jurisdiction>
+		<coding>
+			<system value="urn:iso:std:iso:3166"/>
+			<code value="US"/>
+			<display value="United States of America"/>
+		</coding>
+	</jurisdiction>
+	<fhirVersion value="3.0.1"/>
+	<kind value="complex-type"/>
+	<abstract value="false"/>
+	<contextType value="resource"/>
+	<context value="Appointment"/>
+	<type value="Extension"/>
+	<baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+	<derivation value="constraint"/>
+	<differential>
+		<element id="Extension:status-reason">
+			<path value="Extension"/>
+			<short value="Reason for current status"/>
+			<definition value="Captures the reason for the current state of the Appointment."/>
+			<comment value="This is generally only used for &quot;exception&quot; statuses such as  `not-done`, `suspended` or `cancelled`. The reason for performing the event at all is captured in the `reason` element, not here."/>
+			<alias value="Suspended Reason"/>
+			<alias value="Cancelled Reason"/>
+			<min value="0"/>
+			<max value="1"/>
+		</element>
+		<element id="Extension:status-reason.url">
+			<path value="Extension.url"/>
+			<fixedUri value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-status-reason"/>
+		</element>
+		<element id="Extension:status-reason.valueCodeableConcept">
+			<path value="Extension.valueCodeableConcept"/>
+			<type>
+				<code value="CodeableConcept"/>
+			</type>
+			<binding>
+				<strength value="preferred"/>
+				<description value="The reason for the current state of the Appointment"/>
+				<valueSetReference>
+					<reference value="http://fhir.org/guides/argonaut-scheduling/ValueSet/status-reason"/>
+				</valueSetReference>
+			</binding>
+		</element>
+	</differential>
+</StructureDefinition>

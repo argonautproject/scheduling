@@ -233,7 +233,7 @@ page source: state-diagram.md
 <p>file:///assets/images/appt-state.png</p>
 
 <div>
-<figure class="figure"><a name="fda15721-bf80-4c36-9e4e-ce8340e7ea50">​</a>
+<figure class="figure"><a name="60388afb-a156-49ea-97ab-aef2a9708852">​</a>
 <figcaption class="figure-caption"><strong>Figure 1: Appointment State Diagram based on the Appointment.status codes.</strong></figcaption>
   <img src="assets/images/appt-state.png" alt="appt-state.png" class="figure-img img-responsive img-rounded center-block"/>
 </figure>
@@ -313,7 +313,6 @@ page source: state-diagram.md
       <th>Activity Description (Role: Scheduler)</th>
       <th>Slot</th>
       <th>Appointment</th>
-      <th>&nbsp;</th>
     </tr>
   </thead>
   <tbody>
@@ -322,14 +321,12 @@ page source: state-diagram.md
       <td>The appointment request is processed and unable to update slot status for all participants. (i.e., slot status != free)</td>
       <td>status varies</td>
       <td>&nbsp;</td>
-      <td>&nbsp;</td>
     </tr>
     <tr>
       <td>6r</td>
       <td>The appointment is cancelled. Update participant status</td>
       <td>status varies</td>
       <td>status = cancelled, participant.status = declined (may be other statuses too)</td>
-      <td>&nbsp;</td>
     </tr>
   </tbody>
 </table>
@@ -343,7 +340,6 @@ page source: state-diagram.md
       <th>Activity Description (Role: Scheduler)</th>
       <th>Slot</th>
       <th>Appointment</th>
-      <th>&nbsp;</th>
     </tr>
   </thead>
   <tbody>
@@ -352,21 +348,18 @@ page source: state-diagram.md
       <td>The appointment is confirmed as accepted by all participants</td>
       <td>status = busy</td>
       <td>status = booked, participant.status = accepted</td>
-      <td>&nbsp;</td>
     </tr>
     <tr>
       <td>9c</td>
       <td>An appointment cancel request is processed. The appointment is declined by patient</td>
       <td>&nbsp;</td>
       <td>patient participant.status = declined</td>
-      <td>&nbsp;</td>
     </tr>
     <tr>
       <td>10c</td>
       <td>The appointment is cancelled</td>
       <td>status = free</td>
       <td>status = cancelled, participant.status = declined</td>
-      <td>&nbsp;</td>
     </tr>
   </tbody>
 </table>
@@ -399,7 +392,7 @@ page source: state-diagram.md
   <div class="container">    <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Thu, Feb 15, 2018 00:13-0800. |
+            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Wed, Mar 14, 2018 19:21-0700. |
                <!-- <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a rel="license" style="color: #81BEF7" href="http://hl7.org/fhir/STU3license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a>
         

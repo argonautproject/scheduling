@@ -33,80 +33,52 @@
 				<tbody>
 					<tr>
 						<td>breast-imaging</td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
+						<td/>
+						<td/>
+						<td/>
+						<td/>
 					</tr>
 					<tr>
 						<td>consult</td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
+						<td/>
+						<td/>
+						<td/>
+						<td/>
 					</tr>
 					<tr>
 						<td>ct</td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
+						<td/>
+						<td/>
+						<td/>
+						<td/>
 					</tr>
 					<tr>
 						<td>dental</td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
+						<td/>
+						<td/>
+						<td/>
+						<td/>
 					</tr>
 					<tr>
 						<td>dxa</td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
+						<td/>
+						<td/>
+						<td/>
+						<td/>
 					</tr>
 					<tr>
 						<td>echo</td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
+						<td/>
+						<td/>
+						<td/>
+						<td/>
 					</tr>
 					<tr>
 						<td>echo-stresstest</td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
+						<td/>
+						<td/>
+						<td/>
+						<td/>
 					</tr>
 					<tr>
 						<td>ed-followup</td>
@@ -115,74 +87,49 @@
 						<td>
 							<a href="http://hl7.org/fhir/v2/0276">http://hl7.org/fhir/v2/0276</a>
 						</td>
-						<td>
-          </td>
+						<td/>
 					</tr>
 					<tr>
 						<td>eeg</td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
+						<td/>
+						<td/>
+						<td/>
+						<td/>
 					</tr>
 					<tr>
 						<td>egd</td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
+						<td/>
+						<td/>
+						<td/>
+						<td/>
 					</tr>
 					<tr>
 						<td>ekg</td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
+						<td/>
+						<td/>
+						<td/>
+						<td/>
 					</tr>
 					<tr>
 						<td>evaluation</td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
+						<td/>
+						<td/>
+						<td/>
+						<td/>
 					</tr>
 					<tr>
 						<td>flu-shot-clinic</td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
+						<td/>
+						<td/>
+						<td/>
+						<td/>
 					</tr>
 					<tr>
 						<td>fluoroscopy</td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
+						<td/>
+						<td/>
+						<td/>
+						<td/>
 					</tr>
 					<tr>
 						<td>follow-up</td>
@@ -191,74 +138,49 @@
 						<td>
 							<a href="http://hl7.org/fhir/v2/0276">http://hl7.org/fhir/v2/0276</a>
 						</td>
-						<td>
-          </td>
+						<td/>
 					</tr>
 					<tr>
 						<td>home-heath visit</td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
+						<td/>
+						<td/>
+						<td/>
+						<td/>
 					</tr>
 					<tr>
 						<td>injection</td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
+						<td/>
+						<td/>
+						<td/>
+						<td/>
 					</tr>
 					<tr>
 						<td>interventional-rad</td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
+						<td/>
+						<td/>
+						<td/>
+						<td/>
 					</tr>
 					<tr>
 						<td>lab</td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
+						<td/>
+						<td/>
+						<td/>
+						<td/>
 					</tr>
 					<tr>
 						<td>minor-surgery</td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
+						<td/>
+						<td/>
+						<td/>
+						<td/>
 					</tr>
 					<tr>
 						<td>mri</td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
+						<td/>
+						<td/>
+						<td/>
+						<td/>
 					</tr>
 					<tr>
 						<td>new-patient</td>
@@ -267,52 +189,35 @@
 						<td>
 							<a href="http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-types">http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-types</a>
 						</td>
-						<td>
-          </td>
+						<td/>
 					</tr>
 					<tr>
 						<td>nuc-med</td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
+						<td/>
+						<td/>
+						<td/>
+						<td/>
 					</tr>
 					<tr>
 						<td>occup-therapy</td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
+						<td/>
+						<td/>
+						<td/>
+						<td/>
 					</tr>
 					<tr>
 						<td>office-visit</td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
+						<td/>
+						<td/>
+						<td/>
+						<td/>
 					</tr>
 					<tr>
 						<td>physical</td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
+						<td/>
+						<td/>
+						<td/>
+						<td/>
 					</tr>
 					<tr>
 						<td>post-op</td>
@@ -321,19 +226,14 @@
 						<td>
 							<a href="http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-types">http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-types</a>
 						</td>
-						<td>
-          </td>
+						<td/>
 					</tr>
 					<tr>
 						<td>pre-admit-testing</td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
+						<td/>
+						<td/>
+						<td/>
+						<td/>
 					</tr>
 					<tr>
 						<td>pre-op</td>
@@ -342,19 +242,14 @@
 						<td>
 							<a href="http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-types">http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-types</a>
 						</td>
-						<td>
-          </td>
+						<td/>
 					</tr>
 					<tr>
 						<td>procedure</td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
+						<td/>
+						<td/>
+						<td/>
+						<td/>
 					</tr>
 					<tr>
 						<td>same-day</td>
@@ -363,52 +258,35 @@
 						<td>
 							<a href="http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-types">http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-types</a>
 						</td>
-						<td>
-          </td>
+						<td/>
 					</tr>
 					<tr>
 						<td>stress-test</td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
+						<td/>
+						<td/>
+						<td/>
+						<td/>
 					</tr>
 					<tr>
 						<td>surgery</td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
+						<td/>
+						<td/>
+						<td/>
+						<td/>
 					</tr>
 					<tr>
 						<td>treatment</td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
+						<td/>
+						<td/>
+						<td/>
+						<td/>
 					</tr>
 					<tr>
 						<td>ultrasound</td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
+						<td/>
+						<td/>
+						<td/>
+						<td/>
 					</tr>
 					<tr>
 						<td>urgent</td>
@@ -417,30 +295,21 @@
 						<td>
 							<a href="http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-types">http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-types</a>
 						</td>
-						<td>
-          </td>
+						<td/>
 					</tr>
 					<tr>
 						<td>vaccine</td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
+						<td/>
+						<td/>
+						<td/>
+						<td/>
 					</tr>
 					<tr>
 						<td>vision</td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
+						<td/>
+						<td/>
+						<td/>
+						<td/>
 					</tr>
 					<tr>
 						<td>walk-in</td>
@@ -449,30 +318,21 @@
 						<td>
 							<a href="http://hl7.org/fhir/v2/0276">http://hl7.org/fhir/v2/0276</a>
 						</td>
-						<td>
-          </td>
+						<td/>
 					</tr>
 					<tr>
 						<td>well-child</td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
+						<td/>
+						<td/>
+						<td/>
+						<td/>
 					</tr>
 					<tr>
 						<td>x-ray</td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
-						<td>
-          </td>
+						<td/>
+						<td/>
+						<td/>
+						<td/>
 					</tr>
 				</tbody>
 			</table>
@@ -480,7 +340,8 @@
   </text>
   <url value="http://fhir.org/guides/argonaut-scheduling/ConceptMap/visit-appt-map"/>
   <version value="0.0.0"/>
-  <name value="Argonaut Scheduiing Visit Type to Appointment Type Mapping"/>
+  <name value="Argonaut_Scheduiing_Visit_Type_to_Appointment_Type_Mapping"/>
+  <title value="Argonaut Scheduiing Visit Type to Appointment Type Mapping"/>
   <status value="draft"/>
   <date value="2017-10-31T10:57:43-07:00"/>
   <publisher value="Argonaut Project"/>
@@ -495,7 +356,6 @@
   <sourceUri value="http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type"/>
   <targetUri value="http://fhir.org/guides/argonaut-scheduling/ValueSet/appt-type"/>
   <group>
-    <source value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
     <target value="http://hl7.org/fhir/v2/0276"/>
     <element>
       <code value="ed-followup"/>
@@ -520,7 +380,6 @@
     </element>
   </group>
   <group>
-    <source value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
     <target value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-types"/>
     <element>
       <code value="new-patient"/>
@@ -559,7 +418,6 @@
     </element>
   </group>
   <group>
-    <source value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
     <element>
       <code value="breast-imaging"/>
     </element>

@@ -30,9 +30,9 @@ Typical flow of statuses for an appointment from appointment availability to boo
 Flow for the rejection of an appointment request by scheduler beginning from steps 4 or 6.
 
 |Step|Activity Description (Role: Scheduler)|Slot|Appointment|
-|---|---|---|---
-|4r or 6r|The appointment request is processed and unable to update slot status for all participants. (i.e., slot status != free)|status varies||
-|6r|The appointment is cancelled. Update participant status|status varies|status = cancelled, participant.status = declined (may be other statuses too)||
+|---|---|---|---|
+|4r or 6r|The appointment request is processed and unable to update slot status for all participants. (i.e., slot status != free)|status varies|
+|6r|The appointment is cancelled. Update participant status|status varies|status = cancelled, participant.status = declined (may be other statuses too)|
 {: .grid}
 
 Flow for the cancellation of an appointment by patient following step 8.
@@ -41,5 +41,5 @@ Flow for the cancellation of an appointment by patient following step 8.
 |---|---|---|---|
 |8|The appointment is confirmed as accepted by all participants |status = busy|status = booked, participant.status = accepted|
 |9c|An appointment cancel request is processed. The appointment is declined by patient||patient participant.status = declined|
-|10c|The appointment is cancelled|status = free|status = cancelled, participant.status = declined||
+|10c|The appointment is cancelled|status = free|status = cancelled, participant.status = declined|
 {: .grid}

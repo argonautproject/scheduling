@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+	<id value="prefetch-slot"/>
+	<url value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/prefetch-slot"/>
+	<version value="0.0.0"/>
+	<name value="Argonaut_Prefetch_Slot_Profile"/>
+	<title value="Argonaut Prefetch Slot Profile"/>
+	<status value="draft"/>
+	<date value="2018-01-10"/>
+	<publisher value="Argonaut Project"/>
+	<contact>
+		<telecom>
+			<system value="url"/>
+			<value value="http://argonautwiki.hl7.org"/>
+		</telecom>
+	</contact>
+	<description value="The Argonaut Prefetch Slot Profile defines the Slots that are returned when prefetching slots."/>
+	<jurisdiction>
+		<coding>
+			<system value="urn:iso:std:iso:3166"/>
+			<code value="US"/>
+			<display value="United States of America"/>
+		</coding>
+	</jurisdiction>
+	<fhirVersion value="3.0.1"/>
+	<kind value="resource"/>
+	<abstract value="false"/>
+	<type value="Slot"/>
+	<baseDefinition value="http://hl7.org/fhir/StructureDefinition/Slot"/>
+	<derivation value="constraint"/>
+	<differential>
+		<element id="Slot">
+			<path value="Slot"/>
+			<mustSupport value="false"/>
+		</element>
+		<element id="Slot.id">
+			<path value="Slot.id"/>
+			<min value="1"/>
+			<max value="1"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Slot.serviceType">
+			<path value="Slot.serviceType"/>
+			<min value="0"/>
+			<max value="*"/>
+			<mustSupport value="true"/>
+			<binding>
+				<strength value="extensible"/>
+				<valueSetReference>
+					<reference value="http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type"/>
+				</valueSetReference>
+			</binding>
+		</element>
+		<element id="Slot.schedule">
+			<path value="Slot.schedule"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Slot.status">
+			<path value="Slot.status"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Slot.start">
+			<path value="Slot.start"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Slot.end">
+			<path value="Slot.end"/>
+			<mustSupport value="true"/>
+		</element>
+	</differential>
+</StructureDefinition>

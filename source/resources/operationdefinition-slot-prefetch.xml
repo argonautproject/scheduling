@@ -127,11 +127,12 @@
 	</text>
 	<url value="http://fhir.org/guides/argonaut-scheduling/OperationDefinition/slot-prefetch"/>
 	<version value="0.0.0"/>
-	<name value="Availability Prefetch Operation"/>
+	<name value="Availability_Prefetch_Operation"/>
+	<!-- <title value="Availability Prefetch Operation"/> -->
 	<status value="draft"/>
 	<kind value="operation"/>
 	<date value="2018-02-12T00:00:00-08:00"/>
-	<description value="This operation fetches available free slots for the &#39;initial load&#39;, update and reconciliation steps in the [Prefetch Use Case](patient-scheduling.html#use-case-3-prefetching-open-slots).  The server determines which open slots to expose to the application for use in creating new appointments.  If neither a start or end date is given then the maximum period as defined by local business rules and starting from when the operation was transacted will be used.   The actors practitioner, organization and location further refine the search.   If more than one actor type is present, the response will contain slots with *all* of these actors (i.e, this is a logical &#39;AND&#39;).  if an actor type is repeated, the response will contain slots with *any* of these actors (i.e. this is a logical  &#39;OR&#39; and  does not drive a joint appointment with multiple practitioners. locations or organizations).  &#xA;&#xA; Note that all input parameters are simple types allowing either the &#39;GET&#39;  or the &#39;POST&#39; syntax to be used to initiate the interaction.  Examples of both are shown below."/>
+	<description value="This operation fetches available free slots for the 'initial load', update and reconciliation steps in the [Prefetch Use Case](patient-scheduling.html#use-case-3-prefetching-open-slots).  The server determines which open slots to expose to the application for use in creating new appointments.  If neither a start or end date is given then the maximum period as defined by local business rules and starting from when the operation was transacted will be used.   The actors practitioner, organization and location further refine the search.   If more than one actor type is present, the response will contain slots with *all* of these actors (i.e, this is a logical 'AND').  if an actor type is repeated, the response will contain slots with *any* of these actors (i.e. this is a logical  'OR' and  does not drive a joint appointment with multiple practitioners. locations or organizations).  &#xA;&#xA; Note that all input parameters are simple types allowing either the 'GET'  or the 'POST' syntax to be used to initiate the interaction.  Examples of both are shown below."/>
 	<jurisdiction>
 		<coding>
 			<system value="urn:iso:std:iso:3166"/>
@@ -166,7 +167,7 @@
 		<use value="in"/>
 		<min value="0"/>
 		<max value="*"/>
-		<documentation value="The Practitioner reference when performing a provider based query.  This is a reference to a FHIR Practitioner resource,  e.g. &#39;Practitioner/123&#39;."/>
+		<documentation value="The Practitioner reference when performing a provider based query.  This is a reference to a FHIR Practitioner resource,  e.g. 'Practitioner/123'."/>
 		<type value="uri"/>
 	</parameter>
 	<parameter>
@@ -174,7 +175,7 @@
 		<use value="in"/>
 		<min value="0"/>
 		<max value="*"/>
-		<documentation value="The Organization reference when performing a provider based query.  This is a reference to a FHIR Organization resource,  e.g. &#39;Organization/abc&#39;."/>
+		<documentation value="The Organization reference when performing a provider based query.  This is a reference to a FHIR Organization resource,  e.g. 'Organization/abc'."/>
 		<type value="uri"/>
 	</parameter>
 	<parameter>

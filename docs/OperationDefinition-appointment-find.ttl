@@ -14,7 +14,7 @@
   ];
   fhir:OperationDefinition.url [ fhir:value "http://fhir.org/guides/argonaut-scheduling/OperationDefinition/appointment-find"];
   fhir:OperationDefinition.version [ fhir:value "0.0.0"];
-  fhir:OperationDefinition.name [ fhir:value "Appointment Availability Operation"];
+  fhir:OperationDefinition.name [ fhir:value "Appointment_Availability_Operation"];
   fhir:OperationDefinition.status [ fhir:value "draft"];
   fhir:OperationDefinition.kind [ fhir:value "operation"];
   fhir:OperationDefinition.date [ fhir:value "2017-10-31T00:00:00-07:00"^^xsd:dateTime];
@@ -64,10 +64,7 @@
      fhir:OperationDefinition.parameter.searchType [ fhir:value "token" ];
      fhir:OperationDefinition.parameter.binding [
        fhir:OperationDefinition.parameter.binding.strength [ fhir:value "extensible" ];
-       fhir:OperationDefinition.parameter.binding.valueSetReference [
-         fhir:link <http://fhir.org/guides/argonaut-scheduling/ValueSet/specialty>;
-         fhir:Reference.reference [ fhir:value "http://fhir.org/guides/argonaut-scheduling/ValueSet/specialty" ]
-       ]
+       fhir:OperationDefinition.parameter.binding.valueSetUri [ fhir:value "http://fhir.org/guides/argonaut-scheduling/ValueSet/specialty" ]
      ]
   ], [
      fhir:index 3;
@@ -80,10 +77,7 @@
      fhir:OperationDefinition.parameter.searchType [ fhir:value "token" ];
      fhir:OperationDefinition.parameter.binding [
        fhir:OperationDefinition.parameter.binding.strength [ fhir:value "extensible" ];
-       fhir:OperationDefinition.parameter.binding.valueSetReference [
-         fhir:link <http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type>;
-         fhir:Reference.reference [ fhir:value "http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type" ]
-       ]
+       fhir:OperationDefinition.parameter.binding.valueSetUri [ fhir:value "http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type" ]
      ]
   ], [
      fhir:index 4;
@@ -161,10 +155,7 @@
      fhir:OperationDefinition.parameter.searchType [ fhir:value "token" ];
      fhir:OperationDefinition.parameter.binding [
        fhir:OperationDefinition.parameter.binding.strength [ fhir:value "preferred" ];
-       fhir:OperationDefinition.parameter.binding.valueSetReference [
-         fhir:link <http://hl7.org/fhir/ValueSet/condition-code>;
-         fhir:Reference.reference [ fhir:value "http://hl7.org/fhir/ValueSet/condition-code" ]
-       ]
+       fhir:OperationDefinition.parameter.binding.valueSetUri [ fhir:value "http://hl7.org/fhir/ValueSet/condition-code" ]
      ]
   ], [
      fhir:index 12;
@@ -181,8 +172,6 @@
   ] .
 
 <http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient> a fhir:us .
-
-<http://hl7.org/fhir/ValueSet/condition-code> a fhir:ValueSet .
 
 # - ontology header ------------------------------------------------------------
 

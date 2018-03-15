@@ -24,13 +24,14 @@
       <sch:assert test="count(f:id) &lt;= 1">id: maximum cardinality of 'id' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-trigger-event']) &gt;= 1">extension with URL = 'http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-trigger-event': minimum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-event-focus']) &gt;= 1">extension with URL = 'http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-event-focus': minimum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-event-focus']) &lt;= 1">extension with URL = 'http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-event-focus': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:value) &lt;= 1">value: maximum cardinality of 'value' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:title>Subscription.criteria.extension</sch:title>
     <sch:rule context="f:Subscription/f:criteria/f:extension">
+      <sch:assert test="@value|f:*|h:div">All FHIR elements must have a @value or children (inherited)</sch:assert>
+      <sch:assert test="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])">Must have either extensions or value[x], not both (inherited)</sch:assert>
       <sch:assert test="@value|f:*|h:div">All FHIR elements must have a @value or children (inherited)</sch:assert>
       <sch:assert test="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])">Must have either extensions or value[x], not both (inherited)</sch:assert>
       <sch:assert test="@value|f:*|h:div">All FHIR elements must have a @value or children (inherited)</sch:assert>
@@ -51,7 +52,6 @@
     <sch:title>f:Subscription/f:channel</sch:title>
     <sch:rule context="f:Subscription/f:channel">
       <sch:assert test="count(f:extension[@url = 'http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-payload-profile']) &gt;= 1">extension with URL = 'http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-payload-profile': minimum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-payload-profile']) &lt;= 1">extension with URL = 'http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-payload-profile': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:endpoint) &gt;= 1">endpoint: minimum cardinality of 'endpoint' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>

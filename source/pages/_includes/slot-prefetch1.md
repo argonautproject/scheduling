@@ -1,13 +1,15 @@
 {{page.uri}}
 
-## Examples
+#### Examples
+{:.no_toc}
 
 ##### Request using `GET` Syntax to prefetch open slots from July 15,2017 to August 17,2017
+{:.no_toc}
 
 `GET  [base]/Slot/$prefetch?start=2017-07-15T20:00:00Z&end=2017-07-17T20:00:00Z`
 
 ##### Request using `POST` Syntax
-
+{:.no_toc}
 `POST [base]/Slot/$prefetch`
 
     **payload:**
@@ -28,7 +30,7 @@
     }
 
 ##### Response
-
+{:.no_toc}
     {
       "resourceType": "Bundle",
       "id": "prefetch-1",

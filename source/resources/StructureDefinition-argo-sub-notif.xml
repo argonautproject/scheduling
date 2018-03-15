@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="argo-sub-notif" />
+  <url value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-sub-notif" />
+  <version value="0.0.0" />
+  <name value="Argonaut_Scheduling_Subscription_Profile" />
+  <title value="Argonaut Scheduling Subscription Profile" />
+  <status value="draft" />
+  <date value="2018-02-13" />
+  <publisher value="Argonaut Project" />
+  <contact>
+    <telecom>
+      <system value="url" />
+      <value value="http://argonautwiki.hl7.org" />
+    </telecom>
+  </contact>
+  <description value="The Argonaut Scheduling Subscription Profile is defined for sending  notifications to a subscriber as described in the updating slots step in [Use Case 3 Prefetching Open Slots](patient-scheduling.html#use-case-3-prefetching-open-slots)." />
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166" />
+      <code value="US" />
+      <display value="United States of America" />
+    </coding>
+  </jurisdiction>
+  <fhirVersion value="3.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Subscription" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Subscription" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Subscription">
+      <path value="Subscription" />
+      <mustSupport value="false" />
+    </element>
+    <element id="Subscription.criteria">
+      <path value="Subscription.criteria" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Subscription.criteria.extension">
+      <path value="Subscription.criteria.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Subscription.criteria.extension:trigger-description">
+      <path value="Subscription.criteria.extension" />
+      <sliceName value="trigger-description" />
+      <short value="Subscription Trigger Event Description Extension" />
+      <comment value="A formal expression, or a reference to a named expression may also be inlined. If the expression is a [FHIRPath](http://hl7.org/fhirpath/) expression, use the [Subscription Trigger Event FHIRPath Extension](StructureDefinition-extension-trigger-fhirpath.html)" />
+      <min value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-trigger-event" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Subscription.criteria.extension:trigger-fhirpath">
+      <path value="Subscription.criteria.extension" />
+      <sliceName value="trigger-fhirpath" />
+      <short value="Subscription Trigger Event FHIRPath Extension" />
+      <definition value="If the expression is a [FHIRPath](http://hl7.org/fhirpath/) expression, it evaluates in the context of a resource of one of the types identified in the [Subscription Event Focus Extension](StructureDefinition-extension-event-focus.html), and may also refer to the variable `%previous`  for delta comparisons." />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/cqif-fhirPathExpression" />
+      </type>
+    </element>
+    <element id="Subscription.criteria.extension:event-focus">
+      <path value="Subscription.criteria.extension" />
+      <sliceName value="event-focus" />
+      <short value="Subscription Event Focus Extension" />
+      <min value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-event-focus" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Subscription.criteria.extension:event-focus.value[x]">
+      <path value="Subscription.criteria.extension.valueCode" />
+      <min value="1" />
+      <fixedCode value="Schedule" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Subscription.channel">
+      <path value="Subscription.channel" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Subscription.channel.extension">
+      <path value="Subscription.channel.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Subscription.channel.extension:payload-profile">
+      <path value="Subscription.channel.extension" />
+      <sliceName value="payload-profile" />
+      <min value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-payload-profile" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Subscription.channel.extension:payload-profile.valueUri">
+      <path value="Subscription.channel.extension.valueUri" />
+      <min value="1" />
+      <fixedUri value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-sched-notif" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Subscription.channel.endpoint">
+      <path value="Subscription.channel.endpoint" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+  </differential>
+</StructureDefinition>

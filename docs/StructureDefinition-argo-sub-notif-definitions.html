@@ -385,16 +385,23 @@
 </td></tr>
   <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
   <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Extension">Extension</a></td></tr>
-  <tr><td colspan="2" class="structure"><a name="Subscription.criteria.extension:trigger-event"> </a><b>Subscription.criteria.extension (<a href="StructureDefinition-extension-trigger-event.html">http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-trigger-event</a>)</b></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Subscription.criteria.extension:trigger-description"> </a><b>Subscription.criteria.extension (<a href="StructureDefinition-extension-trigger-event.html">[CanonicalType[http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-trigger-event]]</a>)</b></td></tr>
   <tr><td>Definition</td><td><p>A brief, natural language description of a particular event identified by the implementation environment. When this event is evaluated as true, it triggers a notification to the subscriber.</p>
 </td></tr>
   <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..* This element is affected by the following invariants: ele-1</td></tr>
   <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td>  (Extension Type: <a href="http://hl7.org/fhir/STU3/datatypes.html#string">string</a>)</td></tr>
-  <tr><td>Comments</td><td><p><a name="360c6114-e270-4590-ba3e-6e5b67e3eba6">​</a>A formal expression, or a reference to a named expression may also be inlined. If the expression is a <a href="http://hl7.org/fhirpath/">FHIRPath</a> expression, it evaluates in the context of a resource of one of the types identified in the <a href="http://hl7.org/fhir/STU3/StructureDefinition-extension-event-focus.html">Subscription Event Focus Extension</a>, and may also refer to the variable <code>%previous</code>  for delta comparisons.</p>
+  <tr><td>Comments</td><td><p><a name="52807319-fb0a-4419-a128-03cea9ad71be">​</a>A formal expression, or a reference to a named expression may also be inlined. If the expression is a <a href="http://hl7.org/fhirpath/">FHIRPath</a> expression, it evaluates in the context of a resource of one of the types identified in the <a href="http://hl7.org/fhir/STU3/StructureDefinition-extension-event-focus.html">Subscription Event Focus Extension</a>, and may also refer to the variable <code>%previous</code>  for delta comparisons.</p>
 </td></tr>
   <tr><td>Invariants</td><td><b>Defined on this element</b><br/>
 <b title="Formal Invariant Identifier">ele-1</b>: All FHIR elements must have a @value or children (: hasValue() | (children().count() &gt; id.count()))<br/><b title="Formal Invariant Identifier">ext-1</b>: Must have either extensions or value[x], not both (: extension.exists() != value.exists())</td></tr>
-  <tr><td colspan="2" class="structure"><a name="Subscription.criteria.extension:event-focus"> </a><b>Subscription.criteria.extension (<a href="StructureDefinition-extension-event-focus.html">http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-event-focus</a>)</b></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Subscription.criteria.extension:trigger-fhirpath"> </a><b>Subscription.criteria.extension (<a href="http://hl7.org/fhir/STU3/cqif/extension-cqif-fhirpathexpression.html">[CanonicalType[http://hl7.org/fhir/StructureDefinition/cqif-fhirPathExpression]]</a>)</b></td></tr>
+  <tr><td>Definition</td><td><p>A FHIRPath expression that provides the value for the element or resource on which it appears.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..* This element is affected by the following invariants: ele-1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td>  (Extension Type: <a href="http://hl7.org/fhir/STU3/datatypes.html#string">string</a>)</td></tr>
+  <tr><td>Invariants</td><td><b>Defined on this element</b><br/>
+<b title="Formal Invariant Identifier">ele-1</b>: All FHIR elements must have a @value or children (: hasValue() | (children().count() &gt; id.count()))<br/><b title="Formal Invariant Identifier">ext-1</b>: Must have either extensions or value[x], not both (: extension.exists() != value.exists())</td></tr>
+  <tr><td colspan="2" class="structure"><a name="Subscription.criteria.extension:event-focus"> </a><b>Subscription.criteria.extension (<a href="StructureDefinition-extension-event-focus.html">[CanonicalType[http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-event-focus]]</a>)</b></td></tr>
   <tr><td>Definition</td><td><p>The type of the required data, specified as the type name of a resource. For profiles, this value is set to the type of the base resource of the profile.</p>
 </td></tr>
   <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1 This element is affected by the following invariants: ele-1</td></tr>
@@ -458,8 +465,8 @@
 </td></tr>
   <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
   <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Extension">Extension</a></td></tr>
-  <tr><td colspan="2" class="structure"><a name="Subscription.channel.extension:payload-profile"> </a><b>Subscription.channel.extension (<a href="StructureDefinition-extension-payload-profile.html">http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-payload-profile</a>)</b></td></tr>
-  <tr><td>Definition</td><td><p><a name="a84cec8c-4a3e-449c-ab1c-717f387028a9">​</a>The profile of the required data to be sent in the payload.  The base resource of the profile is set in the <a href="http://hl7.org/fhir/STU3/StructureDefinition-extension-event-focus.html">Subscription Event Focus Extension</a>.</p>
+  <tr><td colspan="2" class="structure"><a name="Subscription.channel.extension:payload-profile"> </a><b>Subscription.channel.extension (<a href="StructureDefinition-extension-payload-profile.html">[CanonicalType[http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-payload-profile]]</a>)</b></td></tr>
+  <tr><td>Definition</td><td><p><a name="fd214037-b0b6-4f89-9a10-f49ca4ae185a">​</a>The profile of the required data to be sent in the payload.  The base resource of the profile is set in the <a href="http://hl7.org/fhir/STU3/StructureDefinition-extension-event-focus.html">Subscription Event Focus Extension</a>.</p>
 </td></tr>
   <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1 This element is affected by the following invariants: ele-1</td></tr>
   <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td>  (Extension Type: <a href="http://hl7.org/fhir/STU3/datatypes.html#uri">uri</a>)</td></tr>
@@ -572,7 +579,7 @@
   <div class="container">    <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Thu, Feb 15, 2018 00:13-0800. |
+            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Wed, Mar 14, 2018 19:21-0700. |
                <!-- <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a rel="license" style="color: #81BEF7" href="http://hl7.org/fhir/STU3license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a>
         

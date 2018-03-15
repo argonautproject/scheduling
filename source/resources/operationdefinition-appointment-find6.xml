@@ -209,11 +209,12 @@
 	</text>
 	<url value="http://fhir.org/guides/argonaut-scheduling/OperationDefinition/appointment-find"/>
 	<version value="0.0.0"/>
-	<name value="Appointment Availability Operation"/>
+	<name value="Appointment_Availability_Operation"/>
+	<!-- <title value="Appointment Availability Operation"/> -->
 	<status value="draft"/>
 	<kind value="operation"/>
 	<date value="2017-10-31T00:00:00-07:00"/>
-	<description value="Searches for availability for a future appointment(s) within a time period of defined by date range input parameters.  If neither a start or end date is given then the maximum period as defined by local business rules and starting from when the  operation was transacted will be used.   Other input parameter further refine the search and include  practitioner references, specialties, visit type, locations, and patient information. From these criteria, a system determines which schedulable resources ( e.g., people, rooms, equiibment) are needed for the visit, and provides time slots where all required resources are available.&#xA;&#xA; Note that for input parameters that are codes, the simple FHIR [token](http://build.fhir.org/search.html#token) search parameter type is used instead of the complex `Coding` datatype.  Also, the simple `uri` datatype is used instead of the complex `Reference` datatype for resources references.  This allows either the &#39;GET&#39;  or the &#39;POST&#39; syntax to be used to initiate the interaction in many cases.  Examples of both are shown in the below."/>
+	<description value="Searches for availability for a future appointment(s) within a time period of defined by date range input parameters.  If neither a start or end date is given then the maximum period as defined by local business rules and starting from when the  operation was transacted will be used.   Other input parameter further refine the search and include  practitioner references, specialties, visit type, locations, and patient information. From these criteria, a system determines which schedulable resources ( e.g., people, rooms, equiibment) are needed for the visit, and provides time slots where all required resources are available.&#xA;&#xA; Note that for input parameters that are codes, the simple FHIR [token](http://build.fhir.org/search.html#token) search parameter type is used instead of the complex `Coding` datatype.  Also, the simple `uri` datatype is used instead of the complex `Reference` datatype for resources references.  This allows either the 'GET'  or the 'POST' syntax to be used to initiate the interaction in many cases.  Examples of both are shown in the below."/>
 	<jurisdiction>
 		<coding>
 			<system value="urn:iso:std:iso:3166"/>
@@ -247,7 +248,7 @@
 		<use value="in"/>
 		<min value="0"/>
 		<max value="*"/>
-		<documentation value="The code for which specialty is requested for the appointment. ( e.g., &#39;Dermatology&#39;).   If multiple codes are listed, the order of the codes will interpreted as the order of preference.  The response will contain appointments with any of these actors (i.e. this does not drive joint appointment with multiple actors).  Each parameter value SHALL contain *both* the system property and the code property for a code using the general syntax `specialty=[system]|[code]`.   See the examples below for how this is implemented."/>
+		<documentation value="The code for which specialty is requested for the appointment. ( e.g., 'Dermatology').   If multiple codes are listed, the order of the codes will interpreted as the order of preference.  The response will contain appointments with any of these actors (i.e. this does not drive joint appointment with multiple actors).  Each parameter value SHALL contain *both* the system property and the code property for a code using the general syntax `specialty=[system]|[code]`.   See the examples below for how this is implemented."/>
 		<type value="string"/>
 		<searchType value="token"/>
 		<binding>
@@ -262,7 +263,7 @@
 		<use value="in"/>
 		<min value="0"/>
 		<max value="*"/>
-		<documentation value="The code for one of the common appointment visit types for scheduling.  ( e.g.,&#39;Echocardiography&#39; or  &#39;Well child visit&#39; ). This list of visit types is extensible and implementers may choose to add there own codes.  If multiple codes are listed, the order of the codes will interpreted as the order of preference.  The response will contain appointments with any of these services (i.e. this does not drive joint appointment with multiple services).  Each parameter value SHALL contain *both* the system property and the code property for a code using the general syntax `service-type=[system]|[code]`.   See the examples below for how this is implemented."/>
+		<documentation value="The code for one of the common appointment visit types for scheduling.  ( e.g.,'Echocardiography' or  'Well child visit' ). This list of visit types is extensible and implementers may choose to add there own codes.  If multiple codes are listed, the order of the codes will interpreted as the order of preference.  The response will contain appointments with any of these services (i.e. this does not drive joint appointment with multiple services).  Each parameter value SHALL contain *both* the system property and the code property for a code using the general syntax `service-type=[system]|[code]`.   See the examples below for how this is implemented."/>
 		<type value="string"/>
 		<searchType value="token"/>
 		<binding>
@@ -277,7 +278,7 @@
 		<use value="in"/>
 		<min value="0"/>
 		<max value="*"/>
-		<documentation value="The Practitioner reference when performing a provider based query.  This is a reference to a FHIR Practitioner resource,  e.g. &#39;Practitioner/123&#39;.   If multiple practitioner references are listed, the order will interpreted as the order of preference.  The response will contain appointments with any of these actors (i.e. this does not drive joint appointment with multiple actors)."/>
+		<documentation value="The Practitioner reference when performing a provider based query.  This is a reference to a FHIR Practitioner resource,  e.g. 'Practitioner/123'.   If multiple practitioner references are listed, the order will interpreted as the order of preference.  The response will contain appointments with any of these actors (i.e. this does not drive joint appointment with multiple actors)."/>
 		<type value="uri"/>
 	</parameter>
 	<parameter>
@@ -285,7 +286,7 @@
 		<use value="in"/>
 		<min value="0"/>
 		<max value="*"/>
-		<documentation value="The Organization reference when performing a provider based query.  This is a reference to a FHIR Organization resource,  e.g. &#39;Organization/abc&#39;.  If multiple organization references are listed, the order will interpreted as the order of preference.  The response will contain appointments with any of these actors (i.e. this does not drive joint appointment with multiple actors)."/>
+		<documentation value="The Organization reference when performing a provider based query.  This is a reference to a FHIR Organization resource,  e.g. 'Organization/abc'.  If multiple organization references are listed, the order will interpreted as the order of preference.  The response will contain appointments with any of these actors (i.e. this does not drive joint appointment with multiple actors)."/>
 		<type value="uri"/>
 	</parameter>
 	<parameter>

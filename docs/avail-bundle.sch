@@ -71,17 +71,6 @@
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
-    <sch:title>Bundle.entry.resource</sch:title>
-    <sch:rule context="f:Bundle/f:entry/f:resource">
-      <sch:assert test="not(parent::f:contained and f:contained)">If the resource is contained in another resource, it SHALL NOT contain nested Resources (inherited)</sch:assert>
-      <sch:assert test="not(parent::f:contained and f:text)">If the resource is contained in another resource, it SHALL NOT contain any narrative (inherited)</sch:assert>
-      <sch:assert test="not(exists(f:contained/*/f:meta/f:versionId)) and not(exists(f:contained/*/f:meta/f:lastUpdated))">If a resource is contained in another resource, it SHALL NOT have a meta.versionId or a meta.lastUpdated (inherited)</sch:assert>
-      <sch:assert test="not(exists(for $id in f:contained/*/@id return $id[not(ancestor::f:contained/parent::*/descendant::f:reference/@value=concat('#', $id))]))">If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource (inherited)</sch:assert>
-      <sch:assert test="((exists(f:start) and exists(f:end)) or (f:status/@value='proposed') or (f:status/@value='cancelled'))">Only proposed or cancelled appointments can be missing start/end dates (inherited)</sch:assert>
-      <sch:assert test="((exists(f:start) and exists(f:end)) or (not(exists(f:start)) and not(exists(f:end))))">Either start and end are specified, or neither (inherited)</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
     <sch:title>f:Bundle/f:entry/f:search</sch:title>
     <sch:rule context="f:Bundle/f:entry/f:search">
       <sch:assert test="count(f:mode) &gt;= 1">mode: minimum cardinality of 'mode' is 1</sch:assert>

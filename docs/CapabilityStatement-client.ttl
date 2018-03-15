@@ -10,11 +10,12 @@
   fhir:Resource.id [ fhir:value "client"];
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "generated" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      <ul>\n        <li>FHIR Version: 3.0.1</li>\n        <li>Supported formats: xml, json</li>\n        <li>Published: 2017-03-08</li>\n        <li>Published by: Health eData Inc</li>\n      </ul>\n      <p>The Section describes the expected capabilities etc....</p>\n    </div>"
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n			<ul>\n				<li>FHIR Version: 3.0.1</li>\n				<li>Supported formats: xml, json</li>\n				<li>Published: 2017-03-08</li>\n				<li>Published by: Health eData Inc</li>\n			</ul>\n			<p>The Section describes the expected capabilities etc....</p>\n		</div>"
   ];
   fhir:CapabilityStatement.url [ fhir:value "http://fhir.org/guides/argonaut-scheduling/CapabilityStatement/client"];
   fhir:CapabilityStatement.version [ fhir:value "0.0.0"];
   fhir:CapabilityStatement.name [ fhir:value "Client"];
+  fhir:CapabilityStatement.title [ fhir:value "Client"];
   fhir:CapabilityStatement.status [ fhir:value "draft"];
   fhir:CapabilityStatement.date [ fhir:value "2017-03-08T00:00:00-08:00"^^xsd:dateTime];
   fhir:CapabilityStatement.publisher [ fhir:value "Health eData Inc"];
@@ -38,7 +39,6 @@
   ];
   fhir:CapabilityStatement.kind [ fhir:value "requirements"];
   fhir:CapabilityStatement.fhirVersion [ fhir:value "3.0.1"];
-  fhir:CapabilityStatement.acceptUnknown [ fhir:value "extensions"];
   fhir:CapabilityStatement.format [
      fhir:value "xml";
      fhir:index 0

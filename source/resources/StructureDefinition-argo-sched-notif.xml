@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+	<id value="argo-sched-notif"/>
+	<url value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-sched-notif"/>
+	<version value="0.0.0"/>
+	<name value="Argonaut_Scheduling_Schedule_Notification_Profile"/>
+	<title value="Argonaut Scheduling Schedule Notification Profile"/>
+	<status value="draft"/>
+	<date value="2018-02-13"/>
+	<publisher value="Argonaut Project"/>
+	<contact>
+		<telecom>
+			<system value="url"/>
+			<value value="http://argonautwiki.hl7.org"/>
+		</telecom>
+	</contact>
+	<description value="The Argonaut Sc heduling Schedule Notification Profile is defined for use as the payload when sending  notifications to a subscriber as described in the updating slots step in [Use Case 3 Prefetching Open Slots](patient-scheduling.html#use-case-3-prefetching-open-slots)."/>
+	<jurisdiction>
+		<coding>
+			<system value="urn:iso:std:iso:3166"/>
+			<code value="US"/>
+			<display value="United States of America"/>
+		</coding>
+	</jurisdiction>
+	<fhirVersion value="3.0.1"/>
+	<kind value="resource"/>
+	<abstract value="false"/>
+	<type value="Schedule"/>
+	<baseDefinition value="http://hl7.org/fhir/StructureDefinition/Schedule"/>
+	<derivation value="constraint"/>
+	<differential>
+		<element id="Schedule">
+			<path value="Schedule"/>
+			<mustSupport value="false"/>
+		</element>
+		<element id="Schedule.actor">
+			<path value="Schedule.actor"/>
+			<min value="1"/>
+			<max value="1"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Schedule.actor.reference">
+			<path value="Schedule.actor.reference"/>
+			<min value="1"/>
+			<max value="1"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Schedule.planningHorizon">
+			<path value="Schedule.planningHorizon"/>
+			<min value="1"/>
+			<max value="1"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Schedule.planningHorizon.start">
+			<path value="Schedule.planningHorizon.start"/>
+			<min value="1"/>
+			<max value="1"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Schedule.planningHorizon.end">
+			<path value="Schedule.planningHorizon.end"/>
+			<min value="1"/>
+			<max value="1"/>
+			<mustSupport value="true"/>
+		</element>
+	</differential>
+</StructureDefinition>

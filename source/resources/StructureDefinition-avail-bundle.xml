@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+	<id value="avail-bundle"/>
+	<url value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/avail-bundle"/>
+	<version value="0.0.0"/>
+	<name value="Argonaut_Appointment_Bundle_Profile"/>
+	<title value="Argonaut Appointment Bundle Profile"/>
+	<status value="draft"/>
+	<date value="2018-01-11"/>
+	<publisher value="Argonaut Project"/>
+	<contact>
+		<telecom>
+			<system value="url"/>
+			<value value="http://argonautwiki.hl7.org"/>
+		</telecom>
+	</contact>
+	<description value="The Argonaut Appointment Bundle Profile is returned as a result of the '$find' operation and Appointment search."/>
+	<jurisdiction>
+		<coding>
+			<system value="urn:iso:std:iso:3166"/>
+			<code value="US"/>
+			<display value="United States of America"/>
+		</coding>
+	</jurisdiction>
+	<fhirVersion value="3.0.1"/>
+	<kind value="resource"/>
+	<abstract value="false"/>
+	<type value="Bundle"/>
+	<baseDefinition value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
+	<derivation value="constraint"/>
+	<differential>
+		<element id="Bundle">
+			<path value="Bundle"/>
+			<definition value="This is the output Appointment Bundle profile which is returned as a result of the *Operation$find* operation."/>
+			<mustSupport value="false"/>
+		</element>
+		<element id="Bundle.type">
+			<path value="Bundle.type"/>
+			<type>
+				<code value="code"/>
+			</type>
+			<fixedCode value="searchset"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Bundle.total">
+			<path value="Bundle.total"/>
+			<min value="1"/>
+			<max value="1"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Bundle.entry:entry-slices">
+			<path value="Bundle.entry"/>
+			<slicing>
+				<discriminator>
+					<type value="value"/>
+					<path value="resource"/>
+				</discriminator>
+				<rules value="open"/>
+			</slicing>
+			<min value="1"/>
+			<max value="*"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Bundle.entry:entry-appt">
+			<path value="Bundle.entry"/>
+			<sliceName value="entry-appt"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Bundle.entry:entry-appt.resource">
+			<path value="Bundle.entry.resource"/>
+			<min value="0"/>
+			<max value="1"/>
+			<type>
+				<code value="Appointment"/>
+				<profile value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt"/>
+			</type>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Bundle.entry:entry-appt.search">
+			<path value="Bundle.entry.search"/>
+			<min value="0"/>
+			<max value="1"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Bundle.entry:entry-appt.search.mode">
+			<path value="Bundle.entry.search.mode"/>
+			<min value="1"/>
+			<max value="1"/>
+			<type>
+				<code value="code"/>
+			</type>
+			<fixedCode value="match"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Bundle.entry:entry-oo">
+			<path value="Bundle.entry"/>
+			<sliceName value="entry-oo"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Bundle.entry:entry-oo.resource">
+			<path value="Bundle.entry.resource"/>
+			<min value="0"/>
+			<max value="1"/>
+			<type>
+				<code value="OperationOutcome"/>
+			</type>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Bundle.entry:entry-oo.search">
+			<path value="Bundle.entry.search"/>
+			<min value="0"/>
+			<max value="1"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Bundle.entry:entry-oo.search.mode">
+			<path value="Bundle.entry.search.mode"/>
+			<min value="1"/>
+			<max value="1"/>
+			<type>
+				<code value="code"/>
+			</type>
+			<fixedCode value="outcome"/>
+			<mustSupport value="true"/>
+		</element>
+	</differential>
+</StructureDefinition>

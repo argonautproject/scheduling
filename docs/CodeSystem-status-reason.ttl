@@ -14,7 +14,8 @@
   ];
   fhir:CodeSystem.url [ fhir:value "http://fhir.org/guides/argonaut-scheduling/CodeSystem/status-reason"];
   fhir:CodeSystem.version [ fhir:value "0.0.0"];
-  fhir:CodeSystem.name [ fhir:value "Argonaut Appointment Event Reason Codes"];
+  fhir:CodeSystem.name [ fhir:value "Argonaut_Appointment_Event_Reason_Codes"];
+  fhir:CodeSystem.title [ fhir:value "Argonaut Appointment Event Reason Codes"];
   fhir:CodeSystem.status [ fhir:value "draft"];
   fhir:CodeSystem.experimental [ fhir:value "false"^^xsd:boolean];
   fhir:CodeSystem.date [ fhir:value "2017-10-10T07:46:45-07:00"^^xsd:dateTime];

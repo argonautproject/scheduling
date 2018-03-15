@@ -337,7 +337,7 @@
 </td></tr>
   <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
   <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Extension">Extension</a></td></tr>
-  <tr><td colspan="2" class="structure"><a name="Appointment.extension:status-reason-extension"> </a><b>Appointment.extension (<a href="StructureDefinition-extension-status-reason.html">http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-status-reason</a>)</b></td></tr>
+  <tr><td colspan="2" class="structure"><a name="Appointment.extension:status-reason-extension"> </a><b>Appointment.extension (<a href="StructureDefinition-extension-status-reason.html">[CanonicalType[http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-status-reason]]</a>)</b></td></tr>
   <tr><td>Definition</td><td><p>Captures the reason for the current state of the Appointment.</p>
 </td></tr>
   <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1 This element is affected by the following invariants: ele-1</td></tr>
@@ -383,21 +383,21 @@
   <tr><td>Definition</td><td><p>The specific service that is to be performed during this appointment.</p>
 </td></tr>
   <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
-  <tr><td><a href="http://hl7.org/fhir/STU3/terminologies.html">Binding</a></td><td>The codes SHALL be taken from <a href="ValueSet-visit-type.html">Argonaut Visit Types</a>; other codes may be used where these codes are not suitable</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/terminologies.html">Binding</a></td><td>The codes SHALL be taken from <a href="ValueSet-visit-type.html">Argonaut_Visit_Types</a>; other codes may be used where these codes are not suitable</td></tr>
   <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
   <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#mustSupport">Must Support</a></td><td>true</td></tr>
   <tr><td colspan="2" class="structure"><a name="Appointment.specialty"> </a><b>Appointment.specialty</b></td></tr>
   <tr><td>Definition</td><td><p>The specialty of a practitioner that would be required to perform the service requested in this appointment.</p>
 </td></tr>
   <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
-  <tr><td><a href="http://hl7.org/fhir/STU3/terminologies.html">Binding</a></td><td>The codes SHALL be taken from <a href="ValueSet-specialty.html">Argonaut Scheduling Specialties</a>; other codes may be used where these codes are not suitable</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/terminologies.html">Binding</a></td><td>The codes SHALL be taken from <a href="ValueSet-specialty.html">Argonaut_Scheduling_Specialties</a>; other codes may be used where these codes are not suitable</td></tr>
   <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
   <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#mustSupport">Must Support</a></td><td>true</td></tr>
   <tr><td colspan="2" class="structure"><a name="Appointment.appointmentType"> </a><b>Appointment.appointmentType</b></td></tr>
   <tr><td>Definition</td><td><p>The style of appointment or patient that has been booked in the slot (not service type).</p>
 </td></tr>
   <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
-  <tr><td><a href="http://hl7.org/fhir/STU3/terminologies.html">Binding</a></td><td>The codes SHALL be taken from <a href="ValueSet-appt-type.html">Argonaut Appointment Types</a>; other codes may be used where these codes are not suitable</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/terminologies.html">Binding</a></td><td>The codes SHALL be taken from <a href="ValueSet-appt-type.html">Argonaut_Appointment_Types</a>; other codes may be used where these codes are not suitable</td></tr>
   <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
   <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#mustSupport">Must Support</a></td><td>true</td></tr>
   <tr><td title="Other names by which this resource/element may be known">Alternate Names</td><td>`</td></tr>
@@ -411,7 +411,7 @@
   <tr><td>Definition</td><td><p>Reason the appointment has been scheduled to take place, as specified using information from another resource. When the patient arrives and the encounter begins it may be used as the admission diagnosis. The indication will typically be a Condition (with other resources referenced in the evidence.detail), or a Procedure.</p>
 </td></tr>
   <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
-  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td>Choice of: <a href="http://hl7.org/fhir/STU3/datatypes.html#Reference">Reference</a>(<a href="http://hl7.org/fhir/STU3/condition.html" title="http://hl7.org/fhir/StructureDefinition/Condition">Condition</a>), <a href="http://hl7.org/fhir/STU3/datatypes.html#Reference">Reference</a>(<a href="http://hl7.org/fhir/STU3/procedure.html" title="http://hl7.org/fhir/StructureDefinition/Procedure">Procedure</a>)</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Reference">Reference</a>(<a href="http://hl7.org/fhir/STU3/condition.html" title="[CanonicalType[http://hl7.org/fhir/StructureDefinition/Condition], CanonicalType[http://hl7.org/fhir/StructureDefinition/Procedure]]">Condition</a>)</td></tr>
   <tr><td colspan="2" class="structure"><a name="Appointment.priority"> </a><b>Appointment.priority</b></td></tr>
   <tr><td>Definition</td><td><p>The priority of the appointment. Can be used to make informed decisions if needing to re-prioritize appointments. (The iCal Standard specifies 0 as undefined, 1 as highest, 9 as lowest priority).</p>
 </td></tr>
@@ -429,7 +429,7 @@
   <tr><td>Definition</td><td><p>Additional information to support the appointment provided when making the appointment.</p>
 </td></tr>
   <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
-  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Reference">Reference</a>(<a href="http://hl7.org/fhir/STU3/resource.html" title="http://hl7.org/fhir/StructureDefinition/Resource">Resource</a>)</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Reference">Reference</a>(<a href="http://hl7.org/fhir/STU3/resource.html" title="[CanonicalType[http://hl7.org/fhir/StructureDefinition/Resource]]">Resource</a>)</td></tr>
   <tr><td colspan="2" class="structure"><a name="Appointment.start"> </a><b>Appointment.start</b></td></tr>
   <tr><td>Definition</td><td><p>Date/Time that the appointment is to take place.</p>
 </td></tr>
@@ -451,7 +451,7 @@
   <tr><td>Definition</td><td><p>The slots from the participants' schedules that will be filled by the appointment.</p>
 </td></tr>
   <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
-  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Reference">Reference</a>(<a href="http://hl7.org/fhir/STU3/slot.html" title="http://hl7.org/fhir/StructureDefinition/Slot">Slot</a>)</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Reference">Reference</a>(<a href="http://hl7.org/fhir/STU3/slot.html" title="[CanonicalType[http://hl7.org/fhir/StructureDefinition/Slot]]">Slot</a>)</td></tr>
   <tr><td colspan="2" class="structure"><a name="Appointment.created"> </a><b>Appointment.created</b></td></tr>
   <tr><td>Definition</td><td><p>The date that this appointment was initially created. This could be different to the meta.lastModified value on the initial entry, as this could have been before the resource was created on the FHIR server, and should remain unchanged over the lifespan of the appointment.</p>
 </td></tr>
@@ -471,7 +471,7 @@
   <tr><td>Definition</td><td><p>The referral request this appointment is allocated to assess (incoming referral).</p>
 </td></tr>
   <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
-  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Reference">Reference</a>(<a href="http://hl7.org/fhir/STU3/referralrequest.html" title="http://hl7.org/fhir/StructureDefinition/ReferralRequest">ReferralRequest</a>)</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Reference">Reference</a>(<a href="http://hl7.org/fhir/STU3/referralrequest.html" title="[CanonicalType[http://hl7.org/fhir/StructureDefinition/ReferralRequest]]">ReferralRequest</a>)</td></tr>
   <tr><td colspan="2" class="structure"><a name="Appointment.participant:p-1"> </a><a name="Appointment.participant"> </a><b>Appointment.participant(p-1)</b></td></tr>
   <tr><td>Definition</td><td><p>List of participants involved in the appointment.</p>
 </td></tr>
@@ -516,7 +516,7 @@
   <tr><td>Definition</td><td><p>A Person, Location/HealthcareService or Device that is participating in the appointment.</p>
 </td></tr>
   <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>1..1</td></tr>
-  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td>Choice of: <a href="http://hl7.org/fhir/STU3/datatypes.html#Reference">Reference</a>(<a href="http://hl7.org/fhir/us/core/stu1//StructureDefinition-us-core-location.html" title="http://hl7.org/fhir/us/core/StructureDefinition/us-core-location">US  Core Location Profile</a>), <a href="http://hl7.org/fhir/STU3/datatypes.html#Reference">Reference</a>(<a href="http://hl7.org/fhir/us/core/stu1//StructureDefinition-us-core-patient.html" title="http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient">US Core Patient Profile</a>), <a href="http://hl7.org/fhir/STU3/datatypes.html#Reference">Reference</a>(<a href="http://hl7.org/fhir/us/core/stu1//StructureDefinition-us-core-practitioner.html" title="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner">US  Core Practitioner Profile</a>), <a href="http://hl7.org/fhir/STU3/datatypes.html#Reference">Reference</a>(<a href="http://hl7.org/fhir/STU3/healthcareservice.html" title="http://hl7.org/fhir/StructureDefinition/HealthcareService">HealthcareService</a>)</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Reference">Reference</a>(<a href="http://hl7.org/fhir/us/core/stu1//StructureDefinition-us-core-location.html" title="[CanonicalType[http://hl7.org/fhir/us/core/StructureDefinition/us-core-location], CanonicalType[http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient], CanonicalType[http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner], CanonicalType[http://hl7.org/fhir/StructureDefinition/HealthcareService]]">US  Core Location Profile</a>)</td></tr>
   <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#mustSupport">Must Support</a></td><td>true</td></tr>
   <tr><td colspan="2" class="structure"><a name="Appointment.participant:p-1.required"> </a><a name="Appointment.participant.required"> </a><b>Appointment.participant.required</b></td></tr>
   <tr><td>Definition</td><td><p>Is this participant required to be present at the meeting. This covers a use-case where 2 doctors need to meet to discuss the results for a specific patient, and the patient is not required to be present.</p>
@@ -573,7 +573,7 @@
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Thu, Feb 15, 2018 00:13-0800. |
+            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Wed, Mar 14, 2018 19:21-0700. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/STU3license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+	<id value="slot-bundle"/>
+	<url value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/slot-bundle"/>
+	<version value="0.0.0"/>
+	<name value="Argonaut_Slot_Bundle_Profile"/>
+	<title value="Argonaut Slot Bundle Profile"/>
+	<status value="draft"/>
+	<date value="2018-01-11"/>
+	<publisher value="Argonaut Project"/>
+	<contact>
+		<telecom>
+			<system value="url"/>
+			<value value="http://argonautwiki.hl7.org"/>
+		</telecom>
+	</contact>
+	<description value="The Argonaut Slot Bundle Profile is returned as a result of the '$find' operation and Appointment search."/>
+	<jurisdiction>
+		<coding>
+			<system value="urn:iso:std:iso:3166"/>
+			<code value="US"/>
+			<display value="United States of America"/>
+		</coding>
+	</jurisdiction>
+	<fhirVersion value="3.0.1"/>
+	<kind value="resource"/>
+	<abstract value="false"/>
+	<type value="Bundle"/>
+	<baseDefinition value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
+	<derivation value="constraint"/>
+	<differential>
+		<element id="Bundle">
+			<path value="Bundle"/>
+			<definition value="This is the output Appointment Bundle profile which is returned as a result of the *Operation$find* operation."/>
+			<mustSupport value="false"/>
+		</element>
+		<element id="Bundle.type">
+			<path value="Bundle.type"/>
+			<short value="searchset|history"/>
+			<type>
+				<code value="code"/>
+			</type>
+			<mustSupport value="true"/>
+			<binding>
+				<strength value="required"/>
+				<description value="Profile types constrained to 'history' and 'searchset'"/>
+				<valueSetReference>
+					<reference value="http://fhir.org/guides/argonaut-scheduling/ValueSet/slot-bundle-type"/>
+				</valueSetReference>
+			</binding>
+		</element>
+		<element id="Bundle.total">
+			<path value="Bundle.total"/>
+			<min value="1"/>
+			<max value="1"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Bundle.entry:entryslices">
+			<path value="Bundle.entry"/>
+			<slicing>
+				<discriminator>
+					<type value="value"/>
+					<path value="resource"/>
+				</discriminator>
+				<rules value="open"/>
+			</slicing>
+			<min value="1"/>
+			<max value="*"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Bundle.entry:entryappt">
+			<path value="Bundle.entry"/>
+			<sliceName value="entryappt"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Bundle.entry:entryappt.resource">
+			<path value="Bundle.entry.resource"/>
+			<min value="0"/>
+			<max value="1"/>
+			<type>
+				<code value="Appointment"/>
+				<profile value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/prefetch-slot"/>
+			</type>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Bundle.entry:entryappt.search">
+			<path value="Bundle.entry.search"/>
+			<min value="0"/>
+			<max value="1"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Bundle.entry:entryappt.search.mode">
+			<path value="Bundle.entry.search.mode"/>
+			<min value="1"/>
+			<max value="1"/>
+			<type>
+				<code value="code"/>
+			</type>
+			<fixedCode value="match"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Bundle.entry:entryoo">
+			<path value="Bundle.entry"/>
+			<sliceName value="entryoo"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Bundle.entry:entryoo.resource">
+			<path value="Bundle.entry.resource"/>
+			<min value="0"/>
+			<max value="1"/>
+			<type>
+				<code value="OperationOutcome"/>
+			</type>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Bundle.entry:entryoo.search">
+			<path value="Bundle.entry.search"/>
+			<min value="0"/>
+			<max value="1"/>
+			<mustSupport value="true"/>
+		</element>
+		<element id="Bundle.entry:entryoo.search.mode">
+			<path value="Bundle.entry.search.mode"/>
+			<min value="1"/>
+			<max value="1"/>
+			<type>
+				<code value="code"/>
+			</type>
+			<fixedCode value="outcome"/>
+			<mustSupport value="true"/>
+		</element>
+	</differential>
+</StructureDefinition>

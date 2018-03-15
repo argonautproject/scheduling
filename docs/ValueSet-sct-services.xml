@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="sct-services"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><h2>Argonaut_Snomed_CT_Services</h2><div><p>The Snomed CT services and procedures concepts that represent visit types for scheduling appointments. These concepts are mapped to the <a href="ConceptMap-visit-snomed-map.html">Argonaut Visit Types</a>.</p>
+</div><p><b>Copyright Statement:</b> This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement</p><p>This value set includes codes from the following code systems:</p><ul><li>Include codes from <a href="http://www.snomed.org/"><code>http://snomed.info/sct</code></a> where concept  is-a  224891009 (Healthcare services)</li><li>Include these codes as defined in <a href="http://www.snomed.org/"><code>http://snomed.info/sct</code></a><table class="none"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=11429006">11429006</a></td><td/><td/></tr><tr><td><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=241686001">241686001</a></td><td/><td/></tr><tr><td><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=40701008">40701008</a></td><td/><td/></tr><tr><td><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=433233004">433233004</a></td><td/><td/></tr><tr><td><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=409073007">409073007</a></td><td/><td/></tr><tr><td><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=54550000">54550000</a></td><td/><td/></tr><tr><td><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=29303009">29303009</a></td><td/><td/></tr><tr><td><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=386053000">386053000</a></td><td/><td/></tr><tr><td><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=86198006">86198006</a></td><td/><td/></tr><tr><td><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=44491008">44491008</a></td><td/><td/></tr><tr><td><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=185389009">185389009</a></td><td/><td/></tr><tr><td><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=439708006">439708006</a></td><td/><td/></tr><tr><td><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=59108006">59108006</a></td><td/><td/></tr><tr><td><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=185387006">185387006</a></td><td/><td/></tr><tr><td><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=310058008">310058008</a></td><td/><td/></tr><tr><td><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=11429006">11429006</a></td><td/><td/></tr><tr><td><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=5880005">5880005</a></td><td/><td/></tr><tr><td><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=439740005">439740005</a></td><td/><td/></tr><tr><td><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=406153003">406153003</a></td><td/><td/></tr><tr><td><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=262068006">262068006</a></td><td/><td/></tr><tr><td><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=71388002">71388002</a></td><td/><td/></tr><tr><td><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=11429006">11429006</a></td><td/><td/></tr><tr><td><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=76746007">76746007</a></td><td/><td/></tr><tr><td><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=77132007">77132007</a></td><td/><td/></tr><tr><td><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=103391001">103391001</a></td><td/><td/></tr><tr><td><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=127785005">127785005</a></td><td/><td/></tr><tr><td><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=11429006">11429006</a></td><td/><td/></tr><tr><td><a href="http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=410620009">410620009</a></td><td/><td/></tr></table></li></ul></div>
+  </text>
+  <url value="http://fhir.org/guides/argonaut-scheduling/ValueSet/sct-services"/>
+  <version value="0.0.0"/>
+  <name value="Argonaut_Snomed_CT_Services"/>
+  <title value="Argonaut Snomed CT Services"/>
+  <status value="draft"/>
+  <date value="2018-03-14T12:40:10-07:00"/>
+  <description value="The Snomed CT services and procedures concepts that represent visit types for scheduling appointments. These concepts are mapped to the [Argonaut Visit Types](ConceptMap-visit-snomed-map.html)."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+      <display value="United States of America"/>
+    </coding>
+  </jurisdiction>
+  <copyright value="This value set includes content from SNOMED CT, which is copyright &#xA9; 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement"/>
+  <compose>
+    <include>
+      <system value="http://snomed.info/sct"/>
+      <filter>
+        <property value="concept"/>
+        <op value="is-a"/>
+        <value value="224891009"/>
+      </filter>
+    </include>
+    <include>
+      <system value="http://snomed.info/sct"/>
+      <concept>
+        <code value="11429006"/>
+      </concept>
+      <concept>
+        <code value="241686001"/>
+      </concept>
+      <concept>
+        <code value="40701008"/>
+      </concept>
+      <concept>
+        <code value="433233004"/>
+      </concept>
+      <concept>
+        <code value="409073007"/>
+      </concept>
+      <concept>
+        <code value="54550000"/>
+      </concept>
+      <concept>
+        <code value="29303009"/>
+      </concept>
+      <concept>
+        <code value="386053000"/>
+      </concept>
+      <concept>
+        <code value="86198006"/>
+      </concept>
+      <concept>
+        <code value="44491008"/>
+      </concept>
+      <concept>
+        <code value="185389009"/>
+      </concept>
+      <concept>
+        <code value="439708006"/>
+      </concept>
+      <concept>
+        <code value="59108006"/>
+      </concept>
+      <concept>
+        <code value="185387006"/>
+      </concept>
+      <concept>
+        <code value="310058008"/>
+      </concept>
+      <concept>
+        <code value="11429006"/>
+      </concept>
+      <concept>
+        <code value="5880005"/>
+      </concept>
+      <concept>
+        <code value="439740005"/>
+      </concept>
+      <concept>
+        <code value="406153003"/>
+      </concept>
+      <concept>
+        <code value="262068006"/>
+      </concept>
+      <concept>
+        <code value="71388002"/>
+      </concept>
+      <concept>
+        <code value="11429006"/>
+      </concept>
+      <concept>
+        <code value="76746007"/>
+      </concept>
+      <concept>
+        <code value="77132007"/>
+      </concept>
+      <concept>
+        <code value="103391001"/>
+      </concept>
+      <concept>
+        <code value="127785005"/>
+      </concept>
+      <concept>
+        <code value="11429006"/>
+      </concept>
+      <concept>
+        <code value="410620009"/>
+      </concept>
+    </include>
+  </compose>
+</ValueSet>

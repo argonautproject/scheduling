@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+	<id value="extension-event-focus"/>
+	<url value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-event-focus"/>
+	<version value="0.0.0"/>
+	<name value="Subscription_Event_Focus_Extension"/>
+	<title value="Subscription Event Focus Extension"/>
+	<status value="draft"/>
+	<date value="2018-02-13"/>
+	<publisher value="Argonaut Project"/>
+	<contact>
+		<telecom>
+			<system value="url"/>
+			<value value="http://argonautwiki.hl7.org"/>
+		</telecom>
+	</contact>
+	<description value="The type of the required data, specified as the type name of a resource. For profiles, this value is set to the type of the base resource of the profile."/>
+	<jurisdiction>
+		<coding>
+			<system value="urn:iso:std:iso:3166"/>
+			<code value="US"/>
+			<display value="United States of America"/>
+		</coding>
+	</jurisdiction>
+	<fhirVersion value="3.0.1"/>
+	<kind value="complex-type"/>
+	<abstract value="false"/>
+	<contextType value="resource"/>
+	<context value="Subscription.criteria"/>
+	<type value="Extension"/>
+	<baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+	<derivation value="constraint"/>
+	<differential>
+		<element id="Extension:event-focus">
+			<path value="Extension"/>
+			<short value="Subscription  Event Focus Extension"/>
+			<definition value="The type of the required data, specified as the type name of a resource. For profiles, this value is set to the type of the base resource of the profile."/>
+			<min value="0"/>
+			<max value="1"/>
+		</element>
+		<element id="Extension:event-focus.url">
+			<path value="Extension.url"/>
+			<fixedUri value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-event-focus"/>
+		</element>
+		<element id="Extension:event-focus.valueCode">
+			<path value="Extension.valueCode"/>
+			<type>
+				<code value="code"/>
+			</type>
+			<binding>
+				<strength value="required"/>
+				<description value="The type of the required data, specified as the type name of a resource. For profiles, this value is set to the type of the base resource of the profile."/>
+				<valueSetReference>
+					<reference value="http://hl7.org/fhir/ValueSet/all-types"/>
+				</valueSetReference>
+			</binding>
+		</element>
+	</differential>
+</StructureDefinition>

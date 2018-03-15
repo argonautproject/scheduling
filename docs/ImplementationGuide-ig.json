@@ -246,50 +246,6 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "StructureDefinition-extension-payload-profile.html"
-            }
-          ],
-          "sourceReference": {
-            "reference": "StructureDefinition/extension-payload-profile"
-          }
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "StructureDefinition-extension-event-focus.html"
-            }
-          ],
-          "sourceReference": {
-            "reference": "StructureDefinition/extension-event-focus"
-          }
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "StructureDefinition-extension-trigger-event.html"
-            }
-          ],
-          "sourceReference": {
-            "reference": "StructureDefinition/extension-trigger-event"
-          }
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "StructureDefinition-extension-status-reason.html"
-            }
-          ],
-          "sourceReference": {
-            "reference": "StructureDefinition/extension-status-reason"
-          }
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
               "valueUri": "ValueSet-visit-type.html"
             }
           ],
@@ -334,22 +290,22 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "ValueSet-appt-type.html"
+              "valueUri": "ValueSet-sct-services.html"
             }
           ],
           "sourceReference": {
-            "reference": "ValueSet/appt-type"
+            "reference": "ValueSet/sct-services"
           }
         },
         {
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "StructureDefinition-argo-sub-notif.html"
+              "valueUri": "ValueSet-appt-type.html"
             }
           ],
           "sourceReference": {
-            "reference": "StructureDefinition/argo-sub-notif"
+            "reference": "ValueSet/appt-type"
           }
         },
         {
@@ -367,6 +323,83 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "StructureDefinition-prefetch-slot.html"
+            }
+          ],
+          "sourceReference": {
+            "reference": "StructureDefinition/prefetch-slot"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "StructureDefinition-extension-trigger-event.html"
+            }
+          ],
+          "sourceReference": {
+            "reference": "StructureDefinition/extension-trigger-event"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "StructureDefinition-extension-status-reason.html"
+            }
+          ],
+          "sourceReference": {
+            "reference": "StructureDefinition/extension-status-reason"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "StructureDefinition-extension-payload-profile.html"
+            }
+          ],
+          "sourceReference": {
+            "reference": "StructureDefinition/extension-payload-profile"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "StructureDefinition-extension-event-focus.html"
+            }
+          ],
+          "sourceReference": {
+            "reference": "StructureDefinition/extension-event-focus"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "StructureDefinition-avail-bundle.html"
+            }
+          ],
+          "sourceReference": {
+            "reference": "StructureDefinition/avail-bundle"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "StructureDefinition-argo-sub-notif.html"
+            }
+          ],
+          "sourceReference": {
+            "reference": "StructureDefinition/argo-sub-notif"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
               "valueUri": "StructureDefinition-argo-sched-notif.html"
             }
           ],
@@ -378,11 +411,22 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "StructureDefinition-prefetch-slot.html"
+              "valueUri": "StructureDefinition-argo-coverage.html"
             }
           ],
           "sourceReference": {
-            "reference": "StructureDefinition/prefetch-slot"
+            "reference": "StructureDefinition/argo-coverage"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "StructureDefinition-argo-appt.html"
+            }
+          ],
+          "sourceReference": {
+            "reference": "StructureDefinition/argo-appt"
           }
         },
         {
@@ -504,206 +548,6 @@
           ],
           "sourceReference": {
             "reference": "CapabilityStatement/client"
-          }
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "StructureDefinition-avail-bundle.html"
-            }
-          ],
-          "sourceReference": {
-            "reference": "StructureDefinition/avail-bundle"
-          }
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "StructureDefinition-argo-coverage.html"
-            }
-          ],
-          "sourceReference": {
-            "reference": "StructureDefinition/argo-coverage"
-          }
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "StructureDefinition-argo-appt.html"
-            }
-          ],
-          "sourceReference": {
-            "reference": "StructureDefinition/argo-appt"
-          }
-        }
-      ]
-    },
-    {
-      "name": "Argonaut Appointment Profile",
-      "resource": [
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "StructureDefinition-extension-status-reason.html"
-            }
-          ],
-          "name": "Reason for current status",
-          "sourceReference": {
-            "reference": "StructureDefinition/extension-status-reason"
-          }
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "StructureDefinition-argo-appt.html"
-            }
-          ],
-          "name": "Argonaut Appointment Profile",
-          "sourceReference": {
-            "reference": "StructureDefinition/argo-appt"
-          }
-        }
-      ]
-    },
-    {
-      "name": "Argonaut Coverage Profile",
-      "resource": [
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "StructureDefinition-argo-coverage.html"
-            }
-          ],
-          "name": "Argonaut Coverage Profile",
-          "sourceReference": {
-            "reference": "StructureDefinition/argo-coverage"
-          }
-        }
-      ]
-    },
-    {
-      "name": "Argonaut Appointment Bundle Profile",
-      "resource": [
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "StructureDefinition-avail-bundle.html"
-            }
-          ],
-          "name": "Argonaut Appointment Bundle Profile",
-          "sourceReference": {
-            "reference": "StructureDefinition/avail-bundle"
-          }
-        }
-      ]
-    },
-    {
-      "name": "Argonaut Prefetch Slot Profile",
-      "resource": [
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "StructureDefinition-prefetch-slot.html"
-            }
-          ],
-          "name": "Argonaut Prefetch Slot Profile",
-          "sourceReference": {
-            "reference": "StructureDefinition/prefetch-slot"
-          }
-        }
-      ]
-    },
-    {
-      "name": "Argonaut Scheduling Schedule Notification Profile",
-      "resource": [
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "StructureDefinition-argo-sched-notif.html"
-            }
-          ],
-          "name": "Argonaut Scheduling Schedule Notification Profile",
-          "sourceReference": {
-            "reference": "StructureDefinition/argo-sched-notif"
-          }
-        }
-      ]
-    },
-    {
-      "name": "Argonaut Slot Bundle Profile",
-      "resource": [
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "StructureDefinition-slot-bundle.html"
-            }
-          ],
-          "name": "Argonaut Slot Bundle Profile",
-          "sourceReference": {
-            "reference": "StructureDefinition/slot-bundle"
-          }
-        }
-      ]
-    },
-    {
-      "name": "Argonaut Scheduling Subscription Profile",
-      "resource": [
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "StructureDefinition-extension-trigger-event.html"
-            }
-          ],
-          "name": "Subscription Trigger Event Extension",
-          "sourceReference": {
-            "reference": "StructureDefinition/extension-trigger-event"
-          }
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "StructureDefinition-extension-event-focus.html"
-            }
-          ],
-          "name": "Subscription  Event Focus Extension",
-          "sourceReference": {
-            "reference": "StructureDefinition/extension-event-focus"
-          }
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "StructureDefinition-extension-payload-profile.html"
-            }
-          ],
-          "name": "Subscription Payload Profile Extension",
-          "sourceReference": {
-            "reference": "StructureDefinition/extension-payload-profile"
-          }
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "StructureDefinition-argo-sub-notif.html"
-            }
-          ],
-          "name": "Argonaut Scheduling Subscription Profile",
-          "sourceReference": {
-            "reference": "StructureDefinition/argo-sub-notif"
           }
         }
       ]

@@ -308,7 +308,7 @@
   ];
   <a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.url">fhir:OperationDefinition.url</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#uri">fhir:value</a> &quot;http://fhir.org/guides/argonaut-scheduling/OperationDefinition/appointment-find&quot;];
   <a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.version">fhir:OperationDefinition.version</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#string">fhir:value</a> &quot;0.0.0&quot;];
-  <a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.name">fhir:OperationDefinition.name</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#string">fhir:value</a> &quot;Appointment Availability Operation&quot;];
+  <a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.name">fhir:OperationDefinition.name</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#string">fhir:value</a> &quot;Appointment_Availability_Operation&quot;];
   <a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.status">fhir:OperationDefinition.status</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#code">fhir:value</a> &quot;draft&quot;];
   <a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.kind">fhir:OperationDefinition.kind</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#code">fhir:value</a> &quot;operation&quot;];
   <a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.date">fhir:OperationDefinition.date</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#dateTime">fhir:value</a> &quot;2017-10-31T00:00:00-07:00&quot;^^xsd:dateTime];
@@ -357,9 +357,7 @@
      <a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.parameter.searchType">fhir:OperationDefinition.parameter.searchType</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#code">fhir:value</a> &quot;token&quot; ];
      <a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.parameter.binding">fhir:OperationDefinition.parameter.binding</a> [
        <a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.parameter.binding.strength">fhir:OperationDefinition.parameter.binding.strength</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#code">fhir:value</a> &quot;extensible&quot; ];
-       <a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.parameter.binding.valueSet[x]">fhir:OperationDefinition.parameter.binding.valueSetReference</a> [
-         <a href="http://hl7.org/fhir/STU3/rdf.html#reference">fhir:link</a> &lt;http://fhir.org/guides/argonaut-scheduling/ValueSet/specialty&gt;;
-         <a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">fhir:Reference.reference</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#string">fhir:value</a> &quot;http://fhir.org/guides/argonaut-scheduling/ValueSet/specialty&quot; ]       ]     ]
+       <a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.parameter.binding.valueSet[x]">fhir:OperationDefinition.parameter.binding.valueSetUri</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#uri">fhir:value</a> &quot;http://fhir.org/guides/argonaut-scheduling/ValueSet/specialty&quot; ]     ]
   ], [
      <a href="http://hl7.org/fhir/STU3/rdf.html#index">fhir:index</a> 3;
      <a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.parameter.name">fhir:OperationDefinition.parameter.name</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#code">fhir:value</a> &quot;visit-type&quot; ];
@@ -371,9 +369,7 @@
      <a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.parameter.searchType">fhir:OperationDefinition.parameter.searchType</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#code">fhir:value</a> &quot;token&quot; ];
      <a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.parameter.binding">fhir:OperationDefinition.parameter.binding</a> [
        <a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.parameter.binding.strength">fhir:OperationDefinition.parameter.binding.strength</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#code">fhir:value</a> &quot;extensible&quot; ];
-       <a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.parameter.binding.valueSet[x]">fhir:OperationDefinition.parameter.binding.valueSetReference</a> [
-         <a href="http://hl7.org/fhir/STU3/rdf.html#reference">fhir:link</a> &lt;http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type&gt;;
-         <a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">fhir:Reference.reference</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#string">fhir:value</a> &quot;http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type&quot; ]       ]     ]
+       <a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.parameter.binding.valueSet[x]">fhir:OperationDefinition.parameter.binding.valueSetUri</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#uri">fhir:value</a> &quot;http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type&quot; ]     ]
   ], [
      <a href="http://hl7.org/fhir/STU3/rdf.html#index">fhir:index</a> 4;
      <a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.parameter.name">fhir:OperationDefinition.parameter.name</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#code">fhir:value</a> &quot;practitioner&quot; ];
@@ -448,9 +444,7 @@
      <a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.parameter.searchType">fhir:OperationDefinition.parameter.searchType</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#code">fhir:value</a> &quot;token&quot; ];
      <a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.parameter.binding">fhir:OperationDefinition.parameter.binding</a> [
        <a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.parameter.binding.strength">fhir:OperationDefinition.parameter.binding.strength</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#code">fhir:value</a> &quot;preferred&quot; ];
-       <a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.parameter.binding.valueSet[x]">fhir:OperationDefinition.parameter.binding.valueSetReference</a> [
-         <a href="http://hl7.org/fhir/STU3/rdf.html#reference">fhir:link</a> &lt;http://hl7.org/fhir/ValueSet/condition-code&gt;;
-         <a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">fhir:Reference.reference</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#string">fhir:value</a> &quot;http://hl7.org/fhir/ValueSet/condition-code&quot; ]       ]     ]
+       <a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.parameter.binding.valueSet[x]">fhir:OperationDefinition.parameter.binding.valueSetUri</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#uri">fhir:value</a> &quot;http://hl7.org/fhir/ValueSet/condition-code&quot; ]     ]
   ], [
      <a href="http://hl7.org/fhir/STU3/rdf.html#index">fhir:index</a> 12;
      <a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.parameter.name">fhir:OperationDefinition.parameter.name</a> [ <a href="http://hl7.org/fhir/STU3/datatypes.html#code">fhir:value</a> &quot;return&quot; ];
@@ -465,8 +459,6 @@
   ].
 
 &lt;http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient&gt; a fhir:us.
-
-&lt;http://hl7.org/fhir/ValueSet/condition-code&gt; a fhir:ValueSet.
 
 # - ontology header ------------------------------------------------------------
 
@@ -518,7 +510,7 @@ Formats: <a href="OperationDefinition-appointment-find.html">Narrative</a>, <a h
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Thu, Feb 15, 2018 00:13-0800. |
+            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Wed, Mar 14, 2018 19:21-0700. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/STU3license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>
