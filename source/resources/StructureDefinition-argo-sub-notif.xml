@@ -75,6 +75,7 @@
       <path value="Subscription.criteria.extension" />
       <sliceName value="event-focus" />
       <short value="Subscription Event Focus Extension" />
+      <definition value="The type of the required data, specified as the type name of a resource." />
       <min value="1" />
       <type>
         <code value="Extension" />
@@ -84,8 +85,9 @@
     </element>
     <element id="Subscription.criteria.extension:event-focus.value[x]">
       <path value="Subscription.criteria.extension.valueCode" />
+      <sliceName value="valueCode" />
       <min value="1" />
-      <fixedCode value="Schedule" />
+      <fixedCode value="Slot" />
       <mustSupport value="true" />
     </element>
     <element id="Subscription.channel">
@@ -105,6 +107,7 @@
     <element id="Subscription.channel.extension:payload-profile">
       <path value="Subscription.channel.extension" />
       <sliceName value="payload-profile" />
+      <definition value="The profile of the required data to be sent in the payload.&#xD;&#xA;" />
       <min value="1" />
       <type>
         <code value="Extension" />
@@ -114,6 +117,10 @@
     </element>
     <element id="Subscription.channel.extension:payload-profile.valueUri">
       <path value="Subscription.channel.extension.valueUri" />
+      <sliceName value="valueUri" />
+      <short value="Payload profile URI" />
+      <definition value="The uri of payload when sending notifications to a subscriber." />
+      <comment value="The Argonaut Scheduling Schedule Notification Profile defines the payload when sending notifications to a subscriber described in [Use Case 3 Prefetching Open Slots](patient-scheduling.html#use-case-3-prefetching-open-slots).   The actual notification is triggered by a Slot instance defined in  `criteria` .  The Slot's `schedule' element identifies the Schedule resource instance that populates the payload." />
       <min value="1" />
       <fixedUri value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-sched-notif" />
       <mustSupport value="true" />

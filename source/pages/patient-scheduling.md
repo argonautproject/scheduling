@@ -227,7 +227,7 @@ In response to this transaction, the server SHOULD create a new patient resource
 ##### Example
 {:.no_toc}
 
-~~~json
+~~~
 todo inline example
 ~~~
 <br />
@@ -329,13 +329,13 @@ The EHR/Hospital shares the business rules and logic for creating an appointment
 ### Subscribe for Schedule Change Notifications
 {:.no_toc}
 
-The third-party application subscribes to the FHIR Scheduler to receive notifications of schedule changes for the "lowest schedulable entity".  This may be a provider, facility, device, etc depending on the system.  The notification of the schedule change informs the client which slots to prefetch to update their slot data and the notification triggers SHALL include:
+The third-party application subscribes to the FHIR Scheduler to receive notifications of schedule changes for the  a provider, facility, device, etc depending on the system.  The notification of the schedule change informs the client which slots to prefetch to update their slot data. For example, Provider X has 6 new appointments booked triggering the FHIR Scheduler to send 6 notifications to the subscriber.  The notification triggers are based upon the Slot events and SHALL include:
 
-- Changes to the schedule for the "lowest schedulable entity"
-- Visit type changes
-- Changes in availability of a service for third party scheduling
+  1.  Slots that are open to prefetching have a change of status
+  1.  Slots that are open to prefetching have a change of visit type
+  1.  Slots that were previously open to prefetching are no longer open to prefetching
 
- The time horizon is determined by the client and events beyond it would be discarded.  Note this can be considered a notification feed and there are several architectures to implement it such as using a "feed handler" as a intermediary system.
+and MAY include additional triggers.  Note that the notification payload is the Schedule resource associated with the Slot that triggered the event.  A "hearbeat" notification should also be sent with a site specific frequency and should not contain a payload.
 
  {% include img.html img="diagrams/Slide43.png" caption="Figure 1: Subscribe for Schedule Change Notifications" %}
 
@@ -351,8 +351,13 @@ The following Argonaut Scheduling artifacts are used in this transaction:
 
 #### Usage
 {:.no_toc}
+To subscribe for notfications of schedule changes, The Client SHALL use the standard FHIR [Subscription]({{site.data.fhir.path}}/subscription.html) API as follows:
 
 `POST [base]/Subscription`
+
+To unsubscribe:
+
+`Delete [base]/Subscription/[id]`
 
 #### Example
 {:.no_toc}
@@ -420,57 +425,115 @@ Using Both `GET` and `POST` Syntax the operation can be invoked as follows to fe
 
 {% include slot-prefetch1.md %}
 
-###  Poll for updated slots
+###  Notification of schedule changes
 {:.no_toc}
 
-After fetching the "initial load" in step 2, the third-party application periodically polls for updated slots to keep the list of open slots current.
-
-Outline:  
-
-1. Subscribe for notifications when the "lowest schedulable entity's" schedule changes  (i.e. a Practitioner's Schedule)
-1. Nofifications (essentially a feed)  payload = stripped down schedule with an actor and period
-  - "heartbeat" notification with no payload
-1. Subscriber uses notification to fetch the slots for that actor and time period using the same operation as the initial load above.
-
-Detailed Documentation pending....
+After subscribing with the FHIR Scheduler and fetching the initial load, the third-party application receives notifications from the FHIR Scheduler of schedule changes as well as "heartbeat" notifications as described above.  For a notification triggered by a schedule change, the notification payload is a Schedule resource containing the actor (e.g, provider, device or location) and date range (usually a day). In a "heartbeat" notification the payload is absent. There are several architectures to implement the subscription notifications such as using a "feed handler" depicted in figure below.
 
 
-<!--
-
-{ % include img.html img="diagrams/Slide15.png" caption="Figure 1: Poll for updated slots" % }
+{% include img.html img="diagrams/Slide44.png" caption="Figure 1: Notification of schedule changes" %}
 
 #### API
 {:.no_toc}
 
 The following Argonaut Scheduling artifacts are used in this transaction:
 
+- **[Argonaut Scheduling Schedule Profile](StructureDefinition-argo-sched-notif.html)**
+
+#### Usage
+{:.no_toc}
+The standard FHIR [Subscription]({{site.data.fhir.path}}/subscription.html) API describe the REST Hook channel as follows:
+
+`POST [app notification endpoint]`
+
+#### Example
+{:.no_toc}
+
+##### Notification of schedule change:
+{:.no_toc}
+~~~
+POST https://feed-handler.com/notification
+
+**payload**
+
+{
+  "resourceType" : "Schedule",
+  "id" : "example1",
+  "actor" : [
+    {
+      "reference" : "Practitioner/1",
+      "display" : "Crusher, Beverly"
+    }
+  ],
+  "planningHorizon" : {
+    "start" : "2018-02-13",
+    "end" : "2018-02-13"
+  }
+}
+~~~
+
+##### "Heartbeat" Notification:
+{:.no_toc}
+~~~
+POST https://feed-handler.com/notification
+
+**no payload**
+~~~
+
+### "Smart Polling" for Updated Slots
+{:.no_toc}
+
+When the Client is notified of schedule changes, it can fetch the slots based on the actor and time period in the notification's payload and update its prefetched slot data.  Notifications beyond the Client's time horizon are ignored.
+
+{% include img.html img="diagrams/Slide45.png" caption="Figure 1: 'Smart Polling' for Updated Slots" %}
+
+#### API
+{:.no_toc}
+
+The following Argonaut Scheduling artifacts are used in this transaction:
+
+- **[Argonaut Availability Prefetch Operation](OperationDefinition-slot-prefetch.html)**
 - **[Argonaut Prefetch Slot Profile](StructureDefinition-prefetch-slot.html)**
 - **[Argonaut Slot Bundle Profile](StructureDefinition-slot-bundle.html)**.
 
 #### Usage
 {:.no_toc}
 
-To fetch all updated slots since the last update, the Client SHALL use:
+This transaction is the same as for the [Initial Load](#initial-load). Using Both `GET` and `POST` Syntax the operation can be invoked as follows to fetch all open slots for the notification period of time for relevant actor:
 
-- the standard FHIR RESTful [history API]({{site.data.fhir.path}}/http.html#history)
-- the `_since` parameter to only include resource versions that were created at or after the last_update or initial load.
+`GET [base]/Slot/$prefetch?{parameters}`
 
-~~~
-GET [base]/Slot/_history?_since=[last-update]
-~~~
-
-Note that this operation *does not* contain any search parameters. The client must to perform additional filtering on the returned slots (for example, `status`=active ) to match the search criteria used for initial load in step 2.
+`POST [base]/Slot/$prefetch`
 
 #### Example
 {:.no_toc}
 
-~~~json
-todo inline example
+~~~
+POST [base]/Slot/$prefetch
+
+**payload:**
+
+{
+  "resourceType": "Parameters",
+  "id": "update-1",
+  "parameter": [
+    {
+      "name": "practitioner",
+      "valueDateTime" : "Practitioner/123"
+    },
+    {
+      "name": "start",
+      "valueDateTime" : "2017-07-15T00:00:00Z"
+    },
+    {
+      "name": "end",
+        "valueDateTime" : "2017-07-15T24:00:00Z"
+    }
+]
+}
 ~~~
 
--->
-
-###  Patient Registration Option A
+### Patient Registration Option A
 {:.no_toc}
 
 This step is identical to [Scenario 2 Step 1.](#patient-registration-option-a) above.
@@ -492,15 +555,109 @@ After the end user selects a preferred appointment time.  There may be additiona
 
 {% include img.html img="diagrams/Slide04.png" caption="Figure 1: Optional Hold Appointment Operation" %}
 
- This step is similar to [Scenario 2 Step 3](#optional-hold-appointment-operation-1) above and its detailed usage is described in [Scenario-1](#optional-hold-appointment-operation).  However, in this case the Client generates an Argonaut Appointment Profile resource and exchanges it with the FHIR Scheduler as is shown in the example below.
-
-### Example
+#### APIs
 {:.no_toc}
 
-~~~json
-todo inline example
+The following Argonaut Scheduling artifacts are used in this transaction:
+
+  - **[Appointment Hold Operation](OperationDefinition-appointment-hold.html)**.
+  - **[Argonaut Appointment Bundle Profile](StructureDefinition-avail-bundle.html)**.
+  - **[Argonaut Appointment Profile](StructureDefinition-argo-appt.html)**.
+
+#### Usage
+{:.no_toc}
+
+This step is similar to [Scenario 2 Step 5](#optional-hold-appointment-operation) above.  However, in this case the Client generates an Argonaut Appointment Profile resource and exchanges it with the FHIR Scheduler. Using the `POST` Syntax the operation can be invoked as follows:
+
+`POST [base]/Appointment/$hold`
+
+The payload can be *either* the Appointment resource or use the [Parameters]({{site.data.fhir.path}}/parameters.html) format as shown in the examples below
+
+
+#### Example
+{:.no_toc}
+
+
+**Request**
+
+`POST [base]/Appointment/$hold`
+
+**Appointment resource as request body**
+
+~~~
+{
+  "resourceType" : "Appointment",
+  "id" : "proposed-appt2",
+...snip...
+  "status" : "proposed",
+  "serviceType" : [
+...snip...
+  "start" : "2017-07-17T01:00:00Z",
+  "end" : "2017-07-17T01:15:00Z",
+  "participant" : [
+    {
+      "actor" : {
+        "reference" : "Practitioner/dr-y",
+        "display" : "Dr Y"
+...snip...
+}
 ~~~
 
+  **Parameter format as request body**
+
+~~~
+      {
+        "resourceType": "Parameters",
+        "id": "pcp-hold",
+        "parameter": [
+          {
+            "name": "appt-resource",
+            "resource":{
+                        "resourceType" : "Appointment",
+                        "id" : "proposed-appt2",
+                      ...snip...
+                        "status" : "proposed",
+                        "serviceType" : [
+                      ...snip...
+                        "start" : "2017-07-17T01:00:00Z",
+                        "end" : "2017-07-17T01:15:00Z",
+                        "participant" : [
+                          {
+                            "actor" : {
+                              "reference" : "Practitioner/dr-y",
+                              "display" : "Dr Y"
+                      ...snip...
+            }
+
+          }
+        ]
+      }
+~~~
+
+**Response**
+
+~~~
+    {
+      "resourceType": "Bundle",
+      "id": "hal-dr-y-held",
+      "type": "searchset",
+      "total": 2,
+      "entry": [{
+        "fullUrl": "http://server/path/Appointment/scheduled-appt2a",
+        "resource": {
+          "resourceType": "Appointment",
+          "id": "held-appt2a",
+          .. snip ...
+        "fullUrl": "http://server/path/OperationOutcome/oo-held-appt1a",
+        "resource": {
+          "resourceType": "OperationOutcome",
+          "id": "oo-held-appt1a-appt1a",
+          .. snip ...
+        }
+      ]
+    }
+
+~~~
 
 ###  Patient Registration Option B
 {:.no_toc}
@@ -512,15 +669,106 @@ This step is identical to [Scenario 2 Step 4](#patient-registration-option-b) ab
 
 The Client is ready to actually book the appointment and the request to book the selected Appointment is made to the FHIR Scheduler (EHR).
 
-{% include img.html img="diagrams/Slide06.png" caption="Figure 1: Optional Hold Appointment Operation" %}
+{% include img.html img="diagrams/Slide06.png" caption="Figure 1: Book Appointment Operation" %}
 
-This step is similar to [Scenario 2 Step 5](#book-appointment-1) above and its detailed usage is described in [Scenario-1](#book-appointment).  However, in this case the Client generates an Argonaut Appointment Profile resource and exchanges it with the FHIR Scheduler as is shown in the example below.
+#### APIs
+{:.no_toc}
+
+The following Argonaut Scheduling artifacts are used in this transaction:
+
+  - **[Appointment Hold Operation](OperationDefinition-appointment-hold.html)**.
+  - **[Argonaut Appointment Bundle Profile](StructureDefinition-avail-bundle.html)**.
+  - **[Argonaut Appointment Profile](StructureDefinition-argo-appt.html)**.
+
+#### Usage
+{:.no_toc}
+
+If the [Hold Appointment Operation](#optional-hold-appointment-operation-2) step was done, this step the same as [Scenario 2 Step 5](#book-appointment-1) above.  The Client references the FHIR Scheduler supplied id from the hold response when booking the appointment. If the [Hold Appointment Operation](#optional-hold-appointment-operation-2) step was skipped then the Client either generates an Argonaut Appointment Profile resource and exchanges it with the FHIR Scheduler. Using the `POST` Syntax the operation can be invoked as follows:
+
+`POST [base]/Appointment/$book`
+
+The payload can be *either* the Appointment resource or use the [Parameters]({{site.data.fhir.path}}/parameters.html) format as shown in the examples below
+
 
 #### Example
 {:.no_toc}
 
-~~~json
-todo inline example
+~~~
+
+**Request**
+
+POST [base]/Appointment/$book
+
+**Appointment resource as payload**
+
+{
+  "resourceType" : "Appointment",
+  "id" : "proposed-appt2",
+...snip...
+  "status" : "pending",
+  "serviceType" : [
+...snip...
+  "start" : "2017-07-17T01:00:00Z",
+  "end" : "2017-07-17T01:15:00Z",
+  "participant" : [
+    {
+      "actor" : {
+        "reference" : "Practitioner/dr-y",
+        "display" : "Dr Y"
+...snip...
+}
+
+  **Parameter format as payload**
+
+      {
+        "resourceType": "Parameters",
+        "id": "pcp-hold",
+        "parameter": [
+          {
+            "name": "appt-resource",
+            "resource":{
+                        "resourceType" : "Appointment",
+                        "id" : "proposed-appt2",
+                      ...snip...
+                        "status" : "pending",
+                        "serviceType" : [
+                      ...snip...
+                        "start" : "2017-07-17T01:00:00Z",
+                        "end" : "2017-07-17T01:15:00Z",
+                        "participant" : [
+                          {
+                            "actor" : {
+                              "reference" : "Practitioner/dr-y",
+                              "display" : "Dr Y"
+                      ...snip...
+            }
+
+          }
+        ]
+      }
+
+**Response**
+
+    {
+      "resourceType": "Bundle",
+      "id": "hal-dr-y-held",
+      "type": "searchset",
+      "total": 2,
+      "entry": [{
+        "fullUrl": "http://server/path/Appointment/scheduled-appt2a",
+        "resource": {
+          "resourceType": "Appointment",
+          "id": "held-appt2a",
+          .. snip ...
+        "fullUrl": "http://server/path/OperationOutcome/oo-held-appt1a",
+        "resource": {
+          "resourceType": "OperationOutcome",
+          "id": "oo-held-appt1a-appt1a",
+          .. snip ...
+        }
+      ]
+    }
+
 ~~~
 
 ###  Patient Coverage Update Option C
@@ -568,7 +816,7 @@ This transaction is identical to canceling an appointment as shown [above](patie
 ### Examples
 {:.no_toc}
 
-~~~json
+~~~
 todo inline example
 ~~~
 

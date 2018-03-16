@@ -772,8 +772,8 @@ page source: patient-scheduling.md
 
 <h5 id="example-2" class="no_toc">Example</h5>
 
-<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="err">todo</span><span class="w"> </span><span class="err">inline</span><span class="w"> </span><span class="err">example</span><span class="w">
-</span></code></pre>
+<div class="highlighter-rouge"><pre class="highlight"><code>todo inline example
+</code></pre>
 </div>
 <p><br/></p>
 
@@ -920,15 +920,15 @@ page source: patient-scheduling.md
 
 <h3 id="subscribe-for-schedule-change-notifications" class="no_toc">Subscribe for Schedule Change Notifications</h3>
 
-<p>The third-party application subscribes to the FHIR Scheduler to receive notifications of schedule changes for the “lowest schedulable entity”.  This may be a provider, facility, device, etc depending on the system.  The notification of the schedule change informs the client which slots to prefetch to update their slot data and the notification triggers SHALL include:</p>
+<p>The third-party application subscribes to the FHIR Scheduler to receive notifications of schedule changes for the  a provider, facility, device, etc depending on the system.  The notification of the schedule change informs the client which slots to prefetch to update their slot data. For example, Provider X has 6 new appointments booked triggering the FHIR Scheduler to send 6 notifications to the subscriber.  The notification triggers are based upon the Slot events and SHALL include:</p>
 
-<ul>
-  <li>Changes to the schedule for the “lowest schedulable entity”</li>
-  <li>Visit type changes</li>
-  <li>Changes in availability of a service for third party scheduling</li>
-</ul>
+<ol>
+  <li>Slots that are open to prefetching have a change of status</li>
+  <li>Slots that are open to prefetching have a change of visit type</li>
+  <li>Slots that were previously open to prefetching are no longer open to prefetching</li>
+</ol>
 
-<p>The time horizon is determined by the client and events beyond it would be discarded.  Note this can be considered a notification feed and there are several architectures to implement it such as using a “feed handler” as a intermediary system.</p>
+<p>and MAY include additional triggers.  Note that the notification payload is the Schedule resource associated with the Slot that triggered the event.  A “hearbeat” notification should also be sent with a site specific frequency and should not contain a payload.</p>
 
 <p>  <!-- all this Bootstrap html for getting an image to fit nicely in text - 640 pix wide --></p>
 
@@ -955,8 +955,13 @@ page source: patient-scheduling.md
 </ul>
 
 <h4 id="usage-5" class="no_toc">Usage</h4>
+<p>To subscribe for notfications of schedule changes, The Client SHALL use the standard FHIR <a href="http://hl7.org/fhir/STU3/subscription.html">Subscription</a> API as follows:</p>
 
 <p><code class="highlighter-rouge">POST [base]/Subscription</code></p>
+
+<p>To unsubscribe:</p>
+
+<p><code class="highlighter-rouge">Delete [base]/Subscription/[id]</code></p>
 
 <h4 id="example-4" class="no_toc">Example</h4>
 
@@ -1101,54 +1106,128 @@ page source: patient-scheduling.md
 </span></code></pre>
 </div>
 
-<h3 id="poll-for-updated-slots" class="no_toc">Poll for updated slots</h3>
+<h3 id="notification-of-schedule-changes" class="no_toc">Notification of schedule changes</h3>
 
-<p>After fetching the “initial load” in step 2, the third-party application periodically polls for updated slots to keep the list of open slots current.</p>
+<p>After subscribing with the FHIR Scheduler and fetching the initial load, the third-party application receives notifications from the FHIR Scheduler of schedule changes as well as “heartbeat” notifications as described above.  For a notification triggered by a schedule change, the notification payload is a Schedule resource containing the actor (e.g, provider, device or location) and date range (usually a day). In a “heartbeat” notification the payload is absent. There are several architectures to implement the subscription notifications such as using a “feed handler” depicted in figure below.</p>
 
-<p>Outline:</p>
+  <!-- all this Bootstrap html for getting an image to fit nicely in text - 640 pix wide -->
 
-<ol>
-  <li>Subscribe for notifications when the “lowest schedulable entity’s” schedule changes  (i.e. a Practitioner’s Schedule)</li>
-  <li>Nofifications (essentially a feed)  payload = stripped down schedule with an actor and period
-    <ul>
-      <li>“heartbeat” notification with no payload</li>
-    </ul>
-  </li>
-  <li>Subscriber uses notification to fetch the slots for that actor and time period using the same operation as the initial load above.</li>
-</ol>
+<p>file:///assets/images/diagrams/Slide44.png</p>
 
-<p>Detailed Documentation pending….</p>
+<div>
+<figure class="figure">
+<figcaption class="figure-caption"><strong>Figure 1: Notification of schedule changes.</strong></figcaption>
+  <img src="assets/images/diagrams/Slide44.png" alt="diagrams/Slide44.png" class="figure-img img-responsive img-rounded center-block"/>
+</figure>
 
-  <!-- { % include img.html img="diagrams/Slide15.png" caption="Figure 1: Poll for updated slots" % }
+<p></p>
+</div>
 
-#### API
-{:.no_toc}
+<h4 id="api-3" class="no_toc">API</h4>
 
-The following Argonaut Scheduling artifacts are used in this transaction:
+<p>The following Argonaut Scheduling artifacts are used in this transaction:</p>
 
-- **[Argonaut Prefetch Slot Profile](StructureDefinition-prefetch-slot.html)**
-- **[Argonaut Slot Bundle Profile](StructureDefinition-slot-bundle.html)**.
+<ul>
+  <li><strong><a href="StructureDefinition-argo-sched-notif.html">Argonaut Scheduling Schedule Profile</a></strong></li>
+</ul>
 
-#### Usage
-{:.no_toc}
+<h4 id="usage-7" class="no_toc">Usage</h4>
+<p>The standard FHIR <a href="http://hl7.org/fhir/STU3/subscription.html">Subscription</a> API describe the REST Hook channel as follows:</p>
 
-To fetch all updated slots since the last update, the Client SHALL use:
+<p><code class="highlighter-rouge">POST [app notification endpoint]</code></p>
 
-- the standard FHIR RESTful [history API](http://hl7.org/fhir/STU3/http.html#history)
-- the `_since` parameter to only include resource versions that were created at or after the last_update or initial load.
+<h4 id="example-5" class="no_toc">Example</h4>
 
-~~~
-GET [base]/Slot/_history?_since=[last-update]
-~~~
+<h5 id="notification-of-schedule-change" class="no_toc">Notification of schedule change:</h5>
+<div class="highlighter-rouge"><pre class="highlight"><code>POST https://feed-handler.com/notification
 
-Note that this operation *does not* contain any search parameters. The client must to perform additional filtering on the returned slots (for example, `status`=active ) to match the search criteria used for initial load in step 2.
+**payload**
 
-#### Example
-{:.no_toc}
+{
+  "resourceType" : "Schedule",
+  "id" : "example1",
+  "actor" : [
+    {
+      "reference" : "Practitioner/1",
+      "display" : "Crusher, Beverly"
+    }
+  ],
+  "planningHorizon" : {
+    "start" : "2018-02-13",
+    "end" : "2018-02-13"
+  }
+}
+</code></pre>
+</div>
 
-~~~json
-todo inline example
-~~~ -->
+<h5 id="heartbeat-notification" class="no_toc">“Heartbeat” Notification:</h5>
+<div class="highlighter-rouge"><pre class="highlight"><code>POST https://feed-handler.com/notification
+
+**no payload**
+</code></pre>
+</div>
+
+<h3 id="smart-polling-for-updated-slots" class="no_toc">“Smart Polling” for Updated Slots</h3>
+
+<p>When the Client is notified of schedule changes, it can fetch the slots based on the actor and time period in the notification’s payload and update its prefetched slot data.  Notifications beyond the Client’s time horizon are ignored.</p>
+
+  <!-- all this Bootstrap html for getting an image to fit nicely in text - 640 pix wide -->
+
+<p>file:///assets/images/diagrams/Slide45.png</p>
+
+<div>
+<figure class="figure">
+<figcaption class="figure-caption"><strong>Figure 1: 'Smart Polling' for Updated Slots.</strong></figcaption>
+  <img src="assets/images/diagrams/Slide45.png" alt="diagrams/Slide45.png" class="figure-img img-responsive img-rounded center-block"/>
+</figure>
+
+<p></p>
+</div>
+
+<h4 id="api-4" class="no_toc">API</h4>
+
+<p>The following Argonaut Scheduling artifacts are used in this transaction:</p>
+
+<ul>
+  <li><strong><a href="OperationDefinition-slot-prefetch.html">Argonaut Availability Prefetch Operation</a></strong></li>
+  <li><strong><a href="StructureDefinition-prefetch-slot.html">Argonaut Prefetch Slot Profile</a></strong></li>
+  <li><strong><a href="StructureDefinition-slot-bundle.html">Argonaut Slot Bundle Profile</a></strong>.</li>
+</ul>
+
+<h4 id="usage-8" class="no_toc">Usage</h4>
+
+<p>This transaction is the same as for the <a href="#initial-load">Initial Load</a>. Using Both <code class="highlighter-rouge">GET</code> and <code class="highlighter-rouge">POST</code> Syntax the operation can be invoked as follows to fetch all open slots for the notification period of time for relevant actor:</p>
+
+<p><code class="highlighter-rouge">GET [base]/Slot/$prefetch?{parameters}</code></p>
+
+<p><code class="highlighter-rouge">POST [base]/Slot/$prefetch</code></p>
+
+<h4 id="example-6" class="no_toc">Example</h4>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>POST [base]/Slot/$prefetch
+
+**payload:**
+
+{
+  "resourceType": "Parameters",
+  "id": "update-1",
+  "parameter": [
+    {
+      "name": "practitioner",
+      "valueDateTime" : "Practitioner/123"
+    },
+    {
+      "name": "start",
+      "valueDateTime" : "2017-07-15T00:00:00Z"
+    },
+    {
+      "name": "end",
+        "valueDateTime" : "2017-07-15T24:00:00Z"
+    }
+]
+}
+</code></pre>
+</div>
 
 <h3 id="patient-registration-option-a-1" class="no_toc">Patient Registration Option A</h3>
 
@@ -1190,11 +1269,104 @@ todo inline example
 <p></p>
 </div>
 
-<p>This step is similar to <a href="#optional-hold-appointment-operation-1">Scenario 2 Step 3</a> above and its detailed usage is described in <a href="#optional-hold-appointment-operation">Scenario-1</a>.  However, in this case the Client generates an Argonaut Appointment Profile resource and exchanges it with the FHIR Scheduler as is shown in the example below.</p>
+<h4 id="apis-3" class="no_toc">APIs</h4>
 
-<h3 id="example-5" class="no_toc">Example</h3>
+<p>The following Argonaut Scheduling artifacts are used in this transaction:</p>
 
-<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="err">todo</span><span class="w"> </span><span class="err">inline</span><span class="w"> </span><span class="err">example</span><span class="w">
+<ul>
+  <li><strong><a href="OperationDefinition-appointment-hold.html">Appointment Hold Operation</a></strong>.</li>
+  <li><strong><a href="StructureDefinition-avail-bundle.html">Argonaut Appointment Bundle Profile</a></strong>.</li>
+  <li><strong><a href="StructureDefinition-argo-appt.html">Argonaut Appointment Profile</a></strong>.</li>
+</ul>
+
+<h4 id="usage-9" class="no_toc">Usage</h4>
+
+<p>This step is similar to <a href="#optional-hold-appointment-operation">Scenario 2 Step 5</a> above.  However, in this case the Client generates an Argonaut Appointment Profile resource and exchanges it with the FHIR Scheduler. Using the <code class="highlighter-rouge">POST</code> Syntax the operation can be invoked as follows:</p>
+
+<p><code class="highlighter-rouge">POST [base]/Appointment/$hold</code></p>
+
+<p>The payload can be <em>either</em> the Appointment resource or use the <a href="http://hl7.org/fhir/STU3/parameters.html">Parameters</a> format as shown in the examples below</p>
+
+<h4 id="example-7" class="no_toc">Example</h4>
+
+<p><strong>Request</strong></p>
+
+<p><code class="highlighter-rouge">POST [base]/Appointment/$hold</code></p>
+
+<p><strong>Appointment resource as request body</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"resourceType"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Appointment"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"proposed-appt2"</span><span class="p">,</span><span class="w">
+</span><span class="err">...snip...</span><span class="w">
+  </span><span class="nt">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"proposed"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"serviceType"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+</span><span class="err">...snip...</span><span class="w">
+  </span><span class="s2">"start"</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="s2">"2017-07-17T01:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"end"</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="s2">"2017-07-17T01:15:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"participant"</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"actor"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"reference"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Practitioner/dr-y"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"display"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Dr Y"</span><span class="w">
+</span><span class="err">...snip...</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<p><strong>Parameter format as request body</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="w">      </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Parameters"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pcp-hold"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"parameter"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"appt-resource"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"resource"</span><span class="p">:{</span><span class="w">
+                        </span><span class="nt">"resourceType"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Appointment"</span><span class="p">,</span><span class="w">
+                        </span><span class="nt">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"proposed-appt2"</span><span class="p">,</span><span class="w">
+                      </span><span class="err">...snip...</span><span class="w">
+                        </span><span class="nt">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"proposed"</span><span class="p">,</span><span class="w">
+                        </span><span class="nt">"serviceType"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                      </span><span class="err">...snip...</span><span class="w">
+                        </span><span class="s2">"start"</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="s2">"2017-07-17T01:00:00Z"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"end"</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="s2">"2017-07-17T01:15:00Z"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"participant"</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                          </span><span class="p">{</span><span class="w">
+                            </span><span class="nt">"actor"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                              </span><span class="nt">"reference"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Practitioner/dr-y"</span><span class="p">,</span><span class="w">
+                              </span><span class="nt">"display"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Dr Y"</span><span class="w">
+                      </span><span class="err">...snip...</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="err">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<p><strong>Response</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="w">    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bundle"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hal-dr-y-held"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"searchset"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"entry"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nt">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://server/path/Appointment/scheduled-appt2a"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Appointment"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"held-appt2a"</span><span class="p">,</span><span class="w">
+          </span><span class="err">..</span><span class="w"> </span><span class="err">snip</span><span class="w"> </span><span class="err">...</span><span class="w">
+        </span><span class="nt">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://server/path/OperationOutcome/oo-held-appt1a"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OperationOutcome"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"oo-held-appt1a-appt1a"</span><span class="p">,</span><span class="w">
+          </span><span class="err">..</span><span class="w"> </span><span class="err">snip</span><span class="w"> </span><span class="err">...</span><span class="w">
+        </span><span class="err">}</span><span class="w">
+      </span><span class="err">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+
 </span></code></pre>
 </div>
 
@@ -1212,19 +1384,109 @@ todo inline example
 
 <div>
 <figure class="figure">
-<figcaption class="figure-caption"><strong>Figure 1: Optional Hold Appointment Operation.</strong></figcaption>
+<figcaption class="figure-caption"><strong>Figure 1: Book Appointment Operation.</strong></figcaption>
   <img src="assets/images/diagrams/Slide06.png" alt="diagrams/Slide06.png" class="figure-img img-responsive img-rounded center-block"/>
 </figure>
 
 <p></p>
 </div>
 
-<p>This step is similar to <a href="#book-appointment-1">Scenario 2 Step 5</a> above and its detailed usage is described in <a href="#book-appointment">Scenario-1</a>.  However, in this case the Client generates an Argonaut Appointment Profile resource and exchanges it with the FHIR Scheduler as is shown in the example below.</p>
+<h4 id="apis-4" class="no_toc">APIs</h4>
 
-<h4 id="example-6" class="no_toc">Example</h4>
+<p>The following Argonaut Scheduling artifacts are used in this transaction:</p>
 
-<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="err">todo</span><span class="w"> </span><span class="err">inline</span><span class="w"> </span><span class="err">example</span><span class="w">
-</span></code></pre>
+<ul>
+  <li><strong><a href="OperationDefinition-appointment-hold.html">Appointment Hold Operation</a></strong>.</li>
+  <li><strong><a href="StructureDefinition-avail-bundle.html">Argonaut Appointment Bundle Profile</a></strong>.</li>
+  <li><strong><a href="StructureDefinition-argo-appt.html">Argonaut Appointment Profile</a></strong>.</li>
+</ul>
+
+<h4 id="usage-10" class="no_toc">Usage</h4>
+
+<p>If the <a href="#optional-hold-appointment-operation-2">Hold Appointment Operation</a> step was done, this step the same as <a href="#book-appointment-1">Scenario 2 Step 5</a> above.  The Client references the FHIR Scheduler supplied id from the hold response when booking the appointment. If the <a href="#optional-hold-appointment-operation-2">Hold Appointment Operation</a> step was skipped then the Client either generates an Argonaut Appointment Profile resource and exchanges it with the FHIR Scheduler. Using the <code class="highlighter-rouge">POST</code> Syntax the operation can be invoked as follows:</p>
+
+<p><code class="highlighter-rouge">POST [base]/Appointment/$book</code></p>
+
+<p>The payload can be <em>either</em> the Appointment resource or use the <a href="http://hl7.org/fhir/STU3/parameters.html">Parameters</a> format as shown in the examples below</p>
+
+<h4 id="example-8" class="no_toc">Example</h4>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+**Request**
+
+POST [base]/Appointment/$book
+
+**Appointment resource as payload**
+
+{
+  "resourceType" : "Appointment",
+  "id" : "proposed-appt2",
+...snip...
+  "status" : "pending",
+  "serviceType" : [
+...snip...
+  "start" : "2017-07-17T01:00:00Z",
+  "end" : "2017-07-17T01:15:00Z",
+  "participant" : [
+    {
+      "actor" : {
+        "reference" : "Practitioner/dr-y",
+        "display" : "Dr Y"
+...snip...
+}
+
+  **Parameter format as payload**
+
+      {
+        "resourceType": "Parameters",
+        "id": "pcp-hold",
+        "parameter": [
+          {
+            "name": "appt-resource",
+            "resource":{
+                        "resourceType" : "Appointment",
+                        "id" : "proposed-appt2",
+                      ...snip...
+                        "status" : "pending",
+                        "serviceType" : [
+                      ...snip...
+                        "start" : "2017-07-17T01:00:00Z",
+                        "end" : "2017-07-17T01:15:00Z",
+                        "participant" : [
+                          {
+                            "actor" : {
+                              "reference" : "Practitioner/dr-y",
+                              "display" : "Dr Y"
+                      ...snip...
+            }
+
+          }
+        ]
+      }
+
+**Response**
+
+    {
+      "resourceType": "Bundle",
+      "id": "hal-dr-y-held",
+      "type": "searchset",
+      "total": 2,
+      "entry": [{
+        "fullUrl": "http://server/path/Appointment/scheduled-appt2a",
+        "resource": {
+          "resourceType": "Appointment",
+          "id": "held-appt2a",
+          .. snip ...
+        "fullUrl": "http://server/path/OperationOutcome/oo-held-appt1a",
+        "resource": {
+          "resourceType": "OperationOutcome",
+          "id": "oo-held-appt1a-appt1a",
+          .. snip ...
+        }
+      ]
+    }
+
+</code></pre>
 </div>
 
 <h3 id="patient-coverage-update-option-c-1" class="no_toc">Patient Coverage Update Option C</h3>
@@ -1250,7 +1512,7 @@ todo inline example
 
 <p>Canceling and Rescheduling has the potential to introduces complex failure states. The <a href="index.html#best-practices">best practices</a> guidance discusses how failures should be handled. See the <a href="state-diagram.html">Appointment State Diagram</a> for further details on statuses and state transitions.</p>
 
-<h3 id="usage-7" class="no_toc">Usage</h3>
+<h3 id="usage-11" class="no_toc">Usage</h3>
 
 <p>To cancel an appointment the Client uses the standard FHIR <a href="http://build.fhir.org/http.html#patch"><code class="highlighter-rouge">PATCH</code></a> transaction as shown:</p>
 
@@ -1265,7 +1527,7 @@ todo inline example
     </ol>
   </li>
   <li>
-    <p><a name="cc84666f-0405-45be-ab60-5c65c917c329">​</a>Note the Server SHALL declare support for JSON, XML, or FHIRPath Patch in the <a href="server-capstatement.html">CapabilityStatement</a></p>
+    <p><a name="a6553b53-0011-42fc-91b1-6dcc185b5d3e">​</a>Note the Server SHALL declare support for JSON, XML, or FHIRPath Patch in the <a href="server-capstatement.html">CapabilityStatement</a></p>
   </li>
 </ul>
 
@@ -1458,14 +1720,14 @@ todo inline example
 <p></p>
 </div>
 
-<h3 id="usage-8" class="no_toc">Usage</h3>
+<h3 id="usage-12" class="no_toc">Usage</h3>
 
 <p>This transaction is identical to canceling an appointment as shown <a href="patient-scheduling.html#usage-6">above</a>.</p>
 
 <h3 id="examples-3" class="no_toc">Examples</h3>
 
-<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="err">todo</span><span class="w"> </span><span class="err">inline</span><span class="w"> </span><span class="err">example</span><span class="w">
-</span></code></pre>
+<div class="highlighter-rouge"><pre class="highlight"><code>todo inline example
+</code></pre>
 </div>
 
 <h2 id="retrieving-appointments">Retrieving appointments</h2>
@@ -1487,7 +1749,7 @@ todo inline example
 
 <p>Patient access to their scheduled appointments uses the standard FHIR <a href="http://hl7.org/fhir/STU3/search.html">search API</a>.</p>
 
-<h3 id="apis-3" class="no_toc">APIs</h3>
+<h3 id="apis-5" class="no_toc">APIs</h3>
 
 <p>The following Argonaut Scheduling artifacts are used in this transaction:</p>
 
@@ -1495,7 +1757,7 @@ todo inline example
   <li><strong><a href="StructureDefinition-argo-appt.html">Argonaut Appointment Profile</a></strong>.</li>
 </ul>
 
-<h3 id="usage-9" class="no_toc">Usage</h3>
+<h3 id="usage-13" class="no_toc">Usage</h3>
 
 <p>To fetch scheduled appointments for a patient the Client SHALL use the standard RESTful <a href="http://hl7.org/fhir/STU3/search.html">search API</a> as shown along with these standard <a href="http://hl7.org/fhir/STU3/appointment.html#search">search parameters</a>:</p>
 
@@ -1548,7 +1810,7 @@ todo inline example
   <div class="container">    <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Wed, Mar 14, 2018 19:21-0700. |
+            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Thu, Mar 15, 2018 17:27-0700. |
                <!-- <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a rel="license" style="color: #81BEF7" href="http://hl7.org/fhir/STU3license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a>
         
