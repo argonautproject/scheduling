@@ -24,10 +24,10 @@ Schematrons for the profiles defined in this guide are also available and listed
 
 <li><a href="slot-bundle.sch">Argonaut Slot Bundle Profile</a></li>
 <li><a href="prefetch-slot.sch">Argonaut Prefetch Slot Profile</a></li>
-<li><a href="extension-trigger-event.sch">Subscription Trigger Event Extension</a></li>
+<li><a href="extension-subscription-triggerevent.sch">Subscription Trigger Event Extension</a></li>
 <li><a href="extension-status-reason.sch">Reason for current status</a></li>
-<li><a href="extension-payload-profile.sch">Subscription Payload Profile Extension</a></li>
-<li><a href="extension-event-focus.sch">Subscription Event Focus Extension</a></li>
+<li><a href="extension-subscription-payloadprofile.sch">Subscription Payload Profile Extension</a></li>
+<li><a href="extension-subscription-eventfocus.sch">Subscription Event Focus Extension</a></li>
 <li><a href="avail-bundle.sch">Argonaut Appointment Bundle Profile</a></li>
 <li><a href="argo-sub-notif.sch">Argonaut Scheduling Subscription Profile</a></li>
 <li><a href="argo-sched-notif.sch">Argonaut Scheduling Schedule Notification Profile</a></li>

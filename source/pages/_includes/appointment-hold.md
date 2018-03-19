@@ -6,13 +6,14 @@ The operation can be invoked as follows:
 
 ##### Example
 {:.no_toc}
-~~~
-##### Request
+
+**Request**
 
 `POST [base]/Appointment/$hold`
 
-    **payload:**
+**Request body**
 
+~~~
     {
       "resourceType": "Parameters",
       "id": "pcp-hold",
@@ -23,10 +24,19 @@ The operation can be invoked as follows:
         }
       ]
     }
+~~~
 
+**Response**
 
-##### Response ([Operation$hold Example 1a](Bundle-hal-dr-y-held.html))
+~~~
+HTTP/1.1 200 OK
+Expires: Wed, 21 March 2018 07:28:00 GMT
+[other headers]
+~~~
 
+**Response body**
+
+~~~
     {
       "resourceType": "Bundle",
       "id": "hal-dr-y-held",

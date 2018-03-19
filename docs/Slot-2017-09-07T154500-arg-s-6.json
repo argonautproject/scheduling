@@ -1,0 +1,44 @@
+{
+  "resourceType": "Slot",
+  "id": "2017-09-07T154500-arg-s-6",
+  "meta": {
+    "versionId": "5",
+    "lastUpdated": "2017-11-09T03:54:08.556+00:00",
+    "profile": [
+      "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/prefetch-slot"
+    ]
+  },
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: 2017-09-07T154500-arg-s-6</p><p><b>meta</b>: </p><p><b>serviceType</b>: WELL CHILD <span style=\"background: LightGoldenRodYellow\">(Details : {http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type code 'well-child' = 'WELL CHILD', given as 'WELL CHILD'})</span></p><p><b>specialty</b>: Family Medicine <span style=\"background: LightGoldenRodYellow\">(Details : {[not stated] code '419772000' = '419772000', given as 'Family Medicine'})</span></p><p><b>schedule</b>: <a href=\"Schedule/arg-s-6\">Schedule/arg-s-6</a></p><p><b>status</b>: busy</p><p><b>start</b>: Sep 7, 2017 3:45:00 PM</p><p><b>end</b>: Sep 7, 2017 4:00:00 PM</p><p><b>comment</b>: age &gt; 1</p></div>"
+  },
+  "specialty": [
+    {
+      "coding": [
+        {
+          "code": "419772000",
+          "display": "Family Medicine"
+        }
+      ]
+    }
+  ],
+  "serviceType": [
+    {
+      "coding": [
+        {
+          "system": "http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type",
+          "code": "well-child",
+          "display": "WELL CHILD"
+        }
+      ],
+      "text": "WELL CHILD"
+    }
+  ],
+  "schedule": {
+    "reference": "Schedule/arg-s-6"
+  },
+  "status": "busy",
+  "start": "2017-09-07T15:45:00+00:00",
+  "end": "2017-09-07T16:00:00+00:00",
+  "comment": "age > 1"
+}

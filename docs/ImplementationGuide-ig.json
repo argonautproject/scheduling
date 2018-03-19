@@ -30,6 +30,18 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "Slot-2017-09-07T154500-arg-s-6.html"
+            }
+          ],
+          "example": true,
+          "sourceReference": {
+            "reference": "Slot/2017-09-07T154500-arg-s-6"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
               "valueUri": "Schedule-example1.html"
             }
           ],
@@ -334,11 +346,33 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "StructureDefinition-extension-trigger-event.html"
+              "valueUri": "StructureDefinition-extension-subscription-triggerevent.html"
             }
           ],
           "sourceReference": {
-            "reference": "StructureDefinition/extension-trigger-event"
+            "reference": "StructureDefinition/extension-subscription-triggerevent"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "StructureDefinition-extension-subscription-payloadprofile.html"
+            }
+          ],
+          "sourceReference": {
+            "reference": "StructureDefinition/extension-subscription-payloadprofile"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "StructureDefinition-extension-subscription-eventfocus.html"
+            }
+          ],
+          "sourceReference": {
+            "reference": "StructureDefinition/extension-subscription-eventfocus"
           }
         },
         {
@@ -350,28 +384,6 @@
           ],
           "sourceReference": {
             "reference": "StructureDefinition/extension-status-reason"
-          }
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "StructureDefinition-extension-payload-profile.html"
-            }
-          ],
-          "sourceReference": {
-            "reference": "StructureDefinition/extension-payload-profile"
-          }
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-              "valueUri": "StructureDefinition-extension-event-focus.html"
-            }
-          ],
-          "sourceReference": {
-            "reference": "StructureDefinition/extension-event-focus"
           }
         },
         {

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Slot xmlns="http://hl7.org/fhir">
+    <id value="2017-09-07T154500-arg-s-6" />
+    <meta>
+        <versionId value="5" />
+        <lastUpdated value="2017-11-09T03:54:08.556+00:00" />
+        <profile value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/prefetch-slot"/>
+    </meta>
+    <specialty>
+        <coding>
+            <code value="419772000" />
+            <display value="Family Medicine" />
+        </coding>
+    </specialty>
+    <serviceType>
+        <coding>
+            <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type" />
+            <code value="well-child"/>
+            <display value="WELL CHILD"/>
+        </coding>
+        <text value="WELL CHILD"/>
+    </serviceType>
+    <schedule>
+        <reference value="Schedule/arg-s-6" />
+    </schedule>
+    <status value="busy" />
+    <start value="2017-09-07T15:45:00+00:00" />
+    <end value="2017-09-07T16:00:00+00:00" />
+    <comment value="age &gt; 1"/>
+</Slot>

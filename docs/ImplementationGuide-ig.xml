@@ -23,6 +23,15 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+        <valueUri value="Slot-2017-09-07T154500-arg-s-6.html"/>
+      </extension>
+      <example value="true"/>
+      <sourceReference>
+        <reference value="Slot/2017-09-07T154500-arg-s-6"/>
+      </sourceReference>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
         <valueUri value="Schedule-example1.html"/>
       </extension>
       <example value="true"/>
@@ -249,10 +258,26 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="StructureDefinition-extension-trigger-event.html"/>
+        <valueUri value="StructureDefinition-extension-subscription-triggerevent.html"/>
       </extension>
       <sourceReference>
-        <reference value="StructureDefinition/extension-trigger-event"/>
+        <reference value="StructureDefinition/extension-subscription-triggerevent"/>
+      </sourceReference>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+        <valueUri value="StructureDefinition-extension-subscription-payloadprofile.html"/>
+      </extension>
+      <sourceReference>
+        <reference value="StructureDefinition/extension-subscription-payloadprofile"/>
+      </sourceReference>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+        <valueUri value="StructureDefinition-extension-subscription-eventfocus.html"/>
+      </extension>
+      <sourceReference>
+        <reference value="StructureDefinition/extension-subscription-eventfocus"/>
       </sourceReference>
     </resource>
     <resource>
@@ -261,22 +286,6 @@
       </extension>
       <sourceReference>
         <reference value="StructureDefinition/extension-status-reason"/>
-      </sourceReference>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="StructureDefinition-extension-payload-profile.html"/>
-      </extension>
-      <sourceReference>
-        <reference value="StructureDefinition/extension-payload-profile"/>
-      </sourceReference>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="StructureDefinition-extension-event-focus.html"/>
-      </extension>
-      <sourceReference>
-        <reference value="StructureDefinition/extension-event-focus"/>
       </sourceReference>
     </resource>
     <resource>

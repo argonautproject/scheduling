@@ -4,15 +4,15 @@
 	<status value="active"/>
 	<reason value="Notify subscriber of schedule changes to trigger the subscriber prefetch updated slots"/>
 	<criteria>
-		<extension url="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-trigger-event">
+		<extension url="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-subscription-triggerevent">
 			<valueString value="schedule where any slot that reference it has changed"/>
 		</extension>
-		<extension url="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-event-focus">
+		<extension url="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-subscription-eventfocus">
 			<valueCode value="Schedule"/>
 		</extension>
 	</criteria>
 	<channel>
-		<extension url="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-payload-profile">
+		<extension url="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-subscription-payloadprofile">
 			<valueUri value="//fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-sched-notif"/>
 		</extension>
 		<type value="rest-hook"/>

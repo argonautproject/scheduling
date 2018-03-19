@@ -55,7 +55,7 @@
       <min value="1" />
       <type>
         <code value="Extension" />
-        <profile value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-trigger-event" />
+        <profile value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-subscription-triggerevent" />
       </type>
       <mustSupport value="true" />
     </element>
@@ -63,7 +63,7 @@
       <path value="Subscription.criteria.extension" />
       <sliceName value="trigger-fhirpath" />
       <short value="Subscription Trigger Event FHIRPath Extension" />
-      <definition value="If the expression is a [FHIRPath](http://hl7.org/fhirpath/) expression, it evaluates in the context of a resource of one of the types identified in the [Subscription Event Focus Extension](StructureDefinition-extension-event-focus.html), and may also refer to the variable `%previous`  for delta comparisons." />
+      <definition value="If the expression is a [FHIRPath](http://hl7.org/fhirpath/) expression, it evaluates in the context of a resource of one of the types identified in the [Subscription Event Focus Extension](StructureDefinition-extension-subscription-eventfocus.html), and may also refer to the variable `%previous`  for delta comparisons." />
       <min value="0" />
       <max value="*" />
       <type>
@@ -79,7 +79,7 @@
       <min value="1" />
       <type>
         <code value="Extension" />
-        <profile value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-event-focus" />
+        <profile value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-subscription-eventfocus" />
       </type>
       <mustSupport value="true" />
     </element>
@@ -111,7 +111,7 @@
       <min value="1" />
       <type>
         <code value="Extension" />
-        <profile value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-payload-profile" />
+        <profile value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-subscription-payloadprofile" />
       </type>
       <mustSupport value="true" />
     </element>

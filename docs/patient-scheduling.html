@@ -476,46 +476,56 @@ page source: patient-scheduling.md
 <p><code class="highlighter-rouge">POST [base]/Appointment/$hold</code></p>
 
 <h5 id="example-1" class="no_toc">Example</h5>
-<div class="highlighter-rouge"><pre class="highlight"><code>##### Request
 
-`POST [base]/Appointment/$hold`
+<p><strong>Request</strong></p>
 
-    **payload:**
+<p><code class="highlighter-rouge">POST [base]/Appointment/$hold</code></p>
 
-    {
-      "resourceType": "Parameters",
-      "id": "pcp-hold",
-      "parameter": [
-        {
-          "name": "appt-id",
-          "valueUrl" : "Appointment/proposed-appt1a-1"
-        }
-      ]
-    }
+<p><strong>Request body</strong></p>
 
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="w">    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Parameters"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pcp-hold"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"parameter"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"appt-id"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"valueUrl"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Appointment/proposed-appt1a-1"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
 
-##### Response ([Operation$hold Example 1a](Bundle-hal-dr-y-held.html))
+<p><strong>Response</strong></p>
 
-    {
-      "resourceType": "Bundle",
-      "id": "hal-dr-y-held",
-      "type": "searchset",
-      "total": 2,
-      "entry": [{
-        "fullUrl": "http://server/path/Appointment/booked-appt1a",
-        "resource": {
-          "resourceType": "Appointment",
-          "id": "held-appt1a",
-          .. snip ...
-        "fullUrl": "http://server/path/OperationOutcome/oo-held-appt1a",
-        "resource": {
-          "resourceType": "OperationOutcome",
-          "id": "oo-held-appt1a-appt1a",
-          .. snip ...
-        }
-      ]
-    }
+<div class="highlighter-rouge"><pre class="highlight"><code>HTTP/1.1 200 OK
+Expires: Wed, 21 March 2018 07:28:00 GMT
+[other headers]
 </code></pre>
+</div>
+
+<p><strong>Response body</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="w">    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bundle"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hal-dr-y-held"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"searchset"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"entry"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nt">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://server/path/Appointment/booked-appt1a"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Appointment"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"held-appt1a"</span><span class="p">,</span><span class="w">
+          </span><span class="err">..</span><span class="w"> </span><span class="err">snip</span><span class="w"> </span><span class="err">...</span><span class="w">
+        </span><span class="nt">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://server/path/OperationOutcome/oo-held-appt1a"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OperationOutcome"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"oo-held-appt1a-appt1a"</span><span class="p">,</span><span class="w">
+          </span><span class="err">..</span><span class="w"> </span><span class="err">snip</span><span class="w"> </span><span class="err">...</span><span class="w">
+        </span><span class="err">}</span><span class="w">
+      </span><span class="err">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span></code></pre>
 </div>
 
 <p><br/></p>
@@ -949,9 +959,9 @@ page source: patient-scheduling.md
 
 <ul>
   <li><strong><a href="StructureDefinition-argo-sub-notif.html">Argonaut Scheduling Subscription Profile</a></strong></li>
-  <li><strong><a href="StructureDefinition-extension-trigger-event.html">Subscription Trigger event Extension</a></strong></li>
-  <li><strong><a href="StructureDefinition-extension-payload-profile.html">Subscription_Payload_Profile_Extension</a></strong></li>
-  <li><strong><a href="StructureDefinition-extension-event-focus.html">Subscription_Event_Focus_Extension</a></strong></li>
+  <li><strong><a href="StructureDefinition-extension-subscription-triggerevent.html">Subscription Trigger event Extension</a></strong></li>
+  <li><strong><a href="StructureDefinition-extension-subscription-payloadprofile.html">Subscription_Payload_Profile_Extension</a></strong></li>
+  <li><strong><a href="StructureDefinition-extension-subscription-eventfocus.html">Subscription_Event_Focus_Extension</a></strong></li>
 </ul>
 
 <h4 id="usage-5" class="no_toc">Usage</h4>
@@ -977,11 +987,11 @@ page source: patient-scheduling.md
       "_criteria": {
         "extension": [
           {
-            "url": "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-trigger-event",
+            "url": "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-subscription-triggerevent",
             "valueString": "schedule where any slot that reference it has changed"
           },
           {
-            "url": "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-event-focus",
+            "url": "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-subscription-eventfocus",
             "valueCode": "Schedule"
           }
         ]
@@ -989,7 +999,7 @@ page source: patient-scheduling.md
       "channel": {
         "extension": [
           {
-            "url": "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-payload-profile",
+            "url": "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-subscription-payloadprofile",
             "valueUri": "//fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-sched-notif"
           }
         ],
@@ -1527,7 +1537,7 @@ POST [base]/Appointment/$book
     </ol>
   </li>
   <li>
-    <p><a name="a6553b53-0011-42fc-91b1-6dcc185b5d3e">​</a>Note the Server SHALL declare support for JSON, XML, or FHIRPath Patch in the <a href="server-capstatement.html">CapabilityStatement</a></p>
+    <p><a name="e84a0972-34b1-4ba0-818f-d03d4c40049a">​</a>Note the Server SHALL declare support for JSON, XML, or FHIRPath Patch in the <a href="server-capstatement.html">CapabilityStatement</a></p>
   </li>
 </ul>
 
@@ -1705,7 +1715,7 @@ POST [base]/Appointment/$book
 
 <h2 id="releasing-holds">Releasing holds</h2>
 
-<p>The length of an appointment hold is determined by the scheduling service’s business rules, after which the status of the Appointment may change.  However, the Client may also elect to cancel a hold on an appointment before it expires.</p>
+<p>The Client should cancel a hold on an appointment before it expires.  The length of an appointment hold is determined by the scheduling service’s business rules, after which the status of the Appointment may change.</p>
 
   <!-- all this Bootstrap html for getting an image to fit nicely in text - 640 pix wide -->
 
@@ -1720,9 +1730,11 @@ POST [base]/Appointment/$book
 <p></p>
 </div>
 
+<p>Releasing holds has the potential to introduces complex failure states. The <a href="index.html#best-practices">best practices</a> guidance discusses how failures should be handled. See the <a href="state-diagram.html">Appointment State Diagram</a> for further details on statuses and state transitions.</p>
+
 <h3 id="usage-12" class="no_toc">Usage</h3>
 
-<p>This transaction is identical to canceling an appointment as shown <a href="patient-scheduling.html#usage-6">above</a>.</p>
+<p>This transaction is identical to canceling an appointment as shown <a href="patient-scheduling.html#cancelingrescheduling-appointments">above</a>.</p>
 
 <h3 id="examples-3" class="no_toc">Examples</h3>
 
@@ -1810,7 +1822,7 @@ POST [base]/Appointment/$book
   <div class="container">    <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Thu, Mar 15, 2018 17:27-0700. |
+            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Sun, Mar 18, 2018 23:15-0700. |
                <!-- <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a rel="license" style="color: #81BEF7" href="http://hl7.org/fhir/STU3license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a>
         

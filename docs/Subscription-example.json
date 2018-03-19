@@ -10,11 +10,11 @@
   "_criteria": {
     "extension": [
       {
-        "url": "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-trigger-event",
+        "url": "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-subscription-triggerevent",
         "valueString": "schedule where any slot that reference it has changed"
       },
       {
-        "url": "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-event-focus",
+        "url": "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-subscription-eventfocus",
         "valueCode": "Schedule"
       }
     ]
@@ -22,7 +22,7 @@
   "channel": {
     "extension": [
       {
-        "url": "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-payload-profile",
+        "url": "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-subscription-payloadprofile",
         "valueUri": "//fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-sched-notif"
       }
     ],

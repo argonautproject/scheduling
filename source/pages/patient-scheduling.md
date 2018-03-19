@@ -345,9 +345,9 @@ and MAY include additional triggers.  Note that the notification payload is the 
 The following Argonaut Scheduling artifacts are used in this transaction:
 
 - **[Argonaut Scheduling Subscription Profile](StructureDefinition-argo-sub-notif.html)**
-- **[Subscription Trigger event Extension](StructureDefinition-extension-trigger-event.html)**
-- **[Subscription_Payload_Profile_Extension](StructureDefinition-extension-payload-profile.html)**
-- **[Subscription_Event_Focus_Extension](StructureDefinition-extension-event-focus.html)**
+- **[Subscription Trigger event Extension](StructureDefinition-extension-subscription-triggerevent.html)**
+- **[Subscription_Payload_Profile_Extension](StructureDefinition-extension-subscription-payloadprofile.html)**
+- **[Subscription_Event_Focus_Extension](StructureDefinition-extension-subscription-eventfocus.html)**
 
 #### Usage
 {:.no_toc}
@@ -375,11 +375,11 @@ POST [base]/Subscription
       "_criteria": {
         "extension": [
           {
-            "url": "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-trigger-event",
+            "url": "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-subscription-triggerevent",
             "valueString": "schedule where any slot that reference it has changed"
           },
           {
-            "url": "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-event-focus",
+            "url": "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-subscription-eventfocus",
             "valueCode": "Schedule"
           }
         ]
@@ -387,7 +387,7 @@ POST [base]/Subscription
       "channel": {
         "extension": [
           {
-            "url": "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-payload-profile",
+            "url": "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-subscription-payloadprofile",
             "valueUri": "//fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-sched-notif"
           }
         ],
@@ -804,14 +804,16 @@ To cancel an appointment the Client uses the standard FHIR [`PATCH`](http://buil
 
 ## Releasing holds
 
-The length of an appointment hold is determined by the scheduling service's business rules, after which the status of the Appointment may change.  However, the Client may also elect to cancel a hold on an appointment before it expires.
+The Client should cancel a hold on an appointment before it expires.  The length of an appointment hold is determined by the scheduling service’s business rules, after which the status of the Appointment may change.
 
 {% include img.html img="diagrams/Slide38.png" caption="Figure 1: Canceling Appointment Hold" %}
+
+Releasing holds has the potential to introduces complex failure states. The [best practices](index.html#best-practices) guidance discusses how failures should be handled. See the [Appointment State Diagram](state-diagram.html) for further details on statuses and state transitions.
 
 ### Usage
 {:.no_toc}
 
-This transaction is identical to canceling an appointment as shown [above](patient-scheduling.html#usage-6).
+This transaction is identical to canceling an appointment as shown [above](patient-scheduling.html#cancelingrescheduling-appointments).
 
 ### Examples
 {:.no_toc}

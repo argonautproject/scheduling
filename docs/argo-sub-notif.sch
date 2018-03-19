@@ -22,8 +22,8 @@
     <sch:title>f:Subscription/f:criteria</sch:title>
     <sch:rule context="f:Subscription/f:criteria">
       <sch:assert test="count(f:id) &lt;= 1">id: maximum cardinality of 'id' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-trigger-event']) &gt;= 1">extension with URL = 'http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-trigger-event': minimum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-event-focus']) &gt;= 1">extension with URL = 'http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-event-focus': minimum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-subscription-triggerevent']) &gt;= 1">extension with URL = 'http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-subscription-triggerevent': minimum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-subscription-eventfocus']) &gt;= 1">extension with URL = 'http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-subscription-eventfocus': minimum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:value) &lt;= 1">value: maximum cardinality of 'value' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
@@ -51,7 +51,7 @@
   <sch:pattern>
     <sch:title>f:Subscription/f:channel</sch:title>
     <sch:rule context="f:Subscription/f:channel">
-      <sch:assert test="count(f:extension[@url = 'http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-payload-profile']) &gt;= 1">extension with URL = 'http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-payload-profile': minimum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-subscription-payloadprofile']) &gt;= 1">extension with URL = 'http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-subscription-payloadprofile': minimum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:endpoint) &gt;= 1">endpoint: minimum cardinality of 'endpoint' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>

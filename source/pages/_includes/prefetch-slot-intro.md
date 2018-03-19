@@ -16,11 +16,12 @@ This profile is defined for:
 **The system [Must Support]({{site.data.fhir.uscore}}guidance.html#must-support) if available:**
 
 1. a visit type
+1. comments to describe any extended information
 
 **Additional Profile specific implementation guidance:**
 
-- None
+- For additional implementation or site specific context os constraints (For example qualification on visit types such as age restrictions for well child visits.) use `Slot.comment`. The example below demonstrates is usage.
 
 #### Examples
 
-- [todo](todo.html)
+- [Slot Example 1](Slot-2017-09-07T154500-arg-s-6.html)

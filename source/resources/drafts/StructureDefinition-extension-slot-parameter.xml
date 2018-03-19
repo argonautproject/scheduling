@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir file:///C:/Users/Eric/Documents/HL7/FHIR/BUILD_EDIT_FILES/structuredefinition.xsd">
+	<id value="extension-slot-parameter"/>
+	<url value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-slot-parameter"/>
+	<version value="0.0.0"/>
+	<name value="Slot_Parameters_Extension"/>
+	<title value="Slot Parameters Extension"/>
+	<status value="draft"/>
+	<date value="2018-03-17"/>
+	<publisher value="Argonaut Project"/>
+	<contact>
+		<telecom>
+			<system value="url"/>
+			<value value="http://argonautwiki.hl7.org"/>
+		</telecom>
+	</contact>
+	<description value="Custom parameters to `Slot` for additional implementation or site specific context or constraints.  For example qualification on visit types such as age restrictions for well child visits."/>
+	<jurisdiction>
+		<coding>
+			<system value="urn:iso:std:iso:3166"/>
+			<code value="US"/>
+			<display value="United States of America"/>
+		</coding>
+	</jurisdiction>
+	<fhirVersion value="3.0.1"/>
+	<kind value="complex-type"/>
+	<abstract value="false"/>
+	<contextType value="resource"/>
+	<context value="Slot"/>
+	<type value="Extension"/>
+	<baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+	<derivation value="constraint"/>
+	<differential>
+		<element id="Extension">
+			<path value="Extension"/>
+			<short value="Subscription Payload Profile Extension"/>
+			<definition value="Custom parameters to `Slot` for additional implementation or site specific context or constraints.  For example qualification on visit types such as age restrictions for well child visits."/>
+      <comment value= "This extension references the [Parameters]({{site.data.fhir.path}}/parameters.html) extending its usage outside its stated scope.  `Parameters` has no restful endpoint associated with it and can only be referenced as a [contained]({{site.data.fhir.path}}/references.html#contained) resource within `Slot`."/>
+			<max value="1"/>
+		</element>
+	    <element id="Extension.valueReference">
+      <path value="Extension.valueReference"/>
+      <min value="1"/>
+      <type>
+        <code value="Reference"/>
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Parameters"/>
+      </type>
+    </element>
+	</differential>
+</StructureDefinition>

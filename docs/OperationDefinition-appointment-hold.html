@@ -282,7 +282,8 @@
 
 <!-- ============OperationDefinition CONTENT CONTENT=============== -->
 
-  <div xmlns="http://www.w3.org/1999/xhtml"><h2>Appointment_Hold</h2><p>OPERATION: Appointment_Hold</p><p>The official URL for this operation definition is: </p><pre>http://fhir.org/guides/argonaut-scheduling/OperationDefinition/appointment-hold</pre><div><p>Request for a hold on a selected Appointment in order for the user to complete entering data for booking an appointment.  This operation precedes the booking and follows the appointment availability interaction.  The server determines if the nominated appointment is still available (i.e., all the required actors and physical assets needed for the appointment are still available) and either accepts or rejects the hold request and updates the resource status accordingly.  See the <a href="state-diagram.html">Appointment State Diagram</a> for further details on statuses. The length of the hold is defined by local business rules.</p>
+  <div xmlns="http://www.w3.org/1999/xhtml"><h2>Appointment_Hold</h2><p>OPERATION: Appointment_Hold</p><p>The official URL for this operation definition is: </p><pre>http://fhir.org/guides/argonaut-scheduling/OperationDefinition/appointment-hold</pre><div><p>Request for a hold on a selected Appointment in order for the user to complete entering data for booking an appointment.  This operation precedes the booking and follows the appointment availability interaction.  The server determines if the nominated appointment is still available (i.e., all the required actors and physical assets needed for the appointment are still available) and either accepts or rejects the hold request and updates the resource status accordingly.  See the <a href="state-diagram.html">Appointment State Diagram</a> for further details on statuses.
+The length of an appointment hold is determined by the scheduling service’s business rules, after which the status of the Appointment may change.  An <code>Expires</code> header Should be included in the response to successful hold request to indicate its expiration.  The Client should cancel a hold on an appointment before it expires.</p>
 </div><p>URL: [base]/Appointment/$hold</p><p>Parameters</p><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>appt-id</td><td>0..1</td><td>uri</td><td/><td><div><p>A resource id for one of proposed Appointments returned by a prior $find operation (e.g., Resource/1234).  References can be to an absolute URL, but servers only perform this operation on their own appointments.</p>
 </div></td></tr><tr><td>IN</td><td>appt-resource</td><td>0..1</td><td>Appointment</td><td/><td><div><p>When prefetching open Slots, an <a href="StructureDefinition-argo-appt.html">Argonaut Appointment Profile</a> resource is created by the Client Application and is exchanged with the FHIR Scheduler (EHR). This parameter represents this profile and is the same as used for the <code>$book</code> operation.</p>
 </div></td></tr><tr><td>OUT</td><td>return</td><td>0..1</td><td>Bundle</td><td/><td><div><p>An <a href="StructureDefinition-avail-bundle.html">Argonaut Appointment Bundle Profile</a>  of type <code>searchset</code> of requested held Appointment resource and may also contain an OperationOutcome with errors, warnings or information as a result of processing the operation.   The Appointment resource will have an updated <code>status</code> of &quot;pending&quot; if the hold is approved or  &quot;cancelled&quot; if the hold is rejected.</p>
@@ -296,46 +297,56 @@
 <p><code class="highlighter-rouge">POST [base]/Appointment/$hold</code></p>
 
 <h5 class="no_toc" id="example">Example</h5>
-<div class="highlighter-rouge"><pre class="highlight"><code>##### Request
 
-`POST [base]/Appointment/$hold`
+<p><strong>Request</strong></p>
 
-    **payload:**
+<p><code class="highlighter-rouge">POST [base]/Appointment/$hold</code></p>
 
-    {
-      "resourceType": "Parameters",
-      "id": "pcp-hold",
-      "parameter": [
-        {
-          "name": "appt-id",
-          "valueUrl" : "Appointment/proposed-appt1a-1"
-        }
-      ]
-    }
+<p><strong>Request body</strong></p>
 
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="w">    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Parameters"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pcp-hold"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"parameter"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"appt-id"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"valueUrl"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Appointment/proposed-appt1a-1"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
 
-##### Response ([Operation$hold Example 1a](Bundle-hal-dr-y-held.html))
+<p><strong>Response</strong></p>
 
-    {
-      "resourceType": "Bundle",
-      "id": "hal-dr-y-held",
-      "type": "searchset",
-      "total": 2,
-      "entry": [{
-        "fullUrl": "http://server/path/Appointment/booked-appt1a",
-        "resource": {
-          "resourceType": "Appointment",
-          "id": "held-appt1a",
-          .. snip ...
-        "fullUrl": "http://server/path/OperationOutcome/oo-held-appt1a",
-        "resource": {
-          "resourceType": "OperationOutcome",
-          "id": "oo-held-appt1a-appt1a",
-          .. snip ...
-        }
-      ]
-    }
+<div class="highlighter-rouge"><pre class="highlight"><code>HTTP/1.1 200 OK
+Expires: Wed, 21 March 2018 07:28:00 GMT
+[other headers]
 </code></pre>
+</div>
+
+<p><strong>Response body</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="w">    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bundle"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hal-dr-y-held"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"searchset"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"entry"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nt">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://server/path/Appointment/booked-appt1a"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Appointment"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"held-appt1a"</span><span class="p">,</span><span class="w">
+          </span><span class="err">..</span><span class="w"> </span><span class="err">snip</span><span class="w"> </span><span class="err">...</span><span class="w">
+        </span><span class="nt">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://server/path/OperationOutcome/oo-held-appt1a"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OperationOutcome"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"oo-held-appt1a-appt1a"</span><span class="p">,</span><span class="w">
+          </span><span class="err">..</span><span class="w"> </span><span class="err">snip</span><span class="w"> </span><span class="err">...</span><span class="w">
+        </span><span class="err">}</span><span class="w">
+      </span><span class="err">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span></code></pre>
 </div>
   <!--add inline examples here -->
 <!-- ============OperationDefinition CONTENT CONTENT=============== -->
@@ -381,7 +392,7 @@ Formats: <a href="OperationDefinition-appointment-hold.html">Narrative</a>, <a h
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Thu, Mar 15, 2018 17:27-0700. |
+            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Sun, Mar 18, 2018 23:15-0700. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/STU3license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>
