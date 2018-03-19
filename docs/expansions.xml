@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Bundle xmlns="http://hl7.org/fhir">
-  <id value="8c309b6f-e90b-404a-abe2-b4155678d7c5"/>
+  <id value="9449b09e-8c8c-4b38-8681-7d1768b556e4"/>
   <meta>
-    <lastUpdated value="2018-03-18T23:15:46.472-07:00"/>
+    <lastUpdated value="2018-03-19T16:22:08.420-07:00"/>
   </meta>
   <type value="collection"/>
   <entry>
@@ -379,8 +379,8 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:07c773b4-2061-4811-9725-a17f075237e4"/>
-          <timestamp value="2018-03-14T11:01:38-07:00"/>
+          <identifier value="urn:uuid:b0769ee9-45a4-44a6-bfa6-e1fc0fa4de44"/>
+          <timestamp value="2018-03-19T14:41:19-07:00"/>
           <total value="41"/>
           <parameter>
             <name value="profile"/>
@@ -900,8 +900,8 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:fda1cbf0-0ed3-4f15-86a5-1f62d48a77fd"/>
-          <timestamp value="2018-03-13T21:26:59-07:00"/>
+          <identifier value="urn:uuid:ac80bd4e-85ce-435d-97a2-1523e2c77d4b"/>
+          <timestamp value="2018-03-19T14:41:19-07:00"/>
           <total value="32"/>
           <parameter>
             <name value="profile"/>
@@ -2328,8 +2328,8 @@
         </jurisdiction>
         <copyright value="This value set includes content from SNOMED CT, which is copyright &#xA9; 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement"/>
         <expansion>
-          <identifier value="urn:uuid:2d128b37-23bb-4ef6-aa74-6ffb3c93c01f"/>
-          <timestamp value="2018-03-13T21:26:59-07:00"/>
+          <identifier value="urn:uuid:e8981786-921d-410c-b4c3-ee8af5aad9e0"/>
+          <timestamp value="2018-03-19T14:41:19-07:00"/>
           <total value="151"/>
           <parameter>
             <name value="profile"/>
@@ -3107,6 +3107,118 @@
     </resource>
   </entry>
   <entry>
+    <fullUrl value="http://fhir.org/guides/argonaut-scheduling/ValueSet/argo-slot-status"/>
+    <resource>
+      <ValueSet>
+        <id value="argo-slot-status"/>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <p>This value set contains 4 concepts</p>
+            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px">Expansion based on http://hl7.org/fhir/slotstatus version 3.0.1</p>
+            <p>All codes from system 
+              <a href="http://hl7.org/fhir/STU3/codesystem-slotstatus.html">
+                <code>http://hl7.org/fhir/slotstatus</code>
+              </a>
+            </p>
+            <table class="codes">
+              <tr>
+                <td style="white-space:nowrap">
+                  <b>Code</b>
+                </td>
+                <td>
+                  <b>Display</b>
+                </td>
+                <td>
+                  <b>Definition</b>
+                </td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---hl7.org-fhir-slotstatus-busy"> </a>
+                  <a href="http://hl7.org/fhir/STU3/codesystem-slotstatus.html#slotstatus-busy">busy</a>
+                </td>
+                <td>Busy</td>
+                <td>Indicates that the time interval is busy because one  or more events have been scheduled for that interval.</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---hl7.org-fhir-slotstatus-free"> </a>
+                  <a href="http://hl7.org/fhir/STU3/codesystem-slotstatus.html#slotstatus-free">free</a>
+                </td>
+                <td>Free</td>
+                <td>Indicates that the time interval is free for scheduling.</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---hl7.org-fhir-slotstatus-busy-unavailable"> </a>
+                  <a href="http://hl7.org/fhir/STU3/codesystem-slotstatus.html#slotstatus-busy-unavailable">busy-unavailable</a>
+                </td>
+                <td>Busy (Unavailable)</td>
+                <td>Indicates that the time interval is busy and that the interval can not be scheduled.</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---hl7.org-fhir-slotstatus-entered-in-error"> </a>
+                  <a href="http://hl7.org/fhir/STU3/codesystem-slotstatus.html#slotstatus-entered-in-error">entered-in-error</a>
+                </td>
+                <td>Entered in error</td>
+                <td>This instance should not have been part of this patient&#39;s medical record.</td>
+              </tr>
+            </table>
+          </div>
+        </text>
+        <url value="http://fhir.org/guides/argonaut-scheduling/ValueSet/argo-slot-status"/>
+        <version value="0.0.0"/>
+        <name value="Argonaut_Slot_Status_Codes"/>
+        <title value="Argonaut Slot Status Codes"/>
+        <status value="draft"/>
+        <date value="2018-03-19T00:00:00-07:00"/>
+        <description value="The free/busy status of the slot. This value set is a subset of the the FHIR core Slot value set excluding the &#39;busy-tentative&#39; concept."/>
+        <jurisdiction>
+          <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+            <display value="United States of America"/>
+          </coding>
+        </jurisdiction>
+        <expansion>
+          <identifier value="urn:uuid:a50128fa-9084-4554-8066-176e1d1d8291"/>
+          <timestamp value="2018-03-19T14:41:28-07:00"/>
+          <total value="4"/>
+          <parameter>
+            <name value="profile"/>
+            <valueUri value="http://hl7.org/fhir/ExpansionProfile/dc8fd4bc-091a-424a-8a3b-6198ef146891"/>
+          </parameter>
+          <parameter>
+            <name value="version"/>
+            <valueUri value="http://hl7.org/fhir/slotstatus|3.0.1"/>
+          </parameter>
+          <contains>
+            <system value="http://hl7.org/fhir/slotstatus"/>
+            <code value="busy"/>
+            <display value="Busy"/>
+          </contains>
+          <contains>
+            <system value="http://hl7.org/fhir/slotstatus"/>
+            <code value="free"/>
+            <display value="Free"/>
+          </contains>
+          <contains>
+            <system value="http://hl7.org/fhir/slotstatus"/>
+            <code value="busy-unavailable"/>
+            <display value="Busy (Unavailable)"/>
+          </contains>
+          <contains>
+            <system value="http://hl7.org/fhir/slotstatus"/>
+            <code value="entered-in-error"/>
+            <display value="Entered in error"/>
+          </contains>
+        </expansion>
+      </ValueSet>
+    </resource>
+  </entry>
+  <entry>
     <fullUrl value="http://fhir.org/guides/argonaut-scheduling/ValueSet/slot-bundle-type"/>
     <resource>
       <ValueSet>
@@ -3167,8 +3279,8 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:cc8d6e69-9c98-48b7-ba2c-5d827bee9913"/>
-          <timestamp value="2018-03-13T21:27:06-07:00"/>
+          <identifier value="urn:uuid:d29c802a-e70f-4bd1-9a7a-9c79c9fb3426"/>
+          <timestamp value="2018-03-19T14:41:29-07:00"/>
           <total value="2"/>
           <parameter>
             <name value="profile"/>
@@ -3325,8 +3437,8 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:f957f35d-b8e3-4ffc-9422-c9da87a7a87c"/>
-          <timestamp value="2018-03-13T21:27:07-07:00"/>
+          <identifier value="urn:uuid:c039e7fd-09bb-48f0-ba15-e72fc5f1b2bb"/>
+          <timestamp value="2018-03-19T14:41:54-07:00"/>
           <total value="10"/>
           <parameter>
             <name value="profile"/>

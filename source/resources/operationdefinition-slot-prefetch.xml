@@ -9,10 +9,9 @@
 			<p>The official URL for this operation definition is: </p>
 			<pre>http://fhir.org/guides/argonaut-scheduling/OperationDefinition/slot-prefetch</pre>
 			<div>
-				<p>This operation fetches available free slots for the 'initial load', update and reconciliation steps in the <a href="patient-scheduling.html#use-case-3-prefetching-open-slots">Prefetch Use Case</a>.  The server determines which open slots to expose to the application for use in creating new appointments.  If neither a start or end date is given then the maximum period as defined by local business rules and starting from when the operation was transacted will be used.   The actors practitioner, organization and location further refine the search.   If more than one actor type is present, the response will contain slots with <em>all</em> of these actors (i.e, this is a logical 'AND').  if an actor type is repeated, the response will contain slots with <em>any</em> of these actors (i.e. this is a logical  'OR' and  does not drive a joint appointment with multiple practitioners. locations or organizations).</p>
-				<p>Note that all input parameters are simple types allowing either the 'GET'  or the 'POST' syntax to be used to initiate the interaction.  Examples of both are shown below.</p>
+				<p>This operation fetches available free slots for the 'initial load', update and reconciliation steps in the <a href="patient-scheduling.html#use-case-3-prefetching-open-slots">Prefetch Use Case</a>.  The server determines which open slots to expose to the application for use in creating new appointments.  If neither a start or end date is given then the maximum period as defined by local business rules and starting from when the operation was transacted SHALL be used.   The actors practitioner, organization and location further refine the search.</p>
 			</div>
-			<p>URL: [base]/Slot//$find</p>
+			<p>URL: [base]/Slot/$prefetch</p>
 			<p>Parameters</p>
 			<table class="grid">
 				<tr>
@@ -103,7 +102,7 @@
 					<td/>
 					<td>
 						<div>
-							<p>A Location reference when performing an operation where the Location resource <code>id</code> is known.  If multiple location references are listed, the order will interpreted as the order of preference. The response will contain slots with any of these actors (i.e. this does not drive joint appointment with multiple locations)</p>
+							<p>A Location reference when performing an operation where the Location resource <code>id</code> is known.</p>
 						</div>
 					</td>
 				</tr>
@@ -121,7 +120,11 @@
 				</tr>
 			</table>
 			<div>
-				<p>References can be to an absolute URL, but servers only perform operations on their own resources.</p>
+        <ul>
+          <li>All input parameters are simple types allowing either the <code>GET</code> or the <code>POST</code> syntax to be used to initiate the interaction.  Examples of both are shown below.</li>
+          <li>If more than one actor type is present, the response SHALL contain slots with <em>all</em> of these actors (i.e, this is a logical 'AND').  If an actor type is repeated the response SHALL contain slots with <em>any</em> of these actors and the order SHOULD be interpreted as the order of preference (i.e. this is a logical  'OR' and does not drive a joint appointment with multiple practitioners. locations or organizations).</li>
+          <li>References can be to an absolute URL, but servers only perform operations on their own resources.</li>
+        </ul>
 			</div>
 		</div>
 	</text>
@@ -132,7 +135,7 @@
 	<status value="draft"/>
 	<kind value="operation"/>
 	<date value="2018-02-12T00:00:00-08:00"/>
-	<description value="This operation fetches available free slots for the 'initial load', update and reconciliation steps in the [Prefetch Use Case](patient-scheduling.html#use-case-3-prefetching-open-slots).  The server determines which open slots to expose to the application for use in creating new appointments.  If neither a start or end date is given then the maximum period as defined by local business rules and starting from when the operation was transacted will be used.   The actors practitioner, organization and location further refine the search.   If more than one actor type is present, the response will contain slots with *all* of these actors (i.e, this is a logical 'AND').  if an actor type is repeated, the response will contain slots with *any* of these actors (i.e. this is a logical  'OR' and  does not drive a joint appointment with multiple practitioners. locations or organizations).  &#xA;&#xA; Note that all input parameters are simple types allowing either the 'GET'  or the 'POST' syntax to be used to initiate the interaction.  Examples of both are shown below."/>
+	<description value="This operation fetches available free slots for the 'initial load', update and reconciliation steps in the [Prefetch Use Case](patient-scheduling.html#use-case-3-prefetching-open-slots).  The server determines which open slots to expose to the application for use in creating new appointments.  If neither a start or end date is given then the maximum period as defined by local business rules and starting from when the operation was transacted SHALL be used.   The actors practitioner, organization and location further refine the search."/>
 	<jurisdiction>
 		<coding>
 			<system value="urn:iso:std:iso:3166"/>
@@ -141,7 +144,7 @@
 		</coding>
 	</jurisdiction>
 	<code value="find"/>
-	<comment value="References can be to an absolute URL, but servers only perform operations on their own resources."/>
+	<comment value="Note that all input parameters are simple types allowing either the 'GET'  or the 'POST' syntax to be used to initiate the interaction.  Examples of both are shown below.&#xA;&#xA; -  If more than one actor type is present, the response SHALL contain slots with *all* of these actors (i.e, this is a logical 'AND').  If an actor type is repeated, the response SHALL contain slots with *any* of these actors and the order SHOULD be interpreted as the order of preference (i.e. this is a logical  'OR' and  does not drive a joint appointment with multiple practitioners. locations or organizations)."/>
 	<resource value="Slot/"/>
 	<system value="false"/>
 	<type value="true"/>
@@ -192,7 +195,7 @@
 		<use value="in"/>
 		<min value="0"/>
 		<max value="*"/>
-		<documentation value="A Location reference when performing an operation where the Location resource `id` is known.  If multiple location references are listed, the order will interpreted as the order of preference. The response will contain slots with any of these actors (i.e. this does not drive joint appointment with multiple locations)"/>
+		<documentation value="A Location reference when performing an operation where the Location resource `id` is known."/>
 		<type value="uri"/>
 	</parameter>
 	<parameter>

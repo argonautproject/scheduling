@@ -109,12 +109,14 @@ For the provider based scheduling, the actors are depicted in figure 2 below.  T
 
 For general security consideration refer to the [Security section](http://hl7.org/fhir/us/core/security.html) in the US Core Implementation Guide.  See the [Assumptions](#login-and-trust) section above for a discussion of login and trust.
 
+<!--
 ## Best Practices
 
 [#29](https://github.com/argonautproject/scheduling/issues/29) add/document- prescribe best practices. + technical operations. ( check list of steps -e.g. Client SHALL verify successful cancellation prior to rebooking ) any outside resources (like a functional model)
  review :
 
 ...todo...
+-->
 
 ## Future Scope
 
@@ -135,6 +137,10 @@ Throughout the development of the Argonaut Scheduling Guide several additional i
    - Appointment Requests are “everything that is not covered by an appointment availability operation”
    - Patient scheduling scenario - where system could not find appointment and need to figure out what wanted or needed.  This may sometimes results in out of sync, out of band ( call-back) responses.
    - May need have a separate interaction that users can just submit the request.
+
+1.  Best Practices
+
+    - Add a section prescribing best practices for technical operations. Such as a check list of steps ( Client SHALL verify successful cancellation prior to rebooking ).
 
 1. Prior approvals including preauthorizations
 1. Scheduling physical (rooms, modalities, etc.) resources

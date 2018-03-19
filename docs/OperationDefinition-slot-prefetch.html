@@ -288,10 +288,9 @@
 			<p>The official URL for this operation definition is: </p>
 			<pre>http://fhir.org/guides/argonaut-scheduling/OperationDefinition/slot-prefetch</pre>
 			<div>
-				<p>This operation fetches available free slots for the 'initial load', update and reconciliation steps in the <a href="patient-scheduling.html#use-case-3-prefetching-open-slots">Prefetch Use Case</a>.  The server determines which open slots to expose to the application for use in creating new appointments.  If neither a start or end date is given then the maximum period as defined by local business rules and starting from when the operation was transacted will be used.   The actors practitioner, organization and location further refine the search.   If more than one actor type is present, the response will contain slots with <em>all</em> of these actors (i.e, this is a logical 'AND').  if an actor type is repeated, the response will contain slots with <em>any</em> of these actors (i.e. this is a logical  'OR' and  does not drive a joint appointment with multiple practitioners. locations or organizations).</p>
-				<p>Note that all input parameters are simple types allowing either the 'GET'  or the 'POST' syntax to be used to initiate the interaction.  Examples of both are shown below.</p>
+				<p>This operation fetches available free slots for the 'initial load', update and reconciliation steps in the <a href="patient-scheduling.html#use-case-3-prefetching-open-slots">Prefetch Use Case</a>.  The server determines which open slots to expose to the application for use in creating new appointments.  If neither a start or end date is given then the maximum period as defined by local business rules and starting from when the operation was transacted SHALL be used.   The actors practitioner, organization and location further refine the search.</p>
 			</div>
-			<p>URL: [base]/Slot//$find</p>
+			<p>URL: [base]/Slot/$prefetch</p>
 			<p>Parameters</p>
 			<table class="grid">
 				<tr>
@@ -382,7 +381,7 @@
 					<td/>
 					<td>
 						<div>
-							<p>A Location reference when performing an operation where the Location resource <code>id</code> is known.  If multiple location references are listed, the order will interpreted as the order of preference. The response will contain slots with any of these actors (i.e. this does not drive joint appointment with multiple locations)</p>
+							<p>A Location reference when performing an operation where the Location resource <code>id</code> is known.</p>
 						</div>
 					</td>
 				</tr>
@@ -400,7 +399,11 @@
 				</tr>
 			</table>
 			<div>
-				<p>References can be to an absolute URL, but servers only perform operations on their own resources.</p>
+        <ul>
+          <li>All input parameters are simple types allowing either the <code>GET</code> or the <code>POST</code> syntax to be used to initiate the interaction.  Examples of both are shown below.</li>
+          <li>If more than one actor type is present, the response SHALL contain slots with <em>all</em> of these actors (i.e, this is a logical 'AND').  If an actor type is repeated the response SHALL contain slots with <em>any</em> of these actors and the order SHOULD be interpreted as the order of preference (i.e. this is a logical  'OR' and does not drive a joint appointment with multiple practitioners. locations or organizations).</li>
+          <li>References can be to an absolute URL, but servers only perform operations on their own resources.</li>
+        </ul>
 			</div>
 		</div>
 
@@ -412,71 +415,82 @@
 
 <h4 class="no_toc" id="examples">Examples</h4>
 
-<h5 class="no_toc" id="request-using-get-syntax-to-prefetch-open-slots-from-july-152017-to-august-172017">Request using <code class="highlighter-rouge">GET</code> Syntax to prefetch open slots from July 15,2017 to August 17,2017</h5>
+<p>Prefetch open slots from July 15,2017 to August 17,2017</p>
+
+<p><strong>Request using <code class="highlighter-rouge">GET</code> Syntax</strong></p>
 
 <p><code class="highlighter-rouge">GET  [base]/Slot/$prefetch?start=2017-07-15T20:00:00Z&amp;end=2017-07-17T20:00:00Z</code></p>
 
-<h5 class="no_toc" id="request-using-post-syntax">Request using <code class="highlighter-rouge">POST</code> Syntax</h5>
+<p><strong>Request using <code class="highlighter-rouge">POST</code> Syntax</strong></p>
+
 <p><code class="highlighter-rouge">POST [base]/Slot/$prefetch</code></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>**payload:**
+<p><strong>Post request body</strong></p>
 
-{
-  "resourceType": "Parameters",
-  "id": "prefetch-1",
-  "parameter": [
-    {
-      "name": "start",
-      "valueDateTime" : "2017-07-15T20:00:00Z"
-    },
-    {
-      "name": "end",
-        "valueDateTime" : "2017-07-17T20:00:00Z"
-    }
-]
-}
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="w">    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Parameters"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prefetch-1"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"parameter"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"start"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"valueDateTime"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-15T20:00:00Z"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"end"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"valueDateTime"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-17T20:00:00Z"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<p><strong>Response</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>HTTP/1.1 200 OK
+[other headers]
 </code></pre>
 </div>
 
-<h5 class="no_toc" id="response">Response</h5>
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bundle"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prefetch-1"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"searchset"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"entry"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-    </span><span class="nt">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://server/path/Slot/1"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Slot"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-      </span><span class="err">..</span><span class="w"> </span><span class="err">snip</span><span class="w"> </span><span class="err">...</span><span class="w">
-      </span><span class="nt">"status"</span><span class="p">:</span><span class="s2">"free"</span><span class="w">
-      </span><span class="err">..</span><span class="w"> </span><span class="err">snip</span><span class="w"> </span><span class="err">...</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nt">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://server/path/Slot/2"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Slot"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
-      </span><span class="err">..</span><span class="w"> </span><span class="err">snip</span><span class="w"> </span><span class="err">...</span><span class="w">
-      </span><span class="nt">"status"</span><span class="p">:</span><span class="s2">"free"</span><span class="w">
-      </span><span class="err">..</span><span class="w"> </span><span class="err">snip</span><span class="w"> </span><span class="err">...</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nt">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://server/path/Slot/3"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Slot"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
-      </span><span class="err">..</span><span class="w"> </span><span class="err">snip</span><span class="w"> </span><span class="err">...</span><span class="w">
-      </span><span class="nt">"status"</span><span class="p">:</span><span class="s2">"free"</span><span class="w">
-      </span><span class="err">..</span><span class="w"> </span><span class="err">snip</span><span class="w"> </span><span class="err">...</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nt">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://server/path/OperationOutcome/oo-for-prefetch"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OperationOutcome"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"oo-for-prefetch"</span><span class="p">,</span><span class="w">
-      </span><span class="err">..</span><span class="w"> </span><span class="err">snip</span><span class="w"> </span><span class="err">...</span><span class="w">
-    </span><span class="err">}</span><span class="w">
-  </span><span class="err">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
+<p><strong>Response body</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="w">    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bundle"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prefetch-1"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"searchset"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"entry"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nt">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://server/path/Slot/1"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Slot"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+          </span><span class="err">..</span><span class="w"> </span><span class="err">snip</span><span class="w"> </span><span class="err">...</span><span class="w">
+          </span><span class="nt">"status"</span><span class="p">:</span><span class="s2">"free"</span><span class="w">
+          </span><span class="err">..</span><span class="w"> </span><span class="err">snip</span><span class="w"> </span><span class="err">...</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nt">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://server/path/Slot/2"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Slot"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+          </span><span class="err">..</span><span class="w"> </span><span class="err">snip</span><span class="w"> </span><span class="err">...</span><span class="w">
+          </span><span class="nt">"status"</span><span class="p">:</span><span class="s2">"free"</span><span class="w">
+          </span><span class="err">..</span><span class="w"> </span><span class="err">snip</span><span class="w"> </span><span class="err">...</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nt">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://server/path/Slot/3"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Slot"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+          </span><span class="err">..</span><span class="w"> </span><span class="err">snip</span><span class="w"> </span><span class="err">...</span><span class="w">
+          </span><span class="nt">"status"</span><span class="p">:</span><span class="s2">"free"</span><span class="w">
+          </span><span class="err">..</span><span class="w"> </span><span class="err">snip</span><span class="w"> </span><span class="err">...</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nt">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://server/path/OperationOutcome/oo-for-prefetch"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OperationOutcome"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"oo-for-prefetch"</span><span class="p">,</span><span class="w">
+          </span><span class="err">..</span><span class="w"> </span><span class="err">snip</span><span class="w"> </span><span class="err">...</span><span class="w">
+        </span><span class="err">}</span><span class="w">
+      </span><span class="err">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 </span></code></pre>
 </div>
 
@@ -524,7 +538,7 @@ Formats: <a href="OperationDefinition-slot-prefetch.html">Narrative</a>, <a href
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Sun, Mar 18, 2018 23:15-0700. |
+            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Mon, Mar 19, 2018 16:22-0700. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/STU3license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

@@ -237,7 +237,6 @@ page source: index.md
   <li><a href="#actors" id="markdown-toc-actors">Actors</a></li>
   <li><a href="#assumptions" id="markdown-toc-assumptions">Assumptions</a></li>
   <li><a href="#security" id="markdown-toc-security">Security</a></li>
-  <li><a href="#best-practices" id="markdown-toc-best-practices">Best Practices</a></li>
   <li><a href="#future-scope" id="markdown-toc-future-scope">Future Scope</a></li>
 </ul>
 
@@ -379,12 +378,14 @@ page source: index.md
 
 <p>For general security consideration refer to the <a href="http://hl7.org/fhir/us/core/security.html">Security section</a> in the US Core Implementation Guide.  See the <a href="#login-and-trust">Assumptions</a> section above for a discussion of login and trust.</p>
 
-<h2 id="best-practices">Best Practices</h2>
+<!--
+## Best Practices
 
-<p><a href="https://github.com/argonautproject/scheduling/issues/29">#29</a> add/document- prescribe best practices. + technical operations. ( check list of steps -e.g. Client SHALL verify successful cancellation prior to rebooking ) any outside resources (like a functional model)
- review :</p>
+[#29](https://github.com/argonautproject/scheduling/issues/29) add/document- prescribe best practices. + technical operations. ( check list of steps -e.g. Client SHALL verify successful cancellation prior to rebooking ) any outside resources (like a functional model)
+ review :
 
-<p>…todo…</p>
+...todo...
+-->
 
 <h2 id="future-scope">Future Scope</h2>
 
@@ -416,6 +417,13 @@ page source: index.md
       <li>Appointment Requests are “everything that is not covered by an appointment availability operation”</li>
       <li>Patient scheduling scenario - where system could not find appointment and need to figure out what wanted or needed.  This may sometimes results in out of sync, out of band ( call-back) responses.</li>
       <li>May need have a separate interaction that users can just submit the request.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Best Practices</p>
+
+    <ul>
+      <li>Add a section prescribing best practices for technical operations. Such as a check list of steps ( Client SHALL verify successful cancellation prior to rebooking ).</li>
     </ul>
   </li>
   <li>Prior approvals including preauthorizations</li>
@@ -457,7 +465,7 @@ page source: index.md
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Sun, Mar 18, 2018 23:15-0700. |
+            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Mon, Mar 19, 2018 16:22-0700. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/STU3license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

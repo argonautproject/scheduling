@@ -1,8 +1,8 @@
 {
   "resourceType": "Bundle",
-  "id": "8c309b6f-e90b-404a-abe2-b4155678d7c5",
+  "id": "9449b09e-8c8c-4b38-8681-7d1768b556e4",
   "meta": {
-    "lastUpdated": "2018-03-18T23:15:46.472-07:00"
+    "lastUpdated": "2018-03-19T16:22:08.420-07:00"
   },
   "type": "collection",
   "entry": [
@@ -34,8 +34,8 @@
           }
         ],
         "expansion": {
-          "identifier": "urn:uuid:07c773b4-2061-4811-9725-a17f075237e4",
-          "timestamp": "2018-03-14T11:01:38-07:00",
+          "identifier": "urn:uuid:b0769ee9-45a4-44a6-bfa6-e1fc0fa4de44",
+          "timestamp": "2018-03-19T14:41:19-07:00",
           "total": 41,
           "parameter": [
             {
@@ -285,8 +285,8 @@
           }
         ],
         "expansion": {
-          "identifier": "urn:uuid:fda1cbf0-0ed3-4f15-86a5-1f62d48a77fd",
-          "timestamp": "2018-03-13T21:26:59-07:00",
+          "identifier": "urn:uuid:ac80bd4e-85ce-435d-97a2-1523e2c77d4b",
+          "timestamp": "2018-03-19T14:41:19-07:00",
           "total": 32,
           "parameter": [
             {
@@ -492,8 +492,8 @@
         ],
         "copyright": "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement",
         "expansion": {
-          "identifier": "urn:uuid:2d128b37-23bb-4ef6-aa74-6ffb3c93c01f",
-          "timestamp": "2018-03-13T21:26:59-07:00",
+          "identifier": "urn:uuid:e8981786-921d-410c-b4c3-ee8af5aad9e0",
+          "timestamp": "2018-03-19T14:41:19-07:00",
           "total": 151,
           "parameter": [
             {
@@ -1274,6 +1274,72 @@
       }
     },
     {
+      "fullUrl": "http://fhir.org/guides/argonaut-scheduling/ValueSet/argo-slot-status",
+      "resource": {
+        "resourceType": "ValueSet",
+        "id": "argo-slot-status",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This value set contains 4 concepts</p><p style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px\">Expansion based on http://hl7.org/fhir/slotstatus version 3.0.1</p><p>All codes from system <a href=\"http://hl7.org/fhir/STU3/codesystem-slotstatus.html\"><code>http://hl7.org/fhir/slotstatus</code></a></p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---hl7.org-fhir-slotstatus-busy\"> </a><a href=\"http://hl7.org/fhir/STU3/codesystem-slotstatus.html#slotstatus-busy\">busy</a></td><td>Busy</td><td>Indicates that the time interval is busy because one  or more events have been scheduled for that interval.</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---hl7.org-fhir-slotstatus-free\"> </a><a href=\"http://hl7.org/fhir/STU3/codesystem-slotstatus.html#slotstatus-free\">free</a></td><td>Free</td><td>Indicates that the time interval is free for scheduling.</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---hl7.org-fhir-slotstatus-busy-unavailable\"> </a><a href=\"http://hl7.org/fhir/STU3/codesystem-slotstatus.html#slotstatus-busy-unavailable\">busy-unavailable</a></td><td>Busy (Unavailable)</td><td>Indicates that the time interval is busy and that the interval can not be scheduled.</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---hl7.org-fhir-slotstatus-entered-in-error\"> </a><a href=\"http://hl7.org/fhir/STU3/codesystem-slotstatus.html#slotstatus-entered-in-error\">entered-in-error</a></td><td>Entered in error</td><td>This instance should not have been part of this patient's medical record.</td></tr></table></div>"
+        },
+        "url": "http://fhir.org/guides/argonaut-scheduling/ValueSet/argo-slot-status",
+        "version": "0.0.0",
+        "name": "Argonaut_Slot_Status_Codes",
+        "title": "Argonaut Slot Status Codes",
+        "status": "draft",
+        "date": "2018-03-19T00:00:00-07:00",
+        "description": "The free/busy status of the slot. This value set is a subset of the the FHIR core Slot value set excluding the 'busy-tentative' concept.",
+        "jurisdiction": [
+          {
+            "coding": [
+              {
+                "system": "urn:iso:std:iso:3166",
+                "code": "US",
+                "display": "United States of America"
+              }
+            ]
+          }
+        ],
+        "expansion": {
+          "identifier": "urn:uuid:a50128fa-9084-4554-8066-176e1d1d8291",
+          "timestamp": "2018-03-19T14:41:28-07:00",
+          "total": 4,
+          "parameter": [
+            {
+              "name": "profile",
+              "valueUri": "http://hl7.org/fhir/ExpansionProfile/dc8fd4bc-091a-424a-8a3b-6198ef146891"
+            },
+            {
+              "name": "version",
+              "valueUri": "http://hl7.org/fhir/slotstatus|3.0.1"
+            }
+          ],
+          "contains": [
+            {
+              "system": "http://hl7.org/fhir/slotstatus",
+              "code": "busy",
+              "display": "Busy"
+            },
+            {
+              "system": "http://hl7.org/fhir/slotstatus",
+              "code": "free",
+              "display": "Free"
+            },
+            {
+              "system": "http://hl7.org/fhir/slotstatus",
+              "code": "busy-unavailable",
+              "display": "Busy (Unavailable)"
+            },
+            {
+              "system": "http://hl7.org/fhir/slotstatus",
+              "code": "entered-in-error",
+              "display": "Entered in error"
+            }
+          ]
+        }
+      }
+    },
+    {
       "fullUrl": "http://fhir.org/guides/argonaut-scheduling/ValueSet/slot-bundle-type",
       "resource": {
         "resourceType": "ValueSet",
@@ -1301,8 +1367,8 @@
           }
         ],
         "expansion": {
-          "identifier": "urn:uuid:cc8d6e69-9c98-48b7-ba2c-5d827bee9913",
-          "timestamp": "2018-03-13T21:27:06-07:00",
+          "identifier": "urn:uuid:d29c802a-e70f-4bd1-9a7a-9c79c9fb3426",
+          "timestamp": "2018-03-19T14:41:29-07:00",
           "total": 2,
           "parameter": [
             {
@@ -1357,8 +1423,8 @@
           }
         ],
         "expansion": {
-          "identifier": "urn:uuid:f957f35d-b8e3-4ffc-9422-c9da87a7a87c",
-          "timestamp": "2018-03-13T21:27:07-07:00",
+          "identifier": "urn:uuid:c039e7fd-09bb-48f0-ba15-e72fc5f1b2bb",
+          "timestamp": "2018-03-19T14:41:54-07:00",
           "total": 10,
           "parameter": [
             {

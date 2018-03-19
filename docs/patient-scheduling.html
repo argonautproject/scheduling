@@ -230,11 +230,16 @@ page source: patient-scheduling.md
 
 <ul id="markdown-toc">
   <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
-  <li><a href="#use-case-1-patient-portal-scheduling-for-existing-patients" id="markdown-toc-use-case-1-patient-portal-scheduling-for-existing-patients">Use Case 1: Patient Portal Scheduling for existing patients</a></li>
+  <li><a href="#use-case-1-patient-portal-scheduling-for-existing-patients" id="markdown-toc-use-case-1-patient-portal-scheduling-for-existing-patients">Use Case 1: Patient Portal Scheduling for existing patients</a>    <ul>
+      <li><a href="#usage-1" id="markdown-toc-usage-1">Usage</a></li>
+      <li><a href="#example-1" id="markdown-toc-example-1">Example</a></li>
+      <li><a href="#example-2" id="markdown-toc-example-2">Example</a></li>
+    </ul>
+  </li>
   <li><a href="#use-case-2-open-scheduling-for-new-patient-or-existing-patient" id="markdown-toc-use-case-2-open-scheduling-for-new-patient-or-existing-patient">Use Case 2: Open Scheduling for new patient or existing patient</a></li>
   <li><a href="#use-case-3-prefetching-open-slots" id="markdown-toc-use-case-3-prefetching-open-slots">Use Case 3 Prefetching Open Slots</a></li>
-  <li><a href="#cancelingrescheduling-appointments" id="markdown-toc-cancelingrescheduling-appointments">Canceling/Rescheduling appointments</a></li>
-  <li><a href="#releasing-holds" id="markdown-toc-releasing-holds">Releasing holds</a></li>
+  <li><a href="#cancelingrescheduling-appointments" id="markdown-toc-cancelingrescheduling-appointments">Canceling/Rescheduling Appointments</a></li>
+  <li><a href="#releasing-holds" id="markdown-toc-releasing-holds">Releasing Holds</a></li>
   <li><a href="#retrieving-appointments" id="markdown-toc-retrieving-appointments">Retrieving appointments</a></li>
 </ul>
 
@@ -352,89 +357,96 @@ page source: patient-scheduling.md
 
 <p>Using Both <code class="highlighter-rouge">GET</code> and <code class="highlighter-rouge">POST</code> Syntax the operation can be invoked as follows:</p>
 
-<p><code class="highlighter-rouge">GET [base]/Appointment/$hold?{parameters}&amp;?{_count}</code></p>
+<p><code class="highlighter-rouge">GET [base]/Appointment/$find?{parameters}&amp;?{_count}</code></p>
 
-<p><code class="highlighter-rouge">POST [base]/Appointment/$hold?{_count}</code></p>
+<p><code class="highlighter-rouge">POST [base]/Appointment/$find?{_count}</code></p>
 
 <h4 id="example" class="no_toc">Example</h4>
 
 <p>appointment-find1a.md</p>
 
-<div id="scenario-1a" class="highlighter-rouge"><pre class="highlight"><code>Scenario Details:  Use the operation to fetch a maximum of the soonest 3 open appointments available within the next 2 days for Dr Y at the Napa location.
+<p id="scenario-1a"><strong>Scenario 1a:</strong></p>
 
+<p>Use the operation to fetch a maximum of the soonest 3 open appointments available within the next 2 days for Dr Y at the Napa location.</p>
 
-##### Request
+<p><strong>Request using <code class="highlighter-rouge">GET</code></strong></p>
 
-**Using `GET`**
+<p><code class="highlighter-rouge">GET [base]/Appointment/$find?start=2017-07-15T20:00:00Z&amp;end=2017-07-17T20:00:00Z&amp;provider=Practitioner/dr-y&amp;location=Napa&amp;_count=3</code></p>
 
-`GET [base]/Appointment/$find?start=2017-07-15T20:00:00Z&amp;end=2017-07-17T20:00:00Z&amp;provider=Practitioner/dr-y&amp;location=Napa&amp;_count=3`
+<p><strong>Request using <code class="highlighter-rouge">POST</code></strong></p>
 
-**Using `POST`**
+<p><code class="highlighter-rouge">POST [base]/Appointment/$find&amp;_count=3</code></p>
 
-`POST [base]/Appointment/$find&amp;_count=3`
+<p><strong>Request body</strong></p>
 
-    **payload:**
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="w">    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Parameters"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pcp-appts"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"parameter"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"start"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"valueDateTime"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-15T20:00:00Z"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"end"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"valueDateTime"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-17T20:00:00Z"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"provider"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"valueUri"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Practitioner/dr-y"</span><span class="p">]</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="err">}</span><span class="p">,</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"location"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"valueString"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Napa"</span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
 
-    {
-      "resourceType": "Parameters",
-      "id": "pcp-appts",
-      "parameter": [
-        {
-          "name": "start",
-          "valueDateTime" : "2017-07-15T20:00:00Z"
-        },
-        {
-          "name": "end",
-            "valueDateTime" : "2017-07-17T20:00:00Z"
-        },
-        {
-          "name": "provider",
-          "valueUri": ["Practitioner/dr-y"]
-          }
-        },
-        {
-          "name": "location",
-          "valueString": ["Napa"]
-        }
-    ]
-    }
+<p><strong>Response</strong></p>
 
-##### Response ([Operation$find Example 1a](Bundle-hal-dr-y-appts.html))
-
-
-    {
-      "resourceType": "Bundle",
-      "id": "hal-dr-y-appts",
-      "type": "searchset",
-      "total": 3,
-      "entry": [{
-        "fullUrl": "http://server/path/Appointment/proposed-appt-1",
-        "resource": {
-          "resourceType": "Appointment",
-          "id": "proposed-appt-1",
-          .. snip ...
-        },
-        "fullUrl": "http://server/path/Appointment/proposed-appt-2",
-        "resource": {
-          "resourceType": "Appointment",
-          "id": "proposed-appt-2",
-          .. snip ...
-        },
-        "fullUrl": "http://server/path/Appointment/proposed-appt-3",
-        "resource": {
-          "resourceType": "Appointment",
-          "id": "proposed-appt-3",
-          .. snip ...
-        },
-        "fullUrl": "http://server/path/OperationOutcome/oo-for-dr-y-appts",
-        "resource": {
-          "resourceType": "OperationOutcome",
-          "id": "oo-for-dr-y-appts",
-          .. snip ...
-        }
-      ]
-    }
+<div class="highlighter-rouge"><pre class="highlight"><code>HTTP/1.1 200 OK
+[other headers]
 </code></pre>
+</div>
+
+<p><strong>Response body</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="w">    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bundle"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hal-dr-y-appts"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"searchset"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"entry"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nt">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://server/path/Appointment/proposed-appt-1"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Appointment"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"proposed-appt-1"</span><span class="p">,</span><span class="w">
+          </span><span class="err">..</span><span class="w"> </span><span class="err">snip</span><span class="w"> </span><span class="err">...</span><span class="w">
+        </span><span class="err">}</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://server/path/Appointment/proposed-appt-2"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Appointment"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"proposed-appt-2"</span><span class="p">,</span><span class="w">
+          </span><span class="err">..</span><span class="w"> </span><span class="err">snip</span><span class="w"> </span><span class="err">...</span><span class="w">
+        </span><span class="err">}</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://server/path/Appointment/proposed-appt-3"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Appointment"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"proposed-appt-3"</span><span class="p">,</span><span class="w">
+          </span><span class="err">..</span><span class="w"> </span><span class="err">snip</span><span class="w"> </span><span class="err">...</span><span class="w">
+        </span><span class="err">}</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://server/path/OperationOutcome/oo-for-dr-y-appts"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OperationOutcome"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"oo-for-dr-y-appts"</span><span class="p">,</span><span class="w">
+          </span><span class="err">..</span><span class="w"> </span><span class="err">snip</span><span class="w"> </span><span class="err">...</span><span class="w">
+        </span><span class="err">}</span><span class="w">
+      </span><span class="err">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span></code></pre>
 </div>
 
 <p><br/></p>
@@ -455,7 +467,7 @@ page source: patient-scheduling.md
 <p></p>
 </div>
 
-<p>The Client sends a hold request operation using the id of selected proposed appointment as the input parameter.  The Server determines if the appointment can be held and returns the Appointment resource with with an updated status. See the <a href="state-diagram.html">Appointment State Diagram</a> for further details on statuses.</p>
+<p>The Client sends a hold request operation using the id of selected proposed appointment as the input parameter.  The Server determines if and how long the appointment can be held and returns the Appointment resource with with an updated status if successful. The <a href="#releasing-holds">Releasing Holds</a> section below describes how to release the hold before it expires.  See the <a href="state-diagram.html">Appointment State Diagram</a> for further details on statuses.</p>
 
 <h4 id="apis-1" class="no_toc">APIs</h4>
 
@@ -467,19 +479,15 @@ page source: patient-scheduling.md
   <li><strong><a href="StructureDefinition-argo-appt.html">Argonaut Appointment Profile</a></strong>.</li>
 </ul>
 
-<h4 id="usage-1" class="no_toc">Usage</h4>
+<h4 id="usage-1">Usage</h4>
 
-<p>source file: pages/_includes/appointment-hold.md</p>
+<p>POST [base]/Appointment/[id]/$hold</p>
 
-<p>The operation can be invoked as follows:</p>
+<h4 id="example-1">Example</h4>
 
-<p><code class="highlighter-rouge">POST [base]/Appointment/$hold</code></p>
+<p class="no_toc"><strong>Request</strong></p>
 
-<h5 id="example-1" class="no_toc">Example</h5>
-
-<p><strong>Request</strong></p>
-
-<p><code class="highlighter-rouge">POST [base]/Appointment/$hold</code></p>
+<p><code class="highlighter-rouge">POST [base]/Appointment/proposed-appt1a-1/$hold</code></p>
 
 <p><strong>Request body</strong></p>
 
@@ -516,14 +524,17 @@ Expires: Wed, 21 March 2018 07:28:00 GMT
         </span><span class="nt">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
           </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Appointment"</span><span class="p">,</span><span class="w">
           </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"held-appt1a"</span><span class="p">,</span><span class="w">
-          </span><span class="err">..</span><span class="w"> </span><span class="err">snip</span><span class="w"> </span><span class="err">...</span><span class="w">
-        </span><span class="nt">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://server/path/OperationOutcome/oo-held-appt1a"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="err">...snip...</span><span class="w">
+            </span><span class="nt">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"serviceType"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="err">...snip...</span><span class="w">
+        </span><span class="s2">"fullUrl"</span><span class="err">:</span><span class="w"> </span><span class="s2">"http://server/path/OperationOutcome/oo-held-appt1a"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"resource"</span><span class="err">:</span><span class="w"> </span><span class="p">{</span><span class="w">
           </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OperationOutcome"</span><span class="p">,</span><span class="w">
           </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"oo-held-appt1a-appt1a"</span><span class="p">,</span><span class="w">
           </span><span class="err">..</span><span class="w"> </span><span class="err">snip</span><span class="w"> </span><span class="err">...</span><span class="w">
         </span><span class="err">}</span><span class="w">
-      </span><span class="err">]</span><span class="w">
+      </span><span class="p">]</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span></code></pre>
 </div>
@@ -553,115 +564,72 @@ Expires: Wed, 21 March 2018 07:28:00 GMT
 <p>The following Argonaut Scheduling artifacts are used in this transaction:</p>
 
 <ul>
-  <li><strong><a href="OperationDefinition-appointment-hold.html">Appointment Hold Operation</a></strong>.</li>
+  <li><strong><a href="OperationDefinition-appointment-book.html">Appointment Hold Operation</a></strong>.</li>
   <li><strong><a href="StructureDefinition-avail-bundle.html">Argonaut Appointment Bundle Profile</a></strong>.</li>
   <li><strong><a href="StructureDefinition-argo-appt.html">Argonaut Appointment Profile</a></strong>.</li>
 </ul>
 
 <h4 id="usage-2" class="no_toc">Usage</h4>
 
-<p>source file:  _includes/appointment-book.md</p>
+<p><code class="highlighter-rouge">POST [base]/Appointment/[id]/$book</code></p>
 
-<p>The operation can be invoked as follows:</p>
+<h4 id="example-2">Example</h4>
 
-<p><code class="highlighter-rouge">POST [base]/Appointment/$book</code></p>
+<p><strong>Request</strong></p>
 
-<h5 id="examples" class="no_toc">Examples</h5>
-  <!-- - [Scenario-1](#scenario-1)
-- [Scenario-2](#scenario-2)
+<p><code class="highlighter-rouge">POST [base]/Appointment/proposed-appt2a-1/$book</code></p>
 
-#### Scenario 1a: Use the operation to book the appointment.
-{: #scenario-1}
+<p><strong>Request body</strong></p>
 
-[Scenario Details](https://github.com/argonautproject/scheduling/wiki/Use-Cases#scenario-1a-existing-patient-schedules-directly-with-their-provider)
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="w">    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Parameters"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pcp-appts"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"parameter"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"appt-id"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"valueUrl"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Appointment/proposed-appt2a-1"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"patient-id"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"valueDateTime"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Patient/1234"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
 
-##### Request
+<p><strong>Response</strong></p>
 
-`POST [base]/Appointment/$book`
-
-    **payload:**
-
-    {
-      "resourceType": "Parameters",
-      "id": "pcp-book",
-      "parameter": [
-        {
-          "name": "appt-id",
-          "valueUrl" : "Appointment/proposed-appt1a-1"
-        },
-        {
-          "name": "comment",
-          "valueString" : "this is an appointment comment how long can it be?"
-        }
-
-      ]
-    }
-
-
-##### Response ([Operation$book Example 1a](Bundle-hal-dr-y-book.html))
-
-    {
-      "resourceType": "Bundle",
-      "id": "hal-dr-y-booked",
-      "type": "searchset",
-      "total": 2,
-      "entry": [{
-        "fullUrl": "http://server/path/Appointment/booked-appt1a",
-        "resource": {
-          "resourceType": "Appointment",
-          "id": "booked-appt1a",
-          .. snip ...
-        "fullUrl": "http://server/path/OperationOutcome/oo-booked-appt1a",
-        "resource": {
-          "resourceType": "OperationOutcome",
-          "id": "oo-booked-appt1a",
-          .. snip ...
-        }
-      ]
-    } -->
-<div class="highlighter-rouge"><pre class="highlight"><code>#### Request
-
-`POST [base]/Appointment/$book`
-
-    **payload:**
-
-    {
-      "resourceType": "Parameters",
-      "id": "pcp-appts",
-      "parameter": [
-        {
-          "name": "appt-id",
-          "valueUrl" : "Appointment/proposed-appt2a-1"
-        },
-        {
-          "name": "patient-id",
-            "valueDateTime" : "Patient/1234"
-        }
-    ]
-    }
-
-##### Response ([Operation$book Example 2a](Bundle-derm-book.html))
-
-        {
-          "resourceType": "Bundle",
-          "id": "derm-booked",
-          "type": "searchset",
-          "total": 2,
-          "entry": [{
-            "fullUrl": "http://server/path/Appointment/booked-derm-appt",
-            "resource": {
-              "resourceType": "Appointment",
-              "id": "booked-derm-appt",
-              .. snip ...
-            "fullUrl": "http://server/path/OperationOutcome/oo-booked-derm-appt",
-            "resource": {
-              "resourceType": "OperationOutcome",
-              "id": "oo-booked-derm-appt",
-              .. snip ...
-            }
-          ]
-        }
+<div class="highlighter-rouge"><pre class="highlight"><code>HTTP/1.1 200 OK
+[other headers]
 </code></pre>
+</div>
+
+<p><strong>Response body</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="w">        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bundle"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"derm-booked"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"searchset"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"entry"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+            </span><span class="nt">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://server/path/Appointment/booked-derm-appt"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Appointment"</span><span class="p">,</span><span class="w">
+              </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"booked-derm-appt"</span><span class="p">,</span><span class="w">
+              </span><span class="err">...snip...</span><span class="w">
+                </span><span class="nt">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"booked"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"serviceType"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+              </span><span class="err">...snip...</span><span class="w">
+            </span><span class="s2">"fullUrl"</span><span class="err">:</span><span class="w"> </span><span class="s2">"http://server/path/OperationOutcome/oo-booked-derm-appt"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"resource"</span><span class="err">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OperationOutcome"</span><span class="p">,</span><span class="w">
+              </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"oo-booked-derm-appt"</span><span class="p">,</span><span class="w">
+              </span><span class="err">..</span><span class="w"> </span><span class="err">snip</span><span class="w"> </span><span class="err">...</span><span class="w">
+            </span><span class="err">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+</span></code></pre>
 </div>
 
 <p><br/></p>
@@ -736,7 +704,7 @@ Expires: Wed, 21 March 2018 07:28:00 GMT
 
 <h3 id="optional-hold-appointment-operation-1" class="no_toc">Optional Hold Appointment Operation</h3>
 
-<p>This operation puts to appointment in a hold status to temporarily prevent the appointment from being booked by another client. This step is not optional if the patient was not registered in step 1 above. It is needed in order to register the patient prior to booking the appointment.</p>
+<p>This operation puts to appointment in a hold status to temporarily prevent the appointment from being booked by another client. This step is <strong>not optional</strong> if the patient was not registered in step 1 above. It is needed in order to register the patient prior to booking the appointment.</p>
 
   <!-- all this Bootstrap html for getting an image to fit nicely in text - 640 pix wide -->
 
@@ -751,7 +719,7 @@ Expires: Wed, 21 March 2018 07:28:00 GMT
 <p></p>
 </div>
 
-<p>The details of this step are the same as described in <a href="#optional-hold-appointment-operation">Scenario-1</a>.</p>
+<p>The details of this step are the same as described in <a href="#optional-hold-appointment-operation">Scenario-1</a>. The <a href="#releasing-holds">Releasing Holds</a> section below describes how to release the hold before it expires.</p>
 
 <h3 id="patient-registration-option-b" class="no_toc">Patient Registration Option B</h3>
 
@@ -780,7 +748,7 @@ Expires: Wed, 21 March 2018 07:28:00 GMT
 
 <p>In response to this transaction, the server SHOULD create a new patient resource only if the patient resource does not already exist in the system.  If the patient is already registered within the system. The existing patient resource SHOULD be returned.  Note that the Client SHALL not use the ‘If-None-Exist’ header as described in FHIR <a href="http://hl7.org/fhir/STU3/http.html#ccreate">conditional create API</a>).</p>
 
-<h5 id="example-2" class="no_toc">Example</h5>
+<h5 id="example-3" class="no_toc">Example</h5>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>todo inline example
 </code></pre>
@@ -810,7 +778,7 @@ Expires: Wed, 21 March 2018 07:28:00 GMT
 
 <p>​Note that the server MAY reject certain updates to the coverage information (for example, type of coverage) and SHOULD return an OperationOutcome explaining the reason. (see issue #47)</p>
 
-<h5 id="example-3" class="no_toc">Example</h5>
+<h5 id="example-4" class="no_toc">Example</h5>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>PUT [base]/Coverage/[id]....
 </code></pre>
@@ -973,41 +941,50 @@ Expires: Wed, 21 March 2018 07:28:00 GMT
 
 <p><code class="highlighter-rouge">Delete [base]/Subscription/[id]</code></p>
 
-<h4 id="example-4" class="no_toc">Example</h4>
+<h4 id="example-5" class="no_toc">Example</h4>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>POST [base]/Subscription
+<p><strong>Subscribe</strong></p>
 
-    **payload:**
+<p><code class="highlighter-rouge">POST [base]/Subscription</code></p>
 
-    {
-      "resourceType": "Subscription",
-      "id": "example",
-      "status": "active",
-      "reason": "Notify subscriber of schedule changes to trigger the subscriber prefetch updated slots",
-      "_criteria": {
-        "extension": [
-          {
-            "url": "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-subscription-triggerevent",
-            "valueString": "schedule where any slot that reference it has changed"
-          },
-          {
-            "url": "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-subscription-eventfocus",
-            "valueCode": "Schedule"
-          }
-        ]
-      },
-      "channel": {
-        "extension": [
-          {
-            "url": "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-subscription-payloadprofile",
-            "valueUri": "//fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-sched-notif"
-          }
-        ],
-        "type": "rest-hook",
-        "endpoint": "https://feed-handler.com/notification",
-        "payload": "application/fhir+json"
-      }
-    }
+<p><strong>Request body</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="w">    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Subscription"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Notify subscriber of schedule changes to trigger the subscriber prefetch updated slots"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"_criteria"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"extension"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-subscription-triggerevent"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"valueString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"schedule where any slot that reference it has changed"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-subscription-eventfocus"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"valueCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Schedule"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"channel"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"extension"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-subscription-payloadprofile"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"valueUri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"//fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-sched-notif"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rest-hook"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"endpoint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://feed-handler.com/notification"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"payload"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/fhir+json"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<p><strong>Response</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>HTTP/1.1 200 OK
+[other headers]
 </code></pre>
 </div>
 
@@ -1046,73 +1023,84 @@ Expires: Wed, 21 March 2018 07:28:00 GMT
 
 <p><code class="highlighter-rouge">POST [base]/Slot/$prefetch</code></p>
 
-<h4 id="examples-1" class="no_toc">Examples</h4>
+<h4 id="examples" class="no_toc">Examples</h4>
 
-<h5 id="request-using-get-syntax-to-prefetch-open-slots-from-july-152017-to-august-172017" class="no_toc">Request using <code class="highlighter-rouge">GET</code> Syntax to prefetch open slots from July 15,2017 to August 17,2017</h5>
+<p>Prefetch open slots from July 15,2017 to August 17,2017</p>
+
+<p><strong>Request using <code class="highlighter-rouge">GET</code> Syntax</strong></p>
 
 <p><code class="highlighter-rouge">GET  [base]/Slot/$prefetch?start=2017-07-15T20:00:00Z&amp;end=2017-07-17T20:00:00Z</code></p>
 
-<h5 id="request-using-post-syntax" class="no_toc">Request using <code class="highlighter-rouge">POST</code> Syntax</h5>
+<p><strong>Request using <code class="highlighter-rouge">POST</code> Syntax</strong></p>
+
 <p><code class="highlighter-rouge">POST [base]/Slot/$prefetch</code></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>**payload:**
+<p><strong>Post request body</strong></p>
 
-{
-  "resourceType": "Parameters",
-  "id": "prefetch-1",
-  "parameter": [
-    {
-      "name": "start",
-      "valueDateTime" : "2017-07-15T20:00:00Z"
-    },
-    {
-      "name": "end",
-        "valueDateTime" : "2017-07-17T20:00:00Z"
-    }
-]
-}
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="w">    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Parameters"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prefetch-1"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"parameter"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"start"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"valueDateTime"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-15T20:00:00Z"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"end"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"valueDateTime"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-17T20:00:00Z"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<p><strong>Response</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>HTTP/1.1 200 OK
+[other headers]
 </code></pre>
 </div>
 
-<h5 id="response" class="no_toc">Response</h5>
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bundle"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prefetch-1"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"searchset"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"entry"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-    </span><span class="nt">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://server/path/Slot/1"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Slot"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-      </span><span class="err">..</span><span class="w"> </span><span class="err">snip</span><span class="w"> </span><span class="err">...</span><span class="w">
-      </span><span class="nt">"status"</span><span class="p">:</span><span class="s2">"free"</span><span class="w">
-      </span><span class="err">..</span><span class="w"> </span><span class="err">snip</span><span class="w"> </span><span class="err">...</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nt">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://server/path/Slot/2"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Slot"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
-      </span><span class="err">..</span><span class="w"> </span><span class="err">snip</span><span class="w"> </span><span class="err">...</span><span class="w">
-      </span><span class="nt">"status"</span><span class="p">:</span><span class="s2">"free"</span><span class="w">
-      </span><span class="err">..</span><span class="w"> </span><span class="err">snip</span><span class="w"> </span><span class="err">...</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nt">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://server/path/Slot/3"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Slot"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
-      </span><span class="err">..</span><span class="w"> </span><span class="err">snip</span><span class="w"> </span><span class="err">...</span><span class="w">
-      </span><span class="nt">"status"</span><span class="p">:</span><span class="s2">"free"</span><span class="w">
-      </span><span class="err">..</span><span class="w"> </span><span class="err">snip</span><span class="w"> </span><span class="err">...</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nt">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://server/path/OperationOutcome/oo-for-prefetch"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OperationOutcome"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"oo-for-prefetch"</span><span class="p">,</span><span class="w">
-      </span><span class="err">..</span><span class="w"> </span><span class="err">snip</span><span class="w"> </span><span class="err">...</span><span class="w">
-    </span><span class="err">}</span><span class="w">
-  </span><span class="err">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
+<p><strong>Response body</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="w">    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bundle"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prefetch-1"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"searchset"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"entry"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nt">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://server/path/Slot/1"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Slot"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+          </span><span class="err">..</span><span class="w"> </span><span class="err">snip</span><span class="w"> </span><span class="err">...</span><span class="w">
+          </span><span class="nt">"status"</span><span class="p">:</span><span class="s2">"free"</span><span class="w">
+          </span><span class="err">..</span><span class="w"> </span><span class="err">snip</span><span class="w"> </span><span class="err">...</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nt">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://server/path/Slot/2"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Slot"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+          </span><span class="err">..</span><span class="w"> </span><span class="err">snip</span><span class="w"> </span><span class="err">...</span><span class="w">
+          </span><span class="nt">"status"</span><span class="p">:</span><span class="s2">"free"</span><span class="w">
+          </span><span class="err">..</span><span class="w"> </span><span class="err">snip</span><span class="w"> </span><span class="err">...</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nt">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://server/path/Slot/3"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Slot"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+          </span><span class="err">..</span><span class="w"> </span><span class="err">snip</span><span class="w"> </span><span class="err">...</span><span class="w">
+          </span><span class="nt">"status"</span><span class="p">:</span><span class="s2">"free"</span><span class="w">
+          </span><span class="err">..</span><span class="w"> </span><span class="err">snip</span><span class="w"> </span><span class="err">...</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nt">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://server/path/OperationOutcome/oo-for-prefetch"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OperationOutcome"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"oo-for-prefetch"</span><span class="p">,</span><span class="w">
+          </span><span class="err">..</span><span class="w"> </span><span class="err">snip</span><span class="w"> </span><span class="err">...</span><span class="w">
+        </span><span class="err">}</span><span class="w">
+      </span><span class="err">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 </span></code></pre>
 </div>
 
@@ -1146,12 +1134,12 @@ Expires: Wed, 21 March 2018 07:28:00 GMT
 
 <p><code class="highlighter-rouge">POST [app notification endpoint]</code></p>
 
-<h4 id="example-5" class="no_toc">Example</h4>
+<h4 id="example-6" class="no_toc">Example</h4>
 
 <h5 id="notification-of-schedule-change" class="no_toc">Notification of schedule change:</h5>
 <div class="highlighter-rouge"><pre class="highlight"><code>POST https://feed-handler.com/notification
 
-**payload**
+**Request body**
 
 {
   "resourceType" : "Schedule",
@@ -1212,7 +1200,7 @@ Expires: Wed, 21 March 2018 07:28:00 GMT
 
 <p><code class="highlighter-rouge">POST [base]/Slot/$prefetch</code></p>
 
-<h4 id="example-6" class="no_toc">Example</h4>
+<h4 id="example-7" class="no_toc">Example</h4>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>POST [base]/Slot/$prefetch
 
@@ -1291,13 +1279,13 @@ Expires: Wed, 21 March 2018 07:28:00 GMT
 
 <h4 id="usage-9" class="no_toc">Usage</h4>
 
-<p>This step is similar to <a href="#optional-hold-appointment-operation">Scenario 2 Step 5</a> above.  However, in this case the Client generates an Argonaut Appointment Profile resource and exchanges it with the FHIR Scheduler. Using the <code class="highlighter-rouge">POST</code> Syntax the operation can be invoked as follows:</p>
+<p>This step is similar to <a href="#optional-hold-appointment-operation">Scenario 2 Step 5</a> above.  However, in this case the Client generates an Argonaut Appointment Profile resource and exchanges it with the FHIR Scheduler. The <a href="#releasing-holds">Releasing Holds</a> section below describes how to release the hold before it expires. Using the <code class="highlighter-rouge">POST</code> Syntax the operation can be invoked as follows:</p>
 
 <p><code class="highlighter-rouge">POST [base]/Appointment/$hold</code></p>
 
-<p>The payload can be <em>either</em> the Appointment resource or use the <a href="http://hl7.org/fhir/STU3/parameters.html">Parameters</a> format as shown in the examples below</p>
+<p>The payload may be either use the Appointment resource directly or the Parameters format as shown in the examples below:</p>
 
-<h4 id="example-7" class="no_toc">Example</h4>
+<h4 id="example-8" class="no_toc">Example</h4>
 
 <p><strong>Request</strong></p>
 
@@ -1357,6 +1345,14 @@ Expires: Wed, 21 March 2018 07:28:00 GMT
 
 <p><strong>Response</strong></p>
 
+<div class="highlighter-rouge"><pre class="highlight"><code>HTTP/1.1 200 OK
+Expires: Wed, 21 March 2018 07:28:00 GMT
+[other headers]
+</code></pre>
+</div>
+
+<p><strong>Response body</strong></p>
+
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="w">    </span><span class="p">{</span><span class="w">
       </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bundle"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hal-dr-y-held"</span><span class="p">,</span><span class="w">
@@ -1367,14 +1363,17 @@ Expires: Wed, 21 March 2018 07:28:00 GMT
         </span><span class="nt">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
           </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Appointment"</span><span class="p">,</span><span class="w">
           </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"held-appt2a"</span><span class="p">,</span><span class="w">
-          </span><span class="err">..</span><span class="w"> </span><span class="err">snip</span><span class="w"> </span><span class="err">...</span><span class="w">
-        </span><span class="nt">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://server/path/OperationOutcome/oo-held-appt1a"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="err">...snip</span><span class="w"> </span><span class="err">...</span><span class="w">
+          </span><span class="nt">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"serviceType"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="err">...snip...</span><span class="w">
+        </span><span class="s2">"fullUrl"</span><span class="err">:</span><span class="w"> </span><span class="s2">"http://server/path/OperationOutcome/oo-held-appt1a"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"resource"</span><span class="err">:</span><span class="w"> </span><span class="p">{</span><span class="w">
           </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OperationOutcome"</span><span class="p">,</span><span class="w">
           </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"oo-held-appt1a-appt1a"</span><span class="p">,</span><span class="w">
           </span><span class="err">..</span><span class="w"> </span><span class="err">snip</span><span class="w"> </span><span class="err">...</span><span class="w">
         </span><span class="err">}</span><span class="w">
-      </span><span class="err">]</span><span class="w">
+      </span><span class="p">]</span><span class="w">
     </span><span class="p">}</span><span class="w">
 
 </span></code></pre>
@@ -1406,104 +1405,119 @@ Expires: Wed, 21 March 2018 07:28:00 GMT
 <p>The following Argonaut Scheduling artifacts are used in this transaction:</p>
 
 <ul>
-  <li><strong><a href="OperationDefinition-appointment-hold.html">Appointment Hold Operation</a></strong>.</li>
+  <li><strong><a href="OperationDefinition-appointment-book.html">Appointment Book Operation</a></strong>.</li>
   <li><strong><a href="StructureDefinition-avail-bundle.html">Argonaut Appointment Bundle Profile</a></strong>.</li>
   <li><strong><a href="StructureDefinition-argo-appt.html">Argonaut Appointment Profile</a></strong>.</li>
 </ul>
 
 <h4 id="usage-10" class="no_toc">Usage</h4>
 
-<p>If the <a href="#optional-hold-appointment-operation-2">Hold Appointment Operation</a> step was done, this step the same as <a href="#book-appointment-1">Scenario 2 Step 5</a> above.  The Client references the FHIR Scheduler supplied id from the hold response when booking the appointment. If the <a href="#optional-hold-appointment-operation-2">Hold Appointment Operation</a> step was skipped then the Client either generates an Argonaut Appointment Profile resource and exchanges it with the FHIR Scheduler. Using the <code class="highlighter-rouge">POST</code> Syntax the operation can be invoked as follows:</p>
+<p>If the <a href="#optional-hold-appointment-operation-2">Hold Appointment Operation</a> step was done, this step the same as <a href="#book-appointment-1">Scenario 2 Step 5</a> above.  The Client references the FHIR Scheduler supplied id from the hold response when booking the appointment. If the Hold Appointment Operation step was skipped, then the Client creates an Argonaut Appointment Profile resource and exchanges it with the FHIR Scheduler. The operation is invoked as follows:</p>
 
 <p><code class="highlighter-rouge">POST [base]/Appointment/$book</code></p>
 
-<p>The payload can be <em>either</em> the Appointment resource or use the <a href="http://hl7.org/fhir/STU3/parameters.html">Parameters</a> format as shown in the examples below</p>
+<p>The payload may be <em>either</em> use the Appointment resource directly or the <a href="http://hl7.org/fhir/STU3/parameters.html">Parameters</a> format as shown in the examples below:</p>
 
-<h4 id="example-8" class="no_toc">Example</h4>
+<h4 id="example-9" class="no_toc">Example</h4>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>
-**Request**
+<p><strong>Request</strong></p>
 
-POST [base]/Appointment/$book
+<p><code class="highlighter-rouge">POST [base]/Appointment/$book</code></p>
 
-**Appointment resource as payload**
+<p><strong>Appointment resource as request body</strong></p>
 
-{
-  "resourceType" : "Appointment",
-  "id" : "proposed-appt2",
-...snip...
-  "status" : "pending",
-  "serviceType" : [
-...snip...
-  "start" : "2017-07-17T01:00:00Z",
-  "end" : "2017-07-17T01:15:00Z",
-  "participant" : [
-    {
-      "actor" : {
-        "reference" : "Practitioner/dr-y",
-        "display" : "Dr Y"
-...snip...
-}
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"resourceType"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Appointment"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"proposed-appt2"</span><span class="p">,</span><span class="w">
+</span><span class="err">...snip...</span><span class="w">
+  </span><span class="nt">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"serviceType"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+</span><span class="err">...snip...</span><span class="w">
+  </span><span class="s2">"start"</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="s2">"2017-07-17T01:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"end"</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="s2">"2017-07-17T01:15:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"participant"</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"actor"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"reference"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Practitioner/dr-y"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"display"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Dr Y"</span><span class="w">
+</span><span class="err">...snip...</span><span class="w">
+</span><span class="p">}</span><span class="w">
 
-  **Parameter format as payload**
+</span></code></pre>
+</div>
 
-      {
-        "resourceType": "Parameters",
-        "id": "pcp-hold",
-        "parameter": [
-          {
-            "name": "appt-resource",
-            "resource":{
-                        "resourceType" : "Appointment",
-                        "id" : "proposed-appt2",
-                      ...snip...
-                        "status" : "pending",
-                        "serviceType" : [
-                      ...snip...
-                        "start" : "2017-07-17T01:00:00Z",
-                        "end" : "2017-07-17T01:15:00Z",
-                        "participant" : [
-                          {
-                            "actor" : {
-                              "reference" : "Practitioner/dr-y",
-                              "display" : "Dr Y"
-                      ...snip...
-            }
+<p><strong>Parameter format as request body</strong></p>
 
-          }
-        ]
-      }
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="w">      </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Parameters"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pcp-hold"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"parameter"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"appt-resource"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"resource"</span><span class="p">:{</span><span class="w">
+                        </span><span class="nt">"resourceType"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Appointment"</span><span class="p">,</span><span class="w">
+                        </span><span class="nt">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"proposed-appt2"</span><span class="p">,</span><span class="w">
+                      </span><span class="err">...snip...</span><span class="w">
+                        </span><span class="nt">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
+                        </span><span class="nt">"serviceType"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                      </span><span class="err">...snip...</span><span class="w">
+                        </span><span class="s2">"start"</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="s2">"2017-07-17T01:00:00Z"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"end"</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="s2">"2017-07-17T01:15:00Z"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"participant"</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                          </span><span class="p">{</span><span class="w">
+                            </span><span class="nt">"actor"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                              </span><span class="nt">"reference"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Practitioner/dr-y"</span><span class="p">,</span><span class="w">
+                              </span><span class="nt">"display"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Dr Y"</span><span class="w">
+                      </span><span class="err">...snip...</span><span class="w">
+            </span><span class="p">}</span><span class="w">
 
-**Response**
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="err">}</span><span class="w">
 
-    {
-      "resourceType": "Bundle",
-      "id": "hal-dr-y-held",
-      "type": "searchset",
-      "total": 2,
-      "entry": [{
-        "fullUrl": "http://server/path/Appointment/scheduled-appt2a",
-        "resource": {
-          "resourceType": "Appointment",
-          "id": "held-appt2a",
-          .. snip ...
-        "fullUrl": "http://server/path/OperationOutcome/oo-held-appt1a",
-        "resource": {
-          "resourceType": "OperationOutcome",
-          "id": "oo-held-appt1a-appt1a",
-          .. snip ...
-        }
-      ]
-    }
+</span></code></pre>
+</div>
 
+<p><strong>Response</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>HTTP/1.1 200 OK
+[other headers]
 </code></pre>
+</div>
+
+<p><strong>Response body</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bundle"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hal-dr-y-held"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"searchset"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"entry"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nt">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://server/path/Appointment/scheduled-appt2a"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Appointment"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"held-appt2a"</span><span class="p">,</span><span class="w">
+          </span><span class="err">...snip...</span><span class="w">
+            </span><span class="nt">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"booked"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"serviceType"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="err">...snip...</span><span class="w">
+        </span><span class="s2">"fullUrl"</span><span class="err">:</span><span class="w"> </span><span class="s2">"http://server/path/OperationOutcome/oo-held-appt1a"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"resource"</span><span class="err">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OperationOutcome"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"oo-held-appt1a-appt1a"</span><span class="p">,</span><span class="w">
+          </span><span class="err">..</span><span class="w"> </span><span class="err">snip</span><span class="w"> </span><span class="err">...</span><span class="w">
+        </span><span class="err">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span></code></pre>
 </div>
 
 <h3 id="patient-coverage-update-option-c-1" class="no_toc">Patient Coverage Update Option C</h3>
 
 <p>For some systems, updating or confirmation of insurance coverage information MAY occur at this step after booking. The Coverage interaction is discussed in detail in <a href="#patient-registration-option-b">Scenario 2 Step 4</a> above.</p>
 
-<h2 id="cancelingrescheduling-appointments">Canceling/Rescheduling appointments</h2>
+<h2 id="cancelingrescheduling-appointments">Canceling/Rescheduling Appointments</h2>
 
 <p>The end user may elect to cancel or reschedule an existing appointment.  Rescheduling is a two step process of canceling and rebooking a new appointment.</p>
 
@@ -1513,14 +1527,14 @@ POST [base]/Appointment/$book
 
 <div>
 <figure class="figure">
-<figcaption class="figure-caption"><strong>Figure 1: Patient Canceling/Rescheduling appointments.</strong></figcaption>
+<figcaption class="figure-caption"><strong>Figure 1: Patient Canceling/Rescheduling Appointments.</strong></figcaption>
   <img src="assets/images/diagrams/Slide33.png" alt="diagrams/Slide33.png" class="figure-img img-responsive img-rounded center-block"/>
 </figure>
 
 <p></p>
 </div>
 
-<p>Canceling and Rescheduling has the potential to introduces complex failure states. The <a href="index.html#best-practices">best practices</a> guidance discusses how failures should be handled. See the <a href="state-diagram.html">Appointment State Diagram</a> for further details on statuses and state transitions.</p>
+<p>Canceling and Rescheduling has the potential to introduces complex failure states. The <a href="index.html#future-scope">best practices</a> guidance discusses how failures should be handled. See the <a href="state-diagram.html">Appointment State Diagram</a> for further details on statuses and state transitions.</p>
 
 <h3 id="usage-11" class="no_toc">Usage</h3>
 
@@ -1537,11 +1551,11 @@ POST [base]/Appointment/$book
     </ol>
   </li>
   <li>
-    <p><a name="e84a0972-34b1-4ba0-818f-d03d4c40049a">​</a>Note the Server SHALL declare support for JSON, XML, or FHIRPath Patch in the <a href="server-capstatement.html">CapabilityStatement</a></p>
+    <p><a name="3f765c98-d945-4cd6-85d3-9e8bc218ffcf">​</a>Note the Server SHALL declare support for JSON, XML, or FHIRPath Patch in the <a href="server-capstatement.html">CapabilityStatement</a></p>
   </li>
 </ul>
 
-<h3 id="examples-2" class="no_toc">Examples</h3>
+<h3 id="examples-1" class="no_toc">Examples</h3>
 
 <h5 id="a-json-example" class="no_toc">A JSON example:</h5>
 
@@ -1713,9 +1727,9 @@ POST [base]/Appointment/$book
 
 <p><br/></p>
 
-<h2 id="releasing-holds">Releasing holds</h2>
+<h2 id="releasing-holds">Releasing Holds</h2>
 
-<p>The Client should cancel a hold on an appointment before it expires.  The length of an appointment hold is determined by the scheduling service’s business rules, after which the status of the Appointment may change.</p>
+<p>If not booking a held appointment, the Client should release  the hold on it before it expires.  The length of an appointment hold is determined by the scheduling service’s business rules, after which the status of the Appointment may change.  See the <a href="state-diagram.html">Appointment State Diagram</a> for further details on statuses and state transitions.</p>
 
   <!-- all this Bootstrap html for getting an image to fit nicely in text - 640 pix wide -->
 
@@ -1730,17 +1744,183 @@ POST [base]/Appointment/$book
 <p></p>
 </div>
 
-<p>Releasing holds has the potential to introduces complex failure states. The <a href="index.html#best-practices">best practices</a> guidance discusses how failures should be handled. See the <a href="state-diagram.html">Appointment State Diagram</a> for further details on statuses and state transitions.</p>
+<p>Releasing holds has the potential to introduces complex failure states. The <a href="index.html#future-scope">best practices</a> guidance discusses how failures should be handled.</p>
 
 <h3 id="usage-12" class="no_toc">Usage</h3>
 
-<p>This transaction is identical to canceling an appointment as shown <a href="patient-scheduling.html#cancelingrescheduling-appointments">above</a>.</p>
+<p>This transaction uses the standard FHIR <a href="http://build.fhir.org/http.html#patch"><code class="highlighter-rouge">PATCH</code></a> transaction as described in the <a href="patient-scheduling.html#usage-11">Canceling/Rescheduling Appointments</a> above.</p>
 
-<h3 id="examples-3" class="no_toc">Examples</h3>
+<h3 id="examples-2" class="no_toc">Examples</h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>todo inline example
+<h5 id="a-json-example-1" class="no_toc">A JSON example:</h5>
+
+<p>Target Appointment:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"resourceType"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Appointment"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"held-appt1"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"meta"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"profile"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"text"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="err">...snip...</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"serviceType"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="err">...snip...</span><span class="w">
+</span></code></pre>
+</div>
+
+<p><em>Cancel using PATCH</em></p>
+
+<p><code class="highlighter-rouge">PATCH [Base]/Appointment/[id]</code></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>     **Request body**
+
+     [
+     { "op": "replace", "path": "Appointment/status", "value": "cancelled" },
+     ]
 </code></pre>
 </div>
+
+<p>Resulting released Appointment:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"resourceType"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Appointment"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"held-appt1"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"meta"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"profile"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"text"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="err">...snip...</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"cancelled"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"serviceType"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="err">...snip...</span><span class="w">
+</span></code></pre>
+</div>
+
+<h5 id="an-xml-example-1" class="no_toc">An XML example:</h5>
+
+<p>Target Appointment:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+ &lt;Appointment xmlns="http://hl7.org/fhir"&gt;
+   &lt;id value="held-appt1"/&gt;
+   &lt;meta&gt;
+     &lt;profile
+              value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt"/&gt;
+   &lt;/meta&gt;
+   &lt;text&gt;
+  ...snip
+   &lt;/text&gt;
+   &lt;status value="booked"/&gt;
+   &lt;serviceType&gt;
+    ...snip...
+</code></pre>
+</div>
+
+<p><em>Cancel using PATCH</em></p>
+
+<p><code class="highlighter-rouge">PATCH [Base]/Appointment/[id]</code></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> **Request body**
+
+ &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+ &lt;diff xmlns="http://hl7.org/fhir"&gt;
+   &lt;replace sel="Appointment/status/@value"&gt;cancelled&lt;/replace&gt;
+ &lt;/diff&gt;
+</code></pre>
+</div>
+
+<p>Resulting released Appointment:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+ &lt;Appointment xmlns="http://hl7.org/fhir"&gt;
+   &lt;id value="held-appt1"/&gt;
+   &lt;meta&gt;
+     &lt;profile
+              value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt"/&gt;
+   &lt;/meta&gt;
+   &lt;text&gt;
+  ...snip...
+   &lt;/text&gt;
+   &lt;status value="cancelled"/&gt;
+  ...snip...
+</code></pre>
+</div>
+
+<h5 id="a-fhirpathhttphl7orgfhirpath-example-1" class="no_toc">A <a href="http://hl7.org/fhirpath/">FHIRPath</a> example:</h5>
+
+<p>Target Appointment:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"resourceType"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Appointment"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"held-appt1"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"meta"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"profile"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"text"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="err">...snip...</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"booked"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"serviceType"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="err">...snip...</span><span class="w">
+</span></code></pre>
+</div>
+
+<p><em>Cancel using PATCH</em></p>
+
+<p><code class="highlighter-rouge">PATCH [Base]/Appointment/[id]</code></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>     **Request body**
+     &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+     &lt;Parameters xmlns="http://hl7.org/fhir"&gt;
+       &lt;parameter&gt;
+         &lt;name value="operation"/&gt;
+         &lt;part&gt;
+           &lt;name value="type"/&gt;
+           &lt;valueCode value="replace"/&gt;
+         &lt;/part&gt;
+         &lt;part&gt;
+           &lt;name value="path"/&gt;
+           &lt;valueString value="status"/&gt;
+         &lt;/part&gt;
+         &lt;part&gt;
+           &lt;name value="value"/&gt;
+           &lt;valueCode value="cancelled"/&gt;
+         &lt;/part&gt;
+       &lt;/parameter&gt;
+     &lt;/Parameters&gt;
+</code></pre>
+</div>
+
+<p>Resulting released Appointment:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"resourceType"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Appointment"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"held-appt1"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"meta"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"profile"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"text"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="err">...snip...</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"cancelled"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"serviceType"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="err">...snip...</span><span class="w">
+</span></code></pre>
+</div>
+
+<p><br/></p>
 
 <h2 id="retrieving-appointments">Retrieving appointments</h2>
 
@@ -1782,7 +1962,7 @@ POST [base]/Appointment/$book
 
 <p>GET [base]/Appointment?patient=[id]{&amp;status=[status]}{&amp;date=[date]{&amp;date=[date]}}{&amp;practitioner=[id]}</p>
 
-<h3 id="examples-4" class="no_toc">Examples</h3>
+<h3 id="examples-3" class="no_toc">Examples</h3>
 
 <p>Search for all appointments for a patient with Resource ID 1234: <code class="highlighter-rouge">GET [base]/Appointment?patient=1234</code></p>
 
@@ -1822,7 +2002,7 @@ POST [base]/Appointment/$book
   <div class="container">    <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Sun, Mar 18, 2018 23:15-0700. |
+            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Mon, Mar 19, 2018 16:22-0700. |
                <!-- <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a rel="license" style="color: #81BEF7" href="http://hl7.org/fhir/STU3license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a>
         

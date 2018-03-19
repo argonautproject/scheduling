@@ -291,6 +291,17 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "ValueSet-argo-slot-status.html"
+            }
+          ],
+          "sourceReference": {
+            "reference": "ValueSet/argo-slot-status"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
               "valueUri": "ValueSet-slot-bundle-type.html"
             }
           ],

@@ -298,6 +298,17 @@
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "ValueSet-argo-slot-status.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/ValueSet/argo-slot-status>;
+         fhir:Reference.reference [ fhir:value "ValueSet/argo-slot-status" ]
+       ]
+     ], [
+       fhir:index 24;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
          fhir:Extension.valueUri [ fhir:value "ValueSet-slot-bundle-type.html" ]
        ];
        fhir:ImplementationGuide.package.resource.sourceReference [
@@ -305,7 +316,7 @@
          fhir:Reference.reference [ fhir:value "ValueSet/slot-bundle-type" ]
        ]
      ], [
-       fhir:index 24;
+       fhir:index 25;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
@@ -316,7 +327,7 @@
          fhir:Reference.reference [ fhir:value "ValueSet/sct-services" ]
        ]
      ], [
-       fhir:index 25;
+       fhir:index 26;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
@@ -327,7 +338,7 @@
          fhir:Reference.reference [ fhir:value "ValueSet/appt-type" ]
        ]
      ], [
-       fhir:index 26;
+       fhir:index 27;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
@@ -338,7 +349,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/slot-bundle" ]
        ]
      ], [
-       fhir:index 27;
+       fhir:index 28;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
@@ -349,7 +360,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/prefetch-slot" ]
        ]
      ], [
-       fhir:index 28;
+       fhir:index 29;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
@@ -360,7 +371,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/extension-subscription-triggerevent" ]
        ]
      ], [
-       fhir:index 29;
+       fhir:index 30;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
@@ -371,7 +382,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/extension-subscription-payloadprofile" ]
        ]
      ], [
-       fhir:index 30;
+       fhir:index 31;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
@@ -382,7 +393,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/extension-subscription-eventfocus" ]
        ]
      ], [
-       fhir:index 31;
+       fhir:index 32;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
@@ -393,7 +404,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/extension-status-reason" ]
        ]
      ], [
-       fhir:index 32;
+       fhir:index 33;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
@@ -404,7 +415,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/avail-bundle" ]
        ]
      ], [
-       fhir:index 33;
+       fhir:index 34;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
@@ -415,7 +426,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/argo-sub-notif" ]
        ]
      ], [
-       fhir:index 34;
+       fhir:index 35;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
@@ -426,7 +437,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/argo-sched-notif" ]
        ]
      ], [
-       fhir:index 35;
+       fhir:index 36;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
@@ -437,7 +448,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/argo-coverage" ]
        ]
      ], [
-       fhir:index 36;
+       fhir:index 37;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
@@ -448,7 +459,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/argo-appt" ]
        ]
      ], [
-       fhir:index 37;
+       fhir:index 38;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
@@ -459,7 +470,7 @@
          fhir:Reference.reference [ fhir:value "OperationDefinition/slot-prefetch" ]
        ]
      ], [
-       fhir:index 38;
+       fhir:index 39;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
@@ -470,7 +481,7 @@
          fhir:Reference.reference [ fhir:value "OperationDefinition/appointment-hold" ]
        ]
      ], [
-       fhir:index 39;
+       fhir:index 40;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
@@ -481,7 +492,7 @@
          fhir:Reference.reference [ fhir:value "OperationDefinition/appointment-find" ]
        ]
      ], [
-       fhir:index 40;
+       fhir:index 41;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
@@ -492,7 +503,7 @@
          fhir:Reference.reference [ fhir:value "OperationDefinition/appointment-book" ]
        ]
      ], [
-       fhir:index 41;
+       fhir:index 42;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
@@ -503,7 +514,7 @@
          fhir:Reference.reference [ fhir:value "ConceptMap/visit-snomed-map" ]
        ]
      ], [
-       fhir:index 42;
+       fhir:index 43;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
@@ -514,7 +525,7 @@
          fhir:Reference.reference [ fhir:value "ConceptMap/visit-appt-map" ]
        ]
      ], [
-       fhir:index 43;
+       fhir:index 44;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
@@ -525,7 +536,7 @@
          fhir:Reference.reference [ fhir:value "CodeSystem/visit-type" ]
        ]
      ], [
-       fhir:index 44;
+       fhir:index 45;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
@@ -536,7 +547,7 @@
          fhir:Reference.reference [ fhir:value "CodeSystem/status-reason" ]
        ]
      ], [
-       fhir:index 45;
+       fhir:index 46;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
@@ -547,7 +558,7 @@
          fhir:Reference.reference [ fhir:value "CodeSystem/appt-type" ]
        ]
      ], [
-       fhir:index 46;
+       fhir:index 47;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
@@ -558,7 +569,7 @@
          fhir:Reference.reference [ fhir:value "CapabilityStatement/server" ]
        ]
      ], [
-       fhir:index 47;
+       fhir:index 48;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];

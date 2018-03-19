@@ -11,11 +11,11 @@
 	<description value="Request to book a selected Appointment. This operation follows the appointment availability and optional hold interactiona.  This operaton completes the booking of an appointment.  The server determines if the nominated appointment is still available (i.e., all the required actors and physical assets needed for the appointment are still available) and either accepts or rejects the hold request and updates the resource status accordingly.  See the [Appointment State Diagram](state-diagram.html) for further details on statuses."/>
 	<idempotent value="false"/>
 	<code value="book"/>
-	<comment value="This operation is not [idempotent](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html) and may only be invoked by performing an HTTP POST.&#xD;&#xD; It is assumed that the server has identified and secured the context appropriately, and can either associate the authorization context with the patient(s), or determine whether the context has the rights to the nominated patient(s), if there is one.  Specifying the relationship between the context, a user and patient records is outside the scope of this specification"/>
+	<comment value="- This operation is not [idempotent](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html) and may only be invoked by performing an HTTP POST.&#xD;&#xD;- When using the `appt-resource` as the *only* input parameter, the payload can be *either* the Appointment resource or use the [Parameters]({{site.data.fhir.path}}/parameters.html) format as shown in the examples below"/>
 	<resource value="Appointment"/>
 	<system value="false"/>
 	<type value="true"/>
-	<instance value="false"/>
+	<instance value="true"/>
 	<parameter>
 		<name value="appt-id"/>
 		<use value="in"/>

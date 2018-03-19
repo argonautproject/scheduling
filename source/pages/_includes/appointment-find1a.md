@@ -1,22 +1,22 @@
 appointment-find1a.md
 
 {: #scenario-1a}
-~~~
-Scenario Details:  Use the operation to fetch a maximum of the soonest 3 open appointments available within the next 2 days for Dr Y at the Napa location.
 
+**Scenario 1a:**
 
-##### Request
+Use the operation to fetch a maximum of the soonest 3 open appointments available within the next 2 days for Dr Y at the Napa location.
 
-**Using `GET`**
+**Request using `GET`**
 
 `GET [base]/Appointment/$find?start=2017-07-15T20:00:00Z&end=2017-07-17T20:00:00Z&provider=Practitioner/dr-y&location=Napa&_count=3`
 
-**Using `POST`**
+**Request using `POST`**
 
 `POST [base]/Appointment/$find&_count=3`
 
-    **payload:**
+**Request body**
 
+~~~
     {
       "resourceType": "Parameters",
       "id": "pcp-appts",
@@ -40,10 +40,18 @@ Scenario Details:  Use the operation to fetch a maximum of the soonest 3 open ap
         }
     ]
     }
+~~~
 
-##### Response ([Operation$find Example 1a](Bundle-hal-dr-y-appts.html))
+**Response**
 
+~~~
+HTTP/1.1 200 OK
+[other headers]
+~~~
 
+**Response body**
+
+~~~
     {
       "resourceType": "Bundle",
       "id": "hal-dr-y-appts",

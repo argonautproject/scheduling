@@ -289,7 +289,6 @@
 			<pre>http://fhir.org/guides/argonaut-scheduling/OperationDefinition/appointment-find</pre>
 			<div>
 				<p>Searches for availability for a future appointment(s) within a time period of defined by date range input parameters.  If neither a start or end date is given then the maximum period as defined by local business rules and starting from when the  operation was transacted will be used.   Other input parameter further refine the search and include  practitioner references, specialties, visit type, locations, and patient information. From these criteria, a system determines which schedulable resources ( e.g., people, rooms, equiibment) are needed for the visit, and provides time slots where all required resources are available.</p>
-				<p>Note that for input parameters that are codes, the simple FHIR <a href="http://build.fhir.org/search.html#token">token</a> search parameter type is used instead of the complex <code>Coding</code> datatype.  Also, the simple <code>uri</code> datatype is used instead of the complex <code>Reference</code> datatype for resources references.  This allows either the 'GET'  or the 'POST' syntax to be used to initiate the interaction in many cases.  Examples of both are shown in the below.</p>
 			</div>
 			<p>URL: [base]/Appointment/$find</p>
 			<p>Parameters</p>
@@ -476,12 +475,12 @@
 			</table>
 			<div>
 				<ul>
-					<li>The server is responsible for determining the first/best available appointment options to return.</li>
+          <li>For input parameters that are codes, the simple FHIR <a href="http://build.fhir.org/search.html#token">token</a> search parameter type is used instead of the complex <code>Coding</code> datatype.  Also, the simple <code>uri</code> datatype is used instead of the complex <code>Reference</code> datatype for resources references.  This allows either the 'GET'  or the 'POST' syntax to be used to initiate the interaction in many cases.  Examples of both are shown below.</li>
+          <li>If more than one actor type is present, the response SHOULD contain appointments with <em>all</em> of these actors (i.e, this is a logical 'AND').  If an actor type is repeated the response SHOULD contain appointments with <em>any</em> of these actors and SHOULD be interpreted as the order of preference (i.e. this is a logical 'OR' and does not drive a joint appointment with multiple practitioners. locations or organizations).  Ultimately the server is responsible for determining the first/best available appointment options to return.</li>
 					<li>References can be to an absolute URL, but servers only perform operations on their own resources.</li>
 					<li>To set the upper limit on the total number of available appointment options to return use the standard <a href="http://build.fhir.org/search.html#count">
 							<code>_count</code>
 						</a> search parameter.  See the examples below for how this is implemented.</li>
-					<li>If there is nominated patient, it is assumed that the server has identified and secured the context appropriately, and can either associate the authorization context with a single patient, or determine whether the context has the rights to the nominated patient, if there is one.  Specifying the relationship between the context, a user and patient records is outside the scope of this specification</li>
 				</ul>
 			</div>
 		</div>
@@ -503,129 +502,144 @@
 
 <p>appointment-find1a.md</p>
 
-<div id="scenario-1a" class="highlighter-rouge"><pre class="highlight"><code>Scenario Details:  Use the operation to fetch a maximum of the soonest 3 open appointments available within the next 2 days for Dr Y at the Napa location.
+<p id="scenario-1a"><strong>Scenario 1a:</strong></p>
 
+<p>Use the operation to fetch a maximum of the soonest 3 open appointments available within the next 2 days for Dr Y at the Napa location.</p>
 
-##### Request
+<p><strong>Request using <code class="highlighter-rouge">GET</code></strong></p>
 
-**Using `GET`**
+<p><code class="highlighter-rouge">GET [base]/Appointment/$find?start=2017-07-15T20:00:00Z&amp;end=2017-07-17T20:00:00Z&amp;provider=Practitioner/dr-y&amp;location=Napa&amp;_count=3</code></p>
 
-`GET [base]/Appointment/$find?start=2017-07-15T20:00:00Z&amp;end=2017-07-17T20:00:00Z&amp;provider=Practitioner/dr-y&amp;location=Napa&amp;_count=3`
-
-**Using `POST`**
-
-`POST [base]/Appointment/$find&amp;_count=3`
-
-    **payload:**
-
-    {
-      "resourceType": "Parameters",
-      "id": "pcp-appts",
-      "parameter": [
-        {
-          "name": "start",
-          "valueDateTime" : "2017-07-15T20:00:00Z"
-        },
-        {
-          "name": "end",
-            "valueDateTime" : "2017-07-17T20:00:00Z"
-        },
-        {
-          "name": "provider",
-          "valueUri": ["Practitioner/dr-y"]
-          }
-        },
-        {
-          "name": "location",
-          "valueString": ["Napa"]
-        }
-    ]
-    }
-
-##### Response ([Operation$find Example 1a](Bundle-hal-dr-y-appts.html))
-
-
-    {
-      "resourceType": "Bundle",
-      "id": "hal-dr-y-appts",
-      "type": "searchset",
-      "total": 3,
-      "entry": [{
-        "fullUrl": "http://server/path/Appointment/proposed-appt-1",
-        "resource": {
-          "resourceType": "Appointment",
-          "id": "proposed-appt-1",
-          .. snip ...
-        },
-        "fullUrl": "http://server/path/Appointment/proposed-appt-2",
-        "resource": {
-          "resourceType": "Appointment",
-          "id": "proposed-appt-2",
-          .. snip ...
-        },
-        "fullUrl": "http://server/path/Appointment/proposed-appt-3",
-        "resource": {
-          "resourceType": "Appointment",
-          "id": "proposed-appt-3",
-          .. snip ...
-        },
-        "fullUrl": "http://server/path/OperationOutcome/oo-for-dr-y-appts",
-        "resource": {
-          "resourceType": "OperationOutcome",
-          "id": "oo-for-dr-y-appts",
-          .. snip ...
-        }
-      ]
-    }
-</code></pre>
-</div>
-
-<h4 id="scenario-1b">Scenario 1b: Use the operation to fetch a maximum of the soonest 3 open appointments available within the next 2 days for the requested service at the Napa location.</h4>
-<p><a href="https://github.com/argonautproject/scheduling/wiki/Use-Cases#scenario-1b-existing-patient-schedules-a-service-directly-with-their-health-care-service">Scenario Details</a></p>
-
-<h5 id="request-using-get-syntax">Request using <code class="highlighter-rouge">GET</code> Syntax</h5>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>GET  [base]/Appointment/$find?start=2017-07-15T20:00:00Z&amp;end=2017-07-17T20:00:00Z&amp;service-type=http://snomed.info/sct|708175003
-&amp;appt-type=http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-type|urgent&amp;location=Napa
-</code></pre>
-</div>
-
-<h5 id="request-using-post-syntax">Request using <code class="highlighter-rouge">POST</code> Syntax</h5>
+<p><strong>Request using <code class="highlighter-rouge">POST</code></strong></p>
 
 <p><code class="highlighter-rouge">POST [base]/Appointment/$find&amp;_count=3</code></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>**payload:**
+<p><strong>Request body</strong></p>
 
-{
-  "resourceType": "Parameters",
-  "id": "pcp-appts",
-  "parameter": [
-    {
-      "name": "start",
-      "valueDateTime" : "2017-07-15T20:00:00Z"
-    },
-    {
-      "name": "end",
-        "valueDateTime" : "2017-07-17T20:00:00Z"
-    },
-    {
-      "name": "appt-type",
-      "valueString": ["http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-type|urgent"]
-    },
-    {
-      "name": "service-type",
-      "valueString": ["http://snomed.info/sct|708175003"]
-    },
-    {
-      "name": "location",
-      "valueString": ["Napa"]
-    }
-]
-}
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="w">    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Parameters"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pcp-appts"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"parameter"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"start"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"valueDateTime"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-15T20:00:00Z"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"end"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"valueDateTime"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-17T20:00:00Z"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"provider"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"valueUri"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Practitioner/dr-y"</span><span class="p">]</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="err">}</span><span class="p">,</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"location"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"valueString"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Napa"</span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<p><strong>Response</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>HTTP/1.1 200 OK
+[other headers]
 </code></pre>
 </div>
 
-<h5 id="response">Response</h5>
+<p><strong>Response body</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="w">    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bundle"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hal-dr-y-appts"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"searchset"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"entry"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nt">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://server/path/Appointment/proposed-appt-1"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Appointment"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"proposed-appt-1"</span><span class="p">,</span><span class="w">
+          </span><span class="err">..</span><span class="w"> </span><span class="err">snip</span><span class="w"> </span><span class="err">...</span><span class="w">
+        </span><span class="err">}</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://server/path/Appointment/proposed-appt-2"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Appointment"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"proposed-appt-2"</span><span class="p">,</span><span class="w">
+          </span><span class="err">..</span><span class="w"> </span><span class="err">snip</span><span class="w"> </span><span class="err">...</span><span class="w">
+        </span><span class="err">}</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://server/path/Appointment/proposed-appt-3"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Appointment"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"proposed-appt-3"</span><span class="p">,</span><span class="w">
+          </span><span class="err">..</span><span class="w"> </span><span class="err">snip</span><span class="w"> </span><span class="err">...</span><span class="w">
+        </span><span class="err">}</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://server/path/OperationOutcome/oo-for-dr-y-appts"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OperationOutcome"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"oo-for-dr-y-appts"</span><span class="p">,</span><span class="w">
+          </span><span class="err">..</span><span class="w"> </span><span class="err">snip</span><span class="w"> </span><span class="err">...</span><span class="w">
+        </span><span class="err">}</span><span class="w">
+      </span><span class="err">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<p>appointment-find1b.md</p>
+
+<p id="scenario-1b"><strong>Scenario 1b:</strong></p>
+
+<p>Use the operation to fetch a maximum of the soonest 3 open appointments available within the next 2 days for the requested service at the Napa location.</p>
+
+<p><strong>Request using <code class="highlighter-rouge">GET</code></strong></p>
+
+<p><code class="highlighter-rouge">[base]/Appointment/$find?start=2017-07-15T20:00:00Z&amp;end=2017-07-17T20:00:00Z&amp;service-type=http://snomed.info/sct|708175003
+&amp;appt-type=http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-type|urgent&amp;location=Napa</code></p>
+
+<p><strong>Request using <code class="highlighter-rouge">POST</code></strong></p>
+
+<p><code class="highlighter-rouge">POST [base]/Appointment/$find&amp;_count=3</code></p>
+
+<p><strong>Request body</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Parameters"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pcp-appts"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"parameter"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"start"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"valueDateTime"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-15T20:00:00Z"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"end"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"valueDateTime"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-17T20:00:00Z"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"appt-type"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"valueString"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-type|urgent"</span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"service-type"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"valueString"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"http://snomed.info/sct|708175003"</span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"location"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"valueString"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Napa"</span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<p><strong>Response</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>HTTP/1.1 200 OK
+[other headers]
+</code></pre>
+</div>
+
+<p><strong>Response body</strong></p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bundle"</span><span class="p">,</span><span class="w">
@@ -662,45 +676,56 @@
 </span></code></pre>
 </div>
 
-<h4 id="scenario-2a">Scenario 2a: Use the operation to ‘prefetch’ all of Dr Y’s open appointments for the Napa location for the next month.</h4>
+<p>appointment-find2a.md</p>
 
-<p><a href="https://github.com/argonautproject/scheduling/wiki/Use-Cases#scenario-2a-new-patient-schedules-an-appointment-with-a-provider-without-being-in-health-system">Scenario Details</a></p>
+<p id="scenario-2a"><strong>Scenario 2a:</strong></p>
+
+<p>Use the operation to fetch all of Dr Y’s open appointments for the Napa location for the next month.</p>
+
+<p><strong>Request using <code class="highlighter-rouge">GET</code></strong></p>
 
 <p><code class="highlighter-rouge">GET [base]/Appointment/$find?start=2017-07-15T20:00:00Z&amp;end=2017-08-17T20:00:00Z&amp;
  provider=Practitioner/dr-y&amp;location=Napa</code></p>
 
-<p><strong>Using <code class="highlighter-rouge">POST</code></strong></p>
+<p><strong>Request using <code class="highlighter-rouge">POST</code></strong></p>
 
-<p><code class="highlighter-rouge">POST [base]/Appointment/$find</code></p>
+<p><code class="highlighter-rouge">POST [base]/Appointment/$find&amp;_count=3</code></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>**payload:**
+<p><strong>Request body</strong></p>
 
-{
-  "resourceType": "Parameters",
-  "id": "pcp-appts",
-  "parameter": [
-    {
-      "name": "start",
-      "valueDateTime" : "2017-07-15T20:00:00Z"
-    },
-    {
-      "name": "end",
-        "valueDateTime" : "2017-07-17T20:00:00Z"
-    },
-    {
-      "name": "provider",
-      "valueUri": ["Practitioner/dr-y"]
-    },
-    {
-      "name": "location",
-      "valueString": ["Napa"]
-    }
-]
-}
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Parameters"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pcp-appts"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"parameter"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"start"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"valueDateTime"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-15T20:00:00Z"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"end"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"valueDateTime"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-17T20:00:00Z"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"provider"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"valueUri"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Practitioner/dr-y"</span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"location"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"valueString"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Napa"</span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<p><strong>Response</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>HTTP/1.1 200 OK
+[other headers]
 </code></pre>
 </div>
 
-<h5 id="response-1">Response</h5>
+<p><strong>Response body</strong></p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bundle"</span><span class="p">,</span><span class="w">
@@ -738,53 +763,59 @@
 </span></code></pre>
 </div>
 
-<h4 id="scenario-2b">Scenario 2b: Use the operation to ‘prefetch’ all open appointments for dermatologists in Napa location for the next month.</h4>
+<p>appointment-find2b.md</p>
 
-<p><a href="https://github.com/argonautproject/scheduling/wiki/Use-Cases#scenario-2b-patient-discovers-and-schedules-a-service-without-being-in-a-health-system">Scenario Details</a></p>
+<p id="scenario-2b"><strong>Scenario 2b:</strong></p>
 
-<h5 id="request-using-get-syntax-1">Request using <code class="highlighter-rouge">GET</code> Syntax</h5>
+<p>Use the operation to fetch all open appointments for dermatologists in Napa location for the next month.
+<strong>Request using <code class="highlighter-rouge">GET</code></strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>GET [base]/Appointment/$find?start=2017-07-15T20:00:00Z&amp;end=2017-08-17T20:00:00Z&amp;appt-type=http://hl7.org/fhir/v2/0276|ROUTINE&amp;
- specialty=http://snomed.info/sct|394582007&amp;location=Napa
+<p><code class="highlighter-rouge">GET [base]/Appointment/$find?start=2017-07-15T20:00:00Z&amp;end=2017-08-17T20:00:00Z&amp;appt-type=http://hl7.org/fhir/v2/0276|ROUTINE&amp;
+     specialty=http://snomed.info/sct|394582007&amp;location=Napa</code></p>
+
+<p><strong>Request using <code class="highlighter-rouge">POST</code></strong></p>
+
+<p><code class="highlighter-rouge">POST [base]/Appointment/$find&amp;_count=3</code></p>
+
+<p><strong>Request body</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Parameters"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prefetch-derm-appts"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"parameter"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"start"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"valueDateTime"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-15T20:00:00Z"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"end"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"valueDateTime"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-17T20:00:00Z"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"appt-type"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"valueString"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"http://hl7.org/fhir/v2/0276|ROUTINE"</span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"specialty"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"valueString"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"http://snomed.info/sct|394582007"</span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"location"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"valueString"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Napa"</span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<p><strong>Response</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>HTTP/1.1 200 OK
+[other headers]
 </code></pre>
 </div>
 
-<h5 id="request-using-post-syntax-1">Request using <code class="highlighter-rouge">POST</code> Syntax</h5>
-
-<p><code class="highlighter-rouge">POST [base]/Appointment/$find</code></p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>**payload:**
-
-{
-  "resourceType": "Parameters",
-  "id": "prefetch-derm-appts",
-  "parameter": [
-  {
-    "name": "start",
-    "valueDateTime" : "2017-07-15T20:00:00Z"
-  },
-  {
-    "name": "end",
-      "valueDateTime" : "2017-07-17T20:00:00Z"
-  },
-  {
-    "name": "appt-type",
-    "valueString": ["http://hl7.org/fhir/v2/0276|ROUTINE"]
-  },
-  {
-    "name": "specialty",
-    "valueString": ["http://snomed.info/sct|394582007"]
-  },
-  {
-    "name": "location",
-    "valueString": ["Napa"]
-  }
-]
-}
-</code></pre>
-</div>
-
-<h5 id="response-operationfind-example-2bbundle-prefetch-derm-apptshtml">Response (<a href="Bundle-prefetch-derm-appts.html">Operation$find Example 2b</a>)</h5>
+<p><strong>Response body</strong></p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bundle"</span><span class="p">,</span><span class="w">
@@ -820,6 +851,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 </div>
+
   <!--add inline examples here -->
 <!-- ============OperationDefinition CONTENT CONTENT=============== -->
 
@@ -864,7 +896,7 @@ Formats: <a href="OperationDefinition-appointment-find.html">Narrative</a>, <a h
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Sun, Mar 18, 2018 23:15-0700. |
+            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Mon, Mar 19, 2018 16:22-0700. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/STU3license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

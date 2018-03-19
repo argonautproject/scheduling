@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet xmlns="http://hl7.org/fhir">
+	<id value="argo-slot-status"/>
+	<url value="http://fhir.org/guides/argonaut-scheduling/ValueSet/argo-slot-status"/>
+	<version value="0.0.0"/>
+	<name value="Argonaut_Slot_Status_Codes"/>
+	<title value="Argonaut Slot Status Codes"/>
+	<status value="draft"/>
+	<date value="2018-03-19"/>
+	<description value="The free/busy status of the slot. This value set is a subset of the the FHIR core Slot value set excluding the 'busy-tentative' concept."/>
+	<compose>
+		<include>
+			<system value="http://hl7.org/fhir/slotstatus"/>
+		</include>
+		<exclude>
+			<system value="http://hl7.org/fhir/slotstatus"/>
+			<concept>
+				<code value="busy-tentative"/>
+			</concept>
+		</exclude>
+	</compose>
+</ValueSet>

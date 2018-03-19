@@ -333,10 +333,13 @@
   <tr><td>Comments</td><td><p>This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again.</p>
 </td></tr>
   <tr><td colspan="2" class="structure"><a name="Slot.extension"> </a><b>Slot.extension</b></td></tr>
-  <tr><td>Definition</td><td><p>An Extension</p>
+  <tr><td>Definition</td><td><p>May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.</p>
 </td></tr>
   <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
   <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Extension">Extension</a></td></tr>
+  <tr><td title="Other names by which this resource/element may be known">Alternate Names</td><td>extensions, user content</td></tr>
+  <tr><td>Comments</td><td><p>There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</p>
+</td></tr>
   <tr><td colspan="2" class="structure"><a name="Slot.modifierExtension"> </a><b>Slot.modifierExtension</b></td></tr>
   <tr><td>Definition</td><td><p>May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.</p>
 </td></tr>
@@ -384,10 +387,10 @@
   <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#Reference">Reference</a>(<a href="http://hl7.org/fhir/STU3/schedule.html" title="[CanonicalType[http://hl7.org/fhir/StructureDefinition/Schedule]]">Schedule</a>)</td></tr>
   <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#mustSupport">Must Support</a></td><td>true</td></tr>
   <tr><td colspan="2" class="structure"><a name="Slot.status"> </a><b>Slot.status</b></td></tr>
-  <tr><td>Definition</td><td><p>busy | free | busy-unavailable | busy-tentative | entered-in-error.</p>
+  <tr><td>Definition</td><td><p>busy | free | busy-unavailable | entered-in-error.</p>
 </td></tr>
   <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#conformance">Control</a></td><td>1..1</td></tr>
-  <tr><td><a href="http://hl7.org/fhir/STU3/terminologies.html">Binding</a></td><td>The free/busy status of the slot.<br/>The codes SHALL be taken from <a href="http://hl7.org/fhir/STU3/valueset-slotstatus.html">SlotStatus</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/STU3/terminologies.html">Binding</a></td><td>The free/busy status of the slot. This value set is a subset of the the FHIR core Slot value set excluding the 'busy-tentative' concept.<br/>The codes SHALL be taken from <a href="ValueSet-argo-slot-status.html">Argonaut_Slot_Status_Codes</a></td></tr>
   <tr><td><a href="http://hl7.org/fhir/STU3/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/STU3/datatypes.html#code">code</a></td></tr>
   <tr><td><a href="http://hl7.org/fhir/STU3/conformance-rules.html#mustSupport">Must Support</a></td><td>true</td></tr>
   <tr><td colspan="2" class="structure"><a name="Slot.start"> </a><b>Slot.start</b></td></tr>
@@ -448,7 +451,7 @@
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Sun, Mar 18, 2018 23:15-0700. |
+            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Mon, Mar 19, 2018 16:22-0700. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/STU3license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

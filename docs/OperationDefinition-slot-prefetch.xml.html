@@ -303,10 +303,9 @@
 			&lt;p&gt;The official URL for this operation definition is: &lt;/p&gt;
 			&lt;pre&gt;http://fhir.org/guides/argonaut-scheduling/OperationDefinition/slot-prefetch&lt;/pre&gt;
 			&lt;div&gt;
-				&lt;p&gt;This operation fetches available free slots for the 'initial load', update and reconciliation steps in the &lt;a href=&quot;patient-scheduling.html#use-case-3-prefetching-open-slots&quot;&gt;Prefetch Use Case&lt;/a&gt;.  The server determines which open slots to expose to the application for use in creating new appointments.  If neither a start or end date is given then the maximum period as defined by local business rules and starting from when the operation was transacted will be used.   The actors practitioner, organization and location further refine the search.   If more than one actor type is present, the response will contain slots with &lt;em&gt;all&lt;/em&gt; of these actors (i.e, this is a logical 'AND').  if an actor type is repeated, the response will contain slots with &lt;em&gt;any&lt;/em&gt; of these actors (i.e. this is a logical  'OR' and  does not drive a joint appointment with multiple practitioners. locations or organizations).&lt;/p&gt;
-				&lt;p&gt;Note that all input parameters are simple types allowing either the 'GET'  or the 'POST' syntax to be used to initiate the interaction.  Examples of both are shown below.&lt;/p&gt;
+				&lt;p&gt;This operation fetches available free slots for the 'initial load', update and reconciliation steps in the &lt;a href=&quot;patient-scheduling.html#use-case-3-prefetching-open-slots&quot;&gt;Prefetch Use Case&lt;/a&gt;.  The server determines which open slots to expose to the application for use in creating new appointments.  If neither a start or end date is given then the maximum period as defined by local business rules and starting from when the operation was transacted SHALL be used.   The actors practitioner, organization and location further refine the search.&lt;/p&gt;
 			&lt;/div&gt;
-			&lt;p&gt;URL: [base]/Slot//$find&lt;/p&gt;
+			&lt;p&gt;URL: [base]/Slot/$prefetch&lt;/p&gt;
 			&lt;p&gt;Parameters&lt;/p&gt;
 			&lt;table class=&quot;grid&quot;&gt;
 				&lt;tr&gt;
@@ -397,7 +396,7 @@
 					&lt;td/&gt;
 					&lt;td&gt;
 						&lt;div&gt;
-							&lt;p&gt;A Location reference when performing an operation where the Location resource &lt;code&gt;id&lt;/code&gt; is known.  If multiple location references are listed, the order will interpreted as the order of preference. The response will contain slots with any of these actors (i.e. this does not drive joint appointment with multiple locations)&lt;/p&gt;
+							&lt;p&gt;A Location reference when performing an operation where the Location resource &lt;code&gt;id&lt;/code&gt; is known.&lt;/p&gt;
 						&lt;/div&gt;
 					&lt;/td&gt;
 				&lt;/tr&gt;
@@ -415,7 +414,11 @@
 				&lt;/tr&gt;
 			&lt;/table&gt;
 			&lt;div&gt;
-				&lt;p&gt;References can be to an absolute URL, but servers only perform operations on their own resources.&lt;/p&gt;
+        &lt;ul&gt;
+          &lt;li&gt;All input parameters are simple types allowing either the &lt;code&gt;GET&lt;/code&gt; or the &lt;code&gt;POST&lt;/code&gt; syntax to be used to initiate the interaction.  Examples of both are shown below.&lt;/li&gt;
+          &lt;li&gt;If more than one actor type is present, the response SHALL contain slots with &lt;em&gt;all&lt;/em&gt; of these actors (i.e, this is a logical 'AND').  If an actor type is repeated the response SHALL contain slots with &lt;em&gt;any&lt;/em&gt; of these actors and the order SHOULD be interpreted as the order of preference (i.e. this is a logical  'OR' and does not drive a joint appointment with multiple practitioners. locations or organizations).&lt;/li&gt;
+          &lt;li&gt;References can be to an absolute URL, but servers only perform operations on their own resources.&lt;/li&gt;
+        &lt;/ul&gt;
 			&lt;/div&gt;
 		&lt;/div&gt;
   &lt;/text&gt;
@@ -427,9 +430,7 @@
   &lt;<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.kind">kind</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;operation&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.date">date</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#dateTime">value</a>=&quot;2018-02-12T00:00:00-08:00&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.description">description</a>
-               <a href="http://hl7.org/fhir/STU3/datatypes.html#markdown">value</a>=&quot;This operation fetches available free slots for the &amp;#39;initial load&amp;#39;, update and reconciliation steps in the [Prefetch Use Case](patient-scheduling.html#use-case-3-prefetching-open-slots).  The server determines which open slots to expose to the application for use in creating new appointments.  If neither a start or end date is given then the maximum period as defined by local business rules and starting from when the operation was transacted will be used.   The actors practitioner, organization and location further refine the search.   If more than one actor type is present, the response will contain slots with *all* of these actors (i.e, this is a logical &amp;#39;AND&amp;#39;).  if an actor type is repeated, the response will contain slots with *any* of these actors (i.e. this is a logical  &amp;#39;OR&amp;#39; and  does not drive a joint appointment with multiple practitioners. locations or organizations).  
-
- Note that all input parameters are simple types allowing either the &amp;#39;GET&amp;#39;  or the &amp;#39;POST&amp;#39; syntax to be used to initiate the interaction.  Examples of both are shown below.&quot;/&gt;
+               <a href="http://hl7.org/fhir/STU3/datatypes.html#markdown">value</a>=&quot;This operation fetches available free slots for the &amp;#39;initial load&amp;#39;, update and reconciliation steps in the [Prefetch Use Case](patient-scheduling.html#use-case-3-prefetching-open-slots).  The server determines which open slots to expose to the application for use in creating new appointments.  If neither a start or end date is given then the maximum period as defined by local business rules and starting from when the operation was transacted SHALL be used.   The actors practitioner, organization and location further refine the search.&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.jurisdiction">jurisdiction</a>&gt;
     &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
       &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#uri">value</a>=&quot;urn:iso:std:iso:3166&quot;/&gt;
@@ -439,7 +440,9 @@
   &lt;/jurisdiction&gt;
   &lt;<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.code">code</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;find&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.comment">comment</a>
-           <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>=&quot;References can be to an absolute URL, but servers only perform operations on their own resources.&quot;/&gt;
+           <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>=&quot;Note that all input parameters are simple types allowing either the &amp;#39;GET&amp;#39;  or the &amp;#39;POST&amp;#39; syntax to be used to initiate the interaction.  Examples of both are shown below.
+
+ -  If more than one actor type is present, the response SHALL contain slots with *all* of these actors (i.e, this is a logical &amp;#39;AND&amp;#39;).  If an actor type is repeated, the response SHALL contain slots with *any* of these actors and the order SHOULD be interpreted as the order of preference (i.e. this is a logical  &amp;#39;OR&amp;#39; and  does not drive a joint appointment with multiple practitioners. locations or organizations).&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.resource">resource</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;Slot/&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.system">system</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#boolean">value</a>=&quot;false&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.type">type</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#boolean">value</a>=&quot;true&quot;/&gt;
@@ -496,7 +499,7 @@
     &lt;<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.parameter.min">min</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#integer">value</a>=&quot;0&quot;/&gt;
     &lt;<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.parameter.max">max</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>=&quot;*&quot;/&gt;
     &lt;<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.parameter.documentation">documentation</a>
-                   <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>=&quot;A Location reference when performing an operation where the Location resource `id` is known.  If multiple location references are listed, the order will interpreted as the order of preference. The response will contain slots with any of these actors (i.e. this does not drive joint appointment with multiple locations)&quot;/&gt;
+                   <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>=&quot;A Location reference when performing an operation where the Location resource `id` is known.&quot;/&gt;
     &lt;<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.parameter.type">type</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;uri&quot;/&gt;
   &lt;/parameter&gt;
   &lt;<a href="http://hl7.org/fhir/STU3/operationdefinition.html#OperationDefinition.parameter">parameter</a>&gt;
@@ -555,7 +558,7 @@ Formats: <a href="OperationDefinition-slot-prefetch.html">Narrative</a>, <a href
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Sun, Mar 18, 2018 23:15-0700. |
+            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Mon, Mar 19, 2018 16:22-0700. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/STU3license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

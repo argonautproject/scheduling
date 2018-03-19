@@ -10,7 +10,6 @@
 			<pre>http://fhir.org/guides/argonaut-scheduling/OperationDefinition/appointment-find</pre>
 			<div>
 				<p>Searches for availability for a future appointment(s) within a time period of defined by date range input parameters.  If neither a start or end date is given then the maximum period as defined by local business rules and starting from when the  operation was transacted will be used.   Other input parameter further refine the search and include  practitioner references, specialties, visit type, locations, and patient information. From these criteria, a system determines which schedulable resources ( e.g., people, rooms, equiibment) are needed for the visit, and provides time slots where all required resources are available.</p>
-				<p>Note that for input parameters that are codes, the simple FHIR <a href="http://build.fhir.org/search.html#token">token</a> search parameter type is used instead of the complex <code>Coding</code> datatype.  Also, the simple <code>uri</code> datatype is used instead of the complex <code>Reference</code> datatype for resources references.  This allows either the 'GET'  or the 'POST' syntax to be used to initiate the interaction in many cases.  Examples of both are shown in the below.</p>
 			</div>
 			<p>URL: [base]/Appointment/$find</p>
 			<p>Parameters</p>
@@ -197,12 +196,12 @@
 			</table>
 			<div>
 				<ul>
-					<li>The server is responsible for determining the first/best available appointment options to return.</li>
+          <li>For input parameters that are codes, the simple FHIR <a href="http://build.fhir.org/search.html#token">token</a> search parameter type is used instead of the complex <code>Coding</code> datatype.  Also, the simple <code>uri</code> datatype is used instead of the complex <code>Reference</code> datatype for resources references.  This allows either the 'GET'  or the 'POST' syntax to be used to initiate the interaction in many cases.  Examples of both are shown below.</li>
+          <li>If more than one actor type is present, the response SHOULD contain appointments with <em>all</em> of these actors (i.e, this is a logical 'AND').  If an actor type is repeated the response SHOULD contain appointments with <em>any</em> of these actors and SHOULD be interpreted as the order of preference (i.e. this is a logical 'OR' and does not drive a joint appointment with multiple practitioners. locations or organizations).  Ultimately the server is responsible for determining the first/best available appointment options to return.</li>
 					<li>References can be to an absolute URL, but servers only perform operations on their own resources.</li>
 					<li>To set the upper limit on the total number of available appointment options to return use the standard <a href="http://build.fhir.org/search.html#count">
 							<code>_count</code>
 						</a> search parameter.  See the examples below for how this is implemented.</li>
-					<li>If there is nominated patient, it is assumed that the server has identified and secured the context appropriately, and can either associate the authorization context with a single patient, or determine whether the context has the rights to the nominated patient, if there is one.  Specifying the relationship between the context, a user and patient records is outside the scope of this specification</li>
 				</ul>
 			</div>
 		</div>
@@ -214,7 +213,7 @@
 	<status value="draft"/>
 	<kind value="operation"/>
 	<date value="2017-10-31T00:00:00-07:00"/>
-	<description value="Searches for availability for a future appointment(s) within a time period of defined by date range input parameters.  If neither a start or end date is given then the maximum period as defined by local business rules and starting from when the  operation was transacted will be used.   Other input parameter further refine the search and include  practitioner references, specialties, visit type, locations, and patient information. From these criteria, a system determines which schedulable resources ( e.g., people, rooms, equiibment) are needed for the visit, and provides time slots where all required resources are available.&#xA;&#xA; Note that for input parameters that are codes, the simple FHIR [token](http://build.fhir.org/search.html#token) search parameter type is used instead of the complex `Coding` datatype.  Also, the simple `uri` datatype is used instead of the complex `Reference` datatype for resources references.  This allows either the 'GET'  or the 'POST' syntax to be used to initiate the interaction in many cases.  Examples of both are shown in the below."/>
+	<description value="Searches for availability for a future appointment(s) within a time period of defined by date range input parameters.  If neither a start or end date is given then the maximum period as defined by local business rules and starting from when the  operation was transacted will be used.   Other input parameter further refine the search and include  practitioner references, specialties, visit type, locations, and patient information. From these criteria, a system determines which schedulable resources ( e.g., people, rooms, equiibment) are needed for the visit, and provides time slots where all required resources are available."/>
 	<jurisdiction>
 		<coding>
 			<system value="urn:iso:std:iso:3166"/>
@@ -222,7 +221,7 @@
 		</coding>
 	</jurisdiction>
 	<code value="find"/>
-	<comment value="- The server is responsible for determining the first/best available appointment options to return.&#xD;-   References can be to an absolute URL, but servers only perform operations on their own resources.&#xD;- To set the upper limit on the total number of available appointment options to return use the standard [`_count`](http://build.fhir.org/search.html#count) search parameter.  See the examples below for how this is implemented.&#xD;- If there is nominated patient, it is assumed that the server has identified and secured the context appropriately, and can either associate the authorization context with a single patient, or determine whether the context has the rights to the nominated patient, if there is one.  Specifying the relationship between the context, a user and patient records is outside the scope of this specification"/>
+	<comment value="- For input parameters that are codes, the simple FHIR [token](http://build.fhir.org/search.html#token) search parameter type is used instead of the complex `Coding` datatype.  Also, the simple `uri` datatype is used instead of the complex `Reference` datatype for resources references.  This allows either the 'GET'  or the 'POST' syntax to be used to initiate the interaction in many cases.  Examples of both are shown below.&#xA;&#xA; -  If more than one actor type is present, the response SHOULD contain appointments with *all* of these actors (i.e, this is a logical 'AND').  If an actor type is repeated, the response SHOULD contain appointments with *any* of these actors and SHOULD be interpreted as the order of preference (i.e. this is a logical  'OR' and  does not drive a joint appointment with multiple practitioners. locations or organizations) Ultimately the server is responsible for determining the first/best available appointment options to return..&#xD;-   References can be to an absolute URL, but servers only perform operations on their own resources.&#xD;- To set the upper limit on the total number of available appointment options to return use the standard [`_count`](http://build.fhir.org/search.html#count) search parameter.  See the examples below for how this is implemented."/>
 	<resource value="Appointment"/>
 	<system value="false"/>
 	<type value="true"/>

@@ -38,16 +38,6 @@
       <min value="1" />
       <mustSupport value="true" />
     </element>
-    <element id="Slot.extension">
-      <path value="Slot.extension" />
-      <slicing>
-        <discriminator>
-          <type value="value" />
-          <path value="url" />
-        </discriminator>
-        <rules value="open" />
-      </slicing>
-    </element>
     <element id="Slot.serviceType">
       <path value="Slot.serviceType" />
       <mustSupport value="true" />
@@ -64,7 +54,19 @@
     </element>
     <element id="Slot.status">
       <path value="Slot.status" />
+      <short value="busy | free | busy-unavailable | entered-in-error" />
+      <definition value="busy | free | busy-unavailable | entered-in-error." />
       <mustSupport value="true" />
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="SlotStatus" />
+        </extension>
+        <strength value="required" />
+        <description value="The free/busy status of the slot. This value set is a subset of the the FHIR core Slot value set excluding the 'busy-tentative' concept." />
+        <valueSetReference>
+          <reference value="http://fhir.org/guides/argonaut-scheduling/ValueSet/argo-slot-status" />
+        </valueSetReference>
+      </binding>
     </element>
     <element id="Slot.start">
       <path value="Slot.start" />
@@ -78,6 +80,5 @@
       <path value="Slot.comment" />
       <mustSupport value="true" />
     </element>
-
   </differential>
 </StructureDefinition>

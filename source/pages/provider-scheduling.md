@@ -191,17 +191,9 @@ This simple use case is covered by steps 2, 3, and 4 in [Scenario 1](#use-case-1
 
 ## Canceling/Rescheduling appointments
 
-The practitioner or patient may elect to cancel or reschedule an existing appointment.  Rescheduling is a two step process of canceling and rebooking a new appointment.
-
-{% include img.html img="diagrams/Slide25.png" caption="Figure 1: Canceling/Rescheduling appointment" %}
-
 Usage and examples are described in the [Patient Use Cases](patient-scheduling.html#cancelingrescheduling-appointments).
 
 ## Releasing holds
-
-The length of an appointment hold is determined by the scheduling service's business rules, after which the status of the Appointment may change.  However, the Client may also elect to cancel a hold on an appointment before it expires.
-
-{% include img.html img="diagrams/Slide26.png" caption="Figure 1: Releasing Appointment Hold" %}
 
 Usage and examples are described in the [Patient Use Cases](patient-scheduling.html#releasing-holds).
 

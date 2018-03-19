@@ -89,9 +89,9 @@ The following Argonaut Scheduling artifacts are used in this transaction:
 
 Using Both `GET` and `POST` Syntax the operation can be invoked as follows:
 
-`GET [base]/Appointment/$hold?{parameters}&?{_count}`
+`GET [base]/Appointment/$find?{parameters}&?{_count}`
 
-`POST [base]/Appointment/$hold?{_count}`
+`POST [base]/Appointment/$find?{_count}`
 
 #### Example
 {:.no_toc}
@@ -107,7 +107,7 @@ This operation puts to appointment in a hold status to temporarily prevent the a
 
 {% include img.html img="diagrams/Slide31.png" caption="Figure 4: Hold Appointment" %}
 
- The Client sends a hold request operation using the id of selected proposed appointment as the input parameter.  The Server determines if the appointment can be held and returns the Appointment resource with with an updated status. See the [Appointment State Diagram](state-diagram.html) for further details on statuses.
+ The Client sends a hold request operation using the id of selected proposed appointment as the input parameter.  The Server determines if and how long the appointment can be held and returns the Appointment resource with with an updated status if successful. The [Releasing Holds](#releasing-holds) section below describes how to release the hold before it expires.  See the [Appointment State Diagram](state-diagram.html) for further details on statuses.
 
 #### APIs
 {:.no_toc}
@@ -119,9 +119,14 @@ The following Argonaut Scheduling artifacts are used in this transaction:
   - **[Argonaut Appointment Profile](StructureDefinition-argo-appt.html)**.
 
 #### Usage
+
+POST [base]/Appointment/[id]/$hold
+
+#### Example
+
 {:.no_toc}
 
-{% include appointment-hold.md %}
+{% include appt-hold-id.md %}
 <br />
 
 
@@ -138,14 +143,18 @@ the Client sends a book operation using the id of selected proposed appointment,
 
 The following Argonaut Scheduling artifacts are used in this transaction:
 
-  - **[Appointment Hold Operation](OperationDefinition-appointment-hold.html)**.
+  - **[Appointment Hold Operation](OperationDefinition-appointment-book.html)**.
   - **[Argonaut Appointment Bundle Profile](StructureDefinition-avail-bundle.html)**.
   - **[Argonaut Appointment Profile](StructureDefinition-argo-appt.html)**.
 
 #### Usage
 {:.no_toc}
 
-{% include appointment-book.md %}
+`POST [base]/Appointment/[id]/$book`
+
+#### Example
+
+{% include appt-book-id.md %}
 
 <br />
 
@@ -198,11 +207,11 @@ This step is the same as described in [Scenario-1](#appointment-availability-dis
 ###  Optional Hold Appointment Operation
 {:.no_toc}
 
-This operation puts to appointment in a hold status to temporarily prevent the appointment from being booked by another client. This step is not optional if the patient was not registered in step 1 above. It is needed in order to register the patient prior to booking the appointment.
+This operation puts to appointment in a hold status to temporarily prevent the appointment from being booked by another client. This step is **not optional** if the patient was not registered in step 1 above. It is needed in order to register the patient prior to booking the appointment.
 
 {% include img.html img="diagrams/Slide04.png" caption="Figure 1: Optional Hold Appointment Operation" %}
 
-The details of this step are the same as described in [Scenario-1](#optional-hold-appointment-operation).
+The details of this step are the same as described in [Scenario-1](#optional-hold-appointment-operation). The [Releasing Holds](#releasing-holds) section below describes how to release the hold before it expires.
 
 ###  Patient Registration Option B
 {:.no_toc}
@@ -362,11 +371,13 @@ To unsubscribe:
 #### Example
 {:.no_toc}
 
+**Subscribe**
+
+`POST [base]/Subscription`
+
+**Request body**
+
 ~~~
-POST [base]/Subscription
-
-    **payload:**
-
     {
       "resourceType": "Subscription",
       "id": "example",
@@ -396,6 +407,13 @@ POST [base]/Subscription
         "payload": "application/fhir+json"
       }
     }
+~~~
+
+**Response**
+
+~~~
+HTTP/1.1 200 OK
+[other headers]
 ~~~
 
 ###  Initial Load
@@ -454,7 +472,7 @@ The standard FHIR [Subscription]({{site.data.fhir.path}}/subscription.html) API 
 ~~~
 POST https://feed-handler.com/notification
 
-**payload**
+**Request body**
 
 {
   "resourceType" : "Schedule",
@@ -567,97 +585,16 @@ The following Argonaut Scheduling artifacts are used in this transaction:
 #### Usage
 {:.no_toc}
 
-This step is similar to [Scenario 2 Step 5](#optional-hold-appointment-operation) above.  However, in this case the Client generates an Argonaut Appointment Profile resource and exchanges it with the FHIR Scheduler. Using the `POST` Syntax the operation can be invoked as follows:
+This step is similar to [Scenario 2 Step 5](#optional-hold-appointment-operation) above.  However, in this case the Client generates an Argonaut Appointment Profile resource and exchanges it with the FHIR Scheduler. The [Releasing Holds](#releasing-holds) section below describes how to release the hold before it expires. Using the `POST` Syntax the operation can be invoked as follows:
 
 `POST [base]/Appointment/$hold`
 
-The payload can be *either* the Appointment resource or use the [Parameters]({{site.data.fhir.path}}/parameters.html) format as shown in the examples below
-
+The payload may be either use the Appointment resource directly or the Parameters format as shown in the examples below:
 
 #### Example
 {:.no_toc}
 
-
-**Request**
-
-`POST [base]/Appointment/$hold`
-
-**Appointment resource as request body**
-
-~~~
-{
-  "resourceType" : "Appointment",
-  "id" : "proposed-appt2",
-...snip...
-  "status" : "proposed",
-  "serviceType" : [
-...snip...
-  "start" : "2017-07-17T01:00:00Z",
-  "end" : "2017-07-17T01:15:00Z",
-  "participant" : [
-    {
-      "actor" : {
-        "reference" : "Practitioner/dr-y",
-        "display" : "Dr Y"
-...snip...
-}
-~~~
-
-  **Parameter format as request body**
-
-~~~
-      {
-        "resourceType": "Parameters",
-        "id": "pcp-hold",
-        "parameter": [
-          {
-            "name": "appt-resource",
-            "resource":{
-                        "resourceType" : "Appointment",
-                        "id" : "proposed-appt2",
-                      ...snip...
-                        "status" : "proposed",
-                        "serviceType" : [
-                      ...snip...
-                        "start" : "2017-07-17T01:00:00Z",
-                        "end" : "2017-07-17T01:15:00Z",
-                        "participant" : [
-                          {
-                            "actor" : {
-                              "reference" : "Practitioner/dr-y",
-                              "display" : "Dr Y"
-                      ...snip...
-            }
-
-          }
-        ]
-      }
-~~~
-
-**Response**
-
-~~~
-    {
-      "resourceType": "Bundle",
-      "id": "hal-dr-y-held",
-      "type": "searchset",
-      "total": 2,
-      "entry": [{
-        "fullUrl": "http://server/path/Appointment/scheduled-appt2a",
-        "resource": {
-          "resourceType": "Appointment",
-          "id": "held-appt2a",
-          .. snip ...
-        "fullUrl": "http://server/path/OperationOutcome/oo-held-appt1a",
-        "resource": {
-          "resourceType": "OperationOutcome",
-          "id": "oo-held-appt1a-appt1a",
-          .. snip ...
-        }
-      ]
-    }
-
-~~~
+{% include appt-hold-resource.md %}
 
 ###  Patient Registration Option B
 {:.no_toc}
@@ -676,113 +613,36 @@ The Client is ready to actually book the appointment and the request to book the
 
 The following Argonaut Scheduling artifacts are used in this transaction:
 
-  - **[Appointment Hold Operation](OperationDefinition-appointment-hold.html)**.
+  - **[Appointment Book Operation](OperationDefinition-appointment-book.html)**.
   - **[Argonaut Appointment Bundle Profile](StructureDefinition-avail-bundle.html)**.
   - **[Argonaut Appointment Profile](StructureDefinition-argo-appt.html)**.
 
 #### Usage
 {:.no_toc}
 
-If the [Hold Appointment Operation](#optional-hold-appointment-operation-2) step was done, this step the same as [Scenario 2 Step 5](#book-appointment-1) above.  The Client references the FHIR Scheduler supplied id from the hold response when booking the appointment. If the [Hold Appointment Operation](#optional-hold-appointment-operation-2) step was skipped then the Client either generates an Argonaut Appointment Profile resource and exchanges it with the FHIR Scheduler. Using the `POST` Syntax the operation can be invoked as follows:
+If the [Hold Appointment Operation](#optional-hold-appointment-operation-2) step was done, this step the same as [Scenario 2 Step 5](#book-appointment-1) above.  The Client references the FHIR Scheduler supplied id from the hold response when booking the appointment. If the Hold Appointment Operation step was skipped, then the Client creates an Argonaut Appointment Profile resource and exchanges it with the FHIR Scheduler. The operation is invoked as follows:
 
 `POST [base]/Appointment/$book`
 
-The payload can be *either* the Appointment resource or use the [Parameters]({{site.data.fhir.path}}/parameters.html) format as shown in the examples below
-
+The payload may be *either* use the Appointment resource directly or the [Parameters]({{site.data.fhir.path}}/parameters.html) format as shown in the examples below:
 
 #### Example
 {:.no_toc}
 
-~~~
-
-**Request**
-
-POST [base]/Appointment/$book
-
-**Appointment resource as payload**
-
-{
-  "resourceType" : "Appointment",
-  "id" : "proposed-appt2",
-...snip...
-  "status" : "pending",
-  "serviceType" : [
-...snip...
-  "start" : "2017-07-17T01:00:00Z",
-  "end" : "2017-07-17T01:15:00Z",
-  "participant" : [
-    {
-      "actor" : {
-        "reference" : "Practitioner/dr-y",
-        "display" : "Dr Y"
-...snip...
-}
-
-  **Parameter format as payload**
-
-      {
-        "resourceType": "Parameters",
-        "id": "pcp-hold",
-        "parameter": [
-          {
-            "name": "appt-resource",
-            "resource":{
-                        "resourceType" : "Appointment",
-                        "id" : "proposed-appt2",
-                      ...snip...
-                        "status" : "pending",
-                        "serviceType" : [
-                      ...snip...
-                        "start" : "2017-07-17T01:00:00Z",
-                        "end" : "2017-07-17T01:15:00Z",
-                        "participant" : [
-                          {
-                            "actor" : {
-                              "reference" : "Practitioner/dr-y",
-                              "display" : "Dr Y"
-                      ...snip...
-            }
-
-          }
-        ]
-      }
-
-**Response**
-
-    {
-      "resourceType": "Bundle",
-      "id": "hal-dr-y-held",
-      "type": "searchset",
-      "total": 2,
-      "entry": [{
-        "fullUrl": "http://server/path/Appointment/scheduled-appt2a",
-        "resource": {
-          "resourceType": "Appointment",
-          "id": "held-appt2a",
-          .. snip ...
-        "fullUrl": "http://server/path/OperationOutcome/oo-held-appt1a",
-        "resource": {
-          "resourceType": "OperationOutcome",
-          "id": "oo-held-appt1a-appt1a",
-          .. snip ...
-        }
-      ]
-    }
-
-~~~
+{% include appt-book-resource.md %}
 
 ###  Patient Coverage Update Option C
 {:.no_toc}
 
 For some systems, updating or confirmation of insurance coverage information MAY occur at this step after booking. The Coverage interaction is discussed in detail in [Scenario 2 Step 4](#patient-registration-option-b) above.
 
-## Canceling/Rescheduling appointments
+## Canceling/Rescheduling Appointments
 
 The end user may elect to cancel or reschedule an existing appointment.  Rescheduling is a two step process of canceling and rebooking a new appointment.
 
-{% include img.html img="diagrams/Slide33.png" caption="Figure 1: Patient Canceling/Rescheduling appointments" %}
+{% include img.html img="diagrams/Slide33.png" caption="Figure 1: Patient Canceling/Rescheduling Appointments" %}
 
-Canceling and Rescheduling has the potential to introduces complex failure states. The [best practices](index.html#best-practices) guidance discusses how failures should be handled. See the [Appointment State Diagram](state-diagram.html) for further details on statuses and state transitions.
+Canceling and Rescheduling has the potential to introduces complex failure states. The [best practices](index.html#future-scope) guidance discusses how failures should be handled. See the [Appointment State Diagram](state-diagram.html) for further details on statuses and state transitions.
 
 ### Usage
 {:.no_toc}
@@ -802,25 +662,24 @@ To cancel an appointment the Client uses the standard FHIR [`PATCH`](http://buil
 
 {% include cancel-examples.md %}
 
-## Releasing holds
+## Releasing Holds
 
-The Client should cancel a hold on an appointment before it expires.  The length of an appointment hold is determined by the scheduling service’s business rules, after which the status of the Appointment may change.
+If not booking a held appointment, the Client should release  the hold on it before it expires.  The length of an appointment hold is determined by the scheduling service’s business rules, after which the status of the Appointment may change.  See the [Appointment State Diagram](state-diagram.html) for further details on statuses and state transitions.
+
 
 {% include img.html img="diagrams/Slide38.png" caption="Figure 1: Canceling Appointment Hold" %}
 
-Releasing holds has the potential to introduces complex failure states. The [best practices](index.html#best-practices) guidance discusses how failures should be handled. See the [Appointment State Diagram](state-diagram.html) for further details on statuses and state transitions.
+Releasing holds has the potential to introduces complex failure states. The [best practices](index.html#future-scope) guidance discusses how failures should be handled.
 
 ### Usage
 {:.no_toc}
 
-This transaction is identical to canceling an appointment as shown [above](patient-scheduling.html#cancelingrescheduling-appointments).
+This transaction uses the standard FHIR [`PATCH`](http://build.fhir.org/http.html#patch) transaction as described in the [Canceling/Rescheduling Appointments](patient-scheduling.html#usage-11) above.
 
 ### Examples
 {:.no_toc}
 
-~~~
-todo inline example
-~~~
+{% include release-hold-example.md %}
 
 
 ## Retrieving appointments

@@ -218,6 +218,14 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+        <valueUri value="ValueSet-argo-slot-status.html"/>
+      </extension>
+      <sourceReference>
+        <reference value="ValueSet/argo-slot-status"/>
+      </sourceReference>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
         <valueUri value="ValueSet-slot-bundle-type.html"/>
       </extension>
       <sourceReference>
