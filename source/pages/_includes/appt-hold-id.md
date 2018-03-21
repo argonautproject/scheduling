@@ -7,7 +7,6 @@
 ~~~
     {
       "resourceType": "Parameters",
-      "id": "pcp-hold",
       "parameter": [
         {
           "name": "appt-id",

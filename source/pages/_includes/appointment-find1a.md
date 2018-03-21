@@ -1,4 +1,4 @@
-appointment-find1a.md
+source file: appointment-find1a.md
 
 {: #scenario-1a}
 
@@ -19,7 +19,6 @@ Use the operation to fetch a maximum of the soonest 3 open appointments availabl
 ~~~
     {
       "resourceType": "Parameters",
-      "id": "pcp-appts",
       "parameter": [
         {
           "name": "start",

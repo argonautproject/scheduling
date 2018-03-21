@@ -20,7 +20,6 @@ Use the operation to fetch all of Dr Y's open appointments for the Napa location
 ~~~
 {
   "resourceType": "Parameters",
-  "id": "pcp-appts",
   "parameter": [
     {
       "name": "start",

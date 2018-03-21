@@ -15,7 +15,6 @@
 
       {
         "resourceType": "Parameters",
-        "id": "derm-appts",
         "parameter": [
           {
             "name": "appointment",

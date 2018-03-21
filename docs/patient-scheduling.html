@@ -230,12 +230,7 @@ page source: patient-scheduling.md
 
 <ul id="markdown-toc">
   <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
-  <li><a href="#use-case-1-patient-portal-scheduling-for-existing-patients" id="markdown-toc-use-case-1-patient-portal-scheduling-for-existing-patients">Use Case 1: Patient Portal Scheduling for existing patients</a>    <ul>
-      <li><a href="#usage-1" id="markdown-toc-usage-1">Usage</a></li>
-      <li><a href="#example-1" id="markdown-toc-example-1">Example</a></li>
-      <li><a href="#example-2" id="markdown-toc-example-2">Example</a></li>
-    </ul>
-  </li>
+  <li><a href="#use-case-1-patient-portal-scheduling-for-existing-patients" id="markdown-toc-use-case-1-patient-portal-scheduling-for-existing-patients">Use Case 1: Patient Portal Scheduling for existing patients</a></li>
   <li><a href="#use-case-2-open-scheduling-for-new-patient-or-existing-patient" id="markdown-toc-use-case-2-open-scheduling-for-new-patient-or-existing-patient">Use Case 2: Open Scheduling for new patient or existing patient</a></li>
   <li><a href="#use-case-3-prefetching-open-slots" id="markdown-toc-use-case-3-prefetching-open-slots">Use Case 3 Prefetching Open Slots</a></li>
   <li><a href="#cancelingrescheduling-appointments" id="markdown-toc-cancelingrescheduling-appointments">Canceling/Rescheduling Appointments</a></li>
@@ -363,7 +358,7 @@ page source: patient-scheduling.md
 
 <h4 id="example" class="no_toc">Example</h4>
 
-<p>appointment-find1a.md</p>
+<p>source file: appointment-find1a.md</p>
 
 <p id="scenario-1a"><strong>Scenario 1a:</strong></p>
 
@@ -381,7 +376,6 @@ page source: patient-scheduling.md
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="w">    </span><span class="p">{</span><span class="w">
       </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Parameters"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pcp-appts"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"parameter"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
           </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"start"</span><span class="p">,</span><span class="w">
@@ -479,13 +473,13 @@ page source: patient-scheduling.md
   <li><strong><a href="StructureDefinition-argo-appt.html">Argonaut Appointment Profile</a></strong>.</li>
 </ul>
 
-<h4 id="usage-1">Usage</h4>
+<h4 id="usage-1" class="no_toc">Usage</h4>
 
 <p>POST [base]/Appointment/[id]/$hold</p>
 
-<h4 id="example-1">Example</h4>
+<h4 id="example-1" class="no_toc">Example</h4>
 
-<p class="no_toc"><strong>Request</strong></p>
+<p><strong>Request</strong></p>
 
 <p><code class="highlighter-rouge">POST [base]/Appointment/proposed-appt1a-1/$hold</code></p>
 
@@ -493,7 +487,6 @@ page source: patient-scheduling.md
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="w">    </span><span class="p">{</span><span class="w">
       </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Parameters"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pcp-hold"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"parameter"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
           </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"appt-id"</span><span class="p">,</span><span class="w">
@@ -557,14 +550,14 @@ Expires: Wed, 21 March 2018 07:28:00 GMT
 <p></p>
 </div>
 
-<p>the Client sends a book operation using the id of selected proposed appointment, the patient(s) id and optionally any comments as the input parameters.  The Server determines if the appointment can be booked and returns the Appointment resource with with an updated status. See the <a href="state-diagram.html">Appointment State Diagram</a> for further details on statuses.</p>
+<p>The Client sends a book operation using the id of selected proposed appointment, the patient(s) id and optionally any comments as the input parameters.  The Server determines if the appointment can be booked and returns the Appointment resource with with an updated status. See the <a href="state-diagram.html">Appointment State Diagram</a> for further details on statuses.</p>
 
 <h4 id="apis-2" class="no_toc">APIs</h4>
 
 <p>The following Argonaut Scheduling artifacts are used in this transaction:</p>
 
 <ul>
-  <li><strong><a href="OperationDefinition-appointment-book.html">Appointment Hold Operation</a></strong>.</li>
+  <li><strong><a href="OperationDefinition-appointment-book.html">Appointment Book Operation</a></strong>.</li>
   <li><strong><a href="StructureDefinition-avail-bundle.html">Argonaut Appointment Bundle Profile</a></strong>.</li>
   <li><strong><a href="StructureDefinition-argo-appt.html">Argonaut Appointment Profile</a></strong>.</li>
 </ul>
@@ -573,7 +566,7 @@ Expires: Wed, 21 March 2018 07:28:00 GMT
 
 <p><code class="highlighter-rouge">POST [base]/Appointment/[id]/$book</code></p>
 
-<h4 id="example-2">Example</h4>
+<h4 id="example-2" class="no_toc">Example</h4>
 
 <p><strong>Request</strong></p>
 
@@ -583,7 +576,6 @@ Expires: Wed, 21 March 2018 07:28:00 GMT
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="w">    </span><span class="p">{</span><span class="w">
       </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Parameters"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pcp-appts"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"parameter"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
           </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"appt-id"</span><span class="p">,</span><span class="w">
@@ -591,7 +583,7 @@ Expires: Wed, 21 March 2018 07:28:00 GMT
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
           </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"patient-id"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"valueDateTime"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Patient/1234"</span><span class="w">
+            </span><span class="nt">"valueUrl"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Patient/1234"</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
     </span><span class="p">}</span><span class="w">
@@ -611,7 +603,7 @@ Expires: Wed, 21 March 2018 07:28:00 GMT
           </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bundle"</span><span class="p">,</span><span class="w">
           </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"derm-booked"</span><span class="p">,</span><span class="w">
           </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"searchset"</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
           </span><span class="nt">"entry"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
             </span><span class="nt">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://server/path/Appointment/booked-derm-appt"</span><span class="p">,</span><span class="w">
             </span><span class="nt">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -621,13 +613,15 @@ Expires: Wed, 21 March 2018 07:28:00 GMT
                 </span><span class="nt">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"booked"</span><span class="p">,</span><span class="w">
                 </span><span class="nt">"serviceType"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
               </span><span class="err">...snip...</span><span class="w">
-            </span><span class="s2">"fullUrl"</span><span class="err">:</span><span class="w"> </span><span class="s2">"http://server/path/OperationOutcome/oo-booked-derm-appt"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"resource"</span><span class="err">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+            </span><span class="s2">"entry"</span><span class="err">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+            </span><span class="nt">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://server/path/OperationOutcome/oo-booked-derm-appt"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
               </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OperationOutcome"</span><span class="p">,</span><span class="w">
               </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"oo-booked-derm-appt"</span><span class="p">,</span><span class="w">
               </span><span class="err">..</span><span class="w"> </span><span class="err">snip</span><span class="w"> </span><span class="err">...</span><span class="w">
             </span><span class="err">}</span><span class="w">
-          </span><span class="p">]</span><span class="w">
+          </span><span class="err">]</span><span class="w">
         </span><span class="p">}</span><span class="w">
 </span></code></pre>
 </div>
@@ -742,17 +736,66 @@ Expires: Wed, 21 March 2018 07:28:00 GMT
 
 <h5 id="usage-3" class="no_toc">Usage</h5>
 
-<p>To register a new or existing patient, The Client SHALL use the standard FHIR RESTful <a href="http://hl7.org/fhir/STU3/http.html#create">create API</a> as follows:</p>
+<h6 id="existing-patients" class="no_toc">Existing Patients</h6>
 
-<p><code class="highlighter-rouge">POST [base]/Patient/[id]</code></p>
+<p>To fetch an <em>existing</em> patient resource id, the Client SHALL follow the guidance in the <a href="http://hl7.org/fhir/us/core/stu1//StructureDefinition-us-core-patient.html#search">US Core Patient Profile</a> which use the standard FHIR RESTful <a href="http://hl7.org/fhir/STU3/search.html">search API</a></p>
 
-<p>In response to this transaction, the server SHOULD create a new patient resource only if the patient resource does not already exist in the system.  If the patient is already registered within the system. The existing patient resource SHOULD be returned.  Note that the Client SHALL not use the ‘If-None-Exist’ header as described in FHIR <a href="http://hl7.org/fhir/STU3/http.html#ccreate">conditional create API</a>).</p>
+<p>For example fetching a patient by an identifier such as an MRN using:</p>
+
+<p><code class="highlighter-rouge">GET [base]/Patient?identifier=[system]|[code]</code></p>
+
+<p>For example fetching a patient by name, gender and birthdate using:</p>
+
+<p><code class="highlighter-rouge">GET [base]/Patient?family=[name]&amp;?given=[name]&amp;gender=[gender]</code></p>
+
+<h6 id="new-patients" class="no_toc">New Patients</h6>
+
+<p>To register a <em>new</em> patient, The Client SHALL use the standard FHIR RESTful <a href="http://hl7.org/fhir/STU3/http.html#create">create API</a> as follows:</p>
+
+<p><code class="highlighter-rouge">POST [base]/Patient</code></p>
+
+<p>In response to this transaction, the server SHOULD create a new patient resource only if the patient resource does not already exist in the system.  If the patient is already registered within the system, the existing patient resource SHOULD be returned.  Note that the Client SHALL not use the ‘If-None-Exist’ header as described in FHIR <a href="http://hl7.org/fhir/STU3/http.html#ccreate">conditional create API</a>).</p>
 
 <h5 id="example-3" class="no_toc">Example</h5>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>todo inline example
+<p><strong>Request</strong></p>
+
+<p><code class="highlighter-rouge">POST [base]/Patient</code></p>
+
+<p><strong>Request body</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"resourceType"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Patient"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"meta"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"profile"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+</span><span class="err">...snip...</span><span class="w">
+  </span><span class="nt">"active"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"family"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Shaw"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"given"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"Amy"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"V."</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="s2">"gender"</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="s2">"female"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"birthDate"</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="s2">"2007-02-20"</span><span class="p">,</span><span class="w">
+</span><span class="err">...snip...</span><span class="w">
+</span><span class="err">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<p><strong>Response</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>HTTP/1.1 201 Created
+Location: [base]/Patient/server-id-123/_history/1
+[other headers]
 </code></pre>
 </div>
+
 <p><br/></p>
 
 <h4 id="updating-or-creating-patient-coverage-information" class="no_toc">Updating or Creating Patient Coverage Information:</h4>
@@ -780,7 +823,84 @@ Expires: Wed, 21 March 2018 07:28:00 GMT
 
 <h5 id="example-4" class="no_toc">Example</h5>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>PUT [base]/Coverage/[id]....
+<p><strong>Request to create Coverage resource for patients</strong></p>
+
+<p><code class="highlighter-rouge">POST [base]/Coverage</code></p>
+
+<p><strong>Request body</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"resourceType"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Coverage"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"identifier"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"system"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.anthem.com/ca"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"value"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"DZW9200000000"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nt">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
+  </span><span class="err">...snip...</span><span class="w">
+  </span><span class="nt">"period"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"start"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-01-01"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"payor"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"display"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Anthem Blue Cross of California"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nt">"grouping"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"plan"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"1FZQ"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"planDisplay"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Anthem Bronze 60 D HSA PPO"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<p><strong>Response</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>HTTP/1.1 201 Created
+Location: [base]/Coverage/argo-sch-1/_history/1
+[other headers]
+</code></pre>
+</div>
+
+<p><strong>Request to update Coverage to extend coverage period</strong></p>
+
+<p><code class="highlighter-rouge">PUT [base]/Coverage/argo-sch-1</code></p>
+
+<p><strong>Request body</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"resourceType"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Coverage"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"argo-sch-1"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"identifier"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"system"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.anthem.com/ca"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"value"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"DZW9200000000"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nt">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
+  </span><span class="err">...snip...</span><span class="w">
+  </span><span class="nt">"period"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"start"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-01"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"payor"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"display"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Anthem Blue Cross of California"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nt">"grouping"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"plan"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"1FZQ"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"planDisplay"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Anthem Bronze 60 D HSA PPO"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<p><strong>Response</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>HTTP/1.1 200 OK
+Location: [base]/Coverage/argo-sch-1/_history/2
+[other headers]
 </code></pre>
 </div>
 
@@ -985,6 +1105,7 @@ Expires: Wed, 21 March 2018 07:28:00 GMT
 
 <div class="highlighter-rouge"><pre class="highlight"><code>HTTP/1.1 200 OK
 [other headers]
+
 </code></pre>
 </div>
 
@@ -1039,7 +1160,6 @@ Expires: Wed, 21 March 2018 07:28:00 GMT
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="w">    </span><span class="p">{</span><span class="w">
       </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Parameters"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prefetch-1"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"parameter"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
           </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"start"</span><span class="p">,</span><span class="w">
@@ -1137,31 +1257,32 @@ Expires: Wed, 21 March 2018 07:28:00 GMT
 <h4 id="example-6" class="no_toc">Example</h4>
 
 <h5 id="notification-of-schedule-change" class="no_toc">Notification of schedule change:</h5>
-<div class="highlighter-rouge"><pre class="highlight"><code>POST https://feed-handler.com/notification
 
-**Request body**
+<p><code class="highlighter-rouge">POST https://feed-handler.com/notification</code></p>
 
-{
-  "resourceType" : "Schedule",
-  "id" : "example1",
-  "actor" : [
-    {
-      "reference" : "Practitioner/1",
-      "display" : "Crusher, Beverly"
-    }
-  ],
-  "planningHorizon" : {
-    "start" : "2018-02-13",
-    "end" : "2018-02-13"
-  }
-}
-</code></pre>
+<p><strong>Notification body</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"resourceType"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Schedule"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"example1"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"actor"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"reference"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Practitioner/1"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"display"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Crusher, Beverly"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nt">"planningHorizon"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"start"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-02-13"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"end"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-02-13"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 </div>
 
 <h5 id="heartbeat-notification" class="no_toc">“Heartbeat” Notification:</h5>
 <div class="highlighter-rouge"><pre class="highlight"><code>POST https://feed-handler.com/notification
 
-**no payload**
+**** No notification body****
 </code></pre>
 </div>
 
@@ -1202,29 +1323,56 @@ Expires: Wed, 21 March 2018 07:28:00 GMT
 
 <h4 id="example-7" class="no_toc">Example</h4>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>POST [base]/Slot/$prefetch
+<p><strong>Request using<code class="highlighter-rouge">POST</code> syntax</strong></p>
 
-**payload:**
+<p><code class="highlighter-rouge">POST [base]/Slot/$prefetch</code></p>
 
-{
-  "resourceType": "Parameters",
-  "id": "update-1",
-  "parameter": [
-    {
-      "name": "practitioner",
-      "valueDateTime" : "Practitioner/123"
-    },
-    {
-      "name": "start",
-      "valueDateTime" : "2017-07-15T00:00:00Z"
-    },
-    {
-      "name": "end",
-        "valueDateTime" : "2017-07-15T24:00:00Z"
-    }
-]
-}
+<p><strong>Request body</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Parameters"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"parameter"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"practitioner"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"valueDateTime"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Practitioner/123"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"start"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"valueDateTime"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-15T00:00:00Z"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"end"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"valueDateTime"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-15T24:00:00Z"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]}</span><span class="w">
+</span></code></pre>
+</div>
+
+<p><strong>Response</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>HTTP/1.1 200 OK
+[other headers]
 </code></pre>
+</div>
+
+<p><strong>Response body</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bundle"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prefetch-1"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"searchset"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"entry"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+    </span><span class="nt">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://server/path/Slot/20170715240000-123"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Slot"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20170715240000-123"</span><span class="p">,</span><span class="w">
+      </span><span class="err">..</span><span class="w"> </span><span class="err">snip</span><span class="w"> </span><span class="err">...</span><span class="w">
+      </span><span class="nt">"status"</span><span class="p">:</span><span class="s2">"free"</span><span class="w">
+      </span><span class="err">..</span><span class="w"> </span><span class="err">snip</span><span class="w"> </span><span class="err">...</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="err">]</span><span class="p">}</span><span class="w">
+</span></code></pre>
 </div>
 
 <h3 id="patient-registration-option-a-1" class="no_toc">Patient Registration Option A</h3>
@@ -1295,7 +1443,6 @@ Expires: Wed, 21 March 2018 07:28:00 GMT
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"resourceType"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Appointment"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"proposed-appt2"</span><span class="p">,</span><span class="w">
 </span><span class="err">...snip...</span><span class="w">
   </span><span class="nt">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"proposed"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"serviceType"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -1316,7 +1463,6 @@ Expires: Wed, 21 March 2018 07:28:00 GMT
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="w">      </span><span class="p">{</span><span class="w">
         </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Parameters"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pcp-hold"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"parameter"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
           </span><span class="p">{</span><span class="w">
             </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"appt-resource"</span><span class="p">,</span><span class="w">
@@ -1345,7 +1491,8 @@ Expires: Wed, 21 March 2018 07:28:00 GMT
 
 <p><strong>Response</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>HTTP/1.1 200 OK
+<div class="highlighter-rouge"><pre class="highlight"><code>HTTP/1.1 201 Created
+Location: [base]/Appointment/argo-appt-1/_history/1
 Expires: Wed, 21 March 2018 07:28:00 GMT
 [other headers]
 </code></pre>
@@ -1355,7 +1502,7 @@ Expires: Wed, 21 March 2018 07:28:00 GMT
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="w">    </span><span class="p">{</span><span class="w">
       </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bundle"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hal-dr-y-held"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"argo-appt-1"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"searchset"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
       </span><span class="nt">"entry"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
@@ -1428,7 +1575,6 @@ Expires: Wed, 21 March 2018 07:28:00 GMT
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"resourceType"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Appointment"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"proposed-appt2"</span><span class="p">,</span><span class="w">
 </span><span class="err">...snip...</span><span class="w">
   </span><span class="nt">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"serviceType"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -1450,7 +1596,6 @@ Expires: Wed, 21 March 2018 07:28:00 GMT
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="w">      </span><span class="p">{</span><span class="w">
         </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Parameters"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pcp-hold"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"parameter"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
           </span><span class="p">{</span><span class="w">
             </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"appt-resource"</span><span class="p">,</span><span class="w">
@@ -1480,7 +1625,8 @@ Expires: Wed, 21 March 2018 07:28:00 GMT
 
 <p><strong>Response</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>HTTP/1.1 200 OK
+<div class="highlighter-rouge"><pre class="highlight"><code>HTTP/1.1 201 Created
+Location: [base]/Appointment/argo-appt-1/_history/1
 [other headers]
 </code></pre>
 </div>
@@ -1490,7 +1636,7 @@ Expires: Wed, 21 March 2018 07:28:00 GMT
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bundle"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hal-dr-y-held"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"argo-appt-1"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"searchset"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
       </span><span class="nt">"entry"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
@@ -1551,19 +1697,17 @@ Expires: Wed, 21 March 2018 07:28:00 GMT
     </ol>
   </li>
   <li>
-    <p><a name="6476ffb8-6b40-4ec2-95cd-9179528bf2b7">​</a>Note the Server SHALL declare support for JSON, XML, or FHIRPath Patch in the <a href="server-capstatement.html">CapabilityStatement</a></p>
+    <p><a name="55076b6a-ba55-4a8c-b51d-556bfc974933">​</a>Note the Server SHALL declare support for JSON, XML, or FHIRPath Patch in the <a href="server-capstatement.html">CapabilityStatement</a></p>
   </li>
 </ul>
 
 <h3 id="examples-1" class="no_toc">Examples</h3>
 
-<h5 id="a-json-example" class="no_toc">A JSON example:</h5>
-
-<p>Target Appointment:</p>
+<p><strong>Target Appointment:</strong></p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"resourceType"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Appointment"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"proposed-appt1"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"argo-appt1"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"meta"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nt">"profile"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="s2">"http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt"</span><span class="w">
@@ -1578,139 +1722,72 @@ Expires: Wed, 21 March 2018 07:28:00 GMT
 </span></code></pre>
 </div>
 
-<p><em>Cancel using PATCH</em></p>
+<p><strong>Cancel using JSON PATCH</strong></p>
 
-<p><code class="highlighter-rouge">PATCH [Base]/Appointment/[id]</code></p>
+<p><code class="highlighter-rouge">PATCH [Base]/Appointment/argo-appt1</code></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>     **payload**
+<p><strong>Patch body</strong></p>
 
-     [
-     { "op": "replace", "path": "Appointment/status", "value": "cancelled" },
-     ]
+<div class="highlighter-rouge"><pre class="highlight"><code> [
+ { "op": "replace", "path": "Appointment/status", "value": "cancelled" },
+ ]
 </code></pre>
 </div>
 
-<p>Resulting cancelled Appointment:</p>
+<p><strong>Cancel using XML PATCH</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"resourceType"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Appointment"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"proposed-appt1"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"meta"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"profile"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="s2">"http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt"</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="nt">"text"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-  </span><span class="err">...snip...</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="nt">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"cancelled"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"serviceType"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-  </span><span class="err">...snip...</span><span class="w">
-</span></code></pre>
-</div>
+<p><code class="highlighter-rouge">PATCH [Base]/Appointment/argo-appt1</code></p>
 
-<h5 id="an-xml-example" class="no_toc">An XML example:</h5>
-
-<p>Target Appointment:</p>
+<p><strong>Patch body</strong></p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code> &lt;?xml version="1.0" encoding="UTF-8"?&gt;
- &lt;Appointment xmlns="http://hl7.org/fhir"&gt;
-   &lt;id value="proposed-appt1"/&gt;
-   &lt;meta&gt;
-     &lt;profile
-              value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt"/&gt;
-   &lt;/meta&gt;
-   &lt;text&gt;
-  ...snip
-   &lt;/text&gt;
-   &lt;status value="booked"/&gt;
-   &lt;serviceType&gt;
-    ...snip...
-</code></pre>
-</div>
-
-<p><em>Cancel using PATCH</em></p>
-
-<p><code class="highlighter-rouge">PATCH [Base]/Appointment/[id]</code></p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code> **payload**
-
- &lt;?xml version="1.0" encoding="UTF-8"?&gt;
  &lt;diff xmlns="http://hl7.org/fhir"&gt;
    &lt;replace sel="Appointment/status/@value"&gt;cancelled&lt;/replace&gt;
  &lt;/diff&gt;
 </code></pre>
 </div>
 
-<p>Resulting cancelled Appointment:</p>
+<p><strong>Cancel using FHIRPath PATCH</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code> &lt;?xml version="1.0" encoding="UTF-8"?&gt;
- &lt;Appointment xmlns="http://hl7.org/fhir"&gt;
-   &lt;id value="proposed-appt1"/&gt;
-   &lt;meta&gt;
-     &lt;profile
-              value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt"/&gt;
-   &lt;/meta&gt;
-   &lt;text&gt;
-  ...snip...
-   &lt;/text&gt;
-   &lt;status value="cancelled"/&gt;
-  ...snip...
+<p><code class="highlighter-rouge">PATCH [Base]/Appointment/argo-appt1</code></p>
+
+<p><strong>Patch body</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> **payload**
+ &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+ &lt;Parameters xmlns="http://hl7.org/fhir"&gt;
+   &lt;parameter&gt;
+     &lt;name value="operation"/&gt;
+     &lt;part&gt;
+       &lt;name value="type"/&gt;
+       &lt;valueCode value="replace"/&gt;
+     &lt;/part&gt;
+     &lt;part&gt;
+       &lt;name value="path"/&gt;
+       &lt;valueString value="status"/&gt;
+     &lt;/part&gt;
+     &lt;part&gt;
+       &lt;name value="value"/&gt;
+       &lt;valueCode value="cancelled"/&gt;
+     &lt;/part&gt;
+   &lt;/parameter&gt;
+ &lt;/Parameters&gt;
 </code></pre>
 </div>
 
-<h5 id="a-fhirpathhttphl7orgfhirpath-example" class="no_toc">A <a href="http://hl7.org/fhirpath/">FHIRPath</a> example:</h5>
+<p><em>Response</em></p>
 
-<p>Target Appointment:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"resourceType"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Appointment"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"proposed-appt1"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"meta"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"profile"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="s2">"http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt"</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="nt">"text"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-  </span><span class="err">...snip...</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="nt">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"booked"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"serviceType"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-  </span><span class="err">...snip...</span><span class="w">
-</span></code></pre>
-</div>
-
-<p><em>Cancel using PATCH</em></p>
-
-<p><code class="highlighter-rouge">PATCH [Base]/Appointment/[id]</code></p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>     **payload**
-     &lt;?xml version="1.0" encoding="UTF-8"?&gt;
-     &lt;Parameters xmlns="http://hl7.org/fhir"&gt;
-       &lt;parameter&gt;
-         &lt;name value="operation"/&gt;
-         &lt;part&gt;
-           &lt;name value="type"/&gt;
-           &lt;valueCode value="replace"/&gt;
-         &lt;/part&gt;
-         &lt;part&gt;
-           &lt;name value="path"/&gt;
-           &lt;valueString value="status"/&gt;
-         &lt;/part&gt;
-         &lt;part&gt;
-           &lt;name value="value"/&gt;
-           &lt;valueCode value="cancelled"/&gt;
-         &lt;/part&gt;
-       &lt;/parameter&gt;
-     &lt;/Parameters&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code>HTTP/1.1 200 OK
+Location: [base]/Appointment/argo-appt1/_history/3
+[other headers]
 </code></pre>
 </div>
 
-<p>Resulting cancelled Appointment:</p>
+<p><strong>Resulting cancelled Appointment:</strong></p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"resourceType"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Appointment"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"proposed-appt1"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"argo-appt1"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"meta"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nt">"profile"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="s2">"http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt"</span><span class="w">
@@ -1752,13 +1829,11 @@ Expires: Wed, 21 March 2018 07:28:00 GMT
 
 <h3 id="examples-2" class="no_toc">Examples</h3>
 
-<h5 id="a-json-example-1" class="no_toc">A JSON example:</h5>
-
-<p>Target Appointment:</p>
+<p><strong>Target Appointment:</strong></p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"resourceType"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Appointment"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"held-appt1"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"argo-appt1"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"meta"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nt">"profile"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="s2">"http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt"</span><span class="w">
@@ -1773,139 +1848,72 @@ Expires: Wed, 21 March 2018 07:28:00 GMT
 </span></code></pre>
 </div>
 
-<p><em>Cancel using PATCH</em></p>
+<p><strong>Release hold using JSON PATCH</strong></p>
 
-<p><code class="highlighter-rouge">PATCH [Base]/Appointment/[id]</code></p>
+<p><code class="highlighter-rouge">PATCH [Base]/Appointment/argo-appt1</code></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>     **Request body**
+<p><strong>Patch body</strong></p>
 
-     [
-     { "op": "replace", "path": "Appointment/status", "value": "cancelled" },
-     ]
+<div class="highlighter-rouge"><pre class="highlight"><code> [
+ { "op": "replace", "path": "Appointment/status", "value": "cancelled" },
+ ]
 </code></pre>
 </div>
 
-<p>Resulting released Appointment:</p>
+<p><strong>Release hold using XML PATCH</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"resourceType"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Appointment"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"held-appt1"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"meta"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"profile"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="s2">"http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt"</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="nt">"text"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-  </span><span class="err">...snip...</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="nt">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"cancelled"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"serviceType"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-  </span><span class="err">...snip...</span><span class="w">
-</span></code></pre>
-</div>
+<p><code class="highlighter-rouge">PATCH [Base]/Appointment/argo-appt1</code></p>
 
-<h5 id="an-xml-example-1" class="no_toc">An XML example:</h5>
-
-<p>Target Appointment:</p>
+<p><strong>Patch body</strong></p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code> &lt;?xml version="1.0" encoding="UTF-8"?&gt;
- &lt;Appointment xmlns="http://hl7.org/fhir"&gt;
-   &lt;id value="held-appt1"/&gt;
-   &lt;meta&gt;
-     &lt;profile
-              value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt"/&gt;
-   &lt;/meta&gt;
-   &lt;text&gt;
-  ...snip
-   &lt;/text&gt;
-   &lt;status value="booked"/&gt;
-   &lt;serviceType&gt;
-    ...snip...
-</code></pre>
-</div>
-
-<p><em>Cancel using PATCH</em></p>
-
-<p><code class="highlighter-rouge">PATCH [Base]/Appointment/[id]</code></p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code> **Request body**
-
- &lt;?xml version="1.0" encoding="UTF-8"?&gt;
  &lt;diff xmlns="http://hl7.org/fhir"&gt;
    &lt;replace sel="Appointment/status/@value"&gt;cancelled&lt;/replace&gt;
  &lt;/diff&gt;
 </code></pre>
 </div>
 
-<p>Resulting released Appointment:</p>
+<p><strong>Release hold using FHIRPath PATCH</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code> &lt;?xml version="1.0" encoding="UTF-8"?&gt;
- &lt;Appointment xmlns="http://hl7.org/fhir"&gt;
-   &lt;id value="held-appt1"/&gt;
-   &lt;meta&gt;
-     &lt;profile
-              value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt"/&gt;
-   &lt;/meta&gt;
-   &lt;text&gt;
-  ...snip...
-   &lt;/text&gt;
-   &lt;status value="cancelled"/&gt;
-  ...snip...
+<p><code class="highlighter-rouge">PATCH [Base]/Appointment/argo-appt1</code></p>
+
+<p><strong>Patch body</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> **payload**
+ &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+ &lt;Parameters xmlns="http://hl7.org/fhir"&gt;
+   &lt;parameter&gt;
+     &lt;name value="operation"/&gt;
+     &lt;part&gt;
+       &lt;name value="type"/&gt;
+       &lt;valueCode value="replace"/&gt;
+     &lt;/part&gt;
+     &lt;part&gt;
+       &lt;name value="path"/&gt;
+       &lt;valueString value="status"/&gt;
+     &lt;/part&gt;
+     &lt;part&gt;
+       &lt;name value="value"/&gt;
+       &lt;valueCode value="cancelled"/&gt;
+     &lt;/part&gt;
+   &lt;/parameter&gt;
+ &lt;/Parameters&gt;
 </code></pre>
 </div>
 
-<h5 id="a-fhirpathhttphl7orgfhirpath-example-1" class="no_toc">A <a href="http://hl7.org/fhirpath/">FHIRPath</a> example:</h5>
+<p><em>Response</em></p>
 
-<p>Target Appointment:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"resourceType"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Appointment"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"held-appt1"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"meta"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"profile"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="s2">"http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt"</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="nt">"text"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-  </span><span class="err">...snip...</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="nt">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"booked"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"serviceType"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-  </span><span class="err">...snip...</span><span class="w">
-</span></code></pre>
-</div>
-
-<p><em>Cancel using PATCH</em></p>
-
-<p><code class="highlighter-rouge">PATCH [Base]/Appointment/[id]</code></p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>     **Request body**
-     &lt;?xml version="1.0" encoding="UTF-8"?&gt;
-     &lt;Parameters xmlns="http://hl7.org/fhir"&gt;
-       &lt;parameter&gt;
-         &lt;name value="operation"/&gt;
-         &lt;part&gt;
-           &lt;name value="type"/&gt;
-           &lt;valueCode value="replace"/&gt;
-         &lt;/part&gt;
-         &lt;part&gt;
-           &lt;name value="path"/&gt;
-           &lt;valueString value="status"/&gt;
-         &lt;/part&gt;
-         &lt;part&gt;
-           &lt;name value="value"/&gt;
-           &lt;valueCode value="cancelled"/&gt;
-         &lt;/part&gt;
-       &lt;/parameter&gt;
-     &lt;/Parameters&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code>HTTP/1.1 200 OK
+Location: [base]/Appointment/argo-appt1/_history/3
+[other headers]
 </code></pre>
 </div>
 
-<p>Resulting released Appointment:</p>
+<p><strong>Resulting Appointment after releasing hold:</strong></p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"resourceType"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Appointment"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"held-appt1"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"argo-appt1"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"meta"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nt">"profile"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="s2">"http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt"</span><span class="w">
@@ -2002,7 +2010,7 @@ Expires: Wed, 21 March 2018 07:28:00 GMT
   <div class="container">    <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Tue, Mar 20, 2018 18:25-0700. |
+            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Wed, Mar 21, 2018 12:44-0700. |
                <!-- <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a rel="license" style="color: #81BEF7" href="http://hl7.org/fhir/STU3license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a>
         

@@ -3,30 +3,199 @@
 <CapabilityStatement xmlns="http://hl7.org/fhir">
   <id value="client"/>
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml">
+    <status value="additional"/><div xmlns="http://www.w3.org/1999/xhtml">
+			<h2 id="argonaut-scheduling-conformance-requirements">Argonaut Scheduling Conformance Requirements</h2>
+			<p>This section outlines conformance requirements for the Argonaut Scheduling Client applications, identifying the specific profiles that need to be supported, the specific RESTful operations that need to be supported, and the search parameters that need to be supported. Note: The individual Argonaut Scheduling profiles identify the structural constraints, terminology bindings and invariants, however, implementers must refer to the conformance requirements for details on the RESTful operations, specific profiles and the search parameters applicable to each of the Argonaut Scheduling actors.</p>
+			<h3 id="conformance-requirements-for-the-argonaut-scheduling-implementation-guide-client">Conformance requirements for the Argonaut Scheduling Implementation Guide Client</h3>
 			<ul>
 				<li>FHIR Version: 3.0.1</li>
 				<li>Supported formats: xml, json</li>
-				<li>Published: 2017-03-08</li>
-				<li>Published by: Health eData Inc</li>
+				<li>Published: March 20, 2018</li>
+				<li>Published by: The Argonaut Project</li>
 			</ul>
-			<p>The Section describes the expected capabilities etc....</p>
+			<p>The Section describes the expected capabilities of the Argonaut Scheduling Scheduling Client which is responsible for creating and initiating the queries for information about patient scheduling as well as creating and updating this information. The complete list of FHIR profiles, RESTful operations, and search parameters supported by Argonaut Scheduling Servers are defined in the Argonaut Scheduling Server CapabilityStatement.  Clients have the option of choosing from this list to access necessary data based on their local use cases and other contextual requirements.</p>
+			<h4 id="behavior">Behavior</h4>
+			<p>Description:</p>
+			<p>The Argonaut Scheduling Client <strong>SHOULD</strong>:</p>
+			<ol>
+				<li>Support fetching and querying scheduling information, using the supported RESTful interactions and search parameters declared in the Argonaut Scheduling Server CapabilityStatement.</li>
+				<li>Conform to the <a href="http://hl7.org/fhir/us/core/1.0.1">US Core Implementation Guide</a>.</li>
+			</ol>
+			<p>The Argonaut Scheduling Client <strong>MAY</strong>:</p>
+			<ol>
+				<li>Support creation and updates of scheduling and patient information, using the supported RESTful interactions and search parameters declared in the Argonaut Scheduling Server CapabilityStatement.</li>
+			</ol>
+			<h4 id="security-">Security:</h4>
+			<p>For general security consideration refer to the <a href="http://hl7.org/fhir/us/core/security.html">Security section</a> in the US Core Implementation Guide.</p>
+			<h4 id="profile-interaction-summary-">Profile Interaction Summary:</h4>
+			<p>Specific server search capabilities are described in detail in each of the resource sections below.</p>
+			<h4 id="appointment">Appointment</h4>
+			<p>Supported Profiles:  <a href="StructureDefinition-argo-appt.html">Argonaut Appointment Profile</a>
+			</p>
+			<h5>Capabilities</h5>
+			<ol>
+				<li>
+					<p>A client <strong>SHOULD</strong> be capable of fetching Appointments using:</p>
+					<p>
+						<code>GET [base]/Appointment/[id]</code>.</p>
+				</li>
+				<li>
+					<p>A client <strong>SHOULD</strong> be capable of fetching Appointments using search:</p>
+					<p>
+						<code>GET [base]/Appointment?patient=[id]{&amp;status=[status]}{&amp;date=[date]{&amp;date=[date]}}{&amp;practitioner=[id]}</code>
+					</p>
+					<ol>
+						<li>A client <strong>SHOULD</strong> support the following search parameters:<ul>
+								<li>_id</li>
+								<li>patient</li>
+								<li>status</li>
+								<li>date - including the date modifiers ‘ge’,’le’,’gt’,’lt’</li>
+								<li>practitioner</li>
+							</ul>
+						</li>
+					</ol>
+				</li>
+			</ol>
+			<ol>
+				<li>
+					<p>A client <strong>SHOULD</strong> be capable of fetching Appointments by supporting  the <a href="OperationDefinition-appointment-find.html">Appointment Availability Operation</a> using either the <code>GET</code> or <code>POST</code> syntax.</p>
+					<p>
+						<code>GET [base]/Appointment/$find?{parameters}&amp;?{_count}</code>
+					</p>
+					<p>
+						<code>POST [base]/Appointment/$find?{_count}</code>
+					</p>
+				</li>
+				<li>
+					<p>A client <strong>MAY</strong> be capable of creating or updating Appointments by supporting the <a href="OperationDefinition-appointment-hold.html">Appointment Hold Operation</a>.</p>
+					<p>
+						<code>POST [base]/Appointment/[id]/$hold</code>
+					</p>
+					<p>
+						<code>POST [base]/Appointment/$hold</code>
+					</p>
+				</li>
+				<li>
+					<p>A client <strong>SHOULD</strong> be capable of creating or updating Appointments by supporting  the <a href="OperationDefinition-appointment-book.html">Appointment Book Operation</a>.</p>
+					<p>
+						<code>POST [base]/Appointment/[id]/$hold</code>
+					</p>
+					<p>
+						<code>POST [base]/Appointment/$hold</code>
+					</p>
+				</li>
+				<li>
+					<p>A client <strong>SHOULD</strong> be capable of updating Appointments by supporting patch using either  JSON, XML, or FHIRPath Patch.</p>
+					<p>
+						<code>PATCH [Base]/Appointment/[id]</code>
+					</p>
+				</li>
+			</ol>
+			<hr/>
+			<h4 id="bundle">Bundle</h4>
+			<p>Supported Profiles:</p>
+			<ul>
+				<li>
+					<a href="StructureDefinition-avail-bundle.html">Argonaut Appointment Bundle Profile</a>
+				</li>
+				<li>
+					<p>
+						<a href="StructureDefinition-slot-bundle.html">Argonaut Slot Bundle Profile</a>
+					</p>
+				</li>
+				<li>
+					<p>A client <strong>SHOULD</strong> be capable of consuming a Bundle as a response to a a query or operation.</p>
+				</li>
+			</ul>
+			<h4 id="coverage">Coverage</h4>
+			<p>Supported Profiles:  <a href="StructureDefinition-argo-coverage.html">Argonaut Coverage Profile</a>
+			</p>
+			<h5>Capabilities</h5>
+			<ol>
+				<li>
+					<p>A client <strong>MAY</strong> be capable of updating or creating a patient's Coverage.</p>
+					<p>
+						<code>PUT [base]/Coverage/[id]</code>
+					</p>
+					<p>
+						<code>PUT or POST [base]/Coverage</code>
+					</p>
+				</li>
+			</ol>
+			<hr/>
+			<h4 id="patient">Patient</h4>
+			<p>Supported Profiles:  <a href="{{site.data.fhir.uscore}}/StructureDefinition-us-core-patient.html#search">US Core Patient Profile</a>
+			</p>
+			<h5>Capabilities</h5>
+			<ol>
+				<li>
+					<p>A client <strong>SHOULD</strong> be capable of searching for Patients as defined in the US Core Implementation Guide.</p>
+				</li>
+				<li>
+					<p>A client <strong>MAY</strong> be capable of creating Patients by supporting create.</p>
+					<p>
+						<code>POST [base]/Patient</code>
+					</p>
+				</li>
+			</ol>
+			<hr/>
+			<h4 id="schedule">Schedule</h4>
+			<p>Supported Profiles:  <a href="StructureDefinition-argo-sched-notif.html">Argonaut Schedule Notification Profile</a>
+			</p>
+			<ol>
+				<li>A client <strong>MAY</strong> be capable of consuming a Schedule notification as a response to a <a href="StructureDefinition-argo-sub-notif.html">Argonaut Scheduling Subscription Profile</a>.</li>
+			</ol>
+			<hr/>
+			<h4>Slot</h4>
+			<p>Supported Profiles:  <a href="StructureDefinition-prefetch-slot.html">Argonaut Prefetch Slot Profile</a>
+			</p>
+			<h5>Capabilities</h5>
+			<ol>
+				<li>
+					<p>A client <strong>MAY</strong> be capable of fetching Slots by supporting  the <a href="OperationDefinition-appointment-find.html">Appointment Availability Operation</a>.</p>
+					<ul>
+						<li>
+							<p>Both the <code>GET</code> and <code>POST</code> Syntax SHALL be supported:</p>
+							<p>
+								<code>GET [base]/Slot/$prefetch?{parameters}</code>
+							</p>
+							<p>
+								<code>POST [base]/Slot/$prefetch</code>
+							</p>
+						</li>
+					</ul>
+				</li>
+			</ol>
+			<hr/>
+			<h4 id="subscription">Subscription</h4>
+			<p>Supported Profiles:  <a href="StructureDefinition-argo-sub-notif.html">Argonaut Scheduling Subscription Profile</a>
+			</p>
+			<h5>Capabilities</h5>
+			<ol>
+				<li>
+					<p>A client <strong>MAY</strong> be capable of creating Subscriptions</p>
+					<p>
+						<code>POST [base]/Subscription</code>
+					</p>
+				</li>
+				<li>
+					<p>A client <strong>MAY</strong> be capable of deleting Subscriptions</p>
+					<p>
+						<code>DELETE [base]/Subscription</code>
+					</p>
+				</li>
+			</ol>
 		</div>
   </text>
   <url value="http://fhir.org/guides/argonaut-scheduling/CapabilityStatement/client"/>
   <version value="0.0.0"/>
-  <name value="Client"/>
-  <title value="Client"/>
+  <name value="Argonaut_Scheduling_Client_CapabilityStatement"/>
+  <title value="Argonaut Scheduling Client CapabilityStatement"/>
   <status value="draft"/>
-  <date value="2017-03-08T00:00:00-08:00"/>
-  <publisher value="Health eData Inc"/>
-  <contact>
-    <telecom>
-      <system value="other"/>
-      <value value="ehaas@healthedatainc.com"/>
-    </telecom>
-  </contact>
-  <description value="This resource defines the expected capabilities "/>
+  <experimental value="false"/>
+  <date value="2018-03-18T00:00:00-07:00"/>
+  <publisher value="Argonaut Project"/>
+  <description value="The Argonaut Scheduling Client CapabilityStatement provides a for a complete list of supported RESTful interactions for the Argonaut Scheduling Implementation Guide"/>
   <jurisdiction>
     <coding>
       <system value="urn:iso:std:iso:3166"/>
@@ -36,18 +205,27 @@
   </jurisdiction>
   <kind value="requirements"/>
   <fhirVersion value="3.0.1"/>
-  <format value="xml"/>
-  <format value="json"/>
+  <format value="application/fhir+xml"/>
+  <format value="application/fhir+json"/>
+  <patchFormat value="application/json-patch+json"/>
+  <patchFormat value="application/xml-patch+xml"/>
+  <patchFormat value="application/fhirpath-patch+fhirpath"/>
+  <implementationGuide value="http://fhir.org/guides/argonaut-scheduling/ImplementationGuide/ig"/>
+  <implementationGuide value="http://hl7.org/fhir/us/core/ImplementationGuide/ig"/>
   <rest>
-    <mode value="client"/>
+    <mode value="server"/>
+    <documentation value="The [Argonaut](http://argonautwiki.hl7.org/) Scheduling Project is a vendor agnostic specification providing FHIR RESTful APIs and guidance for access to and booking of appointments for patients by both patient and practitioner end users. This specification is based on [FHIR Version 3.0.1]({{site.data.fhir.path}}) and specifically the [Scheduling and Appointment resources]({{site.data.fhir.path}}/administration-module.html#sched)."/>
+    <security>
+      <service>
+        <coding>
+          <system value="http://hl7.org/fhir/restful-security-service"/>
+          <code value="SMART-on-FHIR"/>
+        </coding>
+      </service>
+      <description value="For general security consideration refer to the [Security section](http://hl7.org/fhir/us/core/security.html) in the US Core Implementation Guide."/>
+    </security>
     <resource>
-      <type value="Slot"/>
-      <interaction>
-        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
-          <valueCode value="SHOULD"/>
-        </extension>
-        <code value="search-type"/>
-      </interaction>
+      <type value="Appointment"/>
       <interaction>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
           <valueCode value="SHOULD"/>
@@ -58,14 +236,150 @@
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
           <valueCode value="SHOULD"/>
         </extension>
-        <code value="history-instance"/>
+        <code value="search-type"/>
       </interaction>
       <interaction>
         <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
           <valueCode value="SHOULD"/>
         </extension>
-        <code value="vread"/>
+        <code value="patch"/>
+      </interaction>
+      <referencePolicy value="enforced"/>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHOULD"/>
+        </extension>
+        <name value="_id"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/_id"/>
+        <type value="token"/>
+      </searchParam>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHOULD"/>
+        </extension>
+        <name value="patient"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/patient"/>
+        <type value="reference"/>
+      </searchParam>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHOULD"/>
+        </extension>
+        <name value="status"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/status"/>
+        <type value="token"/>
+      </searchParam>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHOULD"/>
+        </extension>
+        <name value="date"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/date"/>
+        <type value="date"/>
+      </searchParam>
+      <searchParam>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHOULD"/>
+        </extension>
+        <name value="practitioner"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/practitioner"/>
+        <type value="reference"/>
+        <documentation value="including the date modifiers &#x2018;ge&#x2019;,&#x2019;le&#x2019;,&#x2019;gt&#x2019;,&#x2019;lt&#x2019;"/>
+      </searchParam>
+    </resource>
+    <resource>
+      <type value="Coverage"/>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="MAY"/>
+        </extension>
+        <code value="create"/>
+      </interaction>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="MAY"/>
+        </extension>
+        <code value="update"/>
+      </interaction>
+      <updateCreate value="true"/>
+      <referencePolicy value="enforced"/>
+    </resource>
+    <resource>
+      <type value="Patient"/>
+      <documentation value="A serve **SHALL** be capable of searching for Patients as defined in the US Core Implementation Guide"/>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="MAY"/>
+        </extension>
+        <code value="create"/>
+      </interaction>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="SHOULD"/>
+        </extension>
+        <code value="search-type"/>
+      </interaction>
+      <referencePolicy value="enforced"/>
+    </resource>
+    <resource>
+      <type value="Schedule"/>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="MAY"/>
+        </extension>
+        <code value="read"/>
       </interaction>
     </resource>
+    <resource>
+      <type value="Subscription"/>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="MAY"/>
+        </extension>
+        <code value="create"/>
+      </interaction>
+      <interaction>
+        <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+          <valueCode value="MAY"/>
+        </extension>
+        <code value="delete"/>
+      </interaction>
+    </resource>
+    <operation>
+      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+        <valueCode value="SHOULD"/>
+      </extension>
+      <name value="find"/>
+      <definition>
+        <reference value="http://fhir.org/guides/argonaut-scheduling/OperationDefinition/appointment-find"/>
+      </definition>
+    </operation>
+    <operation>
+      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+        <valueCode value="MAY"/>
+      </extension>
+      <name value="hold"/>
+      <definition>
+        <reference value="http://fhir.org/guides/argonaut-scheduling/OperationDefinition/appointment-hold"/>
+      </definition>
+    </operation>
+    <operation>
+      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+        <valueCode value="SHOULD"/>
+      </extension>
+      <name value="book"/>
+      <definition>
+        <reference value="http://fhir.org/guides/argonaut-scheduling/OperationDefinition/appointment-book"/>
+      </definition>
+    </operation>
+    <operation>
+      <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+        <valueCode value="MAY"/>
+      </extension>
+      <name value="prefetch"/>
+      <definition>
+        <reference value="http://fhir.org/guides/argonaut-scheduling/OperationDefinition/slot-prefetch"/>
+      </definition>
+    </operation>
   </rest>
 </CapabilityStatement>

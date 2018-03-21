@@ -130,7 +130,7 @@ Throughout the development of the Argonaut Scheduling Guide several additional i
 
    -  For example an operation could precede the search for appointment availability to discover what inputs are needed for the service.  This operation would return a questionnaire to be filled out by the end user and submitted with the appointment availability operation.  Alternatively, an operation could return an OperationOutcome resource informing the client that information is needed and a questionnaire to be completed first.
 
-1. Amending an appointment by an end user
+1. Amending an appointment or patient information by an end user
    - Need to establish what if anything the consumer can update.
 
 1. Scheduling Requests
@@ -139,7 +139,6 @@ Throughout the development of the Argonaut Scheduling Guide several additional i
    - May need have a separate interaction that users can just submit the request.
 
 1.  Best Practices
-
     - Add a section prescribing best practices for technical operations. Such as a check list of steps ( Client SHALL verify successful cancellation prior to rebooking ).
 
 1. Prior approvals including preauthorizations

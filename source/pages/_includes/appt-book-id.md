@@ -7,7 +7,6 @@
 ~~~
     {
       "resourceType": "Parameters",
-      "id": "pcp-appts",
       "parameter": [
         {
           "name": "appt-id",
@@ -15,7 +14,7 @@
         },
         {
           "name": "patient-id",
-            "valueDateTime" : "Patient/1234"
+            "valueUrl" : "Patient/1234"
         }
     ]
     }
@@ -35,7 +34,7 @@ HTTP/1.1 200 OK
           "resourceType": "Bundle",
           "id": "derm-booked",
           "type": "searchset",
-          "total": 2,
+          "total": 1,
           "entry": [{
             "fullUrl": "http://server/path/Appointment/booked-derm-appt",
             "resource": {
@@ -45,6 +44,8 @@ HTTP/1.1 200 OK
                 "status" : "booked",
                 "serviceType" : [
               ...snip...
+            ]
+            "entry": [{
             "fullUrl": "http://server/path/OperationOutcome/oo-booked-derm-appt",
             "resource": {
               "resourceType": "OperationOutcome",

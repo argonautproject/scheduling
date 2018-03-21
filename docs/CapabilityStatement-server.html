@@ -277,7 +277,7 @@
 
   <div xmlns="http://www.w3.org/1999/xhtml">
 			<h2 id="argonaut-scheduling-conformance-requirements">Argonaut Scheduling Conformance Requirements</h2>
-			<p>This section outlines conformance requirements for the Argonaut Scheduling Servers and Client applications, identifying the specific profiles that need to be supported, the specific RESTful operations that need to be supported, and the search parameters that need to be supported. Note: The individual Argonaut Scheduling profiles identify the structural constraints, terminology bindings and invariants, however, implementers must refer to the conformance requirements for details on the RESTful operations, specific profiles and the search parameters applicable to each of the Argonaut Scheduling actors.</p>
+			<p>This section outlines conformance requirements for the Argonaut Scheduling Servers application, identifying the specific profiles that need to be supported, the specific RESTful operations that need to be supported, and the search parameters that need to be supported. Note: The individual Argonaut Scheduling profiles identify the structural constraints, terminology bindings and invariants, however, implementers must refer to the conformance requirements for details on the RESTful operations, specific profiles and the search parameters applicable to each of the Argonaut Scheduling actors.</p>
 			<h3 id="conformance-requirements-for-the-argonaut-scheduling-implementation-guide-server">Conformance requirements for the Argonaut Scheduling Implementation Guide Server</h3>
 			<ul>
 				<li>FHIR Version: 3.0.1</li>
@@ -285,13 +285,14 @@
 				<li>Published: March 20, 2018</li>
 				<li>Published by: The Argonaut Project</li>
 			</ul>
-			<p>The Section describes the expected Capabilities of the Argonaut Scheduling Scheduling Server whihc is responsible for providing responses to the requests submitted by the Argonaut Scheduling Clients. The complete list of FHIR profiles, RESTful operations, and search parameters supported by Argonaut Scheduling Servers are defined. Argonaut Scheduling Clients have the option of choosing from this list to access necessary data based on their local use cases and other contextual requirements.</p>
+			<p>The Section describes the expected Capabilities of the Argonaut Scheduling Scheduling Server which is responsible for providing responses to the requests submitted by the Argonaut Scheduling Clients. The complete list of FHIR profiles, RESTful operations, and search parameters supported by Argonaut Scheduling Servers are defined.</p>
 			<h4 id="behavior">Behavior</h4>
 			<p>Description:</p>
 			<p>The Argonaut Scheduling Server <strong>SHALL</strong>:</p>
 			<ol>
 				<li>Support at least one Argonaut Scheduling patient or provider use case.</li>
-				<li><a name="49882802-f338-428a-b95f-452c5325f9c3">​</a>Implement the RESTful behavior according to the FHIR specification including returning the appropriate response classes as described in the FHIR specification for <a href="{site.data.fhir.path}}/http.html">FHIR RESTful API</a> and <a href="{site.data.fhir.path}}/operations.html">Extended Operations on the RESTful API</a>.</li>
+				<li><a name="946d2ab6-7f5b-4280-9a8d-196b7c0dcde7">​</a>Implement the RESTful behavior according to the FHIR specification including returning the appropriate response classes as described in the FHIR specification for <a href="{site.data.fhir.path}}/http.html">FHIR RESTful API</a> and <a href="{site.data.fhir.path}}/operations.html">Extended Operations on the RESTful API</a>.</li>
+				<li>Conform to the <a href="http://hl7.org/fhir/us/core/1.0.1">US Core Implementation Guiide</a>.</li>
 				<li>Support <em>json</em> resource formats for all Argonaut Scheduling interactions.</li>
 				<li>Declare a CapabilityStatement identifying the list of profiles, operations, search parameter supported.</li>
 			</ol>
@@ -337,6 +338,13 @@
 					</tr>
 					<tr>
 						<td>
+							<a href="#patient">Patient</a>
+						</td>
+						<td>US Core Patient Profile</td>
+						<td>search, create</td>
+					</tr>
+					<tr>
+						<td>
 							<a href="#schedule">Schedule</a>
 						</td>
 						<td>Argonaut Schedule Notification Profile</td>
@@ -344,14 +352,14 @@
 						</td>
 					</tr>
 					<tr>
-						<td><a name="3c6f49c7-fc60-4364-afb3-b9df1413139e">​</a>
+						<td><a name="d4aaf42b-7156-4c3c-8862-4fec9da2e8b1">​</a>
 							<a href="#slot">Slot</a>
 						</td>
 						<td>Argonaut Prefetch Slot Profile</td>
 						<td>$prefetch</td>
 					</tr>
 					<tr>
-						<td><a name="c2988704-18a8-49fd-bffa-ca13993ca205">​</a>
+						<td><a name="21ac72d1-cbdc-47a9-a2f6-6f631e938de1">​</a>
 							<a href="#Subscription">Subscription</a>
 						</td>
 						<td>Argonaut Scheduling Subscription Profile</td>
@@ -362,7 +370,7 @@
 			<h4 id="resource-details-">Resource  Details:</h4>
 			<hr/>
 			<h4 id="appointment">Appointment</h4>
-			<p><a name="ea962dd9-2b98-4f05-8a3e-0ee100bd7d8c">​</a>Supported Profiles:  <a href="StuctureDefinition-argo-appt.html">Argonaut Appointment Profile</a>
+			<p>Supported Profiles:  <a href="StructureDefinition-argo-appt.html">Argonaut Appointment Profile</a>
 			</p>
 			<p>Capabilities:</p>
 			<ol>
@@ -439,15 +447,15 @@
 			<h4 id="bundle">Bundle</h4>
 			<p>Supported Profiles:</p>
 			<ul>
-				<li><a name="ba4e08c9-85de-414a-9df0-3f824416cd7c">​</a>
-					<a href="StuctureDefinition-avail-bundle.html">Argonaut Appointment Bundle Profile</a>
+				<li>
+					<a href="StructureDefinition-avail-bundle.html">Argonaut Appointment Bundle Profile</a>
 				</li>
-				<li><a name="335c9603-195b-4572-98d8-8710ac6dd133">​</a>
-					<a href="StuctureDefinition-slot-bundle.html">Argonaut Slot Bundle Profile</a>
+				<li>
+					<a href="StructureDefinition-slot-bundle.html">Argonaut Slot Bundle Profile</a>
 				</li>
 			</ul>
 			<h4 id="coverage">Coverage</h4>
-			<p><a name="e4fee2d3-4ff8-401c-b129-04aadf295aa0">​</a>Supported Profiles:  <a href="StuctureDefinition-argo-coverage.html">Argonaut Coverage Profile</a>
+			<p>Supported Profiles:  <a href="StructureDefinition-argo-coverage.html">Argonaut Coverage Profile</a>
 			</p>
 			<p>Capabilities:</p>
 			<ol>
@@ -465,12 +473,31 @@
 				</li>
 			</ol>
 			<hr/>
+			<h4 id="patient">Patient</h4>
+			<p>Supported Profiles:  <a href="http://hl7.org/fhir/us/core/stu1//StructureDefinition-us-core-patient.html#search">US Core Patient Profile</a>
+			</p>
+			<h5>Capabilities</h5>
+			<ol>
+				<li>
+					<p>A server <strong>SHALL</strong> be capable of searching for Patients as defined in the US Core Implementation Guide.</p>
+				</li>
+				<li>
+					<p>A server <strong>SHOULD</strong> be capable of creating Patients by supporting create</p>
+					<p>
+						<code>POST [base]/Patient</code>
+					</p>
+					<ul>
+						<li>The server <strong>SHOULD</strong> create a new patient resource only if the patient resource does not already exist in the system. If the patient is already registered within the system, the existing patient resource <strong>SHOULD</strong> be returned.</li>
+					</ul>
+				</li>
+			</ol>
+			<hr/>
 			<h4 id="schedule">Schedule</h4>
-			<p><a name="690b1104-e342-4ea2-8ce2-3ce792bf8599">​</a>Supported Profiles:  <a href="StuctureDefinition-argo-sched-notif.html">Argonaut Schedule Notification Profile</a>
+			<p>Supported Profiles:  <a href="StructureDefinition-argo-sched-notif.html">Argonaut Schedule Notification Profile</a>
 			</p>
 			<hr/>
 			<h4>Slot</h4>
-			<p><a name="d209ce07-103d-4dd3-b045-5f51aaa57397">​</a>Supported Profiles:  <a href="StuctureDefinition-prefetch-slot.html">Argonaut Prefetch Slot Profile</a>
+			<p>Supported Profiles:  <a href="StructureDefinition-prefetch-slot.html">Argonaut Prefetch Slot Profile</a>
 			</p>
 			<p>Capabilities:</p>
 			<ol>
@@ -491,7 +518,7 @@
 			</ol>
 			<hr/>
 			<h4 id="subscription">Subscription</h4>
-			<p><a name="4d08d778-971e-47a6-a25e-c8b9ae30a942">​</a>Supported Profiles:  <a href="StuctureDefinition-argo-sub-notif.html">Argonaut Scheduling Subscription Profile</a>
+			<p>Supported Profiles:  <a href="StructureDefinition-argo-sub-notif.html">Argonaut Scheduling Subscription Profile</a>
 			</p>
 			<p>Capabilities:</p>
 			<ol>
@@ -552,7 +579,7 @@ Formats: <a href="CapabilityStatement-server.html">Narrative</a>, <a href="Capab
   <div class="container">    <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Tue, Mar 20, 2018 18:25-0700. |
+            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Wed, Mar 21, 2018 12:44-0700. |
                <!-- <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a rel="license" style="color: #81BEF7" href="http://hl7.org/fhir/STU3license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a>
         

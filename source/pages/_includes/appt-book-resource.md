@@ -7,7 +7,6 @@
 ~~~
 {
   "resourceType" : "Appointment",
-  "id" : "proposed-appt2",
 ...snip...
   "status" : "pending",
   "serviceType" : [
@@ -29,7 +28,6 @@
 ~~~  
       {
         "resourceType": "Parameters",
-        "id": "pcp-hold",
         "parameter": [
           {
             "name": "appt-resource",
@@ -59,7 +57,8 @@
 **Response**
 
 ~~~
-HTTP/1.1 200 OK
+HTTP/1.1 201 Created
+Location: [base]/Appointment/argo-appt-1/_history/1
 [other headers]
 ~~~
 
@@ -69,7 +68,7 @@ HTTP/1.1 200 OK
 
     {
       "resourceType": "Bundle",
-      "id": "hal-dr-y-held",
+      "id": "argo-appt-1",
       "type": "searchset",
       "total": 2,
       "entry": [{

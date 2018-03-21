@@ -31,6 +31,7 @@ The following data-elements are mandatory (i.e data MUST be present).
 **Additional Profile specific implementation guidance:**
 
  - The [Appointment State Diagram](state-diagram.html) SHOULD be referenced to when considering the statuses of the scheduling resources during the scheduling workflow.
+ - The Specialty codes are bound to the [Argonaut Scheduling Specialties](ValueSet-specialty.html) valueset which is based upon SNOMED CT.  There are other provider specialty code systems that implementers should be aware of including *NUCC* codes, and *CMS Provider* types.  More information on them can be found [here](https://www.cms.gov/Medicare/Provider-Enrollment-and-Certification/MedicareProviderSupEnroll/Taxonomy.html).
 
 #### Examples
 

@@ -20,7 +20,6 @@ Use the operation to fetch a maximum of the soonest 3 open appointments availabl
 ~~~
 {
   "resourceType": "Parameters",
-  "id": "pcp-appts",
   "parameter": [
     {
       "name": "start",

@@ -296,32 +296,202 @@
 &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement">CapabilityStatement</a> xmlns=&quot;http://hl7.org/fhir&quot;&gt;
   &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.id">id</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#id">value</a>=&quot;client&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.text">text</a>&gt;
-    &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#Narrative#Narrative.status">status</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;generated&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#Narrative#Narrative.status">status</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;additional&quot;/&gt;
     &lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+			&lt;h2 id=&quot;argonaut-scheduling-conformance-requirements&quot;&gt;Argonaut Scheduling Conformance Requirements&lt;/h2&gt;
+			&lt;p&gt;This section outlines conformance requirements for the Argonaut Scheduling Client applications, identifying the specific profiles that need to be supported, the specific RESTful operations that need to be supported, and the search parameters that need to be supported. Note: The individual Argonaut Scheduling profiles identify the structural constraints, terminology bindings and invariants, however, implementers must refer to the conformance requirements for details on the RESTful operations, specific profiles and the search parameters applicable to each of the Argonaut Scheduling actors.&lt;/p&gt;
+			&lt;h3 id=&quot;conformance-requirements-for-the-argonaut-scheduling-implementation-guide-client&quot;&gt;Conformance requirements for the Argonaut Scheduling Implementation Guide Client&lt;/h3&gt;
 			&lt;ul&gt;
 				&lt;li&gt;FHIR Version: 3.0.1&lt;/li&gt;
 				&lt;li&gt;Supported formats: xml, json&lt;/li&gt;
-				&lt;li&gt;Published: 2017-03-08&lt;/li&gt;
-				&lt;li&gt;Published by: Health eData Inc&lt;/li&gt;
+				&lt;li&gt;Published: March 20, 2018&lt;/li&gt;
+				&lt;li&gt;Published by: The Argonaut Project&lt;/li&gt;
 			&lt;/ul&gt;
-			&lt;p&gt;The Section describes the expected capabilities etc....&lt;/p&gt;
+			&lt;p&gt;The Section describes the expected capabilities of the Argonaut Scheduling Scheduling Client which is responsible for creating and initiating the queries for information about patient scheduling as well as creating and updating this information. The complete list of FHIR profiles, RESTful operations, and search parameters supported by Argonaut Scheduling Servers are defined in the Argonaut Scheduling Server CapabilityStatement.  Clients have the option of choosing from this list to access necessary data based on their local use cases and other contextual requirements.&lt;/p&gt;
+			&lt;h4 id=&quot;behavior&quot;&gt;Behavior&lt;/h4&gt;
+			&lt;p&gt;Description:&lt;/p&gt;
+			&lt;p&gt;The Argonaut Scheduling Client &lt;strong&gt;SHOULD&lt;/strong&gt;:&lt;/p&gt;
+			&lt;ol&gt;
+				&lt;li&gt;Support fetching and querying scheduling information, using the supported RESTful interactions and search parameters declared in the Argonaut Scheduling Server CapabilityStatement.&lt;/li&gt;
+				&lt;li&gt;Conform to the &lt;a href=&quot;http://hl7.org/fhir/us/core/1.0.1&quot;&gt;US Core Implementation Guide&lt;/a&gt;.&lt;/li&gt;
+			&lt;/ol&gt;
+			&lt;p&gt;The Argonaut Scheduling Client &lt;strong&gt;MAY&lt;/strong&gt;:&lt;/p&gt;
+			&lt;ol&gt;
+				&lt;li&gt;Support creation and updates of scheduling and patient information, using the supported RESTful interactions and search parameters declared in the Argonaut Scheduling Server CapabilityStatement.&lt;/li&gt;
+			&lt;/ol&gt;
+			&lt;h4 id=&quot;security-&quot;&gt;Security:&lt;/h4&gt;
+			&lt;p&gt;For general security consideration refer to the &lt;a href=&quot;http://hl7.org/fhir/us/core/security.html&quot;&gt;Security section&lt;/a&gt; in the US Core Implementation Guide.&lt;/p&gt;
+			&lt;h4 id=&quot;profile-interaction-summary-&quot;&gt;Profile Interaction Summary:&lt;/h4&gt;
+			&lt;p&gt;Specific server search capabilities are described in detail in each of the resource sections below.&lt;/p&gt;
+			&lt;h4 id=&quot;appointment&quot;&gt;Appointment&lt;/h4&gt;
+			&lt;p&gt;Supported Profiles:  &lt;a href=&quot;StructureDefinition-argo-appt.html&quot;&gt;Argonaut Appointment Profile&lt;/a&gt;
+			&lt;/p&gt;
+			&lt;h5&gt;Capabilities&lt;/h5&gt;
+			&lt;ol&gt;
+				&lt;li&gt;
+					&lt;p&gt;A client &lt;strong&gt;SHOULD&lt;/strong&gt; be capable of fetching Appointments using:&lt;/p&gt;
+					&lt;p&gt;
+						&lt;code&gt;GET [base]/Appointment/[id]&lt;/code&gt;.&lt;/p&gt;
+				&lt;/li&gt;
+				&lt;li&gt;
+					&lt;p&gt;A client &lt;strong&gt;SHOULD&lt;/strong&gt; be capable of fetching Appointments using search:&lt;/p&gt;
+					&lt;p&gt;
+						&lt;code&gt;GET [base]/Appointment?patient=[id]{&amp;amp;status=[status]}{&amp;amp;date=[date]{&amp;amp;date=[date]}}{&amp;amp;practitioner=[id]}&lt;/code&gt;
+					&lt;/p&gt;
+					&lt;ol&gt;
+						&lt;li&gt;A client &lt;strong&gt;SHOULD&lt;/strong&gt; support the following search parameters:&lt;ul&gt;
+								&lt;li&gt;_id&lt;/li&gt;
+								&lt;li&gt;patient&lt;/li&gt;
+								&lt;li&gt;status&lt;/li&gt;
+								&lt;li&gt;date - including the date modifiers ‘ge’,’le’,’gt’,’lt’&lt;/li&gt;
+								&lt;li&gt;practitioner&lt;/li&gt;
+							&lt;/ul&gt;
+						&lt;/li&gt;
+					&lt;/ol&gt;
+				&lt;/li&gt;
+			&lt;/ol&gt;
+			&lt;ol&gt;
+				&lt;li&gt;
+					&lt;p&gt;A client &lt;strong&gt;SHOULD&lt;/strong&gt; be capable of fetching Appointments by supporting  the &lt;a href=&quot;OperationDefinition-appointment-find.html&quot;&gt;Appointment Availability Operation&lt;/a&gt; using either the &lt;code&gt;GET&lt;/code&gt; or &lt;code&gt;POST&lt;/code&gt; syntax.&lt;/p&gt;
+					&lt;p&gt;
+						&lt;code&gt;GET [base]/Appointment/$find?{parameters}&amp;amp;?{_count}&lt;/code&gt;
+					&lt;/p&gt;
+					&lt;p&gt;
+						&lt;code&gt;POST [base]/Appointment/$find?{_count}&lt;/code&gt;
+					&lt;/p&gt;
+				&lt;/li&gt;
+				&lt;li&gt;
+					&lt;p&gt;A client &lt;strong&gt;MAY&lt;/strong&gt; be capable of creating or updating Appointments by supporting the &lt;a href=&quot;OperationDefinition-appointment-hold.html&quot;&gt;Appointment Hold Operation&lt;/a&gt;.&lt;/p&gt;
+					&lt;p&gt;
+						&lt;code&gt;POST [base]/Appointment/[id]/$hold&lt;/code&gt;
+					&lt;/p&gt;
+					&lt;p&gt;
+						&lt;code&gt;POST [base]/Appointment/$hold&lt;/code&gt;
+					&lt;/p&gt;
+				&lt;/li&gt;
+				&lt;li&gt;
+					&lt;p&gt;A client &lt;strong&gt;SHOULD&lt;/strong&gt; be capable of creating or updating Appointments by supporting  the &lt;a href=&quot;OperationDefinition-appointment-book.html&quot;&gt;Appointment Book Operation&lt;/a&gt;.&lt;/p&gt;
+					&lt;p&gt;
+						&lt;code&gt;POST [base]/Appointment/[id]/$hold&lt;/code&gt;
+					&lt;/p&gt;
+					&lt;p&gt;
+						&lt;code&gt;POST [base]/Appointment/$hold&lt;/code&gt;
+					&lt;/p&gt;
+				&lt;/li&gt;
+				&lt;li&gt;
+					&lt;p&gt;A client &lt;strong&gt;SHOULD&lt;/strong&gt; be capable of updating Appointments by supporting patch using either  JSON, XML, or FHIRPath Patch.&lt;/p&gt;
+					&lt;p&gt;
+						&lt;code&gt;PATCH [Base]/Appointment/[id]&lt;/code&gt;
+					&lt;/p&gt;
+				&lt;/li&gt;
+			&lt;/ol&gt;
+			&lt;hr/&gt;
+			&lt;h4 id=&quot;bundle&quot;&gt;Bundle&lt;/h4&gt;
+			&lt;p&gt;Supported Profiles:&lt;/p&gt;
+			&lt;ul&gt;
+				&lt;li&gt;
+					&lt;a href=&quot;StructureDefinition-avail-bundle.html&quot;&gt;Argonaut Appointment Bundle Profile&lt;/a&gt;
+				&lt;/li&gt;
+				&lt;li&gt;
+					&lt;p&gt;
+						&lt;a href=&quot;StructureDefinition-slot-bundle.html&quot;&gt;Argonaut Slot Bundle Profile&lt;/a&gt;
+					&lt;/p&gt;
+				&lt;/li&gt;
+				&lt;li&gt;
+					&lt;p&gt;A client &lt;strong&gt;SHOULD&lt;/strong&gt; be capable of consuming a Bundle as a response to a a query or operation.&lt;/p&gt;
+				&lt;/li&gt;
+			&lt;/ul&gt;
+			&lt;h4 id=&quot;coverage&quot;&gt;Coverage&lt;/h4&gt;
+			&lt;p&gt;Supported Profiles:  &lt;a href=&quot;StructureDefinition-argo-coverage.html&quot;&gt;Argonaut Coverage Profile&lt;/a&gt;
+			&lt;/p&gt;
+			&lt;h5&gt;Capabilities&lt;/h5&gt;
+			&lt;ol&gt;
+				&lt;li&gt;
+					&lt;p&gt;A client &lt;strong&gt;MAY&lt;/strong&gt; be capable of updating or creating a patient's Coverage.&lt;/p&gt;
+					&lt;p&gt;
+						&lt;code&gt;PUT [base]/Coverage/[id]&lt;/code&gt;
+					&lt;/p&gt;
+					&lt;p&gt;
+						&lt;code&gt;PUT or POST [base]/Coverage&lt;/code&gt;
+					&lt;/p&gt;
+				&lt;/li&gt;
+			&lt;/ol&gt;
+			&lt;hr/&gt;
+			&lt;h4 id=&quot;patient&quot;&gt;Patient&lt;/h4&gt;
+			&lt;p&gt;Supported Profiles:  &lt;a href=&quot;http://hl7.org/fhir/us/core/stu1//StructureDefinition-us-core-patient.html#search&quot;&gt;US Core Patient Profile&lt;/a&gt;
+			&lt;/p&gt;
+			&lt;h5&gt;Capabilities&lt;/h5&gt;
+			&lt;ol&gt;
+				&lt;li&gt;
+					&lt;p&gt;A client &lt;strong&gt;SHOULD&lt;/strong&gt; be capable of searching for Patients as defined in the US Core Implementation Guide.&lt;/p&gt;
+				&lt;/li&gt;
+				&lt;li&gt;
+					&lt;p&gt;A client &lt;strong&gt;MAY&lt;/strong&gt; be capable of creating Patients by supporting create.&lt;/p&gt;
+					&lt;p&gt;
+						&lt;code&gt;POST [base]/Patient&lt;/code&gt;
+					&lt;/p&gt;
+				&lt;/li&gt;
+			&lt;/ol&gt;
+			&lt;hr/&gt;
+			&lt;h4 id=&quot;schedule&quot;&gt;Schedule&lt;/h4&gt;
+			&lt;p&gt;Supported Profiles:  &lt;a href=&quot;StructureDefinition-argo-sched-notif.html&quot;&gt;Argonaut Schedule Notification Profile&lt;/a&gt;
+			&lt;/p&gt;
+			&lt;ol&gt;
+				&lt;li&gt;A client &lt;strong&gt;MAY&lt;/strong&gt; be capable of consuming a Schedule notification as a response to a &lt;a href=&quot;StructureDefinition-argo-sub-notif.html&quot;&gt;Argonaut Scheduling Subscription Profile&lt;/a&gt;.&lt;/li&gt;
+			&lt;/ol&gt;
+			&lt;hr/&gt;
+			&lt;h4&gt;Slot&lt;/h4&gt;
+			&lt;p&gt;Supported Profiles:  &lt;a href=&quot;StructureDefinition-prefetch-slot.html&quot;&gt;Argonaut Prefetch Slot Profile&lt;/a&gt;
+			&lt;/p&gt;
+			&lt;h5&gt;Capabilities&lt;/h5&gt;
+			&lt;ol&gt;
+				&lt;li&gt;
+					&lt;p&gt;A client &lt;strong&gt;MAY&lt;/strong&gt; be capable of fetching Slots by supporting  the &lt;a href=&quot;OperationDefinition-appointment-find.html&quot;&gt;Appointment Availability Operation&lt;/a&gt;.&lt;/p&gt;
+					&lt;ul&gt;
+						&lt;li&gt;
+							&lt;p&gt;Both the &lt;code&gt;GET&lt;/code&gt; and &lt;code&gt;POST&lt;/code&gt; Syntax SHALL be supported:&lt;/p&gt;
+							&lt;p&gt;
+								&lt;code&gt;GET [base]/Slot/$prefetch?{parameters}&lt;/code&gt;
+							&lt;/p&gt;
+							&lt;p&gt;
+								&lt;code&gt;POST [base]/Slot/$prefetch&lt;/code&gt;
+							&lt;/p&gt;
+						&lt;/li&gt;
+					&lt;/ul&gt;
+				&lt;/li&gt;
+			&lt;/ol&gt;
+			&lt;hr/&gt;
+			&lt;h4 id=&quot;subscription&quot;&gt;Subscription&lt;/h4&gt;
+			&lt;p&gt;Supported Profiles:  &lt;a href=&quot;StructureDefinition-argo-sub-notif.html&quot;&gt;Argonaut Scheduling Subscription Profile&lt;/a&gt;
+			&lt;/p&gt;
+			&lt;h5&gt;Capabilities&lt;/h5&gt;
+			&lt;ol&gt;
+				&lt;li&gt;
+					&lt;p&gt;A client &lt;strong&gt;MAY&lt;/strong&gt; be capable of creating Subscriptions&lt;/p&gt;
+					&lt;p&gt;
+						&lt;code&gt;POST [base]/Subscription&lt;/code&gt;
+					&lt;/p&gt;
+				&lt;/li&gt;
+				&lt;li&gt;
+					&lt;p&gt;A client &lt;strong&gt;MAY&lt;/strong&gt; be capable of deleting Subscriptions&lt;/p&gt;
+					&lt;p&gt;
+						&lt;code&gt;DELETE [base]/Subscription&lt;/code&gt;
+					&lt;/p&gt;
+				&lt;/li&gt;
+			&lt;/ol&gt;
 		&lt;/div&gt;
   &lt;/text&gt;
   &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.url">url</a>
        <a href="http://hl7.org/fhir/STU3/datatypes.html#uri">value</a>=&quot;http://fhir.org/guides/argonaut-scheduling/CapabilityStatement/client&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.version">version</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>=&quot;0.0.0&quot;/&gt;
-  &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.name">name</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>=&quot;Client&quot;/&gt;
-  &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.title">title</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>=&quot;Client&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.name">name</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>=&quot;Argonaut_Scheduling_Client_CapabilityStatement&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.title">title</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>=&quot;Argonaut Scheduling Client CapabilityStatement&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.status">status</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;draft&quot;/&gt;
-  &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.date">date</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#dateTime">value</a>=&quot;2017-03-08T00:00:00-08:00&quot;/&gt;
-  &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.publisher">publisher</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>=&quot;Health eData Inc&quot;/&gt;
-  &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.contact">contact</a>&gt;
-    &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#ContactDetail#ContactDetail.telecom">telecom</a>&gt;
-      &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#ContactPoint#ContactPoint.system">system</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;other&quot;/&gt;
-      &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#ContactPoint#ContactPoint.value">value</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>=&quot;ehaas@healthedatainc.com&quot;/&gt;
-    &lt;/telecom&gt;
-  &lt;/contact&gt;
-  &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.description">description</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#markdown">value</a>=&quot;This resource defines the expected capabilities &quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.experimental">experimental</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#boolean">value</a>=&quot;false&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.date">date</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#dateTime">value</a>=&quot;2018-03-18T00:00:00-07:00&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.publisher">publisher</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>=&quot;Argonaut Project&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.description">description</a>
+               <a href="http://hl7.org/fhir/STU3/datatypes.html#markdown">value</a>=&quot;The Argonaut Scheduling Client CapabilityStatement provides a for a complete list of supported RESTful interactions for the Argonaut Scheduling Implementation Guide&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.jurisdiction">jurisdiction</a>&gt;
     &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
       &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#uri">value</a>=&quot;urn:iso:std:iso:3166&quot;/&gt;
@@ -331,19 +501,31 @@
   &lt;/jurisdiction&gt;
   &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.kind">kind</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;requirements&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.fhirVersion">fhirVersion</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#id">value</a>=&quot;3.0.1&quot;/&gt;
-  &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.format">format</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;xml&quot;/&gt;
-  &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.format">format</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;json&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.format">format</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;application/fhir+xml&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.format">format</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;application/fhir+json&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.patchFormat">patchFormat</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;application/json-patch+json&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.patchFormat">patchFormat</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;application/xml-patch+xml&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.patchFormat">patchFormat</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;application/fhirpath-patch+fhirpath&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.implementationGuide">implementationGuide</a>
+                       <a href="http://hl7.org/fhir/STU3/datatypes.html#uri">value</a>=&quot;http://fhir.org/guides/argonaut-scheduling/ImplementationGuide/ig&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.implementationGuide">implementationGuide</a>
+                       <a href="http://hl7.org/fhir/STU3/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/us/core/ImplementationGuide/ig&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest">rest</a>&gt;
-    &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.mode">mode</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;client&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.mode">mode</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;server&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.documentation">documentation</a>
+                   <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>=&quot;The [Argonaut](http://argonautwiki.hl7.org/) Scheduling Project is a vendor agnostic specification providing FHIR RESTful APIs and guidance for access to and booking of appointments for patients by both patient and practitioner end users. This specification is based on [FHIR Version 3.0.1](http://hl7.org/fhir/STU3) and specifically the [Scheduling and Appointment resources](http://hl7.org/fhir/STU3/administration-module.html#sched).&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.security">security</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.security.service">service</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/restful-security-service&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;SMART-on-FHIR&quot;/&gt;
+        &lt;/coding&gt;
+      &lt;/service&gt;
+      &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.security.description">description</a>
+                   <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>=&quot;For general security consideration refer to the [Security section](http://hl7.org/fhir/us/core/security.html) in the US Core Implementation Guide.&quot;/&gt;
+    &lt;/security&gt;
     &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource">resource</a>&gt;
-      &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.type">type</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;Slot&quot;/&gt;
-      &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction">interaction</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.extension">extension</a>
-                   <a href="http://hl7.org/fhir/STU3/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation&quot;&gt;
-          &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueCode</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;SHOULD&quot;/&gt;
-        &lt;/extension&gt;
-        &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.code">code</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;search-type&quot;/&gt;
-      &lt;/interaction&gt;
+      &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.type">type</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;Appointment&quot;/&gt;
       &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction">interaction</a>&gt;
         &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.extension">extension</a>
                    <a href="http://hl7.org/fhir/STU3/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation&quot;&gt;
@@ -356,16 +538,173 @@
                    <a href="http://hl7.org/fhir/STU3/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation&quot;&gt;
           &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueCode</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;SHOULD&quot;/&gt;
         &lt;/extension&gt;
-        &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.code">code</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;history-instance&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.code">code</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;search-type&quot;/&gt;
       &lt;/interaction&gt;
       &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction">interaction</a>&gt;
         &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.extension">extension</a>
                    <a href="http://hl7.org/fhir/STU3/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation&quot;&gt;
           &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueCode</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;SHOULD&quot;/&gt;
         &lt;/extension&gt;
-        &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.code">code</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;vread&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.code">code</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;patch&quot;/&gt;
+      &lt;/interaction&gt;
+      &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.referencePolicy">referencePolicy</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;enforced&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.extension">extension</a>
+                   <a href="http://hl7.org/fhir/STU3/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueCode</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;SHOULD&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.name">name</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>=&quot;_id&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.definition">definition</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/SearchParameter/_id&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;token&quot;/&gt;
+      &lt;/searchParam&gt;
+      &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.extension">extension</a>
+                   <a href="http://hl7.org/fhir/STU3/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueCode</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;SHOULD&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.name">name</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>=&quot;patient&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.definition">definition</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/SearchParameter/patient&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;reference&quot;/&gt;
+      &lt;/searchParam&gt;
+      &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.extension">extension</a>
+                   <a href="http://hl7.org/fhir/STU3/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueCode</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;SHOULD&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.name">name</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>=&quot;status&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.definition">definition</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/SearchParameter/status&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;token&quot;/&gt;
+      &lt;/searchParam&gt;
+      &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.extension">extension</a>
+                   <a href="http://hl7.org/fhir/STU3/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueCode</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;SHOULD&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.name">name</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>=&quot;date&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.definition">definition</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/SearchParameter/date&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;date&quot;/&gt;
+      &lt;/searchParam&gt;
+      &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.extension">extension</a>
+                   <a href="http://hl7.org/fhir/STU3/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueCode</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;SHOULD&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.name">name</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>=&quot;practitioner&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.definition">definition</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/SearchParameter/practitioner&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;reference&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>=&quot;including the date modifiers ‘ge’,’le’,’gt’,’lt’&quot;/&gt;
+      &lt;/searchParam&gt;
+    &lt;/resource&gt;
+    &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource">resource</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.type">type</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;Coverage&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction">interaction</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.extension">extension</a>
+                   <a href="http://hl7.org/fhir/STU3/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueCode</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;MAY&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.code">code</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;create&quot;/&gt;
+      &lt;/interaction&gt;
+      &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction">interaction</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.extension">extension</a>
+                   <a href="http://hl7.org/fhir/STU3/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueCode</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;MAY&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.code">code</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;update&quot;/&gt;
+      &lt;/interaction&gt;
+      &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.updateCreate">updateCreate</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#boolean">value</a>=&quot;true&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.referencePolicy">referencePolicy</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;enforced&quot;/&gt;
+    &lt;/resource&gt;
+    &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource">resource</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.type">type</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;Patient&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.documentation">documentation</a>
+                     <a href="http://hl7.org/fhir/STU3/datatypes.html#markdown">value</a>=&quot;A serve **SHALL** be capable of searching for Patients as defined in the US Core Implementation Guide&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction">interaction</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.extension">extension</a>
+                   <a href="http://hl7.org/fhir/STU3/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueCode</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;MAY&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.code">code</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;create&quot;/&gt;
+      &lt;/interaction&gt;
+      &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction">interaction</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.extension">extension</a>
+                   <a href="http://hl7.org/fhir/STU3/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueCode</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;SHOULD&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.code">code</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;search-type&quot;/&gt;
+      &lt;/interaction&gt;
+      &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.referencePolicy">referencePolicy</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;enforced&quot;/&gt;
+    &lt;/resource&gt;
+    &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource">resource</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.type">type</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;Schedule&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction">interaction</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.extension">extension</a>
+                   <a href="http://hl7.org/fhir/STU3/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueCode</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;MAY&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.code">code</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;read&quot;/&gt;
       &lt;/interaction&gt;
     &lt;/resource&gt;
+    &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource">resource</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.type">type</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;Subscription&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction">interaction</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.extension">extension</a>
+                   <a href="http://hl7.org/fhir/STU3/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueCode</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;MAY&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.code">code</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;create&quot;/&gt;
+      &lt;/interaction&gt;
+      &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction">interaction</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.extension">extension</a>
+                   <a href="http://hl7.org/fhir/STU3/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation&quot;&gt;
+          &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueCode</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;MAY&quot;/&gt;
+        &lt;/extension&gt;
+        &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.code">code</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;delete&quot;/&gt;
+      &lt;/interaction&gt;
+    &lt;/resource&gt;
+    &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.operation">operation</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.operation.extension">extension</a>
+                 <a href="http://hl7.org/fhir/STU3/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation&quot;&gt;
+        &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueCode</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;SHOULD&quot;/&gt;
+      &lt;/extension&gt;
+      &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.operation.name">name</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>=&quot;find&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.operation.definition">definition</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>
+                   <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>=&quot;http://fhir.org/guides/argonaut-scheduling/OperationDefinition/appointment-find&quot;/&gt;
+      &lt;/definition&gt;
+    &lt;/operation&gt;
+    &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.operation">operation</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.operation.extension">extension</a>
+                 <a href="http://hl7.org/fhir/STU3/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation&quot;&gt;
+        &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueCode</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;MAY&quot;/&gt;
+      &lt;/extension&gt;
+      &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.operation.name">name</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>=&quot;hold&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.operation.definition">definition</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>
+                   <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>=&quot;http://fhir.org/guides/argonaut-scheduling/OperationDefinition/appointment-hold&quot;/&gt;
+      &lt;/definition&gt;
+    &lt;/operation&gt;
+    &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.operation">operation</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.operation.extension">extension</a>
+                 <a href="http://hl7.org/fhir/STU3/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation&quot;&gt;
+        &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueCode</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;SHOULD&quot;/&gt;
+      &lt;/extension&gt;
+      &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.operation.name">name</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>=&quot;book&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.operation.definition">definition</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>
+                   <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>=&quot;http://fhir.org/guides/argonaut-scheduling/OperationDefinition/appointment-book&quot;/&gt;
+      &lt;/definition&gt;
+    &lt;/operation&gt;
+    &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.operation">operation</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.operation.extension">extension</a>
+                 <a href="http://hl7.org/fhir/STU3/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation&quot;&gt;
+        &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueCode</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#code">value</a>=&quot;MAY&quot;/&gt;
+      &lt;/extension&gt;
+      &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.operation.name">name</a> <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>=&quot;prefetch&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.operation.definition">definition</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>
+                   <a href="http://hl7.org/fhir/STU3/datatypes.html#string">value</a>=&quot;http://fhir.org/guides/argonaut-scheduling/OperationDefinition/slot-prefetch&quot;/&gt;
+      &lt;/definition&gt;
+    &lt;/operation&gt;
   &lt;/rest&gt;
 &lt;/CapabilityStatement&gt;</pre>
 
@@ -411,7 +750,7 @@ Formats: <a href="CapabilityStatement-client.html">Narrative</a>, <a href="Capab
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Tue, Mar 20, 2018 18:25-0700. |
+            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Wed, Mar 21, 2018 12:44-0700. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/STU3license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

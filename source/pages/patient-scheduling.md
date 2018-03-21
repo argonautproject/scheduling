@@ -119,16 +119,15 @@ The following Argonaut Scheduling artifacts are used in this transaction:
   - **[Argonaut Appointment Profile](StructureDefinition-argo-appt.html)**.
 
 #### Usage
+{:.no_toc}
 
 POST [base]/Appointment/[id]/$hold
 
 #### Example
-
 {:.no_toc}
 
 {% include appt-hold-id.md %}
 <br />
-
 
 ###  Book Appointment
 {:.no_toc}
@@ -136,14 +135,14 @@ The actual booking of the appointment is completed in this step and the scheduli
 
 {% include img.html img="diagrams/Slide32.png" caption="Figure 5: Book Appointment" %}
 
-the Client sends a book operation using the id of selected proposed appointment, the patient(s) id and optionally any comments as the input parameters.  The Server determines if the appointment can be booked and returns the Appointment resource with with an updated status. See the [Appointment State Diagram](state-diagram.html) for further details on statuses.
+The Client sends a book operation using the id of selected proposed appointment, the patient(s) id and optionally any comments as the input parameters.  The Server determines if the appointment can be booked and returns the Appointment resource with with an updated status. See the [Appointment State Diagram](state-diagram.html) for further details on statuses.
 
 #### APIs
 {:.no_toc}
 
 The following Argonaut Scheduling artifacts are used in this transaction:
 
-  - **[Appointment Hold Operation](OperationDefinition-appointment-book.html)**.
+  - **[Appointment Book Operation](OperationDefinition-appointment-book.html)**.
   - **[Argonaut Appointment Bundle Profile](StructureDefinition-avail-bundle.html)**.
   - **[Argonaut Appointment Profile](StructureDefinition-argo-appt.html)**.
 
@@ -153,6 +152,7 @@ The following Argonaut Scheduling artifacts are used in this transaction:
 `POST [base]/Appointment/[id]/$book`
 
 #### Example
+{:.no_toc}
 
 {% include appt-book-id.md %}
 
@@ -226,19 +226,33 @@ A new patient will need to be registered or an existing patient fetched prior to
 ##### Usage
 {:.no_toc}
 
-To register a new or existing patient, The Client SHALL use the standard FHIR RESTful [create API]({{site.data.fhir.path}}/http.html#create) as follows:
+###### Existing Patients
+{:.no_toc}
 
-`POST [base]/Patient/[id]`
+ To fetch an *existing* patient resource id, the Client SHALL follow the guidance in the [US Core Patient Profile]({{site.data.fhir.uscore}}/StructureDefinition-us-core-patient.html#search) which use the standard FHIR RESTful [search API]({{site.data.fhir.path}}/search.html)
 
-In response to this transaction, the server SHOULD create a new patient resource only if the patient resource does not already exist in the system.  If the patient is already registered within the system. The existing patient resource SHOULD be returned.  Note that the Client SHALL not use the 'If-None-Exist' header as described in FHIR [conditional create API]({{site.data.fhir.path}}/http.html#ccreate)).
+For example fetching a patient by an identifier such as an MRN using:
+
+`GET [base]/Patient?identifier=[system]|[code]`
+
+For example fetching a patient by name, gender and birthdate using:
+
+`GET [base]/Patient?family=[name]&?given=[name]&gender=[gender]`
+
+###### New Patients
+{:.no_toc}
+
+To register a *new* patient, The Client SHALL use the standard FHIR RESTful [create API]({{site.data.fhir.path}}/http.html#create) as follows:
+
+`POST [base]/Patient`
+
+In response to this transaction, the server SHOULD create a new patient resource only if the patient resource does not already exist in the system.  If the patient is already registered within the system, the existing patient resource SHOULD be returned.  Note that the Client SHALL not use the 'If-None-Exist' header as described in FHIR [conditional create API]({{site.data.fhir.path}}/http.html#ccreate)).
 
 
 ##### Example
 {:.no_toc}
 
-~~~
-todo inline example
-~~~
+{% include create-patient-ex.md %}
 <br />
 
 #### Updating or Creating Patient Coverage Information:
@@ -266,14 +280,9 @@ To update the existing insurance information or create it if it is new, The Clie
 ##### Example
 {:.no_toc}
 
-~~~
-PUT [base]/Coverage/[id]....
-~~~
-
+{% include create-coverage-ex.md %}
 
 <br />
-
-
 
 ###  Book Appointment
 {:.no_toc}
@@ -371,50 +380,7 @@ To unsubscribe:
 #### Example
 {:.no_toc}
 
-**Subscribe**
-
-`POST [base]/Subscription`
-
-**Request body**
-
-~~~
-    {
-      "resourceType": "Subscription",
-      "id": "example",
-      "status": "active",
-      "reason": "Notify subscriber of schedule changes to trigger the subscriber prefetch updated slots",
-      "_criteria": {
-        "extension": [
-          {
-            "url": "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-subscription-triggerevent",
-            "valueString": "schedule where any slot that reference it has changed"
-          },
-          {
-            "url": "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-subscription-eventfocus",
-            "valueCode": "Schedule"
-          }
-        ]
-      },
-      "channel": {
-        "extension": [
-          {
-            "url": "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-subscription-payloadprofile",
-            "valueUri": "//fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-sched-notif"
-          }
-        ],
-        "type": "rest-hook",
-        "endpoint": "https://feed-handler.com/notification",
-        "payload": "application/fhir+json"
-      }
-    }
-~~~
-
-**Response**
-
-~~~
-HTTP/1.1 200 OK
-[other headers]
-~~~
+{% include subscribe-ex.md %}
 
 ###  Initial Load
 {:.no_toc}
@@ -467,36 +433,7 @@ The standard FHIR [Subscription]({{site.data.fhir.path}}/subscription.html) API 
 #### Example
 {:.no_toc}
 
-##### Notification of schedule change:
-{:.no_toc}
-~~~
-POST https://feed-handler.com/notification
-
-**Request body**
-
-{
-  "resourceType" : "Schedule",
-  "id" : "example1",
-  "actor" : [
-    {
-      "reference" : "Practitioner/1",
-      "display" : "Crusher, Beverly"
-    }
-  ],
-  "planningHorizon" : {
-    "start" : "2018-02-13",
-    "end" : "2018-02-13"
-  }
-}
-~~~
-
-##### "Heartbeat" Notification:
-{:.no_toc}
-~~~
-POST https://feed-handler.com/notification
-
-**no payload**
-~~~
+{% include notification-ex.md  %}
 
 ### "Smart Polling" for Updated Slots
 {:.no_toc}
@@ -526,30 +463,7 @@ This transaction is the same as for the [Initial Load](#initial-load). Using Bot
 #### Example
 {:.no_toc}
 
-~~~
-POST [base]/Slot/$prefetch
-
-**payload:**
-
-{
-  "resourceType": "Parameters",
-  "id": "update-1",
-  "parameter": [
-    {
-      "name": "practitioner",
-      "valueDateTime" : "Practitioner/123"
-    },
-    {
-      "name": "start",
-      "valueDateTime" : "2017-07-15T00:00:00Z"
-    },
-    {
-      "name": "end",
-        "valueDateTime" : "2017-07-15T24:00:00Z"
-    }
-]
-}
-~~~
+{% include smartpoll-ex.md %}
 
 ### Patient Registration Option A
 {:.no_toc}

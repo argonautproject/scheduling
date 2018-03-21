@@ -296,10 +296,10 @@
   "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement">resourceType</a>" : "CapabilityStatement",
   "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.id">id</a>" : "server",
   "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.text">text</a>" : {
-    "<a href="http://hl7.org/fhir/STU3/datatypes.html#Narrative#Narrative.status">status</a>" : "generated",
+    "<a href="http://hl7.org/fhir/STU3/datatypes.html#Narrative#Narrative.status">status</a>" : "additional",
     "<a href="http://hl7.org/fhir/STU3/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
 			&lt;h2 id=&quot;argonaut-scheduling-conformance-requirements&quot;&gt;Argonaut Scheduling Conformance Requirements&lt;/h2&gt;
-			&lt;p&gt;This section outlines conformance requirements for the Argonaut Scheduling Servers and Client applications, identifying the specific profiles that need to be supported, the specific RESTful operations that need to be supported, and the search parameters that need to be supported. Note: The individual Argonaut Scheduling profiles identify the structural constraints, terminology bindings and invariants, however, implementers must refer to the conformance requirements for details on the RESTful operations, specific profiles and the search parameters applicable to each of the Argonaut Scheduling actors.&lt;/p&gt;
+			&lt;p&gt;This section outlines conformance requirements for the Argonaut Scheduling Servers application, identifying the specific profiles that need to be supported, the specific RESTful operations that need to be supported, and the search parameters that need to be supported. Note: The individual Argonaut Scheduling profiles identify the structural constraints, terminology bindings and invariants, however, implementers must refer to the conformance requirements for details on the RESTful operations, specific profiles and the search parameters applicable to each of the Argonaut Scheduling actors.&lt;/p&gt;
 			&lt;h3 id=&quot;conformance-requirements-for-the-argonaut-scheduling-implementation-guide-server&quot;&gt;Conformance requirements for the Argonaut Scheduling Implementation Guide Server&lt;/h3&gt;
 			&lt;ul&gt;
 				&lt;li&gt;FHIR Version: 3.0.1&lt;/li&gt;
@@ -307,13 +307,14 @@
 				&lt;li&gt;Published: March 20, 2018&lt;/li&gt;
 				&lt;li&gt;Published by: The Argonaut Project&lt;/li&gt;
 			&lt;/ul&gt;
-			&lt;p&gt;The Section describes the expected Capabilities of the Argonaut Scheduling Scheduling Server whihc is responsible for providing responses to the requests submitted by the Argonaut Scheduling Clients. The complete list of FHIR profiles, RESTful operations, and search parameters supported by Argonaut Scheduling Servers are defined. Argonaut Scheduling Clients have the option of choosing from this list to access necessary data based on their local use cases and other contextual requirements.&lt;/p&gt;
+			&lt;p&gt;The Section describes the expected Capabilities of the Argonaut Scheduling Scheduling Server which is responsible for providing responses to the requests submitted by the Argonaut Scheduling Clients. The complete list of FHIR profiles, RESTful operations, and search parameters supported by Argonaut Scheduling Servers are defined.&lt;/p&gt;
 			&lt;h4 id=&quot;behavior&quot;&gt;Behavior&lt;/h4&gt;
 			&lt;p&gt;Description:&lt;/p&gt;
 			&lt;p&gt;The Argonaut Scheduling Server &lt;strong&gt;SHALL&lt;/strong&gt;:&lt;/p&gt;
 			&lt;ol&gt;
 				&lt;li&gt;Support at least one Argonaut Scheduling patient or provider use case.&lt;/li&gt;
 				&lt;li&gt;Implement the RESTful behavior according to the FHIR specification including returning the appropriate response classes as described in the FHIR specification for &lt;a href=&quot;{site.data.fhir.path}}/http.html&quot;&gt;FHIR RESTful API&lt;/a&gt; and &lt;a href=&quot;{site.data.fhir.path}}/operations.html&quot;&gt;Extended Operations on the RESTful API&lt;/a&gt;.&lt;/li&gt;
+				&lt;li&gt;Conform to the &lt;a href=&quot;http://hl7.org/fhir/us/core/1.0.1&quot;&gt;US Core Implementation Guiide&lt;/a&gt;.&lt;/li&gt;
 				&lt;li&gt;Support &lt;em&gt;json&lt;/em&gt; resource formats for all Argonaut Scheduling interactions.&lt;/li&gt;
 				&lt;li&gt;Declare a CapabilityStatement identifying the list of profiles, operations, search parameter supported.&lt;/li&gt;
 			&lt;/ol&gt;
@@ -359,6 +360,13 @@
 					&lt;/tr&gt;
 					&lt;tr&gt;
 						&lt;td&gt;
+							&lt;a href=&quot;#patient&quot;&gt;Patient&lt;/a&gt;
+						&lt;/td&gt;
+						&lt;td&gt;US Core Patient Profile&lt;/td&gt;
+						&lt;td&gt;search, create&lt;/td&gt;
+					&lt;/tr&gt;
+					&lt;tr&gt;
+						&lt;td&gt;
 							&lt;a href=&quot;#schedule&quot;&gt;Schedule&lt;/a&gt;
 						&lt;/td&gt;
 						&lt;td&gt;Argonaut Schedule Notification Profile&lt;/td&gt;
@@ -384,7 +392,7 @@
 			&lt;h4 id=&quot;resource-details-&quot;&gt;Resource  Details:&lt;/h4&gt;
 			&lt;hr/&gt;
 			&lt;h4 id=&quot;appointment&quot;&gt;Appointment&lt;/h4&gt;
-			&lt;p&gt;Supported Profiles:  &lt;a href=&quot;StuctureDefinition-argo-appt.html&quot;&gt;Argonaut Appointment Profile&lt;/a&gt;
+			&lt;p&gt;Supported Profiles:  &lt;a href=&quot;StructureDefinition-argo-appt.html&quot;&gt;Argonaut Appointment Profile&lt;/a&gt;
 			&lt;/p&gt;
 			&lt;p&gt;Capabilities:&lt;/p&gt;
 			&lt;ol&gt;
@@ -462,14 +470,14 @@
 			&lt;p&gt;Supported Profiles:&lt;/p&gt;
 			&lt;ul&gt;
 				&lt;li&gt;
-					&lt;a href=&quot;StuctureDefinition-avail-bundle.html&quot;&gt;Argonaut Appointment Bundle Profile&lt;/a&gt;
+					&lt;a href=&quot;StructureDefinition-avail-bundle.html&quot;&gt;Argonaut Appointment Bundle Profile&lt;/a&gt;
 				&lt;/li&gt;
 				&lt;li&gt;
-					&lt;a href=&quot;StuctureDefinition-slot-bundle.html&quot;&gt;Argonaut Slot Bundle Profile&lt;/a&gt;
+					&lt;a href=&quot;StructureDefinition-slot-bundle.html&quot;&gt;Argonaut Slot Bundle Profile&lt;/a&gt;
 				&lt;/li&gt;
 			&lt;/ul&gt;
 			&lt;h4 id=&quot;coverage&quot;&gt;Coverage&lt;/h4&gt;
-			&lt;p&gt;Supported Profiles:  &lt;a href=&quot;StuctureDefinition-argo-coverage.html&quot;&gt;Argonaut Coverage Profile&lt;/a&gt;
+			&lt;p&gt;Supported Profiles:  &lt;a href=&quot;StructureDefinition-argo-coverage.html&quot;&gt;Argonaut Coverage Profile&lt;/a&gt;
 			&lt;/p&gt;
 			&lt;p&gt;Capabilities:&lt;/p&gt;
 			&lt;ol&gt;
@@ -487,12 +495,31 @@
 				&lt;/li&gt;
 			&lt;/ol&gt;
 			&lt;hr/&gt;
+			&lt;h4 id=&quot;patient&quot;&gt;Patient&lt;/h4&gt;
+			&lt;p&gt;Supported Profiles:  &lt;a href=&quot;http://hl7.org/fhir/us/core/stu1//StructureDefinition-us-core-patient.html#search&quot;&gt;US Core Patient Profile&lt;/a&gt;
+			&lt;/p&gt;
+			&lt;h5&gt;Capabilities&lt;/h5&gt;
+			&lt;ol&gt;
+				&lt;li&gt;
+					&lt;p&gt;A server &lt;strong&gt;SHALL&lt;/strong&gt; be capable of searching for Patients as defined in the US Core Implementation Guide.&lt;/p&gt;
+				&lt;/li&gt;
+				&lt;li&gt;
+					&lt;p&gt;A server &lt;strong&gt;SHOULD&lt;/strong&gt; be capable of creating Patients by supporting create&lt;/p&gt;
+					&lt;p&gt;
+						&lt;code&gt;POST [base]/Patient&lt;/code&gt;
+					&lt;/p&gt;
+					&lt;ul&gt;
+						&lt;li&gt;The server &lt;strong&gt;SHOULD&lt;/strong&gt; create a new patient resource only if the patient resource does not already exist in the system. If the patient is already registered within the system, the existing patient resource &lt;strong&gt;SHOULD&lt;/strong&gt; be returned.&lt;/li&gt;
+					&lt;/ul&gt;
+				&lt;/li&gt;
+			&lt;/ol&gt;
+			&lt;hr/&gt;
 			&lt;h4 id=&quot;schedule&quot;&gt;Schedule&lt;/h4&gt;
-			&lt;p&gt;Supported Profiles:  &lt;a href=&quot;StuctureDefinition-argo-sched-notif.html&quot;&gt;Argonaut Schedule Notification Profile&lt;/a&gt;
+			&lt;p&gt;Supported Profiles:  &lt;a href=&quot;StructureDefinition-argo-sched-notif.html&quot;&gt;Argonaut Schedule Notification Profile&lt;/a&gt;
 			&lt;/p&gt;
 			&lt;hr/&gt;
 			&lt;h4&gt;Slot&lt;/h4&gt;
-			&lt;p&gt;Supported Profiles:  &lt;a href=&quot;StuctureDefinition-prefetch-slot.html&quot;&gt;Argonaut Prefetch Slot Profile&lt;/a&gt;
+			&lt;p&gt;Supported Profiles:  &lt;a href=&quot;StructureDefinition-prefetch-slot.html&quot;&gt;Argonaut Prefetch Slot Profile&lt;/a&gt;
 			&lt;/p&gt;
 			&lt;p&gt;Capabilities:&lt;/p&gt;
 			&lt;ol&gt;
@@ -513,7 +540,7 @@
 			&lt;/ol&gt;
 			&lt;hr/&gt;
 			&lt;h4 id=&quot;subscription&quot;&gt;Subscription&lt;/h4&gt;
-			&lt;p&gt;Supported Profiles:  &lt;a href=&quot;StuctureDefinition-argo-sub-notif.html&quot;&gt;Argonaut Scheduling Subscription Profile&lt;/a&gt;
+			&lt;p&gt;Supported Profiles:  &lt;a href=&quot;StructureDefinition-argo-sub-notif.html&quot;&gt;Argonaut Scheduling Subscription Profile&lt;/a&gt;
 			&lt;/p&gt;
 			&lt;p&gt;Capabilities:&lt;/p&gt;
 			&lt;ol&gt;
@@ -559,15 +586,20 @@
     "application/fhir+xml",
     "application/fhir+json"
   ],
+  "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.patchFormat">patchFormat</a>" : [
+    "application/json-patch+json",
+    "application/xml-patch+xml",
+    "application/fhirpath-patch+fhirpath"
+  ],
   "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.implementationGuide">implementationGuide</a>" : [
-    "  http://fhir.org/guides/argonaut-scheduling/ImplementationGuide/ig"
+    "http://fhir.org/guides/argonaut-scheduling/ImplementationGuide/ig",
+    "http://hl7.org/fhir/us/core/ImplementationGuide/ig"
   ],
   "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest">rest</a>" : [
     {
       "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.mode">mode</a>" : "server",
       "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.documentation">documentation</a>" : "The [Argonaut](http://argonautwiki.hl7.org/) Scheduling Project is a vendor agnostic specification providing FHIR RESTful APIs and guidance for access to and booking of appointments for patients by both patient and practitioner end users. This specification is based on [FHIR Version 3.0.1](http://hl7.org/fhir/STU3) and specifically the [Scheduling and Appointment resources](http://hl7.org/fhir/STU3/administration-module.html#sched).",
       "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.security">security</a>" : {
-        "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.security.cors">cors</a>" : false,
         "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.security.service">service</a>" : [
           {
             "<a href="http://hl7.org/fhir/STU3/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
@@ -585,144 +617,221 @@
           "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.type">type</a>" : "Appointment",
           "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction">interaction</a>" : [
             {
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.extension">extension</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueCode</a>" : "SHALL"
+                }
+              ],
               "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.code">code</a>" : "read"
             },
             {
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.code">code</a>" : "vread"
-            },
-            {
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.extension">extension</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueCode</a>" : "SHALL"
+                }
+              ],
               "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.code">code</a>" : "search-type"
             },
             {
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.code">code</a>" : "create"
-            },
-            {
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.code">code</a>" : "update"
-            },
-            {
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.code">code</a>" : "history-instance"
-            },
-            {
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.extension">extension</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueCode</a>" : "SHALL"
+                }
+              ],
               "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.code">code</a>" : "patch"
             }
           ],
-          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.updateCreate">updateCreate</a>" : true,
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.referencePolicy">referencePolicy</a>" : [
+            "enforced"
+          ],
           "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam">searchParam</a>" : [
             {
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.name">name</a>" : "_content",
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.definition">definition</a>" : "http://hl7.org/fhir/SearchParameter/Appointment-_content",
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a>" : "string",
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a>" : "Search on the entire content of the resource"
-            },
-            {
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.extension">extension</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueCode</a>" : "SHALL"
+                }
+              ],
               "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.name">name</a>" : "_id",
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.definition">definition</a>" : "http://hl7.org/fhir/SearchParameter/Appointment-_id",
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a>" : "token",
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a>" : "Logical id of this artifact"
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.definition">definition</a>" : "http://hl7.org/fhir/SearchParameter/_id",
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a>" : "token"
             },
             {
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.name">name</a>" : "_lastUpdated",
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.definition">definition</a>" : "http://hl7.org/fhir/SearchParameter/Appointment-_lastUpdated",
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a>" : "date",
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a>" : "When the resource version last changed"
-            },
-            {
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.name">name</a>" : "_profile",
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.definition">definition</a>" : "http://hl7.org/fhir/SearchParameter/Appointment-_profile",
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a>" : "uri",
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a>" : "Profiles this resource claims to conform to"
-            },
-            {
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.name">name</a>" : "_query",
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.definition">definition</a>" : "http://hl7.org/fhir/SearchParameter/Appointment-_query",
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a>" : "token",
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a>" : "A custom search profile that describes a specific defined query operation"
-            },
-            {
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.name">name</a>" : "_security",
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.definition">definition</a>" : "http://hl7.org/fhir/SearchParameter/Appointment-_security",
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a>" : "token",
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a>" : "Security Labels applied to this resource"
-            },
-            {
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.name">name</a>" : "_tag",
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.definition">definition</a>" : "http://hl7.org/fhir/SearchParameter/Appointment-_tag",
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a>" : "token",
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a>" : "Tags applied to this resource"
-            },
-            {
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.name">name</a>" : "_text",
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.definition">definition</a>" : "http://hl7.org/fhir/SearchParameter/Appointment-_text",
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a>" : "string",
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a>" : "Search on the narrative of the resource"
-            },
-            {
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.name">name</a>" : "actor",
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.definition">definition</a>" : "http://hl7.org/fhir/SearchParameter/Appointment-actor",
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a>" : "reference",
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a>" : "Any one of the individuals participating in the appointment"
-            },
-            {
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.name">name</a>" : "appointment-type",
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.definition">definition</a>" : "http://hl7.org/fhir/SearchParameter/Appointment-appointment-type",
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a>" : "token",
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a>" : "The style of appointment or patient that has been booked in the slot (not service type)"
-            },
-            {
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.name">name</a>" : "date",
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.definition">definition</a>" : "http://hl7.org/fhir/SearchParameter/Appointment-date",
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a>" : "date",
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a>" : "Appointment date/time."
-            },
-            {
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.name">name</a>" : "identifier",
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.definition">definition</a>" : "http://hl7.org/fhir/SearchParameter/Appointment-identifier",
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a>" : "token",
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a>" : "An Identifier of the Appointment"
-            },
-            {
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.name">name</a>" : "incomingreferral",
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.definition">definition</a>" : "http://hl7.org/fhir/SearchParameter/Appointment-incomingreferral",
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a>" : "reference",
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a>" : "The ReferralRequest provided as information to allocate to the Encounter"
-            },
-            {
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.name">name</a>" : "location",
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.definition">definition</a>" : "http://hl7.org/fhir/SearchParameter/Appointment-location",
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a>" : "reference",
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a>" : "This location is listed in the participants of the appointment"
-            },
-            {
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.name">name</a>" : "part-status",
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.definition">definition</a>" : "http://hl7.org/fhir/SearchParameter/Appointment-part-status",
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a>" : "token",
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a>" : "The Participation status of the subject, or other participant on the appointment. Can be used to locate participants that have not responded to meeting requests."
-            },
-            {
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.extension">extension</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueCode</a>" : "SHALL"
+                }
+              ],
               "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.name">name</a>" : "patient",
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.definition">definition</a>" : "http://hl7.org/fhir/SearchParameter/Appointment-patient",
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a>" : "reference",
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a>" : "One of the individuals of the appointment is this patient"
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.definition">definition</a>" : "http://hl7.org/fhir/SearchParameter/patient",
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a>" : "reference"
             },
             {
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.name">name</a>" : "practitioner",
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.definition">definition</a>" : "http://hl7.org/fhir/SearchParameter/Appointment-practitioner",
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a>" : "reference",
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a>" : "One of the individuals of the appointment is this practitioner"
-            },
-            {
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.name">name</a>" : "service-type",
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.definition">definition</a>" : "http://hl7.org/fhir/SearchParameter/Appointment-service-type",
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a>" : "token",
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a>" : "The specific service that is to be performed during this appointment"
-            },
-            {
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.extension">extension</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueCode</a>" : "SHOULD"
+                }
+              ],
               "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.name">name</a>" : "status",
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.definition">definition</a>" : "http://hl7.org/fhir/SearchParameter/Appointment-status",
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a>" : "token",
-              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a>" : "The overall status of the appointment"
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.definition">definition</a>" : "http://hl7.org/fhir/SearchParameter/status",
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a>" : "token"
+            },
+            {
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.extension">extension</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueCode</a>" : "SHOULD"
+                }
+              ],
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.name">name</a>" : "date",
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.definition">definition</a>" : "http://hl7.org/fhir/SearchParameter/date",
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a>" : "date"
+            },
+            {
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.extension">extension</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueCode</a>" : "SHOULD"
+                }
+              ],
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.name">name</a>" : "practitioner",
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.definition">definition</a>" : "http://hl7.org/fhir/SearchParameter/practitioner",
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.type">type</a>" : "reference",
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.searchParam.documentation">documentation</a>" : "including the date modifiers ‘ge’,’le’,’gt’,’lt’"
             }
           ]
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.type">type</a>" : "Coverage",
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction">interaction</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.extension">extension</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueCode</a>" : "SHOULD"
+                }
+              ],
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.code">code</a>" : "create"
+            },
+            {
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.extension">extension</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueCode</a>" : "SHOULD"
+                }
+              ],
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.code">code</a>" : "update"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.updateCreate">updateCreate</a>" : true,
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.referencePolicy">referencePolicy</a>" : [
+            "enforced"
+          ]
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.type">type</a>" : "Patient",
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.documentation">documentation</a>" : "A serve **SHALL** be capable of searching for Patients as defined in the US Core Implementation Guide",
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction">interaction</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.extension">extension</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueCode</a>" : "SHOULD"
+                }
+              ],
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.code">code</a>" : "create"
+            },
+            {
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.extension">extension</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueCode</a>" : "SHALL"
+                }
+              ],
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.code">code</a>" : "search-type"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.referencePolicy">referencePolicy</a>" : [
+            "enforced"
+          ]
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.type">type</a>" : "Subscription",
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction">interaction</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.extension">extension</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueCode</a>" : "SHALL"
+                }
+              ],
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.code">code</a>" : "create"
+            },
+            {
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.extension">extension</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueCode</a>" : "SHALL"
+                }
+              ],
+              "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.code">code</a>" : "delete"
+            }
+          ]
+        }
+      ],
+      "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.operation">operation</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.operation.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueCode</a>" : "SHALL"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.operation.name">name</a>" : "find",
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.operation.definition">definition</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "http://fhir.org/guides/argonaut-scheduling/OperationDefinition/appointment-find"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.operation.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueCode</a>" : "SHALL"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.operation.name">name</a>" : "hold",
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.operation.definition">definition</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "http://fhir.org/guides/argonaut-scheduling/OperationDefinition/appointment-hold"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.operation.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueCode</a>" : "SHALL"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.operation.name">name</a>" : "book",
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.operation.definition">definition</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "http://fhir.org/guides/argonaut-scheduling/OperationDefinition/appointment-book"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.operation.extension">extension</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+              "<a href="http://hl7.org/fhir/STU3/datatypes.html#Extension#Extension.value[x]">valueCode</a>" : "SHALL"
+            }
+          ],
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.operation.name">name</a>" : "prefetch",
+          "<a href="http://hl7.org/fhir/STU3/capabilitystatement.html#CapabilityStatement.rest.operation.definition">definition</a>" : {
+            "<a href="http://hl7.org/fhir/STU3/datatypes.html#Reference#Reference.reference">reference</a>" : "http://fhir.org/guides/argonaut-scheduling/OperationDefinition/slot-prefetch"
+          }
         }
       ]
     }
@@ -771,7 +880,7 @@ Formats: <a href="CapabilityStatement-server.html">Narrative</a>, <a href="Capab
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Tue, Mar 20, 2018 18:25-0700. |
+            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Wed, Mar 21, 2018 12:44-0700. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/STU3license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

@@ -18,7 +18,6 @@ Prefetch open slots from July 15,2017 to August 17,2017
 ~~~
     {
       "resourceType": "Parameters",
-      "id": "prefetch-1",
       "parameter": [
         {
           "name": "start",

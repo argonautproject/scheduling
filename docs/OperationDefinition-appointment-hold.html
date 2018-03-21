@@ -320,7 +320,6 @@
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="w">    </span><span class="p">{</span><span class="w">
       </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Parameters"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pcp-hold"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"parameter"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
           </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"appt-id"</span><span class="p">,</span><span class="w">
@@ -376,7 +375,6 @@ Expires: Wed, 21 March 2018 07:28:00 GMT
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"resourceType"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Appointment"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"proposed-appt2"</span><span class="p">,</span><span class="w">
 </span><span class="err">...snip...</span><span class="w">
   </span><span class="nt">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"proposed"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"serviceType"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -397,7 +395,6 @@ Expires: Wed, 21 March 2018 07:28:00 GMT
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="w">      </span><span class="p">{</span><span class="w">
         </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Parameters"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pcp-hold"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"parameter"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
           </span><span class="p">{</span><span class="w">
             </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"appt-resource"</span><span class="p">,</span><span class="w">
@@ -426,7 +423,8 @@ Expires: Wed, 21 March 2018 07:28:00 GMT
 
 <p><strong>Response</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>HTTP/1.1 200 OK
+<div class="highlighter-rouge"><pre class="highlight"><code>HTTP/1.1 201 Created
+Location: [base]/Appointment/argo-appt-1/_history/1
 Expires: Wed, 21 March 2018 07:28:00 GMT
 [other headers]
 </code></pre>
@@ -436,7 +434,7 @@ Expires: Wed, 21 March 2018 07:28:00 GMT
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="w">    </span><span class="p">{</span><span class="w">
       </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bundle"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hal-dr-y-held"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"argo-appt-1"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"searchset"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
       </span><span class="nt">"entry"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
@@ -504,7 +502,7 @@ Formats: <a href="OperationDefinition-appointment-hold.html">Narrative</a>, <a h
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Tue, Mar 20, 2018 18:25-0700. |
+            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Wed, Mar 21, 2018 12:44-0700. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/STU3license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

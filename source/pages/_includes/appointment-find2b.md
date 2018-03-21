@@ -19,7 +19,6 @@ Use the operation to fetch all open appointments for dermatologists in Napa loca
 ~~~
 {
   "resourceType": "Parameters",
-  "id": "prefetch-derm-appts",
   "parameter": [
   {
     "name": "start",

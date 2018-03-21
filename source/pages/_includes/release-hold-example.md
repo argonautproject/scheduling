@@ -1,156 +1,102 @@
-##### A JSON example:
-{:.no_toc}
+**Target Appointment:**
 
-Target Appointment:
+~~~
+{
+  "resourceType" : "Appointment",
+  "id" : "argo-appt1",
+  "meta" : {
+    "profile" : [
+      "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt"
+    ]
+  },
+  "text" : {
+  ...snip...
+  },
+  "status" : "pending",
+  "serviceType" : [
+  ...snip...
+~~~
 
-    {
-      "resourceType" : "Appointment",
-      "id" : "held-appt1",
-      "meta" : {
-        "profile" : [
-          "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt"
-        ]
-      },
-      "text" : {
-      ...snip...
-      },
-      "status" : "pending",
-      "serviceType" : [
-      ...snip...
+**Release hold using JSON PATCH**
 
-*Cancel using PATCH*
+`PATCH [Base]/Appointment/argo-appt1`
 
-`PATCH [Base]/Appointment/[id]`
+**Patch body**
 
-         **Request body**
+~~~
+ [
+ { "op": "replace", "path": "Appointment/status", "value": "cancelled" },
+ ]
+~~~
 
-         [
-         { "op": "replace", "path": "Appointment/status", "value": "cancelled" },
-         ]
+**Release hold using XML PATCH**
 
-Resulting released Appointment:
+`PATCH [Base]/Appointment/argo-appt1`
 
-    {
-      "resourceType" : "Appointment",
-      "id" : "held-appt1",
-      "meta" : {
-        "profile" : [
-          "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt"
-        ]
-      },
-      "text" : {
-      ...snip...
-      },
-      "status" : "cancelled",
-      "serviceType" : [
-      ...snip...
+**Patch body**
+
+~~~
+ <?xml version="1.0" encoding="UTF-8"?>
+ <diff xmlns="http://hl7.org/fhir">
+   <replace sel="Appointment/status/@value">cancelled</replace>
+ </diff>
+~~~
 
 
-##### An XML example:
-{:.no_toc}
+**Release hold using FHIRPath PATCH**
 
-Target Appointment:
+`PATCH [Base]/Appointment/argo-appt1`
 
-     <?xml version="1.0" encoding="UTF-8"?>
-     <Appointment xmlns="http://hl7.org/fhir">
-       <id value="held-appt1"/>
-       <meta>
-         <profile
-                  value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt"/>
-       </meta>
-       <text>
-      ...snip
-       </text>
-       <status value="booked"/>
-       <serviceType>
-        ...snip...
+**Patch body**
 
-*Cancel using PATCH*
+~~~
+ **payload**
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Parameters xmlns="http://hl7.org/fhir">
+   <parameter>
+     <name value="operation"/>
+     <part>
+       <name value="type"/>
+       <valueCode value="replace"/>
+     </part>
+     <part>
+       <name value="path"/>
+       <valueString value="status"/>
+     </part>
+     <part>
+       <name value="value"/>
+       <valueCode value="cancelled"/>
+     </part>
+   </parameter>
+ </Parameters>
+~~~
 
-`PATCH [Base]/Appointment/[id]`
+*Response*
 
-     **Request body**
-
-     <?xml version="1.0" encoding="UTF-8"?>
-     <diff xmlns="http://hl7.org/fhir">
-       <replace sel="Appointment/status/@value">cancelled</replace>
-     </diff>
-
-Resulting released Appointment:
-
-     <?xml version="1.0" encoding="UTF-8"?>
-     <Appointment xmlns="http://hl7.org/fhir">
-       <id value="held-appt1"/>
-       <meta>
-         <profile
-                  value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt"/>
-       </meta>
-       <text>
-      ...snip...
-       </text>
-       <status value="cancelled"/>
-      ...snip...
-
-##### A [FHIRPath](http://hl7.org/fhirpath/) example:
-{:.no_toc}
-
-Target Appointment:
-
-    {
-      "resourceType" : "Appointment",
-      "id" : "held-appt1",
-      "meta" : {
-        "profile" : [
-          "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt"
-        ]
-      },
-      "text" : {
-      ...snip...
-      },
-      "status" : "booked",
-      "serviceType" : [
-      ...snip...
-
-*Cancel using PATCH*
-
-`PATCH [Base]/Appointment/[id]`
-
-         **Request body**
-         <?xml version="1.0" encoding="UTF-8"?>
-         <Parameters xmlns="http://hl7.org/fhir">
-           <parameter>
-             <name value="operation"/>
-             <part>
-               <name value="type"/>
-               <valueCode value="replace"/>
-             </part>
-             <part>
-               <name value="path"/>
-               <valueString value="status"/>
-             </part>
-             <part>
-               <name value="value"/>
-               <valueCode value="cancelled"/>
-             </part>
-           </parameter>
-         </Parameters>
+~~~
+HTTP/1.1 200 OK
+Location: [base]/Appointment/argo-appt1/_history/3
+[other headers]
+~~~
 
 
-Resulting released Appointment:
+**Resulting Appointment after releasing hold:**
 
-    {
-      "resourceType" : "Appointment",
-      "id" : "held-appt1",
-      "meta" : {
-        "profile" : [
-          "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt"
-        ]
-      },
-      "text" : {
-      ...snip...
-      },
-      "status" : "cancelled",
-      "serviceType" : [
-      ...snip...
+~~~
+{
+  "resourceType" : "Appointment",
+  "id" : "argo-appt1",
+  "meta" : {
+    "profile" : [
+      "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt"
+    ]
+  },
+  "text" : {
+  ...snip...
+  },
+  "status" : "cancelled",
+  "serviceType" : [
+  ...snip...
+~~~
 
 <br />

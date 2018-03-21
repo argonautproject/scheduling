@@ -329,6 +329,7 @@ Formats: <a href="StructureDefinition-argo-appt.html">Narrative</a>, <a href="St
 
 <ul>
   <li>The <a href="state-diagram.html">Appointment State Diagram</a> SHOULD be referenced to when considering the statuses of the scheduling resources during the scheduling workflow.</li>
+  <li>The Specialty codes are bound to the <a href="ValueSet-specialty.html">Argonaut Scheduling Specialties</a> valueset which is based upon SNOMED CT.  There are other provider specialty code systems that implementers should be aware of including <em>NUCC</em> codes, and <em>CMS Provider</em> types.  More information on them can be found <a href="https://www.cms.gov/Medicare/Provider-Enrollment-and-Certification/MedicareProviderSupEnroll/Taxonomy.html">here</a>.</li>
 </ul>
 
 <h4 id="examples">Examples</h4>
@@ -519,7 +520,7 @@ Summary
 <ul>
   <li><a href="patient-scheduling.html#appointment-availability-discovery-and-search">Appointment Availability Discovery and Search</a></li>
   <li><a href="patient-scheduling.html#optional-hold-appointment-operation">Hold Appointment Operation</a></li>
-  <li><a name="b785332b-2a27-4b6b-9d7d-67d90f53a681">​</a><a href="scheduling/patient-scheduling.html#optional-hold-appointment-operation-2">Hold Appointment Operation (Prefetch) </a></li>
+  <li><a name="1846158b-1a0e-46c6-815e-4c39622e70f8">​</a><a href="scheduling/patient-scheduling.html#optional-hold-appointment-operation-2">Hold Appointment Operation (Prefetch) </a></li>
   <li><a href="patient-scheduling.html#book-appointment">Book Appointment Operation</a></li>
   <li><a href="patient-scheduling.html#book-appointment-2">Book Appointment Operation  (Prefetch)</a></li>
   <li><a href="patient-scheduling.html#retrieving-appointments">Retrieving appointments</a></li>
@@ -596,7 +597,7 @@ $( '#tabs' ).tabs({
   <div class="container">    <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Tue, Mar 20, 2018 18:25-0700. |
+            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Wed, Mar 21, 2018 12:44-0700. |
                <!-- <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a rel="license" style="color: #81BEF7" href="http://hl7.org/fhir/STU3license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a>
         
