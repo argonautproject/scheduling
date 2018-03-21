@@ -241,7 +241,7 @@ todo inline example
 ~~~
 <br />
 
-#### Updating or creating Patient Coverage Information:
+#### Updating or Creating Patient Coverage Information:
 {:.no_toc}
 
 Updates to patient coverage information MAY be associated with the login and registration steps for some systems or as a distinct step following booking.
@@ -261,7 +261,7 @@ To update the existing insurance information or create it if it is new, The Clie
 - update: `PUT [base]/Coverage/[id]`
 - create: `PUT or POST [base]/Coverage`
 
-​Note that the server MAY reject certain updates to the coverage information (for example, type of coverage) and SHOULD return an OperationOutcome explaining the reason. (see issue #47)
+​Note that the server MAY reject certain updates to the coverage information (for example, type of coverage) and SHOULD return an OperationOutcome explaining the reason.
 
 ##### Example
 {:.no_toc}
@@ -708,7 +708,7 @@ To fetch scheduled appointments for a patient the Client SHALL use the standard 
 - `date` (optional) filter by a date or a date range ( including the date modifiers ‘ge’,’le’,’gt’,’lt’)
 - `practitioner` (optional) filter by a practitioner(s)
 
-GET [base]/Appointment?patient=[id]{&status=[status]}{&date=[date]{&date=[date]}}{&practitioner=[id]}
+`GET [base]/Appointment?patient=[id]{&status=[status]}{&date=[date]{&date=[date]}}{&practitioner=[id]}`
 
 ### Examples
 {:.no_toc}

@@ -224,18 +224,17 @@ To fetch scheduled appointments for a patient the Client SHALL use the standard 
 
 `GET [base]\Appointment?practitioner=[id]{&status=[status]&date=[date]}`
 
-For example, fetch all of a practitioner's appointments (all statuses):
+### Examples
+{:.no_toc}
 
+Fetch all of a practitioner's appointments (all statuses):
 `GET [base]\Appointment?practitioner=[id]`
 
-fetch all open appointments:
-
+Fetch all open appointments:
 `GET [base]\Appointment?practitioner=[id]&status=free`
 
-fetch all completed appointments since October:
-
+Fetch all completed appointments since October:
 `GET [base]\Appointment?practitioner=[id]&status=fulfilled&date=ge2017-10-01`
 
-fetch all completed appointments for a patient since October:
-
+Fetch all completed appointments for a patient since October:
 `GET [base]\Appointment?practitioner=[id]&patient=[id]&status=fulfilled&date=ge2017-10-01`

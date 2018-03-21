@@ -572,21 +572,19 @@ are described in the <a href="patient-scheduling.html#appointment-availability-d
 
 <p><code class="highlighter-rouge">GET [base]\Appointment?practitioner=[id]{&amp;status=[status]&amp;date=[date]}</code></p>
 
-<p>For example, fetch all of a practitioner’s appointments (all statuses):</p>
+<h3 class="no_toc" id="examples">Examples</h3>
 
-<p><code class="highlighter-rouge">GET [base]\Appointment?practitioner=[id]</code></p>
+<p>Fetch all of a practitioner’s appointments (all statuses):
+<code class="highlighter-rouge">GET [base]\Appointment?practitioner=[id]</code></p>
 
-<p>fetch all open appointments:</p>
+<p>Fetch all open appointments:
+<code class="highlighter-rouge">GET [base]\Appointment?practitioner=[id]&amp;status=free</code></p>
 
-<p><code class="highlighter-rouge">GET [base]\Appointment?practitioner=[id]&amp;status=free</code></p>
+<p>Fetch all completed appointments since October:
+<code class="highlighter-rouge">GET [base]\Appointment?practitioner=[id]&amp;status=fulfilled&amp;date=ge2017-10-01</code></p>
 
-<p>fetch all completed appointments since October:</p>
-
-<p><code class="highlighter-rouge">GET [base]\Appointment?practitioner=[id]&amp;status=fulfilled&amp;date=ge2017-10-01</code></p>
-
-<p>fetch all completed appointments for a patient since October:</p>
-
-<p><code class="highlighter-rouge">GET [base]\Appointment?practitioner=[id]&amp;patient=[id]&amp;status=fulfilled&amp;date=ge2017-10-01</code></p>
+<p>Fetch all completed appointments for a patient since October:
+<code class="highlighter-rouge">GET [base]\Appointment?practitioner=[id]&amp;patient=[id]&amp;status=fulfilled&amp;date=ge2017-10-01</code></p>
 
 
 
@@ -616,7 +614,7 @@ are described in the <a href="patient-scheduling.html#appointment-availability-d
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Mon, Mar 19, 2018 16:22-0700. |
+            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Tue, Mar 20, 2018 18:25-0700. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/STU3license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>
