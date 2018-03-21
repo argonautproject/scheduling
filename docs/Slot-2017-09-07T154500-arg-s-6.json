@@ -2,8 +2,6 @@
   "resourceType": "Slot",
   "id": "2017-09-07T154500-arg-s-6",
   "meta": {
-    "versionId": "5",
-    "lastUpdated": "2017-11-09T03:54:08.556+00:00",
     "profile": [
       "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/prefetch-slot"
     ]

@@ -273,22 +273,122 @@
 
   <!-- ============OperationDefinition CONTENT CONTENT=============== -->
 
-  <div xmlns="http://www.w3.org/1999/xhtml"><h2>Appointment_Book</h2><p>OPERATION: Appointment_Book</p><p>The official URL for this operation definition is: </p><pre>http://fhir.org/guides/argonaut-scheduling/OperationDefinition/appointment-book</pre><div><p>Request to book a selected Appointment. This operation follows the appointment availability and optional hold interactiona.  This operaton completes the booking of an appointment.  The server determines if the nominated appointment is still available (i.e., all the required actors and physical assets needed for the appointment are still available) and either accepts or rejects the hold request and updates the resource status accordingly.  See the <a href="state-diagram.html">Appointment State Diagram</a> for further details on statuses.</p>
-</div><p>URL: [base]/Appointment/$book</p><p>URL: [base]/Appointment/[id]/$book</p><p>Parameters</p><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>appt-id</td><td>0..1</td><td>uri</td><td></td><td><div><p>A resource id for one of proposed Appointments returned by a prior <code>$find</code> operation (e.g., Resource/1234).  This is the same resource id as used for the <code>$hold</code> operation.  References can be to an absolute URL, but servers only perform this operation on their own appointments.</p>
-</div></td></tr><tr><td>IN</td><td>appt-resource</td><td>0..1</td><td>Appointment</td><td></td><td><div><p>When prefetching open Slots, an <a href="StructureDefinition-argo-appt.html">Argonaut Appointment Profile</a> resource is created by the Client Application and is exchanged with the FHIR Scheduler (EHR). This parameter represents this profile and is the same as used for the <code>$hold</code> operation.</p>
-</div></td></tr><tr><td>IN</td><td>cancelled-appt-id</td><td>0..1</td><td>uri</td><td></td><td><div><p>For this implementation, rescheduling is two step process of cancelling an appointment and rebooking a new appointment.  This parameter represents the resource id (e.g., Resource/1234) of the <em>cancelled</em> Appointment and the <code>appt-id</code> parameter represents the <em>new</em> appointment when rescheduling and rebooking a new appointment.  References can be to an absolute URL, but servers only perform this operation on their own appointments.</p>
-</div></td></tr><tr><td>IN</td><td>patient-id</td><td>0..*</td><td>uri</td><td></td><td><div><p><a name="421a91b2-9161-4e38-9bf2-e02c3dc4548d">​</a>A resource id for the Patient(s) participant in the resource (e.g., Patient/1234).  References can be to an absolute URL, but servers only perform this operation on their own patients.  For existing patients the client may need to fetch Patient ID using RESTful <code>GET</code> to the FHIR Server (i.e., <a href="{site.data.fhir.uscore}/StructureDefinition-us-core-patient.html#search">US-Core Patient Search</a>). For new patients client needs to fetch Patient ID using RESTful <code>POST</code> to register the patient on the FHIR Server (see <a href="{site.data.fhir.path}/http.html#create">create</a> and <a href="{site.data.fhir.path}/http.html#ccreate">conditional create</a>)</p>
-</div></td></tr><tr><td>IN</td><td>comment</td><td>0..1</td><td>string</td><td></td><td><div><p>Comments or special instructions</p>
-</div></td></tr><tr><td>OUT</td><td>return</td><td>0..1</td><td>Bundle</td><td></td><td><div><p><a name="bdcd96a9-f8bc-4fc1-9df9-cf96a0ff4830">​</a>An <a href="StructureDefinition-avail-bundle.html">Argonaut Appointment Bundle Profile </a> of type <code>searchset</code> of requested Appointment resource and may also contain an <a href="{site.data.fhir.path}/operationoutcome.html">OperationOutcome</a> with errors, warnings or information as a result of processing the operation.   If the booking is accepted, the Appointment resource will have an updated <code>status</code> of "booked" and  the <code>participants</code>element updated to include the patients.  If the booking is rejected, the Appointment resource will have an updated <code>status</code> of  "cancelled".</p>
-</div></td></tr></table><div><ul>
-<li>
-<p>This operation is not <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html">idempotent</a> and may only be invoked by performing an HTTP POST.</p>
-</li>
-<li>
-<p>When using the <code>appt-resource</code> as the <em>only</em> input parameter, the payload can be <em>either</em> the Appointment resource or use the <a href="http://hl7.org/fhir/STU3/parameters.html">Parameters</a> format as shown in the examples below</p>
-</li>
-</ul>
-</div></div>
+  <div xmlns="http://www.w3.org/1999/xhtml">
+			<h2>Appointment_Book</h2>
+			<p>OPERATION: Appointment_Book</p>
+			<p>The official URL for this operation definition is: </p>
+			<pre>http://fhir.org/guides/argonaut-scheduling/OperationDefinition/appointment-book</pre>
+			<div>
+				<p>Request to book a selected Appointment. This operation follows the appointment availability and optional hold interactiona.  This operaton completes the booking of an appointment.  The server determines if the nominated appointment is still available (i.e., all the required actors and physical assets needed for the appointment are still available) and either accepts or rejects the hold request and updates the resource status accordingly.  See the <a href="state-diagram.html">Appointment State Diagram</a> for further details on statuses.</p>
+			</div>
+			<p>URL: [base]/Appointment/$book</p>
+			<p>URL: [base]/Appointment/[id]/$book</p>
+			<p>Parameters</p>
+			<table class="grid">
+				<tr>
+					<td>
+						<b>Use</b>
+					</td>
+					<td>
+						<b>Name</b>
+					</td>
+					<td>
+						<b>Cardinality</b>
+					</td>
+					<td>
+						<b>Type</b>
+					</td>
+					<td>
+						<b>Binding</b>
+					</td>
+					<td>
+						<b>Documentation</b>
+					</td>
+				</tr>
+				<tr>
+					<td>IN</td>
+					<td>appt-id</td>
+					<td>0..1</td>
+					<td>uri</td>
+					<td></td>
+					<td>
+						<div>
+							<p>A resource id for one of proposed Appointments returned by a prior <code>$find</code> operation (e.g., Resource/1234).  This is the same resource id as used for the <code>$hold</code> operation.  References can be to an absolute URL, but servers only perform this operation on their own appointments.</p>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>IN</td>
+					<td>appt-resource</td>
+					<td>0..1</td>
+					<td>Appointment (<a href="StructureDefinition-argo-appt.html">Argonaut Appointment Profile</a>)</td>
+					<td></td>
+					<td>
+						<div>
+							<p>When prefetching open Slots, an <a href="StructureDefinition-argo-appt.html">Argonaut Appointment Profile</a> resource is created by the Client Application and is exchanged with the FHIR Scheduler (EHR). This parameter represents this profile and is the same as used for the <code>$hold</code> operation.</p>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>IN</td>
+					<td>cancelled-appt-id</td>
+					<td>0..1</td>
+					<td>uri</td>
+					<td></td>
+					<td>
+						<div>
+							<p>For this implementation, rescheduling is two step process of cancelling an appointment and rebooking a new appointment.  This parameter represents the resource id (e.g., Resource/1234) of the <em>cancelled</em> Appointment and the <code>appt-id</code> parameter represents the <em>new</em> appointment when rescheduling and rebooking a new appointment.  References can be to an absolute URL, but servers only perform this operation on their own appointments.</p>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>IN</td>
+					<td>patient-id</td>
+					<td>0..*</td>
+					<td>uri</td>
+					<td></td>
+					<td>
+						<div>
+							<p><a name="c4ed55d0-d256-4b31-8922-5e02bdb36c33">​</a>A resource id for the Patient(s) participant in the resource (e.g., Patient/1234).  References can be to an absolute URL, but servers only perform this operation on their own patients.  For existing patients the client may need to fetch Patient ID using RESTful <code>GET</code> to the FHIR Server (i.e., <a href="{site.data.fhir.uscore}/StructureDefinition-us-core-patient.html#search">US-Core Patient Search</a>). For new patients client needs to fetch Patient ID using RESTful <code>POST</code> to register the patient on the FHIR Server (see <a href="{site.data.fhir.path}/http.html#create">create</a> and <a href="{site.data.fhir.path}/http.html#ccreate">conditional create</a>)</p>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>IN</td>
+					<td>comment</td>
+					<td>0..1</td>
+					<td>string</td>
+					<td></td>
+					<td>
+						<div>
+							<p>Comments or special instructions</p>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>OUT</td>
+					<td>return</td>
+					<td>0..1</td>
+					<td>Bundle (<a href="StructureDefinition-avail-bundle.html">Argonaut Appointment Bundle Profile</a>)</td>
+					<td></td>
+					<td>
+						<div>
+							<p><a name="ff47715a-b407-442b-ae0c-f74c18357482">​</a>An <a href="StructureDefinition-avail-bundle.html">Argonaut Appointment Bundle Profile </a> of type <code>searchset</code> of requested Appointment resource and may also contain an <a href="{site.data.fhir.path}/operationoutcome.html">OperationOutcome</a> with errors, warnings or information as a result of processing the operation.   If the booking is accepted, the Appointment resource will have an updated <code>status</code> of "booked" and  the <code>participants</code>element updated to include the patients.  If the booking is rejected, the Appointment resource will have an updated <code>status</code> of  "cancelled".</p>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<div>
+				<ul>
+					<li>
+						<p>This operation is not <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html">idempotent</a> and may only be invoked by performing an HTTP POST.</p>
+					</li>
+					<li>
+						<p>When using the <code>appt-resource</code> as the <em>only</em> input parameter, the payload can be <em>either</em> the Appointment resource or use the <a href="http://hl7.org/fhir/STU3/parameters.html">Parameters</a> format as shown in the examples below</p>
+					</li>
+				</ul>
+			</div>
+		</div>
 
   <p>source file:  _includes/appointment-book.md</p>
 
@@ -498,7 +598,7 @@ Formats: <a href="OperationDefinition-appointment-book.html">Narrative</a>, <a h
   <div class="container">    <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Wed, Mar 21, 2018 12:44-0700. |
+            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Wed, Mar 21, 2018 16:34-0700. |
                <!-- <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a rel="license" style="color: #81BEF7" href="http://hl7.org/fhir/STU3license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a>
         

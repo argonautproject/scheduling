@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Coverage xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir file:///C:/Users/Eric/Downloads/fhir-all-xsd/structuredefinition.xsd">
 	<id value="argo-sch-1"/>
+  <meta>
+		<profile value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-coverage"/>
+	</meta>
 
 	<identifier>
 		<system value="https://www.anthem.com/ca"/>

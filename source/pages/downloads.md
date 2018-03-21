@@ -4,6 +4,9 @@ layout: default
 active: downloads
 mycss: argo-sched.css
 ---
+## ImplemenationGuide Resource:
+
+The [{{site.data.fhir.igName}} ImplementationGuide](ImplementationGuide-ig.html) resource defines the logical content and the important pages published in this IG and can be downloaded in both xml and JSON.
 
 ## Validator Pack and Definitions:
 

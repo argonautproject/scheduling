@@ -42,12 +42,36 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "Bundle-slot-bundle-example.html"
+            }
+          ],
+          "example": true,
+          "sourceReference": {
+            "reference": "Bundle/slot-bundle-example"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
               "valueUri": "Schedule-example1.html"
             }
           ],
           "example": true,
           "sourceReference": {
             "reference": "Schedule/example1"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "Schedule-2017-08-28-derm.html"
+            }
+          ],
+          "example": true,
+          "sourceReference": {
+            "reference": "Schedule/2017-08-28-derm"
           }
         },
         {

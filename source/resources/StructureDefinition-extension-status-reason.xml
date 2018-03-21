@@ -3,8 +3,8 @@
 	<id value="extension-status-reason"/>
 	<url value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-status-reason"/>
 	<version value="0.0.0"/>
-	<name value="Reason_for_current_status"/>
-	<title value="Reason for current status"/>
+	<name value="Reason_For_Current_Status"/>
+	<title value="Reason For Current Status"/>
 	<status value="draft"/>
 	<date value="2017-06-13"/>
 	<publisher value="Argonaut Project"/>
@@ -33,7 +33,7 @@
 	<differential>
 		<element id="Extension:status-reason">
 			<path value="Extension"/>
-			<short value="Reason for current status"/>
+			<short value="Reason For Current Status"/>
 			<definition value="Captures the reason for the current state of the Appointment."/>
 			<comment value="This is generally only used for &quot;exception&quot; statuses such as  `not-done`, `suspended` or `cancelled`. The reason for performing the event at all is captured in the `reason` element, not here."/>
 			<alias value="Suspended Reason"/>

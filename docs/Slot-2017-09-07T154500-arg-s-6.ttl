@@ -9,8 +9,6 @@
   fhir:nodeRole fhir:treeRoot;
   fhir:Resource.id [ fhir:value "2017-09-07T154500-arg-s-6"];
   fhir:Resource.meta [
-     fhir:Meta.versionId [ fhir:value "5" ];
-     fhir:Meta.lastUpdated [ fhir:value "2017-11-09T03:54:08.556+00:00"^^xsd:dateTime ];
      fhir:Meta.profile [
        fhir:value "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/prefetch-slot";
        fhir:index 0

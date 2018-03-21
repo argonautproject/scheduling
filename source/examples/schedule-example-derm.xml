@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Schedule xmlns="http://hl7.org/fhir">
+	<id value="2017-08-28-derm"/>
+  <meta>
+    <profile value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-sched-notif"/>
+  </meta>
+
+  <serviceType>
+    <coding>
+      <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
+      <code value="office-visit"/>
+      <display value="OFFICE VISIT"/>
+    </coding>
+    <text value="OFFICE VISIT"/>
+  </serviceType>
+  <specialty>
+    <coding>
+      <code value="394582007"/>
+      <display value="Dermatology"/>
+    </coding>
+  </specialty>
+
+	<actor>
+		<reference value="Practitioner/1"/>
+		<display value="Crusher, Beverly"/>
+	</actor>
+	<planningHorizon>
+		<start value="2017-08-28"/>
+		<end value="2018-08-28"/>
+	</planningHorizon>
+</Schedule>

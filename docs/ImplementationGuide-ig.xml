@@ -32,11 +32,29 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+        <valueUri value="Bundle-slot-bundle-example.html"/>
+      </extension>
+      <example value="true"/>
+      <sourceReference>
+        <reference value="Bundle/slot-bundle-example"/>
+      </sourceReference>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
         <valueUri value="Schedule-example1.html"/>
       </extension>
       <example value="true"/>
       <sourceReference>
         <reference value="Schedule/example1"/>
+      </sourceReference>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+        <valueUri value="Schedule-2017-08-28-derm.html"/>
+      </extension>
+      <example value="true"/>
+      <sourceReference>
+        <reference value="Schedule/2017-08-28-derm"/>
       </sourceReference>
     </resource>
     <resource>

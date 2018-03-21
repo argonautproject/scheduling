@@ -62,11 +62,11 @@ These requirements were developed and defined by the Argonaut pilot implementati
 In FHIR, booking an appointment typically includes two main actors: the FHIR Server serving as the EHR scheduler and a Client as a scheduling application. For the patient based scheduling, the actors are depicted in figure 1 below.  Note that for the 3rd Party Application the scheduling application is both server for the end user application and a client of the FHIR Server.  In the patient portal use case the the end user application interacts directly with the FHIR Server.
 
 
-{% include img.html img="diagrams/Slide27.png" caption="Figure 1: Actors for Patient Based Scheduling" %}
+{% include img.html img="diagrams/Slide27.png" caption="Figure:  Actors for Patient Based Scheduling" %}
 
-For the provider based scheduling, the actors are depicted in figure 2 below.  The referring provider's scheduling application is the client and may schedule with or without patient input.
+For the provider based scheduling, the actors are depicted in the figure below.  The referring provider's scheduling application is the client and may schedule with or without patient input.
 
-{% include img.html img="diagrams/Slide19.png" caption="Figure 2: Actors for Provider Based Scheduling" %}
+{% include img.html img="diagrams/Slide19.png" caption="Figure:  Actors for Provider Based Scheduling" %}
 
 ## Assumptions
 

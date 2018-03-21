@@ -1,0 +1,409 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/argonaut-scheduling/Bundle/slot-bundle-example> a fhir:Bundle;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "slot-bundle-example"];
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://fhir.org/guides/argonaut-scheduling/StructurDefinition/slot-bundle";
+       fhir:index 0
+     ]
+  ];
+  fhir:Bundle.type [ fhir:value "searchset"];
+  fhir:Bundle.total [ fhir:value "8"^^xsd:nonNegativeInteger];
+  fhir:Bundle.entry [
+     fhir:index 0;
+     fhir:Bundle.entry.fullUrl [ fhir:value "https://example.com/base/Slot/2017-08-28T080000-arg-s-1" ];
+     fhir:Bundle.entry.resource <https://example.com/base/Slot/2017-08-28T080000-arg-s-1>;
+     fhir:Bundle.entry.search [
+       fhir:Bundle.entry.search.mode [ fhir:value "match" ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:Bundle.entry.fullUrl [ fhir:value "https://example.com/base/Slot/2017-08-28T081500-arg-s-1" ];
+     fhir:Bundle.entry.resource <https://example.com/base/Slot/2017-08-28T081500-arg-s-1>;
+     fhir:Bundle.entry.search [
+       fhir:Bundle.entry.search.mode [ fhir:value "match" ]
+     ]
+  ], [
+     fhir:index 2;
+     fhir:Bundle.entry.fullUrl [ fhir:value "https://example.com/base/Slot/2017-08-28T083000-arg-s-1" ];
+     fhir:Bundle.entry.resource <https://example.com/base/Slot/2017-08-28T083000-arg-s-1>;
+     fhir:Bundle.entry.search [
+       fhir:Bundle.entry.search.mode [ fhir:value "match" ]
+     ]
+  ], [
+     fhir:index 3;
+     fhir:Bundle.entry.fullUrl [ fhir:value "https://example.com/base/Slot/2017-08-28T084500-arg-s-1" ];
+     fhir:Bundle.entry.resource <https://example.com/base/Slot/2017-08-28T084500-arg-s-1>;
+     fhir:Bundle.entry.search [
+       fhir:Bundle.entry.search.mode [ fhir:value "match" ]
+     ]
+  ], [
+     fhir:index 4;
+     fhir:Bundle.entry.fullUrl [ fhir:value "https://example.com/base/Slot/2017-08-28T090000-arg-s-1" ];
+     fhir:Bundle.entry.resource <https://example.com/base/Slot/2017-08-28T090000-arg-s-1>;
+     fhir:Bundle.entry.search [
+       fhir:Bundle.entry.search.mode [ fhir:value "match" ]
+     ]
+  ], [
+     fhir:index 5;
+     fhir:Bundle.entry.fullUrl [ fhir:value "https://example.com/base/Slot/2017-08-28T091500-arg-s-1" ];
+     fhir:Bundle.entry.resource <https://example.com/base/Slot/2017-08-28T091500-arg-s-1>;
+     fhir:Bundle.entry.search [
+       fhir:Bundle.entry.search.mode [ fhir:value "match" ]
+     ]
+  ], [
+     fhir:index 6;
+     fhir:Bundle.entry.fullUrl [ fhir:value "https://example.com/base/Slot/2017-08-28T093000-arg-s-1" ];
+     fhir:Bundle.entry.resource <https://example.com/base/Slot/2017-08-28T093000-arg-s-1>;
+     fhir:Bundle.entry.search [
+       fhir:Bundle.entry.search.mode [ fhir:value "match" ]
+     ]
+  ], [
+     fhir:index 7;
+     fhir:Bundle.entry.fullUrl [ fhir:value "https://example.com/base/Slot/2017-08-28T094500-arg-s-1" ];
+     fhir:Bundle.entry.resource <https://example.com/base/Slot/2017-08-28T094500-arg-s-1>;
+     fhir:Bundle.entry.search [
+       fhir:Bundle.entry.search.mode [ fhir:value "match" ]
+     ]
+  ], [
+     fhir:index 8;
+     fhir:Bundle.entry.fullUrl [ fhir:value "https://example.com/base/OperationOutcome/arg-slot-prefetch-1" ];
+     fhir:Bundle.entry.resource <https://example.com/base/OperationOutcome/arg-slot-prefetch-1>;
+     fhir:Bundle.entry.search [
+       fhir:Bundle.entry.search.mode [ fhir:value "outcome" ]
+     ]
+  ] .
+
+<https://example.com/base/Slot/2017-08-28T080000-arg-s-1> a fhir:Slot;
+  fhir:Resource.id [ fhir:value "2017-08-28T080000-arg-s-1"];
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://fhir.org/guides/argonaut-scheduling/StructurDefinition/prefetch-slot";
+       fhir:index 0
+     ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><strong>Time Slot:</strong> August 28 08:00:00 2017-Mon Aug 28 08:15:00 2017: <b>Status:</b> free <strong>Visit Type:</strong> Dermatology Office Visit   </div>"
+  ];
+  fhir:Slot.serviceType [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type" ];
+       fhir:Coding.code [ fhir:value "office-visit" ];
+       fhir:Coding.display [ fhir:value "OFFICE VISIT" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "OFFICE VISIT" ]
+  ];
+  fhir:Slot.specialty [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.code [ fhir:value "394582007" ];
+       fhir:Coding.display [ fhir:value "Dermatology" ]
+     ]
+  ];
+  fhir:Slot.schedule [
+     fhir:link <http://fhir.org/guides/argonaut-scheduling/Schedule/2017-08-28-derm>;
+     fhir:Reference.reference [ fhir:value "Schedule/2017-08-28-derm" ]
+  ];
+  fhir:Slot.status [ fhir:value "free"];
+  fhir:Slot.start [ fhir:value "2017-08-28T08:00:00+08:00"^^xsd:dateTime];
+  fhir:Slot.end [ fhir:value "2017-08-28T08:15:00+08:15"^^xsd:dateTime] .
+
+<https://example.com/base/Slot/2017-08-28T081500-arg-s-1> a fhir:Slot;
+  fhir:Resource.id [ fhir:value "2017-08-28T081500-arg-s-1"];
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://fhir.org/guides/argonaut-scheduling/StructurDefinition/prefetch-slot";
+       fhir:index 0
+     ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><strong>Time Slot:</strong> August 28 08:15:00 2017-Mon Aug 28 08:30:00 2017: <b>Status:</b> free <strong>Visit Type:</strong> Dermatology Office Visit   </div>"
+  ];
+  fhir:Slot.serviceType [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type" ];
+       fhir:Coding.code [ fhir:value "office-visit" ];
+       fhir:Coding.display [ fhir:value "OFFICE VISIT" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "OFFICE VISIT" ]
+  ];
+  fhir:Slot.specialty [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.code [ fhir:value "394582007" ];
+       fhir:Coding.display [ fhir:value "Dermatology" ]
+     ]
+  ];
+  fhir:Slot.schedule [
+     fhir:link <http://fhir.org/guides/argonaut-scheduling/Schedule/2017-08-28-derm>;
+     fhir:Reference.reference [ fhir:value "Schedule/2017-08-28-derm" ]
+  ];
+  fhir:Slot.status [ fhir:value "free"];
+  fhir:Slot.start [ fhir:value "2017-08-28T08:15:00+08:15"^^xsd:dateTime];
+  fhir:Slot.end [ fhir:value "2017-08-28T08:30:00+08:30"^^xsd:dateTime] .
+
+<https://example.com/base/Slot/2017-08-28T083000-arg-s-1> a fhir:Slot;
+  fhir:Resource.id [ fhir:value "2017-08-28T083000-arg-s-1"];
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://fhir.org/guides/argonaut-scheduling/StructurDefinition/prefetch-slot";
+       fhir:index 0
+     ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><strong>Time Slot:</strong> August 28 08:30:00 2017-Mon Aug 28 08:45:00 2017: <b>Status:</b> free <strong>Visit Type:</strong> Dermatology Office Visit   </div>"
+  ];
+  fhir:Slot.serviceType [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type" ];
+       fhir:Coding.code [ fhir:value "office-visit" ];
+       fhir:Coding.display [ fhir:value "OFFICE VISIT" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "OFFICE VISIT" ]
+  ];
+  fhir:Slot.specialty [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.code [ fhir:value "394582007" ];
+       fhir:Coding.display [ fhir:value "Dermatology" ]
+     ]
+  ];
+  fhir:Slot.schedule [
+     fhir:link <http://fhir.org/guides/argonaut-scheduling/Schedule/2017-08-28-derm>;
+     fhir:Reference.reference [ fhir:value "Schedule/2017-08-28-derm" ]
+  ];
+  fhir:Slot.status [ fhir:value "free"];
+  fhir:Slot.start [ fhir:value "2017-08-28T08:30:00+08:30"^^xsd:dateTime];
+  fhir:Slot.end [ fhir:value "2017-08-28T08:45:00+08:45"^^xsd:dateTime] .
+
+<https://example.com/base/Slot/2017-08-28T084500-arg-s-1> a fhir:Slot;
+  fhir:Resource.id [ fhir:value "2017-08-28T084500-arg-s-1"];
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://fhir.org/guides/argonaut-scheduling/StructurDefinition/prefetch-slot";
+       fhir:index 0
+     ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><strong>Time Slot:</strong> August 28 08:45:00 2017-Mon Aug 28 09:00:00 2017: <b>Status:</b> free <strong>Visit Type:</strong> Dermatology Office Visit   </div>"
+  ];
+  fhir:Slot.serviceType [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type" ];
+       fhir:Coding.code [ fhir:value "office-visit" ];
+       fhir:Coding.display [ fhir:value "OFFICE VISIT" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "OFFICE VISIT" ]
+  ];
+  fhir:Slot.specialty [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.code [ fhir:value "394582007" ];
+       fhir:Coding.display [ fhir:value "Dermatology" ]
+     ]
+  ];
+  fhir:Slot.schedule [
+     fhir:link <http://fhir.org/guides/argonaut-scheduling/Schedule/2017-08-28-derm>;
+     fhir:Reference.reference [ fhir:value "Schedule/2017-08-28-derm" ]
+  ];
+  fhir:Slot.status [ fhir:value "free"];
+  fhir:Slot.start [ fhir:value "2017-08-28T08:45:00+08:45"^^xsd:dateTime];
+  fhir:Slot.end [ fhir:value "2017-08-28T09:00:00+09:00"^^xsd:dateTime] .
+
+<https://example.com/base/Slot/2017-08-28T090000-arg-s-1> a fhir:Slot;
+  fhir:Resource.id [ fhir:value "2017-08-28T090000-arg-s-1"];
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://fhir.org/guides/argonaut-scheduling/StructurDefinition/prefetch-slot";
+       fhir:index 0
+     ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><strong>Time Slot:</strong> August 28 09:00:00 2017-Mon Aug 28 09:15:00 2017: <b>Status:</b> free <strong>Visit Type:</strong> Dermatology Office Visit   </div>"
+  ];
+  fhir:Slot.serviceType [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type" ];
+       fhir:Coding.code [ fhir:value "office-visit" ];
+       fhir:Coding.display [ fhir:value "OFFICE VISIT" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "OFFICE VISIT" ]
+  ];
+  fhir:Slot.specialty [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.code [ fhir:value "394582007" ];
+       fhir:Coding.display [ fhir:value "Dermatology" ]
+     ]
+  ];
+  fhir:Slot.schedule [
+     fhir:link <http://fhir.org/guides/argonaut-scheduling/Schedule/2017-08-28-derm>;
+     fhir:Reference.reference [ fhir:value "Schedule/2017-08-28-derm" ]
+  ];
+  fhir:Slot.status [ fhir:value "free"];
+  fhir:Slot.start [ fhir:value "2017-08-28T09:00:00+09:00"^^xsd:dateTime];
+  fhir:Slot.end [ fhir:value "2017-08-28T09:15:00+09:15"^^xsd:dateTime] .
+
+<https://example.com/base/Slot/2017-08-28T091500-arg-s-1> a fhir:Slot;
+  fhir:Resource.id [ fhir:value "2017-08-28T091500-arg-s-1"];
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://fhir.org/guides/argonaut-scheduling/StructurDefinition/prefetch-slot";
+       fhir:index 0
+     ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><strong>Time Slot:</strong> August 28 09:15:00 2017-Mon Aug 28 09:30:00 2017: <b>Status:</b> free <strong>Visit Type:</strong> Dermatology Office Visit   </div>"
+  ];
+  fhir:Slot.serviceType [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type" ];
+       fhir:Coding.code [ fhir:value "office-visit" ];
+       fhir:Coding.display [ fhir:value "OFFICE VISIT" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "OFFICE VISIT" ]
+  ];
+  fhir:Slot.specialty [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.code [ fhir:value "394582007" ];
+       fhir:Coding.display [ fhir:value "Dermatology" ]
+     ]
+  ];
+  fhir:Slot.schedule [
+     fhir:link <http://fhir.org/guides/argonaut-scheduling/Schedule/2017-08-28-derm>;
+     fhir:Reference.reference [ fhir:value "Schedule/2017-08-28-derm" ]
+  ];
+  fhir:Slot.status [ fhir:value "free"];
+  fhir:Slot.start [ fhir:value "2017-08-28T09:15:00+09:15"^^xsd:dateTime];
+  fhir:Slot.end [ fhir:value "2017-08-28T09:30:00+09:30"^^xsd:dateTime] .
+
+<https://example.com/base/Slot/2017-08-28T093000-arg-s-1> a fhir:Slot;
+  fhir:Resource.id [ fhir:value "2017-08-28T093000-arg-s-1"];
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://fhir.org/guides/argonaut-scheduling/StructurDefinition/prefetch-slot";
+       fhir:index 0
+     ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><strong>Time Slot:</strong> August 28 09:30:00 2017-Mon Aug 28 09:45:00 2017: <b>Status:</b> free <strong>Visit Type:</strong> Dermatology Office Visit</div>"
+  ];
+  fhir:Slot.serviceType [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type" ];
+       fhir:Coding.code [ fhir:value "office-visit" ];
+       fhir:Coding.display [ fhir:value "OFFICE VISIT" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "OFFICE VISIT" ]
+  ];
+  fhir:Slot.specialty [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.code [ fhir:value "394582007" ];
+       fhir:Coding.display [ fhir:value "Dermatology" ]
+     ]
+  ];
+  fhir:Slot.schedule [
+     fhir:link <http://fhir.org/guides/argonaut-scheduling/Schedule/2017-08-28-derm>;
+     fhir:Reference.reference [ fhir:value "Schedule/2017-08-28-derm" ]
+  ];
+  fhir:Slot.status [ fhir:value "free"];
+  fhir:Slot.start [ fhir:value "2017-08-28T09:30:00+09:30"^^xsd:dateTime];
+  fhir:Slot.end [ fhir:value "2017-08-28T09:45:00+09:45"^^xsd:dateTime] .
+
+<https://example.com/base/Slot/2017-08-28T094500-arg-s-1> a fhir:Slot;
+  fhir:Resource.id [ fhir:value "2017-08-28T094500-arg-s-1"];
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://fhir.org/guides/argonaut-scheduling/StructurDefinition/prefetch-slot";
+       fhir:index 0
+     ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><strong>Time Slot:</strong> August 28 09:45:00 2017-Mon Aug 28 10:00:00 2017: <b>Status:</b> free <strong>Visit Type:</strong> Dermatology Office Visit   </div>"
+  ];
+  fhir:Slot.serviceType [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type" ];
+       fhir:Coding.code [ fhir:value "office-visit" ];
+       fhir:Coding.display [ fhir:value "OFFICE VISIT" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "OFFICE VISIT" ]
+  ];
+  fhir:Slot.specialty [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.code [ fhir:value "394582007" ];
+       fhir:Coding.display [ fhir:value "Dermatology" ]
+     ]
+  ];
+  fhir:Slot.schedule [
+     fhir:link <http://fhir.org/guides/argonaut-scheduling/Schedule/2017-08-28-derm>;
+     fhir:Reference.reference [ fhir:value "Schedule/2017-08-28-derm" ]
+  ];
+  fhir:Slot.status [ fhir:value "free"];
+  fhir:Slot.start [ fhir:value "2017-08-28T09:45:00+09:45"^^xsd:dateTime];
+  fhir:Slot.end [ fhir:value "2017-08-28T10:00:00+10:00"^^xsd:dateTime] .
+
+<https://example.com/base/OperationOutcome/arg-slot-prefetch-1> a fhir:OperationOutcome;
+  fhir:Resource.id [ fhir:value "example"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: example</p><h3>Issues</h3><table class=\"grid\"><tr><td>-</td><td><b>Severity</b></td><td><b>Code</b></td><td><b>Details</b></td></tr><tr><td>*</td><td>information</td><td>informational</td><td>the prefetch slot operation was successful <span style=\"background: LightGoldenRodYellow\">(Details )</span></td></tr></table></div>"
+  ];
+  fhir:OperationOutcome.issue [
+     fhir:index 0;
+     fhir:OperationOutcome.issue.severity [ fhir:value "information" ];
+     fhir:OperationOutcome.issue.code [ fhir:value "informational" ];
+     fhir:OperationOutcome.issue.details [
+       fhir:CodeableConcept.text [ fhir:value "the prefetch slot operation was successful" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.org/guides/argonaut-scheduling/Bundle/slot-bundle-example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

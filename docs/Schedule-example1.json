@@ -1,9 +1,14 @@
 {
   "resourceType": "Schedule",
   "id": "example1",
+  "meta": {
+    "profile": [
+      "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-sched-notif"
+    ]
+  },
   "text": {
     "status": "generated",
-    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: example1</p><p><b>actor</b>: <a href=\"Practitioner/1\">Crusher, Beverly</a></p><p><b>planningHorizon</b>: Feb 13, 2018 --&gt; Feb 13, 2018</p></div>"
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: example1</p><p><b>meta</b>: </p><p><b>actor</b>: <a href=\"Practitioner/1\">Crusher, Beverly</a></p><p><b>planningHorizon</b>: Feb 13, 2018 --&gt; Feb 13, 2018</p></div>"
   },
   "actor": [
     {

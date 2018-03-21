@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Subscription xmlns="http://hl7.org/fhir">
 	<id value="example"/>
+  <meta>
+    <profile value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-sub-notif"/>
+  </meta>
+
 	<status value="active"/>
 	<reason value="Notify subscriber of schedule changes to trigger the subscriber prefetch updated slots"/>
 	<criteria>

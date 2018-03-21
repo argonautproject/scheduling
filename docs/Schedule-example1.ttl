@@ -8,9 +8,15 @@
 <http://fhir.org/guides/argonaut-scheduling/Schedule/example1> a fhir:Schedule;
   fhir:nodeRole fhir:treeRoot;
   fhir:Resource.id [ fhir:value "example1"];
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-sched-notif";
+       fhir:index 0
+     ]
+  ];
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "generated" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: example1</p><p><b>actor</b>: <a href=\"Practitioner/1\">Crusher, Beverly</a></p><p><b>planningHorizon</b>: Feb 13, 2018 --&gt; Feb 13, 2018</p></div>"
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: example1</p><p><b>meta</b>: </p><p><b>actor</b>: <a href=\"Practitioner/1\">Crusher, Beverly</a></p><p><b>planningHorizon</b>: Feb 13, 2018 --&gt; Feb 13, 2018</p></div>"
   ];
   fhir:Schedule.actor [
      fhir:index 0;

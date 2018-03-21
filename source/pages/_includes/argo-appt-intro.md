@@ -38,4 +38,3 @@ The following data-elements are mandatory (i.e data MUST be present).
 - [Proposed Appt 1](Appointment-proposed-appt1.html)
 - [Proposed Appt 2](Appointment-proposed-appt2.html)
 - [Proposed Appt 3](Appointment-proposed-appt3.html)
--proposed-appt3.html)

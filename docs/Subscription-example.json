@@ -1,9 +1,14 @@
 {
   "resourceType": "Subscription",
   "id": "example",
+  "meta": {
+    "profile": [
+      "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-sub-notif"
+    ]
+  },
   "text": {
     "status": "generated",
-    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: example</p><p><b>status</b>: active</p><p><b>reason</b>: Notify subscriber of schedule changes to trigger the subscriber prefetch updated slots</p><p><b>criteria</b>: </p><h3>Channels</h3><table class=\"grid\"><tr><td>-</td><td><b>Extension</b></td><td><b>Type</b></td><td><b>Endpoint</b></td><td><b>Payload</b></td></tr><tr><td>*</td><td/><td>rest-hook</td><td><a href=\"https://feed-handler.com/notification\">https://feed-handler.com/notification</a></td><td>application/fhir+json</td></tr></table></div>"
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: example</p><p><b>meta</b>: </p><p><b>status</b>: active</p><p><b>reason</b>: Notify subscriber of schedule changes to trigger the subscriber prefetch updated slots</p><p><b>criteria</b>: </p><h3>Channels</h3><table class=\"grid\"><tr><td>-</td><td><b>Extension</b></td><td><b>Type</b></td><td><b>Endpoint</b></td><td><b>Payload</b></td></tr><tr><td>*</td><td/><td>rest-hook</td><td><a href=\"https://feed-handler.com/notification\">https://feed-handler.com/notification</a></td><td>application/fhir+json</td></tr></table></div>"
   },
   "status": "active",
   "reason": "Notify subscriber of schedule changes to trigger the subscriber prefetch updated slots",

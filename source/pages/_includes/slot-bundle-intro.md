@@ -18,4 +18,4 @@ The Slot Bundle profile sets the minimum expectations for the Bundle resource wh
 
 #### Examples
 
-- [todo](todo.html)
+- [Prefetch Slot Bundle Example](Bundle-slot-bundle-example.html)

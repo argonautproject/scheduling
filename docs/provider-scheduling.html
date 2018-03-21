@@ -294,7 +294,7 @@ page source: provider-scheduling.md
 
 <div>
 <figure class="figure">
-<figcaption class="figure-caption"><strong>Figure 1: Provider Scheduling for a patient across systems.</strong></figcaption>
+<figcaption class="figure-caption"><strong>Figure:  Provider Scheduling for a patient across systems.</strong></figcaption>
   <img src="assets/images/diagrams/Slide36.png" class="figure-img img-responsive img-rounded center-block" alt="diagrams/Slide36.png" />
 </figure>
 
@@ -311,7 +311,7 @@ page source: provider-scheduling.md
 
 <div>
 <figure class="figure">
-<figcaption class="figure-caption"><strong>Figure 1: Optional Find Patient.</strong></figcaption>
+<figcaption class="figure-caption"><strong>Figure:  Optional Find Patient.</strong></figcaption>
   <img src="assets/images/diagrams/Slide20.png" class="figure-img img-responsive img-rounded center-block" alt="diagrams/Slide20.png" />
 </figure>
 
@@ -326,7 +326,110 @@ page source: provider-scheduling.md
 
 <h4 class="no_toc" id="example">Example</h4>
 
-<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="err">todo</span><span class="w"> </span><span class="err">inline</span><span class="w"> </span><span class="err">example</span><span class="w">
+<p><strong>Request</strong></p>
+
+<p>POST [base]/Patient/$match</p>
+
+<p><strong>Request body</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Parameters"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"parameter"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"resource"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Patient"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"use"</span><span class="p">:</span><span class="w"> </span><span class="s2">"usual"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nt">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                  </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://hl7.org/fhir/v2/0203"</span><span class="p">,</span><span class="w">
+                  </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MR"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+              </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:oid:1.2.36.146.595.217.0.1"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"family"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+              </span><span class="s2">"Chalmers"</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nt">"given"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+              </span><span class="s2">"Peter"</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nt">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"male"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"birthDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1974-12-25"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"count"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"valueInteger"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"onlyCertainMatches"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"valueBoolean"</span><span class="p">:</span><span class="w"> </span><span class="s2">"false"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<p><strong>ResponseResults from imaginary MPI algorithm:</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>HTTP/1.1 200 OK
+[other headers]
+</code></pre>
+</div>
+
+<p><strong>Response body</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bundle"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"26419249-18b3-45de-b10e-dca0b2e72b"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-18T03:28:49Z"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"searchset"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"entry"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+    </span><span class="nt">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://server/path/Patient/example"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Patient"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example"</span><span class="p">,</span><span class="w">
+      </span><span class="err">..</span><span class="w"> </span><span class="err">snip</span><span class="w"> </span><span class="err">...</span><span class="w">
+    </span><span class="err">}</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"search"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"extension"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://hl7.org/fhir/StructureDefinition/match-grade"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"valueCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"certain"</span><span class="w">
+      </span><span class="p">}],</span><span class="w">
+      </span><span class="nt">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"match"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.9</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},{</span><span class="w">
+    </span><span class="nt">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://server/path/Patient/292"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Patient"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"292"</span><span class="p">,</span><span class="w">
+      </span><span class="err">..</span><span class="w"> </span><span class="err">snip</span><span class="w"> </span><span class="err">...</span><span class="w">
+    </span><span class="err">}</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"search"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"extension"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://hl7.org/fhir/StructureDefinition/match-grade"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"valueCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"possible"</span><span class="w">
+      </span><span class="p">}],</span><span class="w">
+      </span><span class="nt">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"match"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre>
 </div>
 
@@ -344,7 +447,7 @@ page source: provider-scheduling.md
 
 <div>
 <figure class="figure">
-<figcaption class="figure-caption"><strong>Figure 1: New Patient Registration.</strong></figcaption>
+<figcaption class="figure-caption"><strong>Figure:  New Patient Registration.</strong></figcaption>
   <img src="assets/images/diagrams/Slide21.png" class="figure-img img-responsive img-rounded center-block" alt="diagrams/Slide21.png" />
 </figure>
 
@@ -361,7 +464,7 @@ page source: provider-scheduling.md
 
 <div>
 <figure class="figure">
-<figcaption class="figure-caption"><strong>Figure 1: Update Coverage information.</strong></figcaption>
+<figcaption class="figure-caption"><strong>Figure:  Update Coverage information.</strong></figcaption>
   <img src="assets/images/diagrams/Slide22.png" class="figure-img img-responsive img-rounded center-block" alt="diagrams/Slide22.png" />
 </figure>
 
@@ -382,7 +485,7 @@ page source: provider-scheduling.md
 
 <div>
 <figure class="figure">
-<figcaption class="figure-caption"><strong>Figure 1: Appointment Availability Discovery and Search.</strong></figcaption>
+<figcaption class="figure-caption"><strong>Figure:  Appointment Availability Discovery and Search.</strong></figcaption>
   <img src="assets/images/diagrams/Slide23.png" class="figure-img img-responsive img-rounded center-block" alt="diagrams/Slide23.png" />
 </figure>
 
@@ -402,7 +505,7 @@ are described in the <a href="patient-scheduling.html#appointment-availability-d
 
 <div>
 <figure class="figure">
-<figcaption class="figure-caption"><strong>Figure 1: Hold Appointment.</strong></figcaption>
+<figcaption class="figure-caption"><strong>Figure:  Hold Appointment.</strong></figcaption>
   <img src="assets/images/diagrams/Slide24.png" class="figure-img img-responsive img-rounded center-block" alt="diagrams/Slide24.png" />
 </figure>
 
@@ -425,7 +528,7 @@ are described in the <a href="patient-scheduling.html#appointment-availability-d
 
 <div>
 <figure class="figure">
-<figcaption class="figure-caption"><strong>Figure 1: Book Appointment.</strong></figcaption>
+<figcaption class="figure-caption"><strong>Figure:  Book Appointment.</strong></figcaption>
   <img src="assets/images/diagrams/Slide41.png" class="figure-img img-responsive img-rounded center-block" alt="diagrams/Slide41.png" />
 </figure>
 
@@ -480,7 +583,7 @@ are described in the <a href="patient-scheduling.html#appointment-availability-d
 
 <div>
 <figure class="figure">
-<figcaption class="figure-caption"><strong>Figure 1: Provider Scheduling for existing patient across systems.</strong></figcaption>
+<figcaption class="figure-caption"><strong>Figure:  Provider Scheduling for existing patient across systems.</strong></figcaption>
   <img src="assets/images/diagrams/Slide35.png" class="figure-img img-responsive img-rounded center-block" alt="diagrams/Slide35.png" />
 </figure>
 
@@ -513,7 +616,7 @@ are described in the <a href="patient-scheduling.html#appointment-availability-d
 
 <div>
 <figure class="figure">
-<figcaption class="figure-caption"><strong>Figure 1: Provider Scheduling for Existing Patient *within* system.</strong></figcaption>
+<figcaption class="figure-caption"><strong>Figure:  Provider Scheduling for Existing Patient *within* system.</strong></figcaption>
   <img src="assets/images/diagrams/Slide40.png" class="figure-img img-responsive img-rounded center-block" alt="diagrams/Slide40.png" />
 </figure>
 
@@ -542,7 +645,7 @@ are described in the <a href="patient-scheduling.html#appointment-availability-d
 
 <div>
 <figure class="figure">
-<figcaption class="figure-caption"><strong>Figure 1: Retrieving Patient appointments.</strong></figcaption>
+<figcaption class="figure-caption"><strong>Figure:  Retrieving Patient appointments.</strong></figcaption>
   <img src="assets/images/diagrams/Slide39.png" class="figure-img img-responsive img-rounded center-block" alt="diagrams/Slide39.png" />
 </figure>
 
@@ -614,7 +717,7 @@ are described in the <a href="patient-scheduling.html#appointment-availability-d
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Wed, Mar 21, 2018 12:44-0700. |
+            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Wed, Mar 21, 2018 16:34-0700. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/STU3license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

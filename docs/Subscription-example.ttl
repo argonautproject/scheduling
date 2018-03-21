@@ -8,9 +8,15 @@
 <http://fhir.org/guides/argonaut-scheduling/Subscription/example> a fhir:Subscription;
   fhir:nodeRole fhir:treeRoot;
   fhir:Resource.id [ fhir:value "example"];
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-sub-notif";
+       fhir:index 0
+     ]
+  ];
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "generated" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: example</p><p><b>status</b>: active</p><p><b>reason</b>: Notify subscriber of schedule changes to trigger the subscriber prefetch updated slots</p><p><b>criteria</b>: </p><h3>Channels</h3><table class=\"grid\"><tr><td>-</td><td><b>Extension</b></td><td><b>Type</b></td><td><b>Endpoint</b></td><td><b>Payload</b></td></tr><tr><td>*</td><td/><td>rest-hook</td><td><a href=\"https://feed-handler.com/notification\">https://feed-handler.com/notification</a></td><td>application/fhir+json</td></tr></table></div>"
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: example</p><p><b>meta</b>: </p><p><b>status</b>: active</p><p><b>reason</b>: Notify subscriber of schedule changes to trigger the subscriber prefetch updated slots</p><p><b>criteria</b>: </p><h3>Channels</h3><table class=\"grid\"><tr><td>-</td><td><b>Extension</b></td><td><b>Type</b></td><td><b>Endpoint</b></td><td><b>Payload</b></td></tr><tr><td>*</td><td/><td>rest-hook</td><td><a href=\"https://feed-handler.com/notification\">https://feed-handler.com/notification</a></td><td>application/fhir+json</td></tr></table></div>"
   ];
   fhir:Subscription.status [ fhir:value "active"];
   fhir:Subscription.reason [ fhir:value "Notify subscriber of schedule changes to trigger the subscriber prefetch updated slots"];
