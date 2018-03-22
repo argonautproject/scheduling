@@ -11,7 +11,7 @@
   "id" : "example1",
   "actor" : [
     {
-      "reference" : "Practitioner/1",
+      "reference" : Practitioner/dr-y,
       "display" : "Crusher, Beverly"
     }
   ],

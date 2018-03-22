@@ -101,7 +101,7 @@
         <div class="nav-collapse collapse navbar-inverse-collapse">
 
        
-<!--{:.nav .navbar-nav} don't remove the line above - to add or remove a menu item commeent in or out - [Home](index.html)- [Use Cases...](guidance.html){: .dropdown-toggle data-toggle="dropdown"}  - [Patient Based Scheduling](patient-scheduling.html)  - [Provider based Scheduling](provider-scheduling.html)  {: .dropdown-menu}- [Operations](operations.html)- [Profiles/Extensions](profiles.html)- [Terminology](terminology.html)- [Capability Statements...](capstatements.html){: .dropdown-toggle data-toggle="dropdown"}  - [Conformance requirements for Server](server-capstatement.html)  - [Conformance requirements for Client](client-capstatement.html)  {: .dropdown-menu}- [Downloads](downloads.html)-->
+<!--{:.nav .navbar-nav} don't remove the line above - to add or remove a menu item commeent in or out - [Home](index.html)- [Use Cases...](guidance.html){: .dropdown-toggle data-toggle="dropdown"}  - [Patient Based Scheduling](patient-scheduling.html)  - [Provider based Scheduling](provider-scheduling.html)  {: .dropdown-menu}- [Operations](operations.html)- [Profiles/Extensions](profiles.html)- [Terminology](terminology.html)- [Capability Statements...](capstatements.html){: .dropdown-toggle data-toggle="dropdown"}  - [Conformance requirements for Server](CapabilityStatement-server.html)  - [Conformance requirements for Client](client-capstatement.html)  {: .dropdown-menu}- [Downloads](downloads.html)-->
 <ul class="nav navbar-nav">
   <li>
     <a href="index.html">Home</a>
@@ -313,7 +313,7 @@
 			&lt;p&gt;The Argonaut Scheduling Server &lt;strong&gt;SHALL&lt;/strong&gt;:&lt;/p&gt;
 			&lt;ol&gt;
 				&lt;li&gt;Support at least one Argonaut Scheduling patient or provider use case.&lt;/li&gt;
-				&lt;li&gt;Implement the RESTful behavior according to the FHIR specification including returning the appropriate response classes as described in the FHIR specification for &lt;a href=&quot;{site.data.fhir.path}}/http.html&quot;&gt;FHIR RESTful API&lt;/a&gt; and &lt;a href=&quot;{site.data.fhir.path}}/operations.html&quot;&gt;Extended Operations on the RESTful API&lt;/a&gt;.&lt;/li&gt;
+				&lt;li&gt;Implement the RESTful behavior according to the FHIR specification including returning the appropriate response classes as described in the FHIR specification for &lt;a href=&quot;http://hl7.org/fhir/STU3/http.html&quot;&gt;FHIR RESTful API&lt;/a&gt; and &lt;a href=&quot;http://hl7.org/fhir/STU3/operations.html&quot;&gt;Extended Operations on the RESTful API&lt;/a&gt;.&lt;/li&gt;
 				&lt;li&gt;Conform to the &lt;a href=&quot;http://hl7.org/fhir/us/core/1.0.1&quot;&gt;US Core Implementation Guiide&lt;/a&gt;.&lt;/li&gt;
 				&lt;li&gt;Support &lt;em&gt;json&lt;/em&gt; resource formats for all Argonaut Scheduling interactions.&lt;/li&gt;
 				&lt;li&gt;Declare a CapabilityStatement identifying the list of profiles, operations, search parameter supported.&lt;/li&gt;
@@ -382,7 +382,7 @@
 					&lt;/tr&gt;
 					&lt;tr&gt;
 						&lt;td&gt;
-							&lt;a href=&quot;#Subscription&quot;&gt;Subscription&lt;/a&gt;
+							&lt;a href=&quot;#subscription&quot;&gt;Subscription&lt;/a&gt;
 						&lt;/td&gt;
 						&lt;td&gt;Argonaut Scheduling Subscription Profile&lt;/td&gt;
 						&lt;td&gt;create, delete&lt;/td&gt;
@@ -518,7 +518,7 @@
 			&lt;p&gt;Supported Profiles:  &lt;a href=&quot;StructureDefinition-argo-sched-notif.html&quot;&gt;Argonaut Schedule Notification Profile&lt;/a&gt;
 			&lt;/p&gt;
 			&lt;hr/&gt;
-			&lt;h4&gt;Slot&lt;/h4&gt;
+			&lt;h4 id=&quot;slot&quot;&gt;Slot&lt;/h4&gt;
 			&lt;p&gt;Supported Profiles:  &lt;a href=&quot;StructureDefinition-prefetch-slot.html&quot;&gt;Argonaut Prefetch Slot Profile&lt;/a&gt;
 			&lt;/p&gt;
 			&lt;p&gt;Capabilities:&lt;/p&gt;
@@ -819,7 +819,7 @@ Formats: <a href="CapabilityStatement-server.html">Narrative</a>, <a href="Capab
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Wed, Mar 21, 2018 16:34-0700. |
+            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Wed, Mar 21, 2018 20:29-0700. |
              <!--  <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/STU3license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

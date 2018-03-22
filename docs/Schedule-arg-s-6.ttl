@@ -1,0 +1,55 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/argonaut-scheduling/Schedule/arg-s-6> a fhir:Schedule;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "arg-s-6"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: arg-s-6</p><p><b>active</b>: true</p><p><b>serviceType</b>: WELL CHILD <span style=\"background: LightGoldenRodYellow\">(Details : {http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type code 'well-child' = 'WELL CHILD', given as 'WELL CHILD'})</span></p><p><b>specialty</b>: Family Medicine <span style=\"background: LightGoldenRodYellow\">(Details : {SNOMED CT code '419772000' = 'Family practice (qualifier value)', given as 'Family Medicine'})</span></p><p><b>actor</b>: <a href=\"Practitioner-dr-y.html\">Dr. Y. Generated Summary: id: dr-y; 9941339108, 25456; Y </a></p><p><b>planningHorizon</b>: Sep 7, 2017 --&gt; Aug 7, 2017</p><p><b>comment</b>: two week schedule for Dr. Y</p></div>"
+  ];
+  fhir:Schedule.active [ fhir:value "true"^^xsd:boolean];
+  fhir:Schedule.serviceType [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type" ];
+       fhir:Coding.code [ fhir:value "well-child" ];
+       fhir:Coding.display [ fhir:value "WELL CHILD" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "WELL CHILD" ]
+  ];
+  fhir:Schedule.specialty [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:419772000;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "419772000" ];
+       fhir:Coding.display [ fhir:value "Family Medicine" ]
+     ]
+  ];
+  fhir:Schedule.actor [
+     fhir:index 0;
+     fhir:link <http://fhir.org/guides/argonaut-scheduling/Practitioner/dr-y>;
+     fhir:Reference.reference [ fhir:value "Practitioner/dr-y" ];
+     fhir:Reference.display [ fhir:value "Dr. Y" ]
+  ];
+  fhir:Schedule.planningHorizon [
+     fhir:Period.start [ fhir:value "2017-09-07"^^xsd:date ];
+     fhir:Period.end [ fhir:value "2017-08-07"^^xsd:date ]
+  ];
+  fhir:Schedule.comment [ fhir:value "two week schedule for Dr. Y"] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.org/guides/argonaut-scheduling/Schedule/arg-s-6.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

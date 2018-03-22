@@ -58,7 +58,7 @@
         "path": "Extension",
         "short": "Subscription Trigger Event Extension",
         "definition": "A brief, natural language description of a particular event identified by the implementation environment. When this event is evaluated as true, it triggers a notification to the subscriber.",
-        "comment": "If the expression is a [FHIRPath](http://hl7.org/fhirpath/) expression, use the [fhirPath Expression]({{site.data.fhir.path}}/cqif/extension-cqif-fhirpathexpression.html) extension.",
+        "comment": "If the expression is a [FHIRPath](http://hl7.org/fhirpath) expression, use the [fhirPath Expression]({{site.data.fhir.path}}/cqif/extension-cqif-fhirpathexpression.html) extension.",
         "min": 0,
         "max": "*",
         "base": {
@@ -216,7 +216,7 @@
         "path": "Extension",
         "short": "Subscription Trigger Event Extension",
         "definition": "A brief, natural language description of a particular event identified by the implementation environment. When this event is evaluated as true, it triggers a notification to the subscriber.",
-        "comment": "If the expression is a [FHIRPath](http://hl7.org/fhirpath/) expression, use the [fhirPath Expression]({{site.data.fhir.path}}/cqif/extension-cqif-fhirpathexpression.html) extension.",
+        "comment": "If the expression is a [FHIRPath](http://hl7.org/fhirpath) expression, use the [fhirPath Expression]({{site.data.fhir.path}}/cqif/extension-cqif-fhirpathexpression.html) extension.",
         "min": 0,
         "max": "*"
       },

@@ -59,6 +59,15 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+        <valueUri value="Schedule-arg-s-6.html"/>
+      </extension>
+      <example value="true"/>
+      <sourceReference>
+        <reference value="Schedule/arg-s-6"/>
+      </sourceReference>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
         <valueUri value="Appointment-proposed-appt3.html"/>
       </extension>
       <example value="true"/>

@@ -4,11 +4,11 @@ layout: default
 active: downloads
 mycss: argo-sched.css
 ---
-## ImplemenationGuide Resource:
+## ImplemenationGuide Resource
 
 The [{{site.data.fhir.igName}} ImplementationGuide](ImplementationGuide-ig.html) resource defines the logical content and the important pages published in this IG and can be downloaded in both xml and JSON.
 
-## Validator Pack and Definitions:
+## Validator Pack and Definitions
 
 The following file contains all the value sets, profiles, extensions, list of pages and urls in the IG, etc defined as part of the this Implementation Guide.:
 
@@ -21,7 +21,7 @@ In addition there are format specific definitions files.
 
 These files should be the first choice whenever generating any implementation artifacts since they contain all of the rules about what makes these US-Core profiles valid. Implementers will still need to be familiar with the content of the specification and profiles that apply in order to make a conformant implementation.  See the overview on [validating FHIR profiles and resources]({{ site.data.fhir.path }}/validation.html)
 
-## Schematrons:
+## Schematrons
 
 Schematrons for the profiles defined in this guide are also available and listed below:
 
@@ -37,7 +37,7 @@ Schematrons for the profiles defined in this guide are also available and listed
 <li><a href="argo-coverage.sch">Argonaut Coverage Profile</a></li>
 <li><a href="argo-appt.sch">Argonaut Appointment Profile</a></li>
 
-## Examples:
+## Examples
 
 All the examples that are used in this guide are available for download:
 

@@ -46,14 +46,14 @@ This scenario is the same as 1a except a Service or Specialty instead of a speci
 
 ---
 
-{% include img.html img="diagrams/Slide28.png" caption="Figure:  Patient Portal Scheduling for new or existing patient" %}
+{% include img.html img="diagrams/Slide28.png" caption="Patient Portal Scheduling for new or existing patient" %}
 
 ###  Patient login
 {:.no_toc}
 
 Before a patient can begin, she must login in to the patient portal.  This step MAY include updating or confirmation of patient  and insurance coverage information.
 
-{% include img.html img="diagrams/Slide05.png" caption="Figure:  Patient login" %}
+{% include img.html img="diagrams/Slide05.png" caption="Patient login" %}
 
 The patient ID is returned or known. See the [Login and Trust](index.html#login-and-trust) Section for details.
 
@@ -65,7 +65,7 @@ The patient ID is returned or known. See the [Login and Trust](index.html#login-
 
 This step is the key transaction for this scheduling Use case. It asks the questions: when to book?  It is dynamic and complex because of multiple dependencies.<!--(In contrast, a discovery operation - which is out of scope for this version - asks the question: what Service(/specialty/provider) to book?)-->
 
-{% include img.html img="diagrams/Slide30.png" caption="Figure:  Appointment Availability Discovery and Search" %}
+{% include img.html img="diagrams/Slide30.png" caption="Appointment Availability Discovery and Search" %}
 
 Based on the set of input parameters supplied by the Client, the Server determines which schedulable "assets" are needed for the visit and returns a set of possible Appointment times where all required assets are available. The scope of this guide is limited to the available appointments based on the following "simple" inputs:
 
@@ -105,7 +105,7 @@ Using Both `GET` and `POST` Syntax the operation can be invoked as follows:
 This operation puts to appointment in a hold status to temporarily prevent the appointment from being booked by another client.  This optional step may be needed to allow the end-user to complete additional steps such as end user data entry before the booking can be completed.
 
 
-{% include img.html img="diagrams/Slide31.png" caption="Figure:  Hold Appointment" %}
+{% include img.html img="diagrams/Slide31.png" caption="Hold Appointment" %}
 
  The Client sends a hold request operation using the id of selected proposed appointment as the input parameter.  The Server determines if and how long the appointment can be held and returns the Appointment resource with with an updated status if successful. The [Releasing Holds](#releasing-holds) section below describes how to release the hold before it expires.  See the [Appointment State Diagram](state-diagram.html) for further details on statuses.
 
@@ -133,7 +133,7 @@ POST [base]/Appointment/[id]/$hold
 {:.no_toc}
 The actual booking of the appointment is completed in this step and the scheduling step is completed.
 
-{% include img.html img="diagrams/Slide32.png" caption="Figure:  Book Appointment" %}
+{% include img.html img="diagrams/Slide32.png" caption="Book Appointment" %}
 
 The Client sends a book operation using the id of selected proposed appointment, the patient(s) id and optionally any comments as the input parameters.  The Server determines if the appointment can be booked and returns the Appointment resource with with an updated status. See the [Appointment State Diagram](state-diagram.html) for further details on statuses.
 
@@ -187,7 +187,7 @@ In Scenario 2a and 2b we have introduced the complexities of a new patient and a
 
 ---
 
-{% include img.html img="diagrams/Slide29.png" caption="Figure:  Open Scheduling for new or existing patient" %}
+{% include img.html img="diagrams/Slide29.png" caption="Open Scheduling for new or existing patient" %}
 
 ###  Patient Registration Option A
 {:.no_toc}
@@ -200,7 +200,7 @@ For this scenario a new patient will need to be registered or an existing patien
 
 This step is the key transaction for this Scheduling Use Case. It asks the questions: when to book? It is dynamic and complex because of multiple dependencies.
 
-{% include img.html img="diagrams/Slide03.png" caption="Figure:  Appointment Availability Discovery and Search" %}
+{% include img.html img="diagrams/Slide03.png" caption="Appointment Availability Discovery and Search" %}
 
 This step is the same as described in [Scenario-1](#appointment-availability-discovery-and-search).
 
@@ -209,7 +209,7 @@ This step is the same as described in [Scenario-1](#appointment-availability-dis
 
 This operation puts to appointment in a hold status to temporarily prevent the appointment from being booked by another client. This step is **not optional** if the patient was not registered in step 1 above. It is needed in order to register the patient prior to booking the appointment.
 
-{% include img.html img="diagrams/Slide04.png" caption="Figure:  Optional Hold Appointment Operation" %}
+{% include img.html img="diagrams/Slide04.png" caption="Optional Hold Appointment Operation" %}
 
 The details of this step are the same as described in [Scenario-1](#optional-hold-appointment-operation). The [Releasing Holds](#releasing-holds) section below describes how to release the hold before it expires.
 
@@ -218,7 +218,7 @@ The details of this step are the same as described in [Scenario-1](#optional-hol
 
 A new patient will need to be registered or an existing patient fetched prior to actually booking the appointment.   This MAY occur at this step prior to booking the appointment or at the beginning of the workflow in step 1.  This step MAY include updating or confirmation of patient and insurance coverage information as well.
 
-{% include img.html img="diagrams/Slide12.png" caption="Figure:  Patient Registration" %}
+{% include img.html img="diagrams/Slide12.png" caption="Patient Registration" %}
 
 #### Registering or Fetching a Patient:
 {:.no_toc}
@@ -289,7 +289,7 @@ To update the existing insurance information or create it if it is new, The Clie
 
 After the patient is registered, the actual booking interaction can occur.
 
-{% include img.html img="diagrams/Slide06.png" caption="Figure:  Book Appointment" %}
+{% include img.html img="diagrams/Slide06.png" caption="Book Appointment" %}
 
 This step is the same as described in [Scenario-1](#book-appointment).
 
@@ -333,16 +333,16 @@ In Scenario 3a and 3b we have introduced the complexities of a new patient and a
 
 ---
 
-{% include img.html img="diagrams/Slide37.png" caption="Figure:  Prefetching Open Slots" %}
+{% include img.html img="diagrams/Slide37.png" caption="Prefetching Open Slots" %}
 
-{% include img.html img="diagrams/Slide42.png" caption="Figure:  Open Scheduling for new or existing patients" %}
+{% include img.html img="diagrams/Slide42.png" caption="Open Scheduling for new or existing patients" %}
 
 ###  Share Business Rules
 {:.no_toc}
 
 The EHR/Hospital shares the business rules and logic for creating an appointment for a particular service with the third-party application. For example, which assets are needed and determination of whether the shared slot are a fixed size (e.g., 5 or 15 minutes) or variable sized slots. This is typically an "out of band" transaction and a FHIR based transaction is out of scope for this IG.
 
-{% include img.html img="diagrams/Slide08.png" caption="Figure:  Share Business Rules" %}
+{% include img.html img="diagrams/Slide08.png" caption="Share Business Rules" %}
 
 ### Subscribe for Schedule Change Notifications
 {:.no_toc}
@@ -355,7 +355,7 @@ The third-party application subscribes to the FHIR Scheduler to receive notifica
 
 and MAY include additional triggers.  Note that the notification payload is the Schedule resource associated with the Slot that triggered the event.  A "hearbeat" notification should also be sent with a site specific frequency and should not contain a payload.
 
- {% include img.html img="diagrams/Slide43.png" caption="Figure:  Subscribe for Schedule Change Notifications" %}
+ {% include img.html img="diagrams/Slide43.png" caption="Subscribe for Schedule Change Notifications" %}
 
 #### API
 {:.no_toc}
@@ -387,7 +387,7 @@ To unsubscribe:
 
 The third-party application fetches the "initial load" of open slots to get all the data needed supporting the creation of new appointments. The query is made for the maximum date ranges for the available slots for each provider or service and is typically repeated daily to reset or to resynchronize its information with a scheduling server.  
 
-{% include img.html img="diagrams/Slide14.png" caption="Figure:  Initial Load" %}
+{% include img.html img="diagrams/Slide14.png" caption="Initial Load" %}
 
 #### API
 {:.no_toc}
@@ -415,7 +415,7 @@ Using Both `GET` and `POST` Syntax the operation can be invoked as follows to fe
 After subscribing with the FHIR Scheduler and fetching the initial load, the third-party application receives notifications from the FHIR Scheduler of schedule changes as well as "heartbeat" notifications as described above.  For a notification triggered by a schedule change, the notification payload is a Schedule resource containing the actor (e.g, provider, device or location) and date range (usually a day). In a "heartbeat" notification the payload is absent. There are several architectures to implement the subscription notifications such as using a "feed handler" depicted in figure below.
 
 
-{% include img.html img="diagrams/Slide44.png" caption="Figure:  Notification of schedule changes" %}
+{% include img.html img="diagrams/Slide44.png" caption="Notification of schedule changes" %}
 
 #### API
 {:.no_toc}
@@ -440,7 +440,7 @@ The standard FHIR [Subscription]({{site.data.fhir.path}}/subscription.html) API 
 
 When the Client is notified of schedule changes, it can fetch the slots based on the actor and time period in the notification's payload and update its prefetched slot data.  Notifications beyond the Client's time horizon are ignored.
 
-{% include img.html img="diagrams/Slide45.png" caption="Figure:  'Smart Polling' for Updated Slots" %}
+{% include img.html img="diagrams/Slide45.png" caption="'Smart Polling' for Updated Slots" %}
 
 #### API
 {:.no_toc}
@@ -476,7 +476,7 @@ This step is identical to [Scenario 2 Step 1.](#patient-registration-option-a) a
 
 Based on the shared business rules and user input, the client application server is able to create available appointments from the prefetched slot information and return them to the end user.  How this is done is application specific and out of scope for this guide.
 
-{% include img.html img="diagrams/Slide10.png" caption="Figure:  Appointment Availability Discovery and Search" %}
+{% include img.html img="diagrams/Slide10.png" caption="Appointment Availability Discovery and Search" %}
 
 The FHIR RESTful based interactions are the same as described in [Scenario-1 Step 2.](#appointment-availability-discovery-and-search) with the key difference that the role of the FHIR Scheduler (EHR) is replaced by the Client Application Server.  Other non-FHIR based solutions are possible as well.
 
@@ -485,7 +485,7 @@ The FHIR RESTful based interactions are the same as described in [Scenario-1 Ste
 
 After the end user selects a preferred appointment time.  There may be additional steps such as end user data entry prior to actually booking the appointment.  The Client Application may request FHIR Scheduler (EHR) to hold this appointment to prevent it from being taken by another user.
 
-{% include img.html img="diagrams/Slide04.png" caption="Figure:  Optional Hold Appointment Operation" %}
+{% include img.html img="diagrams/Slide04.png" caption="Optional Hold Appointment Operation" %}
 
 #### APIs
 {:.no_toc}
@@ -520,7 +520,7 @@ This step is identical to [Scenario 2 Step 4](#patient-registration-option-b) ab
 
 The Client is ready to actually book the appointment and the request to book the selected Appointment is made to the FHIR Scheduler (EHR).
 
-{% include img.html img="diagrams/Slide06.png" caption="Figure:  Book Appointment Operation" %}
+{% include img.html img="diagrams/Slide06.png" caption="Book Appointment Operation" %}
 
 #### APIs
 {:.no_toc}
@@ -554,7 +554,7 @@ For some systems, updating or confirmation of insurance coverage information MAY
 
 The end user may elect to cancel or reschedule an existing appointment.  Rescheduling is a two step process of canceling and rebooking a new appointment.
 
-{% include img.html img="diagrams/Slide33.png" caption="Figure:  Patient Canceling/Rescheduling Appointments" %}
+{% include img.html img="diagrams/Slide33.png" caption="Patient Canceling/Rescheduling Appointments" %}
 
 Canceling and Rescheduling has the potential to introduces complex failure states. The [best practices](index.html#future-scope) guidance discusses how failures should be handled. See the [Appointment State Diagram](state-diagram.html) for further details on statuses and state transitions.
 
@@ -569,7 +569,7 @@ To cancel an appointment the Client uses the standard FHIR [`PATCH`](http://buil
 
     1. cancel [reason code](#) or string
 
-- Note the Server SHALL declare support for JSON, XML, or FHIRPath Patch in the [CapabilityStatement](server-capstatement.html)
+- Note the Server SHALL declare support for JSON, XML, or FHIRPath Patch in the [CapabilityStatement](CapabilityStatement-server.html)
 
 ### Examples
 {:.no_toc}
@@ -581,7 +581,7 @@ To cancel an appointment the Client uses the standard FHIR [`PATCH`](http://buil
 If not booking a held appointment, the Client should release  the hold on it before it expires.  The length of an appointment hold is determined by the scheduling service’s business rules, after which the status of the Appointment may change.  See the [Appointment State Diagram](state-diagram.html) for further details on statuses and state transitions.
 
 
-{% include img.html img="diagrams/Slide38.png" caption="Figure:  Canceling Appointment Hold" %}
+{% include img.html img="diagrams/Slide38.png" caption="Canceling Appointment Hold" %}
 
 Releasing holds has the potential to introduces complex failure states. The [best practices](index.html#future-scope) guidance discusses how failures should be handled.
 
@@ -600,7 +600,7 @@ This transaction uses the standard FHIR [`PATCH`](http://build.fhir.org/http.htm
 
 The patient searches for their appointments.
 
-{% include img.html img="diagrams/Slide34.png" caption="Figure:  Patient Retrieves Their Appointments" %}
+{% include img.html img="diagrams/Slide34.png" caption="Patient Retrieves Their Appointments" %}
 
 
 Patient access to their scheduled appointments uses the standard FHIR [search API]({{site.data.fhir.path}}/search.html).

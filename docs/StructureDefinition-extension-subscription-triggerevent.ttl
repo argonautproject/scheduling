@@ -61,7 +61,7 @@
        fhir:ElementDefinition.path [ fhir:value "Extension" ];
        fhir:ElementDefinition.short [ fhir:value "Subscription Trigger Event Extension" ];
        fhir:ElementDefinition.definition [ fhir:value "A brief, natural language description of a particular event identified by the implementation environment. When this event is evaluated as true, it triggers a notification to the subscriber." ];
-       fhir:ElementDefinition.comment [ fhir:value "If the expression is a [FHIRPath](http://hl7.org/fhirpath/) expression, use the [fhirPath Expression]({{site.data.fhir.path}}/cqif/extension-cqif-fhirpathexpression.html) extension." ];
+       fhir:ElementDefinition.comment [ fhir:value "If the expression is a [FHIRPath](http://hl7.org/fhirpath) expression, use the [fhirPath Expression]({{site.data.fhir.path}}/cqif/extension-cqif-fhirpathexpression.html) extension." ];
        fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
        fhir:ElementDefinition.max [ fhir:value "*" ];
        fhir:ElementDefinition.base [
@@ -214,7 +214,7 @@
        fhir:ElementDefinition.path [ fhir:value "Extension" ];
        fhir:ElementDefinition.short [ fhir:value "Subscription Trigger Event Extension" ];
        fhir:ElementDefinition.definition [ fhir:value "A brief, natural language description of a particular event identified by the implementation environment. When this event is evaluated as true, it triggers a notification to the subscriber." ];
-       fhir:ElementDefinition.comment [ fhir:value "If the expression is a [FHIRPath](http://hl7.org/fhirpath/) expression, use the [fhirPath Expression]({{site.data.fhir.path}}/cqif/extension-cqif-fhirpathexpression.html) extension." ];
+       fhir:ElementDefinition.comment [ fhir:value "If the expression is a [FHIRPath](http://hl7.org/fhirpath) expression, use the [fhirPath Expression]({{site.data.fhir.path}}/cqif/extension-cqif-fhirpathexpression.html) extension." ];
        fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
        fhir:ElementDefinition.max [ fhir:value "*" ]
      ], [

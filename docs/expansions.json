@@ -1,8 +1,8 @@
 {
   "resourceType": "Bundle",
-  "id": "561f4f70-d7a7-4903-bdca-d0835d9d495e",
+  "id": "59cfa485-c830-491f-9914-16809910edf3",
   "meta": {
-    "lastUpdated": "2018-03-21T16:34:35.192-07:00"
+    "lastUpdated": "2018-03-21T20:29:56.305-07:00"
   },
   "type": "collection",
   "entry": [
@@ -21,7 +21,7 @@
         "title": "Argonaut Visit Types",
         "status": "draft",
         "date": "2017-07-30T12:40:10-07:00",
-        "description": "The Argonaut Visit Types are a prioritized valueset of the most common 'business types' for scheduling and have been identified as the baseline use cases for the  Argonaut scheduling Implementation Guide.  This is intended to facilitates implementation of the IG by provide a common starting point for interoperability.  These concept are used in the Argonaut Appointment, Schedule and Slot resources.  The Visit types can be extended by implementers to meet there use cases.  In order to address overlap between `serviceType` and `appointmentType`, these concepts are mapped to the [Argonaut Appointment Types](ConceptMap-visit-appt-map.html).  A mapping to [SNOMED CT ](ConceptMap-visit-snomed-map.html) is also provided.",
+        "description": "The Argonaut Visit Types are a prioritized valueset of the most common 'business types' for scheduling and have been identified as the baseline use cases for the  Argonaut scheduling Implementation Guide.  This is intended to facilitates implementation of the IG by provide a common starting point for interoperability.  These concept are used in the Argonaut Appointment, Schedule and Slot resources.  The Visit types can be extended by implementers to meet there use cases.  In order to address overlap between `serviceType` and `appointmentType`, these concepts are mapped to the [Argonaut Appointment Types](ConceptMap-visit-appt-map.html).  A mapping to [SNOMED CT](ConceptMap-visit-snomed-map.html) is also provided.",
         "jurisdiction": [
           {
             "coding": [

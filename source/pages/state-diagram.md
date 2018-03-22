@@ -8,7 +8,7 @@ active: state
 
 It is important to understand the state transitions during the scheduling process and the typical flow of statuses for an Appointment and associated Slot resources.  This State Diagram should be referenced to when considering the statuses of the scheduling resources.
 
-{% include img.html img="appt-state.png" caption="Figure:  Appointment State Diagram based on the Appointment.status codes" %}
+{% include img.html img="appt-state.png" caption="Appointment State Diagram based on the Appointment.status codes" %}
 
 #### Typical booking including the [Slot](http://build.fhir.org/slot.html) resource from context of the scheduling service.  (modified from the [Appointment](http://build.fhir.org/appointment.html) resource notes)
 

@@ -78,6 +78,18 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+              "valueUri": "Schedule-arg-s-6.html"
+            }
+          ],
+          "example": true,
+          "sourceReference": {
+            "reference": "Schedule/arg-s-6"
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
               "valueUri": "Appointment-proposed-appt3.html"
             }
           ],

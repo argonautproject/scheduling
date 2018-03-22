@@ -6,7 +6,7 @@
   </meta>
 
 	<actor>
-		<reference value="Practitioner/1"/>
+		<reference value="Practitioner/dr-y"/>
 		<display value="Crusher, Beverly"/>
 	</actor>
 	<planningHorizon>

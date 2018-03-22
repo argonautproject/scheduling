@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Bundle xmlns="http://hl7.org/fhir">
-  <id value="561f4f70-d7a7-4903-bdca-d0835d9d495e"/>
+  <id value="59cfa485-c830-491f-9914-16809910edf3"/>
   <meta>
-    <lastUpdated value="2018-03-21T16:34:35.192-07:00"/>
+    <lastUpdated value="2018-03-21T20:29:56.305-07:00"/>
   </meta>
   <type value="collection"/>
   <entry>
@@ -370,7 +370,7 @@
         <title value="Argonaut Visit Types"/>
         <status value="draft"/>
         <date value="2017-07-30T12:40:10-07:00"/>
-        <description value="The Argonaut Visit Types are a prioritized valueset of the most common &#39;business types&#39; for scheduling and have been identified as the baseline use cases for the  Argonaut scheduling Implementation Guide.  This is intended to facilitates implementation of the IG by provide a common starting point for interoperability.  These concept are used in the Argonaut Appointment, Schedule and Slot resources.  The Visit types can be extended by implementers to meet there use cases.  In order to address overlap between `serviceType` and `appointmentType`, these concepts are mapped to the [Argonaut Appointment Types](ConceptMap-visit-appt-map.html).  A mapping to [SNOMED CT ](ConceptMap-visit-snomed-map.html) is also provided."/>
+        <description value="The Argonaut Visit Types are a prioritized valueset of the most common &#39;business types&#39; for scheduling and have been identified as the baseline use cases for the  Argonaut scheduling Implementation Guide.  This is intended to facilitates implementation of the IG by provide a common starting point for interoperability.  These concept are used in the Argonaut Appointment, Schedule and Slot resources.  The Visit types can be extended by implementers to meet there use cases.  In order to address overlap between `serviceType` and `appointmentType`, these concepts are mapped to the [Argonaut Appointment Types](ConceptMap-visit-appt-map.html).  A mapping to [SNOMED CT](ConceptMap-visit-snomed-map.html) is also provided."/>
         <jurisdiction>
           <coding>
             <system value="urn:iso:std:iso:3166"/>

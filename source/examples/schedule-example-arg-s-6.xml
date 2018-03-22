@@ -1,0 +1,30 @@
+<Schedule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir file:///C:/Users/Eric/Documents/HL7/FHIR/BUILD_EDIT_FILES/structuredefinition.xsd" xmlns="http://hl7.org/fhir">
+	<id value="arg-s-6"/>
+	<active value="true"/>
+		<serviceType>
+		<coding>
+			<system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
+			<code value="well-child"/>
+			<display value="WELL CHILD"/>
+		</coding>
+		<text value="WELL CHILD"/>
+	</serviceType>
+	<specialty>
+		<coding>
+			<system value="http://snomed.info/sct"/>
+			<code value="419772000"/>
+			<display value="Family Medicine"/>
+		</coding>
+	</specialty>
+
+	<actor>
+		<reference value="Practitioner/dr-y"/>
+		<display value="Dr. Y"/>
+	</actor>
+	<!--two week horizon-->
+	<planningHorizon>
+		<start value="2017-09-07"/>
+		<end value="2017-08-07"/>
+	</planningHorizon>
+	<comment value="two week schedule for Dr. Y"/>
+</Schedule>

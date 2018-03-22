@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Schedule xmlns="http://hl7.org/fhir">
+  <id value="arg-s-6"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: arg-s-6</p><p><b>active</b>: true</p><p><b>serviceType</b>: WELL CHILD <span style="background: LightGoldenRodYellow">(Details : {http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type code 'well-child' = 'WELL CHILD', given as 'WELL CHILD'})</span></p><p><b>specialty</b>: Family Medicine <span style="background: LightGoldenRodYellow">(Details : {SNOMED CT code '419772000' = 'Family practice (qualifier value)', given as 'Family Medicine'})</span></p><p><b>actor</b>: <a href="Practitioner-dr-y.html">Dr. Y. Generated Summary: id: dr-y; 9941339108, 25456; Y </a></p><p><b>planningHorizon</b>: Sep 7, 2017 --&gt; Aug 7, 2017</p><p><b>comment</b>: two week schedule for Dr. Y</p></div>
+  </text>
+  <active value="true"/>
+  <serviceType>
+    <coding>
+      <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
+      <code value="well-child"/>
+      <display value="WELL CHILD"/>
+    </coding>
+    <text value="WELL CHILD"/>
+  </serviceType>
+  <specialty>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="419772000"/>
+      <display value="Family Medicine"/>
+    </coding>
+  </specialty>
+  <actor>
+    <reference value="Practitioner/dr-y"/>
+    <display value="Dr. Y"/>
+  </actor>
+<!-- two week horizon -->
+  <planningHorizon>
+    <start value="2017-09-07"/>
+    <end value="2017-08-07"/>
+  </planningHorizon>
+  <comment value="two week schedule for Dr. Y"/>
+</Schedule>

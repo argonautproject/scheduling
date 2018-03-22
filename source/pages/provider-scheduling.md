@@ -48,7 +48,7 @@ This scenario is also very similar to 1a above, but is an appointment for a proc
 
 ---
 
-{% include img.html img="diagrams/Slide36.png" caption="Figure:  Provider Scheduling for a patient across systems" %}
+{% include img.html img="diagrams/Slide36.png" caption="Provider Scheduling for a patient across systems" %}
 
 
 ### Optional Find Patient
@@ -56,7 +56,7 @@ This scenario is also very similar to 1a above, but is an appointment for a proc
 
 Prior to booking an appointment with a FHIR Scheduler, the Client can search across the systems for an existing FHIR Patient resource ID for the patient.  If there is an existing FHIR Patient resource, finding it helps avoid double booking a patient.
 
-{% include img.html img="diagrams/Slide20.png" caption="Figure:  Optional Find Patient" %}
+{% include img.html img="diagrams/Slide20.png" caption="Optional Find Patient" %}
 
 #### Usage
 {:.no_toc}
@@ -80,14 +80,14 @@ New patients need to be registered and existing patients discovered prior to boo
 #### Registering or Fetching a Patient:
 {:.no_toc}
 
-{% include img.html img="diagrams/Slide21.png" caption="Figure:  New Patient Registration" %}
+{% include img.html img="diagrams/Slide21.png" caption="New Patient Registration" %}
 
 Usage and examples for this step are described in the [Patient Use Cases](patient-scheduling.html#registering-or-fetching-a-patient).
 
 #### Updating or creating Patient Coverage Information:
 {:.no_toc}
 
-{% include img.html img="diagrams/Slide22.png" caption="Figure:  Update Coverage information" %}
+{% include img.html img="diagrams/Slide22.png" caption="Update Coverage information" %}
 
 Usage and examples for this step are described in the [Patient Use Cases](patient-scheduling.html#updating-or-creating-patient-coverage-information).
 
@@ -98,7 +98,7 @@ Usage and examples for this step are described in the [Patient Use Cases](patien
 
 The Client searches for available appointments across system(s) based on simple search criteria provided by the patient or on behalf of the patient. This step is the key transaction for this Scheduling Use Case. It asks the questions: when to book? It is dynamic and complex because of multiple dependencies.
 
-{% include img.html img="diagrams/Slide23.png" caption="Figure:  Appointment Availability Discovery and Search" %}
+{% include img.html img="diagrams/Slide23.png" caption="Appointment Availability Discovery and Search" %}
 
 This step uses the Appointment Availability Search Operation and its usage and examples
 are described in the [Patient Use Cases](patient-scheduling.html#appointment-availability-discovery-and-search).
@@ -109,7 +109,7 @@ are described in the [Patient Use Cases](patient-scheduling.html#appointment-ava
 
 After the patient or the provider on behalf of the patient selects from the available appointments returned in step 3 above, the Client requests a hold on the appointment to prevent the appointment from being booked by another client.  This optional interaction may be needed to allow the patient or provider to complete additional steps such as end user data entry before the booking can be completed.
 
-{% include img.html img="diagrams/Slide24.png" caption="Figure:  Hold Appointment" %}
+{% include img.html img="diagrams/Slide24.png" caption="Hold Appointment" %}
 
 Usage and examples for this step are described in the [Patient Use Cases](patient-scheduling.html#optional-hold-appointment-operation).
 
@@ -123,7 +123,7 @@ This registration step MAY occur here or as a distinct step prior to the availab
 
  After the patient or the provider selects from the available appointments returned in step 3 and the patient registration is complete, the appointment is booked.  
 
-{% include img.html img="diagrams/Slide41.png" caption="Figure:  Book Appointment" %}
+{% include img.html img="diagrams/Slide41.png" caption="Book Appointment" %}
 
 Usage and examples for this step are described in the [Patient Use Cases](patient-scheduling.html#book-appointment).
 
@@ -161,7 +161,7 @@ This is a basic referral scenario in which the patient is registered with the re
 
 ---
 
-{% include img.html img="diagrams/Slide35.png" caption="Figure:  Provider Scheduling for existing patient across systems" %}
+{% include img.html img="diagrams/Slide35.png" caption="Provider Scheduling for existing patient across systems" %}
 
 
 This use case is discussed in detail in steps 1, 3, 4, 6, 7 in [Scenario 1](#use-case-1-scheduling-across-systems) above.
@@ -181,7 +181,7 @@ Preconditions:
 
        Patient Y sees Doctor Z for a rash. After examining and prescribing the appropriate treatment plan, Doctor Z wants to see Patient Y in two weeks for a follow-up visit to evaluate the response to treatment.  The clinic staff schedule Patient Y for a follow-up office call.
 
-{% include img.html img="diagrams/Slide40.png" caption="Figure:  Provider Scheduling for Existing Patient *within* system" %}
+{% include img.html img="diagrams/Slide40.png" caption="Provider Scheduling for Existing Patient *within* system" %}
 
 This simple use case is covered by steps 2, 3, and 4 in [Scenario 1](#use-case-1-scheduling-across-systems) above.
 
@@ -199,7 +199,7 @@ Usage and examples are described in the [Patient Use Cases](patient-scheduling.h
 
 The provider searches for appointments on behalf of a patient or the provider.
 
-{% include img.html img="diagrams/Slide39.png" caption="Figure:  Retrieving Patient appointments" %}
+{% include img.html img="diagrams/Slide39.png" caption="Retrieving Patient appointments" %}
 
 Provider access to their scheduled appointments uses the standard FHIR [search API]({{site.data.fhir.path}}/search.html).
 

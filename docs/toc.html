@@ -96,7 +96,7 @@
         <div class="nav-collapse collapse navbar-inverse-collapse">
 
        
-  <!-- {:.nav .navbar-nav} don't remove the line above - to add or remove a menu item commeent in or out - [Home](index.html)- [Use Cases...](guidance.html){: .dropdown-toggle data-toggle="dropdown"}  - [Patient Based Scheduling](patient-scheduling.html)  - [Provider based Scheduling](provider-scheduling.html)  {: .dropdown-menu}- [Operations](operations.html)- [Profiles/Extensions](profiles.html)- [Terminology](terminology.html)- [Capability Statements...](capstatements.html){: .dropdown-toggle data-toggle="dropdown"}  - [Conformance requirements for Server](server-capstatement.html)  - [Conformance requirements for Client](client-capstatement.html)  {: .dropdown-menu}- [Downloads](downloads.html) -->
+  <!-- {:.nav .navbar-nav} don't remove the line above - to add or remove a menu item commeent in or out - [Home](index.html)- [Use Cases...](guidance.html){: .dropdown-toggle data-toggle="dropdown"}  - [Patient Based Scheduling](patient-scheduling.html)  - [Provider based Scheduling](provider-scheduling.html)  {: .dropdown-menu}- [Operations](operations.html)- [Profiles/Extensions](profiles.html)- [Terminology](terminology.html)- [Capability Statements...](capstatements.html){: .dropdown-toggle data-toggle="dropdown"}  - [Conformance requirements for Server](CapabilityStatement-server.html)  - [Conformance requirements for Client](client-capstatement.html)  {: .dropdown-menu}- [Downloads](downloads.html) -->
 <ul class="nav navbar-nav">
   <li>
     <a href="index.html">Home</a>
@@ -235,21 +235,21 @@ page source: toc.md
     </ul>
   </li>
   <li><a href="index.html#actors">Actors</a></li>
-  <li><a href="index.html#assumptions">Assumptions</a>
+  <li><a href="index.html#assumptions-and-preconditions">Assumptions</a>
     <ul>
-      <li><a href="index.html#third-party-applications">Third Party applications</a></li>
-      <li><a href="index.html#login-and-trust">Login and Trust</a>
+      <li><a name="f868e88a-7243-424e-8e7f-3949f327c1f1">​</a><a href="index.html#third-party-applications">Third Party applications</a></li>
+      <li><a name="215cfc7b-94e4-43b7-b659-af6cff8b4c99">​</a><a href="index.html#login-and-trust">Login and Trust</a>
         <ul>
-          <li><a href="index.html#system-level-trust">System level trust:</a></li>
-          <li><a href="index.html#user-level-trust">User Level Trust:</a></li>
+          <li><a href="index.html#assumptions-and-preconditions">System level trust:</a></li>
+          <li><a href="index.html#assumptions-and-preconditions">User Level Trust:</a></li>
         </ul>
       </li>
-      <li><a href="index.html#dependencies">Dependencies</a></li>
-      <li><a href="index.html#rescheduling">Rescheduling</a></li>
+      <li><a name="7cec16b2-1454-46f6-b487-8c35ca62702b">​</a><a href="index.html#dependencies">Dependencies</a></li>
+      <li><a name="b6b2280e-2e28-4fec-803f-99f2167e0b71">​</a><a href="index.html#rescheduling">Rescheduling</a></li>
     </ul>
   </li>
   <li><a href="index.html#security">Security</a></li>
-  <li><a name="56f66147-0306-4451-819d-244e80ef030d">​</a><a href="index.html#best-practices">Best Practices</a></li>
+  <li><a name="783a98ad-d470-4f10-8c92-bb519ea33edf">​</a><a href="index.html#best-practices">Best Practices</a></li>
   <li><a href="index.html#future-scope">Future Scope</a></li>
 </ul>
 
@@ -322,7 +322,7 @@ page source: toc.md
           <li><a href="patient-scheduling.html#example-3">Example</a></li>
         </ul>
       </li>
-      <li><a name="1bb581d6-f12f-429c-a59e-675cb6596bc4">​</a><a href="patient-scheduling.html#poll-for-updated-slots">Poll for updated slots</a>
+      <li><a href="patient-scheduling.html#smart-polling-for-updated-slots">Poll for updated slots</a>
         <ul>
           <li><a href="patient-scheduling.html#usage-6">Usage</a></li>
           <li><a href="patient-scheduling.html#example-4">Example</a></li>
@@ -368,9 +368,9 @@ page source: toc.md
   <li><a href="provider-scheduling.html#introduction">Introduction</a></li>
   <li><a href="provider-scheduling.html#use-case-1-scheduling-across-systems">Use Case 1: Scheduling across systems</a>
     <ul>
-      <li><a name="83fbfb9c-967f-4b94-8f80-6da03151ddd4">​</a><a href="provider-scheduling.html#scenario-1a-provider-schedules-an-appointment-with-a-patient-s-pcp-on-behalf-of-patient-discharge-follow-up">Scenario 1a Provider schedules an appointment with a patient’s PCP on behalf of patient (Discharge follow-up):</a></li>
-      <li><a name="dae31216-b447-4544-8f07-12820edeceac">​</a><a href="provider-scheduling.html#scenario-1b-provider-schedules-an-appointment-with-a-provider-on-behalf-of-patient--dermatology-referral">Scenario 1b Provider schedules an appointment with a provider on behalf of patient (Dermatology referral):</a></li>
-      <li><a name="7ad57ebb-d121-44ad-8c3f-e2ecb9cb77de">​</a><a href="provider-scheduling.html#scenario-1c-provider-schedules-a-procedure-on-behalf-of-patient--imaging-referral">Scenario 1c Provider schedules a procedure on behalf of patient (Imaging referral):</a></li>
+      <li><a name="d50f68c6-4c7e-4924-ad31-306ff058ec44">​</a><a href="provider-scheduling.html#scenario-1a-provider-schedules-an-appointment-with-a-patient-s-pcp-on-behalf-of-patient-discharge-follow-up">Scenario 1a Provider schedules an appointment with a patient’s PCP on behalf of patient (Discharge follow-up):</a></li>
+      <li><a name="7bce1e15-f43d-4e30-8f94-4ffc107aef16">​</a><a href="provider-scheduling.html#scenario-1b-provider-schedules-an-appointment-with-a-provider-on-behalf-of-patient--dermatology-referral">Scenario 1b Provider schedules an appointment with a provider on behalf of patient (Dermatology referral):</a></li>
+      <li><a name="a32881a1-a95a-49f6-bc84-45e3c4d3cb97">​</a><a href="provider-scheduling.html#scenario-1c-provider-schedules-a-procedure-on-behalf-of-patient--imaging-referral">Scenario 1c Provider schedules a procedure on behalf of patient (Imaging referral):</a></li>
       <li><a href="provider-scheduling.html#optional-find-patient">Optional Find Patient</a>
         <ul>
           <li><a href="provider-scheduling.html#usage">Usage</a></li>
@@ -390,15 +390,15 @@ page source: toc.md
       <li><a href="provider-scheduling.html#optional-exchange-of-patient-information">Optional exchange of patient information</a></li>
     </ul>
   </li>
-  <li><a name="0e86bd0d-df7b-4230-b7f3-817add64cc9b">​</a><a href="provider-scheduling.html#use-case-2--scheduling-for-existing-patient-across-systems">Use Case 2: Scheduling for existing patient across systems</a>
+  <li><a name="5bbde8d5-b140-47fb-9ca0-9807bfbe93d0">​</a><a href="provider-scheduling.html#use-case-2--scheduling-for-existing-patient-across-systems">Use Case 2: Scheduling for existing patient across systems</a>
     <ul>
-      <li><a name="c7b38f55-bbc5-4d0e-82cf-5d99fc910c5a">​</a><a href="provider-scheduling.html#scenario-2a-provider-schedules-an-appointment-with-a-patient-s-pcp-on-behalf-of-patient-discharge-follow-up">Scenario 2a Provider schedules an appointment with a patient’s PCP on behalf of patient (Discharge follow-up):</a></li>
-      <li><a name="845a370d-a376-418b-aec5-2d730f1ebdfa">​</a><a href="provider-scheduling.html#scenario-2a-provider-schedules-a-follow-up-procedure-on-behalf-of-patient--imaging-referral">Scenario 2a Provider schedules a follow-up procedure on behalf of patient (Imaging referral):</a></li>
+      <li><a name="c9348ae7-8550-4e10-a234-8826c15fd853">​</a><a href="provider-scheduling.html#scenario-2a-provider-schedules-an-appointment-with-a-patient-s-pcp-on-behalf-of-patient-discharge-follow-up">Scenario 2a Provider schedules an appointment with a patient’s PCP on behalf of patient (Discharge follow-up):</a></li>
+      <li><a name="9d5833dd-32a6-4253-a964-d13ca5fd844a">​</a><a href="provider-scheduling.html#scenario-2a-provider-schedules-a-follow-up-procedure-on-behalf-of-patient--imaging-referral">Scenario 2a Provider schedules a follow-up procedure on behalf of patient (Imaging referral):</a></li>
     </ul>
   </li>
-  <li><a name="f3efc946-adb3-4f76-a0a5-e1343302e5cd">​</a><a href="provider-scheduling.html#use-case-3--scheduling-for-existing-patient--within--a-system">Use Case 3: Scheduling for existing patient <em>within</em> a system</a>
+  <li><a name="0bc907f8-4b0d-416f-b76c-3e13db556e1b">​</a><a href="provider-scheduling.html#use-case-3--scheduling-for-existing-patient--within--a-system">Use Case 3: Scheduling for existing patient <em>within</em> a system</a>
     <ul>
-      <li><a name="62a16ed9-bda8-48fd-984e-4be5a2c5e417">​</a><a href="provider-scheduling.html#scenario-3-provider-schedules-an-follow-up-appointment-with-same-provider-on-behalf-of-patient--follow-up-appointment">Scenario 3 Provider schedules an follow-up appointment with same provider on behalf of patient. (follow-up appointment):</a></li>
+      <li><a name="21877c2e-0d96-4910-b03c-740e1811aa96">​</a><a href="provider-scheduling.html#scenario-3-provider-schedules-an-follow-up-appointment-with-same-provider-on-behalf-of-patient--follow-up-appointment">Scenario 3 Provider schedules an follow-up appointment with same provider on behalf of patient. (follow-up appointment):</a></li>
     </ul>
   </li>
   <li><a href="provider-scheduling.html#cancelingrescheduling-appointments">Canceling/Rescheduling appointments</a></li>
@@ -493,7 +493,7 @@ page source: toc.md
   <div class="container">    <!-- container -->
    <div class="inner-wrapper">
     <p>
-            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Wed, Mar 21, 2018 16:34-0700. |
+            Argo-Scheduling Version: 0.0.0  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/STU3">FHIR Version: 3.0.1</a> (IG Publisher v3.0.1-11917) generated on Wed, Mar 21, 2018 20:29-0700. |
                <!-- <a style="color: #81BEF7" rel="license"  <href="../license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> -->
                 <a rel="license" style="color: #81BEF7" href="http://hl7.org/fhir/STU3license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a>
         

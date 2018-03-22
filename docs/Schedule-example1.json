@@ -8,11 +8,11 @@
   },
   "text": {
     "status": "generated",
-    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: example1</p><p><b>meta</b>: </p><p><b>actor</b>: <a href=\"Practitioner/1\">Crusher, Beverly</a></p><p><b>planningHorizon</b>: Feb 13, 2018 --&gt; Feb 13, 2018</p></div>"
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: example1</p><p><b>meta</b>: </p><p><b>actor</b>: <a href=\"Practitioner-dr-y.html\">Crusher, Beverly. Generated Summary: id: dr-y; 9941339108, 25456; Y </a></p><p><b>planningHorizon</b>: Feb 13, 2018 --&gt; Feb 13, 2018</p></div>"
   },
   "actor": [
     {
-      "reference": "Practitioner/1",
+      "reference": "Practitioner/dr-y",
       "display": "Crusher, Beverly"
     }
   ],

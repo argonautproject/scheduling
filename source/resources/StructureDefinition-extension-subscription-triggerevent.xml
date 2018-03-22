@@ -35,7 +35,7 @@
 			<path value="Extension"/>
 			<short value="Subscription Trigger Event Extension"/>
 			<definition value="A brief, natural language description of a particular event identified by the implementation environment. When this event is evaluated as true, it triggers a notification to the subscriber."/>
-			<comment value="If the expression is a [FHIRPath](http://hl7.org/fhirpath/) expression, use the [fhirPath Expression]({{site.data.fhir.path}}/cqif/extension-cqif-fhirpathexpression.html) extension."/>
+			<comment value="If the expression is a [FHIRPath](http://hl7.org/fhirpath) expression, use the [fhirPath Expression]({{site.data.fhir.path}}/cqif/extension-cqif-fhirpathexpression.html) extension."/>
 			<min value="0"/>
 			<max value="*"/>
 		</element>

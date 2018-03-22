@@ -8,7 +8,7 @@
   },
   "text": {
     "status": "generated",
-    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: 2017-08-28-derm</p><p><b>meta</b>: </p><p><b>serviceType</b>: OFFICE VISIT <span style=\"background: LightGoldenRodYellow\">(Details : {http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type code 'office-visit' = 'OFFICE VISIT', given as 'OFFICE VISIT'})</span></p><p><b>specialty</b>: Dermatology <span style=\"background: LightGoldenRodYellow\">(Details : {[not stated] code '394582007' = '394582007', given as 'Dermatology'})</span></p><p><b>actor</b>: <a href=\"Practitioner/1\">Crusher, Beverly</a></p><p><b>planningHorizon</b>: Aug 28, 2017 --&gt; Aug 28, 2018</p></div>"
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: 2017-08-28-derm</p><p><b>meta</b>: </p><p><b>serviceType</b>: OFFICE VISIT <span style=\"background: LightGoldenRodYellow\">(Details : {http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type code 'office-visit' = 'OFFICE VISIT', given as 'OFFICE VISIT'})</span></p><p><b>specialty</b>: Dermatology <span style=\"background: LightGoldenRodYellow\">(Details : {[not stated] code '394582007' = '394582007', given as 'Dermatology'})</span></p><p><b>actor</b>: <a href=\"Practitioner-dr-y.html\">Crusher, Beverly. Generated Summary: id: dr-y; 9941339108, 25456; Y </a></p><p><b>planningHorizon</b>: Aug 28, 2017 --&gt; Aug 28, 2018</p></div>"
   },
   "serviceType": [
     {
@@ -34,7 +34,7 @@
   ],
   "actor": [
     {
-      "reference": "Practitioner/1",
+      "reference": "Practitioner/dr-y",
       "display": "Crusher, Beverly"
     }
   ],
