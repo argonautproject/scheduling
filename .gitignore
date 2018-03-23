@@ -8,10 +8,6 @@
 *.so
 *.sh
 *.py
-!definitions.py
-!publish.sh
-!publish2.sh
-!push.sh
 
 # Packages #
 ############
@@ -47,8 +43,9 @@ Thumbs.db
 # FHIR IG Publisher local build directories #
 #############################################
 
-qa
-temp
+generated_output/qa
+generated_output/temp
+docs  #if not using Git-Pages
 output
 archived
 validation
@@ -70,5 +67,3 @@ tmp*.xml
 ~*.docx
 ~*.xlsx
 ~*.pptx
-
-
