@@ -339,10 +339,10 @@
 		</div>
 	</text>
 	<url value="http://fhir.org/guides/argonaut-scheduling/ConceptMap/visit-appt-map"/>
-	<version value="0.0.0"/>
+	<version value="1.0.0"/>
 	<name value="Argonaut_Scheduiing_Visit_Type_to_Appointment_Type_Mapping"/>
 	<title value="Argonaut Scheduiing Visit Type to Appointment Type Mapping"/>
-	<status value="draft"/>
+	<status value="active"/>
 	<date value="2017-10-31T10:57:43-07:00"/>
 	<publisher value="Argonaut Project"/>
 	<description value="The source concepts are Argonaut Visit Types which are a prioritized valueset of the most common appointment types for scheduling and have been identified as the baseline use cases for the  Argonaut scheduling Implementation Guide.   The Visit types are mapped to the target concepts from the Argonaut Appointment Types Valueset in order to align with the FHIR Appointment, Schedule and Slot resources.  Note where the there is no mapping the appointment type is assumed to be 'ROUTINE'."/>

@@ -1,0 +1,28 @@
+.
+├── docs
+├── framework
+│   ├── _includes
+│   ├── _layouts
+│   └── assets
+│       ├── css
+│       ├── fonts
+│       ├── ico
+│       ├── images
+│       └── js
+├── generated_output
+│   ├── qa
+│   ├── temp
+│   └── txCache
+├── my_notes
+└── source
+    ├── examples
+    ├── pages
+    │   ├── _includes
+    │   ├── assets
+    │   │   ├── css
+    │   │   └── images
+    │   └── page_template_library
+    └── resources
+        └── drafts
+
+25 directories

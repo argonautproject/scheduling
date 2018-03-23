@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ValueSet xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir http://build.fhir.org/device.xsd">
+<ValueSet xmlns="http://hl7.org/fhir" >
 	<id value="sct-services"/>
 	<url value="http://fhir.org/guides/argonaut-scheduling/ValueSet/sct-services"/>
 	<version value="1.0.0"/>
 	<name value="Argonaut_Snomed_CT_Services"/>
 	<title value="Argonaut Snomed CT Services"/>
-	<status value="draft"/>
+	<status value="active"/>
 	<date value="2018-03-14T19:40:10Z"/>
 	<description value="The Snomed CT services and procedures concepts that represent visit types for scheduling appointments. These concepts are mapped to the [Argonaut Visit Types](ConceptMap-visit-snomed-map.html)."/>
 	<copyright value="This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement"/>

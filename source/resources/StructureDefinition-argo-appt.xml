@@ -2,10 +2,10 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
 	<id value="argo-appt"/>
 	<url value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt"/>
-	<version value="0.0.0"/>
+	<version value="1.0.0"/>
 	<name value="Argonaut_Appointment_Profile"/>
 	<title value="Argonaut Appointment Profile"/>
-	<status value="draft"/>
+	<status value="active"/>
 	<date value="2017-06-13"/>
 	<publisher value="Argonaut Project"/>
 	<contact>

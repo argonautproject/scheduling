@@ -1,8 +1,3 @@
-{{page.uri}}
-
-#### Examples
-{:.no_toc}
-
 Prefetch open slots from July 15,2017 to August 17,2017
 
 **Request using `GET` Syntax**

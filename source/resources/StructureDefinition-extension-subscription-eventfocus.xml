@@ -2,10 +2,10 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
 	<id value="extension-subscription-eventfocus"/>
 	<url value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-subscription-eventfocus"/>
-	<version value="0.0.0"/>
+	<version value="1.0.0"/>
 	<name value="Subscription_Event_Focus_Extension"/>
 	<title value="Subscription Event Focus Extension"/>
-	<status value="draft"/>
+	<status value="active"/>
 	<date value="2018-02-13"/>
 	<publisher value="Argonaut Project"/>
 	<contact>

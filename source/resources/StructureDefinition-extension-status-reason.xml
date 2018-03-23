@@ -2,10 +2,10 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
 	<id value="extension-status-reason"/>
 	<url value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-status-reason"/>
-	<version value="0.0.0"/>
+	<version value="1.0.0"/>
 	<name value="Reason_For_Current_Status"/>
 	<title value="Reason For Current Status"/>
-	<status value="draft"/>
+	<status value="active"/>
 	<date value="2017-06-13"/>
 	<publisher value="Argonaut Project"/>
 	<contact>

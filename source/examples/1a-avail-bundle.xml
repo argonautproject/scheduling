@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Bundle xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir http://build.fhir.org/device.xsd">
+<Bundle xmlns="http://hl7.org/fhir">
 	<id value="hal-dr-y-appts"/>
 	<!--   this example bundle is a search set   -->
 	<meta>
@@ -21,9 +21,9 @@
 				<status value="proposed"/>
 				<serviceType>
 					<coding>
-						<system value="http://snomed.info/sct"/>
-						<code value="11429006"/>
-						<display value="Consultation (procedure)"/>
+						<system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
+						<code value="consult"/>
+						<display value="CONSULTATION"/>
 					</coding>
 					<text value="Office Call"/>
 				</serviceType>
@@ -78,9 +78,9 @@
 				<status value="proposed"/>
 				<serviceType>
 					<coding>
-						<system value="http://snomed.info/sct"/>
-						<code value="11429006"/>
-						<display value="Consultation (procedure)"/>
+						<system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
+						<code value="consult"/>
+						<display value="CONSULTATION"/>
 					</coding>
 					<text value="Office Call"/>
 				</serviceType>
@@ -135,9 +135,9 @@
 				<status value="proposed"/>
 				<serviceType>
 					<coding>
-						<system value="http://snomed.info/sct"/>
-						<code value="11429006"/>
-						<display value="Consultation (procedure)"/>
+						<system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
+						<code value="consult"/>
+						<display value="CONSULTATION"/>
 					</coding>
 					<text value="Office Call"/>
 				</serviceType>

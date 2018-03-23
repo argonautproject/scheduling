@@ -2,10 +2,10 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
 	<id value="avail-bundle"/>
 	<url value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/avail-bundle"/>
-	<version value="0.0.0"/>
+	<version value="1.0.0"/>
 	<name value="Argonaut_Appointment_Bundle_Profile"/>
 	<title value="Argonaut Appointment Bundle Profile"/>
-	<status value="draft"/>
+	<status value="active"/>
 	<date value="2018-01-11"/>
 	<publisher value="Argonaut Project"/>
 	<contact>
@@ -52,7 +52,7 @@
 			<path value="Bundle.entry"/>
 			<slicing>
 				<discriminator>
-					<type value="value"/>
+					<type value="type"/>
 					<path value="resource"/>
 				</discriminator>
 				<rules value="open"/>

@@ -3,6 +3,7 @@ title: Patient based Scheduling Use Cases
 layout: default
 active: quidance
 mycss: argo-sched.css
+topofpage: true
 ---
 
 <!-- TOC  the css styling for this is \pages\assets\css\project.css under 'markdown-toc'-->
@@ -55,7 +56,7 @@ Before a patient can begin, she must login in to the patient portal.  This step 
 
 {% include img.html img="diagrams/Slide05.png" caption="Patient login" %}
 
-The patient ID is returned or known. See the [Login and Trust](index.html#login-and-trust) Section for details.
+The patient ID is returned or known. See the [Login and Trust](index.html#assumptions-and-preconditions) Section for details.
 
 - Updates to patient demographic information MAY be included in the login step for some systems.  However the interactions to update this information are outside the scope of this specification
 - Updates to patient insurance coverage information are detailed in [Use Case 2 Step 4](#patient-registration-option-b) below
@@ -93,12 +94,7 @@ Using Both `GET` and `POST` Syntax the operation can be invoked as follows:
 
 `POST [base]/Appointment/$find?{_count}`
 
-#### Example
-{:.no_toc}
-
-{% include appointment-find1a.md %}
-
-<br />
+{% include examplebutton.html example="appointment-find1a" %}
 
 ###  Optional Hold Appointment Operation
 {:.no_toc}
@@ -123,11 +119,7 @@ The following Argonaut Scheduling artifacts are used in this transaction:
 
 POST [base]/Appointment/[id]/$hold
 
-#### Example
-{:.no_toc}
-
-{% include appt-hold-id.md %}
-<br />
+{% include examplebutton.html example="appt-hold-id" %}
 
 ###  Book Appointment
 {:.no_toc}
@@ -151,12 +143,7 @@ The following Argonaut Scheduling artifacts are used in this transaction:
 
 `POST [base]/Appointment/[id]/$book`
 
-#### Example
-{:.no_toc}
-
-{% include appt-book-id.md %}
-
-<br />
+{% include examplebutton.html example="appt-book-id" %}
 
 ## Use Case 2: Open Scheduling for new patient or existing patient
 
@@ -248,12 +235,7 @@ To register a *new* patient, The Client SHALL use the standard FHIR RESTful [cre
 
 In response to this transaction, the server SHOULD create a new patient resource only if the patient resource does not already exist in the system.  If the patient is already registered within the system, the existing patient resource SHOULD be returned.  Note that the Client SHALL not use the 'If-None-Exist' header as described in FHIR [conditional create API]({{site.data.fhir.path}}/http.html#ccreate)).
 
-
-##### Example
-{:.no_toc}
-
-{% include create-patient-ex.md %}
-<br />
+{% include examplebutton.html example="create-patient-ex" %}
 
 #### Updating or Creating Patient Coverage Information:
 {:.no_toc}
@@ -277,12 +259,7 @@ To update the existing insurance information or create it if it is new, The Clie
 
 ​Note that the server MAY reject certain updates to the coverage information (for example, type of coverage) and SHOULD return an OperationOutcome explaining the reason.
 
-##### Example
-{:.no_toc}
-
-{% include create-coverage-ex.md %}
-
-<br />
+{% include examplebutton.html example="create-coverage-ex" %}
 
 ###  Book Appointment
 {:.no_toc}
@@ -377,10 +354,7 @@ To unsubscribe:
 
 `Delete [base]/Subscription/[id]`
 
-#### Example
-{:.no_toc}
-
-{% include subscribe-ex.md %}
+{% include examplebutton.html example="subscribe-ex" %}
 
 ###  Initial Load
 {:.no_toc}
@@ -407,7 +381,7 @@ Using Both `GET` and `POST` Syntax the operation can be invoked as follows to fe
 
 `POST [base]/Slot/$prefetch`
 
-{% include slot-prefetch1.md %}
+{% include examplebutton.html example="slot-prefetch1" %}
 
 ###  Notification of schedule changes
 {:.no_toc}
@@ -430,10 +404,7 @@ The standard FHIR [Subscription]({{site.data.fhir.path}}/subscription.html) API 
 
 `POST [app notification endpoint]`
 
-#### Example
-{:.no_toc}
-
-{% include notification-ex.md  %}
+{% include examplebutton.html example="notification-ex" %}
 
 ### "Smart Polling" for Updated Slots
 {:.no_toc}
@@ -460,10 +431,7 @@ This transaction is the same as for the [Initial Load](#initial-load). Using Bot
 
 `POST [base]/Slot/$prefetch`
 
-#### Example
-{:.no_toc}
-
-{% include smartpoll-ex.md %}
+{% include examplebutton.html example="smartpoll-ex" %}
 
 ### Patient Registration Option A
 {:.no_toc}
@@ -505,10 +473,7 @@ This step is similar to [Scenario 2 Step 5](#optional-hold-appointment-operation
 
 The payload may be either use the Appointment resource directly or the Parameters format as shown in the examples below:
 
-#### Example
-{:.no_toc}
-
-{% include appt-hold-resource.md %}
+{% include examplebutton.html example="appt-hold-resource" %}
 
 ###  Patient Registration Option B
 {:.no_toc}
@@ -540,10 +505,7 @@ If the [Hold Appointment Operation](#optional-hold-appointment-operation-2) step
 
 The payload may be *either* use the Appointment resource directly or the [Parameters]({{site.data.fhir.path}}/parameters.html) format as shown in the examples below:
 
-#### Example
-{:.no_toc}
-
-{% include appt-book-resource.md %}
+{% include examplebutton.html example="appt-book-resource" %}
 
 ###  Patient Coverage Update Option C
 {:.no_toc}
@@ -571,10 +533,7 @@ To cancel an appointment the Client uses the standard FHIR [`PATCH`](http://buil
 
 - Note the Server SHALL declare support for JSON, XML, or FHIRPath Patch in the [CapabilityStatement](CapabilityStatement-server.html)
 
-### Examples
-{:.no_toc}
-
-{% include cancel-examples.md %}
+{% include examplebutton.html example="cancel-examples" %}
 
 ## Releasing Holds
 
@@ -590,11 +549,7 @@ Releasing holds has the potential to introduces complex failure states. The [bes
 
 This transaction uses the standard FHIR [`PATCH`](http://build.fhir.org/http.html#patch) transaction as described in the [Canceling/Rescheduling Appointments](patient-scheduling.html#usage-11) above.
 
-### Examples
-{:.no_toc}
-
-{% include release-hold-example.md %}
-
+{% include examplebutton.html example="release-hold-example" %}
 
 ## Retrieving appointments
 
@@ -624,15 +579,4 @@ To fetch scheduled appointments for a patient the Client SHALL use the standard 
 
 `GET [base]/Appointment?patient=[id]{&status=[status]}{&date=[date]{&date=[date]}}{&practitioner=[id]}`
 
-### Examples
-{:.no_toc}
-
-Search for all appointments for a patient with Resource ID 1234: `GET [base]/Appointment?patient=1234`
-
-Search for all booked appointments for this patient: `GET [base]/Appointment?patient=1234&status=booked`
-
-Fetch all completed appointments for this patient since January: `GET [base]/Appointment?patient=1234&status=fulfilled&date=ge2017-01-01`
-
-Fetch all completed appointments with Dr Y for this patient since January : `GET [base]/Appointment?patient=1234&status=fulfilled&date=ge2017-01-01&practitioner=Dr+Y`
-
-<br />
+{% include examplebutton.html example="patient-fetch-ex" %}

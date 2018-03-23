@@ -3,7 +3,7 @@
 <Bundle xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir file:///C:/Users/Eric/Documents/HL7/FHIR/BUILD_EDIT_FILES/structuredefinition.xsd">
 	<id value="slot-bundle-example"/>
 	<meta>
-		<profile value="http://fhir.org/guides/argonaut-scheduling/StructurDefinition/slot-bundle"/>
+		<profile value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/slot-bundle"/>
 	</meta>
 	<!--    this bundle is a searchset     -->
 	<type value="searchset"/>
@@ -14,7 +14,7 @@
 			<Slot>
 				<id value="2017-08-28T080000-arg-s-1"/>
 				<meta>
-					<profile value="http://fhir.org/guides/argonaut-scheduling/StructurDefinition/prefetch-slot"/>
+					<profile value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/prefetch-slot"/>
 				</meta>
 				<text>
 					<status value="generated"/>
@@ -52,7 +52,7 @@
 			<Slot>
 				<id value="2017-08-28T081500-arg-s-1"/>
 				<meta>
-					<profile value="http://fhir.org/guides/argonaut-scheduling/StructurDefinition/prefetch-slot"/>
+					<profile value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/prefetch-slot"/>
 				</meta>
 				<text>
 					<status value="generated"/>
@@ -90,7 +90,7 @@
 			<Slot>
 				<id value="2017-08-28T083000-arg-s-1"/>
 				<meta>
-					<profile value="http://fhir.org/guides/argonaut-scheduling/StructurDefinition/prefetch-slot"/>
+					<profile value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/prefetch-slot"/>
 				</meta>
 				<text>
 					<status value="generated"/>
@@ -128,7 +128,7 @@
 			<Slot>
 				<id value="2017-08-28T084500-arg-s-1"/>
 				<meta>
-					<profile value="http://fhir.org/guides/argonaut-scheduling/StructurDefinition/prefetch-slot"/>
+					<profile value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/prefetch-slot"/>
 				</meta>
 				<text>
 					<status value="generated"/>
@@ -166,7 +166,7 @@
 			<Slot>
 				<id value="2017-08-28T090000-arg-s-1"/>
 				<meta>
-					<profile value="http://fhir.org/guides/argonaut-scheduling/StructurDefinition/prefetch-slot"/>
+					<profile value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/prefetch-slot"/>
 				</meta>
 				<text>
 					<status value="generated"/>
@@ -204,7 +204,7 @@
 			<Slot>
 				<id value="2017-08-28T091500-arg-s-1"/>
 				<meta>
-					<profile value="http://fhir.org/guides/argonaut-scheduling/StructurDefinition/prefetch-slot"/>
+					<profile value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/prefetch-slot"/>
 				</meta>
 				<text>
 					<status value="generated"/>
@@ -242,7 +242,7 @@
 			<Slot>
 				<id value="2017-08-28T093000-arg-s-1"/>
 				<meta>
-					<profile value="http://fhir.org/guides/argonaut-scheduling/StructurDefinition/prefetch-slot"/>
+					<profile value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/prefetch-slot"/>
 				</meta>
 				<text>
 					<status value="generated"/>
@@ -280,7 +280,7 @@
 			<Slot>
 				<id value="2017-08-28T094500-arg-s-1"/>
 				<meta>
-					<profile value="http://fhir.org/guides/argonaut-scheduling/StructurDefinition/prefetch-slot"/>
+					<profile value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/prefetch-slot"/>
 				</meta>
 				<text>
 					<status value="generated"/>

@@ -129,10 +129,10 @@
 		</div>
 	</text>
 	<url value="http://fhir.org/guides/argonaut-scheduling/OperationDefinition/slot-prefetch"/>
-	<version value="0.0.0"/>
+	<version value="1.0.0"/>
 	<name value="Availability_Prefetch_Operation"/>
 	<!-- <title value="Availability Prefetch Operation"/> -->
-	<status value="draft"/>
+	<status value="active"/>
 	<kind value="operation"/>
 	<date value="2018-02-12T00:00:00-08:00"/>
 	<description value="This operation fetches available free slots for the 'initial load', update and reconciliation steps in the [Prefetch Use Case](patient-scheduling.html#use-case-3-prefetching-open-slots).  The server determines which open slots to expose to the application for use in creating new appointments.  If neither a start or end date is given then the maximum period as defined by local business rules and starting from when the operation was transacted SHALL be used.   The actors practitioner, organization and location further refine the search."/>
@@ -145,7 +145,7 @@
 	</jurisdiction>
 	<code value="find"/>
 	<comment value="Note that all input parameters are simple types allowing either the 'GET'  or the 'POST' syntax to be used to initiate the interaction.  Examples of both are shown below.&#xA;&#xA; -  If more than one actor type is present, the response SHALL contain slots with *all* of these actors (i.e, this is a logical 'AND').  If an actor type is repeated, the response SHALL contain slots with *any* of these actors and the order SHOULD be interpreted as the order of preference (i.e. this is a logical  'OR' and  does not drive a joint appointment with multiple practitioners. locations or organizations)."/>
-	<resource value="Slot/"/>
+	<resource value="Slot"/>
 	<system value="false"/>
 	<type value="true"/>
 	<instance value="false"/>
@@ -206,7 +206,7 @@
 		<documentation value="An [Argonaut Slot Bundle Profile](StructureDefinition-prefetch-slot.html) of type `searchset` with entries of proposed [Slot](http://build.fhir.org/slot.html) resources and may also contain an [OperationOutcome](http://build.fhir.org/operationoutcome.html) with errors, warnings or information as a result of processing the operation - e.g., an informational notice that the returned slots are not within the requested start and end times.  An empty bundle means no available slots based on inputs"/>
 		<type value="Bundle"/>
 		<profile>
-			<reference value="http://hl7.org/fhir/ValueSet/condition-code"/>
+			<reference value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/slot-bundle"/>
 		</profile>
 	</parameter>
 </OperationDefinition>

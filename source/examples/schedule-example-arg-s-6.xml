@@ -13,7 +13,7 @@
 		<coding>
 			<system value="http://snomed.info/sct"/>
 			<code value="419772000"/>
-			<display value="Family Medicine"/>
+			<display value="Family practice"/>
 		</coding>
 	</specialty>
 
@@ -23,7 +23,7 @@
 	</actor>
 	<!--two week horizon-->
 	<planningHorizon>
-		<start value="2017-09-07"/>
+		<start value="2017-08-07"/>
 		<end value="2017-08-07"/>
 	</planningHorizon>
 	<comment value="two week schedule for Dr. Y"/>

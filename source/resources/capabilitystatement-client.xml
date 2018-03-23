@@ -188,10 +188,10 @@
 		</div>
 	</text>
 	<url value="http://fhir.org/guides/argonaut-scheduling/CapabilityStatement/client"/>
-	<version value="0.0.0"/>
+	<version value="1.0.0"/>
 	<name value="Argonaut_Scheduling_Client_CapabilityStatement"/>
 	<title value="Argonaut Scheduling Client CapabilityStatement"/>
-	<status value="draft"/>
+	<status value="active"/>
 	<experimental value="false"/>
 	<date value="2018-03-18T00:00:00-07:00"/>
 	<publisher value="Argonaut Project"/>

@@ -3,6 +3,7 @@ title: Provider based Scheduling Use Cases
 layout: default
 active: guidance
 mycss: argo-sched.css
+topofpage: true
 ---
 
 <!-- TOC  the css styling for this is \pages\assets\css\project.css under 'markdown-toc'-->
@@ -65,10 +66,7 @@ To search and fetch the FHIR Patient reasource Id, use the [`$match` operation](
 
 `POST [base]/Patient/$match`
 
-#### Example
-{:.no_toc}
-
-{% include patient-match-ex.md  %}
+{% include examplebutton.html example="patient-match-ex" %}
 
 ---
 
@@ -222,17 +220,4 @@ To fetch scheduled appointments for a patient the Client SHALL use the standard 
 
 `GET [base]\Appointment?practitioner=[id]{&status=[status]&date=[date]}`
 
-### Examples
-{:.no_toc}
-
-Fetch all of a practitioner's appointments (all statuses):
-`GET [base]\Appointment?practitioner=[id]`
-
-Fetch all open appointments:
-`GET [base]\Appointment?practitioner=[id]&status=free`
-
-Fetch all completed appointments since October:
-`GET [base]\Appointment?practitioner=[id]&status=fulfilled&date=ge2017-10-01`
-
-Fetch all completed appointments for a patient since October:
-`GET [base]\Appointment?practitioner=[id]&patient=[id]&status=fulfilled&date=ge2017-10-01`
+{% include examplebutton.html example="provider-fetch-ex" %}

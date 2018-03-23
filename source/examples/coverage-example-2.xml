@@ -10,7 +10,7 @@
 			<id value="argo-sch-1"/>
 			<active value="true"/>
 			<patient>
-				<reference value="Patient/argo-sch-2"/>
+				<reference value="Patient/argo-sch-patient-2"/>
 				<display value="Daughter M LastName"/>
 			</patient>
 			<name>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ValueSet xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir http://build.fhir.org/device.xsd">
+<ValueSet xmlns="http://hl7.org/fhir" >
 	<id value="status-reason"/>
 	<url value="http://fhir.org/guides/argonaut-scheduling/ValueSet/status-reason"/>
 	<version value="1.0.0"/>
 	<name value="Argonaut_Appointment_Event_Reason_Codes"/>
 	<title value="Argonaut Appointment Event Reason Codes"/>
-	<status value="draft"/>
+	<status value="active"/>
 	<date value="2017-10-10T07:40:10Z"/>
 	<description value="The reason for the current state of the Appointment."/>
 	<compose>

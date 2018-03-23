@@ -62,7 +62,7 @@
 					<td>IN</td>
 					<td>specialty</td>
 					<td>0..*</td>
-					<td>string (<a href="http://hl7.org/fhir/STU3/search.html#token">token</a>)</td>
+					<td>string (<a href="{{ site.data.fhir.path }}/search.html#token">token</a>)</td>
 					<td>
 						<a href="ValueSet-specialty.html">http://fhir.org/guides/argonaut-scheduling/ValueSet/specialty</a> (Extensible)</td>
 					<td>
@@ -75,7 +75,7 @@
 					<td>IN</td>
 					<td>visit-type</td>
 					<td>0..*</td>
-					<td>string (<a href="http://hl7.org/fhir/STU3/search.html#token">token</a>)</td>
+					<td>string (<a href="{{ site.data.fhir.path }}/search.html#token">token</a>)</td>
 					<td>
 						<a href="ValueSet-visit-type.html">http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type</a> (Extensible)</td>
 					<td>
@@ -112,7 +112,7 @@
 					<td>IN</td>
 					<td>location-string</td>
 					<td>0..*</td>
-					<td>string (<a href="http://hl7.org/fhir/STU3/search.html#string">string</a>)</td>
+					<td>string (<a href="{{ site.data.fhir.path }}/search.html#string">string</a>)</td>
 					<td/>
 					<td>
 						<div>
@@ -172,9 +172,9 @@
 					<td>IN</td>
 					<td>reason</td>
 					<td>0..*</td>
-					<td>string (<a href="http://hl7.org/fhir/STU3/search.html#token">token</a>)</td>
+					<td>string (<a href="{{ site.data.fhir.path }}/search.html#token">token</a>)</td>
 					<td>
-						<a href="http://hl7.org/fhir/STU3/valueset-condition-code.html">http://hl7.org/fhir/ValueSet/condition-code</a> (Preferred)</td>
+						<a href="{{ site.data.fhir.path }}/valueset-condition-code.html">http://hl7.org/fhir/ValueSet/condition-code</a> (Preferred)</td>
 					<td>
 						<div>
 							<p>A clinical sign, symptom, diagnosis or health concern that this appointment is intended to treat. This may  is used in conjunction with the specialty to determine which schedulable resources are needed for the visit. For example, for an orthopedics appointment, the reason may drive whether a hip specialist or knee specialist is preferred. Each parameter value SHALL contain both the system property and the code property for a code using the general syntax <code>specialty=[system]|[code]</code>. See the examples below for how this is implemented.</p>
@@ -207,10 +207,10 @@
 		</div>
 	</text>
 	<url value="http://fhir.org/guides/argonaut-scheduling/OperationDefinition/appointment-find"/>
-	<version value="0.0.0"/>
+	<version value="1.0.0"/>
 	<name value="Appointment_Availability_Operation"/>
 	<!-- <title value="Appointment Availability Operation"/> -->
-	<status value="draft"/>
+	<status value="active"/>
 	<kind value="operation"/>
 	<date value="2017-10-31T00:00:00-07:00"/>
 	<description value="Searches for availability for a future appointment(s) within a time period of defined by date range input parameters.  If neither a start or end date is given then the maximum period as defined by local business rules and starting from when the  operation was transacted will be used.   Other input parameter further refine the search and include  practitioner references, specialties, visit type, locations, and patient information. From these criteria, a system determines which schedulable resources ( e.g., people, rooms, equiibment) are needed for the visit, and provides time slots where all required resources are available."/>

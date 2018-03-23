@@ -1,29 +1,28 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Bundle xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir http://build.fhir.org/device.xsd">
+<Bundle xmlns="http://hl7.org/fhir">
 	<id value="prefetch-derm-appts"/>
-	<!--   this example bundle is a search set   -->
+	<!--    this example bundle is a search set    -->
 	<meta>
 		<profile value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/avail-bundle"/>
 	</meta>
 	<type value="searchset"/>
-	<!--   the total number of matches.  -->
+	<!--    the total number of matches.   -->
 	<total value="3"/>
-	<!--   now, the actual entries   -->
+	<!--    now, the actual entries    -->
 	<entry>
 		<fullUrl value="https://example.com/base/Appointment/proposed-appt2b-1"/>
-		<!--   the matching resource   -->
 		<resource>
 			<Appointment>
 				<id value="proposed-appt2b-1"/>
 				<meta>
 					<profile value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt"/>
 				</meta>
+
 				<status value="proposed"/>
 				<serviceType>
 					<coding>
-						<system value="http://snomed.info/sct"/>
-						<code value="11429006"/>
-						<display value="Consultation (procedure)"/>
+						<system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
+						<code value="consult"/>
+						<display value="CONSULTATION"/>
 					</coding>
 					<text value="Office Call"/>
 				</serviceType>
@@ -65,30 +64,30 @@
 				</requestedPeriod>
 			</Appointment>
 		</resource>
-		<!--   and now optional search information   -->
+		<!--    and now optional search information    -->
 		<search>
-			<!--   this resource included as a match to the search criteria.
+			<!--    this resource included as a match to the search criteria.
          Servers are not required to populate this, but should, because
          there are a few cases where it might be ambiguous whether a
-         resource is added because it's a match or an include           -->
+         resource is added because it's a match or an include            -->
 			<mode value="match"/>
 		</search>
 	</entry>
 	<entry>
 		<fullUrl value="https://example.com/base/Appointment/proposed-appt2b-2"/>
-		<!--   the matching resource   -->
 		<resource>
 			<Appointment>
 				<id value="proposed-appt2b-2"/>
 				<meta>
 					<profile value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt"/>
 				</meta>
+
 				<status value="proposed"/>
 				<serviceType>
 					<coding>
-						<system value="http://snomed.info/sct"/>
-						<code value="11429006"/>
-						<display value="Consultation (procedure)"/>
+						<system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
+						<code value="consult"/>
+						<display value="CONSULTATION"/>
 					</coding>
 					<text value="Office Call"/>
 				</serviceType>
@@ -130,30 +129,30 @@
 				</requestedPeriod>
 			</Appointment>
 		</resource>
-		<!--   and now optional search information   -->
+		<!--    and now optional search information    -->
 		<search>
-			<!--   this resource included as a match to the search criteria.
+			<!--    this resource included as a match to the search criteria.
          Servers are not required to populate this, but should, because
          there are a few cases where it might be ambiguous whether a
-         resource is added because it's a match or an include           -->
+         resource is added because it's a match or an include            -->
 			<mode value="match"/>
 		</search>
 	</entry>
 	<entry>
 		<fullUrl value="https://example.com/base/Appointment/proposed-appt2b-3"/>
-		<!--   the matching resource   -->
 		<resource>
 			<Appointment>
 				<id value="proposed-appt2b-3"/>
 				<meta>
 					<profile value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt"/>
 				</meta>
+
 				<status value="proposed"/>
 				<serviceType>
 					<coding>
-						<system value="http://snomed.info/sct"/>
-						<code value="11429006"/>
-						<display value="Consultation (procedure)"/>
+						<system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
+						<code value="consult"/>
+						<display value="CONSULTATION"/>
 					</coding>
 					<text value="Office Call"/>
 				</serviceType>
@@ -195,21 +194,21 @@
 				</requestedPeriod>
 			</Appointment>
 		</resource>
-		<!--   and now optional search information   -->
+		<!--    and now optional search information    -->
 		<search>
-			<!--   this resource included as a match to the search criteria.
+			<!--    this resource included as a match to the search criteria.
          Servers are not required to populate this, but should, because
          there are a few cases where it might be ambiguous whether a
-         resource is added because it's a match or an include           -->
+         resource is added because it's a match or an include            -->
 			<mode value="match"/>
 		</search>
 	</entry>
 	<entry>
 		<fullUrl value="https://example.com/base/OperationOutcome/example"/>
-		<!--   the matching resource   -->
 		<resource>
 			<OperationOutcome>
 				<id value="example"/>
+
 				<issue>
 					<severity value="information"/>
 					<code value="informational"/>
@@ -219,9 +218,9 @@
 				</issue>
 			</OperationOutcome>
 		</resource>
-		<!--   and now optional search information   -->
+		<!--    and now optional search information    -->
 		<search>
-			<!--   this resource included as an OperationOutcome that provides additional information about the processing of a search. -->
+			<!--    this resource included as an OperationOutcome that provides additional information about the processing of a search.  -->
 			<mode value="outcome"/>
 		</search>
 	</entry>

@@ -4,10 +4,10 @@
   <id value="extension-subscription-payloadprofile"/>
 
   <url value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-subscription-payloadprofile"/>
-  <version value="0.0.0"/>
+  <version value="1.0.0"/>
   <name value="Subscription_Payload_Profile_Extension"/>
   <title value="Subscription Payload Profile Extension"/>
-  <status value="draft"/>
+  <status value="active"/>
   <date value="2018-02-13T00:00:00-08:00"/>
   <publisher value="Argonaut Project"/>
   <contact>

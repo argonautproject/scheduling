@@ -81,7 +81,7 @@
 						<p>The length of an appointment hold is determined by the scheduling service’s business rules, after which the status of the Appointment may change.  An <code>Expires</code> header Should be included in the response to successful hold request to indicate its expiration.  The Client should cancel a hold on an appointment before it expires.</p>
 					</li>
 					<li>
-						<p>When using the <code>appt-resource</code> as an input parameter, the payload can be <em>either</em> the Appointment resource or use the <a href="http://hl7.org/fhir/STU3/parameters.html">Parameters</a> format as shown in the examples below</p>
+						<p>When using the <code>appt-resource</code> as an input parameter, the payload can be <em>either</em> the Appointment resource or use the <a href="{{ site.data.fhir.path }}/parameters.html">Parameters</a> format as shown in the examples below</p>
 					</li>
 				</ul>
 			</div>
@@ -90,7 +90,7 @@
 	<url value="http://fhir.org/guides/argonaut-scheduling/OperationDefinition/appointment-hold"/>
 	<name value="Appointment_Hold"/>
 	<!-- <title value="Appointment Hold"/> -->
-	<status value="draft"/>
+	<status value="active"/>
 	<kind value="operation"/>
 	<date value="2017-08-09T11:36:05-07:00"/>
 	<publisher value="Argonaut Project"/>

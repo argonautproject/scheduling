@@ -114,7 +114,7 @@
 						<p>This operation is not <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html">idempotent</a> and may only be invoked by performing an HTTP POST.</p>
 					</li>
 					<li>
-						<p>When using the <code>appt-resource</code> as the <em>only</em> input parameter, the payload can be <em>either</em> the Appointment resource or use the <a href="http://hl7.org/fhir/STU3/parameters.html">Parameters</a> format as shown in the examples below</p>
+						<p>When using the <code>appt-resource</code> as the <em>only</em> input parameter, the payload can be <em>either</em> the Appointment resource or use the <a href="{{ site.data.fhir.path }}/parameters.html">Parameters</a> format as shown in the examples below</p>
 					</li>
 				</ul>
 			</div>
@@ -123,7 +123,7 @@
 	<url value="http://fhir.org/guides/argonaut-scheduling/OperationDefinition/appointment-book"/>
 	<name value="Appointment_Book"/>
 	<!-- <title value="Appointment Book"/> -->
-	<status value="draft"/>
+	<status value="active"/>
 	<kind value="operation"/>
 	<date value="2017-08-09T11:36:05-07:00"/>
 	<publisher value="Argonaut Project"/>

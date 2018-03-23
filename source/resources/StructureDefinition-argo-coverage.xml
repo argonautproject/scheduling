@@ -2,10 +2,10 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
 	<id value="argo-coverage"/>
 	<url value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-coverage"/>
-	<version value="0.0.0"/>
+	<version value="1.0.0"/>
 	<name value="Argonaut_Coverage_Profile"/>
 	<title value="Argonaut Coverage Profile"/>
-	<status value="draft"/>
+	<status value="active"/>
 	<date value="2017-11-07"/>
 	<publisher value="Argonaut Project"/>
 	<contact>

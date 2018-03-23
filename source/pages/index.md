@@ -1,9 +1,12 @@
 ---
-title: Argonaut Scheduling IG HomePage
+title: Argonaut Scheduling IG (Release 1.0.0) HomePage
 layout: default
 active: home
 mycss: argo-sched.css
+topofpage: true
 ---
+
+{% include publish-box.html %}
 
 <!--. TOC  the css styling for this is \pages\assets\css\project.css under 'markdown-toc'-->
 
@@ -23,7 +26,7 @@ These requirements were developed and defined by the Argonaut pilot implementati
 
 
 ### Patient Based Scheduling
-{:.no_toc}
+<!-- {:.no_toc} -->
 
 **For a detailed description of the use cases and workflow see the [Patient Scheduling Use Cases](patient-scheduling.html) page.**
 
@@ -40,7 +43,7 @@ These requirements were developed and defined by the Argonaut pilot implementati
    1. Patient retrieves their scheduled appointments through a patient portal or a third-party application.
 
 ### Provider based Scheduling
-{:.no_toc}
+<!-- {:.no_toc} -->
 
 **For a detailed description of the use cases and workflow see the [Provider Scheduling Use Cases](provider-scheduling.html) page.**
 
@@ -91,7 +94,7 @@ For the provider based scheduling, the actors are depicted in the figure below. 
 
 ## Security
 
-For general security consideration refer to the [Security section](http://hl7.org/fhir/us/core/security.html) in the US Core Implementation Guide.  See the [Assumptions](#login-and-trust) section above for a discussion of login and trust.
+For general security consideration refer to the [Security section](http://hl7.org/fhir/us/core/security.html) in the US Core Implementation Guide.  See the [Assumptions](#assumptions-and-preconditions) section above for a discussion of login and trust.
 
 <!--
 ## Best Practices

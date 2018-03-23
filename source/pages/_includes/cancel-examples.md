@@ -25,7 +25,7 @@
 
 ~~~
  [
- { "op": "replace", "path": "Appointment/status", "value": "cancelled" },
+ { "op": "replace", "path": "/status", "value": "cancelled" },
  ]
 ~~~
 

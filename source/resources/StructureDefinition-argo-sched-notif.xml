@@ -2,10 +2,10 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
 	<id value="argo-sched-notif"/>
 	<url value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-sched-notif"/>
-	<version value="0.0.0"/>
+	<version value="1.0.0"/>
 	<name value="Argonaut_Schedule_Notification_Profile"/>
 	<title value="Argonaut Schedule Notification Profile"/>
-	<status value="draft"/>
+	<status value="active"/>
 	<date value="2018-02-13"/>
 	<publisher value="Argonaut Project"/>
 	<contact>

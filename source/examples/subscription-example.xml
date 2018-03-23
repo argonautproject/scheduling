@@ -12,12 +12,12 @@
 			<valueString value="schedule where any slot that reference it has changed"/>
 		</extension>
 		<extension url="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-subscription-eventfocus">
-			<valueCode value="Schedule"/>
+			<valueCode value="Slot"/>
 		</extension>
 	</criteria>
 	<channel>
 		<extension url="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-subscription-payloadprofile">
-			<valueUri value="//fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-sched-notif"/>
+			<valueUri value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-sched-notif"/>
 		</extension>
 		<type value="rest-hook"/>
 		<endpoint value="https://feed-handler.com/notification"/>

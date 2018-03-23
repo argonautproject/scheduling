@@ -4,12 +4,6 @@
     <meta>
         <profile value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/prefetch-slot"/>
     </meta>
-    <specialty>
-        <coding>
-            <code value="419772000" />
-            <display value="Family Medicine" />
-        </coding>
-    </specialty>
     <serviceType>
         <coding>
             <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type" />
@@ -18,6 +12,12 @@
         </coding>
         <text value="WELL CHILD"/>
     </serviceType>
+    <specialty>
+        <coding>
+            <code value="419772000" />
+            <display value="Family practice" />
+        </coding>
+    </specialty>
     <schedule>
         <reference value="Schedule/arg-s-6" />
     </schedule>

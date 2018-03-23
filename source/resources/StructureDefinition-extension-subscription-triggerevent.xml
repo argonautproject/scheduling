@@ -2,10 +2,10 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
 	<id value="extension-subscription-triggerevent"/>
 	<url value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-subscription-triggerevent"/>
-	<version value="0.0.0"/>
+	<version value="1.0.0"/>
 	<name value="Subscription_Trigger_Event_Extension"/>
 	<title value="Subscription Trigger Event Extension"/>
-	<status value="draft"/>
+	<status value="active"/>
 	<date value="2018-02-13"/>
 	<publisher value="Argonaut Project"/>
 	<contact>
