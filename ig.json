@@ -1,1 +1,330 @@
-{"working-dir": "/Users/ehaas/Documents/FHIR/Argo-Scheduling/", "pub_url": "ehaas@healthedatainc.com", "tool": "jekyll", "status": "active", "special-urls": [], "extensions": [], "version": "3.0.1", "do-transforms": "false", "fixed-business-version": "1.0.0", "jurisdiction": "US", "codesystems": [], "gen-examples": "false", "valuesets": [], "defaults": {"ConceptMap": {"template-base": "base.html"}, "Schedule": {"template-base": "ex.html"}, "SearchParameter": {"template-base": "base.html"}, "Coverage": {"template-base": "ex.html"}, "OperationDefinition": {"template-base": "base.html"}, "StructureDefinition": {"template-base": "sd.html", "template-defns": "sd-definitions.html", "template-mappings": "sd-mappings.html"}, "Patient": {"template-base": "ex.html"}, "Appointment": {"template-base": "ex.html"}, "Slot": {"template-base": "ex.html"}, "Any": {"template-base": "base.html", "template-format": "format.html"}, "StructureMap": {"template-base": "ex.html", "profiles": false, "script": false, "content": false}, "CodeSystem": {"template-base": "base.html"}, "Practitioner": {"template-base": "ex.html"}, "CapabilityStatement": {"template-base": "base.html"}, "Subscription": {"template-base": "ex.html"}, "OperationOutcome": {"template-base": "ex.html"}, "Bundle": {"template-base": "ex.html"}, "ValueSet": {"template-base": "base.html"}}, "sct-edition": "http://snomed.info/sct/731000124108", "searches": [], "structuremaps": [], "canonicalBase": "http://fhir.org/guides/argonaut-scheduling", "igtemplate-dir": "/Users/ehaas/Documents/FHIR/IG-Template2/", "spreadsheets": [], "resources": {"OperationDefinition/slot-prefetch": {"base": "OperationDefinition-slot-prefetch.html", "source": "operationdefinition-slot-prefetch.xml"}, "Bundle/hal-dr-y-appts": {"base": "Bundle-hal-dr-y-appts.html", "source": "1a-avail-bundle.xml"}, "Bundle/slot-bundle-example": {"base": "Bundle-slot-bundle-example.html", "source": "slot-bundle-example.xml"}, "Schedule/example1": {"base": "Schedule-example1.html", "source": "schedule-example1.xml"}, "ValueSet/visit-type": {"base": "ValueSet-visit-type.html", "source": "valueset-visit-type.xml"}, "Subscription/example": {"base": "Subscription-example.html", "source": "subscription-example.xml"}, "StructureDefinition/argo-coverage": {"defns": "StructureDefinition-argo-coverage-definitions.html", "base": "StructureDefinition-argo-coverage.html", "source": "StructureDefinition-argo-coverage.xml"}, "Appointment/proposed-appt1": {"base": "Appointment-proposed-appt1.html", "source": "proposed-appt1.xml"}, "ConceptMap/visit-appt-map": {"base": "ConceptMap-visit-appt-map.html", "source": "conceptmap-visit-appt.xml"}, "Appointment/proposed-appt2": {"base": "Appointment-proposed-appt2.html", "source": "proposed-appt2.xml"}, "ValueSet/appt-type": {"base": "ValueSet-appt-type.html", "source": "valueset-appt-type.xml"}, "Coverage/argo-sch-1": {"base": "Coverage-argo-sch-1.html", "source": "coverage-example-1.xml"}, "OperationDefinition/appointment-book": {"base": "OperationDefinition-appointment-book.html", "source": "operationdefinition-appointment-book.xml"}, "OperationDefinition/appointment-hold": {"base": "OperationDefinition-appointment-hold.html", "source": "operationdefinition-appointment-hold.xml"}, "Patient/argo-sch-patient-2": {"base": "Patient-argo-sch-patient-2.html", "source": "patient-sch-example-2.xml"}, "Patient/argo-sch-patient-1": {"base": "Patient-argo-sch-patient-1.html", "source": "patient-sch-example-1.xml"}, "StructureDefinition/argo-sub-notif": {"defns": "StructureDefinition-argo-sub-notif-definitions.html", "base": "StructureDefinition-argo-sub-notif.html", "source": "StructureDefinition-argo-sub-notif.xml"}, "CodeSystem/appt-type": {"base": "CodeSystem-appt-type.html", "source": "codesystem-appt-type.xml"}, "CapabilityStatement/server": {"base": "CapabilityStatement-server.html", "source": "capabilitystatement-server.xml"}, "Coverage/argo-sch-2": {"base": "Coverage-argo-sch-2.html", "source": "coverage-example-2.xml"}, "Appointment/proposed-appt2b-1": {"base": "Appointment-proposed-appt2b-1.html", "source": "proposed-appt2b-1.xml"}, "StructureDefinition/slot-bundle": {"defns": "StructureDefinition-slot-bundle-definitions.html", "base": "StructureDefinition-slot-bundle.html", "source": "StructureDefinition-slot-bundle.xml"}, "ValueSet/sct-services": {"base": "ValueSet-sct-services.html", "source": "valueset-sct-services.xml"}, "ValueSet/argo-slot-status": {"base": "ValueSet-argo-slot-status.html", "source": "valueset-slot-status.xml"}, "Schedule/arg-s-6": {"base": "Schedule-arg-s-6.html", "source": "schedule-example-arg-s-6.xml"}, "StructureDefinition/avail-bundle": {"defns": "StructureDefinition-avail-bundle-definitions.html", "base": "StructureDefinition-avail-bundle.html", "source": "StructureDefinition-avail-bundle.xml"}, "StructureDefinition/extension-subscription-payloadprofile": {"defns": "StructureDefinition-extension-subscription-payloadprofile-definitions.html", "base": "StructureDefinition-extension-subscription-payloadprofile.html", "source": "StructureDefinition-extension-subscription-payloadprofile.xml"}, "StructureDefinition/argo-appt": {"defns": "StructureDefinition-argo-appt-definitions.html", "base": "StructureDefinition-argo-appt.html", "source": "StructureDefinition-argo-appt.xml"}, "Appointment/proposed-appt1a-3": {"base": "Appointment-proposed-appt1a-3.html", "source": "proposed-appt1a-3.xml"}, "CapabilityStatement/client": {"base": "CapabilityStatement-client.html", "source": "capabilitystatement-client.xml"}, "Schedule/2017-08-28-derm": {"base": "Schedule-2017-08-28-derm.html", "source": "schedule-example-derm.xml"}, "Appointment/proposed-appt1a-1": {"base": "Appointment-proposed-appt1a-1.html", "source": "proposed-appt1a-1.xml"}, "StructureDefinition/extension-subscription-triggerevent": {"defns": "StructureDefinition-extension-subscription-triggerevent-definitions.html", "base": "StructureDefinition-extension-subscription-triggerevent.html", "source": "StructureDefinition-extension-subscription-triggerevent.xml"}, "OperationOutcome/example": {"base": "OperationOutcome-example.html", "source": "operationoutcome-example.xml"}, "ConceptMap/visit-snomed-map": {"base": "ConceptMap-visit-snomed-map.html", "source": "conceptmap-visit-snomed.xml"}, "StructureDefinition/argo-sched-notif": {"defns": "StructureDefinition-argo-sched-notif-definitions.html", "base": "StructureDefinition-argo-sched-notif.html", "source": "StructureDefinition-argo-sched-notif.xml"}, "Appointment/proposed-appt3": {"base": "Appointment-proposed-appt3.html", "source": "proposed-appt3.xml"}, "Appointment/proposed-appt1a-2": {"base": "Appointment-proposed-appt1a-2.html", "source": "proposed-appt1a-2.xml"}, "ValueSet/slot-bundle-type": {"base": "ValueSet-slot-bundle-type.html", "source": "valueset-slot-bundle-type.xml"}, "StructureDefinition/prefetch-slot": {"defns": "StructureDefinition-prefetch-slot-definitions.html", "base": "StructureDefinition-prefetch-slot.html", "source": "StructureDefinition-prefetch-slot.xml"}, "ValueSet/status-reason": {"base": "ValueSet-status-reason.html", "source": "valueset-status-reason.xml"}, "StructureDefinition/extension-subscription-eventfocus": {"defns": "StructureDefinition-extension-subscription-eventfocus-definitions.html", "base": "StructureDefinition-extension-subscription-eventfocus.html", "source": "StructureDefinition-extension-subscription-eventfocus.xml"}, "Practitioner/dr-y": {"base": "Practitioner-dr-y.html", "source": "practitioner-1.xml"}, "Appointment/proposed-appt2b-3": {"base": "Appointment-proposed-appt2b-3.html", "source": "proposed-appt2b-3.xml"}, "Appointment/proposed-appt2b-2": {"base": "Appointment-proposed-appt2b-2.html", "source": "proposed-appt2b-2.xml"}, "CodeSystem/status-reason": {"base": "CodeSystem-status-reason.html", "source": "codesystem-status-reason.xml"}, "Slot/2017-09-07T154500-arg-s-6": {"base": "Slot-2017-09-07T154500-arg-s-6.html", "source": "slot-example1.xml"}, "Bundle/prefetch-derm-appts": {"base": "Bundle-prefetch-derm-appts.html", "source": "2b-avail-bundle.xml"}, "OperationDefinition/appointment-find": {"base": "OperationDefinition-appointment-find.html", "source": "operationdefinition-appointment-find6.xml"}, "ValueSet/specialty": {"base": "ValueSet-specialty.html", "source": "valueset-specialty.xml"}, "StructureDefinition/extension-status-reason": {"defns": "StructureDefinition-extension-status-reason-definitions.html", "base": "StructureDefinition-extension-status-reason.html", "source": "StructureDefinition-extension-status-reason.xml"}, "CodeSystem/visit-type": {"base": "CodeSystem-visit-type.html", "source": "codesystem-visit-type.xml"}}, "paths": {"output": "output", "txCache": "generated_output/txCache", "pages": ["framework", "source/pages"], "qa": "generated_output/qa", "resources": ["source/resources", "source/examples"], "temp": "generated_output/temp", "specification": "http://hl7.org/fhir/STU3"}, "logging": [], "publisher": "Argonaut Project", "license": "CC0-1.0", "html-template": "html-template.html", "broken-links": "warning", "no-inactive-codes": "false", "source": "ig.xml", "title": "Argo-Scheduling", "dependencyList": [{"name": "uscore", "source": "dependencies/uscore-vp", "location": "http://hl7.org/fhir/us/core/1.0.1/"}], "extraTemplates": ["mappings"]}
+{
+	"working-dir": "/Users/ehaas/Documents/FHIR/Argo-Scheduling/",
+	"pub_url": "ehaas@healthedatainc.com",
+	"tool": "jekyll",
+	"status": "active",
+	"special-urls": [],
+	"extensions": [],
+	"version": "3.0.1",
+	"do-transforms": "false",
+	"fixed-business-version": "1.0.0",
+	"jurisdiction": "US",
+	"codesystems": [],
+	"gen-examples": "false",
+	"valuesets": [],
+	"defaults": {
+		"ConceptMap": {
+			"template-base": "base.html"
+		},
+		"Schedule": {
+			"template-base": "ex.html"
+		},
+		"SearchParameter": {
+			"template-base": "base.html"
+		},
+		"Coverage": {
+			"template-base": "ex.html"
+		},
+		"OperationDefinition": {
+			"template-base": "base.html"
+		},
+		"StructureDefinition": {
+			"template-base": "sd.html",
+			"template-defns": "sd-definitions.html",
+			"template-mappings": "sd-mappings.html"
+		},
+		"Patient": {
+			"template-base": "ex.html"
+		},
+		"Appointment": {
+			"template-base": "ex.html"
+		},
+		"Slot": {
+			"template-base": "ex.html"
+		},
+		"Any": {
+			"template-base": "base.html",
+			"template-format": "format.html"
+		},
+		"StructureMap": {
+			"template-base": "ex.html",
+			"profiles": false,
+			"script": false,
+			"content": false
+		},
+		"CodeSystem": {
+			"template-base": "base.html"
+		},
+		"Practitioner": {
+			"template-base": "ex.html"
+		},
+		"CapabilityStatement": {
+			"template-base": "base.html"
+		},
+		"Subscription": {
+			"template-base": "ex.html"
+		},
+		"OperationOutcome": {
+			"template-base": "ex.html"
+		},
+		"Bundle": {
+			"template-base": "ex.html"
+		},
+		"ValueSet": {
+			"template-base": "base.html"
+		}
+	},
+	"sct-edition": "http://snomed.info/sct/731000124108",
+	"searches": [],
+	"structuremaps": [],
+	"canonicalBase": "http://fhir.org/guides/argonaut-scheduling",
+	"igtemplate-dir": "/Users/ehaas/Documents/FHIR/IG-Template2/",
+	"spreadsheets": [],
+	"resources": {
+		"OperationDefinition/slot-prefetch": {
+			"base": "OperationDefinition-slot-prefetch.html",
+			"source": "operationdefinition-slot-prefetch.xml"
+		},
+		"Bundle/hal-dr-y-appts": {
+			"base": "Bundle-hal-dr-y-appts.html",
+			"source": "1a-avail-bundle.xml"
+		},
+		"Bundle/slot-bundle-example": {
+			"base": "Bundle-slot-bundle-example.html",
+			"source": "slot-bundle-example.xml"
+		},
+		"Schedule/example1": {
+			"base": "Schedule-example1.html",
+			"source": "schedule-example1.xml"
+		},
+		"ValueSet/visit-type": {
+			"base": "ValueSet-visit-type.html",
+			"source": "valueset-visit-type.xml"
+		},
+		"Subscription/example": {
+			"base": "Subscription-example.html",
+			"source": "subscription-example.xml"
+		},
+		"StructureDefinition/argo-coverage": {
+			"defns": "StructureDefinition-argo-coverage-definitions.html",
+			"base": "StructureDefinition-argo-coverage.html",
+			"source": "StructureDefinition-argo-coverage.xml"
+		},
+		"Appointment/proposed-appt1": {
+			"base": "Appointment-proposed-appt1.html",
+			"source": "proposed-appt1.xml"
+		},
+		"ConceptMap/visit-appt-map": {
+			"base": "ConceptMap-visit-appt-map.html",
+			"source": "conceptmap-visit-appt.xml"
+		},
+		"Appointment/proposed-appt2": {
+			"base": "Appointment-proposed-appt2.html",
+			"source": "proposed-appt2.xml"
+		},
+		"ValueSet/appt-type": {
+			"base": "ValueSet-appt-type.html",
+			"source": "valueset-appt-type.xml"
+		},
+		"Coverage/argo-sch-1": {
+			"base": "Coverage-argo-sch-1.html",
+			"source": "coverage-example-1.xml"
+		},
+		"OperationDefinition/appointment-book": {
+			"base": "OperationDefinition-appointment-book.html",
+			"source": "operationdefinition-appointment-book.xml"
+		},
+		"OperationDefinition/appointment-hold": {
+			"base": "OperationDefinition-appointment-hold.html",
+			"source": "operationdefinition-appointment-hold.xml"
+		},
+		"Patient/argo-sch-patient-2": {
+			"base": "Patient-argo-sch-patient-2.html",
+			"source": "patient-sch-example-2.xml"
+		},
+		"Patient/argo-sch-patient-1": {
+			"base": "Patient-argo-sch-patient-1.html",
+			"source": "patient-sch-example-1.xml"
+		},
+		"StructureDefinition/argo-sub-notif": {
+			"defns": "StructureDefinition-argo-sub-notif-definitions.html",
+			"base": "StructureDefinition-argo-sub-notif.html",
+			"source": "StructureDefinition-argo-sub-notif.xml"
+		},
+		"CodeSystem/appt-type": {
+			"base": "CodeSystem-appt-type.html",
+			"source": "codesystem-appt-type.xml"
+		},
+		"CapabilityStatement/server": {
+			"base": "CapabilityStatement-server.html",
+			"source": "capabilitystatement-server.xml"
+		},
+		"Coverage/argo-sch-2": {
+			"base": "Coverage-argo-sch-2.html",
+			"source": "coverage-example-2.xml"
+		},
+		"Appointment/proposed-appt2b-1": {
+			"base": "Appointment-proposed-appt2b-1.html",
+			"source": "proposed-appt2b-1.xml"
+		},
+		"StructureDefinition/slot-bundle": {
+			"defns": "StructureDefinition-slot-bundle-definitions.html",
+			"base": "StructureDefinition-slot-bundle.html",
+			"source": "StructureDefinition-slot-bundle.xml"
+		},
+		"ValueSet/sct-services": {
+			"base": "ValueSet-sct-services.html",
+			"source": "valueset-sct-services.xml"
+		},
+		"ValueSet/argo-slot-status": {
+			"base": "ValueSet-argo-slot-status.html",
+			"source": "valueset-slot-status.xml"
+		},
+		"Schedule/arg-s-6": {
+			"base": "Schedule-arg-s-6.html",
+			"source": "schedule-example-arg-s-6.xml"
+		},
+		"StructureDefinition/avail-bundle": {
+			"defns": "StructureDefinition-avail-bundle-definitions.html",
+			"base": "StructureDefinition-avail-bundle.html",
+			"source": "StructureDefinition-avail-bundle.xml"
+		},
+		"StructureDefinition/extension-subscription-payloadprofile": {
+			"defns": "StructureDefinition-extension-subscription-payloadprofile-definitions.html",
+			"base": "StructureDefinition-extension-subscription-payloadprofile.html",
+			"source": "StructureDefinition-extension-subscription-payloadprofile.xml"
+		},
+		"StructureDefinition/argo-appt": {
+			"defns": "StructureDefinition-argo-appt-definitions.html",
+			"base": "StructureDefinition-argo-appt.html",
+			"source": "StructureDefinition-argo-appt.xml"
+		},
+		"Appointment/proposed-appt1a-3": {
+			"base": "Appointment-proposed-appt1a-3.html",
+			"source": "proposed-appt1a-3.xml"
+		},
+		"CapabilityStatement/client": {
+			"base": "CapabilityStatement-client.html",
+			"source": "capabilitystatement-client.xml"
+		},
+		"Schedule/2017-08-28-derm": {
+			"base": "Schedule-2017-08-28-derm.html",
+			"source": "schedule-example-derm.xml"
+		},
+		"Appointment/proposed-appt1a-1": {
+			"base": "Appointment-proposed-appt1a-1.html",
+			"source": "proposed-appt1a-1.xml"
+		},
+		"StructureDefinition/extension-subscription-triggerevent": {
+			"defns": "StructureDefinition-extension-subscription-triggerevent-definitions.html",
+			"base": "StructureDefinition-extension-subscription-triggerevent.html",
+			"source": "StructureDefinition-extension-subscription-triggerevent.xml"
+		},
+		"OperationOutcome/example": {
+			"base": "OperationOutcome-example.html",
+			"source": "operationoutcome-example.xml"
+		},
+		"ConceptMap/visit-snomed-map": {
+			"base": "ConceptMap-visit-snomed-map.html",
+			"source": "conceptmap-visit-snomed.xml"
+		},
+		"StructureDefinition/argo-sched-notif": {
+			"defns": "StructureDefinition-argo-sched-notif-definitions.html",
+			"base": "StructureDefinition-argo-sched-notif.html",
+			"source": "StructureDefinition-argo-sched-notif.xml"
+		},
+		"Appointment/proposed-appt3": {
+			"base": "Appointment-proposed-appt3.html",
+			"source": "proposed-appt3.xml"
+		},
+		"Appointment/proposed-appt1a-2": {
+			"base": "Appointment-proposed-appt1a-2.html",
+			"source": "proposed-appt1a-2.xml"
+		},
+		"ValueSet/slot-bundle-type": {
+			"base": "ValueSet-slot-bundle-type.html",
+			"source": "valueset-slot-bundle-type.xml"
+		},
+		"StructureDefinition/prefetch-slot": {
+			"defns": "StructureDefinition-prefetch-slot-definitions.html",
+			"base": "StructureDefinition-prefetch-slot.html",
+			"source": "StructureDefinition-prefetch-slot.xml"
+		},
+		"ValueSet/status-reason": {
+			"base": "ValueSet-status-reason.html",
+			"source": "valueset-status-reason.xml"
+		},
+		"StructureDefinition/extension-subscription-eventfocus": {
+			"defns": "StructureDefinition-extension-subscription-eventfocus-definitions.html",
+			"base": "StructureDefinition-extension-subscription-eventfocus.html",
+			"source": "StructureDefinition-extension-subscription-eventfocus.xml"
+		},
+		"Practitioner/dr-y": {
+			"base": "Practitioner-dr-y.html",
+			"source": "practitioner-1.xml"
+		},
+		"Appointment/proposed-appt2b-3": {
+			"base": "Appointment-proposed-appt2b-3.html",
+			"source": "proposed-appt2b-3.xml"
+		},
+		"Appointment/proposed-appt2b-2": {
+			"base": "Appointment-proposed-appt2b-2.html",
+			"source": "proposed-appt2b-2.xml"
+		},
+		"CodeSystem/status-reason": {
+			"base": "CodeSystem-status-reason.html",
+			"source": "codesystem-status-reason.xml"
+		},
+		"Slot/2017-09-07T154500-arg-s-6": {
+			"base": "Slot-2017-09-07T154500-arg-s-6.html",
+			"source": "slot-example1.xml"
+		},
+		"Bundle/prefetch-derm-appts": {
+			"base": "Bundle-prefetch-derm-appts.html",
+			"source": "2b-avail-bundle.xml"
+		},
+		"OperationDefinition/appointment-find": {
+			"base": "OperationDefinition-appointment-find.html",
+			"source": "operationdefinition-appointment-find6.xml"
+		},
+		"ValueSet/specialty": {
+			"base": "ValueSet-specialty.html",
+			"source": "valueset-specialty.xml"
+		},
+		"StructureDefinition/extension-status-reason": {
+			"defns": "StructureDefinition-extension-status-reason-definitions.html",
+			"base": "StructureDefinition-extension-status-reason.html",
+			"source": "StructureDefinition-extension-status-reason.xml"
+		},
+		"CodeSystem/visit-type": {
+			"base": "CodeSystem-visit-type.html",
+			"source": "codesystem-visit-type.xml"
+		}
+	},
+	"paths": {
+		"output": "output",
+		"txCache": "generated_output/txCache",
+		"pages": ["framework",
+		"source/pages"],
+		"qa": "generated_output/qa",
+		"resources": ["source/resources",
+		"source/examples"],
+		"temp": "generated_output/temp",
+		"specification": "http://hl7.org/fhir/STU3"
+	},
+	"logging": [],
+	"publisher": "Argonaut Project",
+	"license": "CC0-1.0",
+	"html-template": "html-template.html",
+	"broken-links": "warning",
+	"no-inactive-codes": "false",
+	"source": "ig.xml",
+	"title": "Argo-Scheduling",
+	"dependencyList": [{
+		"name": "uscore",
+		"source": "dependencies/uscore-vp",
+		"location": "http://hl7.org/fhir/us/core/1.0.1/"
+	}],
+	"extraTemplates": ["mappings"],
+  "npm-name" : "argonaut-scheduling"
+}
