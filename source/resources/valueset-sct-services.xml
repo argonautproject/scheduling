@@ -7,7 +7,7 @@
 	<title value="Argonaut Snomed CT Services"/>
 	<status value="active"/>
 	<date value="2018-03-14T19:40:10Z"/>
-	<description value="The Snomed CT services and procedures concepts that represent visit types for scheduling appointments. These concepts are mapped to the [Argonaut Visit Types](ConceptMap-visit-snomed-map.html)."/>
+	<description value="The Snomed CT services and procedures concepts that represent visit types for scheduling appointments. These concepts are mapped to the [Argonaut Visit Types](http://fhir.org/guides/argonaut-scheduling/ConceptMap/visit-snomed-map)."/>
 	<copyright value="This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement"/>
 	<compose>
 		<include>

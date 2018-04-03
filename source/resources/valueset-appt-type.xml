@@ -7,7 +7,7 @@
 	<title value="Argonaut Appointment Types"/>
 	<status value="active"/>
 	<date value="2017-07-12T19:40:10Z"/>
-	<description value="The style of appointment or patient for appointment booking (not service type).  These concepts are used in the FHIR Appointment, Schedule and Slot resources. The [Argonaut Scheduling Visit Types](ConceptMap-visit-appt-map.html) are mapped to these concepts."/>
+	<description value="The style of appointment or patient for appointment booking (not service type).  These concepts are used in the FHIR Appointment, Schedule and Slot resources. The [Argonaut Scheduling Visit Types](http://fhir.org/guides/argonaut-scheduling/ConceptMap/visit-appt-map) are mapped to these concepts."/>
 	<compose>
 		<include>
 			<system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-type"/>
