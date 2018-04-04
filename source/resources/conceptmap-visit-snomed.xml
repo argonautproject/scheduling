@@ -5,7 +5,7 @@
 		<status value="generated"/>
 		<div xmlns="http://www.w3.org/1999/xhtml">
 			<h2>Argonaut Scheduiing Visit Type to SNOMED CT Mapping (http://fhir.org/guides/argonaut-scheduling/ConceptMap/visit-snomed-map)</h2>
-			<p>Mapping from <a href="ValueSet-visit-type.html">http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type</a> to http://fhir.org/guides/argonaut-scheduling/ValueSet/sct-services</p>
+			<p>Mapping from <a href="ValueSet-visit-type.html">Argonaut_Visit_Types</a> to <a href="ValueSet-sct-services.html">Argonaut_Snomed_CT_Services</a></p>
 			<p>DRAFT. Published on Oct 30, 2017 6:49:44 PM by Argonaut Project. </p>
 			<div>
 				<p>The source concepts are Argonaut Visit Types which are a prioritized valueset of the most common appointment types for scheduling and have been identified as the baseline use cases for the  Argonaut scheduling Implementation Guide.   The Visit types are mapped to the target concepts from <a href="http://snomed.info/sct">SNOMED CT</a>.</p>
