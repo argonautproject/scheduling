@@ -534,7 +534,7 @@
 		<element>
 			<code value="treatment"/>
 			<target>
-				<code value="77132007"/>
+				<code value="277132007"/>
 				<equivalence value="inexact"/>
 				<comment value="Assuming Treatment means 'with intent to cure'  vs 'rehabilitation'"/>
 			</target>
