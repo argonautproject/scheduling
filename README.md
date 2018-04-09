@@ -25,11 +25,8 @@ Meeting agenda and notes are archived [here](https://github.com/argonautproject/
 
 Issues will be listed and tracked on this Github repository site [here](https://github.com/argonautproject/scheduling/issues).
 
-### Rendered Scheduling Implementation Guide at
+### Published Scheduling Implementation Guide (Release 1.0.0) at:
 
-http://build.fhir.org/ig/argonautproject/scheduling
+http://www.fhir.org/guides/argonaut/scheduling/
 
-### Find debugging info about the build
-
-For a build log, see:
-http://build.fhir.org/ig/argonautproject/scheduling/build.log
+###  Continuous Integration Build at:

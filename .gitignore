@@ -45,7 +45,9 @@ Thumbs.db
 
 generated_output/qa
 generated_output/temp
-#docs  #if not using Git-Pages
+######## comment out if not using Git-Pages
+docs
+#########
 output
 archived
 validation
