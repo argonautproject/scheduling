@@ -1,9 +1,10 @@
 ---
-title: Argonaut Scheduling IG (Release 1.0.0) HomePage
+title: Argonaut Scheduling IG CI Build HomePage
 layout: default
 active: home
 mycss: argo-sched.css
 topofpage: true
+historypath: argonaut/scheduling
 ---
 
 {% include publish-box.html %}

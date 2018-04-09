@@ -1,0 +1,414 @@
+{
+  "resourceType": "ConceptMap",
+  "id": "visit-snomed-map",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\t\t\t<h2>Argonaut Scheduiing Visit Type to SNOMED CT Mapping (http://fhir.org/guides/argonaut-scheduling/ConceptMap/visit-snomed-map)</h2>\n\t\t\t<p>Mapping from <a href=\"ValueSet-visit-type.html\">http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type</a> to (not specified)</p>\n\t\t\t<p>DRAFT. Published on Oct 30, 2017 6:49:44 PM by Argonaut Project. </p>\n\t\t\t<div>\n\t\t\t\t<p>The source concepts are Argonaut Visit Types which are a prioritized valueset of the most common appointment types for scheduling and have been identified as the baseline use cases for the  Argonaut scheduling Implementation Guide.   The Visit types are mapped to the target concepts from <a href=\"http://snomed.info/sct\">SNOMED CT</a>.</p>\n\t\t\t</div>\n\t\t\t<br/>\n\t\t\t<table class=\"grid\">\n\t\t\t\t<tr>\n\t\t\t\t\t<td>\n\t\t\t\t\t\t<b>Source Code</b>\n\t\t\t\t\t</td>\n\t\t\t\t\t<td>\n\t\t\t\t\t\t<b>Equivalence</b>\n\t\t\t\t\t</td>\n\t\t\t\t\t<td>\n\t\t\t\t\t\t<b>Destination Code</b>\n\t\t\t\t\t</td>\n\t\t\t\t\t<td>\n\t\t\t\t\t\t<b>Comment</b>\n\t\t\t\t\t</td>\n\t\t\t\t</tr>\n\t\t\t\t<tr>\n\t\t\t\t\t<td>breast-imaging</td>\n\t\t\t\t\t<td>wider</td>\n\t\t\t\t\t<td>1310126000</td>\n\t\t\t\t\t<td>Target concept may include more than mammography</td>\n\t\t\t\t</tr>\n\t\t\t\t<tr>\n\t\t\t\t\t<td>consult (CONSULTATION)</td>\n\t\t\t\t\t<td>equivalent</td>\n\t\t\t\t\t<td>11429006</td>\n\t\t\t\t\t<td/>\n\t\t\t\t</tr>\n\t\t\t\t<tr>\n\t\t\t\t\t<td>ct (COMPUTED TOMOGRAPHY SCAN(CT))</td>\n\t\t\t\t\t<td>equivalent</td>\n\t\t\t\t\t<td>310128004</td>\n\t\t\t\t\t<td/>\n\t\t\t\t</tr>\n\t\t\t\t<tr>\n\t\t\t\t\t<td>dental</td>\n\t\t\t\t\t<td>equivalent</td>\n\t\t\t\t\t<td>3671000175100</td>\n\t\t\t\t\t<td/>\n\t\t\t\t</tr>\n\t\t\t\t<tr>\n\t\t\t\t\t<td>dxa (DUAL-ENERGY X-RAY ABSORPTIOMETRY(DXA))</td>\n\t\t\t\t\t<td>equivalent</td>\n\t\t\t\t\t<td>241686001</td>\n\t\t\t\t\t<td/>\n\t\t\t\t</tr>\n\t\t\t\t<tr>\n\t\t\t\t\t<td>echo (ECHOCARDIOGRAPHY(ECHO))</td>\n\t\t\t\t\t<td>equivalent</td>\n\t\t\t\t\t<td>310169008</td>\n\t\t\t\t\t<td/>\n\t\t\t\t</tr>\n\t\t\t\t<tr>\n\t\t\t\t\t<td>echo-stresstest (ECHOCARDIOGRAPHY(ECHO) STRESS TEST)</td>\n\t\t\t\t\t<td>equivalent</td>\n\t\t\t\t\t<td>433233004</td>\n\t\t\t\t\t<td/>\n\t\t\t\t</tr>\n\t\t\t\t<tr>\n\t\t\t\t\t<td>ed-followup (EDUCATION FOLLOW UP)</td>\n\t\t\t\t\t<td>wider</td>\n\t\t\t\t\t<td>409073007</td>\n\t\t\t\t\t<td>Target concept not constrained to follow up temporal context</td>\n\t\t\t\t</tr>\n\t\t\t\t<tr>\n\t\t\t\t\t<td>eeg (ELECTROENCEPHALOGRAPHY(EEG))</td>\n\t\t\t\t\t<td>equivalent</td>\n\t\t\t\t\t<td>54550000</td>\n\t\t\t\t\t<td/>\n\t\t\t\t</tr>\n\t\t\t\t<tr>\n\t\t\t\t\t<td>egd (ESOPHAGOGASTRODUODENOSCOPY(EGD))</td>\n\t\t\t\t\t<td>equivalent</td>\n\t\t\t\t\t<td>310030000</td>\n\t\t\t\t\t<td/>\n\t\t\t\t</tr>\n\t\t\t\t<tr>\n\t\t\t\t\t<td>ekg (ELECTROCARDIOGRAM(EKG))</td>\n\t\t\t\t\t<td>equivalent</td>\n\t\t\t\t\t<td>29303009</td>\n\t\t\t\t\t<td/>\n\t\t\t\t</tr>\n\t\t\t\t<tr>\n\t\t\t\t\t<td>evaluation</td>\n\t\t\t\t\t<td>equivalent</td>\n\t\t\t\t\t<td>386053000</td>\n\t\t\t\t\t<td/>\n\t\t\t\t</tr>\n\t\t\t\t<tr>\n\t\t\t\t\t<td>flu-shot-clinic (INFLUENZA VACCINATION CLINIC)</td>\n\t\t\t\t\t<td>wider</td>\n\t\t\t\t\t<td>86198006</td>\n\t\t\t\t\t<td>Target concept not constrained to the context of a vaccine clinic'</td>\n\t\t\t\t</tr>\n\t\t\t\t<tr>\n\t\t\t\t\t<td>fluoroscopy</td>\n\t\t\t\t\t<td>equivalent</td>\n\t\t\t\t\t<td>44491008</td>\n\t\t\t\t\t<td/>\n\t\t\t\t</tr>\n\t\t\t\t<tr>\n\t\t\t\t\t<td>follow-up</td>\n\t\t\t\t\t<td>equivalent</td>\n\t\t\t\t\t<td>185389009</td>\n\t\t\t\t\t<td/>\n\t\t\t\t</tr>\n\t\t\t\t<tr>\n\t\t\t\t\t<td>home-health (HOME HEALTH VISIT)</td>\n\t\t\t\t\t<td>equivalent</td>\n\t\t\t\t\t<td>439708006</td>\n\t\t\t\t\t<td/>\n\t\t\t\t</tr>\n\t\t\t\t<tr>\n\t\t\t\t\t<td>injection</td>\n\t\t\t\t\t<td>equivalent</td>\n\t\t\t\t\t<td>59108006</td>\n\t\t\t\t\t<td/>\n\t\t\t\t</tr>\n\t\t\t\t<tr>\n\t\t\t\t\t<td>inter-rad (INTERVENTIONAL RADIOLOGY)</td>\n\t\t\t\t\t<td>equivalent</td>\n\t\t\t\t\t<td>708174004</td>\n\t\t\t\t\t<td/>\n\t\t\t\t</tr>\n\t\t\t\t<tr>\n\t\t\t\t\t<td>lab (LABORATORY TESTS)</td>\n\t\t\t\t\t<td>equivalent</td>\n\t\t\t\t\t<td>708184003</td>\n\t\t\t\t\t<td/>\n\t\t\t\t</tr>\n\t\t\t\t<tr>\n\t\t\t\t\t<td>minor-surgery</td>\n\t\t\t\t\t<td>narrower</td>\n\t\t\t\t\t<td>711580002</td>\n\t\t\t\t\t<td>The target restricts to ambulatory context</td>\n\t\t\t\t</tr>\n\t\t\t\t<tr>\n\t\t\t\t\t<td>mri (MAGNETIC RESONANCE IMAGING(MRI))</td>\n\t\t\t\t\t<td>equivalent</td>\n\t\t\t\t\t<td>310127009</td>\n\t\t\t\t\t<td/>\n\t\t\t\t</tr>\n\t\t\t\t<tr>\n\t\t\t\t\t<td>new-patient</td>\n\t\t\t\t\t<td>equivalent</td>\n\t\t\t\t\t<td>185387006</td>\n\t\t\t\t\t<td/>\n\t\t\t\t</tr>\n\t\t\t\t<tr>\n\t\t\t\t\t<td>nuc-med (NUCLEAR MEDICINE)</td>\n\t\t\t\t\t<td>equivalent</td>\n\t\t\t\t\t<td>310058008</td>\n\t\t\t\t\t<td/>\n\t\t\t\t</tr>\n\t\t\t\t<tr>\n\t\t\t\t\t<td>occup-therapy (OCCUPATIONAL THERAPY)</td>\n\t\t\t\t\t<td>equivalent</td>\n\t\t\t\t\t<td>310093001</td>\n\t\t\t\t\t<td/>\n\t\t\t\t</tr>\n\t\t\t\t<tr>\n\t\t\t\t\t<td>office-visit</td>\n\t\t\t\t\t<td>equivalent</td>\n\t\t\t\t\t<td>11429006</td>\n\t\t\t\t\t<td>Proposing that the US term 'office visit' is synonomous with the UK term 'consultation'</td>\n\t\t\t\t</tr>\n\t\t\t\t<tr>\n\t\t\t\t\t<td>physical</td>\n\t\t\t\t\t<td>equivalent</td>\n\t\t\t\t\t<td>5880005</td>\n\t\t\t\t\t<td/>\n\t\t\t\t</tr>\n\t\t\t\t<tr>\n\t\t\t\t\t<td>post-op (POST-OPERATIVE(POST-OP))</td>\n\t\t\t\t\t<td>equivalent</td>\n\t\t\t\t\t<td>439740005</td>\n\t\t\t\t\t<td/>\n\t\t\t\t</tr>\n\t\t\t\t<tr>\n\t\t\t\t\t<td>pre-admit-testing (PRE-ADMISSION TESTING VISIT)</td>\n\t\t\t\t\t<td>wider</td>\n\t\t\t\t\t<td>406153003</td>\n\t\t\t\t\t<td>Target concept in not constrained to testing</td>\n\t\t\t\t</tr>\n\t\t\t\t<tr>\n\t\t\t\t\t<td>pre-op (PRE-OPERATIVE(PRE-OP))</td>\n\t\t\t\t\t<td>equivalent</td>\n\t\t\t\t\t<td>133858001</td>\n\t\t\t\t\t<td/>\n\t\t\t\t</tr>\n\t\t\t\t<tr>\n\t\t\t\t\t<td>procedure</td>\n\t\t\t\t\t<td>equivalent</td>\n\t\t\t\t\t<td>71388002</td>\n\t\t\t\t\t<td/>\n\t\t\t\t</tr>\n\t\t\t\t<tr>\n\t\t\t\t\t<td>same-day</td>\n\t\t\t\t\t<td>inexact</td>\n\t\t\t\t\t<td>11429006</td>\n\t\t\t\t\t<td>Mapping assumes the source concept is a same-day office visit vs  same day testing or some other more specific service</td>\n\t\t\t\t</tr>\n\t\t\t\t<tr>\n\t\t\t\t\t<td>stress-test</td>\n\t\t\t\t\t<td>equivalent</td>\n\t\t\t\t\t<td>76746007</td>\n\t\t\t\t\t<td/>\n\t\t\t\t</tr>\n\t\t\t\t<tr>\n\t\t\t\t\t<td>surgery</td>\n\t\t\t\t\t<td>equivalent</td>\n\t\t\t\t\t<td>310138009</td>\n\t\t\t\t\t<td/>\n\t\t\t\t</tr>\n\t\t\t\t<tr>\n\t\t\t\t\t<td>treatment</td>\n\t\t\t\t\t<td>inexact</td>\n\t\t\t\t\t<td>77132007</td>\n\t\t\t\t\t<td>Assuming Treatment means 'with intent to cure'  vs 'rehabilitation'</td>\n\t\t\t\t</tr>\n\t\t\t\t<tr>\n\t\t\t\t\t<td>ultrasound</td>\n\t\t\t\t\t<td>equivalent</td>\n\t\t\t\t\t<td>310169008</td>\n\t\t\t\t\t<td/>\n\t\t\t\t</tr>\n\t\t\t\t<tr>\n\t\t\t\t\t<td>urgent</td>\n\t\t\t\t\t<td>inexact</td>\n\t\t\t\t\t<td>11429006</td>\n\t\t\t\t\t<td>Mapping assumes the source concept is an urgent office visit vs  urgent  testing or some other more specific service</td>\n\t\t\t\t</tr>\n\t\t\t\t<tr>\n\t\t\t\t\t<td>vaccine (VACCINATION)</td>\n\t\t\t\t\t<td>equivalent</td>\n\t\t\t\t\t<td>127785005</td>\n\t\t\t\t\t<td/>\n\t\t\t\t</tr>\n\t\t\t\t<tr>\n\t\t\t\t\t<td>vision</td>\n\t\t\t\t\t<td>equivalent</td>\n\t\t\t\t\t<td>310160007</td>\n\t\t\t\t\t<td/>\n\t\t\t\t</tr>\n\t\t\t\t<tr>\n\t\t\t\t\t<td>walk-in</td>\n\t\t\t\t\t<td>inexact</td>\n\t\t\t\t\t<td>11429006</td>\n\t\t\t\t\t<td>Mapping assumes the source concept is a walk in office visit vs walk in testing or some other more specific service</td>\n\t\t\t\t</tr>\n\t\t\t\t<tr>\n\t\t\t\t\t<td>well-child</td>\n\t\t\t\t\t<td>equivalent</td>\n\t\t\t\t\t<td>410620009</td>\n\t\t\t\t\t<td/>\n\t\t\t\t</tr>\n\t\t\t\t<tr>\n\t\t\t\t\t<td>x-ray</td>\n\t\t\t\t\t<td>equivalent</td>\n\t\t\t\t\t<td>310125001</td>\n\t\t\t\t\t<td/>\n\t\t\t\t</tr>\n\t\t\t</table>\n\t\t</div>"
+  },
+  "url": "http://fhir.org/guides/argonaut-scheduling/ConceptMap/visit-snomed-map",
+  "version": "1.0.1",
+  "name": "Argonaut_Scheduiing_Visit_Type_to_SNOMED_CT_Mapping",
+  "title": "Argonaut Scheduiing Visit Type to SNOMED CT Mapping",
+  "status": "active",
+  "date": "2017-10-30T18:49:44-07:00",
+  "publisher": "Argonaut Project",
+  "description": "The source concepts are Argonaut Visit Types which are a prioritized valueset of the most common appointment types for scheduling and have been identified as the baseline use cases for the  Argonaut scheduling Implementation Guide.   The Visit types are mapped to the target concepts from [SNOMED CT](http://snomed.info/sct).",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "urn:iso:std:iso:3166",
+          "code": "US",
+          "display": "United States of America"
+        }
+      ]
+    }
+  ],
+  "sourceUri": "http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type",
+  "targetUri": "http://fhir.org/guides/argonaut-scheduling/ValueSet/sct-services",
+  "group": [
+    {
+      "element": [
+        {
+          "code": "breast-imaging",
+          "target": [
+            {
+              "code": "1310126000",
+              "equivalence": "wider",
+              "comment": "Target concept may include more than mammography"
+            }
+          ]
+        },
+        {
+          "code": "consult",
+          "target": [
+            {
+              "code": "11429006",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "ct",
+          "target": [
+            {
+              "code": "310128004",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "dental",
+          "target": [
+            {
+              "code": "3671000175100",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "dxa",
+          "target": [
+            {
+              "code": "241686001",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "echo",
+          "target": [
+            {
+              "code": "310169008",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "echo-stresstest",
+          "target": [
+            {
+              "code": "433233004",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "ed-followup",
+          "target": [
+            {
+              "code": "409073007",
+              "equivalence": "wider",
+              "comment": "Target concept not constrained to follow up temporal context"
+            }
+          ]
+        },
+        {
+          "code": "eeg",
+          "target": [
+            {
+              "code": "54550000",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "egd",
+          "target": [
+            {
+              "code": "310030000",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "ekg",
+          "target": [
+            {
+              "code": "29303009",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "evaluation",
+          "target": [
+            {
+              "code": "386053000",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "flu-shot-clinic",
+          "target": [
+            {
+              "code": "86198006",
+              "equivalence": "wider",
+              "comment": "Target concept not constrained to the context of a vaccine clinic'"
+            }
+          ]
+        },
+        {
+          "code": "fluoroscopy",
+          "target": [
+            {
+              "code": "44491008",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "follow-up",
+          "target": [
+            {
+              "code": "185389009",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "home-health",
+          "target": [
+            {
+              "code": "439708006",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "injection",
+          "target": [
+            {
+              "code": "59108006",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "inter-rad",
+          "target": [
+            {
+              "code": "708174004",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "lab",
+          "target": [
+            {
+              "code": "708184003",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "minor-surgery",
+          "target": [
+            {
+              "code": "711580002",
+              "equivalence": "narrower",
+              "comment": "The target restricts to ambulatory context"
+            }
+          ]
+        },
+        {
+          "code": "mri",
+          "target": [
+            {
+              "code": "310127009",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "new-patient",
+          "target": [
+            {
+              "code": "185387006",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "nuc-med",
+          "target": [
+            {
+              "code": "310058008",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "occup-therapy",
+          "target": [
+            {
+              "code": "310093001",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "office-visit",
+          "target": [
+            {
+              "code": "11429006",
+              "equivalence": "equivalent",
+              "comment": "Proposing that the US term 'office visit' is synonomous with the UK term 'consultation'"
+            }
+          ]
+        },
+        {
+          "code": "physical",
+          "target": [
+            {
+              "code": "5880005",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "post-op",
+          "target": [
+            {
+              "code": "439740005",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "pre-admit-testing",
+          "target": [
+            {
+              "code": "406153003",
+              "equivalence": "wider",
+              "comment": "Target concept in not constrained to testing"
+            }
+          ]
+        },
+        {
+          "code": "pre-op",
+          "target": [
+            {
+              "code": "133858001",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "procedure",
+          "target": [
+            {
+              "code": "71388002",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "same-day",
+          "target": [
+            {
+              "code": "11429006",
+              "equivalence": "inexact",
+              "comment": "Mapping assumes the source concept is a same-day office visit vs  same day testing or some other more specific service"
+            }
+          ]
+        },
+        {
+          "code": "stress-test",
+          "target": [
+            {
+              "code": "76746007",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "surgery",
+          "target": [
+            {
+              "code": "310138009",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "treatment",
+          "target": [
+            {
+              "code": "77132007",
+              "equivalence": "inexact",
+              "comment": "Assuming Treatment means 'with intent to cure'  vs 'rehabilitation'"
+            }
+          ]
+        },
+        {
+          "code": "ultrasound",
+          "target": [
+            {
+              "code": "310169008",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "urgent",
+          "target": [
+            {
+              "code": "11429006",
+              "equivalence": "inexact",
+              "comment": "Mapping assumes the source concept is an urgent office visit vs  urgent  testing or some other more specific service"
+            }
+          ]
+        },
+        {
+          "code": "vaccine",
+          "target": [
+            {
+              "code": "127785005",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "vision",
+          "target": [
+            {
+              "code": "310160007",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "walk-in",
+          "target": [
+            {
+              "code": "11429006",
+              "equivalence": "inexact",
+              "comment": "Mapping assumes the source concept is a walk in office visit vs walk in testing or some other more specific service"
+            }
+          ]
+        },
+        {
+          "code": "well-child",
+          "target": [
+            {
+              "code": "410620009",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "x-ray",
+          "target": [
+            {
+              "code": "310125001",
+              "equivalence": "equivalent"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

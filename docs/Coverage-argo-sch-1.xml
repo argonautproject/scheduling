@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Coverage xmlns="http://hl7.org/fhir">
+  <id value="argo-sch-1"/>
+  <meta>
+    <profile value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-coverage"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: argo-sch-1</p><p><b>meta</b>: </p><p><b>identifier</b>: DZW9200000000</p><p><b>status</b>: active</p><p><b>type</b>: health insurance plan policy <span style="background: LightGoldenRodYellow">(Details : {http://hl7.org/fhir/v3/ActCode code 'HIP' = 'health insurance plan policy', given as 'health insurance plan policy'})</span></p><p><b>subscriber</b>: <a href="Patient-argo-sch-patient-1.html">First M LastName Jr. Generated Summary: id: argo-sch-patient-1; Medical Record Number = 1032702 (USUAL); active; First M LastName ; ph: 555-555-5555(HOME), myemail@example.com; gender: male; birthDate: Jun 19, 1964</a></p><p><b>subscriberId</b>: DZW9200000000</p><p><b>relationship</b>: Self <span style="background: LightGoldenRodYellow">(Details : {http://hl7.org/fhir/policyholder-relationship code 'self' = 'Self', given as 'Self'})</span></p><p><b>period</b>: Jan 1, 2016 12:00:00 AM --&gt; (ongoing)</p><p><b>payor</b>: Anthem Blue Cross of California</p><h3>Groupings</h3><table class="grid"><tr><td>-</td><td><b>Plan</b></td><td><b>PlanDisplay</b></td></tr><tr><td>*</td><td>1FZQ</td><td>Anthem Bronze 60 D HSA PPO</td></tr></table></div>
+  </text>
+  <identifier>
+    <system value="https://www.anthem.com/ca"/>
+    <value value="DZW9200000000"/>
+  </identifier>
+  <status value="active"/>
+  <type>
+    <coding>
+      <system value="http://hl7.org/fhir/v3/ActCode"/>
+      <code value="HIP"/>
+      <display value="health insurance plan policy"/>
+    </coding>
+  </type>
+  <subscriber>
+    <reference value="Patient/argo-sch-patient-1"/>
+    <display value="First M LastName Jr"/>
+  </subscriber>
+  <subscriberId value="DZW9200000000"/>
+  <relationship>
+    <coding>
+      <system value="http://hl7.org/fhir/policyholder-relationship"/>
+      <code value="self"/>
+      <display value="Self"/>
+    </coding>
+  </relationship>
+  <period>
+    <start value="2016-01-01"/>
+  </period>
+  <payor>
+    <display value="Anthem Blue Cross of California"/>
+  </payor>
+  <grouping>
+    <plan value="1FZQ"/>
+    <planDisplay value="Anthem Bronze 60 D HSA PPO"/>
+  </grouping>
+</Coverage>

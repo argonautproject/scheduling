@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Subscription xmlns="http://hl7.org/fhir">
+  <id value="example"/>
+  <meta>
+    <profile value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-sub-notif"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: example</p><p><b>meta</b>: </p><p><b>status</b>: active</p><p><b>reason</b>: Notify subscriber of schedule changes to trigger the subscriber prefetch updated slots</p><p><b>criteria</b>: </p><h3>Channels</h3><table class="grid"><tr><td>-</td><td><b>Extension</b></td><td><b>Type</b></td><td><b>Endpoint</b></td><td><b>Payload</b></td></tr><tr><td>*</td><td/><td>rest-hook</td><td><a href="https://feed-handler.com/notification">https://feed-handler.com/notification</a></td><td>application/fhir+json</td></tr></table></div>
+  </text>
+  <status value="active"/>
+  <reason value="Notify subscriber of schedule changes to trigger the subscriber prefetch updated slots"/>
+  <criteria>
+    <extension url="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-subscription-triggerevent">
+      <valueString value="schedule where any slot that reference it has changed"/>
+    </extension>
+    <extension url="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-subscription-eventfocus">
+      <valueCode value="Slot"/>
+    </extension>
+  </criteria>
+  <channel>
+    <extension url="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-subscription-payloadprofile">
+      <valueUri value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-sched-notif"/>
+    </extension>
+    <type value="rest-hook"/>
+    <endpoint value="https://feed-handler.com/notification"/>
+    <payload value="application/fhir+json"/>
+  </channel>
+</Subscription>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<OperationDefinition xmlns="http://hl7.org/fhir">
+  <id value="appointment-hold"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml">
+			<h2>Appointment_Hold</h2>
+			<p>OPERATION: Appointment_Hold</p>
+			<p>The official URL for this operation definition is: </p>
+			<pre>http://fhir.org/guides/argonaut-scheduling/OperationDefinition/appointment-hold</pre>
+			<div>
+				<p>Request for a hold on a selected Appointment in order for the user to complete entering data for booking an appointment.  This operation precedes the booking and follows the appointment availability interaction.  The server determines if the nominated appointment is still available (i.e., all the required actors and physical assets needed for the appointment are still available) and either accepts or rejects the hold request and updates the resource status accordingly.  See the <a href="state-diagram.html">Appointment State Diagram</a> for further details on statuses.</p>
+			</div>
+			<p>URL: [base]/Appointment/$hold</p>
+			<p>URL: [base]/Appointment/[id]/$hold</p>
+			<p>Parameters</p>
+			<table class="grid">
+				<tr>
+					<td>
+						<b>Use</b>
+					</td>
+					<td>
+						<b>Name</b>
+					</td>
+					<td>
+						<b>Cardinality</b>
+					</td>
+					<td>
+						<b>Type</b>
+					</td>
+					<td>
+						<b>Binding</b>
+					</td>
+					<td>
+						<b>Documentation</b>
+					</td>
+				</tr>
+				<tr>
+					<td>IN</td>
+					<td>appt-id</td>
+					<td>0..1</td>
+					<td>uri</td>
+					<td/>
+					<td>
+						<div>
+							<p>A resource id for one of proposed Appointments returned by a prior $find operation (e.g., Resource/1234).  References can be to an absolute URL, but servers only perform this operation on their own appointments.</p>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>IN</td>
+					<td>appt-resource</td>
+					<td>0..1</td>
+					<td>Appointment (<a href="StructureDefinition-argo-appt.html">Argonaut Appointment Profile</a>)</td>
+					<td/>
+					<td>
+						<div>
+							<p>When prefetching open Slots, an <a href="StructureDefinition-argo-appt.html">Argonaut Appointment Profile</a> resource is created by the Client Application and is exchanged with the FHIR Scheduler (EHR). This parameter represents this profile and is the same as used for the <code>$book</code> operation.</p>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>OUT</td>
+					<td>return</td>
+					<td>0..1</td>
+					<td>Bundle (<a href="StructureDefinition-avail-bundle.html">Argonaut Appointment Bundle Profile</a>)</td>
+					<td/>
+					<td>
+						<div>
+							<p>An <a href="StructureDefinition-avail-bundle.html">Argonaut Appointment Bundle Profile</a>  of type <code>searchset</code> of requested held Appointment resource and may also contain an OperationOutcome with errors, warnings or information as a result of processing the operation.   The Appointment resource will have an updated <code>status</code> of &quot;pending&quot; if the hold is approved or  &quot;cancelled&quot; if the hold is rejected.</p>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<div>
+				<ul>
+					<li>
+						<p>This operation is not <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html">idempotent</a> and may only be invoked by performing an HTTP POST.</p>
+					</li>
+					<li>
+						<p>The length of an appointment hold is determined by the scheduling service’s business rules, after which the status of the Appointment may change.  An <code>Expires</code> header Should be included in the response to successful hold request to indicate its expiration.  The Client should cancel a hold on an appointment before it expires.</p>
+					</li>
+					<li>
+						<p>When using the <code>appt-resource</code> as an input parameter, the payload can be <em>either</em> the Appointment resource or use the <a href="{{ site.data.fhir.path }}/parameters.html">Parameters</a> format as shown in the examples below</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+  </text>
+  <url value="http://fhir.org/guides/argonaut-scheduling/OperationDefinition/appointment-hold"/>
+  <version value="1.0.1"/>
+  <name value="Appointment_Hold"/>
+  <status value="active"/>
+  <kind value="operation"/>
+  <date value="2017-08-09T11:36:05-07:00"/>
+  <publisher value="Argonaut Project"/>
+  <description value="Request for a hold on a selected Appointment in order for the user to complete entering data for booking an appointment.  This operation precedes the booking and follows the appointment availability interaction.  The server determines if the nominated appointment is still available (i.e., all the required actors and physical assets needed for the appointment are still available) and either accepts or rejects the hold request and updates the resource status accordingly.  See the [Appointment State Diagram](state-diagram.html) for further details on statuses."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+      <display value="United States of America"/>
+    </coding>
+  </jurisdiction>
+  <idempotent value="false"/>
+  <code value="hold"/>
+  <comment value="- This operation is not [idempotent](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html) and may only be invoked by performing an HTTP POST.&#xD;&#xD;-  The length of an appointment hold is determined by the scheduling service&#x2019;s business rules, after which the status of the Appointment may change.  An `Expires` header Should be included in the response to successful hold request to indicate its expiration.  The Client should cancel a hold on an appointment before it expires.  &#xD;&#xD;- When using the `appt-resource` as an input parameter, the payload can be *either* the Appointment resource or use the [Parameters]({{site.data.fhir.path}}/parameters.html) format as shown in the examples below"/>
+  <resource value="Appointment"/>
+  <system value="false"/>
+  <type value="true"/>
+  <instance value="true"/>
+  <parameter>
+    <name value="appt-id"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="A resource id for one of proposed Appointments returned by a prior $find operation (e.g., Resource/1234).  References can be to an absolute URL, but servers only perform this operation on their own appointments."/>
+    <type value="uri"/>
+  </parameter>
+  <parameter>
+    <name value="appt-resource"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="When prefetching open Slots, an [Argonaut Appointment Profile](StructureDefinition-argo-appt.html) resource is created by the Client Application and is exchanged with the FHIR Scheduler (EHR). This parameter represents this profile and is the same as used for the `$book` operation."/>
+    <type value="Appointment"/>
+    <profile>
+      <reference value="StructureDefinition/argo-appt"/>
+    </profile>
+  </parameter>
+  <parameter>
+    <name value="return"/>
+    <use value="out"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="An [Argonaut Appointment Bundle Profile](StructureDefinition-avail-bundle.html)  of type `searchset` of requested held Appointment resource and may also contain an OperationOutcome with errors, warnings or information as a result of processing the operation.   The Appointment resource will have an updated `status` of &quot;pending&quot; if the hold is approved or  &quot;cancelled&quot; if the hold is rejected."/>
+    <type value="Bundle"/>
+    <profile>
+      <reference value="StructureDefinition/avail-bundle"/>
+    </profile>
+  </parameter>
+</OperationDefinition>

@@ -1,0 +1,107 @@
+{
+  "resourceType": "Patient",
+  "id": "argo-sch-patient-1",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
+    ]
+  },
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: argo-sch-patient-1</p><p><b>meta</b>: </p><p><b>identifier</b>: Medical Record Number = 1032702 (USUAL)</p><p><b>active</b>: true</p><p><b>name</b>: First M LastName </p><p><b>telecom</b>: ph: 555-555-5555(HOME), myemail@example.com</p><p><b>gender</b>: male</p><p><b>birthDate</b>: Jun 19, 1964</p><p><b>address</b>: 123 Main St Santa Rosa CA 95555 US </p></div>"
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+      "extension": [
+        {
+          "url": "ombCategory",
+          "valueCoding": {
+            "system": "urn:oid:2.16.840.1.113883.6.238",
+            "code": "2106-3",
+            "display": "White"
+          }
+        },
+        {
+          "url": "text",
+          "valueString": "White"
+        }
+      ]
+    },
+    {
+      "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+      "extension": [
+        {
+          "url": "ombCategory",
+          "valueCoding": {
+            "system": "urn:oid:2.16.840.1.113883.6.238",
+            "code": "2135-2",
+            "display": "Hispanic or Latino"
+          }
+        },
+        {
+          "url": "text",
+          "valueString": "Hispanic or Latino"
+        }
+      ]
+    },
+    {
+      "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex",
+      "valueCode": "M"
+    }
+  ],
+  "identifier": [
+    {
+      "use": "usual",
+      "type": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/v2/0203",
+            "code": "MR",
+            "display": "Medical Record Number"
+          }
+        ],
+        "text": "Medical Record Number"
+      },
+      "system": "http://hospital.smarthealthit.org",
+      "value": "1032702"
+    }
+  ],
+  "active": true,
+  "name": [
+    {
+      "family": "LastName",
+      "given": [
+        "First",
+        "M"
+      ],
+      "suffix": [
+        "Jr"
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "555-555-5555",
+      "use": "home"
+    },
+    {
+      "system": "email",
+      "value": "myemail@example.com"
+    }
+  ],
+  "gender": "male",
+  "birthDate": "1964-06-19",
+  "address": [
+    {
+      "line": [
+        "123 Main St"
+      ],
+      "city": "Santa Rosa",
+      "state": "CA",
+      "postalCode": "95555",
+      "country": "US"
+    }
+  ]
+}

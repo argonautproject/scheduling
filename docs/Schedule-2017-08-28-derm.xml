@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Schedule xmlns="http://hl7.org/fhir">
+  <id value="2017-08-28-derm"/>
+  <meta>
+    <profile value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-sched-notif"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: 2017-08-28-derm</p><p><b>meta</b>: </p><p><b>serviceType</b>: OFFICE VISIT <span style="background: LightGoldenRodYellow">(Details : {http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type code 'office-visit' = 'OFFICE VISIT', given as 'OFFICE VISIT'})</span></p><p><b>specialty</b>: Dermatology <span style="background: LightGoldenRodYellow">(Details : {[not stated] code '394582007' = '394582007', given as 'Dermatology'})</span></p><p><b>actor</b>: <a href="Practitioner-dr-y.html">Crusher, Beverly. Generated Summary: id: dr-y; 9941339108, 25456; Y </a></p><p><b>planningHorizon</b>: Aug 28, 2017 12:00:00 AM --&gt; Aug 28, 2018 12:00:00 AM</p></div>
+  </text>
+  <serviceType>
+    <coding>
+      <system value="http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type"/>
+      <code value="office-visit"/>
+      <display value="OFFICE VISIT"/>
+    </coding>
+    <text value="OFFICE VISIT"/>
+  </serviceType>
+  <specialty>
+    <coding>
+      <code value="394582007"/>
+      <display value="Dermatology"/>
+    </coding>
+  </specialty>
+  <actor>
+    <reference value="Practitioner/dr-y"/>
+    <display value="Crusher, Beverly"/>
+  </actor>
+  <planningHorizon>
+    <start value="2017-08-28"/>
+    <end value="2018-08-28"/>
+  </planningHorizon>
+</Schedule>

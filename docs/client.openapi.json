@@ -1,0 +1,261 @@
+﻿{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Argonaut Scheduling Client CapabilityStatement",
+    "description": "The Argonaut Scheduling Client CapabilityStatement provides a for a complete list of supported RESTful interactions for the Argonaut Scheduling Implementation Guide",
+    "license": {
+      "name": "CC0-1.0"
+    },
+    "version": "1.0.1",
+    "contact": {
+      "name": "Argonaut Project"
+    }
+  },
+  "externalDocs": {
+    "url": "http://fhir.org/guides/argonaut-scheduling/CapabilityStatement/client",
+    "description": "FHIR CapabilityStatement"
+  },
+  "paths": {
+    "/Appointment": {
+      "summary": "manage the collection of resources of type Appointment",
+      "description": "Access to services to manage the collection of all resources of type Appointment",
+      "get": {
+        "summary": "Search all resources based on a set of criteria",
+        "operationId": "searchAppointment",
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "http://build.fhir.org/fhir.json.schema/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "http://build.fhir.org/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "the resource being returned",
+            "headers": {
+              "ETag": {
+                "description": "Version from Resource.meta.version as a weak ETag"
+              }
+            },
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "http://build.fhir.org/fhir.json.schema/definitions/Bundle"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "http://build.fhir.org/Bundle.xsd"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Appointment/{rid}": {
+      "summary": "Read/Write/etc resource instance of type Appointment",
+      "description": "Access to services to manage the state of a single resource of type Appointment",
+      "get": {
+        "summary": "Read the current state of the resource",
+        "operationId": "readAppointment",
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "http://build.fhir.org/fhir.json.schema/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "http://build.fhir.org/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "the resource being returned",
+            "headers": {
+              "ETag": {
+                "description": "Version from Resource.meta.version as a weak ETag"
+              }
+            },
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "http://build.fhir.org/fhir.json.schema/definitions/Appointment"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "http://build.fhir.org/Appointment.xsd"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Coverage/{rid}": {
+      "summary": "Read/Write/etc resource instance of type Coverage",
+      "description": "Access to services to manage the state of a single resource of type Coverage",
+      "put": {
+        "summary": "Update the current state of the resource",
+        "operationId": "updateCoverage",
+        "requestBody": {
+          "description": "The new state of the resource",
+          "required": true,
+          "content": {
+            "application/fhir+json": {
+              "schema": {
+                "$ref": "http://build.fhir.org/fhir.json.schema/definitions/Coverage"
+              }
+            },
+            "application/fhir+xml": {
+              "schema": {
+                "$ref": "http://build.fhir.org/Coverage.xsd"
+              }
+            }
+          }
+        },
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "http://build.fhir.org/fhir.json.schema/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "http://build.fhir.org/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "the resource being returned after being updated",
+            "headers": {
+              "ETag": {
+                "description": "Version from Resource.meta.version as a weak ETag"
+              }
+            },
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "http://build.fhir.org/fhir.json.schema/definitions/Coverage"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "http://build.fhir.org/Coverage.xsd"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Patient": {
+      "summary": "manage the collection of resources of type Patient",
+      "description": "Access to services to manage the collection of all resources of type Patient",
+      "get": {
+        "summary": "Search all resources based on a set of criteria",
+        "operationId": "searchPatient",
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "http://build.fhir.org/fhir.json.schema/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "http://build.fhir.org/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "the resource being returned",
+            "headers": {
+              "ETag": {
+                "description": "Version from Resource.meta.version as a weak ETag"
+              }
+            },
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "http://build.fhir.org/fhir.json.schema/definitions/Bundle"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "http://build.fhir.org/Bundle.xsd"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Schedule/{rid}": {
+      "summary": "Read/Write/etc resource instance of type Schedule",
+      "description": "Access to services to manage the state of a single resource of type Schedule",
+      "get": {
+        "summary": "Read the current state of the resource",
+        "operationId": "readSchedule",
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "http://build.fhir.org/fhir.json.schema/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "http://build.fhir.org/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "the resource being returned",
+            "headers": {
+              "ETag": {
+                "description": "Version from Resource.meta.version as a weak ETag"
+              }
+            },
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "http://build.fhir.org/fhir.json.schema/definitions/Schedule"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "http://build.fhir.org/Schedule.xsd"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

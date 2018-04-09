@@ -1,0 +1,1363 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "argo-sub-notif",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"border: 0px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;\"><tr style=\"border: 1px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;\"><th style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/STU3/formats.html#table\" title=\"The logical name of the element\">Name</a></th><th style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/STU3/formats.html#table\" title=\"Information about the use of the element\">Flags</a></th><th style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/STU3/formats.html#table\" title=\"Minimum and Maximum # of times the the element can appear in the instance\">Card.</a></th><th style=\"width: 100px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/STU3/formats.html#table\" title=\"Reference to the type of the element\">Type</a></th><th style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/STU3/formats.html#table\" title=\"Additional information about the element\">Description &amp; Constraints</a><span style=\"float: right\"><a href=\"http://hl7.org/fhir/STU3/formats.html#table\" title=\"Legend for this format\"><img src=\"http://hl7.org/fhir/STU3/help16.png\" alt=\"doco\" style=\"background-color: inherit\"/></a></span></th></tr><tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck1.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <a href=\"StructureDefinition-argo-sub-notif-definitions.html#Subscription\" title=\"null\">Subscription</a><a name=\"Subscription\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"opacity: 0.4\">0</span><span style=\"opacity: 0.5\">..</span><span style=\"opacity: 0.4\">*</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck11.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <a href=\"StructureDefinition-argo-sub-notif-definitions.html#Subscription.criteria\" title=\"null\">criteria</a><a name=\"Subscription.criteria\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"padding-left: 3px; padding-right: 3px; color: white; background-color: red\" title=\"This element must be supported\">S</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"opacity: 0.4\">1</span><span style=\"opacity: 0.5\">..</span><span style=\"opacity: 0.4\">1</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a style=\"opacity: 0.4\" href=\"http://hl7.org/fhir/STU3/datatypes.html#string\">string</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck114.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_extension_simple.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Simple Extension\" class=\"hierarchy\"/> <a href=\"StructureDefinition-argo-sub-notif-definitions.html#Subscription.criteria.extension:trigger-description\" title=\"Extension URL = http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-subscription-triggerevent\">extension-subscription-triggerevent</a><a name=\"Subscription.criteria.extension\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"padding-left: 3px; padding-right: 3px; color: white; background-color: red\" title=\"This element must be supported\">S</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..*</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/STU3/datatypes.html#string\">string</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Subscription Trigger Event Description Extension<br/><span style=\"font-weight:bold\">URL: </span><a href=\"http://hl7.org/fhir/STU3/StructureDefinition-extension-subscription-triggerevent.html\">http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-subscription-triggerevent</a></td></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck114.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_extension_simple.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Simple Extension\" class=\"hierarchy\"/> <a href=\"StructureDefinition-argo-sub-notif-definitions.html#Subscription.criteria.extension:trigger-fhirpath\" title=\"Extension URL = http://hl7.org/fhir/StructureDefinition/cqif-fhirPathExpression\">cqif-fhirPathExpression</a><a name=\"Subscription.criteria.extension\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"opacity: 0.4\">0</span><span style=\"opacity: 0.5\">..</span><span style=\"opacity: 0.4\">*</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/STU3/datatypes.html#string\">string</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Subscription Trigger Event FHIRPath Extension<br/><span style=\"font-weight:bold\">URL: </span><a href=\"http://hl7.org/fhir/STU3/cqif/extension-cqif-fhirpathexpression.html\">http://hl7.org/fhir/StructureDefinition/cqif-fhirPathExpression</a><br/></td></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck105.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_extension_simple.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Simple Extension\" class=\"hierarchy\"/> <a href=\"StructureDefinition-argo-sub-notif-definitions.html#Subscription.criteria.extension:event-focus\" title=\"Extension URL = http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-subscription-eventfocus\">extension-subscription-eventfocus</a><a name=\"Subscription.criteria.extension\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"padding-left: 3px; padding-right: 3px; color: white; background-color: red\" title=\"This element must be supported\">S</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..*</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/STU3/datatypes.html#code\">code</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Subscription Event Focus Extension<br/><span style=\"font-weight:bold\">URL: </span><a href=\"http://hl7.org/fhir/STU3/StructureDefinition-extension-subscription-eventfocus.html\">http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-subscription-eventfocus</a><br/><span style=\"font-weight:bold\">Binding: </span><a href=\"http://hl7.org/fhir/STU3/valueset-all-types.html\">FHIRAllTypes</a> (<a href=\"http://hl7.org/fhir/STU3/terminologies.html#required\" title=\"To be conformant, the concept in this element SHALL be from the specified value set\">required</a>)</td></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck1044.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end_slice.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <a href=\"StructureDefinition-argo-sub-notif-definitions.html#Subscription.criteria.extension:event-focus.valueCode:valuecode\" title=\"Slice valueCode: null\">valueCode</a><a name=\"Subscription.criteria.extension.valueCode\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"padding-left: 3px; padding-right: 3px; color: white; background-color: red\" title=\"This element must be supported\">S</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a style=\"opacity: 0.4\" href=\"http://hl7.org/fhir/STU3/datatypes.html#code\">code</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"font-weight:bold\">Fixed Value: </span><span style=\"color: darkgreen\">Slot</span></td></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck01.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <a href=\"StructureDefinition-argo-sub-notif-definitions.html#Subscription.channel\" title=\"null\">channel</a><a name=\"Subscription.channel\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"padding-left: 3px; padding-right: 3px; color: white; background-color: red\" title=\"This element must be supported\">S</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"opacity: 0.4\">1</span><span style=\"opacity: 0.5\">..</span><span style=\"opacity: 0.4\">1</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a style=\"opacity: 0.4\" href=\"http://hl7.org/fhir/STU3/datatypes.html#BackboneElement\">BackboneElement</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck015.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_extension_simple.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Simple Extension\" class=\"hierarchy\"/> <a href=\"StructureDefinition-argo-sub-notif-definitions.html#Subscription.channel.extension:payload-profile\" title=\"Extension URL = http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-subscription-payloadprofile\">extension-subscription-payloadprofile</a><a name=\"Subscription.channel.extension\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"padding-left: 3px; padding-right: 3px; color: white; background-color: red\" title=\"This element must be supported\">S</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..*</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/STU3/datatypes.html#uri\">uri</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Subscription Payload Profile Extension<br/><span style=\"font-weight:bold\">URL: </span><a href=\"http://hl7.org/fhir/STU3/StructureDefinition-extension-subscription-payloadprofile.html\">http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-subscription-payloadprofile</a></td></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck0144.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end_slice.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <a href=\"StructureDefinition-argo-sub-notif-definitions.html#Subscription.channel.extension:payload-profile.valueUri:valueuri\" title=\"Slice valueUri: The uri of payload when sending notifications to a subscriber.\">valueUri</a><a name=\"Subscription.channel.extension.valueUri\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"padding-left: 3px; padding-right: 3px; color: white; background-color: red\" title=\"This element must be supported\">S</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a style=\"opacity: 0.4\" href=\"http://hl7.org/fhir/STU3/datatypes.html#uri\">uri</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Payload profile URI<br/><span style=\"font-weight:bold\">Fixed Value: </span><span style=\"color: darkgreen\">http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-sched-notif</span></td></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\"><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck000.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <a href=\"StructureDefinition-argo-sub-notif-definitions.html#Subscription.channel.endpoint\" title=\"null\">endpoint</a><a name=\"Subscription.channel.endpoint\"> </a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"padding-left: 3px; padding-right: 3px; color: white; background-color: red\" title=\"This element must be supported\">S</span></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a style=\"opacity: 0.4\" href=\"http://hl7.org/fhir/STU3/datatypes.html#uri\">uri</a></td><td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>\r\n<tr><td colspan=\"5\" class=\"hierarchy\"><br/><a href=\"http://hl7.org/fhir/STU3/formats.html#table\" title=\"Legend for this format\"><img src=\"http://hl7.org/fhir/STU3/help16.png\" alt=\"doco\" style=\"background-color: inherit\"/> Documentation for this format</a></td></tr></table></div>"
+  },
+  "url": "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-sub-notif",
+  "version": "1.0.1",
+  "name": "Argonaut_Scheduling_Subscription_Profile",
+  "title": "Argonaut Scheduling Subscription Profile",
+  "status": "active",
+  "date": "2018-02-13T00:00:00-08:00",
+  "publisher": "Argonaut Project",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://argonautwiki.hl7.org"
+        }
+      ]
+    }
+  ],
+  "description": "The Argonaut Scheduling Subscription Profile is defined for sending  notifications to a subscriber as described in the updating slots step in [Use Case 3 Prefetching Open Slots](patient-scheduling.html#use-case-3-prefetching-open-slots).",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "urn:iso:std:iso:3166",
+          "code": "US",
+          "display": "United States of America"
+        }
+      ]
+    }
+  ],
+  "fhirVersion": "3.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/w5",
+      "name": "W5 Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Subscription",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Subscription",
+  "derivation": "constraint",
+  "snapshot": {
+    "element": [
+      {
+        "id": "Subscription",
+        "path": "Subscription",
+        "short": "A server push subscription criteria",
+        "definition": "The subscription resource is used to define a push based subscription from a server to another system. Once a subscription is registered with the server, the server checks every resource that is created or updated, and if the resource matches the given criteria, it sends a message on the defined \"channel\" so that another system is able to take an appropriate action.",
+        "alias": [
+          "WebHook",
+          "Hook",
+          "Routing Rule"
+        ],
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Subscription",
+          "min": 0,
+          "max": "*"
+        },
+        "constraint": [
+          {
+            "key": "dom-2",
+            "severity": "error",
+            "human": "If the resource is contained in another resource, it SHALL NOT contain nested Resources",
+            "expression": "contained.contained.empty()",
+            "xpath": "not(parent::f:contained and f:contained)",
+            "source": "DomainResource"
+          },
+          {
+            "key": "dom-1",
+            "severity": "error",
+            "human": "If the resource is contained in another resource, it SHALL NOT contain any narrative",
+            "expression": "contained.text.empty()",
+            "xpath": "not(parent::f:contained and f:text)",
+            "source": "DomainResource"
+          },
+          {
+            "key": "dom-4",
+            "severity": "error",
+            "human": "If a resource is contained in another resource, it SHALL NOT have a meta.versionId or a meta.lastUpdated",
+            "expression": "contained.meta.versionId.empty() and contained.meta.lastUpdated.empty()",
+            "xpath": "not(exists(f:contained/*/f:meta/f:versionId)) and not(exists(f:contained/*/f:meta/f:lastUpdated))",
+            "source": "DomainResource"
+          },
+          {
+            "key": "dom-3",
+            "severity": "error",
+            "human": "If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource",
+            "expression": "contained.where(('#'+id in %resource.descendants().reference).not()).empty()",
+            "xpath": "not(exists(for $id in f:contained/*/@id return $id[not(ancestor::f:contained/parent::*/descendant::f:reference/@value=concat('#', $id))]))",
+            "source": "DomainResource"
+          }
+        ],
+        "mustSupport": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "Entity. Role, or Act"
+          },
+          {
+            "identity": "rim",
+            "map": "N/A"
+          },
+          {
+            "identity": "w5",
+            "map": "infrastructure.exchange"
+          }
+        ]
+      },
+      {
+        "id": "Subscription.id",
+        "path": "Subscription.id",
+        "short": "Logical id of this artifact",
+        "definition": "The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.",
+        "comment": "The only time that a resource does not have an id is when it is being submitted to the server using a create operation.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Resource.id",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "id"
+          }
+        ],
+        "isSummary": true
+      },
+      {
+        "id": "Subscription.meta",
+        "path": "Subscription.meta",
+        "short": "Metadata about the resource",
+        "definition": "The metadata about the resource. This is content that is maintained by the infrastructure. Changes to the content may not always be associated with version changes to the resource.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Resource.meta",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "Meta"
+          }
+        ],
+        "isSummary": true
+      },
+      {
+        "id": "Subscription.implicitRules",
+        "path": "Subscription.implicitRules",
+        "short": "A set of rules under which this content was created",
+        "definition": "A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content.",
+        "comment": "Asserting this rule set restricts the content to be only understood by a limited set of trading partners. This inherently limits the usefulness of the data in the long term. However, the existing health eco-system is highly fractured, and not yet ready to define, collect, and exchange data in a generally computable sense. Wherever possible, implementers and/or specification writers should avoid using this element. \n\nThis element is labelled as a modifier because the implicit rules may provide additional knowledge about the resource that modifies it's meaning or interpretation.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Resource.implicitRules",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "uri"
+          }
+        ],
+        "isModifier": true,
+        "isSummary": true
+      },
+      {
+        "id": "Subscription.language",
+        "path": "Subscription.language",
+        "short": "Language of the resource content",
+        "definition": "The base language in which the resource is written.",
+        "comment": "Language is provided to support indexing and accessibility (typically, services such as text to speech use the language tag). The html language tag in the narrative applies  to the narrative. The language tag on the resource may be used to specify the language of other presentations generated from the data in the resource  Not all the content has to be in the base language. The Resource.language should not be assumed to apply to the narrative automatically. If a language is specified, it should it also be specified on the div element in the html (see rules in HTML5 for information about the relationship between xml:lang and the html lang attribute).",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Resource.language",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "binding": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet",
+              "valueReference": {
+                "reference": "http://hl7.org/fhir/ValueSet/all-languages"
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "Language"
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding",
+              "valueBoolean": true
+            }
+          ],
+          "strength": "extensible",
+          "description": "A human language.",
+          "valueSetReference": {
+            "reference": "http://hl7.org/fhir/ValueSet/languages"
+          }
+        }
+      },
+      {
+        "id": "Subscription.text",
+        "path": "Subscription.text",
+        "short": "Text summary of the resource, for human interpretation",
+        "definition": "A human-readable narrative that contains a summary of the resource, and may be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it \"clinically safe\" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.",
+        "comment": "Contained resources do not have narrative. Resources that are not contained SHOULD have a narrative. In some cases, a resource may only have text with little or no additional discrete data (as long as all minOccurs=1 elements are satisfied).  This may be necessary for data from legacy systems where information is captured as a \"text blob\" or where text is additionally entered raw or narrated and encoded in formation is added later.",
+        "alias": [
+          "narrative",
+          "html",
+          "xhtml",
+          "display"
+        ],
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "DomainResource.text",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "Narrative"
+          }
+        ],
+        "condition": [
+          "dom-1"
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "Act.text?"
+          }
+        ]
+      },
+      {
+        "id": "Subscription.contained",
+        "path": "Subscription.contained",
+        "short": "Contained, inline Resources",
+        "definition": "These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.",
+        "comment": "This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again.",
+        "alias": [
+          "inline resources",
+          "anonymous resources",
+          "contained resources"
+        ],
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "DomainResource.contained",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Resource"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "N/A"
+          }
+        ]
+      },
+      {
+        "id": "Subscription.extension",
+        "path": "Subscription.extension",
+        "short": "Additional Content defined by implementations",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+        "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+        "alias": [
+          "extensions",
+          "user content"
+        ],
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "DomainResource.extension",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Extension"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "N/A"
+          }
+        ]
+      },
+      {
+        "id": "Subscription.modifierExtension",
+        "path": "Subscription.modifierExtension",
+        "short": "Extensions that cannot be ignored",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.",
+        "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+        "alias": [
+          "extensions",
+          "user content"
+        ],
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "DomainResource.modifierExtension",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Extension"
+          }
+        ],
+        "isModifier": true,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "N/A"
+          }
+        ]
+      },
+      {
+        "id": "Subscription.status",
+        "path": "Subscription.status",
+        "short": "requested | active | error | off",
+        "definition": "The status of the subscription, which marks the server state for managing the subscription.",
+        "comment": "A client can only submit subscription resources in the requested or off state. Only the server can  move a subscription from requested to active, and then to error. Either the server or the client can turn a subscription off.\n\nThis element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Subscription.status",
+          "min": 1,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "isModifier": true,
+        "isSummary": true,
+        "binding": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "SubscriptionStatus"
+            }
+          ],
+          "strength": "required",
+          "description": "The status of a subscription.",
+          "valueSetReference": {
+            "reference": "http://hl7.org/fhir/ValueSet/subscription-status"
+          }
+        },
+        "mapping": [
+          {
+            "identity": "w5",
+            "map": "status"
+          }
+        ]
+      },
+      {
+        "id": "Subscription.contact",
+        "path": "Subscription.contact",
+        "short": "Contact details for source (e.g. troubleshooting)",
+        "definition": "Contact details for a human to contact about the subscription. The primary use of this for system administrator troubleshooting.",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Subscription.contact",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "ContactPoint"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "w5",
+            "map": "who.focus"
+          }
+        ]
+      },
+      {
+        "id": "Subscription.end",
+        "path": "Subscription.end",
+        "short": "When to automatically delete the subscription",
+        "definition": "The time for the server to turn the subscription off.",
+        "comment": "The server is permitted to deviate from this time, but should observe it.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Subscription.end",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "instant"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "w5",
+            "map": "when.done"
+          }
+        ]
+      },
+      {
+        "id": "Subscription.reason",
+        "path": "Subscription.reason",
+        "short": "Description of why this subscription was created",
+        "definition": "A description of why this subscription is defined.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Subscription.reason",
+          "min": 1,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "w5",
+            "map": "why"
+          }
+        ]
+      },
+      {
+        "id": "Subscription.criteria",
+        "path": "Subscription.criteria",
+        "short": "Rule for server push criteria",
+        "definition": "The rules that the server should use to determine when to generate notifications for this subscription.",
+        "comment": "The rules are a search criteria (without the [base] part). Like Bundle.entry.request.url, it has no leading \"/\".",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Subscription.criteria",
+          "min": 1,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mustSupport": true,
+        "isSummary": true
+      },
+      {
+        "id": "Subscription.criteria.id",
+        "path": "Subscription.criteria.id",
+        "representation": [
+          "xmlAttr"
+        ],
+        "short": "xml:id (or equivalent in JSON)",
+        "definition": "unique id for the element within a resource (for internal references)",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Element.id",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "Subscription.criteria.extension",
+        "path": "Subscription.criteria.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "open"
+        },
+        "short": "Extension",
+        "definition": "An Extension",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Element.extension",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Extension"
+          }
+        ]
+      },
+      {
+        "id": "Subscription.criteria.extension:trigger-description",
+        "path": "Subscription.criteria.extension",
+        "sliceName": "trigger-description",
+        "short": "Subscription Trigger Event Description Extension",
+        "definition": "An Extension",
+        "comment": "A formal expression, or a reference to a named expression may also be inlined. If the expression is a [FHIRPath](http://hl7.org/fhirpath/) expression, use the [Subscription Trigger Event FHIRPath Extension](StructureDefinition-extension-trigger-fhirpath.html)",
+        "min": 1,
+        "max": "*",
+        "base": {
+          "path": "Element.extension",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Extension",
+            "profile": "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-subscription-triggerevent"
+          }
+        ],
+        "condition": [
+          "ele-1"
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() | (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "Element"
+          },
+          {
+            "key": "ext-1",
+            "severity": "error",
+            "human": "Must have either extensions or value[x], not both",
+            "expression": "extension.exists() != value.exists()",
+            "xpath": "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
+            "source": "Extension"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Subscription.criteria.extension:trigger-fhirpath",
+        "path": "Subscription.criteria.extension",
+        "sliceName": "trigger-fhirpath",
+        "short": "Subscription Trigger Event FHIRPath Extension",
+        "definition": "If the expression is a [FHIRPath](http://hl7.org/fhirpath/) expression, it evaluates in the context of a resource of one of the types identified in the [Subscription Event Focus Extension](StructureDefinition-extension-subscription-eventfocus.html), and may also refer to the variable `%previous`  for delta comparisons.",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Element.extension",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Extension",
+            "profile": "http://hl7.org/fhir/StructureDefinition/cqif-fhirPathExpression"
+          }
+        ],
+        "condition": [
+          "ele-1"
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() | (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "Element"
+          },
+          {
+            "key": "ext-1",
+            "severity": "error",
+            "human": "Must have either extensions or value[x], not both",
+            "expression": "extension.exists() != value.exists()",
+            "xpath": "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
+            "source": "Extension"
+          }
+        ]
+      },
+      {
+        "id": "Subscription.criteria.extension:event-focus",
+        "path": "Subscription.criteria.extension",
+        "sliceName": "event-focus",
+        "short": "Subscription Event Focus Extension",
+        "definition": "The type of the required data, specified as the type name of a resource.",
+        "min": 1,
+        "max": "*",
+        "base": {
+          "path": "Element.extension",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Extension",
+            "profile": "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-subscription-eventfocus"
+          }
+        ],
+        "condition": [
+          "ele-1"
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() | (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "Element"
+          },
+          {
+            "key": "ext-1",
+            "severity": "error",
+            "human": "Must have either extensions or value[x], not both",
+            "expression": "extension.exists() != value.exists()",
+            "xpath": "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
+            "source": "Extension"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Subscription.criteria.extension:event-focus.id",
+        "path": "Subscription.criteria.extension.id",
+        "representation": [
+          "xmlAttr"
+        ],
+        "short": "xml:id (or equivalent in JSON)",
+        "definition": "unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Element.id",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          }
+        ]
+      },
+      {
+        "id": "Subscription.criteria.extension:event-focus.extension",
+        "path": "Subscription.criteria.extension.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "description": "Extensions are always sliced by (at least) url",
+          "rules": "open"
+        },
+        "short": "Additional Content defined by implementations",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+        "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+        "alias": [
+          "extensions",
+          "user content"
+        ],
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Element.extension",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Extension"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          }
+        ]
+      },
+      {
+        "id": "Subscription.criteria.extension:event-focus.url",
+        "path": "Subscription.criteria.extension.url",
+        "representation": [
+          "xmlAttr"
+        ],
+        "short": "identifies the meaning of the extension",
+        "definition": "Source of the definition for the extension code - a logical name or a URL.",
+        "comment": "The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Extension.url",
+          "min": 1,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "uri"
+          }
+        ],
+        "fixedUri": "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-subscription-eventfocus",
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "N/A"
+          }
+        ]
+      },
+      {
+        "id": "Subscription.criteria.extension:event-focus.valueCode:valuecode",
+        "path": "Subscription.criteria.extension.valueCode",
+        "sliceName": "valueCode",
+        "short": "Value of extension",
+        "definition": "Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list).",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Extension.value[x]",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "fixedCode": "Slot",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "description": "The type of the required data, specified as the type name of a resource. For profiles, this value is set to the type of the base resource of the profile.",
+          "valueSetReference": {
+            "reference": "http://hl7.org/fhir/ValueSet/all-types"
+          }
+        },
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "N/A"
+          }
+        ]
+      },
+      {
+        "id": "Subscription.criteria.value",
+        "path": "Subscription.criteria.value",
+        "representation": [
+          "xmlAttr"
+        ],
+        "short": "Primitive value for string",
+        "definition": "The actual value",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "string.value",
+          "min": 0,
+          "max": "1"
+        },
+        "maxLength": 1048576
+      },
+      {
+        "id": "Subscription.error",
+        "path": "Subscription.error",
+        "short": "Latest error note",
+        "definition": "A record of the last error that occurred when the server processed a notification.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Subscription.error",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "isSummary": true
+      },
+      {
+        "id": "Subscription.channel",
+        "path": "Subscription.channel",
+        "short": "The channel on which to report matches to the criteria",
+        "definition": "Details where to send notifications when resources are received that meet the criteria.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Subscription.channel",
+          "min": 1,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() | (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "Element"
+          }
+        ],
+        "mustSupport": true,
+        "isSummary": true
+      },
+      {
+        "id": "Subscription.channel.id",
+        "path": "Subscription.channel.id",
+        "representation": [
+          "xmlAttr"
+        ],
+        "short": "xml:id (or equivalent in JSON)",
+        "definition": "unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Element.id",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          }
+        ]
+      },
+      {
+        "id": "Subscription.channel.extension",
+        "path": "Subscription.channel.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "open"
+        },
+        "short": "Extension",
+        "definition": "An Extension",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Element.extension",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Extension"
+          }
+        ]
+      },
+      {
+        "id": "Subscription.channel.extension:payload-profile",
+        "path": "Subscription.channel.extension",
+        "sliceName": "payload-profile",
+        "short": "Extension",
+        "definition": "The profile of the required data to be sent in the payload.\r\n",
+        "min": 1,
+        "max": "*",
+        "base": {
+          "path": "Element.extension",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Extension",
+            "profile": "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-subscription-payloadprofile"
+          }
+        ],
+        "condition": [
+          "ele-1"
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() | (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "Element"
+          },
+          {
+            "key": "ext-1",
+            "severity": "error",
+            "human": "Must have either extensions or value[x], not both",
+            "expression": "extension.exists() != value.exists()",
+            "xpath": "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
+            "source": "Extension"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Subscription.channel.extension:payload-profile.id",
+        "path": "Subscription.channel.extension.id",
+        "representation": [
+          "xmlAttr"
+        ],
+        "short": "xml:id (or equivalent in JSON)",
+        "definition": "unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Element.id",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          }
+        ]
+      },
+      {
+        "id": "Subscription.channel.extension:payload-profile.extension",
+        "path": "Subscription.channel.extension.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "description": "Extensions are always sliced by (at least) url",
+          "rules": "open"
+        },
+        "short": "Additional Content defined by implementations",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+        "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+        "alias": [
+          "extensions",
+          "user content"
+        ],
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Element.extension",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Extension"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          }
+        ]
+      },
+      {
+        "id": "Subscription.channel.extension:payload-profile.url",
+        "path": "Subscription.channel.extension.url",
+        "representation": [
+          "xmlAttr"
+        ],
+        "short": "identifies the meaning of the extension",
+        "definition": "Source of the definition for the extension code - a logical name or a URL.",
+        "comment": "The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Extension.url",
+          "min": 1,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "uri"
+          }
+        ],
+        "fixedUri": "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-subscription-payloadprofile",
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "N/A"
+          }
+        ]
+      },
+      {
+        "id": "Subscription.channel.extension:payload-profile.valueUri:valueuri",
+        "path": "Subscription.channel.extension.valueUri",
+        "sliceName": "valueUri",
+        "short": "Payload profile URI",
+        "definition": "The uri of payload when sending notifications to a subscriber.",
+        "comment": "The Argonaut Scheduling Schedule Notification Profile defines the payload when sending notifications to a subscriber described in Use Case 3 Prefetching Open Slots.   The actual notification is triggered by a Slot instance defined in  `criteria` .  The Slot's `schedule' element identifies the Schedule resource instance that populates the payload.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Extension.value[x]",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "uri"
+          }
+        ],
+        "fixedUri": "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-sched-notif",
+        "mustSupport": true,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "N/A"
+          }
+        ]
+      },
+      {
+        "id": "Subscription.channel.modifierExtension",
+        "path": "Subscription.channel.modifierExtension",
+        "short": "Extensions that cannot be ignored",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.",
+        "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+        "alias": [
+          "extensions",
+          "user content",
+          "modifiers"
+        ],
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "BackboneElement.modifierExtension",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Extension"
+          }
+        ],
+        "isModifier": true,
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "N/A"
+          }
+        ]
+      },
+      {
+        "id": "Subscription.channel.type",
+        "path": "Subscription.channel.type",
+        "short": "rest-hook | websocket | email | sms | message",
+        "definition": "The type of channel to send notifications on.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Subscription.channel.type",
+          "min": 1,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "isSummary": true,
+        "binding": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "SubscriptionChannelType"
+            }
+          ],
+          "strength": "required",
+          "description": "The type of method used to execute a subscription.",
+          "valueSetReference": {
+            "reference": "http://hl7.org/fhir/ValueSet/subscription-channel-type"
+          }
+        }
+      },
+      {
+        "id": "Subscription.channel.endpoint",
+        "path": "Subscription.channel.endpoint",
+        "short": "Where the channel points to",
+        "definition": "The uri that describes the actual end-point to send messages to.",
+        "comment": "For rest-hook, and websocket, the end-point must be an http: or https: URL; for email, a mailto: url, for sms, a tel: url, and for message the endpoint can be in any form of url the server understands (usually, http: or mllp:). The URI is allowed to be relative; in which case, it is relative to the server end-point (since their may be more than one, clients should avoid using relative URIs).",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Subscription.channel.endpoint",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "uri"
+          }
+        ],
+        "mustSupport": true,
+        "isSummary": true
+      },
+      {
+        "id": "Subscription.channel.payload",
+        "path": "Subscription.channel.payload",
+        "short": "Mimetype to send, or omit for no payload",
+        "definition": "The mime type to send the payload in - either application/fhir+xml, or application/fhir+json. If the payload is not present, then there is no payload in the notification, just a notification.",
+        "comment": "Sending the payload has obvious security implications. The server is responsible for ensuring that the content is appropriately secured.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Subscription.channel.payload",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "isSummary": true
+      },
+      {
+        "id": "Subscription.channel.header",
+        "path": "Subscription.channel.header",
+        "short": "Usage depends on the channel type",
+        "definition": "Additional headers / information to send as part of the notification.",
+        "comment": "Exactly what these mean depend on the channel type. They can convey additional information to the recipient and/or meet security requirements; for example, support of multiple headers in the outgoing notifications for rest-hook type subscriptions.",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Subscription.channel.header",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "isSummary": true
+      },
+      {
+        "id": "Subscription.tag",
+        "path": "Subscription.tag",
+        "short": "A tag to add to matching resources",
+        "definition": "A tag to add to any resource that matches the criteria, after the subscription is processed.",
+        "comment": "So that other systems can tell which resources have been the subject of a notification.",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Subscription.tag",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Coding"
+          }
+        ],
+        "isSummary": true,
+        "binding": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "SubscriptionTag"
+            }
+          ],
+          "strength": "example",
+          "description": "Tags to put on a resource after subscriptions have been sent.",
+          "valueSetReference": {
+            "reference": "http://hl7.org/fhir/ValueSet/subscription-tag"
+          }
+        }
+      }
+    ]
+  },
+  "differential": {
+    "element": [
+      {
+        "id": "Subscription",
+        "path": "Subscription",
+        "mustSupport": false
+      },
+      {
+        "id": "Subscription.criteria",
+        "path": "Subscription.criteria",
+        "mustSupport": true
+      },
+      {
+        "id": "Subscription.criteria.extension",
+        "path": "Subscription.criteria.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Subscription.criteria.extension:trigger-description",
+        "path": "Subscription.criteria.extension",
+        "sliceName": "trigger-description",
+        "short": "Subscription Trigger Event Description Extension",
+        "comment": "A formal expression, or a reference to a named expression may also be inlined. If the expression is a [FHIRPath](http://hl7.org/fhirpath/) expression, use the [Subscription Trigger Event FHIRPath Extension](StructureDefinition-extension-trigger-fhirpath.html)",
+        "min": 1,
+        "type": [
+          {
+            "code": "Extension",
+            "profile": "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-subscription-triggerevent"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Subscription.criteria.extension:trigger-fhirpath",
+        "path": "Subscription.criteria.extension",
+        "sliceName": "trigger-fhirpath",
+        "short": "Subscription Trigger Event FHIRPath Extension",
+        "definition": "If the expression is a [FHIRPath](http://hl7.org/fhirpath/) expression, it evaluates in the context of a resource of one of the types identified in the [Subscription Event Focus Extension](StructureDefinition-extension-subscription-eventfocus.html), and may also refer to the variable `%previous`  for delta comparisons.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": "http://hl7.org/fhir/StructureDefinition/cqif-fhirPathExpression"
+          }
+        ]
+      },
+      {
+        "id": "Subscription.criteria.extension:event-focus",
+        "path": "Subscription.criteria.extension",
+        "sliceName": "event-focus",
+        "short": "Subscription Event Focus Extension",
+        "definition": "The type of the required data, specified as the type name of a resource.",
+        "min": 1,
+        "type": [
+          {
+            "code": "Extension",
+            "profile": "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-subscription-eventfocus"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Subscription.criteria.extension:event-focus.valueCode:valuecode",
+        "path": "Subscription.criteria.extension.valueCode",
+        "sliceName": "valueCode",
+        "min": 1,
+        "fixedCode": "Slot",
+        "mustSupport": true
+      },
+      {
+        "id": "Subscription.channel",
+        "path": "Subscription.channel",
+        "mustSupport": true
+      },
+      {
+        "id": "Subscription.channel.extension",
+        "path": "Subscription.channel.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Subscription.channel.extension:payload-profile",
+        "path": "Subscription.channel.extension",
+        "sliceName": "payload-profile",
+        "definition": "The profile of the required data to be sent in the payload.\r\n",
+        "min": 1,
+        "type": [
+          {
+            "code": "Extension",
+            "profile": "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-subscription-payloadprofile"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Subscription.channel.extension:payload-profile.valueUri:valueuri",
+        "path": "Subscription.channel.extension.valueUri",
+        "sliceName": "valueUri",
+        "short": "Payload profile URI",
+        "definition": "The uri of payload when sending notifications to a subscriber.",
+        "comment": "The Argonaut Scheduling Schedule Notification Profile defines the payload when sending notifications to a subscriber described in Use Case 3 Prefetching Open Slots.   The actual notification is triggered by a Slot instance defined in  `criteria` .  The Slot's `schedule' element identifies the Schedule resource instance that populates the payload.",
+        "min": 1,
+        "fixedUri": "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-sched-notif",
+        "mustSupport": true
+      },
+      {
+        "id": "Subscription.channel.endpoint",
+        "path": "Subscription.channel.endpoint",
+        "min": 1,
+        "mustSupport": true
+      }
+    ]
+  }
+}

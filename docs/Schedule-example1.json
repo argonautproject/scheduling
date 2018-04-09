@@ -1,0 +1,23 @@
+{
+  "resourceType": "Schedule",
+  "id": "example1",
+  "meta": {
+    "profile": [
+      "http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-sched-notif"
+    ]
+  },
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: example1</p><p><b>meta</b>: </p><p><b>actor</b>: <a href=\"Practitioner-dr-y.html\">Crusher, Beverly. Generated Summary: id: dr-y; 9941339108, 25456; Y </a></p><p><b>planningHorizon</b>: Feb 13, 2018 12:00:00 AM --&gt; Feb 13, 2018 12:00:00 AM</p></div>"
+  },
+  "actor": [
+    {
+      "reference": "Practitioner/dr-y",
+      "display": "Crusher, Beverly"
+    }
+  ],
+  "planningHorizon": {
+    "start": "2018-02-13",
+    "end": "2018-02-13"
+  }
+}

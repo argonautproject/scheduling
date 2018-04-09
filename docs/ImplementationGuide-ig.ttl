@@ -1,0 +1,668 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/argonaut-scheduling/ImplementationGuide/ig> a fhir:ImplementationGuide;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "ig"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>Argo-Scheduling</h2><p>The official URL for this implementation guide is: </p><pre>http://fhir.org/guides/argonaut-scheduling/ImplementationGuide/ig</pre></div>"
+  ];
+  fhir:ImplementationGuide.url [ fhir:value "http://fhir.org/guides/argonaut-scheduling/ImplementationGuide/ig"];
+  fhir:ImplementationGuide.name [ fhir:value "Argo-Scheduling"];
+  fhir:ImplementationGuide.status [ fhir:value "draft"];
+  fhir:ImplementationGuide.experimental [ fhir:value "true"^^xsd:boolean];
+  fhir:ImplementationGuide.publisher [ fhir:value "Argonaut Project"];
+  fhir:ImplementationGuide.package [
+     fhir:index 0;
+     fhir:Element.id [ fhir:value "p1" ];
+     fhir:ImplementationGuide.package.name [ fhir:value "base" ];
+     fhir:ImplementationGuide.package.resource [
+       fhir:index 0;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "Subscription-example.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/Subscription/example>;
+         fhir:Reference.reference [ fhir:value "Subscription/example" ]
+       ]
+     ], [
+       fhir:index 1;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "Slot-2017-09-07T154500-arg-s-6.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/Slot/2017-09-07T154500-arg-s-6>;
+         fhir:Reference.reference [ fhir:value "Slot/2017-09-07T154500-arg-s-6" ]
+       ]
+     ], [
+       fhir:index 2;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "Bundle-slot-bundle-example.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/Bundle/slot-bundle-example>;
+         fhir:Reference.reference [ fhir:value "Bundle/slot-bundle-example" ]
+       ]
+     ], [
+       fhir:index 3;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "Schedule-example1.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/Schedule/example1>;
+         fhir:Reference.reference [ fhir:value "Schedule/example1" ]
+       ]
+     ], [
+       fhir:index 4;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "Schedule-2017-08-28-derm.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/Schedule/2017-08-28-derm>;
+         fhir:Reference.reference [ fhir:value "Schedule/2017-08-28-derm" ]
+       ]
+     ], [
+       fhir:index 5;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "Schedule-arg-s-6.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/Schedule/arg-s-6>;
+         fhir:Reference.reference [ fhir:value "Schedule/arg-s-6" ]
+       ]
+     ], [
+       fhir:index 6;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "Appointment-proposed-appt3.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/Appointment/proposed-appt3>;
+         fhir:Reference.reference [ fhir:value "Appointment/proposed-appt3" ]
+       ]
+     ], [
+       fhir:index 7;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "Appointment-proposed-appt2b-3.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/Appointment/proposed-appt2b-3>;
+         fhir:Reference.reference [ fhir:value "Appointment/proposed-appt2b-3" ]
+       ]
+     ], [
+       fhir:index 8;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "Appointment-proposed-appt2b-2.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/Appointment/proposed-appt2b-2>;
+         fhir:Reference.reference [ fhir:value "Appointment/proposed-appt2b-2" ]
+       ]
+     ], [
+       fhir:index 9;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "Appointment-proposed-appt2b-1.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/Appointment/proposed-appt2b-1>;
+         fhir:Reference.reference [ fhir:value "Appointment/proposed-appt2b-1" ]
+       ]
+     ], [
+       fhir:index 10;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "Appointment-proposed-appt2.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/Appointment/proposed-appt2>;
+         fhir:Reference.reference [ fhir:value "Appointment/proposed-appt2" ]
+       ]
+     ], [
+       fhir:index 11;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "Appointment-proposed-appt1a-3.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/Appointment/proposed-appt1a-3>;
+         fhir:Reference.reference [ fhir:value "Appointment/proposed-appt1a-3" ]
+       ]
+     ], [
+       fhir:index 12;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "Appointment-proposed-appt1a-2.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/Appointment/proposed-appt1a-2>;
+         fhir:Reference.reference [ fhir:value "Appointment/proposed-appt1a-2" ]
+       ]
+     ], [
+       fhir:index 13;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "Appointment-proposed-appt1a-1.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/Appointment/proposed-appt1a-1>;
+         fhir:Reference.reference [ fhir:value "Appointment/proposed-appt1a-1" ]
+       ]
+     ], [
+       fhir:index 14;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "Appointment-proposed-appt1.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/Appointment/proposed-appt1>;
+         fhir:Reference.reference [ fhir:value "Appointment/proposed-appt1" ]
+       ]
+     ], [
+       fhir:index 15;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "Practitioner-dr-y.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/Practitioner/dr-y>;
+         fhir:Reference.reference [ fhir:value "Practitioner/dr-y" ]
+       ]
+     ], [
+       fhir:index 16;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "Patient-argo-sch-patient-2.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/Patient/argo-sch-patient-2>;
+         fhir:Reference.reference [ fhir:value "Patient/argo-sch-patient-2" ]
+       ]
+     ], [
+       fhir:index 17;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "Patient-argo-sch-patient-1.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/Patient/argo-sch-patient-1>;
+         fhir:Reference.reference [ fhir:value "Patient/argo-sch-patient-1" ]
+       ]
+     ], [
+       fhir:index 18;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "OperationOutcome-example.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/OperationOutcome/example>;
+         fhir:Reference.reference [ fhir:value "OperationOutcome/example" ]
+       ]
+     ], [
+       fhir:index 19;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "Coverage-argo-sch-2.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/Coverage/argo-sch-2>;
+         fhir:Reference.reference [ fhir:value "Coverage/argo-sch-2" ]
+       ]
+     ], [
+       fhir:index 20;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "Coverage-argo-sch-1.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/Coverage/argo-sch-1>;
+         fhir:Reference.reference [ fhir:value "Coverage/argo-sch-1" ]
+       ]
+     ], [
+       fhir:index 21;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "Bundle-prefetch-derm-appts.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/Bundle/prefetch-derm-appts>;
+         fhir:Reference.reference [ fhir:value "Bundle/prefetch-derm-appts" ]
+       ]
+     ], [
+       fhir:index 22;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "Bundle-hal-dr-y-appts.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "true"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/Bundle/hal-dr-y-appts>;
+         fhir:Reference.reference [ fhir:value "Bundle/hal-dr-y-appts" ]
+       ]
+     ], [
+       fhir:index 23;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "ValueSet-visit-type.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type>;
+         fhir:Reference.reference [ fhir:value "ValueSet/visit-type" ]
+       ]
+     ], [
+       fhir:index 24;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "ValueSet-status-reason.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/ValueSet/status-reason>;
+         fhir:Reference.reference [ fhir:value "ValueSet/status-reason" ]
+       ]
+     ], [
+       fhir:index 25;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "ValueSet-specialty.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/ValueSet/specialty>;
+         fhir:Reference.reference [ fhir:value "ValueSet/specialty" ]
+       ]
+     ], [
+       fhir:index 26;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "ValueSet-argo-slot-status.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/ValueSet/argo-slot-status>;
+         fhir:Reference.reference [ fhir:value "ValueSet/argo-slot-status" ]
+       ]
+     ], [
+       fhir:index 27;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "ValueSet-slot-bundle-type.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/ValueSet/slot-bundle-type>;
+         fhir:Reference.reference [ fhir:value "ValueSet/slot-bundle-type" ]
+       ]
+     ], [
+       fhir:index 28;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "ValueSet-sct-services.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/ValueSet/sct-services>;
+         fhir:Reference.reference [ fhir:value "ValueSet/sct-services" ]
+       ]
+     ], [
+       fhir:index 29;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "ValueSet-appt-type.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/ValueSet/appt-type>;
+         fhir:Reference.reference [ fhir:value "ValueSet/appt-type" ]
+       ]
+     ], [
+       fhir:index 30;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "StructureDefinition-slot-bundle.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/StructureDefinition/slot-bundle>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/slot-bundle" ]
+       ]
+     ], [
+       fhir:index 31;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "StructureDefinition-prefetch-slot.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/StructureDefinition/prefetch-slot>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/prefetch-slot" ]
+       ]
+     ], [
+       fhir:index 32;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "StructureDefinition-extension-subscription-triggerevent.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-subscription-triggerevent>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/extension-subscription-triggerevent" ]
+       ]
+     ], [
+       fhir:index 33;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "StructureDefinition-extension-subscription-payloadprofile.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-subscription-payloadprofile>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/extension-subscription-payloadprofile" ]
+       ]
+     ], [
+       fhir:index 34;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "StructureDefinition-extension-subscription-eventfocus.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-subscription-eventfocus>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/extension-subscription-eventfocus" ]
+       ]
+     ], [
+       fhir:index 35;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "StructureDefinition-extension-status-reason.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/StructureDefinition/extension-status-reason>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/extension-status-reason" ]
+       ]
+     ], [
+       fhir:index 36;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "StructureDefinition-avail-bundle.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/StructureDefinition/avail-bundle>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/avail-bundle" ]
+       ]
+     ], [
+       fhir:index 37;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "StructureDefinition-argo-sub-notif.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-sub-notif>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/argo-sub-notif" ]
+       ]
+     ], [
+       fhir:index 38;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "StructureDefinition-argo-sched-notif.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-sched-notif>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/argo-sched-notif" ]
+       ]
+     ], [
+       fhir:index 39;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "StructureDefinition-argo-coverage.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-coverage>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/argo-coverage" ]
+       ]
+     ], [
+       fhir:index 40;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "StructureDefinition-argo-appt.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-appt>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/argo-appt" ]
+       ]
+     ], [
+       fhir:index 41;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "OperationDefinition-slot-prefetch.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/OperationDefinition/slot-prefetch>;
+         fhir:Reference.reference [ fhir:value "OperationDefinition/slot-prefetch" ]
+       ]
+     ], [
+       fhir:index 42;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "OperationDefinition-appointment-hold.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/OperationDefinition/appointment-hold>;
+         fhir:Reference.reference [ fhir:value "OperationDefinition/appointment-hold" ]
+       ]
+     ], [
+       fhir:index 43;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "OperationDefinition-appointment-find.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/OperationDefinition/appointment-find>;
+         fhir:Reference.reference [ fhir:value "OperationDefinition/appointment-find" ]
+       ]
+     ], [
+       fhir:index 44;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "OperationDefinition-appointment-book.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/OperationDefinition/appointment-book>;
+         fhir:Reference.reference [ fhir:value "OperationDefinition/appointment-book" ]
+       ]
+     ], [
+       fhir:index 45;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "ConceptMap-visit-snomed-map.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/ConceptMap/visit-snomed-map>;
+         fhir:Reference.reference [ fhir:value "ConceptMap/visit-snomed-map" ]
+       ]
+     ], [
+       fhir:index 46;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "ConceptMap-visit-appt-map.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/ConceptMap/visit-appt-map>;
+         fhir:Reference.reference [ fhir:value "ConceptMap/visit-appt-map" ]
+       ]
+     ], [
+       fhir:index 47;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "CodeSystem-visit-type.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type>;
+         fhir:Reference.reference [ fhir:value "CodeSystem/visit-type" ]
+       ]
+     ], [
+       fhir:index 48;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "CodeSystem-status-reason.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/CodeSystem/status-reason>;
+         fhir:Reference.reference [ fhir:value "CodeSystem/status-reason" ]
+       ]
+     ], [
+       fhir:index 49;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "CodeSystem-appt-type.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/CodeSystem/appt-type>;
+         fhir:Reference.reference [ fhir:value "CodeSystem/appt-type" ]
+       ]
+     ], [
+       fhir:index 50;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "CapabilityStatement-server.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/CapabilityStatement/server>;
+         fhir:Reference.reference [ fhir:value "CapabilityStatement/server" ]
+       ]
+     ], [
+       fhir:index 51;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "CapabilityStatement-client.html" ]
+       ];
+       fhir:ImplementationGuide.package.resource.example [ fhir:value "false"^^xsd:boolean ];
+       fhir:ImplementationGuide.package.resource.sourceReference [
+         fhir:link <http://fhir.org/guides/argonaut-scheduling/CapabilityStatement/client>;
+         fhir:Reference.reference [ fhir:value "CapabilityStatement/client" ]
+       ]
+     ]
+  ];
+  fhir:ImplementationGuide.page [
+     fhir:ImplementationGuide.page.source [ fhir:value "index.md" ];
+     fhir:ImplementationGuide.page.title [ fhir:value "Argo-Scheduling Homepage" ];
+     fhir:ImplementationGuide.page.kind [ fhir:value "page" ];
+     fhir:ImplementationGuide.page.page [
+       fhir:index 0;
+       fhir:ImplementationGuide.page.source [ fhir:value "_includes/toc.md" ];
+       fhir:ImplementationGuide.page.title [ fhir:value "Argo-Scheduling Table of Contents" ];
+       fhir:ImplementationGuide.page.kind [ fhir:value "page" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.org/guides/argonaut-scheduling/ImplementationGuide/ig.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

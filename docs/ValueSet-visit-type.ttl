@@ -1,0 +1,414 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type> a fhir:ValueSet;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "visit-type"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>Argonaut_Visit_Types</h2><div><p>The Argonaut Visit Types are a prioritized valueset of the most common 'business types' for scheduling and have been identified as the baseline use cases for the  Argonaut scheduling Implementation Guide.  This is intended to facilitates implementation of the IG by provide a common starting point for interoperability.  These concept are used in the Argonaut Appointment, Schedule and Slot resources.  The Visit types can be extended by implementers to meet there use cases.  In order to address overlap between <code>serviceType</code> and <code>appointmentType</code>, these concepts are mapped to the <a href=\"http://fhir.org/guides/argonaut-scheduling/ConceptMap/visit-appt-map\">Argonaut Appointment Types</a>.  A mapping to <a href=\"http://fhir.org/guides/argonaut-scheduling/ConceptMap/visit-snomed-map\">SNOMED CT</a> is also provided.</p>\n</div><p>This value set includes codes from the following code systems:</p><ul><li>Include these codes as defined in <a href=\"CodeSystem-visit-type.html\"><code>http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type</code></a><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a href=\"CodeSystem-visit-type.html#visit-type-breast-imaging\">breast-imaging</a></td><td>BREAST IMAGING</td><td>breast imaging visit</td></tr><tr><td><a href=\"CodeSystem-visit-type.html#visit-type-consult\">consult</a></td><td>CONSULTATION</td><td>consultation visit</td></tr><tr><td><a href=\"CodeSystem-visit-type.html#visit-type-ct\">ct</a></td><td>COMPUTED TOMOGRAPHY SCAN(CT)</td><td>computed tomography scan(ct) visit</td></tr><tr><td><a href=\"CodeSystem-visit-type.html#visit-type-dental\">dental</a></td><td>DENTAL</td><td>dental visit</td></tr><tr><td><a href=\"CodeSystem-visit-type.html#visit-type-dxa\">dxa</a></td><td>DUAL-ENERGY X-RAY ABSORPTIOMETRY(DXA)</td><td>Dual-energy X-ray absorptiometry(dxa) visit</td></tr><tr><td><a href=\"CodeSystem-visit-type.html#visit-type-echo\">echo</a></td><td>ECHOCARDIOGRAPHY(ECHO)</td><td>echocardiography(echo) visit</td></tr><tr><td><a href=\"CodeSystem-visit-type.html#visit-type-echo-stresstest\">echo-stresstest</a></td><td>ECHOCARDIOGRAPHY(ECHO) STRESS TEST</td><td>echocardiography(echo) stress test visit</td></tr><tr><td><a href=\"CodeSystem-visit-type.html#visit-type-ed-followup\">ed-followup</a></td><td>EDUCATION FOLLOW UP</td><td>education follow up visit</td></tr><tr><td><a href=\"CodeSystem-visit-type.html#visit-type-eeg\">eeg</a></td><td>ELECTROENCEPHALOGRAPHY(EEG)</td><td>Electroencephalography(eeg) visit</td></tr><tr><td><a href=\"CodeSystem-visit-type.html#visit-type-egd\">egd</a></td><td>ESOPHAGOGASTRODUODENOSCOPY(EGD)</td><td>esophagogastroduodenoscopy(egd) visit</td></tr><tr><td><a href=\"CodeSystem-visit-type.html#visit-type-ekg\">ekg</a></td><td>ELECTROCARDIOGRAM(EKG)</td><td>electrocardiogram(ekg) visit</td></tr><tr><td><a href=\"CodeSystem-visit-type.html#visit-type-evaluation\">evaluation</a></td><td>EVALUATION</td><td>evaluation visit</td></tr><tr><td><a href=\"CodeSystem-visit-type.html#visit-type-flu-shot-clinic\">flu-shot-clinic</a></td><td>INFLUENZA VACCINATION CLINIC</td><td>Influenza vaccination clinic visit</td></tr><tr><td><a href=\"CodeSystem-visit-type.html#visit-type-fluoroscopy\">fluoroscopy</a></td><td>FLUOROSCOPY</td><td>fluoroscopy visit</td></tr><tr><td><a href=\"CodeSystem-visit-type.html#visit-type-follow-up\">follow-up</a></td><td>FOLLOW UP</td><td>follow up visit</td></tr><tr><td><a href=\"CodeSystem-visit-type.html#visit-type-home-health\">home-health</a></td><td>HOME HEALTH VISIT</td><td>home health visit visit</td></tr><tr><td><a href=\"CodeSystem-visit-type.html#visit-type-injection\">injection</a></td><td>INJECTION</td><td>injection visit</td></tr><tr><td><a href=\"CodeSystem-visit-type.html#visit-type-inter-rad\">inter-rad</a></td><td>INTERVENTIONAL RADIOLOGY</td><td>interventional radiology visit</td></tr><tr><td><a href=\"CodeSystem-visit-type.html#visit-type-lab\">lab</a></td><td>LABORATORY TESTS</td><td>Laboratory Testing visit</td></tr><tr><td><a href=\"CodeSystem-visit-type.html#visit-type-minor-surgery\">minor-surgery</a></td><td>MINOR SURGERY</td><td>minor surgery visit</td></tr><tr><td><a href=\"CodeSystem-visit-type.html#visit-type-mri\">mri</a></td><td>MAGNETIC RESONANCE IMAGING(MRI)</td><td>magnetic resonance imaging(mri) visit</td></tr><tr><td><a href=\"CodeSystem-visit-type.html#visit-type-new-patient\">new-patient</a></td><td>NEW PATIENT</td><td>new patient visit</td></tr><tr><td><a href=\"CodeSystem-visit-type.html#visit-type-nuc-med\">nuc-med</a></td><td>NUCLEAR MEDICINE</td><td>nuclear medicine visit</td></tr><tr><td><a href=\"CodeSystem-visit-type.html#visit-type-occup-therapy\">occup-therapy</a></td><td>OCCUPATIONAL THERAPY</td><td>occupational therapy visit</td></tr><tr><td><a href=\"CodeSystem-visit-type.html#visit-type-office-visit\">office-visit</a></td><td>OFFICE VISIT</td><td>office visit</td></tr><tr><td><a href=\"CodeSystem-visit-type.html#visit-type-physical\">physical</a></td><td>PHYSICAL</td><td>physical visit</td></tr><tr><td><a href=\"CodeSystem-visit-type.html#visit-type-post-op\">post-op</a></td><td>POST-OPERATIVE(POST-OP)</td><td>post-operative visit</td></tr><tr><td><a href=\"CodeSystem-visit-type.html#visit-type-pre-admit-testing\">pre-admit-testing</a></td><td>PRE-ADMISSION TESTING VISIT</td><td>pre-admission testing visit visit</td></tr><tr><td><a href=\"CodeSystem-visit-type.html#visit-type-pre-op\">pre-op</a></td><td>PRE-OPERATIVE(PRE-OP)</td><td>pre-operative(pre-op) visit</td></tr><tr><td><a href=\"CodeSystem-visit-type.html#visit-type-procedure\">procedure</a></td><td>PROCEDURE</td><td>procedure visit</td></tr><tr><td><a href=\"CodeSystem-visit-type.html#visit-type-same-day\">same-day</a></td><td>SAME DAY</td><td>same day visit</td></tr><tr><td><a href=\"CodeSystem-visit-type.html#visit-type-stress-test\">stress-test</a></td><td>STRESS TEST</td><td>stress test visit</td></tr><tr><td><a href=\"CodeSystem-visit-type.html#visit-type-surgery\">surgery</a></td><td>SURGERY</td><td>surgery visit</td></tr><tr><td><a href=\"CodeSystem-visit-type.html#visit-type-treatment\">treatment</a></td><td>TREATMENT</td><td>treatment visit</td></tr><tr><td><a href=\"CodeSystem-visit-type.html#visit-type-ultrasound\">ultrasound</a></td><td>ULTRASOUND</td><td>ultrasound visit</td></tr><tr><td><a href=\"CodeSystem-visit-type.html#visit-type-urgent\">urgent</a></td><td>URGENT</td><td>urgent visit</td></tr><tr><td><a href=\"CodeSystem-visit-type.html#visit-type-vaccine\">vaccine</a></td><td>VACCINATION</td><td>vaccination visit</td></tr><tr><td><a href=\"CodeSystem-visit-type.html#visit-type-vision\">vision</a></td><td>VISION</td><td>vision visit</td></tr><tr><td><a href=\"CodeSystem-visit-type.html#visit-type-walk-in\">walk-in</a></td><td>WALK IN</td><td>walk in visit</td></tr><tr><td><a href=\"CodeSystem-visit-type.html#visit-type-well-child\">well-child</a></td><td>WELL CHILD</td><td>well child visit</td></tr><tr><td><a href=\"CodeSystem-visit-type.html#visit-type-x-ray\">x-ray</a></td><td>X-RAY</td><td>x-ray visit</td></tr></table></li></ul></div>"
+  ];
+  fhir:ValueSet.url [ fhir:value "http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type"];
+  fhir:ValueSet.version [ fhir:value "1.0.1"];
+  fhir:ValueSet.name [ fhir:value "Argonaut_Visit_Types"];
+  fhir:ValueSet.title [ fhir:value "Argonaut Visit Types"];
+  fhir:ValueSet.status [ fhir:value "active"];
+  fhir:ValueSet.date [ fhir:value "2017-07-30T12:40:10-07:00"^^xsd:dateTime];
+  fhir:ValueSet.description [ fhir:value "The Argonaut Visit Types are a prioritized valueset of the most common 'business types' for scheduling and have been identified as the baseline use cases for the  Argonaut scheduling Implementation Guide.  This is intended to facilitates implementation of the IG by provide a common starting point for interoperability.  These concept are used in the Argonaut Appointment, Schedule and Slot resources.  The Visit types can be extended by implementers to meet there use cases.  In order to address overlap between `serviceType` and `appointmentType`, these concepts are mapped to the [Argonaut Appointment Types](http://fhir.org/guides/argonaut-scheduling/ConceptMap/visit-appt-map).  A mapping to [SNOMED CT](http://fhir.org/guides/argonaut-scheduling/ConceptMap/visit-snomed-map) is also provided."];
+  fhir:ValueSet.jurisdiction [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ];
+       fhir:Coding.code [ fhir:value "US" ];
+       fhir:Coding.display [ fhir:value "United States of America" ]
+     ]
+  ];
+  fhir:ValueSet.compose [
+     fhir:ValueSet.compose.include [
+       fhir:index 0;
+       fhir:ValueSet.compose.include.system [ fhir:value "http://fhir.org/guides/argonaut-scheduling/CodeSystem/visit-type" ];
+       fhir:ValueSet.compose.include.concept [
+         fhir:index 0;
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/valueset-definition" ];
+           fhir:Extension.valueString [ fhir:value "breast imaging visit" ]
+         ];
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "breast-imaging" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "BREAST IMAGING" ]
+       ], [
+         fhir:index 1;
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/valueset-definition" ];
+           fhir:Extension.valueString [ fhir:value "consultation visit" ]
+         ];
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "consult" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "CONSULTATION" ]
+       ], [
+         fhir:index 2;
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/valueset-definition" ];
+           fhir:Extension.valueString [ fhir:value "computed tomography scan(ct) visit" ]
+         ];
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ct" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "COMPUTED TOMOGRAPHY SCAN(CT)" ]
+       ], [
+         fhir:index 3;
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/valueset-definition" ];
+           fhir:Extension.valueString [ fhir:value "dental visit" ]
+         ];
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "dental" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "DENTAL" ]
+       ], [
+         fhir:index 4;
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/valueset-definition" ];
+           fhir:Extension.valueString [ fhir:value "Dual-energy X-ray absorptiometry(dxa) visit" ]
+         ];
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "dxa" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "DUAL-ENERGY X-RAY ABSORPTIOMETRY(DXA)" ]
+       ], [
+         fhir:index 5;
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/valueset-definition" ];
+           fhir:Extension.valueString [ fhir:value "echocardiography(echo) visit" ]
+         ];
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "echo" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "ECHOCARDIOGRAPHY(ECHO)" ]
+       ], [
+         fhir:index 6;
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/valueset-definition" ];
+           fhir:Extension.valueString [ fhir:value "echocardiography(echo) stress test visit" ]
+         ];
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "echo-stresstest" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "ECHOCARDIOGRAPHY(ECHO) STRESS TEST" ]
+       ], [
+         fhir:index 7;
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/valueset-definition" ];
+           fhir:Extension.valueString [ fhir:value "education follow up visit" ]
+         ];
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ed-followup" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "EDUCATION FOLLOW UP" ]
+       ], [
+         fhir:index 8;
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/valueset-definition" ];
+           fhir:Extension.valueString [ fhir:value "Electroencephalography(eeg) visit" ]
+         ];
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "eeg" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "ELECTROENCEPHALOGRAPHY(EEG)" ]
+       ], [
+         fhir:index 9;
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/valueset-definition" ];
+           fhir:Extension.valueString [ fhir:value "esophagogastroduodenoscopy(egd) visit" ]
+         ];
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "egd" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "ESOPHAGOGASTRODUODENOSCOPY(EGD)" ]
+       ], [
+         fhir:index 10;
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/valueset-definition" ];
+           fhir:Extension.valueString [ fhir:value "electrocardiogram(ekg) visit" ]
+         ];
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ekg" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "ELECTROCARDIOGRAM(EKG)" ]
+       ], [
+         fhir:index 11;
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/valueset-definition" ];
+           fhir:Extension.valueString [ fhir:value "evaluation visit" ]
+         ];
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "evaluation" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "EVALUATION" ]
+       ], [
+         fhir:index 12;
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/valueset-definition" ];
+           fhir:Extension.valueString [ fhir:value "Influenza vaccination clinic visit" ]
+         ];
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "flu-shot-clinic" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "INFLUENZA VACCINATION CLINIC" ]
+       ], [
+         fhir:index 13;
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/valueset-definition" ];
+           fhir:Extension.valueString [ fhir:value "fluoroscopy visit" ]
+         ];
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "fluoroscopy" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "FLUOROSCOPY" ]
+       ], [
+         fhir:index 14;
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/valueset-definition" ];
+           fhir:Extension.valueString [ fhir:value "follow up visit" ]
+         ];
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "follow-up" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "FOLLOW UP" ]
+       ], [
+         fhir:index 15;
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/valueset-definition" ];
+           fhir:Extension.valueString [ fhir:value "home health visit visit" ]
+         ];
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "home-health" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "HOME HEALTH VISIT" ]
+       ], [
+         fhir:index 16;
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/valueset-definition" ];
+           fhir:Extension.valueString [ fhir:value "injection visit" ]
+         ];
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "injection" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "INJECTION" ]
+       ], [
+         fhir:index 17;
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/valueset-definition" ];
+           fhir:Extension.valueString [ fhir:value "interventional radiology visit" ]
+         ];
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "inter-rad" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "INTERVENTIONAL RADIOLOGY" ]
+       ], [
+         fhir:index 18;
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/valueset-definition" ];
+           fhir:Extension.valueString [ fhir:value "Laboratory Testing visit" ]
+         ];
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "lab" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "LABORATORY TESTS" ]
+       ], [
+         fhir:index 19;
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/valueset-definition" ];
+           fhir:Extension.valueString [ fhir:value "minor surgery visit" ]
+         ];
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "minor-surgery" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "MINOR SURGERY" ]
+       ], [
+         fhir:index 20;
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/valueset-definition" ];
+           fhir:Extension.valueString [ fhir:value "magnetic resonance imaging(mri) visit" ]
+         ];
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "mri" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "MAGNETIC RESONANCE IMAGING(MRI)" ]
+       ], [
+         fhir:index 21;
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/valueset-definition" ];
+           fhir:Extension.valueString [ fhir:value "new patient visit" ]
+         ];
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "new-patient" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "NEW PATIENT" ]
+       ], [
+         fhir:index 22;
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/valueset-definition" ];
+           fhir:Extension.valueString [ fhir:value "nuclear medicine visit" ]
+         ];
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "nuc-med" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "NUCLEAR MEDICINE" ]
+       ], [
+         fhir:index 23;
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/valueset-definition" ];
+           fhir:Extension.valueString [ fhir:value "occupational therapy visit" ]
+         ];
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "occup-therapy" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "OCCUPATIONAL THERAPY" ]
+       ], [
+         fhir:index 24;
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/valueset-definition" ];
+           fhir:Extension.valueString [ fhir:value "office visit" ]
+         ];
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "office-visit" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "OFFICE VISIT" ]
+       ], [
+         fhir:index 25;
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/valueset-definition" ];
+           fhir:Extension.valueString [ fhir:value "physical visit" ]
+         ];
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "physical" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "PHYSICAL" ]
+       ], [
+         fhir:index 26;
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/valueset-definition" ];
+           fhir:Extension.valueString [ fhir:value "post-operative visit" ]
+         ];
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "post-op" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "POST-OPERATIVE(POST-OP)" ]
+       ], [
+         fhir:index 27;
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/valueset-definition" ];
+           fhir:Extension.valueString [ fhir:value "pre-admission testing visit visit" ]
+         ];
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "pre-admit-testing" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "PRE-ADMISSION TESTING VISIT" ]
+       ], [
+         fhir:index 28;
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/valueset-definition" ];
+           fhir:Extension.valueString [ fhir:value "pre-operative(pre-op) visit" ]
+         ];
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "pre-op" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "PRE-OPERATIVE(PRE-OP)" ]
+       ], [
+         fhir:index 29;
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/valueset-definition" ];
+           fhir:Extension.valueString [ fhir:value "procedure visit" ]
+         ];
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "procedure" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "PROCEDURE" ]
+       ], [
+         fhir:index 30;
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/valueset-definition" ];
+           fhir:Extension.valueString [ fhir:value "same day visit" ]
+         ];
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "same-day" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "SAME DAY" ]
+       ], [
+         fhir:index 31;
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/valueset-definition" ];
+           fhir:Extension.valueString [ fhir:value "stress test visit" ]
+         ];
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "stress-test" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "STRESS TEST" ]
+       ], [
+         fhir:index 32;
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/valueset-definition" ];
+           fhir:Extension.valueString [ fhir:value "surgery visit" ]
+         ];
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "surgery" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "SURGERY" ]
+       ], [
+         fhir:index 33;
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/valueset-definition" ];
+           fhir:Extension.valueString [ fhir:value "treatment visit" ]
+         ];
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "treatment" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "TREATMENT" ]
+       ], [
+         fhir:index 34;
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/valueset-definition" ];
+           fhir:Extension.valueString [ fhir:value "ultrasound visit" ]
+         ];
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ultrasound" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "ULTRASOUND" ]
+       ], [
+         fhir:index 35;
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/valueset-definition" ];
+           fhir:Extension.valueString [ fhir:value "urgent visit" ]
+         ];
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "urgent" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "URGENT" ]
+       ], [
+         fhir:index 36;
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/valueset-definition" ];
+           fhir:Extension.valueString [ fhir:value "vaccination visit" ]
+         ];
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "vaccine" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "VACCINATION" ]
+       ], [
+         fhir:index 37;
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/valueset-definition" ];
+           fhir:Extension.valueString [ fhir:value "vision visit" ]
+         ];
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "vision" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "VISION" ]
+       ], [
+         fhir:index 38;
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/valueset-definition" ];
+           fhir:Extension.valueString [ fhir:value "walk in visit" ]
+         ];
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "walk-in" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "WALK IN" ]
+       ], [
+         fhir:index 39;
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/valueset-definition" ];
+           fhir:Extension.valueString [ fhir:value "well child visit" ]
+         ];
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "well-child" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "WELL CHILD" ]
+       ], [
+         fhir:index 40;
+         fhir:Element.extension [
+           fhir:index 0;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/valueset-definition" ];
+           fhir:Extension.valueString [ fhir:value "x-ray visit" ]
+         ];
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "x-ray" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "X-RAY" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.org/guides/argonaut-scheduling/ValueSet/visit-type.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

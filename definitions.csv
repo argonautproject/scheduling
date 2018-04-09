@@ -7,12 +7,12 @@ dependencyList.name,uscore
 dependencyList.source,dependencies/uscore-vp
 do-transforms,FALSE
 extensions,
-fixed-business-version,1.0.0
+fixed-business-version,1.0.1
 gen-examples,FALSE
 igtemplate-dir,/Users/ehaas/Documents/FHIR/IG-Template2/
 jurisdiction,US
 no-inactive-codes,FALSE
-paths.output,output
+paths.output,docs
 paths.pages,framework|source/pages
 paths.qa,generated_output/qa
 paths.resources,source/resources|source/examples
@@ -24,7 +24,7 @@ sct-edition,http://snomed.info/sct/731000124108
 searches,
 source,ig.xml
 special-urls,
-status,active
+status,draft
 structuremaps,
 title,Argo-Scheduling
 tool,jekyll

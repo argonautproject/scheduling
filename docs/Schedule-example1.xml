@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Schedule xmlns="http://hl7.org/fhir">
+  <id value="example1"/>
+  <meta>
+    <profile value="http://fhir.org/guides/argonaut-scheduling/StructureDefinition/argo-sched-notif"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: example1</p><p><b>meta</b>: </p><p><b>actor</b>: <a href="Practitioner-dr-y.html">Crusher, Beverly. Generated Summary: id: dr-y; 9941339108, 25456; Y </a></p><p><b>planningHorizon</b>: Feb 13, 2018 12:00:00 AM --&gt; Feb 13, 2018 12:00:00 AM</p></div>
+  </text>
+  <actor>
+    <reference value="Practitioner/dr-y"/>
+    <display value="Crusher, Beverly"/>
+  </actor>
+  <planningHorizon>
+    <start value="2018-02-13"/>
+    <end value="2018-02-13"/>
+  </planningHorizon>
+</Schedule>
