@@ -23,10 +23,16 @@ Meeting agenda and notes are archived [here](https://github.com/argonautproject/
 
 ## Issues
 
-Issues will be listed and tracked on this Github repository site [here](https://github.com/argonautproject/scheduling/issues).
+Issues will be listed and tracked on this Github repository siteAT:
 
-### Published Scheduling Implementation Guide (Release 1.0.0) at:
+https://github.com/argonautproject/scheduling/issues
+
+## Published Scheduling Implementation Guide
+
+Official Release 1.0.0 at:
 
 http://www.fhir.org/guides/argonaut/scheduling/
 
 ###  Continuous Integration Build at:
+
+https://argonautproject.github.io/scheduling/
