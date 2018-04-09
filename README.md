@@ -23,7 +23,7 @@ Meeting agenda and notes are archived [here](https://github.com/argonautproject/
 
 ## Issues
 
-Issues will be listed and tracked on this Github repository siteAT:
+Issues will be listed and tracked on this Github repository site:
 
 https://github.com/argonautproject/scheduling/issues
 
